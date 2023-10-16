@@ -20,8 +20,11 @@
               <p style="text-align:center">
                 <name>Sungjae Park</name>
               </p>
-              <p>I am a Research Intern at <a href="https://ai.google/research">Cognitive Learning for Vision and Robotics Lab(CLVR)</a> in Korea Advanced Institute of Science and Technology(KAIST)</a>, where I work on robot learning. Also, I am currently a senior undergraduate student in Mechanical Engineering and Mathematics at Seoul National University(SNU).
+              <p>Hi, I am a research intern in <a href="https://www.clvrai.com/">Cognitive Learning for Vision and robotics Lab (CLVR)</a> in KAIST</a>, advised by <a href="https://clvrai.com/web_lim/">Prof. Joseph J. Lim</a>.
               </p>
+              <p>Previously, I completed B.S. in Math and Mechanical Engineering at Seoul National University.
+              </p>
+
              <!-- <p>
                 At Google I've worked on <a href="https://www.google.com/glass/start/">Glass</a>,  <a href="https://ai.googleblog.com/2014/04/lens-blur-in-new-google-camera-app.html">Lens Blur</a>, <a href="https://ai.googleblog.com/2014/10/hdr-low-light-and-high-dynamic-range.html">HDR+</a>, <a href="https://blog.google/products/google-ar-vr/introducing-next-generation-jump/">Jump</a>, <a href="https://ai.googleblog.com/2017/10/portrait-mode-on-pixel-2-and-pixel-2-xl.html">Portrait Mode</a>, <a href="https://ai.googleblog.com/2020/12/portrait-light-enhancing-portrait.html">Portrait Light</a>, and <a href="https://www.matthewtancik.com/nerf">NeRF</a>. I did my PhD at <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I was advised by <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a> and funded by the <a href="http://www.nsfgrfp.org/">NSF GRFP</a>. I've received the <a href="https://www2.eecs.berkeley.edu/Students/Awards/15/">C.V. Ramamoorthy Distinguished Research Award</a> and the <a href="https://www.thecvf.com/?page_id=413#YRA">PAMI Young Researcher Award</a>.
               </p>-->
@@ -39,39 +42,66 @@
             </td>
           </tr>
         </tbody></table>
+        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>News</heading>
+            <ul>
+              <li>[Aug, 2023] Obtained B.S. from Seoul National University.
+                <br><strong>1st in mechanical engineering department, 2nd in engineering department among fall graduates.</strong></li>
+              <li>[Dec, 2022] Received <strong>Outstanding BS Thesis Presentation Award</strong> for my Bachelor's Thesis</li> 
+            </ul>
+                      </td>
+        </tr> -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                My research interest lies on <strong>developing a learning robot that can accomplish complex, long-horizon manipulation tasks</strong>. Ultimately, I aim to develop a general-purpose robot system. 
-                <br>
-                To achieve my ultimate goal, specific topics I am interested 
-                in are: 
-                learning an agent with physical understanding & reasoning ability, efficient reinforcement learning from prior data, and contact-rich dexterous manipulation.
+                My research goal is to develop a robot with human-like abilities, including 
+                <strong>physical capabilities</strong> for manipulation tasks, and <strong>cognitive capabilities</strong> for intuitive understanding of the real world.
               </p>
-
+              <p> 
+                Specifically, I am interested in solving <strong>complex, long horizon manipulation tasks</strong> (e.g. cooking a tomato pasta), 
+                <br>
+                <strong>physical reasoning with interaction</strong> (e.g. experimenting with objects and inferring properties with phsyical interaction), and 
+                <br>
+                <strong>
+                  physical reasoning for interaction</strong>(e.g. intuitive physics, leveraging object permanence for efficient object retrieval). 
+              </p>
               <p>
                 * denotes equal contribution.
               </p>
+  
+
             </td>
           </tr>
         </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+      </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/error_recovery.gif" alt="critical" width="160" height="160">
+              <img src="images/error_recovery_visualization.gif" alt="critical" width="160" height="160">
             </td>
             <td width="75%" valign="middle">
               <!--<a href="https://drive.google.com/file/d/1YvRx-4hrZoCk-nl6OgVJZlHAqOiN5hWq/view?usp=sharing">-->
-              <papertitle>Learning Robust Manipulation with Error Recovery</papertitle>
+              <papertitle>Done is Better than Perfect : Learning Complex Manipulation with Error Recovery</papertitle>
               <!--</a>-->
               <br>
               <a href="https://minoring.github.io//">Minho Heo*</a>, <strong><a href="https://rureadyo.github.io/">Sungjae Park*</a></strong>, <a href="https://clvrai.com/web_lim/">Joseph J. Lim</a>
               <br>
               <em>To be submitted</em>
               <br>
-              <p>We achieve robust, higher success rate manipulation policy using error recovery.</p>
+              <!-- <p>When humans are given with a complex manipulation task, such as putting a thread in a needle, they often fail in single shot. However, they can iteratively recover from the failure state and retry, completing the task in the end.
+                We model such process as hierarchical reinforcement learning, where the high level policy determines whether to use task policy or call recovery. This improves suboptimal policy's success rate up to twice. </p>
+              </p> -->
+              <p>We model <strong>"iterative recovery and retry"</strong> process in complex manipulation as hierarchical reinforcement learning, where the high level policy determines whether to use task policy or call recovery. This improves suboptimal policy's success rate up to 30%. </p>
+              </p>
+
+
               <!--<p>In use at <a href="http://www.astrometry.net">Astrometry.net</a></p>-->
             </td>
           </tr>
@@ -88,7 +118,7 @@
               <br>
               <em>To be submitted</em>
               <br>
-              <p>We use task oriented critical states to boost reinforcment learning.</p>
+              <p>We leverage <strong>"critical states"</strong> of a given task to achieve sample efficient reinforcement learning. Critical states refer to states where number of near-optimal actions is significantly smaller than others, such as when the ball is about to reach the floor in Breakout.</p>
               <!--<p>In use at <a href="http://www.astrometry.net">Astrometry.net</a></p>-->
             </td>
           </tr>
