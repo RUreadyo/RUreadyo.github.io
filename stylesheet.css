@@ -265,8 +265,6 @@ ul.service-list li {
 
 .pub-row.featured {
   background-color: #f2f7fd;
-  border-left: 3px solid #1772d0;
-  padding-left: 11px;
 }
 
 .pub-row.featured:hover {
