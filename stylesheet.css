@@ -341,8 +341,9 @@ ul.service-list li {
 
 .pub-info .venue {
   margin-top: 2px;
-  color: #6b6b6b;
+  color: #262626;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .pub-info .pub-links {
