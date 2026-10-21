@@ -412,6 +412,8 @@ ul.service-list li {
   .pub-thumb {
     flex: none;
     width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
   }
 
   .teaching-row.pub-row {
