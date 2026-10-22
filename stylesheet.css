@@ -320,7 +320,8 @@ ul.service-list li {
   display: block;
 }
 
-.pub-thumb.contain img {
+.pub-thumb.contain img,
+.pub-thumb.contain video {
   object-fit: contain;
   background: #f2f2f2;
 }
