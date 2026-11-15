@@ -338,6 +338,7 @@ ul.service-list li {
 .pub-info .authors {
   margin-top: 6px;
   color: #3a3a3a;
+  font-size: 15px;
 }
 
 .pub-info .venue {
@@ -352,8 +353,15 @@ ul.service-list li {
   font-size: 15px;
 }
 
-.award {
+.accolade {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
   color: #c0392b;
+}
+
+.accolade a {
+  color: inherit;
 }
 
 /* ---------- Teaching entries ---------- */
