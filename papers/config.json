@@ -1,0 +1,112 @@
+{
+  "_comment": "Edit freely. Keyword weights add up per topic; tracked authors get a bonus. interests.md is the free-text profile Claude uses to rank.",
+  "lookback_days": 4,
+  "max_candidates_for_llm": 80,
+  "top_picks": 15,
+  "roundup_size": 40,
+  "categories_full": ["cs.RO"],
+  "categories_filtered": ["cs.LG", "cs.CV", "cs.AI", "stat.ML", "eess.SY"],
+  "filtered_query_terms": [
+    "reinforcement learning", "policy gradient", "offline RL", "imitation learning",
+    "behavior cloning", "diffusion policy", "flow matching", "diffusion model",
+    "consistency model", "mean flow", "stochastic interpolant", "classifier-free guidance",
+    "world model", "video generation", "video diffusion", "diffusion forcing",
+    "vision-language-action", "robot", "manipulation", "dexterous", "model predictive control",
+    "action chunking", "energy-based"
+  ],
+  "topics": {
+    "RL": {
+      "label": "Reinforcement Learning",
+      "keywords": {
+        "reinforcement learning": 3, "policy gradient": 4, "ppo": 3, "soft actor-critic": 3, "sac": 1,
+        "q-learning": 3, "actor-critic": 3, "offline rl": 4, "offline reinforcement": 4, "online rl": 3,
+        "value function": 2, "rl fine-tuning": 4, "residual rl": 4, "sample efficiency": 2,
+        "conservative q": 4, "implicit q": 4, "dqn": 2, "discounted state distribution": 5,
+        "layer normalization": 1, "td-mpc": 5, "model-based rl": 4, "model-based reinforcement": 4,
+        "reward": 1, "rlhf": 2, "grpo": 2
+      }
+    },
+    "RLGen": {
+      "label": "RL × Diffusion/Flow",
+      "keywords": {
+        "dppo": 6, "diffusion policy policy optimization": 6, "idql": 6, "diffusion q-learning": 6,
+        "flow policy optimization": 6, "fpo": 3, "steering diffusion": 5, "noise-space": 3,
+        "latent noise policy": 5, "rl for diffusion": 5, "fine-tuning diffusion polic": 5,
+        "reinforcement learning with diffusion": 5, "flow-based policy": 4, "q-score matching": 6
+      }
+    },
+    "IL": {
+      "label": "Imitation Learning",
+      "keywords": {
+        "imitation learning": 4, "behavior cloning": 4, "behavioral cloning": 4, "diffusion policy": 5,
+        "flow matching policy": 5, "action chunking": 5, "action chunk": 4, "real-time chunking": 6,
+        "streaming flow": 6, "consistency policy": 5, "demonstrations": 2, "teleoperation": 2,
+        "long context": 2, "history conditioning": 3, "ambient diffusion": 6, "low-quality data": 3,
+        "kinematic constraint": 3, "covariate shift": 3, "compounding error": 3
+      }
+    },
+    "GenModel": {
+      "label": "Generative Models",
+      "keywords": {
+        "diffusion model": 3, "flow matching": 4, "rectified flow": 4, "consistency model": 5,
+        "mean flow": 6, "meanflow": 6, "one-step generation": 5, "few-step": 3, "distillation": 1,
+        "stochastic interpolant": 6, "score matching": 4, "fokker-planck": 5, "langevin": 3,
+        "classifier-free guidance": 5, "guidance": 2, "autoguidance": 6, "ode solver": 4,
+        "dpm-solver": 5, "noise conditioning": 5, "equilibrium matching": 6, "energy-based": 4,
+        "ambient diffusion": 6, "corrupted data": 3
+      }
+    },
+    "FM": {
+      "label": "Robot Foundation Models / VLA",
+      "keywords": {
+        "vision-language-action": 5, "vla": 4, "large behavior model": 6, "generalist policy": 5,
+        "robot foundation model": 6, "foundation model": 2, "open x-embodiment": 4, "cross-embodiment": 4,
+        "pi0": 4, "π0": 4, "openvla": 4, "octo": 2, "fine-tuning vla": 5, "vla inference": 5,
+        "vision-language model": 2, "scaling": 1, "pretraining": 1
+      }
+    },
+    "Video": {
+      "label": "Video Generation",
+      "keywords": {
+        "video generation": 5, "video diffusion": 5, "diffusion forcing": 6, "autoregressive video": 5,
+        "video prediction": 4, "self forcing": 5, "long video": 3, "text-to-video": 3
+      }
+    },
+    "WM": {
+      "label": "World Models",
+      "keywords": {
+        "world model": 6, "v-jepa": 6, "jepa": 4, "video action model": 6, "unified video action": 6,
+        "forward dynamics": 3, "inverse dynamics": 3, "learned simulator": 4, "dreamgen": 6,
+        "action-conditioned video": 5, "latent dynamics": 4, "planning in latent": 4
+      }
+    },
+    "Dex": {
+      "label": "Dexterous Manipulation",
+      "keywords": {
+        "dexterous": 6, "multi-fingered": 5, "multi-finger": 5, "in-hand": 5, "robot hand": 4,
+        "allegro": 5, "leap hand": 5, "shadow hand": 5, "retargeting": 4, "tactile": 4,
+        "visuotactile": 5, "grasp synthesis": 4, "human-to-robot": 3, "hand-object": 4,
+        "bimanual": 3, "contact-rich": 4, "mocap": 3, "egocentric human video": 4, "human video": 2
+      }
+    },
+    "Control": {
+      "label": "Control",
+      "keywords": {
+        "model predictive control": 4, "mpc": 3, "mppi": 5, "optimal control": 4, "lqr": 4,
+        "trajectory optimization": 4, "impedance control": 4, "whole-body control": 4,
+        "contact-implicit": 5, "operational space": 4, "stability": 1, "sim-to-real": 3
+      }
+    }
+  },
+  "tracked_authors": [
+    "Haozhi Qi", "Tyler Ga Wei Lum", "Tyler Lum", "Lerrel Pinto", "Xiaolong Wang", "Deepak Pathak",
+    "Vikash Kumar", "C. Karen Liu", "Karen Liu", "Jitendra Malik", "Jeannette Bohg", "Shuran Song",
+    "Chelsea Finn", "Sergey Levine", "Pieter Abbeel", "Russ Tedrake", "Yilun Du", "Kaiming He",
+    "Max Simchowitz", "Benjamin Burchfiel", "Cheng Chi", "Boyuan Chen", "Vincent Sitzmann",
+    "Shubham Tulsiani", "Hanbyul Joo", "Nicklas Hansen", "Hao Su", "Guanya Shi", "Pulkit Agrawal",
+    "Abhishek Gupta", "Dorsa Sadigh", "Jiajun Wu", "Yuke Zhu", "Kevin Black", "Tony Z. Zhao",
+    "Giannis Daras", "Adam Klivans", "Michael S. Albergo", "Yaron Lipman", "Ricky T. Q. Chen",
+    "Tero Karras", "Yang Song", "Peter Holderrieth", "Siddharth Ancha", "Allen Z. Ren",
+    "Mike Lambeta", "Roberto Calandra", "Jitendra Malik", "Danfei Xu", "Shuang Li", "Huazhe Xu"
+  ]
+}
