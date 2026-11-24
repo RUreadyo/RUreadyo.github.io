@@ -196,10 +196,24 @@ def venue_from_comment(text):
         v = f"{m.group(1)} {year}".strip()
         if re.search(r"workshop", clause, re.I):
             v += " Workshop"
-        for tag in ("Oral", "Spotlight"):
-            if re.search(tag, clause, re.I):
-                v += f" ({tag})"
+        h = honor_from_comment(text)
+        if h:
+            v += f" ({h})"
         return v
+    return ""
+
+
+HONORS = [(r"best[\w\s-]{0,30}paper[\w\s-]{0,12}(finalist|nominee|nomination|candidate)", "Best Paper Finalist"),
+          (r"best[\w\s-]{0,30}paper[\w\s-]{0,12}award|\bbest paper\b", "Best Paper Award"),
+          (r"outstanding paper", "Outstanding Paper"), (r"\boral\b", "Oral"), (r"\bspotlight\b", "Spotlight"),
+          (r"\bhighlight\b", "Highlight")]
+
+
+def honor_from_comment(text):
+    """Oral / Spotlight / award, searched over the whole comment (it is often in a different clause than the venue)."""
+    for rx, name in HONORS:
+        if re.search(rx, text or "", re.I):
+            return name
     return ""
 
 
@@ -337,7 +351,7 @@ def venue_bonus(v):
         return 0
     if "Workshop" in v:
         return 1
-    return 4 if v.split()[0] in PRIORITY else 2
+    return (4 if v.split()[0] in PRIORITY else 2) + (1 if "(" in v else 0)  # +1 for oral / spotlight / award
 
 
 def select_day(papers, ratings, cfg):

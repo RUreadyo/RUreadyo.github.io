@@ -63,6 +63,20 @@
     .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
     .chip.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
     .search { flex: 1 1 200px; min-width: 0; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 7px 14px; font: 14px Inter, sans-serif; }
+    #filters { display: block; }
+    .badge.honor { background: var(--gold-soft); color: var(--gold); }
+    .chip.conf.on { background: var(--green); border-color: var(--green); color: var(--surface); }
+    .filters .lbl { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-right: 2px; }
+    .sform { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow); margin-bottom: 22px; }
+    .sform .qrow { display: flex; gap: 8px; margin-bottom: 14px; }
+    .sform .qrow input { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 12px; padding: 11px 14px; font: 16px Inter, sans-serif; }
+    .sform .qrow button, .go { border: 0; background: var(--accent); color: #fff; border-radius: 12px; padding: 0 18px; font: 600 14px Inter, sans-serif; cursor: pointer; }
+    .sform .filters { margin-bottom: 10px; }
+    .sform select, .sform .yr { border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 8px; padding: 5px 8px; font: 13px Inter, sans-serif; }
+    .sform .yr { width: 74px; }
+    .ext { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .ext a { border: 1px solid var(--line); border-radius: 7px; padding: 3px 10px; color: var(--fg-2); font-weight: 500; }
+    .note { color: var(--muted); font-size: 13px; margin: -6px 0 14px; }
     .toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--fg-2); cursor: pointer; user-select: none; }
 
     .overview { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); margin-bottom: 28px; position: relative; overflow: hidden; }
@@ -145,6 +159,7 @@
     <button class="tab" data-view="month">Best of month</button>
     <button class="tab" data-view="ml">Trending in ML</button>
     <button class="tab" data-view="impact">Most impactful</button>
+    <button class="tab" data-view="search">🔍 Search</button>
   </div>
 
   <div class="datebar" id="datebar">
@@ -164,8 +179,29 @@
 <script>
 const TOPICS = {Dex:"Dexterous", IL:"Imitation", RLGen:"RL × Gen", RL:"RL", GenModel:"Generative", FM:"VLA / FM", WM:"World models", Video:"Video gen", Control:"Control"};
 const MAIN = ["CoRL","RSS","ICRA","ICML","NeurIPS","ICLR"];
+// conferences offered as buttons; s2 = Semantic Scholar venue names, rx = matcher for raw venue strings
+const CONF = {
+  CoRL: {s2: "Conference on Robot Learning,CoRL", rx: /conference on robot learning|\bcorl\b/i},
+  RSS: {s2: "Robotics: Science and Systems,RSS", rx: /robotics: science and systems|\brss\b/i},
+  ICRA: {s2: "IEEE International Conference on Robotics and Automation,ICRA", rx: /international conference on robotics and automation|\bicra\b/i},
+  ICML: {s2: "International Conference on Machine Learning,ICML", rx: /international conference on machine learning|\bicml\b/i},
+  NeurIPS: {s2: "Neural Information Processing Systems,NeurIPS", rx: /neural information processing systems|\bneurips\b|\bnips\b/i},
+  ICLR: {s2: "International Conference on Learning Representations,ICLR", rx: /learning representations|\biclr\b/i},
+  IROS: {s2: "IEEE/RJS International Conference on Intelligent RObots and Systems,IROS", rx: /intelligent robots and systems|\biros\b/i},
+  CVPR: {s2: "Computer Vision and Pattern Recognition,CVPR", rx: /computer vision and pattern recognition|\bcvpr\b/i},
+};
+const SHORTV = [[/robotics and automation letters|\bra-l\b/i, "RA-L"], [/transactions on robotics/i, "T-RO"], [/science robotics/i, "Science Robotics"],
+  [/international journal of robotics research/i, "IJRR"], [/international conference on computer vision|\biccv\b/i, "ICCV"], [/european conference on computer vision|\beccv\b/i, "ECCV"],
+  [/transactions on machine learning research/i, "TMLR"], [/journal of machine learning research/i, "JMLR"], [/^arxiv/i, ""]];
+function shortVenue(name) {
+  if (!name) return "";
+  for (const [k, c] of Object.entries(CONF)) if (c.rx.test(name)) return k;
+  for (const [rx, k] of SHORTV) if (rx.test(name)) return k;
+  return name.length > 40 ? name.slice(0, 38) + "…" : name;
+}
 const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitation", Dex: "Dexterous", RL: "RL", RLGen: "RL × Gen", FM: "VLA / FM", WM: "World models", Video: "Video gen", Control: "Control"};
-const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", accepted: false, showAll: false };
+const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", venue: "all", showAll: false,
+  search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null };
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tc = t => `var(--t-${TOPICS[t] ? t : "Other"})`;
@@ -192,7 +228,9 @@ function authors(p) {
 function venueBadge(v) {
   if (!v) return "";
   const main = MAIN.includes(v.split(" ")[0]) && !v.includes("Workshop");
-  return `<span class="badge venue ${main ? "main" : ""}" title="Accepted venue">${esc(v)}</span>`;
+  const m = v.match(/\s*\(([^)]+)\)\s*$/), base = m ? v.slice(0, m.index) : v;
+  return `<span class="badge venue ${main ? "main" : ""}" title="Accepted venue">${esc(base)}</span>` +
+    (m ? `<span class="badge honor" title="Presentation / award">${/award|paper/i.test(m[1]) ? "🏆" : "★"} ${esc(m[1])}</span>` : "");
 }
 
 function card(p, opts = {}) {
@@ -241,20 +279,35 @@ function fmtDate(d, long) {
 
 function matches(p) {
   if (state.topic !== "all" && !(p.topics || []).includes(state.topic)) return false;
-  if (state.accepted && !p.venue) return false;
+  if (!venueOk(p.venue)) return false;
   if (!state.q) return true;
   const hay = [p.title, (p.authors || []).join(" "), p.abstract, p.tldr, p.summary, p.venue].join(" ").toLowerCase();
   return state.q.split(/\s+/).every(w => hay.includes(w));
 }
 
+function venueOk(v) {
+  if (state.venue === "all") return true;
+  if (!v) return false;
+  if (state.venue === "any") return true;
+  if (state.venue === "honor") return /\((oral|spotlight|highlight|best paper[^)]*|outstanding[^)]*)\)/i.test(v);
+  return v.split(" ")[0] === state.venue && !/workshop/i.test(v);
+}
+function venueChips() {
+  return `<span class="lbl">Venue</span>` + [["all", "Any / preprint"], ["any", "Accepted anywhere"], ["honor", "★ Oral / Spotlight / Award"], ...MAIN.map(m => [m, m])].map(([k, v]) =>
+    `<button class="chip conf ${state.venue === k ? "on" : ""}" data-v="${k}">${v}</button>`).join("");
+}
+function bindVenue(root, after) {
+  root.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.venue = b.dataset.v; after(); });
+}
+
 function filtersUI(withTopics = true) {
   const chips = withTopics ? [["all", "All topics"], ...Object.entries(TOPICS)].map(([k, v]) =>
     `<button class="chip ${state.topic === k ? "on" : ""}" data-k="${k}">${k !== "all" ? `<span class="dot" style="--c:${tc(k)}"></span>` : ""}${v}</button>`).join("") : "";
-  $("filters").innerHTML = chips +
-    (withTopics ? `<label class="toggle"><input type="checkbox" id="acc" ${state.accepted ? "checked" : ""}> Accepted at a venue</label>` : "") +
-    `<input class="search" id="q" type="search" placeholder="Search titles, authors, abstracts…" value="${esc(state.q)}">`;
-  $("filters").querySelectorAll(".chip").forEach(b => b.onclick = () => { state.topic = b.dataset.k; render(); });
-  const acc = $("acc"); if (acc) acc.onchange = () => { state.accepted = acc.checked; render(); };
+  $("filters").innerHTML = `<div class="filters" style="margin:0">` + chips +
+    `<input class="search" id="q" type="search" placeholder="Filter titles, authors, abstracts…" value="${esc(state.q)}">` +
+    `</div>` + (withTopics ? `<div class="filters" style="margin:10px 0 0">${venueChips()}</div>` : "");
+  $("filters").querySelectorAll("[data-k]").forEach(b => b.onclick = () => { state.topic = b.dataset.k; render(); });
+  bindVenue($("filters"), render);
   const q = $("q"); q.oninput = () => { state.q = q.value.trim().toLowerCase(); renderContent(); };
 }
 
@@ -278,24 +331,27 @@ function impactCard(p, i) {
 
 function renderImpact(c) {
   const d = state.impact; if (!d) return;
-  const items = (d.topics[state.impactTopic] || []).filter(p => !state.q || (p.title + " " + (p.authors || []).join(" ") + " " + p.tldr).toLowerCase().includes(state.q));
+  const items = (d.topics[state.impactTopic] || []).filter(p => venueOk(p.venue) && (!state.q || (p.title + " " + (p.authors || []).join(" ") + " " + p.tldr).toLowerCase().includes(state.q)));
   items.sort((a, b) => b[state.impactSort] - a[state.impactSort]);
   const sorts = [["citations", "Total citations"], ["per_year", "Citations / year (recent impact)"], ["year", "Newest first"]];
   c.innerHTML = `<div class="filters">${Object.entries(IMPACT_TOPICS).map(([k, v]) => `<button class="chip ${state.impactTopic === k ? "on" : ""}" data-it="${k}"><span class="dot" style="--c:${tc(k)}"></span>${v}</button>`).join("")}</div>
     <div class="filters">${sorts.map(([k, v]) => `<button class="chip ${state.impactSort === k ? "on" : ""}" data-is="${k}">${v}</button>`).join("")}</div>
+    <div class="filters">${venueChips()}</div>
     <div class="section-h"><h2>${esc(IMPACT_TOPICS[state.impactTopic])}: most impactful since ${d.since}</h2><span>${esc(d.source || "Semantic Scholar")} citations · updated ${esc(d.updated)}</span></div>
     ${items.map(impactCard).join("") || '<p class="empty">No papers match.</p>'}`;
   c.querySelectorAll("[data-it]").forEach(b => b.onclick = () => { state.impactTopic = b.dataset.it; renderContent(); });
   c.querySelectorAll("[data-is]").forEach(b => b.onclick = () => { state.impactSort = b.dataset.is; renderContent(); });
+  bindVenue(c, renderContent);
 }
 
 function renderContent() {
   const c = $("content");
   if (state.view === "impact") return renderImpact(c);
+  if (state.view === "search") return renderSearch(c);
   if (state.view === "daily") {
     const d = state.day; if (!d) return;
     const top = d.top_picks.filter(matches), rest = d.roundup.filter(matches);
-    const ml = (d.trending_ml || []).filter(p => !state.q || (p.title + p.summary).toLowerCase().includes(state.q));
+    const ml = state.venue !== "all" || state.topic !== "all" ? [] : (d.trending_ml || []).filter(p => !state.q || (p.title + p.summary).toLowerCase().includes(state.q));
     const shown = state.showAll ? rest : rest.slice(0, 12);
     const s = d.stats;
     c.innerHTML = `
@@ -344,8 +400,167 @@ function renderDates() {
 function render() {
   document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === state.view));
   $("datebar").style.display = state.view === "daily" ? "" : "none";
-  filtersUI(state.view !== "ml" && state.view !== "impact");
+  if (state.view === "search") $("filters").innerHTML = "";
+  else filtersUI(state.view !== "ml" && state.view !== "impact");
   renderContent();
+}
+
+
+// ---------- Search (live: Semantic Scholar, fallback OpenAlex; plus my own digest) ----------
+const S2F = "title,authors,venue,publicationVenue,year,publicationDate,citationCount,externalIds,url,openAccessPdf,abstract";
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function renderSearch(c) {
+  const S = state.search, yNow = new Date().getFullYear();
+  const confChips = Object.keys(CONF).map(k => `<button class="chip conf ${S.confs.includes(k) ? "on" : ""}" data-c="${k}">${k}</button>`).join("");
+  c.innerHTML = `<form class="sform" id="sform">
+      <div class="qrow"><input id="sq" type="search" placeholder="Search any paper: e.g. diffusion policy, in-hand rotation, Chi Cheng…" value="${esc(S.q)}" autofocus><button type="submit">Search</button></div>
+      <div class="filters"><span class="lbl">Where</span><button type="button" class="chip conf ${!S.confs.length && !S.arxiv ? "on" : ""}" data-c="">Everywhere</button>
+        <button type="button" class="chip conf ${S.arxiv ? "on" : ""}" data-c="arxiv">arXiv</button>${confChips}</div>
+      <div class="filters" style="margin:0"><span class="lbl">Years</span>
+        <input class="yr" id="yf" type="number" min="1990" max="${yNow}" placeholder="from" value="${esc(S.from)}">–<input class="yr" id="yt" type="number" min="1990" max="${yNow}" placeholder="to" value="${esc(S.to)}">
+        <span class="lbl" style="margin-left:10px">Sort</span>
+        <select id="ss">${[["relevance", "Relevance"], ["citations", "Most cited"], ["newest", "Newest"]].map(([k, v]) => `<option value="${k}" ${S.sort === k ? "selected" : ""}>${v}</option>`).join("")}</select>
+      </div>
+    </form>
+    <div id="sres">${S.q ? "" : `<p class="note">Searches the whole literature: arXiv preprints and published conference/journal papers (CoRL, RSS, ICRA, ICML, NeurIPS, ICLR, IROS, CVPR…). Pick one or more conferences to restrict the search. Results from my own digest are shown first.</p>`}</div>`;
+  c.querySelectorAll("[data-c]").forEach(b => b.onclick = e => {
+    e.preventDefault(); const k = b.dataset.c;
+    if (!k) { S.confs = []; S.arxiv = false; }
+    else if (k === "arxiv") { S.arxiv = !S.arxiv; S.confs = []; }
+    else { S.arxiv = false; S.confs = S.confs.includes(k) ? S.confs.filter(x => x !== k) : [...S.confs, k]; }
+    readForm(); renderSearch(c); if (S.q) runSearch();
+  });
+  $("ss").onchange = () => { readForm(); if (S.q) runSearch(); };
+  $("sform").onsubmit = e => { e.preventDefault(); readForm(); runSearch(); };
+  if (S.q && state.sres) showResults();
+}
+
+function readForm() {
+  const S = state.search;
+  S.q = $("sq").value.trim(); S.from = $("yf").value; S.to = $("yt").value; S.sort = $("ss").value;
+  try { history.replaceState(null, "", "#search=" + encodeURIComponent(S.q)); } catch (e) {}
+}
+
+function yearRange() {
+  const {from, to} = state.search;
+  return from || to ? `${from || 1900}-${to || new Date().getFullYear()}` : "";
+}
+
+function extLinks() {
+  const S = state.search, q = encodeURIComponent(S.q + (S.confs.length === 1 ? " " + S.confs[0] : ""));
+  const yr = (S.from ? `&as_ylo=${S.from}` : "") + (S.to ? `&as_yhi=${S.to}` : "");
+  return `<div class="ext">Also search on
+    <a href="https://arxiv.org/search/?query=${encodeURIComponent(S.q)}&searchtype=all&order=${S.sort === "newest" ? "-announced_date_first" : ""}" target="_blank" rel="noopener">arXiv</a>
+    <a href="https://scholar.google.com/scholar?q=${q}${yr}" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(S.q)}" target="_blank" rel="noopener">Semantic Scholar</a>
+    <a href="https://openreview.net/search?term=${encodeURIComponent(S.q)}&group=all&content=all&source=all" target="_blank" rel="noopener">OpenReview</a></div>`;
+}
+
+async function loadAllPapers() {
+  if (state.allPapers) return state.allPapers;
+  const days = await Promise.all(state.index.map(d => getJSON(`data/days/${d.date}.json`).catch(() => null)));
+  const seen = new Set(), all = [];
+  for (const d of days) if (d) for (const p of [...d.top_picks, ...d.roundup]) if (!seen.has(p.id)) { seen.add(p.id); all.push({...p, day: d.date}); }
+  return (state.allPapers = all);
+}
+
+function localMatches(all) {
+  const S = state.search, words = S.q.toLowerCase().split(/\s+/).filter(Boolean);
+  const [y0, y1] = (yearRange() || "0-9999").split("-").map(Number);
+  return all.filter(p => {
+    const y = +(p.day || "").slice(0, 4);
+    if (y < y0 || y > y1) return false;
+    if (S.confs.length && (/workshop/i.test(p.venue || "") || !S.confs.some(k => (p.venue || "").split(" ")[0] === k))) return false;
+    const hay = [p.title, (p.authors || []).join(" "), p.abstract, p.tldr].join(" ").toLowerCase();
+    return words.every(w => hay.includes(w));
+  }).sort((a, b) => (b.relevance || 0) - (a.relevance || 0)).slice(0, 8);
+}
+
+async function s2Search() {
+  const S = state.search, params = new URLSearchParams({query: S.q, fields: S2F});
+  if (S.confs.length) params.set("venue", S.confs.map(k => CONF[k].s2).join(","));
+  const yr = yearRange(); if (yr) params.set("year", yr);
+  let url;
+  if (S.sort === "relevance") { params.set("limit", S.arxiv ? "100" : "40"); url = "https://api.semanticscholar.org/graph/v1/paper/search?" + params; }
+  else { params.set("sort", S.sort === "citations" ? "citationCount:desc" : "publicationDate:desc"); url = "https://api.semanticscholar.org/graph/v1/paper/search/bulk?" + params; }
+  for (let i = 0; i < 3; i++) {
+    const r = await fetch(url);
+    if (r.status === 429) { await sleep(1200 * (i + 1)); continue; }
+    if (!r.ok) throw new Error("s2 " + r.status);
+    const j = await r.json();
+    return (j.data || []).map(p => {
+      const ax = p.externalIds?.ArXiv, raw = p.publicationVenue?.name || p.venue || "";
+      const v = shortVenue(raw);
+      return {title: p.title, authors: (p.authors || []).map(a => a.name), year: p.year, date: p.publicationDate,
+        venue: v ? `${v}${p.year ? " " + p.year : ""}` : "", rawVenue: raw, citations: p.citationCount, abstract: p.abstract || "",
+        arxiv: ax, url: ax ? `https://arxiv.org/abs/${ax}` : p.url, pdf: ax ? `https://arxiv.org/pdf/${ax}` : p.openAccessPdf?.url || "", s2: p.url};
+    });
+  }
+  throw new Error("s2 rate limited");
+}
+
+async function oaSearch() {
+  const S = state.search, f = [];
+  const yr = yearRange(); if (yr) f.push(`publication_year:${yr}`);
+  const params = new URLSearchParams({search: S.q, "per-page": "100",
+    sort: {relevance: "relevance_score:desc", citations: "cited_by_count:desc", newest: "publication_date:desc"}[S.sort],
+    select: "id,title,publication_year,publication_date,cited_by_count,primary_location,locations,ids,authorships,abstract_inverted_index"});
+  if (f.length) params.set("filter", f.join(","));
+  const r = await fetch("https://api.openalex.org/works?" + params);
+  if (!r.ok) throw new Error("openalex " + r.status);
+  const j = await r.json();
+  return (j.results || []).map(w => {
+    const names = (w.locations || []).map(l => l?.source?.display_name || "").filter(Boolean);
+    const pub = names.find(n => !/arxiv|openreview|repository|university|zenodo/i.test(n)) || "";
+    const ax = ((w.ids?.doi || "").match(/arxiv\.(\d{4}\.\d{4,5})/i) || [])[1] ||
+      ((w.locations || []).map(l => l?.landing_page_url || "").join(" ").match(/arxiv\.org\/abs\/(\d{4}\.\d{4,5})/) || [])[1];
+    const inv = w.abstract_inverted_index || {}, words = [];
+    for (const [t, ps] of Object.entries(inv)) for (const i of ps) words[i] = t;
+    const v = shortVenue(pub);
+    return {title: w.title, authors: (w.authorships || []).map(a => a.author.display_name), year: w.publication_year, date: w.publication_date,
+      venue: v ? `${v} ${w.publication_year}` : "", rawVenue: names.join(" | "), citations: w.cited_by_count, abstract: words.join(" "),
+      arxiv: ax, url: ax ? `https://arxiv.org/abs/${ax}` : (w.ids?.doi || w.id), pdf: ax ? `https://arxiv.org/pdf/${ax}` : ""};
+  });
+}
+
+async function runSearch() {
+  const S = state.search, box = $("sres");
+  if (!S.q) return;
+  const token = Symbol(); state.stoken = token;
+  box.innerHTML = `<p class="empty">Searching…</p>`;
+  let remote = [], source = "Semantic Scholar", err = "";
+  const local = localMatches(await loadAllPapers().catch(() => []));
+  try { remote = await s2Search(); }
+  catch (e) {
+    source = "OpenAlex";
+    try { remote = await oaSearch(); } catch (e2) { err = "Live search is unavailable right now (both Semantic Scholar and OpenAlex refused the request — usually a temporary rate limit). Try again in a minute, or use the links below."; }
+  }
+  if (source === "OpenAlex" && S.confs.length) remote = remote.filter(p => S.confs.some(k => CONF[k].rx.test(p.rawVenue)));
+  if (S.arxiv) remote = remote.filter(p => p.arxiv);
+  if (state.stoken !== token) return;
+  state.sres = {local, remote: remote.slice(0, 40), source, err};
+  showResults();
+}
+
+function resultCard(p) {
+  return `<article class="card">
+    <div class="meta-row">${venueBadge(p.venue)}${p.citations != null ? `<span class="badge cite">${p.citations.toLocaleString()} citations</span>` : ""}${p.arxiv ? `<span class="badge cite">arXiv ${esc(p.arxiv)}</span>` : ""}<span class="rel">${esc(p.date || p.year || "")}</span></div>
+    <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
+    <p class="authors">${authors(p)}</p>
+    ${p.abstract ? `<p class="summary">${esc(p.abstract.length > 300 ? p.abstract.slice(0, 300).replace(/\s\S*$/, "") + "…" : p.abstract)}</p>` : ""}
+    <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">${p.arxiv ? "arXiv" : "Paper"}</a>${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}${p.s2 ? `<a href="${esc(p.s2)}" target="_blank" rel="noopener">Semantic Scholar</a>` : ""}</div>
+    ${p.abstract && p.abstract.length > 300 ? `<details><summary>Full abstract</summary><p>${esc(p.abstract)}</p></details>` : ""}
+  </article>`;
+}
+
+function showResults() {
+  const r = state.sres, S = state.search, box = $("sres"); if (!r || !box) return;
+  const where = S.arxiv ? "arXiv" : S.confs.length ? S.confs.join(", ") : "everywhere";
+  box.innerHTML = extLinks() +
+    (r.local.length ? `<div class="section-h"><h2>In my digest</h2><span>${r.local.length} match${r.local.length > 1 ? "es" : ""} with summaries</span></div>${r.local.map(p => card(p, {compact: true})).join("")}` : "") +
+    `<div class="section-h"><h2>All papers</h2><span>${where} · ${r.remote.length} results · via ${r.source}</span></div>` +
+    (r.err ? `<p class="empty">${esc(r.err)}</p>` : r.remote.length ? r.remote.map(resultCard).join("") : `<p class="empty">No results. Try fewer words or a wider year range.</p>`);
 }
 
 async function getJSON(u) { const r = await fetch(u, {cache: "no-cache"}); if (!r.ok) throw new Error(u); return r.json(); }
@@ -364,7 +579,7 @@ async function setView(v) {
   if (v === "impact" && !state.impact) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.impact = await getJSON("data/impact.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
-  } else if (v !== "daily" && v !== "impact" && !state.best) {
+  } else if (!["daily", "impact", "search"].includes(v) && !state.best) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.best = await getJSON("data/best.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
   }
@@ -378,6 +593,11 @@ async function setView(v) {
   try { state.index = await getJSON("data/index.json"); } catch (e) { state.index = []; }
   if (!state.index.length) { $("content").innerHTML = '<p class="empty">No digests yet.</p>'; return; }
   const h = location.hash.slice(1), j = state.index.findIndex(d => d.date === h);
+  if (h.startsWith("search")) {
+    state.search.q = decodeURIComponent(h.split("=")[1] || "");
+    state.cur = 0; renderDates(); state.day = await getJSON(`data/days/${state.index[0].date}.json`).catch(() => null);
+    await setView("search"); if (state.search.q) runSearch(); return;
+  }
   loadDay(j >= 0 ? j : 0);
 })();
 </script>
