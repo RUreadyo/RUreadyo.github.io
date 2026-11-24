@@ -68,8 +68,7 @@
    "topics": [
     "RLGen",
     "Dex",
-    "GenModel",
-    "IL"
+    "GenModel"
    ],
    "kw_score": 33,
    "relevance": 9,
@@ -136,6 +135,7 @@
    "published": "2026-11-07",
    "topics": [
     "IL",
+    "Tactile",
     "Dex"
    ],
    "kw_score": 27,
@@ -167,7 +167,8 @@
    ],
    "published": "2026-11-07",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 24,
    "relevance": 7,
@@ -197,8 +198,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "IL",
-    "GenModel"
+    "IL"
    ],
    "kw_score": 27,
    "relevance": 7,
@@ -231,7 +231,8 @@
    ],
    "published": "2026-11-07",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 22,
    "relevance": 7,
@@ -621,7 +622,8 @@
    "tldr": "We propose REINS, a harness built on three LLM-planner couplings: LLM outputs are (i) grounded to a learned variable-level dynamics model, (ii) verified via calibrated predicates and forward rollout, and (iii) consolidated into an indexed rule memory that serves future scenes…",
    "summary": "We propose REINS, a harness built on three LLM-planner couplings: LLM outputs are (i) grounded to a learned variable-level dynamics model, (ii) verified via calibrated predicates and forward rollout, and (iii) consolidated into an indexed rule memory that serves future scenes in O(log n) without re-invoking the LLM. Without modifying LLM weights, REINS attains 98%+ compliance, nearly 50% collision reduction, and 1.9-4.6 ms latency on simulated and real-world benchmarks at the tactical decision layer, with LLM invocation rate monotonically declining as memory matures.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.10720",
@@ -648,7 +650,8 @@
    "tldr": "Vision-Language Models (VLMs) are increasingly adopted as end-to-end driving planners, yet they suffer from cross-city domain shift.",
    "summary": "Vision-Language Models (VLMs) are increasingly adopted as end-to-end driving planners, yet they suffer from cross-city domain shift. We challenge this view on two counts: (i) domain shift in VLM trajectory planners is inherently structured across modality and layer, and (ii) a locate-then-repair recipe matched to this structure outperforms every uniform-objective baseline.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.10994",
@@ -759,7 +762,8 @@
    "tldr": "We introduce PLS-GS, a probabilistic LiDAR scaffold for Gaussian Splatting that exploits this complementary sensing setting to construct a compact 3DGS representation aligned to the measured surface.",
    "summary": "We introduce PLS-GS, a probabilistic LiDAR scaffold for Gaussian Splatting that exploits this complementary sensing setting to construct a compact 3DGS representation aligned to the measured surface.",
    "venue": "WACV 2027",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.10430",

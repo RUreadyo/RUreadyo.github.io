@@ -205,8 +205,8 @@
         "leap hand": 5,
         "shadow hand": 5,
         "retargeting": 4,
-        "tactile": 4,
-        "visuotactile": 5,
+        "tactile": 2,
+        "visuotactile": 2,
         "grasp synthesis": 4,
         "human-to-robot": 3,
         "hand-object": 4,
@@ -232,6 +232,29 @@
         "operational space": 4,
         "stability": 1,
         "sim-to-real": 3
+      }
+    },
+    "Tactile": {
+      "label": "Tactile & Touch Sensing",
+      "keywords": {
+        "tactile": 6,
+        "visuotactile": 6,
+        "visuo-tactile": 6,
+        "vision-tactile": 6,
+        "gelsight": 6,
+        "digit sensor": 5,
+        "taxel": 5,
+        "touch": 3,
+        "haptic": 3,
+        "force sensing": 4,
+        "force/torque": 3,
+        "force-torque": 3,
+        "slip detection": 4,
+        "electronic skin": 4,
+        "e-skin": 4,
+        "contact sensing": 4,
+        "tactile sensor": 6,
+        "tactile skin": 6
       }
     }
   },

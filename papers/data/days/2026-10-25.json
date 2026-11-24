@@ -169,8 +169,7 @@
    "topics": [
     "WM",
     "FM",
-    "Video",
-    "IL"
+    "Video"
    ],
    "kw_score": 21,
    "relevance": 6,
@@ -519,7 +518,8 @@
    "tldr": "In this paper, we propose the Dual-Stream Gated Network (DSGN), an architecture designed to address scale-amplified task-transition difficulties by separating surveillance and containment into specialized representation streams and coordinating them through a context-aware…",
    "summary": "In this paper, we propose the Dual-Stream Gated Network (DSGN), an architecture designed to address scale-amplified task-transition difficulties by separating surveillance and containment into specialized representation streams and coordinating them through a context-aware gating mechanism.",
    "venue": "RA-L",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.34583",
@@ -619,7 +619,8 @@
    "tldr": "Vision-language models now grade robot videos, and text placed beside the frames can change their verdicts.",
    "summary": "Vision-language models now grade robot videos, and text placed beside the frames can change their verdicts.",
    "venue": "CoRL 2026 Workshop",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.34128",

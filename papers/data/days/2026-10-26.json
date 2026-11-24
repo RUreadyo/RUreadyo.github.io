@@ -32,8 +32,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "IL",
-    "FM"
+    "IL"
    ],
    "kw_score": 11,
    "relevance": 8,
@@ -70,7 +69,8 @@
    "published": "2026-10-26",
    "topics": [
     "IL",
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "tracked_authors": [
     "Guanya Shi",
@@ -370,6 +370,7 @@
    "published": "2026-10-26",
    "topics": [
     "Dex",
+    "Tactile",
     "GenModel"
    ],
    "kw_score": 16,

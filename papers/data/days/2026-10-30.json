@@ -34,8 +34,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "GenModel",
-    "Video"
+    "GenModel"
    ],
    "kw_score": 20,
    "relevance": 8,
@@ -213,6 +212,7 @@
    "published": "2026-10-30",
    "topics": [
     "Dex",
+    "Tactile",
     "WM"
    ],
    "kw_score": 20,
@@ -691,7 +691,8 @@
    "tldr": "In this paper, we instantiate the concept in the context of planar primitives with PGGT, the Primitive-Grounded Geometry Transformer network.",
    "summary": "In this paper, we instantiate the concept in the context of planar primitives with PGGT, the Primitive-Grounded Geometry Transformer network. With this straightforward and scalable architecture, our method pushes the state-of-the-art localization performance on both dense surface maps and minimal layout models.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.41354",
@@ -756,7 +757,8 @@
    "tldr": "End-to-end (E2E) autonomous driving models achieve strong planning performance but remain largely opaque, limiting observability and trust.",
    "summary": "End-to-end (E2E) autonomous driving models achieve strong planning performance but remain largely opaque, limiting observability and trust. Unsupervised clustering of SAE latents reveals interpretable structure aligned with route intent, vehicle speed, and braking behavior, recovering route intent with 98.3% accuracy without supervision.",
    "venue": "CoRL",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.00283",
@@ -1016,7 +1018,8 @@
    "tldr": "In this letter, we present a volumetric mapping system that effectively calculates Occupancy Grid Maps (OGMs) and Euclidean Distance Transforms (EDTs) with parallel computing.",
    "summary": "In this letter, we present a volumetric mapping system that effectively calculates Occupancy Grid Maps (OGMs) and Euclidean Distance Transforms (EDTs) with parallel computing. Experiments with datasets have shown that our proposed approach outperforms existing state-of-the-art robot mapping systems and is particularly suitable for mapping unexplored areas.",
    "venue": "RA-L 2022",
-   "citations": 36
+   "citations": 36,
+   "topics": []
   },
   {
    "id": "2610.41429",
@@ -1175,7 +1178,8 @@
    "kw_score": 4,
    "tldr": "We present Sensorium, an open-source Python library for recording, processing, annotating, and curating multimodal surgical data from configurable robot and sensor streams using the Robot Operating System (ROS) and ROS2 middleware.",
    "summary": "We present Sensorium, an open-source Python library for recording, processing, annotating, and curating multimodal surgical data from configurable robot and sensor streams using the Robot Operating System (ROS) and ROS2 middleware.",
-   "venue": "NeurIPS 2026 Workshop"
+   "venue": "NeurIPS 2026 Workshop",
+   "topics": []
   }
  ],
  "trending_ml": [

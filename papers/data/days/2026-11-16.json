@@ -69,8 +69,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "IL"
+    "RL"
    ],
    "kw_score": 27,
    "relevance": 8,
@@ -219,8 +218,8 @@
    "published": "2026-11-16",
    "topics": [
     "Dex",
-    "FM",
-    "Control"
+    "Tactile",
+    "FM"
    ],
    "kw_score": 23,
    "relevance": 7,
@@ -256,7 +255,8 @@
    ],
    "published": "2026-11-16",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 14,
    "relevance": 7,
@@ -767,7 +767,8 @@
    ],
    "published": "2026-11-16",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "We introduce TacBridge, a framework for learning unified representations from multi-sensor tactile videos through cross-sensor correspondence.",
@@ -794,7 +795,8 @@
    ],
    "published": "2026-11-16",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "Non-imaging optical tactile sensors encode contact through changes in optical intensity, wavelength, spectra, or photon counts, offering diverse architectures for robotic touch.",
@@ -823,7 +825,8 @@
    "tldr": "This report describes our submission to the 2026 Hilti-Trimble SLAM Challenge.",
    "summary": "This report describes our submission to the 2026 Hilti-Trimble SLAM Challenge.",
    "venue": "ICRA 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.20402",

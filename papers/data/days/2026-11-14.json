@@ -59,8 +59,7 @@
    "topics": [
     "WM",
     "IL",
-    "FM",
-    "Video"
+    "FM"
    ],
    "kw_score": 23,
    "relevance": 7,
@@ -148,8 +147,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "Control"
+    "RL"
    ],
    "kw_score": 15,
    "relevance": 6,

@@ -380,7 +380,8 @@
    "tldr": "We present RFWalk, a self-supervised, RF-only odometry framework that models dense correspondences across range-azimuth frames as random walks on a space-time graph and learns them from unlabeled sequences through temporal cycle consistency.",
    "summary": "We present RFWalk, a self-supervised, RF-only odometry framework that models dense correspondences across range-azimuth frames as random walks on a space-time graph and learns them from unlabeled sequences through temporal cycle consistency. Without pose labels or auxiliary sensors, RFWalk remains competitive with supervised baselines in static scenes and reduces absolute trajectory error by 58% in dynamic scenes with moving pedestrians.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.38443",
@@ -430,7 +431,8 @@
    "tldr": "We present AtomTree, a hierarchical framework for state-aware task planning with LLMs.",
    "summary": "We present AtomTree, a hierarchical framework for state-aware task planning with LLMs. In zero-shot evaluation on the ALFRED benchmark, AtomTree outperforms prior LLM-based planners.",
    "venue": "IROS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.38967",

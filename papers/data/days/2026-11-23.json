@@ -70,8 +70,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "Dex"
+    "RL"
    ],
    "kw_score": 29,
    "relevance": 8,
@@ -254,8 +253,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "GenModel",
-    "FM"
+    "GenModel"
    ],
    "kw_score": 16,
    "relevance": 7,
@@ -325,8 +323,8 @@
    "published": "2026-11-23",
    "topics": [
     "Dex",
-    "WM",
-    "IL"
+    "Tactile",
+    "WM"
    ],
    "kw_score": 22,
    "relevance": 7,
@@ -400,8 +398,7 @@
    "topics": [
     "Control",
     "FM",
-    "IL",
-    "Dex"
+    "IL"
    ],
    "tracked_authors": [
     "Yilun Du"
@@ -1164,7 +1161,8 @@
    "tldr": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios.",
    "summary": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios. We demonstrate that environment-only perturbations raise hazardous-action rates to an average of 83.4% across the five evaluated action policies, with similar vulnerability patterns confirmed in world models.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.30637",

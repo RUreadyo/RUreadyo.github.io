@@ -35,7 +35,8 @@
    "published": "2026-11-19",
    "topics": [
     "Dex",
-    "FM"
+    "FM",
+    "Tactile"
    ],
    "kw_score": 24,
    "relevance": 7,
@@ -102,7 +103,8 @@
    ],
    "published": "2026-11-19",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 22,
    "relevance": 7,
@@ -490,7 +492,8 @@
    "published": "2026-11-19",
    "topics": [
     "Dex",
-    "FM"
+    "FM",
+    "Tactile"
    ],
    "kw_score": 23,
    "relevance": 4,
@@ -691,6 +694,7 @@
    "published": "2026-11-19",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 12,
@@ -950,6 +954,7 @@
    "published": "2026-11-19",
    "topics": [
     "IL",
+    "Tactile",
     "GenModel"
    ],
    "kw_score": 8,

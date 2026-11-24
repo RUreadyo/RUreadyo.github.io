@@ -34,8 +34,8 @@
    "published": "2026-11-13",
    "topics": [
     "Dex",
-    "Control",
-    "IL"
+    "Tactile",
+    "Control"
    ],
    "kw_score": 22,
    "relevance": 9,
@@ -69,6 +69,7 @@
    "published": "2026-11-13",
    "topics": [
     "Dex",
+    "Tactile",
     "Control"
    ],
    "kw_score": 33,
@@ -468,7 +469,8 @@
    "tldr": "In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe visual disturbances.",
    "summary": "In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe visual disturbances. Vision-based perceptive locomotion has enabled legged robots to achieve agile and terrain-aware locomotion across complex environments.",
    "venue": "CoRL 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.18546",
@@ -490,7 +492,8 @@
    "tldr": "In this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption.",
    "summary": "In this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption. Additionally, real-time implementation of this model can be achieved, meeting the demand for computational efficiency in robotic applications.",
    "venue": "IJRR",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.18365",

@@ -141,7 +141,8 @@
    ],
    "published": "2026-11-20",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 28,
    "relevance": 6,
@@ -866,7 +867,8 @@
    ],
    "published": "2026-11-20",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression.",

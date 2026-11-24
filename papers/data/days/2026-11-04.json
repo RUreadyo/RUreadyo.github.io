@@ -219,6 +219,7 @@
    "published": "2026-11-04",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 28,
@@ -249,7 +250,8 @@
    "published": "2026-11-04",
    "topics": [
     "Dex",
-    "FM"
+    "FM",
+    "Tactile"
    ],
    "kw_score": 34,
    "relevance": 7,
@@ -514,8 +516,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "IL",
-    "FM"
+    "IL"
    ],
    "kw_score": 13,
    "relevance": 5,
@@ -835,7 +836,8 @@
    ],
    "published": "2026-11-04",
    "topics": [
-    "IL"
+    "IL",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "This paper explores the cognitive effects of haptic feedback to improve vehicle safety in such environments.",
@@ -1061,7 +1063,8 @@
    "tldr": "A robot action can satisfy shape and range constraints yet carry the wrong semantics: axes may be permuted, signs inverted, rotations rescaled, or gripper polarity reversed.",
    "summary": "A robot action can satisfy shape and range constraints yet carry the wrong semantics: axes may be permuted, signs inverted, rotations rescaled, or gripper polarity reversed. On ten LIBERO Spatial tasks comprising 432 source episodes, a capacity-controlled comparison at 2.5% empirical clean false-positive rate gives 46.1% recall for a ridge forward residual, 61.0% for a four-component joint Gaussian mixture, and 65.7% for the exact conditional of that same mixture.",
    "venue": "CoRL 2026 Workshop",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.06378",

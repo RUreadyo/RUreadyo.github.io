@@ -94,8 +94,7 @@
    "topics": [
     "FM",
     "WM",
-    "Video",
-    "GenModel"
+    "Video"
    ],
    "kw_score": 38,
    "relevance": 6,
@@ -162,8 +161,7 @@
    "topics": [
     "WM",
     "Dex",
-    "GenModel",
-    "IL"
+    "GenModel"
    ],
    "kw_score": 14,
    "relevance": 6,
@@ -323,7 +321,8 @@
    "published": "2026-11-17",
    "topics": [
     "IL",
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 15,
    "relevance": 5,
@@ -367,6 +366,7 @@
    "published": "2026-11-17",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 15,
@@ -843,7 +843,8 @@
    "tldr": "We present WoRD (Waypoint Recognition with Diffusion), which uses a learned trajectory prior to infer the agent's goal from partial observations.",
    "summary": "We present WoRD (Waypoint Recognition with Diffusion), which uses a learned trajectory prior to infer the agent's goal from partial observations.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.22990",
@@ -862,7 +863,8 @@
    ],
    "published": "2026-11-17",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "To prove this, we introduce a Physics-Informed Vision Transformer (ViT) framework that maps tactile images to a 3D vertex chain.",

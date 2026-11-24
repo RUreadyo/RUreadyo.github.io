@@ -36,7 +36,7 @@
    "topics": [
     "Dex",
     "IL",
-    "Control"
+    "Tactile"
    ],
    "kw_score": 27,
    "relevance": 8,
@@ -155,8 +155,7 @@
    "topics": [
     "WM",
     "Dex",
-    "IL",
-    "FM"
+    "IL"
    ],
    "kw_score": 14,
    "relevance": 6,
@@ -748,7 +747,8 @@
    ],
    "published": "2026-11-11",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "Generated touch could extend robot learning beyond recorded contacts.",
@@ -779,7 +779,8 @@
    ],
    "published": "2026-11-11",
    "topics": [
-    "IL"
+    "IL",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact.",

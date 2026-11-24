@@ -35,6 +35,7 @@
    "published": "2026-11-21",
    "topics": [
     "Dex",
+    "Tactile",
     "GenModel"
    ],
    "kw_score": 20,
@@ -105,8 +106,8 @@
    "published": "2026-11-21",
    "topics": [
     "Dex",
-    "FM",
-    "RL"
+    "Tactile",
+    "FM"
    ],
    "kw_score": 26,
    "relevance": 7,
@@ -280,8 +281,7 @@
    "topics": [
     "WM",
     "Video",
-    "FM",
-    "Dex"
+    "FM"
    ],
    "kw_score": 11,
    "relevance": 6,
@@ -339,6 +339,7 @@
    "published": "2026-11-21",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 16,
@@ -669,7 +670,8 @@
    "tldr": "This paper presents a decentralized microscopic control framework for swarm navigation in obstacle environments, given a precomputed macroscopic trajectory represented by Gaussian mixture models (GMMs).",
    "summary": "This paper presents a decentralized microscopic control framework for swarm navigation in obstacle environments, given a precomputed macroscopic trajectory represented by Gaussian mixture models (GMMs). Simulation results demonstrate improved efficiency and obstacle avoidance compared to conventional APF-based methods",
    "venue": "CDC",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.28978",

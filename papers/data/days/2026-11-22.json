@@ -31,8 +31,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "GenModel"
+    "RL"
    ],
    "kw_score": 22,
    "relevance": 8,
@@ -301,8 +300,8 @@
    "published": "2026-11-22",
    "topics": [
     "Dex",
-    "Control",
-    "IL"
+    "Tactile",
+    "Control"
    ],
    "kw_score": 17,
    "relevance": 6,
@@ -375,7 +374,8 @@
    "published": "2026-11-22",
    "topics": [
     "FM",
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 28,
    "relevance": 5,
@@ -580,7 +580,7 @@
    "topics": [
     "FM",
     "Dex",
-    "IL"
+    "Tactile"
    ],
    "kw_score": 20,
    "relevance": 4,
@@ -942,7 +942,8 @@
    "tldr": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back.",
    "summary": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back. The rule outperforms every summary-only memory, and giving language models the sighting history closes the gap.",
    "venue": "CoRL 2026 Workshop",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.29682",

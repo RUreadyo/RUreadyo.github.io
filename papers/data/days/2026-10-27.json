@@ -36,6 +36,7 @@
    "published": "2026-10-27",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "tracked_authors": [
@@ -225,6 +226,7 @@
    "published": "2026-10-27",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 25,
@@ -474,6 +476,7 @@
    "published": "2026-10-27",
    "topics": [
     "Dex",
+    "Tactile",
     "Control"
    ],
    "tracked_authors": [
@@ -1175,7 +1178,8 @@
    ],
    "published": "2026-10-27",
    "topics": [
-    "RL"
+    "RL",
+    "Tactile"
    ],
    "kw_score": 8,
    "tldr": "A joint of pipe run into the hole swings from the elevator over the well and strikes a fixed stabbing guide at whatever speed the swing has.",

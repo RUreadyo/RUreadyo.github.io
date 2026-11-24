@@ -113,6 +113,7 @@
    "published": "2026-11-18",
    "topics": [
     "Dex",
+    "Tactile",
     "FM"
    ],
    "kw_score": 43,
@@ -367,8 +368,7 @@
    "topics": [
     "WM",
     "Dex",
-    "FM",
-    "IL"
+    "FM"
    ],
    "kw_score": 20,
    "relevance": 6,
@@ -430,6 +430,7 @@
    "published": "2026-11-18",
    "topics": [
     "Dex",
+    "Tactile",
     "FM"
    ],
    "kw_score": 19,
@@ -466,8 +467,7 @@
    "topics": [
     "WM",
     "GenModel",
-    "IL",
-    "RL"
+    "IL"
    ],
    "kw_score": 14,
    "relevance": 5,
@@ -763,6 +763,7 @@
    "published": "2026-11-18",
    "topics": [
     "Dex",
+    "Tactile",
     "GenModel"
    ],
    "kw_score": 17,
@@ -1143,7 +1144,8 @@
    "tldr": "In this work, we examine what CF reasoning actually induces in VLM-based autonomous driving and observe that it shifts the action distribution toward more conservative behaviors while increasing uncertainty in reasoning and decision-making.",
    "summary": "In this work, we examine what CF reasoning actually induces in VLM-based autonomous driving and observe that it shifts the action distribution toward more conservative behaviors while increasing uncertainty in reasoning and decision-making. To mitigate these limitations, recent works based on Vision-Language Models (VLMs) have explored incorporating linguistic reasoning capabilities into driving decision-making, reporting improvements in driving performance.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.23804",
@@ -1164,7 +1166,8 @@
    ],
    "published": "2026-11-18",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "We introduce TacPilot, a tactile residual framework that separates representation updates from action intervention around a frozen visual policy.",

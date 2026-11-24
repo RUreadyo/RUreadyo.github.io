@@ -73,8 +73,7 @@
    "topics": [
     "IL",
     "FM",
-    "Dex",
-    "RL"
+    "Dex"
    ],
    "kw_score": 38,
    "relevance": 8,
@@ -175,6 +174,7 @@
    "published": "2026-11-01",
    "topics": [
     "Dex",
+    "Tactile",
     "GenModel"
    ],
    "kw_score": 18,
@@ -534,7 +534,8 @@
    ],
    "published": "2026-11-01",
    "topics": [
-    "GenModel"
+    "GenModel",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "This work presents a 3D-printed polyether block amide (PEBA) Kresling cell with magnetic angular sensing that supports three operating modes: force sensing at zero gauge pressure, force sensing with tunable stiffness under gauge positive pressure, and self-sensing actuation…",

@@ -69,7 +69,7 @@
    "topics": [
     "Dex",
     "FM",
-    "IL"
+    "Tactile"
    ],
    "tracked_authors": [
     "Huazhe Xu"
@@ -180,6 +180,7 @@
    "published": "2026-10-29",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 40,
@@ -274,8 +275,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "GenModel"
+    "RL"
    ],
    "kw_score": 34,
    "relevance": 7,
@@ -408,8 +408,8 @@
    "published": "2026-10-29",
    "topics": [
     "Dex",
-    "WM",
-    "IL"
+    "Tactile",
+    "WM"
    ],
    "kw_score": 28,
    "relevance": 7,
@@ -446,8 +446,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "GenModel",
-    "RL"
+    "GenModel"
    ],
    "kw_score": 19,
    "relevance": 7,
@@ -720,6 +719,7 @@
    "published": "2026-10-29",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 22,
@@ -1329,7 +1329,8 @@
    "tldr": "In this paper, we introduce AquaProbe for measuring how the location of the domain gap changes with water type and imaging range.",
    "summary": "In this paper, we introduce AquaProbe for measuring how the location of the domain gap changes with water type and imaging range. The three-way router, conditioned on estimated condition clusters, achieves 70.6 mIoU on the standard SUIM split and 63.4 AUDRC under held-out degradation.",
    "venue": "WACV 2027",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.40632",
@@ -1359,7 +1360,8 @@
    "tldr": "To this end, we introduce SymAnt, a novel neuro-symbolic approach that unifies the expressiveness of neural networks with the structured reasoning of scene and knowledge graphs.",
    "summary": "To this end, we introduce SymAnt, a novel neuro-symbolic approach that unifies the expressiveness of neural networks with the structured reasoning of scene and knowledge graphs. This symbolic context serves as a prior for an iterative refinement process that progressively generates and improves the sequence of future actions.",
    "venue": "WACV 2027",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2610.40537",

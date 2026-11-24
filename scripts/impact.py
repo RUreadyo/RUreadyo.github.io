@@ -32,6 +32,8 @@ TOPICS = {
            "learning from demonstrations", "diffusion policy", "visuomotor policy", "action chunking", "teleoperation"],
     "Dex": ["dexterous manipulation", "in-hand manipulation", "dexterous hand", "dexterous grasping", "multi-fingered",
             "in-hand object rotation", "robot hand"],
+    "Tactile": ["tactile", "visuotactile", "visuo-tactile", "gelsight", "tactile sensing", "tactile sensor", "sense of touch",
+                "electronic skin", "haptic"],
     "RL": ["reinforcement learning", "policy optimization", "actor-critic", "q-learning", "offline reinforcement learning",
            "model-based reinforcement learning", "policy gradient"],
     "RLGen": ["diffusion policies", "diffusion policy", "flow policy", "diffusion model"],
@@ -46,6 +48,7 @@ TOPICS = {
 REQUIRE = {
     "RLGen": ["reinforcement learning", "q-learning", "policy optimization", "reward"],
     "FM": ["robot", "robotic", "action", "embodied", "manipulation"],
+    "Tactile": ["robot", "robotic", "manipulation", "grasp", "hand"],
     "Control": ["robot", "robotic", "locomotion", "manipulation", "legged", "quadruped", "humanoid"],
 }
 

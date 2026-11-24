@@ -90,8 +90,7 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL",
-    "GenModel"
+    "RL"
    ],
    "kw_score": 20,
    "relevance": 8,
@@ -125,8 +124,7 @@
    "topics": [
     "IL",
     "Dex",
-    "WM",
-    "GenModel"
+    "Tactile"
    ],
    "kw_score": 31,
    "relevance": 6,
@@ -362,7 +360,8 @@
    ],
    "published": "2026-11-02",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "tracked_authors": [
     "Lerrel Pinto"
@@ -529,6 +528,7 @@
    "published": "2026-11-02",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 25,
@@ -885,7 +885,8 @@
    "tldr": "We present CoReMatch (Coordinate Refinement Match), a recurrent framework that refines correspondences directly in continuous coordinate space rather than predicting discrete confidence maps.",
    "summary": "We present CoReMatch (Coordinate Refinement Match), a recurrent framework that refines correspondences directly in continuous coordinate space rather than predicting discrete confidence maps. CoReMatch progressively improves correspondence estimates by propagating information across iterations.",
    "venue": "CoRL 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.03489",
@@ -911,7 +912,8 @@
    ],
    "published": "2026-11-02",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "In this work, we introduce ToFTouch, a multimodal tactile sensor combining three multizone (4$\\times$4 resolution) time-of-flight sensors with an optics-based pressure sensing array.",
@@ -964,7 +966,8 @@
    "tldr": "Building on this perspective, we introduce a family of multi-step training losses that progressively incorporate long-horizon structure, robustness via continuous ranked probability scores (CRPS), and training on full autoregressive rollouts.",
    "summary": "Building on this perspective, we introduce a family of multi-step training losses that progressively incorporate long-horizon structure, robustness via continuous ranked probability scores (CRPS), and training on full autoregressive rollouts. Across illustrative synthetic environments, a diverse suite of chaotic dynamical systems, and real-world data, we show that multi-step, CRPS-based objectives substantially improve long-horizon accuracy and distributional fit, consistently outperforming single-step likelihood training.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.04027",
@@ -1193,7 +1196,8 @@
    ],
    "published": "2026-11-02",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 7,
    "tldr": "We present SyncHeC (Synchronized Hand-Eye Calibration), a dense differentiable-rendering framework that estimates both from a single robot trajectory.",

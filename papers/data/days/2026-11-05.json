@@ -65,8 +65,8 @@
    "published": "2026-11-05",
    "topics": [
     "Dex",
-    "Control",
-    "RL"
+    "Tactile",
+    "Control"
    ],
    "kw_score": 40,
    "relevance": 8,
@@ -668,7 +668,8 @@
    "summary": "Agentic robot control uses LLM agents as policies. RoboARCade provides harder long-horizon tasks across three embodiments with pluggable interfaces; GPT-6 Astra scores 49.8% vs 43.6% for Claude Fable 5.1. Failures come mainly from strategy choice and imprecise execution, agents falsely claim success on 24-39% of subtasks, and one in-context demo raises Astra from 53.5% to 73.0%.",
    "why": "Informative snapshot of LLM agents as policies, but not your core direction.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.08425",
@@ -1004,7 +1005,8 @@
    ],
    "published": "2026-11-05",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 10,
    "tldr": "Tactile sensing provides information about object properties that can improve robotic grasping and manipulation.",
@@ -1057,7 +1059,8 @@
    ],
    "published": "2026-11-05",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "This paper presents a tactile display technology that offers both softness and temperature change.",
@@ -1181,7 +1184,8 @@
    "tldr": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection.",
    "summary": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection. On the SfC benchmark, our method improves hidden-structure reconstruction and future prediction over the density-based SfC baseline.",
    "venue": "WACV 2027",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.07272",

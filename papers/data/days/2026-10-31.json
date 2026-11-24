@@ -33,7 +33,7 @@
    "topics": [
     "Dex",
     "IL",
-    "FM"
+    "Tactile"
    ],
    "kw_score": 32,
    "relevance": 7,
@@ -649,7 +649,10 @@
    "tldr": "This paper presents the Multi-modal Embodiment Stimulation Shoulder Pad (MESSPa), a wearable interface that combines one-to-one motion transfer with spatially distributed pneumatic (balloon) haptic feedback on the shoulder, with the goal of preserving the sense of agency…",
    "summary": "This paper presents the Multi-modal Embodiment Stimulation Shoulder Pad (MESSPa), a wearable interface that combines one-to-one motion transfer with spatially distributed pneumatic (balloon) haptic feedback on the shoulder, with the goal of preserving the sense of agency across attached and detached states. Compared with keyboard control in the detached condition, MESSPa significantly reduced task completion time and significantly improved the sense of agency in the detached state, while narrowing the performance gap between the attached and detached conditions.",
    "venue": "Humanoids 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": [
+    "Tactile"
+   ]
   },
   {
    "id": "2611.00499",

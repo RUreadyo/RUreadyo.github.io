@@ -31,8 +31,7 @@
    "topics": [
     "RLGen",
     "RL",
-    "IL",
-    "Control"
+    "IL"
    ],
    "tracked_authors": [
     "Sergey Levine"
@@ -279,8 +278,7 @@
    "topics": [
     "WM",
     "Video",
-    "GenModel",
-    "IL"
+    "GenModel"
    ],
    "kw_score": 18,
    "relevance": 7,
@@ -313,8 +311,7 @@
    "topics": [
     "WM",
     "Video",
-    "Dex",
-    "IL"
+    "Dex"
    ],
    "kw_score": 16,
    "relevance": 7,
@@ -613,8 +610,7 @@
    "topics": [
     "WM",
     "FM",
-    "IL",
-    "RL"
+    "IL"
    ],
    "kw_score": 20,
    "relevance": 5,
@@ -1054,6 +1050,7 @@
    "published": "2026-11-03",
    "topics": [
     "WM",
+    "Tactile",
     "Dex"
    ],
    "kw_score": 10,
@@ -1087,7 +1084,8 @@
    "tldr": "To address this gap, we propose ReSMap, a redundancy-aware camera-satellite fusion framework for robust online HD map construction.",
    "summary": "To address this gap, we propose ReSMap, a redundancy-aware camera-satellite fusion framework for robust online HD map construction. Our framework explicitly leverages satellite images as a complementary source to improve robustness against camera failures.",
    "venue": "NeurIPS 2026",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.04957",

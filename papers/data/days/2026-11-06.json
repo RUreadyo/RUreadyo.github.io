@@ -31,8 +31,7 @@
    "topics": [
     "IL",
     "FM",
-    "GenModel",
-    "Dex"
+    "GenModel"
    ],
    "tracked_authors": [
     "Shuran Song"
@@ -111,6 +110,7 @@
    "published": "2026-11-06",
    "topics": [
     "WM",
+    "Tactile",
     "Dex"
    ],
    "kw_score": 14,
@@ -146,6 +146,7 @@
    "published": "2026-11-06",
    "topics": [
     "Dex",
+    "Tactile",
     "Control"
    ],
    "kw_score": 35,
@@ -846,6 +847,7 @@
    "published": "2026-11-06",
    "topics": [
     "Dex",
+    "Tactile",
     "IL"
    ],
    "kw_score": 8,
@@ -1036,7 +1038,8 @@
    "tldr": "We propose a planner-verified counterfactual (CF) test: holding the grasp pose fixed, we insert a solid obstacle into the approach corridor, add its points to the model input, and let a planner re-derive the label, which flips from feasible to infeasible.",
    "summary": "We propose a planner-verified counterfactual (CF) test: holding the grasp pose fixed, we insert a solid obstacle into the approach corridor, add its points to the model input, and let a planner re-derive the label, which flips from feasible to infeasible.",
    "venue": "WACV 2027",
-   "citations": 0
+   "citations": 0,
+   "topics": []
   },
   {
    "id": "2611.09059",
@@ -1055,7 +1058,8 @@
    ],
    "published": "2026-11-06",
    "topics": [
-    "Dex"
+    "Dex",
+    "Tactile"
    ],
    "kw_score": 6,
    "tldr": "We propose a time-domain optimization method for robust readout of cross-point resistive arrays.",
