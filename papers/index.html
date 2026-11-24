@@ -85,6 +85,10 @@
     .bibbar button { border: 0; border-radius: 8px; padding: 6px 12px; font: 600 13px Inter, sans-serif; cursor: pointer; background: var(--bg); color: var(--fg); }
     .bibbar button.ghost { background: transparent; color: var(--bg); text-decoration: underline; }
     .toast { position: fixed; left: 50%; top: 20px; transform: translateX(-50%); z-index: 60; background: var(--green); color: #fff; padding: 8px 16px; border-radius: 10px; font: 600 14px Inter, sans-serif; box-shadow: var(--shadow); }
+    .follow-list { margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+    .follow-list summary { font-weight: 600; color: var(--fg); font-size: 14px; }
+    .follow-list #followers { display: flex; flex-wrap: wrap; gap: 6px; }
+    .follow-list #followers span { background: var(--gold-soft); color: var(--gold); border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 600; }
     .toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--fg-2); cursor: pointer; user-select: none; }
 
     .overview { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); margin-bottom: 28px; position: relative; overflow: hidden; }
@@ -165,6 +169,7 @@
     <button class="tab on" data-view="daily">Daily</button>
     <button class="tab" data-view="month">Best of month</button>
     <button class="tab" data-view="year">Best of year</button>
+    <button class="tab" data-view="conf">Conferences</button>
     <button class="tab" data-view="ml">Trending in ML</button>
     <button class="tab" data-view="impact">Most impactful</button>
     <button class="tab" data-view="search">🔍 Search</button>
@@ -179,6 +184,8 @@
   <div class="filters" id="filters"></div>
   <div id="content"><p class="empty">Loading…</p></div>
 
+  <details class="follow-list" id="followlist"><summary>★ Authors / groups I follow</summary><p id="followers">Loading…</p>
+    <p class="note" style="margin:6px 0 0">Papers with any of these authors get a gold ★ badge and rank higher. The list lives in <code>papers/config.json</code> → <code>tracked_authors</code>.</p></details>
   <footer>
     Ranked from arXiv cs.RO plus robot-relevant cs.LG / cs.CV / cs.AI using my interest profile and the groups I follow (their authors are highlighted in gold with a ★ badge; the list is tracked_authors in papers/config.json). Summaries are written by Claude when available, otherwise extracted from the abstract. Venues come from arXiv comments and Semantic Scholar, and main conferences (CoRL, RSS, ICRA, ICML, NeurIPS, ICLR) are ranked up. Trending ML comes from Hugging Face Daily Papers. "Most impactful" ranks the last 10 years by OpenAlex citation counts.
   </footer>
@@ -211,7 +218,7 @@ const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitat
 const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", venue: "all", showAll: false,
   search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null,
   conf: {}, confYear: "all", confN: 25, bestYear: null, yearN: 40 };
-const ARCHIVE = ["CoRL", "RSS", "ICLR", "ICML", "NeurIPS"];
+const ARCHIVE = ["CoRL", "RSS", "ICRA", "IROS", "ICLR", "ICML", "NeurIPS"];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tc = t => `var(--t-${TOPICS[t] ? t : "Other"})`;
@@ -294,6 +301,7 @@ function fmtDate(d, long) {
 function matches(p) {
   if (state.topic !== "all" && !(p.topics || []).includes(state.topic)) return false;
   if (!venueOk(p.venue)) return false;
+  if (state.followedOnly && !(p.tracked_authors || []).length) return false;
   if (!state.q) return true;
   const hay = [p.title, (p.authors || []).join(" "), p.abstract, p.tldr, p.summary, p.venue].join(" ").toLowerCase();
   return state.q.split(/\s+/).every(w => hay.includes(w));
@@ -306,22 +314,24 @@ function venueOk(v) {
   if (state.venue === "honor") return /\((oral|spotlight|highlight|best[^)]*paper[^)]*|outstanding[^)]*)\)/i.test(v);
   return v.split(" ")[0] === state.venue && !/workshop/i.test(v);
 }
-function venueChips() {
-  return `<span class="lbl">Venue</span>` + [["all", "Any / preprint"], ["any", "Accepted anywhere"], ["honor", "★ Oral / Spotlight / Award"], ...MAIN.map(m => [m, m])].map(([k, v]) =>
+function venueChips(withConfs = false) {
+  return `<span class="lbl">Venue</span>` + [["all", "Any / preprint"], ["any", "Accepted anywhere"], ["honor", "★ Oral / Spotlight / Award"], ...(withConfs ? MAIN.map(m => [m, m]) : [])].map(([k, v]) =>
     `<button class="chip conf ${state.venue === k ? "on" : ""}" data-v="${k}">${v}</button>`).join("");
 }
 function bindVenue(root, after) {
   root.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.venue = b.dataset.v; state.confN = 25; after(); });
 }
 
-function filtersUI(withTopics = true) {
+function filtersUI(withTopics = true, withVenue = true) {
   const chips = withTopics ? [["all", "All topics"], ...Object.entries(TOPICS)].map(([k, v]) =>
     `<button class="chip ${state.topic === k ? "on" : ""}" data-k="${k}">${k !== "all" ? `<span class="dot" style="--c:${tc(k)}"></span>` : ""}${v}</button>`).join("") : "";
   $("filters").innerHTML = `<div class="filters" style="margin:0">` + chips +
+    (withTopics ? `<button class="chip ${state.followedOnly ? "on" : ""}" data-fo="1" title="Only papers with an author I follow (list at the bottom of the page)">★ Followed authors</button>` : "") +
     `<input class="search" id="q" type="search" placeholder="Filter titles, authors, abstracts…" value="${esc(state.q)}">` +
-    `</div>` + (withTopics ? `<div class="filters" style="margin:10px 0 0">${venueChips()}</div>` : "");
+    `</div>` + (withTopics && withVenue ? `<div class="filters" style="margin:10px 0 0">${venueChips()}</div>` : "");
   $("filters").querySelectorAll("[data-k]").forEach(b => b.onclick = () => { state.topic = b.dataset.k; render(); });
   bindVenue($("filters"), render);
+  const fo = $("filters").querySelector("[data-fo]"); if (fo) fo.onclick = () => { state.followedOnly = !state.followedOnly; render(); };
   const q = $("q"); q.oninput = () => { state.q = q.value.trim().toLowerCase(); renderContent(); };
 }
 
@@ -350,7 +360,7 @@ function renderImpact(c) {
   const sorts = [["citations", "Total citations"], ["per_year", "Citations / year (recent impact)"], ["year", "Newest first"]];
   c.innerHTML = `<div class="filters">${Object.entries(IMPACT_TOPICS).filter(([k]) => d.topics[k]?.length).map(([k, v]) => `<button class="chip ${state.impactTopic === k ? "on" : ""}" data-it="${k}"><span class="dot" style="--c:${tc(k)}"></span>${v}</button>`).join("")}</div>
     <div class="filters">${sorts.map(([k, v]) => `<button class="chip ${state.impactSort === k ? "on" : ""}" data-is="${k}">${v}</button>`).join("")}</div>
-    <div class="filters">${venueChips()}</div>
+    <div class="filters">${venueChips(true)}</div>
     <div class="section-h"><h2>${esc(IMPACT_TOPICS[state.impactTopic])}: most impactful since ${d.since}</h2><span>${esc(d.source || "Semantic Scholar")} citations · updated ${esc(d.updated)}</span></div>
     ${items.map(impactCard).join("") || '<p class="empty">No papers match.</p>'}`;
   c.querySelectorAll("[data-it]").forEach(b => b.onclick = () => { state.impactTopic = b.dataset.it; renderContent(); });
@@ -363,7 +373,7 @@ function renderContent() {
   if (state.view === "impact") return renderImpact(c);
   if (state.view === "search") return renderSearch(c);
   if (state.view === "year") return renderYear(c);
-  if (state.venue !== "all" && state.venue !== "any" && ["daily", "week", "month"].includes(state.view)) return renderConf(c);
+  if (state.view === "conf") return renderConfTab(c);
   if (state.view === "daily") {
     const d = state.day; if (!d) return;
     const top = d.top_picks.filter(matches), rest = d.roundup.filter(matches);
@@ -395,10 +405,7 @@ function renderContent() {
     const items = b[state.view].filter(matches);
     c.innerHTML = `<div class="section-h"><h2>Best of the ${state.view === "week" ? "last 7 days" : "last 30 days"}</h2><span>updated ${esc(b.updated)} · ranked by relevance, quality, venue</span></div>${list(items)}`;
   } else {
-    const b = state.best; if (!b) return;
-    const f = p => !state.q || (p.title + " " + p.summary + " " + (p.org || "")).toLowerCase().includes(state.q);
-    c.innerHTML = `<div class="section-h"><h2>Most upvoted this week</h2><span>Hugging Face Daily Papers</span></div><div class="grid">${b.ml_week.filter(f).map(mlCard).join("")}</div>
-      <div class="section-h"><h2>Most upvoted this month</h2></div><div class="grid">${b.ml_month.filter(p => !b.ml_week.some(w => w.id === p.id)).filter(f).map(mlCard).join("")}</div>`;
+    renderTrending(c);
   }
 }
 
@@ -415,12 +422,58 @@ function renderDates() {
 
 function render() {
   document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === state.view));
-  $("datebar").style.display = state.view === "daily" && (state.venue === "all" || state.venue === "any") ? "" : "none";
+  $("datebar").style.display = state.view === "daily" ? "" : "none";
   if (state.view === "search") $("filters").innerHTML = "";
-  else filtersUI(state.view !== "ml" && state.view !== "impact");
+  else filtersUI(state.view !== "ml" && state.view !== "impact", state.view !== "conf");
   renderContent();
 }
 
+
+// ---------- Trending in ML, grouped into themes (keyword rules over title + summary; first match wins) ----------
+const ML_CLUSTERS = [
+  ["Robotics & embodied AI", /\b(robot\w*|embodied|manipulation|vla|vision-language-action|locomotion|humanoid|navigation|autonomous driving|driving|grasp\w*|dexter\w*)\b/i],
+  ["World models & video", /\b(world models?|video (generation|diffusion|model\w*|synthesis|prediction)|text-to-video|image-to-video|diffusion forcing|long video|video world)\b/i],
+  ["Diffusion & generative models", /\b(diffusion|flow matching|rectified flow|generative|text-to-image|image generation|image editing|tokeni[sz]er|autoregressive image|consistency model|score-based|gan)\b/i],
+  ["RL, reward & alignment", /\b(reinforcement learning|rlhf|rlvr|grpo|ppo|dpo|reward model\w*|rewards?|policy optimization|preference|alignment)\b/i],
+  ["Agents & tool use", /\b(agents?|agentic|tool[- ]use|tool calling|gui|web (browsing|navigation)|computer use|software engineering|swe-bench|deep research)\b/i],
+  ["Reasoning & language models", /\b(reasoning|chain-of-thought|llms?|large language models?|language models?|math\w*|test-time|thinking|instruction)\b/i],
+  ["3D, vision & multimodal", /\b(3d|gaussian splatting|nerf|point cloud|multimodal|vision-language|vlms?|mllms?|image|visual|segmentation|detection|depth|pose)\b/i],
+  ["Efficiency, scaling & systems", /\b(efficien\w*|quantiz\w*|sparse|sparsity|kv cache|inference|attention|mixture-of-experts|moe|scaling|pretraining|training|distillation|long-context)\b/i],
+];
+function clusterOf(p) {
+  const h = `${p.title} ${p.summary || ""}`;
+  return (ML_CLUSTERS.find(([, rx]) => rx.test(h)) || ["Other"])[0];
+}
+async function renderTrending(c) {
+  if (!state.trendAll) {
+    c.innerHTML = '<p class="empty">Loading…</p>';
+    const days = await Promise.all(state.index.map(d => getJSON(`data/days/${d.date}.json`).catch(() => null)));
+    const by = new Map();
+    for (const d of days) for (const p of d?.trending_ml || []) {
+      const prev = by.get(p.id);
+      if (!prev || (p.upvotes || 0) > (prev.upvotes || 0)) by.set(p.id, {...p, day: d.date});
+    }
+    state.trendAll = [...by.values()].map(p => ({...p, cluster: clusterOf(p)}));
+    if (state.view !== "ml") return;
+  }
+  const period = state.trendPeriod || "month", cut = new Date(Date.now() - (period === "week" ? 7 : 31) * 864e5).toISOString().slice(0, 10);
+  const f = p => p.day >= cut && (!state.q || (p.title + " " + p.summary + " " + (p.org || "")).toLowerCase().includes(state.q));
+  const items = state.trendAll.filter(f).sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+  const groups = [...ML_CLUSTERS.map(([n]) => n), "Other"].map(n => [n, items.filter(p => p.cluster === n)]).filter(([, l]) => l.length);
+  const sel = state.trendCluster && groups.some(([n]) => n === state.trendCluster) ? state.trendCluster : null;
+  const open = state.trendOpen || (state.trendOpen = {});
+  c.innerHTML = `<div class="filters"><span class="lbl">Period</span>${[["week", "This week"], ["month", "Last 30 days"]].map(([k, v]) => `<button class="chip ${period === k ? "on" : ""}" data-tp="${k}">${v}</button>`).join("")}</div>
+    <div class="filters"><span class="lbl">Theme</span><button class="chip ${!sel ? "on" : ""}" data-tc="">All themes</button>${groups.map(([n, l]) => `<button class="chip ${sel === n ? "on" : ""}" data-tc="${esc(n)}">${esc(n)} <span style="opacity:.6">${l.length}</span></button>`).join("")}</div>
+    <p class="note">Most upvoted papers on Hugging Face Daily Papers, grouped by theme so the rest of ML stays visible. Within each theme, sorted by upvotes.</p>
+    ${groups.filter(([n]) => !sel || n === sel).map(([n, l]) => {
+      const lim = sel || open[n] ? l.length : 6;
+      return `<div class="section-h"><h2>${esc(n)}</h2><span>${l.length} papers</span></div><div class="grid">${l.slice(0, lim).map(mlCard).join("")}</div>
+        ${l.length > lim ? `<button class="more" data-to="${esc(n)}">Show ${l.length - lim} more ${esc(n.toLowerCase())}</button>` : ""}`;
+    }).join("") || '<p class="empty">Nothing trending in this window.</p>'}`;
+  c.querySelectorAll("[data-tp]").forEach(b => b.onclick = () => { state.trendPeriod = b.dataset.tp; renderTrending(c); });
+  c.querySelectorAll("[data-tc]").forEach(b => b.onclick = () => { state.trendCluster = b.dataset.tc || null; renderTrending(c); });
+  c.querySelectorAll("[data-to]").forEach(b => b.onclick = () => { open[b.dataset.to] = true; renderTrending(c); });
+}
 
 // ---------- BibTeX: per-paper copy + a reading list kept in this browser ----------
 const BOOK = {CoRL: "Conference on Robot Learning (CoRL)", RSS: "Robotics: Science and Systems (RSS)",
@@ -526,34 +579,43 @@ async function renderYear(c) {
   const m = $("ymore"); if (m) m.onclick = () => { state.yearN += 40; renderYear(c); };
 }
 
-// ---------- Conference archive (data/conf/<CONF>.json, built by scripts/conferences.py) ----------
-async function renderConf(c) {
-  const v = state.venue, confs = v === "honor" ? ARCHIVE : ARCHIVE.includes(v) ? [v] : [];
-  const need = confs.filter(k => !state.conf[k]);
-  if (need.length || !state.best) {
-    c.innerHTML = '<p class="empty">Loading conference papers…</p>';
-    await Promise.all([...need.map(k => getJSON(`data/conf/${k}.json`).then(d => state.conf[k] = d).catch(() => state.conf[k] = {years: {}})),
-      state.best ? null : getJSON("data/best.json").then(b => state.best = b).catch(() => {})]);
-    if (state.venue !== v) return;
-  }
-  const recent = (state.best?.month || []).filter(matches);
-  const all = confs.flatMap(k => Object.values(state.conf[k].years || {}).flat());
-  const years = [...new Set(all.map(p => p.year))].sort((a, b) => b - a);
-  if (state.confYear !== "all" && !years.includes(+state.confYear)) state.confYear = "all";
-  const items = all.filter(p => (state.confYear === "all" || p.year === +state.confYear) && matches(p)).sort((a, b) => b.score - a.score);
+// ---------- Conferences tab: pick a conference, then a year (archive = official proceedings; current year also from the daily feed) ----------
+const CONF_SRC = {CoRL: "PMLR proceedings / corl.org", RSS: "roboticsproceedings.org", ICRA: "ICRA program (PaperCept)", IROS: "IROS program (PaperCept)",
+  ICLR: "iclr.cc", ICML: "icml.cc", NeurIPS: "neurips.cc"};
+async function renderConfTab(c) {
+  const k = state.confSel = state.confSel || "CoRL";
+  if (!state.allPapers) { c.innerHTML = '<p class="empty">Loading conference papers…</p>'; await loadAllPapers().catch(() => []); if (state.view !== "conf") return; }
+  const arch = state.conf[k]?.years || {};
+  const digest = state.allPapers.filter(p => p.kind === "digest" && (p.venue || "").startsWith(k + " ") && !/workshop/i.test(p.venue));
+  const yearOf = p => p.year || +((p.venue || "").match(/\b(20\d\d)\b/) || [])[1];
+  const years = [...new Set([...Object.keys(arch).map(Number), ...digest.map(yearOf)])].filter(Boolean).sort((a, b) => b - a);
+  const archYears = Object.keys(arch).map(Number).sort((a, b) => b - a);
+  const digestN = y => digest.filter(p => yearOf(p) === y).length;
+  if (!years.includes(+state.confYear)) state.confYear = years.find(y => archYears.includes(y) || digestN(y) >= 10) || years[0];
+  const Y = +state.confYear;
+  const inArch = new Set((arch[Y] || []).map(p => normT(p.title)));
+  const pool = [...(arch[Y] || []), ...digest.filter(p => yearOf(p) === Y && !inArch.has(normT(p.title))).map(p => ({...p, score: (p.relevance || 0) * 6}))];
+  const HONRX = /\((oral|spotlight|highlight|best[^)]*|outstanding[^)]*)\)/i;
+  const hon = !!state.confHonor;
+  const items = pool.filter(p => matches(p) && (!hon || HONRX.test(p.venue))).sort((a, b) => b.score - a.score);
+  const nH = pool.filter(p => HONRX.test(p.venue)).length;
   const shown = items.slice(0, state.confN);
-  const title = v === "honor" ? "Orals, spotlights & awards" : `${v} papers`;
-  const noArchive = !confs.length ? `<p class="note">${v} proceedings are not openly indexed, so there is no archive for it yet. Use the 🔍 Search tab with the ${v} button to search all ${v} papers.</p>` : "";
-  c.innerHTML = `
-    ${recent.length ? `<div class="section-h"><h2>New on arXiv</h2><span>last 30 days · accepted at ${v === "honor" ? "a venue as oral / spotlight" : v}</span></div>${list(recent)}` : ""}
-    <div class="section-h"><h2>${esc(title)}</h2><span>${confs.length ? `${items.length} papers matching my interests · ranked by topic match${v === "honor" ? "" : ", orals & spotlights boosted"}` : ""}</span></div>
-    ${noArchive}
-    ${years.length > 1 ? `<div class="filters"><span class="lbl">Year</span>${["all", ...years].map(y => `<button class="chip ${String(state.confYear) === String(y) ? "on" : ""}" data-y="${y}">${y === "all" ? "All years" : y}</button>`).join("")}</div>` : ""}
-    <div class="compact">${confs.length ? list(shown, {compact: true}) : ""}</div>
-    ${items.length > shown.length ? `<button class="more" id="cmore">Show ${Math.min(50, items.length - shown.length)} more</button>` : ""}
-    ${confs.length ? `<p class="note" style="margin-top:14px">From ${confs.map(k => ({CoRL: "PMLR proceedings", RSS: "roboticsproceedings.org", ICLR: "iclr.cc", ICML: "icml.cc", NeurIPS: "neurips.cc"})[k] + " (" + k + ")").join(", ")}. CoRL 2026 isn't in the proceedings yet; its papers show up above as they appear on arXiv.</p>` : ""}`;
-  c.querySelectorAll("[data-y]").forEach(b => b.onclick = () => { state.confYear = b.dataset.y; state.confN = 25; renderConf(c); });
-  const m = $("cmore"); if (m) m.onclick = () => { state.confN += 50; renderConf(c); };
+  const nHon = pool.filter(p => /\((oral|spotlight|best)/i.test(p.venue)).length;
+  const fromDigest = pool.length - (arch[Y] || []).length;
+  c.innerHTML = `<div class="filters"><span class="lbl">Conference</span>${ARCHIVE.map(x => `<button class="chip conf ${x === k ? "on" : ""}" data-cs="${x}">${x}</button>`).join("")}</div>
+    <div class="filters"><span class="lbl">Year</span>${years.map(y => `<button class="chip ${y === Y ? "on" : ""}" data-cy="${y}">${y}</button>`).join("") || '<span class="note" style="margin:0">no data yet</span>'}
+      <button class="chip conf ${hon ? "on" : ""}" data-ch="1" style="margin-left:8px" title="Combine with any conference / year">★ Oral / Spotlight / Award <span style="opacity:.7">${nH}</span></button></div>
+    <section class="overview"><div class="kicker">${k} ${Y || ""}</div><h2>${k} ${Y || ""}</h2>
+      <p>Accepted ${k} ${Y || ""} papers that match my interests, ranked by topic fit with orals, spotlights and awards boosted.
+      ${(arch[Y] || []).length ? `From ${CONF_SRC[k]}.` : ""} ${fromDigest ? `${fromDigest} paper${fromDigest > 1 ? "s" : ""} from the daily arXiv feed (marked accepted at ${k} ${Y}).` : ""}
+      ${k === "ICRA" ? "ICRA 2023–2025 programs aren't publicly available; use 🔍 Search for those." : k === "IROS" ? "Only IROS 2025's program is publicly available." : ""}</p>
+      <div class="stats"><div><b>${items.length}</b>papers shown</div><div><b>${nHon}</b>oral / spotlight / award</div></div></section>
+    <div class="compact">${list(shown, {compact: true})}</div>
+    ${items.length > shown.length ? `<button class="more" id="cmore">Show ${Math.min(50, items.length - shown.length)} more</button>` : ""}`;
+  c.querySelectorAll("[data-cs]").forEach(b => b.onclick = () => { state.confSel = b.dataset.cs; state.confYear = null; state.confN = 25; renderConfTab(c); });
+  c.querySelectorAll("[data-cy]").forEach(b => b.onclick = () => { state.confYear = +b.dataset.cy; state.confN = 25; renderConfTab(c); });
+  c.querySelector("[data-ch]").onclick = () => { state.confHonor = !state.confHonor; state.confN = 25; renderConfTab(c); };
+  const m = $("cmore"); if (m) m.onclick = () => { state.confN += 50; renderConfTab(c); };
 }
 
 // ---------- Search (live: Semantic Scholar, fallback OpenAlex; plus my own digest) ----------
@@ -796,11 +858,12 @@ async function loadDay(i) {
 }
 
 async function setView(v) {
+  if (state.view === "impact" && !["all", "any", "honor"].includes(state.venue)) state.venue = "all";
   state.view = v;
   if (v === "impact" && !state.impact) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.impact = await getJSON("data/impact.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
-  } else if (!["daily", "impact", "search", "year"].includes(v) && !state.best) {
+  } else if (!["daily", "impact", "search", "year", "conf"].includes(v) && !state.best) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.best = await getJSON("data/best.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
   }
@@ -811,6 +874,7 @@ async function setView(v) {
   document.querySelectorAll(".tab").forEach(t => t.onclick = () => setView(t.dataset.view));
   $("prev").onclick = () => loadDay(state.cur + 1);
   $("next").onclick = () => loadDay(state.cur - 1);
+  getJSON("config.json").then(cfg => { $("followers").innerHTML = [...new Set(cfg.tracked_authors || [])].sort((a, b) => a.split(" ").pop().localeCompare(b.split(" ").pop())).map(a => `<span>${esc(a)}</span>`).join(""); }).catch(() => { $("followers").textContent = "(unavailable)"; });
   try { state.index = await getJSON("data/index.json"); } catch (e) { state.index = []; }
   if (!state.index.length) { $("content").innerHTML = '<p class="empty">No digests yet.</p>'; return; }
   const h = location.hash.slice(1), j = state.index.findIndex(d => d.date === h);

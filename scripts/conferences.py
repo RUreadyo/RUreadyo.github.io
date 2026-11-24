@@ -21,6 +21,7 @@ import json
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -33,10 +34,11 @@ UA = {"User-Agent": "Mozilla/5.0 (paper-digest)"}
 VIRTUAL = {"ICLR": "iclr", "ICML": "icml", "NeurIPS": "neurips"}
 CORL_PMLR = {2023: 229, 2024: 270, 2025: 305}
 RSS_VOL = {2023: "rss19", 2024: "rss20", 2025: "rss21", 2026: "rss22"}
-ROBOTICS = {"CoRL", "RSS"}
+ROBOTICS = {"CoRL", "RSS", "ICRA", "IROS"}
+PAPERCEPT = {"ICRA", "IROS"}  # programs on ras.papercept.net (only recent years are public)
 # keep at most this many per conference-year (ML venues have thousands of papers)
-CAP = {"CoRL": 400, "RSS": 250, "ICLR": 150, "ICML": 150, "NeurIPS": 150}
-MIN_SCORE = {"CoRL": 1, "RSS": 1, "ICLR": 10, "ICML": 10, "NeurIPS": 10}
+CAP = {"CoRL": 400, "RSS": 250, "ICLR": 150, "ICML": 150, "NeurIPS": 150, "ICRA": 300, "IROS": 250}
+MIN_SCORE = {"CoRL": 1, "RSS": 1, "ICLR": 10, "ICML": 10, "NeurIPS": 10, "ICRA": 7, "IROS": 7}
 HONOR_BONUS = {"Oral": 6, "Spotlight": 3, "Best Paper Award": 12, "Best Student Paper": 11, "Best Paper Finalist": 9}
 HONOR_RANK = ["Best Paper Award", "Best Student Paper", "Best Paper Finalist", "Oral", "Spotlight", ""]
 
@@ -171,6 +173,9 @@ def corl_honors(year):
 
     def lines(url):
         page = get(url, tries=2) or ""
+        if f"CoRL {year}" not in page:  # the current year lives on www.corl.org
+            alt = get(url.replace(f"https://{year}.corl.org", "https://www.corl.org"), tries=2) or ""
+            page = alt if f"CoRL {year}" in alt else page
         return [l.strip() for l in html.unescape(re.sub(r"<[^>]+>", "\n", page)).split("\n") if l.strip()]
 
     t = lines(f"https://{year}.corl.org/program/main-conference")
@@ -199,9 +204,103 @@ def corl_honors(year):
     return out
 
 
+def from_papercept(conf, year):
+    code = f"{conf}{year % 100:02d}"
+    base = f"https://ras.papercept.net/conferences/conferences/{code}/program/"
+    out, seen = [], set()
+    for n in range(1, 9):
+        raw = get(f"{base}{code}_ContentListWeb_{n}.html", binary=True, tries=2)
+        if not raw:
+            if n == 1:
+                return []
+            break
+        page = raw.decode("cp1252", "replace")
+        sessions = [(m.start(), html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))) for m in
+                    re.finditer(r'ProgramAtAGlanceWeb\.html#\w+" title="Click to go to the Program at a Glance"><b>(.*?)</b>', page, re.S)]
+        for m in re.finditer(r'<tr class="pHdr">(.*?)(?=<tr class="pHdr">|$)', page, re.S):
+            chunk = m.group(1)
+            t = re.search(r'class="pTtl">.*?<a [^>]*>(.*?)</a>', chunk, re.S)
+            if not t:
+                continue
+            title = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", t.group(1))).split())
+            k = norm(title)
+            if not title or k in seen:
+                continue
+            seen.add(k)
+            head = chunk.split('<div id="Ab')[0]
+            authors = [" ".join(reversed([x.strip() for x in html.unescape(a).split(",", 1)]))
+                       for a in re.findall(r'AuthorIndexWeb\.html#\d+" title="Click to go to the Author Index">([^<]+)</a>', head)]
+            ab = re.search(r"<strong>Abstract:</strong>(.*?)</div>", chunk, re.S)
+            anchor = re.search(r'<a name="([^"]+)">', chunk)
+            sess = next((name for pos, name in reversed(sessions) if pos < m.start()), "")
+            out.append({"title": title, "authors": authors,
+                        "abstract": " ".join(html.unescape(re.sub(r"<[^>]+>", " ", ab.group(1))).split()) if ab else "",
+                        "url": f"{base}{code}_ContentListWeb_{n}.html" + (f"#{anchor.group(1)}" if anchor else ""),
+                        "honor": "Best Paper Finalist" if re.search(r"award finalist", sess, re.I) else ""})
+        time.sleep(0.5)
+    return out
+
+
+ARXIV_CACHE = ROOT / "papers" / "data" / "cache" / "arxiv_titles.json"
+
+
+def arxiv_by_title(title, cache):
+    """Authors / abstract / id for a title via the arXiv API (3 s politeness delay; cached)."""
+    k = norm(title)
+    if k in cache:
+        return cache[k]
+    q = re.sub(r"[^A-Za-z0-9 ]", " ", title)
+    q = " AND ".join(f"ti:{w}" for w in q.split() if len(w) > 2)[:900]
+    raw = get("https://export.arxiv.org/api/query?" + urllib.parse.urlencode({"search_query": q, "max_results": 3}), tries=2) or ""
+    time.sleep(3)
+    hit = None
+    for e in raw.split("<entry>")[1:]:
+        t = " ".join(html.unescape(re.search(r"<title>(.*?)</title>", e, re.S).group(1)).split())
+        if norm(t) == k or (len(k) > 30 and (norm(t).startswith(k[:40]))):
+            hit = {"arxiv": re.search(r"<id>https?://arxiv.org/abs/([\d.]+)", e).group(1),
+                   "authors": [html.unescape(a) for a in re.findall(r"<name>(.*?)</name>", e)],
+                   "abstract": " ".join(html.unescape(re.search(r"<summary>(.*?)</summary>", e, re.S).group(1)).split())}
+            break
+    cache[k] = hit
+    return hit
+
+
+def from_corl_site(year):
+    """Accepted papers + oral/spotlight sessions from the CoRL website (used before PMLR publishes the volume)."""
+    page = None
+    for url in (f"https://{year}.corl.org/program/accepted-papers", "https://www.corl.org/program/accepted-papers"):
+        page = get(url, tries=2)
+        if page and f"CoRL {year}" in page:
+            break
+        page = None
+    if not page:
+        return []
+    page = html.unescape(page)
+    sess = [(m.start(), m.group(1)) for m in re.finditer(r'<h3[^>]*class="(oral|spotlight|poster)[^"]*"', page)]
+    best = {}
+    for m in re.finditer(r'<li class="paper"><a href="([^"]+)"[^>]*>(.*?)</a>', page, re.S):
+        title = clean_tex(" ".join(html.unescape(re.sub(r"<[^>]+>", "", m.group(2))).split()))
+        kind = next((k for pos, k in reversed(sess) if pos < m.start()), "poster")
+        honor = {"oral": "Oral", "spotlight": "Spotlight"}.get(kind, "")
+        k = norm(title)
+        if k not in best or HONOR_RANK.index(honor) < HONOR_RANK.index(best[k]["honor"]):
+            best[k] = {"title": title, "authors": [], "abstract": "", "url": m.group(1), "honor": honor}
+    cache = json.loads(ARXIV_CACHE.read_text()) if ARXIV_CACHE.exists() else {}
+    print(f"  CoRL {year} site: {len(best)} papers; looking up authors/abstracts on arXiv ({sum(norm(p['title']) not in cache for p in best.values())} new)")
+    for i, p in enumerate(best.values()):
+        hit = arxiv_by_title(p["title"], cache)
+        if hit:
+            p.update(authors=hit["authors"], abstract=hit["abstract"], arxiv=hit["arxiv"], pdf=f"https://arxiv.org/pdf/{hit['arxiv']}")
+        if i % 50 == 49:
+            ARXIV_CACHE.write_text(json.dumps(cache))
+    ARXIV_CACHE.write_text(json.dumps(cache))
+    return list(best.values())
+
+
 # ---------------------------------------------------------------- build
 def build(conf, year, comp, tracked):
-    src = from_virtual(conf, year) if conf in VIRTUAL else from_pmlr(year) if conf == "CoRL" else from_rss(year)
+    src = (from_virtual(conf, year) if conf in VIRTUAL else (from_pmlr(year) or from_corl_site(year)) if conf == "CoRL"
+           else from_papercept(conf, year) if conf in PAPERCEPT else from_rss(year))
     if not src:
         return None, None
     if conf == "CoRL":
@@ -215,7 +314,7 @@ def build(conf, year, comp, tracked):
         fp.keyword_score(q, comp, tracked)
         if not q["topics"] or q["kw_score"] < MIN_SCORE[conf]:
             continue
-        ax = arxiv_id(p.get("url"), p.get("code"))
+        ax = p.get("arxiv") or arxiv_id(p.get("url"), p.get("code"))
         tldr, summary = fp.extractive(p["abstract"]) if p["abstract"] else ("", "")
         venue = f"{conf} {year}" + (f" ({p['honor']})" if p["honor"] else "")
         scored.append({
@@ -233,7 +332,7 @@ def build(conf, year, comp, tracked):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", default="CoRL,RSS,ICLR,ICML,NeurIPS")
+    ap.add_argument("--only", default="CoRL,RSS,ICRA,IROS,ICLR,ICML,NeurIPS")
     ap.add_argument("--years", default=f"2023-{dt.date.today().year}")
     ap.add_argument("--refresh", action="store_true")
     a = ap.parse_args()
