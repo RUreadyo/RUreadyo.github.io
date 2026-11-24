@@ -155,8 +155,8 @@
 
   <div class="tabs" role="tablist">
     <button class="tab on" data-view="daily">Daily</button>
-    <button class="tab" data-view="week">Best of week</button>
     <button class="tab" data-view="month">Best of month</button>
+    <button class="tab" data-view="year">Best of year</button>
     <button class="tab" data-view="ml">Trending in ML</button>
     <button class="tab" data-view="impact">Most impactful</button>
     <button class="tab" data-view="search">🔍 Search</button>
@@ -201,7 +201,9 @@ function shortVenue(name) {
 }
 const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitation", Dex: "Dexterous", Tactile: "Tactile", RL: "RL", RLGen: "RL × Gen", FM: "VLA / FM", WM: "World models", Video: "Video gen", Control: "Control"};
 const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", venue: "all", showAll: false,
-  search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null };
+  search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null,
+  conf: {}, confYear: "all", confN: 25, bestYear: null, yearN: 40 };
+const ARCHIVE = ["CoRL", "RSS", "ICLR", "ICML", "NeurIPS"];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tc = t => `var(--t-${TOPICS[t] ? t : "Other"})`;
@@ -248,8 +250,10 @@ function card(p, opts = {}) {
     ${!opts.compact && sumText ? `<p class="summary">${esc(sumText)}</p>` : ""}
     ${!opts.compact && p.why ? `<p class="why">${esc(p.why)}</p>` : ""}
     <div class="links">
-      <a href="${esc(p.url)}" target="_blank" rel="noopener">arXiv</a>
-      <a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>
+      <a href="${esc(p.url)}" target="_blank" rel="noopener">${/arxiv\.org/.test(p.url) ? "arXiv" : /openreview/.test(p.url) ? "OpenReview" : "Paper"}</a>
+      ${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}
+      ${p.arxiv && !/arxiv\.org/.test(p.url) ? `<a href="https://arxiv.org/abs/${esc(p.arxiv)}" target="_blank" rel="noopener">arXiv</a>` : ""}
+      ${p.site ? `<a href="${esc(p.site)}" target="_blank" rel="noopener">Talk / poster</a>` : ""}
       ${p.project ? `<a href="${esc(p.project)}" target="_blank" rel="noopener">Project</a>` : ""}
       ${p.code ? `<a href="${esc(p.code)}" target="_blank" rel="noopener">Code</a>` : ""}
       ${p.day ? `<span class="day">${esc(fmtDate(p.day))}</span>` : ""}
@@ -289,7 +293,7 @@ function venueOk(v) {
   if (state.venue === "all") return true;
   if (!v) return false;
   if (state.venue === "any") return true;
-  if (state.venue === "honor") return /\((oral|spotlight|highlight|best paper[^)]*|outstanding[^)]*)\)/i.test(v);
+  if (state.venue === "honor") return /\((oral|spotlight|highlight|best[^)]*paper[^)]*|outstanding[^)]*)\)/i.test(v);
   return v.split(" ")[0] === state.venue && !/workshop/i.test(v);
 }
 function venueChips() {
@@ -297,7 +301,7 @@ function venueChips() {
     `<button class="chip conf ${state.venue === k ? "on" : ""}" data-v="${k}">${v}</button>`).join("");
 }
 function bindVenue(root, after) {
-  root.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.venue = b.dataset.v; after(); });
+  root.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.venue = b.dataset.v; state.confN = 25; after(); });
 }
 
 function filtersUI(withTopics = true) {
@@ -348,6 +352,8 @@ function renderContent() {
   const c = $("content");
   if (state.view === "impact") return renderImpact(c);
   if (state.view === "search") return renderSearch(c);
+  if (state.view === "year") return renderYear(c);
+  if (state.venue !== "all" && state.venue !== "any" && ["daily", "week", "month"].includes(state.view)) return renderConf(c);
   if (state.view === "daily") {
     const d = state.day; if (!d) return;
     const top = d.top_picks.filter(matches), rest = d.roundup.filter(matches);
@@ -399,12 +405,69 @@ function renderDates() {
 
 function render() {
   document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === state.view));
-  $("datebar").style.display = state.view === "daily" ? "" : "none";
+  $("datebar").style.display = state.view === "daily" && (state.venue === "all" || state.venue === "any") ? "" : "none";
   if (state.view === "search") $("filters").innerHTML = "";
   else filtersUI(state.view !== "ml" && state.view !== "impact");
   renderContent();
 }
 
+
+// ---------- Best of year: top conference papers per year across CoRL, RSS, ICLR, ICML, NeurIPS ----------
+async function renderYear(c) {
+  const need = ARCHIVE.filter(k => !state.conf[k]);
+  if (need.length) {
+    c.innerHTML = '<p class="empty">Loading…</p>';
+    await Promise.all(need.map(k => getJSON(`data/conf/${k}.json`).then(d => state.conf[k] = d).catch(() => state.conf[k] = {years: {}})));
+    if (state.view !== "year") return;
+  }
+  const all = ARCHIVE.flatMap(k => Object.values(state.conf[k].years || {}).flat());
+  const years = [...new Set(all.map(p => p.year))].sort((a, b) => b - a);
+  if (!years.includes(state.bestYear)) state.bestYear = years[0];
+  const Y = state.bestYear;
+  const items = all.filter(p => p.year === Y && matches(p)).sort((a, b) => b.score - a.score);
+  const shown = items.slice(0, state.yearN);
+  const confsY = ARCHIVE.filter(k => (state.conf[k].years || {})[Y]);
+  const per = Object.fromEntries(confsY.map(k => [k, items.filter(p => p.venue.startsWith(k + " ")).length]));
+  const honors = items.filter(p => /\((oral|spotlight|best)/i.test(p.venue));
+  c.innerHTML = `<div class="filters"><span class="lbl">Year</span>${years.map(y => `<button class="chip ${y === Y ? "on" : ""}" data-by="${y}">${y}</button>`).join("")}</div>
+    <section class="overview"><div class="kicker">${Y}</div><h2>Best of ${Y}</h2>
+      <p>The papers from ${confsY.join(", ")} ${Y} that best match my interests, ranked by topic fit with orals, spotlights and awards boosted. ${!confsY.includes("CoRL") && Y === new Date().getFullYear() ? "CoRL " + Y + " isn't in the proceedings yet; its papers appear in the daily digest as they hit arXiv." : ""}</p>
+      <div class="stats"><div><b>${items.length}</b>papers</div>${confsY.map(k => `<div><b>${per[k]}</b>${k}</div>`).join("")}<div><b>${honors.length}</b>oral / spotlight / award</div></div></section>
+    <div class="compact">${list(shown, {compact: true})}</div>
+    ${items.length > shown.length ? `<button class="more" id="ymore">Show ${Math.min(40, items.length - shown.length)} more</button>` : ""}`;
+  c.querySelectorAll("[data-by]").forEach(b => b.onclick = () => { state.bestYear = +b.dataset.by; state.yearN = 40; renderYear(c); });
+  const m = $("ymore"); if (m) m.onclick = () => { state.yearN += 40; renderYear(c); };
+}
+
+// ---------- Conference archive (data/conf/<CONF>.json, built by scripts/conferences.py) ----------
+async function renderConf(c) {
+  const v = state.venue, confs = v === "honor" ? ARCHIVE : ARCHIVE.includes(v) ? [v] : [];
+  const need = confs.filter(k => !state.conf[k]);
+  if (need.length || !state.best) {
+    c.innerHTML = '<p class="empty">Loading conference papers…</p>';
+    await Promise.all([...need.map(k => getJSON(`data/conf/${k}.json`).then(d => state.conf[k] = d).catch(() => state.conf[k] = {years: {}})),
+      state.best ? null : getJSON("data/best.json").then(b => state.best = b).catch(() => {})]);
+    if (state.venue !== v) return;
+  }
+  const recent = (state.best?.month || []).filter(matches);
+  const all = confs.flatMap(k => Object.values(state.conf[k].years || {}).flat());
+  const years = [...new Set(all.map(p => p.year))].sort((a, b) => b - a);
+  if (state.confYear !== "all" && !years.includes(+state.confYear)) state.confYear = "all";
+  const items = all.filter(p => (state.confYear === "all" || p.year === +state.confYear) && matches(p)).sort((a, b) => b.score - a.score);
+  const shown = items.slice(0, state.confN);
+  const title = v === "honor" ? "Orals, spotlights & awards" : `${v} papers`;
+  const noArchive = !confs.length ? `<p class="note">${v} proceedings are not openly indexed, so there is no archive for it yet. Use the 🔍 Search tab with the ${v} button to search all ${v} papers.</p>` : "";
+  c.innerHTML = `
+    ${recent.length ? `<div class="section-h"><h2>New on arXiv</h2><span>last 30 days · accepted at ${v === "honor" ? "a venue as oral / spotlight" : v}</span></div>${list(recent)}` : ""}
+    <div class="section-h"><h2>${esc(title)}</h2><span>${confs.length ? `${items.length} papers matching my interests · ranked by topic match${v === "honor" ? "" : ", orals & spotlights boosted"}` : ""}</span></div>
+    ${noArchive}
+    ${years.length > 1 ? `<div class="filters"><span class="lbl">Year</span>${["all", ...years].map(y => `<button class="chip ${String(state.confYear) === String(y) ? "on" : ""}" data-y="${y}">${y === "all" ? "All years" : y}</button>`).join("")}</div>` : ""}
+    <div class="compact">${confs.length ? list(shown, {compact: true}) : ""}</div>
+    ${items.length > shown.length ? `<button class="more" id="cmore">Show ${Math.min(50, items.length - shown.length)} more</button>` : ""}
+    ${confs.length ? `<p class="note" style="margin-top:14px">From ${confs.map(k => ({CoRL: "PMLR proceedings", RSS: "roboticsproceedings.org", ICLR: "iclr.cc", ICML: "icml.cc", NeurIPS: "neurips.cc"})[k] + " (" + k + ")").join(", ")}. CoRL 2026 isn't in the proceedings yet; its papers show up above as they appear on arXiv.</p>` : ""}`;
+  c.querySelectorAll("[data-y]").forEach(b => b.onclick = () => { state.confYear = b.dataset.y; state.confN = 25; renderConf(c); });
+  const m = $("cmore"); if (m) m.onclick = () => { state.confN += 50; renderConf(c); };
+}
 
 // ---------- Search (live: Semantic Scholar, fallback OpenAlex; plus my own digest) ----------
 const S2F = "title,authors,venue,publicationVenue,year,publicationDate,citationCount,externalIds,url,openAccessPdf,abstract";
@@ -414,7 +477,7 @@ function renderSearch(c) {
   const S = state.search, yNow = new Date().getFullYear();
   const confChips = Object.keys(CONF).map(k => `<button class="chip conf ${S.confs.includes(k) ? "on" : ""}" data-c="${k}">${k}</button>`).join("");
   c.innerHTML = `<form class="sform" id="sform">
-      <div class="qrow"><input id="sq" type="search" placeholder="Search any paper: e.g. diffusion policy, in-hand rotation, Chi Cheng…" value="${esc(S.q)}" autofocus><button type="submit">Search</button></div>
+      <div class="qrow"><input id="sq" type="search" placeholder="Title words, author, or &quot;exact phrase&quot; (e.g. dexskin, &quot;diffusion policy&quot;, Shuran Song)" value="${esc(S.q)}" autofocus><button type="submit">Search</button></div>
       <div class="filters"><span class="lbl">Where</span><button type="button" class="chip conf ${!S.confs.length && !S.arxiv ? "on" : ""}" data-c="">Everywhere</button>
         <button type="button" class="chip conf ${S.arxiv ? "on" : ""}" data-c="arxiv">arXiv</button>${confChips}</div>
       <div class="filters" style="margin:0"><span class="lbl">Years</span>
@@ -423,7 +486,7 @@ function renderSearch(c) {
         <select id="ss">${[["relevance", "Relevance"], ["citations", "Most cited"], ["newest", "Newest"]].map(([k, v]) => `<option value="${k}" ${S.sort === k ? "selected" : ""}>${v}</option>`).join("")}</select>
       </div>
     </form>
-    <div id="sres">${S.q ? "" : `<p class="note">Searches the whole literature: arXiv preprints and published conference/journal papers (CoRL, RSS, ICRA, ICML, NeurIPS, ICLR, IROS, CVPR…). Pick one or more conferences to restrict the search. Results from my own digest are shown first.</p>`}</div>`;
+    <div id="sres">${S.q ? "" : `<p class="note">Instant search over every accepted paper at CoRL, RSS, ICLR, ICML and NeurIPS (2023 onward, from the official proceedings) plus my daily digest, then a live search of everything else (arXiv preprints, journals, other venues). Matches titles, authors and abstracts; use quotes for an exact phrase. Pick conferences to narrow it down.</p>`}</div>`;
   c.querySelectorAll("[data-c]").forEach(b => b.onclick = e => {
     e.preventDefault(); const k = b.dataset.c;
     if (!k) { S.confs = []; S.arxiv = false; }
@@ -457,24 +520,72 @@ function extLinks() {
     <a href="https://openreview.net/search?term=${encodeURIComponent(S.q)}&group=all&content=all&source=all" target="_blank" rel="noopener">OpenReview</a></div>`;
 }
 
+const normT = t => (t || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 async function loadAllPapers() {
   if (state.allPapers) return state.allPapers;
-  const days = await Promise.all(state.index.map(d => getJSON(`data/days/${d.date}.json`).catch(() => null)));
+  const [days] = await Promise.all([
+    Promise.all(state.index.map(d => getJSON(`data/days/${d.date}.json`).catch(() => null))),
+    ...ARCHIVE.filter(k => !state.conf[k]).map(k => getJSON(`data/conf/${k}.json`).then(d => state.conf[k] = d).catch(() => state.conf[k] = {years: {}}))]);
   const seen = new Set(), all = [];
-  for (const d of days) if (d) for (const p of [...d.top_picks, ...d.roundup]) if (!seen.has(p.id)) { seen.add(p.id); all.push({...p, day: d.date}); }
+  const add = p => { const k = normT(p.title); if (k && !seen.has(k)) { seen.add(k); all.push(p); } };
+  for (const d of days) if (d) for (const p of [...d.top_picks, ...d.roundup]) add({...p, day: d.date, kind: "digest"});
+  for (const k of ARCHIVE) for (const p of Object.values(state.conf[k].years || {}).flat()) add({...p, kind: "archive"});
+  state.seenTitles = seen;
   return (state.allPapers = all);
 }
 
-function localMatches(all) {
-  const S = state.search, words = S.q.toLowerCase().split(/\s+/).filter(Boolean);
+// every accepted paper (title + authors) from data/conf/full/<CONF>.json, loaded on first search
+async function loadFull(confs) {
+  state.full = state.full || {};
+  await Promise.all(confs.filter(k => !state.full[k]).map(k => getJSON(`data/conf/full/${k}.json`).then(d => {
+    const rows = [];
+    for (const [y, list] of Object.entries(d.years || {})) for (const [title, au, honor, url] of list)
+      rows.push({title, authorsStr: au, authors: au ? au.split(", ") : [], year: +y, url, kind: "full",
+        venue: `${k} ${y}` + (honor ? ` (${honor})` : "")});
+    state.full[k] = rows;
+  }).catch(() => state.full[k] = [])));
+}
+
+function parseQuery(q) {
+  const phrases = [...q.matchAll(/"([^"]+)"/g)].map(m => m[1].toLowerCase().trim()).filter(Boolean);
+  const words = q.replace(/"[^"]*"/g, " ").toLowerCase().split(/[\s,]+/).filter(w => w.length > 1 || /\d/.test(w));
+  return {phrases, words};
+}
+
+function scorePaper(p, Q) {
+  const t = p.title.toLowerCase(), a = (p.authorsStr || (p.authors || []).join(", ")).toLowerCase();
+  const ab = ((p.abstract || "") + " " + (p.tldr || "")).toLowerCase();
+  const wb = (h, w) => new RegExp("(^|[^a-z0-9])" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(h);  // word-prefix match
+  let sc = 0, hit = 0;
+  for (const ph of Q.phrases) { if (t.includes(ph)) { sc += 60; hit++; } else if (a.includes(ph)) { sc += 50; hit++; } else if (ab.includes(ph)) { sc += 12; hit++; } }
+  for (const w of Q.words) {
+    if (wb(t, w)) { sc += 14; hit++; } else if (wb(a, w)) { sc += 18; hit++; } else if (wb(ab, w)) { sc += 3; hit++; } else if (t.includes(w)) { sc += 6; hit++; }
+  }
+  const need = Q.phrases.length + Q.words.length;
+  if (!hit) return null;
+  const all = hit === need;
+  if (all && Q.words.length > 1 && Q.words.every(w => wb(t, w))) sc += 30;          // every word in the title
+  if (all && t.startsWith(Q.words[0] || "\u0000")) sc += 10;
+  sc += /\((oral|spotlight|highlight)/i.test(p.venue || "") ? 4 : /\(best/i.test(p.venue || "") ? 8 : 0;
+  sc += p.kind === "digest" ? (p.relevance || 0) * 0.8 : p.kind === "archive" ? Math.min(10, (p.score || 0) / 6) : 0;
+  return {sc, all};
+}
+
+function localMatches(pool) {
+  const S = state.search, Q = parseQuery(S.q);
   const [y0, y1] = (yearRange() || "0-9999").split("-").map(Number);
-  return all.filter(p => {
-    const y = +(p.day || "").slice(0, 4);
-    if (y < y0 || y > y1) return false;
-    if (S.confs.length && (/workshop/i.test(p.venue || "") || !S.confs.some(k => (p.venue || "").split(" ")[0] === k))) return false;
-    const hay = [p.title, (p.authors || []).join(" "), p.abstract, p.tldr].join(" ").toLowerCase();
-    return words.every(w => hay.includes(w));
-  }).sort((a, b) => (b.relevance || 0) - (a.relevance || 0)).slice(0, 8);
+  const scored = [], partial = [];
+  for (const p of pool) {
+    const y = p.year || +(p.day || "").slice(0, 4);
+    if (y < y0 || y > y1) continue;
+    if (S.confs.length && (/workshop/i.test(p.venue || "") || !S.confs.some(k => (p.venue || "").split(" ")[0] === k))) continue;
+    if (S.arxiv && !(p.arxiv || /arxiv\.org/.test(p.url || ""))) continue;
+    const r = scorePaper(p, Q); if (!r) continue;
+    (r.all ? scored : partial).push({p, sc: r.sc, y});
+  }
+  const out = scored.length ? scored : partial;
+  const cmp = S.sort === "newest" ? (a, b) => b.y - a.y || b.sc - a.sc : (a, b) => b.sc - a.sc;
+  return {items: out.sort(cmp).map(x => x.p), loose: !scored.length && partial.length > 0};
 }
 
 async function s2Search() {
@@ -529,18 +640,36 @@ async function runSearch() {
   if (!S.q) return;
   const token = Symbol(); state.stoken = token;
   box.innerHTML = `<p class="empty">Searching…</p>`;
+  const confs = S.arxiv ? [] : S.confs.length ? S.confs.filter(k => ARCHIVE.includes(k)) : ARCHIVE;
+  const [rich] = await Promise.all([loadAllPapers().catch(() => []), loadFull(confs)]);
+  if (state.stoken !== token) return;
+  const seen = new Set(rich.map(p => normT(p.title)));
+  const pool = [...rich, ...confs.flatMap(k => state.full[k] || []).filter(p => !seen.has(normT(p.title)))];
+  const L = localMatches(pool);
+  state.sres = {local: L.items, loose: L.loose, n: 30, remote: null, source: "", err: "", pool: pool.length};
+  showResults();
+  // live search for everything else (preprints, other venues)
   let remote = [], source = "Semantic Scholar", err = "";
-  const local = localMatches(await loadAllPapers().catch(() => []));
   try { remote = await s2Search(); }
   catch (e) {
     source = "OpenAlex";
-    try { remote = await oaSearch(); } catch (e2) { err = "Live search is unavailable right now (both Semantic Scholar and OpenAlex refused the request — usually a temporary rate limit). Try again in a minute, or use the links below."; }
+    try { remote = await oaSearch(); } catch (e2) { err = "Live search is busy right now (Semantic Scholar and OpenAlex rate-limit anonymous use). Conference results above are unaffected; use the links for more."; }
   }
   if (source === "OpenAlex" && S.confs.length) remote = remote.filter(p => S.confs.some(k => CONF[k].rx.test(p.rawVenue)));
   if (S.arxiv) remote = remote.filter(p => p.arxiv);
+  const shownT = new Set(L.items.slice(0, 200).map(p => normT(p.title)));
   if (state.stoken !== token) return;
-  state.sres = {local, remote: remote.slice(0, 40), source, err};
+  Object.assign(state.sres, {remote: remote.filter(p => !shownT.has(normT(p.title))).slice(0, 40), source, err});
   showResults();
+}
+
+function fullRow(p) {
+  return `<article class="card"><div class="meta-row">${venueBadge(p.venue)}</div>
+    <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
+    <p class="authors" style="margin:0">${esc(p.authorsStr)}</p>
+    <div class="links" style="margin-top:8px"><a href="${esc(p.url)}" target="_blank" rel="noopener">${/openreview/.test(p.url) ? "OpenReview" : "Paper"}</a>
+      <a href="https://scholar.google.com/scholar?q=${encodeURIComponent('"' + p.title + '"')}" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://arxiv.org/search/?query=${encodeURIComponent(p.title)}&searchtype=title" target="_blank" rel="noopener">Find on arXiv</a></div></article>`;
 }
 
 function resultCard(p) {
@@ -556,11 +685,16 @@ function resultCard(p) {
 
 function showResults() {
   const r = state.sres, S = state.search, box = $("sres"); if (!r || !box) return;
-  const where = S.arxiv ? "arXiv" : S.confs.length ? S.confs.join(", ") : "everywhere";
+  const where = S.arxiv ? "arXiv" : S.confs.length ? S.confs.join(", ") : "CoRL, RSS, ICLR, ICML, NeurIPS + my digest";
+  const shown = r.local.slice(0, r.n);
   box.innerHTML = extLinks() +
-    (r.local.length ? `<div class="section-h"><h2>In my digest</h2><span>${r.local.length} match${r.local.length > 1 ? "es" : ""} with summaries</span></div>${r.local.map(p => card(p, {compact: true})).join("")}` : "") +
-    `<div class="section-h"><h2>All papers</h2><span>${where} · ${r.remote.length} results · via ${r.source}</span></div>` +
-    (r.err ? `<p class="empty">${esc(r.err)}</p>` : r.remote.length ? r.remote.map(resultCard).join("") : `<p class="empty">No results. Try fewer words or a wider year range.</p>`);
+    `<div class="section-h"><h2>Conference papers &amp; my digest</h2><span>${r.local.length.toLocaleString()} match${r.local.length === 1 ? "" : "es"} in ${r.pool.toLocaleString()} papers · ${esc(where)}</span></div>` +
+    (r.loose ? `<p class="note">No paper matches every word; showing partial matches.</p>` : "") +
+    `<div class="compact">${shown.map(p => p.kind === "full" ? fullRow(p) : card(p, {compact: true})).join("") || '<p class="empty">No conference papers match. Try fewer words.</p>'}</div>` +
+    (r.local.length > shown.length ? `<button class="more" id="smore">Show ${Math.min(30, r.local.length - shown.length)} more</button>` : "") +
+    `<div class="section-h"><h2>More from the literature</h2><span>${r.remote ? `${r.remote.length} other results · via ${r.source}` : "searching…"}</span></div>` +
+    (r.remote == null ? '<p class="empty">Searching Semantic Scholar…</p>' : r.err ? `<p class="empty">${esc(r.err)}</p>` : r.remote.length ? r.remote.map(resultCard).join("") : `<p class="empty">Nothing else found.</p>`);
+  const m = $("smore"); if (m) m.onclick = () => { r.n += 30; showResults(); };
 }
 
 async function getJSON(u) { const r = await fetch(u, {cache: "no-cache"}); if (!r.ok) throw new Error(u); return r.json(); }
@@ -579,7 +713,7 @@ async function setView(v) {
   if (v === "impact" && !state.impact) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.impact = await getJSON("data/impact.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
-  } else if (!["daily", "impact", "search"].includes(v) && !state.best) {
+  } else if (!["daily", "impact", "search", "year"].includes(v) && !state.best) {
     $("content").innerHTML = '<p class="empty">Loading…</p>';
     try { state.best = await getJSON("data/best.json"); } catch (e) { $("content").innerHTML = '<p class="empty">Not available yet.</p>'; return; }
   }

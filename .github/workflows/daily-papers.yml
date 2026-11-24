@@ -37,6 +37,11 @@ jobs:
           except FileNotFoundError:
               sys.exit(0)
           PY
+      - name: Update conference archive (new proceedings only; weekly)
+        continue-on-error: true
+        run: |
+          [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] || exit 0
+          timeout 1500 python scripts/conferences.py || true
       - name: Commit digest
         run: |
           git config user.name "paper-digest-bot"
