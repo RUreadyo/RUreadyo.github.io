@@ -77,6 +77,14 @@
     .ext { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); margin-top: 4px; }
     .ext a { border: 1px solid var(--line); border-radius: 7px; padding: 3px 10px; color: var(--fg-2); font-weight: 500; }
     .note { color: var(--muted); font-size: 13px; margin: -6px 0 14px; }
+    .links .lk { border: 1px solid var(--line); border-radius: 7px; padding: 3px 10px; color: var(--fg-2); font: 500 13px Inter, sans-serif; background: none; cursor: pointer; }
+    .links .lk:hover { border-color: var(--accent); color: var(--accent); }
+    .links .lk.in { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .bibbar { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 50; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center;
+      background: var(--fg); color: var(--bg); border-radius: 14px; padding: 10px 14px; box-shadow: 0 8px 30px rgba(0,0,0,.25); font-size: 14px; max-width: calc(100vw - 32px); }
+    .bibbar button { border: 0; border-radius: 8px; padding: 6px 12px; font: 600 13px Inter, sans-serif; cursor: pointer; background: var(--bg); color: var(--fg); }
+    .bibbar button.ghost { background: transparent; color: var(--bg); text-decoration: underline; }
+    .toast { position: fixed; left: 50%; top: 20px; transform: translateX(-50%); z-index: 60; background: var(--green); color: #fff; padding: 8px 16px; border-radius: 10px; font: 600 14px Inter, sans-serif; box-shadow: var(--shadow); }
     .toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--fg-2); cursor: pointer; user-select: none; }
 
     .overview { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; box-shadow: var(--shadow); margin-bottom: 28px; position: relative; overflow: hidden; }
@@ -172,7 +180,7 @@
   <div id="content"><p class="empty">Loading…</p></div>
 
   <footer>
-    Ranked from arXiv cs.RO plus robot-relevant cs.LG / cs.CV / cs.AI using my interest profile and the groups I follow (highlighted in gold). Summaries are written by Claude when available, otherwise extracted from the abstract. Venues come from arXiv comments and Semantic Scholar, and main conferences (CoRL, RSS, ICRA, ICML, NeurIPS, ICLR) are ranked up. Trending ML comes from Hugging Face Daily Papers. "Most impactful" ranks the last 10 years by OpenAlex citation counts.
+    Ranked from arXiv cs.RO plus robot-relevant cs.LG / cs.CV / cs.AI using my interest profile and the groups I follow (their authors are highlighted in gold with a ★ badge; the list is tracked_authors in papers/config.json). Summaries are written by Claude when available, otherwise extracted from the abstract. Venues come from arXiv comments and Semantic Scholar, and main conferences (CoRL, RSS, ICRA, ICML, NeurIPS, ICLR) are ranked up. Trending ML comes from Hugging Face Daily Papers. "Most impactful" ranks the last 10 years by OpenAlex citation counts.
   </footer>
 </div>
 
@@ -239,7 +247,7 @@ function card(p, opts = {}) {
   const t = (p.topics || [])[0];
   const pills = (p.topics || []).slice(0, 2).map(x => `<span class="pill" style="--c:${tc(x)}">${esc(TOPICS[x] || x)}</span>`).join("");
   const rel = p.relevance != null ? `<span class="rel" title="Relevance to my interests">relevance <span class="bar"><i style="width:${p.relevance * 10}%"></i></span> ${p.relevance}/10</span>` : "";
-  const follow = p.tracked_authors?.length ? `<span class="badge follow">★ Followed group</span>` : "";
+  const follow = p.tracked_authors?.length ? `<span class="badge follow" title="Author from a group I follow (papers/config.json → tracked_authors)">★ ${esc(p.tracked_authors.slice(0, 2).join(", "))}${p.tracked_authors.length > 2 ? " +" + (p.tracked_authors.length - 2) : ""}</span>` : "";
   const cite = p.citations ? `<span class="badge cite">${p.citations} citations</span>` : "";
   const sumText = p.summary && p.summary !== p.tldr ? p.summary : "";
   return `<article class="card" style="--tc:${tc(t)}">
@@ -256,6 +264,7 @@ function card(p, opts = {}) {
       ${p.site ? `<a href="${esc(p.site)}" target="_blank" rel="noopener">Talk / poster</a>` : ""}
       ${p.project ? `<a href="${esc(p.project)}" target="_blank" rel="noopener">Project</a>` : ""}
       ${p.code ? `<a href="${esc(p.code)}" target="_blank" rel="noopener">Code</a>` : ""}
+      ${bibBtns(p)}
       ${p.day ? `<span class="day">${esc(fmtDate(p.day))}</span>` : ""}
     </div>
     <details><summary>${opts.compact && sumText ? "Summary & abstract" : "Abstract"}</summary>${opts.compact && sumText ? `<p><b>Summary.</b> ${esc(sumText)}</p>` : ""}${opts.compact && p.why ? `<p><b>Why it matters.</b> ${esc(p.why)}</p>` : ""}<p>${esc(p.abstract)}</p></details>
@@ -272,6 +281,7 @@ function mlCard(p) {
       <a href="${esc(p.url)}" target="_blank" rel="noopener">arXiv</a>
       ${p.github ? `<a href="${esc(p.github)}" target="_blank" rel="noopener">Code</a>` : ""}
       ${p.project ? `<a href="${esc(p.project)}" target="_blank" rel="noopener">Project</a>` : ""}
+      ${bibBtns(p)}
     </div>
   </article>`;
 }
@@ -328,7 +338,7 @@ function impactCard(p, i) {
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
     <p class="authors">${authors(p)}</p>
     ${p.tldr ? `<p class="summary">${esc(p.tldr)}</p>` : ""}
-    <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">Paper</a>${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}</div>
+    <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">Paper</a>${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}${bibBtns(p)}</div>
     ${p.abstract ? `<details><summary>Abstract</summary><p>${esc(p.abstract)}</p></details>` : ""}
   </article>`;
 }
@@ -411,6 +421,83 @@ function render() {
   renderContent();
 }
 
+
+// ---------- BibTeX: per-paper copy + a reading list kept in this browser ----------
+const BOOK = {CoRL: "Conference on Robot Learning (CoRL)", RSS: "Robotics: Science and Systems (RSS)",
+  ICRA: "IEEE International Conference on Robotics and Automation (ICRA)", IROS: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  ICML: "International Conference on Machine Learning (ICML)", NeurIPS: "Advances in Neural Information Processing Systems (NeurIPS)",
+  ICLR: "International Conference on Learning Representations (ICLR)", CVPR: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  ICCV: "IEEE/CVF International Conference on Computer Vision (ICCV)", ECCV: "European Conference on Computer Vision (ECCV)",
+  AAAI: "AAAI Conference on Artificial Intelligence", Humanoids: "IEEE-RAS International Conference on Humanoid Robots (Humanoids)"};
+const JOURNAL = {"RA-L": "IEEE Robotics and Automation Letters", "T-RO": "IEEE Transactions on Robotics", IJRR: "The International Journal of Robotics Research",
+  "Science Robotics": "Science Robotics", TMLR: "Transactions on Machine Learning Research", JMLR: "Journal of Machine Learning Research",
+  Nature: "Nature", Science: "Science", TPAMI: "IEEE Transactions on Pattern Analysis and Machine Intelligence"};
+const BIBREG = new Map();
+let bibList = []; try { bibList = JSON.parse(localStorage.getItem("biblist") || "[]"); } catch (e) {}
+const bibKeyOf = p => normT(p.title).slice(0, 60);
+
+function bibBtns(p) {
+  const k = bibKeyOf(p); if (!k) return "";
+  BIBREG.set(k, {title: p.title, authors: p.authors?.length ? p.authors : (p.authorsStr || "").split(", ").filter(Boolean), venue: p.venue || "",
+    year: p.year, day: p.day || p.date, url: p.url, arxiv: p.arxiv || ((p.url || "").match(/arxiv\.org\/abs\/(\d{4}\.\d{4,5})/) || [])[1] || (/^\d{4}\.\d{4,5}$/.test(p.id || "") ? p.id : ""),
+    primary: p.primary});
+  const inList = bibList.some(x => bibKeyOf(x) === k);
+  return `<button class="lk" data-bib="${k}" title="Copy BibTeX">BibTeX</button><button class="lk ${inList ? "in" : ""}" data-sel="${k}" title="Add to my BibTeX list">${inList ? "✓ In list" : "+ List"}</button>`;
+}
+
+function bibtex(p) {
+  const au = (p.authors || []).filter(a => a && a !== "…");
+  const etal = au.some(a => /et al\.?$/.test(a));
+  const names = au.map(a => a.replace(/\s*et al\.?$/, "")).filter(Boolean);
+  const m = (p.venue || "").match(/^(.+?)\s+((?:19|20)\d\d)\b/);
+  const vname = m ? m[1] : (p.venue || "").replace(/\s*\(.*$/, "");
+  const workshop = /workshop/i.test(p.venue || "");
+  const year = (m && m[2]) || p.year || (p.arxiv ? "20" + p.arxiv.slice(0, 2) : (p.day || "").slice(0, 4)) || "";
+  const last = (names[0] || "anon").split(/\s+/).pop().toLowerCase().normalize("NFD").replace(/[^a-z]/g, "") || "anon";
+  const word = (p.title.toLowerCase().match(/[a-z]{4,}/g) || ["paper"]).find(w => !["with", "from", "towards", "toward", "learning", "using", "via"].includes(w)) || "paper";
+  const f = [["title", `{${p.title}}`], ["author", names.join(" and ") + (etal ? " and others" : "")], ["year", year]];
+  let type = "misc";
+  if (!workshop && BOOK[vname]) { type = "inproceedings"; f.push(["booktitle", BOOK[vname]]); }
+  else if (!workshop && JOURNAL[vname]) { type = "article"; f.push(["journal", JOURNAL[vname]]); }
+  else if (vname && !/^arxiv/i.test(vname)) f.push(["note", p.venue]);
+  if (p.arxiv) { f.push(["eprint", p.arxiv], ["archivePrefix", "arXiv"]); if (p.primary) f.push(["primaryClass", p.primary]); }
+  if (p.url) f.push(["url", p.url]);
+  return `@${type}{${last}${year}${word},\n` + f.filter(([, v]) => v).map(([k, v]) => `  ${k} = {${v}}`).join(",\n") + "\n}";
+}
+
+function toast(msg) {
+  const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t);
+  setTimeout(() => t.remove(), 1600);
+}
+async function copyText(txt) {
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch (e) {
+    const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch (e2) {} ta.remove(); return ok;
+  }
+}
+function saveList() { try { localStorage.setItem("biblist", JSON.stringify(bibList)); } catch (e) {} renderBibBar(); }
+function renderBibBar() {
+  let bar = $("bibbar");
+  if (!bibList.length) { if (bar) bar.remove(); return; }
+  if (!bar) { bar = document.createElement("div"); bar.id = "bibbar"; bar.className = "bibbar"; document.body.appendChild(bar); }
+  bar.innerHTML = `<span>📚 <b>${bibList.length}</b> paper${bibList.length > 1 ? "s" : ""} in list</span>
+    <button id="bibcopy">Copy BibTeX</button><button id="bibdl">Download .bib</button><button class="ghost" id="bibclear">Clear</button>`;
+  const all = () => bibList.map(bibtex).join("\n\n") + "\n";
+  $("bibcopy").onclick = async () => toast(await copyText(all()) ? `Copied ${bibList.length} BibTeX entries` : "Copy failed");
+  $("bibdl").onclick = () => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([all()], {type: "text/plain"})); a.download = "papers.bib"; a.click(); };
+  $("bibclear").onclick = () => { bibList = []; saveList(); document.querySelectorAll("[data-sel].in").forEach(b => { b.classList.remove("in"); b.textContent = "+ List"; }); };
+}
+document.addEventListener("click", async e => {
+  const b = e.target.closest("[data-bib],[data-sel]"); if (!b) return;
+  const k = b.dataset.bib || b.dataset.sel, p = BIBREG.get(k); if (!p) return;
+  if (b.dataset.bib) { toast(await copyText(bibtex(p)) ? "BibTeX copied" : "Copy failed"); return; }
+  const i = bibList.findIndex(x => bibKeyOf(x) === k);
+  if (i >= 0) bibList.splice(i, 1); else bibList.push(p);
+  document.querySelectorAll(`[data-sel="${k}"]`).forEach(x => { x.classList.toggle("in", i < 0); x.textContent = i < 0 ? "✓ In list" : "+ List"; });
+  saveList();
+});
+renderBibBar();
 
 // ---------- Best of year: top conference papers per year across CoRL, RSS, ICLR, ICML, NeurIPS ----------
 async function renderYear(c) {
@@ -669,7 +756,7 @@ function fullRow(p) {
     <p class="authors" style="margin:0">${esc(p.authorsStr)}</p>
     <div class="links" style="margin-top:8px"><a href="${esc(p.url)}" target="_blank" rel="noopener">${/openreview/.test(p.url) ? "OpenReview" : "Paper"}</a>
       <a href="https://scholar.google.com/scholar?q=${encodeURIComponent('"' + p.title + '"')}" target="_blank" rel="noopener">Scholar</a>
-      <a href="https://arxiv.org/search/?query=${encodeURIComponent(p.title)}&searchtype=title" target="_blank" rel="noopener">Find on arXiv</a></div></article>`;
+      <a href="https://arxiv.org/search/?query=${encodeURIComponent(p.title)}&searchtype=title" target="_blank" rel="noopener">Find on arXiv</a>${bibBtns(p)}</div></article>`;
 }
 
 function resultCard(p) {
@@ -678,7 +765,7 @@ function resultCard(p) {
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
     <p class="authors">${authors(p)}</p>
     ${p.abstract ? `<p class="summary">${esc(p.abstract.length > 300 ? p.abstract.slice(0, 300).replace(/\s\S*$/, "") + "…" : p.abstract)}</p>` : ""}
-    <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">${p.arxiv ? "arXiv" : "Paper"}</a>${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}${p.s2 ? `<a href="${esc(p.s2)}" target="_blank" rel="noopener">Semantic Scholar</a>` : ""}</div>
+    <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">${p.arxiv ? "arXiv" : "Paper"}</a>${p.pdf ? `<a href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ""}${p.s2 ? `<a href="${esc(p.s2)}" target="_blank" rel="noopener">Semantic Scholar</a>` : ""}${bibBtns(p)}</div>
     ${p.abstract && p.abstract.length > 300 ? `<details><summary>Full abstract</summary><p>${esc(p.abstract)}</p></details>` : ""}
   </article>`;
 }

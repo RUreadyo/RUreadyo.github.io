@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-24T22:54:33+00:00",
+ "generated_at": "2026-11-24T23:31:39+00:00",
  "ranker": "Claude",
  "overview": "The strongest day of the batch for core interests. DexDuet learns contact-preserving bimanual dexterity from a single human demo, and DelayOPSD fixes asynchronous action-chunk execution by distilling a synchronous teacher on on-policy rollouts. OVOGO (offline RL for flow VLAs), iTDM (fixing baseline drift in diffusion RL) and SOAR (one-step DCT action generation) cover the generative-policy side, while EgoStudy gives controlled evidence on scaling egocentric human data. Human-data-driven world models (Native LAM, DexLatentWorld, VeriTouch) form a connecting theme.",
  "stats": {
@@ -39,8 +39,7 @@
    "tldr": "DexDuet learns contact-preserving bimanual dexterous RL policies from a single human demo with interaction rewards and an assisted curriculum.",
    "summary": "Object-tracking rewards let robots contact wrong parts or slide fingers. DexDuet adds two interaction rewards preserving human hand-object contacts, factorizes bimanual control into weight-sharing per-hand policies conditioned on each other, and uses assisted reference-state initialization. It is evaluated across four bimanual benchmarks.",
    "why": "Bimanual dexterity from human demonstrations with RL is exactly my core area.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30477",
@@ -70,7 +69,8 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL"
+    "RL",
+    "Dex"
    ],
    "kw_score": 29,
    "relevance": 8,
@@ -78,8 +78,7 @@
    "tldr": "OVOGO does offline RL for flow VLAs by separating offline critic learning from on-policy resampling of the generative process.",
    "summary": "Collecting new robot interactions for flow-VLA improvement is costly, but fresh generation trajectories can be resampled cheaply at replay observations. OVOGO learns a Return-Anchored Ranking Critic combining in-sample distributional value learning with guarded local ranking, then optimizes the flow policy on-policy over generated actions. It improves flow VLAs from logged experience.",
    "why": "Offline RL fine-tuning of flow-matching policies is a core RL+generative topic.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30490",
@@ -117,8 +116,7 @@
    "tldr": "EgoStudy runs controlled experiments on how egocentric human data scale, diversity and processing affect VLA and world-action-model pretraining.",
    "summary": "The value of egocentric human data for robots is unclear due to embodiment gaps. Holding robot data fixed, they vary egocentric scale, diversity, processing and co-training for VLAs and WAMs. Diversity, trajectory alignment and detailed language matter most, with scaling effects differing between VLAs and WAMs.",
    "why": "Systematic study on learning from human egocentric data, central to dexterous data scaling.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30534",
@@ -156,8 +154,7 @@
    "tldr": "DelayOPSD distills a synchronous flow-VLA teacher into an asynchronous delayed student on the policy's own rollouts for real-time execution.",
    "summary": "Asynchronous chunk execution conditions on stale observations; actions differ little on expert data but diverge on the policy's own delayed rollouts. DelayOPSD trains the delayed student, seeing an earlier frame plus pending actions, to imitate the synchronous teacher on on-policy rollouts. This recovers performance under latency.",
    "why": "Directly addresses real-time/asynchronous action chunking, a core interest.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30363",
@@ -191,8 +188,7 @@
    "tldr": "SOAR is a one-step generative policy that directly predicts DCT coefficients of action chunks to capture temporal structure.",
    "summary": "Multi-step diffusion/flow policies are slow, and velocity-parameterized one-step flows recover actions indirectly. SOAR predicts an observation-conditioned DCT representation across frequency bands and directly generates clean action trajectories, enabling structural calibration. It improves one-step action quality at one-step cost.",
    "why": "Fast one-step generative policies with action chunk structure are a core interest.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30898",
@@ -231,8 +227,7 @@
    "tldr": "Native LAM turns a pretrained video diffusion transformer into both inverse and forward dynamics, extracting compact latent actions via dynamics registers.",
    "summary": "Latent action models train IDM/FDM from scratch, trading reconstruction against latent capacity. Native LAM uses one pretrained video DiT as both, bridged only by learnable dynamics registers, trained on counterfactual pairs differing only in motion, so registers distill compact latent actions. They also propose a pretraining paradigm using these latents for action-free video.",
    "why": "Latent actions from video world models are a promising route to learning from human/egocentric video.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30986",
@@ -253,7 +248,8 @@
    "topics": [
     "RLGen",
     "RL",
-    "GenModel"
+    "GenModel",
+    "FM"
    ],
    "kw_score": 16,
    "relevance": 7,
@@ -261,40 +257,7 @@
    "tldr": "iTDM identifies baseline-induced gradient drift in forward diffusion RL and fixes it via instantaneous trajectory distribution matching.",
    "summary": "Forward diffusion RL methods are signed reward-weighted regression whose baseline subtraction assumes policy velocity equals behavior marginal velocity, violated under CFG, off-policy updates and imperfect self-consistency. iTDM takes the infinitesimal limit of trajectory distribution matching to remove this mismatch. It stabilizes diffusion RL alignment.",
    "why": "Clear theoretical insight into RL for diffusion/flow models, transferable to diffusion policies.",
-   "rated_by": "claude",
-   "citations": 0
-  },
-  {
-   "id": "2611.30907",
-   "title": "DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation",
-   "authors": [
-    "Vinay Udit Mohan",
-    "Xuchuan Huang",
-    "Rolandos Alexandros Potamias"
-   ],
-   "abstract": "World models facilitate planning and control in robotic manipulation by enabling agents to anticipate the consequences of their actions. However, they typically rely on action-labelled interaction data that is costly to acquire and difficult to scale. These models are also often tied to the specific embodiment they were trained on, limiting transferability to previously unseen robot morphologies. We introduce a 3D latent-action world model that learns continuous action representations directly from point-cloud observations of retargeted human manipulation demonstrations. A contrastive objective is used to encourage consistent representations of motion across embodiments. The resulting unified latent action space serves directly as the search space for model-predictive control, where sampled latent actions condition particle-based future predictions. Executable robot commands are then recovered from the predicted geometric motion without requiring an embodiment-specific action decoder. Through extensive evaluations, we demonstrate that the learned latent actions exhibit controllable and compositional motion, transfer to unseen robot embodiments, and support zero-shot manipulation with unseen gripper geometries. Following task-agnostic adaptation, our model achieves 90%, 92%, and 60% success on reaching, grasping, and placing, respectively, compared with DexWM's reported 72%, 58%, and 28%. Finally, we demonstrate zero-shot real-world manipulation with an unseen dexterous hand, achieving an 86% success rate across 50 trials on five diverse tasks involving pushing, grasping, and lifting everyday objects. These results highlight the potential of geometry-grounded latent actions as a unified, transferable interface for world-model-based robotic manipulation. Project materials, including demonstration videos and source code, are available at https://vinaymohan0409.github.io/DexLatentWorld/.",
-   "url": "https://arxiv.org/abs/2611.30907",
-   "pdf": "https://arxiv.org/pdf/2611.30907",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.CV",
-    "cs.LG"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "Dex",
-    "FM",
-    "WM"
-   ],
-   "kw_score": 24,
-   "relevance": 7,
-   "quality": 6,
-   "tldr": "DexLatentWorld learns a 3D cross-embodiment latent-action world model from retargeted human point-cloud demos and plans with MPC in latent space.",
-   "summary": "World models need action labels and are embodiment-specific. A contrastive objective learns continuous latent actions from point clouds of retargeted human demos; MPC samples latent actions predicting particle futures, and robot commands are recovered from predicted geometry without an embodiment decoder. This enables zero-shot manipulation on unseen embodiments.",
-   "why": "Human-demo-driven cross-embodiment world models for dexterous manipulation.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30572",
@@ -326,14 +289,44 @@
     "Tactile",
     "WM"
    ],
-   "kw_score": 22,
+   "kw_score": 42,
    "relevance": 7,
    "quality": 6,
    "tldr": "VeriTouch generates synthetic visuo-tactile trajectories with a joint video-tactile world model and verifies them for policy learning.",
    "summary": "Visuo-tactile data is costly to collect. VeriGen jointly generates dual-view videos and tactile sequences from an initial image and instruction using a tactile expert plus pretrained video model, and VeriEval filters for visual and tactile plausibility. Verified synthetic data improves visuo-tactile policy learning.",
    "why": "Synthetic tactile data from video generation (DreamGen-style) matches both tactile and world-model interests.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.30907",
+   "title": "DexLatentWorld: 3D Cross-Embodiment Latent Action World Models for Zero-Shot Robotic Manipulation",
+   "authors": [
+    "Vinay Udit Mohan",
+    "Xuchuan Huang",
+    "Rolandos Alexandros Potamias"
+   ],
+   "abstract": "World models facilitate planning and control in robotic manipulation by enabling agents to anticipate the consequences of their actions. However, they typically rely on action-labelled interaction data that is costly to acquire and difficult to scale. These models are also often tied to the specific embodiment they were trained on, limiting transferability to previously unseen robot morphologies. We introduce a 3D latent-action world model that learns continuous action representations directly from point-cloud observations of retargeted human manipulation demonstrations. A contrastive objective is used to encourage consistent representations of motion across embodiments. The resulting unified latent action space serves directly as the search space for model-predictive control, where sampled latent actions condition particle-based future predictions. Executable robot commands are then recovered from the predicted geometric motion without requiring an embodiment-specific action decoder. Through extensive evaluations, we demonstrate that the learned latent actions exhibit controllable and compositional motion, transfer to unseen robot embodiments, and support zero-shot manipulation with unseen gripper geometries. Following task-agnostic adaptation, our model achieves 90%, 92%, and 60% success on reaching, grasping, and placing, respectively, compared with DexWM's reported 72%, 58%, and 28%. Finally, we demonstrate zero-shot real-world manipulation with an unseen dexterous hand, achieving an 86% success rate across 50 trials on five diverse tasks involving pushing, grasping, and lifting everyday objects. These results highlight the potential of geometry-grounded latent actions as a unified, transferable interface for world-model-based robotic manipulation. Project materials, including demonstration videos and source code, are available at https://vinaymohan0409.github.io/DexLatentWorld/.",
+   "url": "https://arxiv.org/abs/2611.30907",
+   "pdf": "https://arxiv.org/pdf/2611.30907",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Dex",
+    "FM",
+    "WM"
+   ],
+   "kw_score": 24,
+   "relevance": 7,
+   "quality": 6,
+   "tldr": "DexLatentWorld learns a 3D cross-embodiment latent-action world model from retargeted human point-cloud demos and plans with MPC in latent space.",
+   "summary": "World models need action labels and are embodiment-specific. A contrastive objective learns continuous latent actions from point clouds of retargeted human demos; MPC samples latent actions predicting particle futures, and robot commands are recovered from predicted geometry without an embodiment decoder. This enables zero-shot manipulation on unseen embodiments.",
+   "why": "Human-demo-driven cross-embodiment world models for dexterous manipulation.",
+   "rated_by": "claude"
   }
  ],
  "roundup": [
@@ -370,8 +363,7 @@
    "tldr": "Analyzes standalone FlowMap distillation for AR video and adds anti-drifting and motion-aware guidance, working with pi-Flow, MeanFlow and consistency distillation.",
    "summary": "Few-step AR video models still need DMD, losing diversity and requiring a bidirectional teacher. The authors add anti-drifting guidance (an auxiliary model mimicking student drift as a negative branch) and motion-aware skip-layer guidance on motion patches. This improves quality and reduces drift for 1.3B AR teachers across several flow-map methods.",
    "why": "Flow-map/MeanFlow distillation for autoregressive generation relates to one-step and streaming flow policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30209",
@@ -398,7 +390,8 @@
    "topics": [
     "Control",
     "FM",
-    "IL"
+    "IL",
+    "Dex"
    ],
    "tracked_authors": [
     "Yilun Du"
@@ -409,8 +402,7 @@
    "tldr": "RoboAda keeps a frozen policy's plan but corrects commands by inferring the robot's command-to-motion mapping at test time.",
    "summary": "Invisible physics changes (heavy objects, weak joints, lag) make correct plans execute poorly. RoboAda uses an inverse-dynamics view after each action chunk to infer how commands map to motion and corrects execution, without altering the plan or risking harmful gradient updates. It adapts frozen policies to unseen physics.",
    "why": "Test-time execution adaptation for chunked policies is practical for contact-rich deployment.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.31079",
@@ -441,8 +433,7 @@
    "tldr": "Wrist Video Policy predicts future wrist-camera views and recovers end-effector poses via a stitched 3D pose estimator.",
    "summary": "Generalist policies need cross-task and cross-embodiment transfer. WVP represents motion as wrist-camera trajectories, pairs a wrist-view video generator with a pretrained 3D pose estimator, and stitches latents directly into the estimator. Task knowledge scales with video data while geometric estimation is reused.",
    "why": "Video-generation-as-policy with clean action recovery is relevant to world-model policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30636",
@@ -475,8 +466,7 @@
    "tldr": "ABI learns actor-free, reward-free multi-horizon action-chunk representations for zero-shot test-time guidance of BC policies.",
    "summary": "Offline RL couples critics to actors or needs task rewards. ABI notes behavior-policy action evaluation preserves value ordering across target policies and learns successor-style chunk representations from unlabeled data; lightweight task readouts guide frozen chunked BC policies at test time. This enables zero-shot task generalization.",
    "why": "Test-time value guidance of action-chunk BC policies is relevant to RL+generative policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30145",
@@ -509,8 +499,7 @@
    "tldr": "RMR adds an explicit recurrent memory-reasoning step to VLAs, doubling RoboMME success and refining memory tokens with GRPO.",
    "summary": "History-dependent tasks require acting on vanished cues. RMR has the VLA infer events, revise task state and ground subgoals as text carried across updates, with GRPO refining memory decisions. It doubles success on RoboMME over a non-recurrent baseline.",
    "why": "History-conditioned policies are an interest area; this uses text memory.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30659",
@@ -541,8 +530,7 @@
    "tldr": "ActField is a continuous-time JEPA world model integrating an action-conditioned latent vector field over physical time.",
    "summary": "Discrete-interval JEPA world models leave action-effect dynamics implicit. ActField separates action-independent and action-induced evolution in a continuous latent ODE with reference conditioning and multi-step loss. It improves prediction on LIBERO, DROID and BEHAVIOR.",
    "why": "Continuous-time latent dynamics for manipulation world models.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30516",
@@ -578,8 +566,7 @@
    "tldr": "JEPA-ICL predicts progress-aligned JEPA latent plans that guide actions and retrieve relevant demo stages for in-context manipulation.",
    "summary": "Demonstrations differ in embodiment and speed, making relevant guidance hard to locate. JEPA-ICL predicts ordered future JEPA states to subtask completion, using them to guide actions and align demo stages as context. It reaches 80.0% seen-task success on Imitator Game, 12 points above Zero-WAM.",
    "why": "In-context imitation with predictive latents; moderate relevance.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29913",
@@ -614,8 +601,7 @@
    "tldr": "MoMa-NMP trains a scene-scale neural motion planner for mobile manipulators on millions of generated whole-body trajectories.",
    "summary": "Generating training data for room-scale neural motion planning is hard. MoMa-DemoSmith splits global path discovery from local refinement to synthesize trajectories, and MoMa-NMP is trained with BC then privileged on-policy distillation. It achieves 87.0% sim and 77.5% real success.",
    "why": "Large-scale BC from planner demos; mobile manipulation is adjacent.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30632",
@@ -649,8 +635,7 @@
    "tldr": "GeoMerge-OPD integrates heterogeneous VLA skills via response-space regularization, parameter merging and on-policy distillation.",
    "summary": "Joint fine-tuning or merging skill experts causes unintended actions. Analysis reveals opposing expert responses in shared high-energy directions; GeoMerge-OPD constrains update gains, merges and distills on-policy. It preserves individual skills in whole-body tasks.",
    "why": "Multi-skill VLA integration; moderate relevance.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30111",
@@ -687,8 +672,7 @@
    "tldr": "RoboThink lets a reasoning agent correct a running policy through instruction and learned feedback channels.",
    "summary": "Policies can't follow new instructions mid-task or fix motion drift. RoboThink rewrites instructions training-free and trains a feedback channel via agent-labelled DAgger with role tokens and counterfactuals. Robots correct themselves mid-execution.",
    "why": "Agent-guided correction; modest relevance.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.30264",
@@ -714,8 +698,7 @@
    "kw_score": 20,
    "tldr": "In this paper, we present a skill-adaptive noise diffusion framework (SaND) which introduces a learnable, skill-conditioned noise schedule that modulates the diffusion process per action dimension, adapting the noising dynamics to each skill.",
    "summary": "In this paper, we present a skill-adaptive noise diffusion framework (SaND) which introduces a learnable, skill-conditioned noise schedule that modulates the diffusion process per action dimension, adapting the noising dynamics to each skill. Such a design fundamentally limits the achievable performance, particularly for contact-rich and dexterous manipulation tasks where different skills exhibit distinct couplings between action dimensions.",
-   "venue": "NeurIPS 2026",
-   "citations": 0
+   "venue": "NeurIPS 2026"
   },
   {
    "id": "2611.30310",
@@ -748,8 +731,7 @@
    "kw_score": 18,
    "tldr": "We introduce Shared Environmental Understanding, a policy-agnostic representation that aggregates partial egocentric observations from multiple robots into a shared latent world model.",
    "summary": "We introduce Shared Environmental Understanding, a policy-agnostic representation that aggregates partial egocentric observations from multiple robots into a shared latent world model. Experimental results demonstrate that SEER captures action-relevant environmental structure and consistently improves navigation performance across both specialized VLN agents and general vision-language model agents, while preserving single-agent capabilities.",
-   "venue": "NeurIPS 2026",
-   "citations": 0
+   "venue": "NeurIPS 2026"
   },
   {
    "id": "2611.31099",
@@ -771,8 +753,7 @@
    ],
    "kw_score": 15,
    "tldr": "Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP.",
-   "summary": "Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP.",
-   "citations": 0
+   "summary": "Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP."
   },
   {
    "id": "2611.29873",
@@ -796,8 +777,7 @@
    ],
    "kw_score": 15,
    "tldr": "We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights…",
-   "summary": "We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights transfer, without re-tuning, to VLA backbones up to 7B parameters. We further provide, to our knowledge, the first controlled analysis of the reference model's role in robotic DRO, showing that removing it induces over-pessimism toward noisy, low-quality domains (-3.8% average and -14.3% worst-domain success rate), and that entropy regularization is needed to prevent weight collapse.",
-   "citations": 0
+   "summary": "We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights transfer, without re-tuning, to VLA backbones up to 7B parameters. We further provide, to our knowledge, the first controlled analysis of the reference model's role in robotic DRO, showing that removing it induces over-pessimism toward noisy, low-quality domains (-3.8% average and -14.3% worst-domain success rate), and that entropy regularization is needed to prevent weight collapse."
   },
   {
    "id": "2611.30007",
@@ -823,8 +803,7 @@
    ],
    "kw_score": 14,
    "tldr": "In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration.",
-   "summary": "In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration. On KITTI-360 and nuScenes, our model generates realistic scenes and reduces the registration error between predicted frames by about 70% relative to the best compared world model.",
-   "citations": 0
+   "summary": "In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration. On KITTI-360 and nuScenes, our model generates realistic scenes and reduces the registration error between predicted frames by about 70% relative to the best compared world model."
   },
   {
    "id": "2611.31240",
@@ -859,8 +838,7 @@
    ],
    "kw_score": 13,
    "tldr": "Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels.",
-   "summary": "Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods.",
-   "citations": 0
+   "summary": "Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods."
   },
   {
    "id": "2611.30658",
@@ -888,8 +866,7 @@
    "kw_score": 13,
    "tldr": "To address this, we present an active observation framework in which one arm of an existing dual-arm platform carries an RGB-D camera as an active observer while the other executes grasping.",
    "summary": "To address this, we present an active observation framework in which one arm of an existing dual-arm platform carries an RGB-D camera as an active observer while the other executes grasping. Across 50 randomized trials per object, the system achieves 94% grasp success versus 76% for a reactive viewpoint baseline and 64% for a fixed camera.",
-   "venue": "Science",
-   "citations": 0
+   "venue": "Science"
   },
   {
    "id": "2611.30765",
@@ -917,8 +894,7 @@
    ],
    "kw_score": 12,
    "tldr": "We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights.",
-   "summary": "We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights.",
-   "citations": 0
+   "summary": "We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights."
   },
   {
    "id": "2611.30265",
@@ -943,8 +919,7 @@
    ],
    "kw_score": 12,
    "tldr": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility.",
-   "summary": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility. Experiments on multiple Safety-Gymnasium benchmarks demonstrate that SGPC achieves a better optimality-safety trade-off by substantially reducing constraint violations and cost oscillations while maintaining competitive or better task returns.",
-   "citations": 0
+   "summary": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility. Experiments on multiple Safety-Gymnasium benchmarks demonstrate that SGPC achieves a better optimality-safety trade-off by substantially reducing constraint violations and cost oscillations while maintaining competitive or better task returns."
   },
   {
    "id": "2611.30511",
@@ -990,8 +965,7 @@
    "kw_score": 11,
    "tldr": "To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving.",
    "summary": "To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving.",
-   "venue": "NeurIPS 2026 Workshop",
-   "citations": 0
+   "venue": "NeurIPS 2026 Workshop"
   },
   {
    "id": "2611.30449",
@@ -1021,8 +995,7 @@
    ],
    "kw_score": 11,
    "tldr": "We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction.",
-   "summary": "We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction. In experiments, CHAMP achieves overall success rates of 84.8% on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings.",
-   "citations": 0
+   "summary": "We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction. In experiments, CHAMP achieves overall success rates of 84.8% on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings."
   },
   {
    "id": "2611.30133",
@@ -1046,8 +1019,7 @@
    ],
    "kw_score": 11,
    "tldr": "This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks.",
-   "summary": "This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks. The policy was better than the existing baselines and reduced safety violations from 27% to 0.1% without almost any compromise on the performance.",
-   "citations": 0
+   "summary": "This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks. The policy was better than the existing baselines and reduced safety violations from 27% to 0.1% without almost any compromise on the performance."
   },
   {
    "id": "2611.31037",
@@ -1072,8 +1044,7 @@
    ],
    "kw_score": 10,
    "tldr": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol.",
-   "summary": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol.",
-   "citations": 0
+   "summary": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol."
   },
   {
    "id": "2611.30997",
@@ -1102,8 +1073,7 @@
    ],
    "kw_score": 10,
    "tldr": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist…",
-   "summary": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist supervised fine-tuning (SFT), and multi-domain online RL. Experiments on LIBERO-PRO and RoboCasa365 show that a single 9B Robo-MOPD planner reaches 72.9% and 44.8% success (58.9% average), surpassing all consolidated baselines in average success and both 9B specialists on their respective benchmarks.",
-   "citations": 0
+   "summary": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist supervised fine-tuning (SFT), and multi-domain online RL. Experiments on LIBERO-PRO and RoboCasa365 show that a single 9B Robo-MOPD planner reaches 72.9% and 44.8% success (58.9% average), surpassing all consolidated baselines in average success and both 9B specialists on their respective benchmarks."
   },
   {
    "id": "2611.30072",
@@ -1133,8 +1103,7 @@
    ],
    "kw_score": 10,
    "tldr": "To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform.",
-   "summary": "To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform. Graph-based reinforcement learning can improve local decisions, but its inference cost grows with the exploration graph and global direction is usually represented only implicitly.",
-   "citations": 0
+   "summary": "To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform. Graph-based reinforcement learning can improve local decisions, but its inference cost grows with the exploration graph and global direction is usually represented only implicitly."
   },
   {
    "id": "2611.30004",
@@ -1160,9 +1129,7 @@
    "kw_score": 10,
    "tldr": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios.",
    "summary": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios. We demonstrate that environment-only perturbations raise hazardous-action rates to an average of 83.4% across the five evaluated action policies, with similar vulnerability patterns confirmed in world models.",
-   "venue": "NeurIPS 2026",
-   "citations": 0,
-   "topics": []
+   "venue": "NeurIPS 2026"
   },
   {
    "id": "2611.30637",
@@ -1191,8 +1158,7 @@
    ],
    "kw_score": 9,
    "tldr": "We introduce SWEEP-Bench, a simulation benchmark with 80 conveyor-belt manipulation tasks spanning 16 skill categories, each evaluated at 13 belt speeds (0.10-0.40 m/s).",
-   "summary": "We introduce SWEEP-Bench, a simulation benchmark with 80 conveyor-belt manipulation tasks spanning 16 skill categories, each evaluated at 13 belt speeds (0.10-0.40 m/s). Adding ground-truth speed input to four of the models improves all of them, and a speed estimated from the images keeps most of this gain.",
-   "citations": 0
+   "summary": "We introduce SWEEP-Bench, a simulation benchmark with 80 conveyor-belt manipulation tasks spanning 16 skill categories, each evaluated at 13 belt speeds (0.10-0.40 m/s). Adding ground-truth speed input to four of the models improves all of them, and a speed estimated from the images keeps most of this gain."
   },
   {
    "id": "2611.29884",
@@ -1219,8 +1185,7 @@
    ],
    "kw_score": 9,
    "tldr": "Particle filters flexibly represent complex, multimodal beliefs but expose them as weighted, unordered sets incompatible with conventional fixed-dimensional policies.",
-   "summary": "Particle filters flexibly represent complex, multimodal beliefs but expose them as weighted, unordered sets incompatible with conventional fixed-dimensional policies. Across eight tasks, pooling-based set encoders and gradient CGF features are reliable end-to-end, while the Set Transformer achieves the highest performance with appropriate pretraining.",
-   "citations": 0
+   "summary": "Particle filters flexibly represent complex, multimodal beliefs but expose them as weighted, unordered sets incompatible with conventional fixed-dimensional policies. Across eight tasks, pooling-based set encoders and gradient CGF features are reliable end-to-end, while the Set Transformer achieves the highest performance with appropriate pretraining."
   },
   {
    "id": "2611.31173",
@@ -1253,8 +1218,7 @@
    ],
    "kw_score": 8,
    "tldr": "We present EmboEagle, a closed-loop agentic framework that unifies subtask-conditioned WAM control, latent-space adaptive supervision, and memory-guided geometric recovery.",
-   "summary": "We present EmboEagle, a closed-loop agentic framework that unifies subtask-conditioned WAM control, latent-space adaptive supervision, and memory-guided geometric recovery. Across RMBench and LIBERO-Mem, EmboEagle achieves 91.3\\% and 90.6\\% average success, surpassing the strongest baselines by 8.0 and 9.8 percentage points, while boosting real-world success over VoLoAgent under identical executor weights.",
-   "citations": 0
+   "summary": "We present EmboEagle, a closed-loop agentic framework that unifies subtask-conditioned WAM control, latent-space adaptive supervision, and memory-guided geometric recovery. Across RMBench and LIBERO-Mem, EmboEagle achieves 91.3\\% and 90.6\\% average success, surpassing the strongest baselines by 8.0 and 9.8 percentage points, while boosting real-world success over VoLoAgent under identical executor weights."
   },
   {
    "id": "2611.30928",
@@ -1280,8 +1244,7 @@
    ],
    "kw_score": 8,
    "tldr": "Personalization of powered prosthesis control to individual user needs remains a significant challenge.",
-   "summary": "Personalization of powered prosthesis control to individual user needs remains a significant challenge. All participants reached the goal within 8-18 tuning steps (1.7-4.2 minutes of walking), reducing the knee-kinematic feature error by 64-90% on average.",
-   "citations": 0
+   "summary": "Personalization of powered prosthesis control to individual user needs remains a significant challenge. All participants reached the goal within 8-18 tuning steps (1.7-4.2 minutes of walking), reducing the knee-kinematic feature error by 64-90% on average."
   }
  ],
  "trending_ml": [

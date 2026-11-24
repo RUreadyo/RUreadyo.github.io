@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-24T22:54:32+00:00",
+ "generated_at": "2026-11-24T23:31:39+00:00",
  "ranker": "Claude",
  "overview": "RL and generative policies lead the day. JKO-GRPO adds Wasserstein proximal steps to Flow-GRPO for pi0-style VLAs, and Dr. Grasp-RL and FunGrasp-Zero push diverse and cross-embodiment dexterous grasping with RL. Two careful analysis papers stand out: 'Detecting Is Not Choosing' finds learned critics can flag danger but cannot rank candidate action chunks, and the REPA-for-VLAs study finds off-the-shelf alignment teachers do not help pi0.5. Force2Act combines chunked planning with reactive force experts.",
  "stats": {
@@ -31,7 +31,8 @@
    "topics": [
     "RLGen",
     "FM",
-    "RL"
+    "RL",
+    "GenModel"
    ],
    "kw_score": 22,
    "relevance": 8,
@@ -39,8 +40,7 @@
    "tldr": "JKO-GRPO augments Flow-GRPO for flow-matching VLAs with Wasserstein proximal (JKO) steps using transport targets from group advantages.",
    "summary": "Flow-GRPO and pi_RL reweight sampled actions by advantage but ignore distances between them. JKO-GRPO treats each state's action group as an empirical distribution, builds transport targets via a soft discrete c-transform of group-relative advantages, and regresses the deterministic flow sampler onto them alongside clipped Flow-GRPO without KL. It improves RL fine-tuning of pi0/pi0.5-style VLAs.",
    "why": "RL fine-tuning of flow VLAs with optimal transport is a core RL+generative-policy topic.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29195",
@@ -76,8 +76,7 @@
    "tldr": "FunGrasp-Zero trains an RL graph-attention policy conditioned on object-centric contact-map potential fields for zero-shot cross-embodiment functional grasping.",
    "summary": "Functional grasping methods tie task representation to one hand via retargeted poses. FunGrasp-Zero represents intent as a cross-embodiment contact map mapped onto heterogeneous hands, builds attractive/repulsive hand-object potential fields, and conditions a graph attention RL policy on them. It enables zero-shot transfer to unseen hand morphologies.",
    "why": "Cross-embodiment dexterous functional grasping is squarely in my core area.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29610",
@@ -105,8 +104,7 @@
    "tldr": "A time-reversed curriculum with coordinated resets lets a PPO MLP policy learn diverse multimodal dexterous grasps with closed-loop robustness.",
    "summary": "Generative grasp methods are diverse but open-loop, while RL policies are robust but collapse to few strategies. Dr. Grasp-RL uses a time-reversed curriculum and coordinated resets so a simple PPO policy captures multiple grasp-pose modes while remaining closed-loop. Experiments show both diversity and robustness.",
    "why": "Simple RL trick for diverse dexterous grasping; directly usable.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29208",
@@ -134,8 +132,7 @@
    "tldr": "Force2Act plans motion and relative force per action chunk and uses a mixture of force experts for reactive compliance within chunks.",
    "summary": "Force-aware policies reproduce demonstrated force levels and fail when more force is needed. Force2Act plans motion and force relative to measured interaction once per chunk and uses a Mixture of Force Experts to regulate force each control step. It introduces Force2Act-Bench with five contact-rich tasks.",
    "why": "Combines action chunking with reactive force control for contact-rich manipulation.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29553",
@@ -165,8 +162,7 @@
    "summary": "Sampling several VLA action chunks and filtering with a world model can improve safety: with the simulator as exact model, safety rises 11.5-25.7 points on LIBERO. But learned critics reach pooled AUROC 0.864 for detection yet only ~0.55 within-decision ranking, and dynamics/video models do no better; 3.18 mm state error removes 70% of the gain. Selection, not detection, is the bottleneck.",
    "why": "Sharp analysis relevant to test-time selection and world-model-based evaluation of chunked policies.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   }
  ],
  "roundup": [
@@ -199,8 +195,7 @@
    "tldr": "Shows REPA-style feature alignment for VLAs rarely helps and proposes a behavioral structure metric to pick teachers.",
    "summary": "VLA representation alignment teachers are chosen heuristically. Across 14 teachers and 16 tasks, no encoder improves pi0.5 clean success by more than 1 point and all reduce perturbed success by 10-39 points. A behavioral structure metric, measuring whether feature-near states have similar expert actions, predicts which teachers help.",
    "why": "Rigorous negative result on a popular VLA fine-tuning trick.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29383",
@@ -231,8 +226,7 @@
    "summary": "Test-time scaling for flow VLAs usually needs large candidate sets or external correctors. They adapt P&P, a mode-seeking self-refinement procedure from video generation, with modifications for action data. Over 400 LIBERO episodes with SmolVLA it improves the baseline by 5.3 points.",
    "why": "Noise-space refinement of flow policies relates to steering diffusion policies at test time.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29178",
@@ -261,8 +255,7 @@
    "summary": "Replay buffers are memory-heavy and slow at credit assignment, while eligibility traces enable streaming updates. The authors show adaptive vector step sizes must be part of the trace to keep forward-backward equivalence, and derive corresponding optimizers. This advances deep streaming RL.",
    "why": "RL fundamentals; background interest.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29240",
@@ -303,14 +296,13 @@
     "Tactile",
     "Control"
    ],
-   "kw_score": 17,
+   "kw_score": 34,
    "relevance": 6,
    "quality": 5,
    "tldr": "Tacinf is an open-source tactile stack spanning sim data, benchmark, VTLA policy learning, handheld collection and sim-to-real evaluation.",
    "summary": "Force-aware manipulation lacks integrated tactile infrastructure. Tacinf combines Tabero sim benchmark, VTLA policy training, Tacumi handheld data collection with the deployment gripper, and Taco sim-to-real evaluation. A model fine-tuned only on tactile sim data transfers zero-shot to real.",
    "why": "Open tactile infrastructure is practically useful for tactile policy research.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29259",
@@ -345,8 +337,7 @@
    "tldr": "REINFORCE Look Back uses counterfactual world models' returns as baselines to separate action effects from environmental luck.",
    "summary": "In stochastic environments, imagining whole trajectories is hard. Counterfactual world models transform observed trajectories under alternative actions, and RLB uses counterfactual returns as baselines with proven unbiasedness and variance reduction. When dynamics are harder than action effects, this beats standard world-model RL.",
    "why": "Novel policy-gradient variance reduction; of RL fundamentals interest.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29279",
@@ -377,14 +368,13 @@
     "Dex",
     "Tactile"
    ],
-   "kw_score": 28,
+   "kw_score": 32,
    "relevance": 5,
    "quality": 5,
    "tldr": "A2I-VLA aligns force-tactile representations to semantics with future-wrench prediction, then integrates them into a VLA.",
    "summary": "Integrating force and touch into VLAs is hampered by representational gaps. Stage I learns aligned force-tactile features with cross-modal alignment, hierarchical fusion, and future wrench plus action prediction; Stage II integrates them into a VLA. It targets contact-rich manipulation.",
    "why": "Force/tactile VLAs are relevant, though the recipe is incremental.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29662",
@@ -415,8 +405,7 @@
    "tldr": "Compares mixture density, tokenized and flow-matching skill-effect models for multimodal object-pose outcomes of contact-rich skills.",
    "summary": "Deterministic models average over distinct outcomes like sliding vs toppling. The authors learn multimodal distributions over object pose changes from partial point clouds and actions with three model classes plus latent dynamics. Multimodal models better predict which outcome occurs and reduce floating/interpenetration artifacts.",
    "why": "Multimodal contact-outcome modeling relevant to contact-rich planning.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29693",
@@ -450,8 +439,7 @@
    "tldr": "HandiVid is a 200K-clip curated egocentric dataset with hand annotations for hand-driven interactive video generation.",
    "summary": "Egocentric datasets lack diversity, interactions and reliable hand annotations simultaneously. HandiVid merges public, online and synthetic videos with quality filtering, SAM 3-aided hand detection, 3D hand reconstruction and VLM interaction validation. It supports hand-conditioned interactive video models.",
    "why": "Hand-object video data may help human-to-robot dexterous learning.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29618",
@@ -483,8 +471,7 @@
    "tldr": "Mass Forcing branches continuations from student-generated prefixes to make DMD distillation of AR video mass-aware and avoid mode collapse.",
    "summary": "DMD's reverse-KL objective collapses AR video students to few modes, and coverage-oriented initialization is transient. Mass Forcing moves on-policy supervision to individual states by branching several continuations from shared prefixes. It preserves diversity and dynamics.",
    "why": "Insight into mode-seeking distillation; relevant to few-step generative models generally.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29453",
@@ -516,8 +503,7 @@
    "tldr": "Decomposes latent world-model prediction error into shared offset and action-dependent parts to design slow-fast test-time training.",
    "summary": "Test-time training of world models helps planning but what it corrects is unclear. On PushObj, the shared offset accounts for 91% of AdaJEPA's gain and is partly episode-specific; sft-JEPA uses fast episodic and slow persistent learners accordingly. This improves planning under shift.",
    "why": "Clean analysis of TTT for world-model planning.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29123",
@@ -551,8 +537,7 @@
    "tldr": "PlanNudge freezes a diffusion driving planner and trains an MLP RL policy to output small speed/curvature nudges.",
    "summary": "RL fine-tuning diffusion planners is complicated by iterative denoising and receding horizon. Observing small adjustments avert many failures, PlanNudge learns a lightweight residual nudge policy. It improves closed-loop safety while preserving pretrained behavior.",
    "why": "Residual RL on frozen diffusion policies is transferable to manipulation despite driving domain.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29377",
@@ -582,14 +567,13 @@
     "Dex",
     "Tactile"
    ],
-   "kw_score": 20,
+   "kw_score": 24,
    "relevance": 4,
    "quality": 5,
    "tldr": "Contact Harness guides a VLM agent with optimized skills and compliant force control to perform zero-shot contact-rich insertion.",
    "summary": "VLM agents lack contact-state awareness. Contact Harness interprets force/tactile feedback via reusable prompt skills and compliant execution, with no fine-tuning or demos. It achieves 90.7% full insertion across 15 connector types on real robots.",
    "why": "Zero-shot contact-rich skill via agents; an alternative to learned policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29339",
@@ -623,8 +607,7 @@
    "tldr": "Redirects VLA latent visual reasoning from predicting future frames to motion-oriented interaction latents for better generalization.",
    "summary": "Latent foresight aligned to future frames binds VLAs to training-scene appearance. Motion-Oriented Latent Reasoning uses semantic latents for stage planning and motion latents capturing how the scene should evolve. It generalizes better to scene changes.",
    "why": "Moderately relevant VLA reasoning design.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.29294",
@@ -652,8 +635,7 @@
    ],
    "kw_score": 8,
    "tldr": "We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows.",
-   "summary": "We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows. Across 10 sites and 89 six-hour traffic scenarios (890 evaluation runs), adaptive configuration consistently improves the composite perception score over static deployment.",
-   "citations": 0
+   "summary": "We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows. Across 10 sites and 89 six-hour traffic scenarios (890 evaluation runs), adaptive configuration consistently improves the composite perception score over static deployment."
   },
   {
    "id": "2611.29275",
@@ -682,8 +664,7 @@
    ],
    "kw_score": 8,
    "tldr": "We introduce DriveOddsBench, a pre-registered benchmark that addresses all three.",
-   "summary": "We introduce DriveOddsBench, a pre-registered benchmark that addresses all three. The real outcome falls outside the range of all 16 samples in 28-61% of cases instead of the 11.8% expected under the real distribution.",
-   "citations": 0
+   "summary": "We introduce DriveOddsBench, a pre-registered benchmark that addresses all three. The real outcome falls outside the range of all 16 samples in 28-61% of cases instead of the 11.8% expected under the real distribution."
   },
   {
    "id": "2611.29277",
@@ -729,8 +710,7 @@
    ],
    "kw_score": 7,
    "tldr": "We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation.",
-   "summary": "We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation. On seven HumanoidArena tasks, $ζ_0$ built on $Ψ_0$ and GR00T N1.7 reaches 63.6% and 79.5% mean success, 18.8 and 9.0 points above these bases.",
-   "citations": 0
+   "summary": "We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation. On seven HumanoidArena tasks, $ζ_0$ built on $Ψ_0$ and GR00T N1.7 reaches 63.6% and 79.5% mean success, 18.8 and 9.0 points above these bases."
   },
   {
    "id": "2611.29748",
@@ -754,8 +734,7 @@
    ],
    "kw_score": 6,
    "tldr": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables.",
-   "summary": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables. Our results show that NMPC achieves superior tracking accuracy and stronger disturbance rejection compared to SMC, but at the cost of higher computational demand.",
-   "citations": 0
+   "summary": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables. Our results show that NMPC achieves superior tracking accuracy and stronger disturbance rejection compared to SMC, but at the cost of higher computational demand."
   },
   {
    "id": "2611.29548",
@@ -779,8 +758,7 @@
    ],
    "kw_score": 6,
    "tldr": "We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots.",
-   "summary": "We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots.",
-   "citations": 0
+   "summary": "We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots."
   },
   {
    "id": "2611.29346",
@@ -805,8 +783,7 @@
    ],
    "kw_score": 6,
    "tldr": "In this work, we propose a method to prescribe such a pattern directly from the task specification.",
-   "summary": "In this work, we propose a method to prescribe such a pattern directly from the task specification.",
-   "citations": 0
+   "summary": "In this work, we propose a method to prescribe such a pattern directly from the task specification."
   },
   {
    "id": "2611.29338",
@@ -865,8 +842,7 @@
    ],
    "kw_score": 6,
    "tldr": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation.",
-   "summary": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation.",
-   "citations": 0
+   "summary": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation."
   },
   {
    "id": "2611.29839",
@@ -890,8 +866,7 @@
    ],
    "kw_score": 5,
    "tldr": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented.",
-   "summary": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented.",
-   "citations": 0
+   "summary": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented."
   },
   {
    "id": "2611.29800",
@@ -918,8 +893,7 @@
    ],
    "kw_score": 5,
    "tldr": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles.",
-   "summary": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles.",
-   "citations": 0
+   "summary": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles."
   },
   {
    "id": "2611.29818",
@@ -941,9 +915,7 @@
    "kw_score": 4,
    "tldr": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back.",
    "summary": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back. The rule outperforms every summary-only memory, and giving language models the sighting history closes the gap.",
-   "venue": "CoRL 2026 Workshop",
-   "citations": 0,
-   "topics": []
+   "venue": "CoRL 2026 Workshop"
   },
   {
    "id": "2611.29682",
@@ -972,8 +944,7 @@
    ],
    "kw_score": 4,
    "tldr": "This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates.",
-   "summary": "This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. Across multiple backbones, simulated environments, and real-world settings, \\method achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster.",
-   "citations": 0
+   "summary": "This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. Across multiple backbones, simulated environments, and real-world settings, \\method achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster."
   },
   {
    "id": "2611.29558",
@@ -998,8 +969,7 @@
    ],
    "kw_score": 4,
    "tldr": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time.",
-   "summary": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time.",
-   "citations": 0
+   "summary": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time."
   },
   {
    "id": "2611.29421",
@@ -1022,8 +992,7 @@
    ],
    "kw_score": 4,
    "tldr": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation…",
-   "summary": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation continuously during tracking.",
-   "citations": 0
+   "summary": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation continuously during tracking."
   },
   {
    "id": "2611.29637",
@@ -1048,8 +1017,7 @@
    ],
    "kw_score": 3,
    "tldr": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy.",
-   "summary": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy. In 30,000 evaluation episodes, each run to its end, the policy timed out in fewer than 0.5% at every tested crowd density.",
-   "citations": 0
+   "summary": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy. In 30,000 evaluation episodes, each run to its end, the policy timed out in fewer than 0.5% at every tested crowd density."
   }
  ],
  "trending_ml": []

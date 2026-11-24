@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-24T22:54:31+00:00",
+ "generated_at": "2026-11-24T23:31:39+00:00",
  "ranker": "Claude",
  "overview": "A day heavy on world models and guidance theory. Scalable Beckmann Maps is the standout for generative-model readers, showing how to bring CFG into teacher-free one-step transport maps. On the robot side, Interval Motion Supervision trains flow-matching VLAs from demos with missing action labels, and LS-MBPO does RL on frozen VLA action chunks inside a latent world model. A connecting theme is skepticism about learned world models: the round-trip check and capped world-model gradients both show model-predicted improvements often fail to hold.",
  "stats": {
@@ -46,8 +46,7 @@
    "tldr": "Adds classifier-free guidance and a scalable training recipe to Beckmann Transport Models for teacher-free one-step generation.",
    "summary": "Beckmann Transport Models learn one-step generative maps without distillation but lacked CFG and scalable training. SBM observes that the BTM current is a positive multiple of an autonomous denoising field, so CFG can be applied using the map's own conditional/null predictions, with characterized bias. Guidance provably shifts basin boundaries toward condition-favored modes while keeping single-NFE sampling.",
    "why": "One-step generation theory with guidance is directly in my generative-model interests and relevant to fast policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27645",
@@ -84,8 +83,7 @@
    "tldr": "LS-MBPO improves frozen VLAs with a residual policy trained in a lightweight latent world model using subchunk rollouts.",
    "summary": "Model-based RL for VLAs usually relies on expensive video world models. LS-MBPO uses a latent world model with Hierarchical Forcing to curb compounding errors and Latent Subchunk Rollouts that refine frozen-VLA action chunks with a residual policy, plus a progress-conditioned branch-start curriculum. It aims for efficient imagination-based VLA improvement.",
    "why": "RL fine-tuning of VLAs with action chunks via world models is a direct fit to my RL-for-BC interests.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27171",
@@ -120,8 +118,7 @@
    "tldr": "Trains flow-matching VLAs with interval motion supervision to learn from demonstrations with missing action labels.",
    "summary": "Egocentric demos often have gaps in action labels but reliable endpoint poses. They add a composition objective constraining aggregate motion of missing actions plus a shared interval branch, while keeping flow matching on reliable actions. On LIBERO with 70.5% missing actions it reaches 87.9%, and 59.6% vs 48.8% (masking) on five real tasks.",
    "why": "Learning from incomplete/corrupted demonstrations with flow policies matches my low-quality-data interest.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27967",
@@ -144,14 +141,13 @@
     "Dex",
     "Tactile"
    ],
-   "kw_score": 28,
+   "kw_score": 32,
    "relevance": 6,
    "quality": 5,
    "tldr": "An agentic design 'Skill' iterates dexterous hand morphology through contact, dynamics, and learning gates, producing a 16-DoF SAGE Hand.",
    "summary": "Designing dexterous hands requires repeated expert iteration over geometry, URDFs, grasps and policy training. Task2Hand packages this into gated checks where an agent revises bounded parameters and escalates to a human, yielding SAGE Hand with four fingers, 16 DoF and an opposable thumb. Under matched training it reaches 45.6% in-hand success on a hexagonal prism vs 37.3% for a baseline.",
    "why": "Hand co-design for in-hand manipulation touches core dexterity interests, though results are sim and modest.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27288",
@@ -190,8 +186,7 @@
    "tldr": "Regularizes RL fine-tuning of diffusion models to preserve the pretrained CFG correction direction, reducing reward hacking.",
    "summary": "RL post-training of diffusion models often improves reward at the cost of overall quality. The authors view CFG and RL as correction vectors in prediction space, use the projection of the RL correction onto the CFG direction as a diagnostic, and propose Conditional Contrast Regularization to preserve it. Analysis and rotation interventions show the CFG direction carries quality information RL updates discard.",
    "why": "The CFG-vs-RL geometric view could inform RL fine-tuning of diffusion policies, though experiments are on images.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   }
  ],
  "roundup": [
@@ -224,8 +219,7 @@
    "tldr": "Hindsight Forcing routes gradients from future chunks back to history in AR video diffusion via a latent straight-through bridge.",
    "summary": "Self-rollout training of AR video diffusion truncates cross-chunk gradients, causing drift. Hindsight Forcing does full multi-step forward rollouts but backpropagates future losses to one selected denoising step per historical chunk, training context writing and denoising jointly. This reduces long-horizon drift and collapse.",
    "why": "Relevant to my interest in autoregressive video diffusion / self-forcing training.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27338",
@@ -258,8 +252,7 @@
    "tldr": "Latent Jacobian Steer maps joint-space perturbations through a policy-Jacobian inverse into latents to elicit contact-rich behaviors from a frozen humanoid controller.",
    "summary": "Exploring raw joints breaks coordination while latent exploration is hard to steer. LJS samples task-relevant joint-action perturbations, maps them via a damped inverse of the policy Jacobian to latent commands, executes them through the frozen behavioral foundation model and evaluates in sim. This elicits out-of-distribution contact-rich behaviors.",
    "why": "Steering a frozen pretrained policy's latent space resembles noise-space steering of diffusion policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27124",
@@ -288,8 +281,7 @@
    "tldr": "Shows latent world model planning can produce adversarial plans and adds a cheap action read-back check to CEM/MPPI.",
    "summary": "On DINO-WM and LeWM, more CEM iterations lower predicted cost but lose up to half of already-solved problems. They propose an action read-back network that penalizes mismatches between planned actions and predicted states. With 0.2-3.1% more planning time it improves CEM and MPPI on three tasks.",
    "why": "Sharp insight on failure modes of planning with learned world models.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.28411",
@@ -322,8 +314,7 @@
    "tldr": "ScaleEvals evaluates generalist policies through reset-free autonomous play with VLM task proposal and grading across a fleet.",
    "summary": "Real-world policy evaluation is bottlenecked by resets and grading. ScaleEvals uses a VLM AutoPrompter and AutoGrader (90.7% human agreement) with Bradley-Terry scoring over 3,000+ rollouts on DROID and YAM, cutting human labor by 98%. Rankings correlate with manual evaluation (r=0.94).",
    "why": "Scalable real-world evaluation is valuable infrastructure for anyone training generalist policies.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.28289",
@@ -359,8 +350,7 @@
    "tldr": "InteR-VLA trains VLAs on diverse task-completing demos so they stay competent when safety filters intervene.",
    "summary": "Safety filters can push robots into states poorly covered by training data. InteR-VLA uses diverse demonstrations under the same data budget to broaden state coverage and mitigate intervention-induced shift. Real-world experiments raise safe success rate up to 90% from 0% for nominal training.",
    "why": "Demonstration diversity vs. distribution shift is a useful IL data insight.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.26981",
@@ -393,8 +383,7 @@
    "tldr": "ViewDreamer is a multi-view robot video world model handling variable camera sets via shared slot tokens.",
    "summary": "Robot data uses varying camera numbers and placements. ViewDreamer keeps per-view generation from a pretrained single-view model and couples views through slot tokens grouped by visual foundation models, with a view-count curriculum. It improves cross-view consistency on RoboView-Bench and carries over to world-action and action-conditioned models.",
    "why": "Multi-view video world models matter for robot policy learning and evaluation.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.28402",
@@ -420,8 +409,7 @@
    "tldr": "BigSmall lets a 14B AR video model plan the opening chunk and a 1.3B model render the rest, keeping most quality at ~3x speed.",
    "summary": "The authors find that in AR video diffusion, letting the large model generate only the first chunk retains 95% of its semantic advantage, while the reverse retains 16%. BigSmall is a training-free planner-renderer sampler with a lazy cross-model KV cache. On VBench it is 3.02x faster than the 14B model.",
    "why": "Interesting insight about where capacity matters in autoregressive video diffusion; tangential to robotics.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27648",
@@ -448,8 +436,7 @@
    "tldr": "Caps per-rollout action-gradient norms when backpropagating through a learned world model for humanoid motion tracking.",
    "summary": "First-order world-model policy gradients are dominated by a few unverified large-gradient rollouts. The simulator confirms 94% of predicted change for small gradients but 1% for gradients above 30x median, so they cap at 10x median and adjust start sampling and resets. Trained on 223 h of motion, the tracker generalizes to 353 unseen motions.",
    "why": "Rigorous analysis of model-based policy gradients; transferable insight for RL with learned models.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27344",
@@ -480,8 +467,7 @@
    "tldr": "MoReWorld focuses action-conditioned video world model learning on predicted motion regions to improve interaction fidelity.",
    "summary": "Video world models optimize global reconstruction and miss contact details. MoReWorld predicts a motion region from history and actions and uses it for local motion prediction, region-aware loss, and gated conditioning. This reduces hallucinated contacts in robot video prediction.",
    "why": "Incremental but relevant to video world models for policy evaluation.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.28274",
@@ -547,8 +533,7 @@
    "tldr": "PACE-WM conditions a JEPA world model on executed-action history and predicts futures in parallel for faster visual planning.",
    "summary": "Similar observations can hide different motion states. PACE-WM uses a recurrent memory of executed actions to condition a causal Transformer predicting multiple futures in parallel, and a RAMP action-scoring rule. It reaches 98% average success and plans 7-9x faster than LeWM.",
    "why": "History conditioning in world models parallels history-conditioned policies; moderately relevant.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
   },
   {
    "id": "2611.27011",
@@ -580,8 +565,52 @@
    "tldr": "Force-guided stage segmentation and an RL-refined retry policy let VLAs recover from failed grasps.",
    "summary": "VLAs often keep transporting after a failed grasp. FoRe splits demonstrations by force into approach-grasp and transport stages, trains a retry policy refined by local RL from post-failure states, and gates stages with force plus gripper status. It improves autonomous recovery on pick-and-place.",
    "why": "Practical force-based recovery, but narrow pick-and-place scope.",
-   "rated_by": "claude",
-   "citations": 0
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.26992",
+   "title": "Geo-Force: A Theory of Force Sensing from Object Geometry",
+   "authors": [
+    "Abdullah Ayad"
+   ],
+   "abstract": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available. A virtual touch sensor that keeps the sensing surface of a tactile sensor but replaces its electronics with a touch signal predicted from the target object's geometry, as measured by a depth sensor, could close this gap, yet it is unclear what such a virtual sensor computes and when its output can be trusted. We give a formal answer. We define the Geometric Force as the force on each taxel of a virtual touch sensor, computed in three steps: rendering the surface to be touched as seen from the virtual sensor, predicting the touch signal with a touch map, learned or simulated, and estimating the force from that signal. We prove three properties of the Geometric Force. First, its force vectors only rotate under a change of coordinate frame. Second, it vanishes when the rendered surface does not touch the virtual sensor. Third, it is stable: its error grows at most linearly with the errors of the three steps for Lipschitz maps. The rendering error, in turn, depends on how well the surface is sampled or reconstructed and how accurately the sensor is placed. We then show a fundamental limit: geometry does not reveal the object's stiffness, so no touch map can predict touch exactly for objects of the same shape and different stiffness. Under an elastic contact model, all object-specific knowledge resides in the touch map. From these results, we derive requirements on the depth sensor and the objects, design rules, and the conditions under which such a virtual sensor fails.",
+   "url": "https://arxiv.org/abs/2611.26992",
+   "pdf": "https://arxiv.org/pdf/2611.26992",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "Tactile",
+    "Dex"
+   ],
+   "kw_score": 32,
+   "tldr": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available.",
+   "summary": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available."
+  },
+  {
+   "id": "2611.26950",
+   "title": "Mechanistic Analysis of Unified Proximity-Tactile Observation by a Capacitive Fingertip Array Constrained by a Metal Phalanx",
+   "authors": [
+    "Shun Cheng"
+   ],
+   "abstract": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression. Electrode-to-body parasitics exceed the useful proximity increment by one to three orders of magnitude, and crosstalk and time-division-multiplexing (TDM) settling prevent identifying the capacitance-to-digital converter (CDC) reading with the electrode-target capacitance. The array is modelled as a multi-conductor system (sensing electrodes, driven-shield nodes, phalanx ground and an external target). The CDC measurand follows from the Maxwell capacitance matrix, with each inactive termination in the observation operator. Three mechanisms are examined: driven-shield hiding of shield-branch current and gain/phase-mismatch leakage; distinct far- and near-field operators; and TDM settling as a frame-rate limit set by shield load. A single layer used for both proximity and force reads Delta C = Delta C_force + Delta C_dielectric(epsilon_target), so its force map cannot be material-independent. A dual-array stack is analysed: the outer array is grounded as a Faraday screen during contact, and the inner array reads silicone-gap compression. FEM simulations give a monotonic, nonlinear contact response (4.6 fF at 0.05 mm to 370 fF at 0.5 mm on a 1.08 pF base), a nylon-versus-metal difference of at most 0.3 fF at exported-matrix resolution (not mesh-converged), mutual-term cancellation under driven-shield readout, and about 1 fF crosstalk on the coarse mesh. In proximity mode, electrode-shield coupling of 1.47 pF makes 10^{-3}-10^{-4} mismatch a quantitative gate: a 15.9 fF increment at 5 mm equals the leakage at |epsilon_A| ~ 10^{-2}. Force map, mechanical crosstalk and all bench quantities remain unvalidated; the equations and FEM evidence are a baseline for prototype calibration, not measured performance claims.",
+   "url": "https://arxiv.org/abs/2611.26950",
+   "pdf": "https://arxiv.org/pdf/2611.26950",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "Tactile",
+    "Dex"
+   ],
+   "kw_score": 18,
+   "tldr": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression.",
+   "summary": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression."
   },
   {
    "id": "2611.27101",
@@ -613,8 +642,7 @@
    "kw_score": 13,
    "tldr": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
    "summary": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
-   "venue": "NeurIPS 2026",
-   "citations": 0
+   "venue": "NeurIPS 2026"
   },
   {
    "id": "2611.28308",
@@ -638,8 +666,7 @@
    ],
    "kw_score": 11,
    "tldr": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution.",
-   "summary": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy).",
-   "citations": 0
+   "summary": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy)."
   },
   {
    "id": "2611.27513",
@@ -667,8 +694,7 @@
    ],
    "kw_score": 11,
    "tldr": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation.",
-   "summary": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation. Experiments show that these geometry and motion latents outperform the evaluated latent-action and video latent baselines in out-of-distribution settings.",
-   "citations": 0
+   "summary": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation. Experiments show that these geometry and motion latents outperform the evaluated latent-action and video latent baselines in out-of-distribution settings."
   },
   {
    "id": "2611.27446",
@@ -698,8 +724,7 @@
    ],
    "kw_score": 11,
    "tldr": "Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training.",
-   "summary": "Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks.",
-   "citations": 0
+   "summary": "Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks."
   },
   {
    "id": "2611.27299",
@@ -734,8 +759,7 @@
    ],
    "kw_score": 11,
    "tldr": "We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding.",
-   "summary": "We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding. Improving continuous hand tracking from surface electromyography (sEMG) requires generalization across users and motion types while maintaining sensitivity to subtle movements.",
-   "citations": 0
+   "summary": "We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding. Improving continuous hand tracking from surface electromyography (sEMG) requires generalization across users and motion types while maintaining sensitivity to subtle movements."
   },
   {
    "id": "2611.27182",
@@ -763,8 +787,7 @@
    ],
    "kw_score": 11,
    "tldr": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts.",
-   "summary": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts. Compared with a turn-based harness using the same agent and tools, TRIP halves the rate of human contact with the strongest policy, raising safety from 61.3% to 81.3%, without sacrificing task success (38.7% vs. 31.0%).",
-   "citations": 0
+   "summary": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts. Compared with a turn-based harness using the same agent and tools, TRIP halves the rate of human contact with the strongest policy, raising safety from 61.3% to 81.3%, without sacrificing task success (38.7% vs. 31.0%)."
   },
   {
    "id": "2611.27047",
@@ -796,8 +819,7 @@
    ],
    "kw_score": 11,
    "tldr": "We propose BeyondEgo to extend VLA perception in space and time.",
-   "summary": "We propose BeyondEgo to extend VLA perception in space and time. On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts.",
-   "citations": 0
+   "summary": "We propose BeyondEgo to extend VLA perception in space and time. On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts."
   },
   {
    "id": "2611.27282",
@@ -822,8 +844,7 @@
    ],
    "kw_score": 10,
    "tldr": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it.",
-   "summary": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it. In experiments on real cloth and foam manipulation, HermiteTwin outperforms the state-of-the-art spring--mass twin across reconstruction, resimulation, and future prediction.",
-   "citations": 0
+   "summary": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it. In experiments on real cloth and foam manipulation, HermiteTwin outperforms the state-of-the-art spring--mass twin across reconstruction, resimulation, and future prediction."
   },
   {
    "id": "2611.27179",
@@ -849,31 +870,7 @@
    ],
    "kw_score": 10,
    "tldr": "In this work, we propose three improvements to bridge these gaps.",
-   "summary": "In this work, we propose three improvements to bridge these gaps. First, we adopt a rectified flow framework to reduce the required inference steps to one while achieving comparable or even superior performance.",
-   "citations": 0
-  },
-  {
-   "id": "2611.26950",
-   "title": "Mechanistic Analysis of Unified Proximity-Tactile Observation by a Capacitive Fingertip Array Constrained by a Metal Phalanx",
-   "authors": [
-    "Shun Cheng"
-   ],
-   "abstract": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression. Electrode-to-body parasitics exceed the useful proximity increment by one to three orders of magnitude, and crosstalk and time-division-multiplexing (TDM) settling prevent identifying the capacitance-to-digital converter (CDC) reading with the electrode-target capacitance. The array is modelled as a multi-conductor system (sensing electrodes, driven-shield nodes, phalanx ground and an external target). The CDC measurand follows from the Maxwell capacitance matrix, with each inactive termination in the observation operator. Three mechanisms are examined: driven-shield hiding of shield-branch current and gain/phase-mismatch leakage; distinct far- and near-field operators; and TDM settling as a frame-rate limit set by shield load. A single layer used for both proximity and force reads Delta C = Delta C_force + Delta C_dielectric(epsilon_target), so its force map cannot be material-independent. A dual-array stack is analysed: the outer array is grounded as a Faraday screen during contact, and the inner array reads silicone-gap compression. FEM simulations give a monotonic, nonlinear contact response (4.6 fF at 0.05 mm to 370 fF at 0.5 mm on a 1.08 pF base), a nylon-versus-metal difference of at most 0.3 fF at exported-matrix resolution (not mesh-converged), mutual-term cancellation under driven-shield readout, and about 1 fF crosstalk on the coarse mesh. In proximity mode, electrode-shield coupling of 1.47 pF makes 10^{-3}-10^{-4} mismatch a quantitative gate: a 15.9 fF increment at 5 mm equals the leakage at |epsilon_A| ~ 10^{-2}. Force map, mechanical crosstalk and all bench quantities remain unvalidated; the equations and FEM evidence are a baseline for prototype calibration, not measured performance claims.",
-   "url": "https://arxiv.org/abs/2611.26950",
-   "pdf": "https://arxiv.org/pdf/2611.26950",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "Dex",
-    "Tactile"
-   ],
-   "kw_score": 10,
-   "tldr": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression.",
-   "summary": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression.",
-   "citations": 0
+   "summary": "In this work, we propose three improvements to bridge these gaps. First, we adopt a rectified flow framework to reduce the required inference steps to one while achieving comparable or even superior performance."
   },
   {
    "id": "2611.26969",
@@ -899,8 +896,7 @@
    ],
    "kw_score": 9,
    "tldr": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes.",
-   "summary": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes. Evaluating vision-language-action models and a world-action model across 5.4K episodes, we find that all policies achieve success rates below 20%, revealing substantial limitations in dynamic manipulation.",
-   "citations": 0
+   "summary": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes. Evaluating vision-language-action models and a world-action model across 5.4K episodes, we find that all policies achieve success rates below 20%, revealing substantial limitations in dynamic manipulation."
   },
   {
    "id": "2611.28387",
@@ -925,8 +921,7 @@
    ],
    "kw_score": 8,
    "tldr": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
-   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
-   "citations": 0
+   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction."
   },
   {
    "id": "2611.27939",
@@ -948,8 +943,7 @@
    ],
    "kw_score": 8,
    "tldr": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next.",
-   "summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy.",
-   "citations": 0
+   "summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy."
   },
   {
    "id": "2611.27638",
@@ -979,8 +973,7 @@
    ],
    "kw_score": 8,
    "tldr": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons.",
-   "summary": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons. Although fine-tuning improves fact accuracy, the two learned components we test show no detectable benefit from reading them.",
-   "citations": 0
+   "summary": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons. Although fine-tuning improves fact accuracy, the two learned components we test show no detectable benefit from reading them."
   },
   {
    "id": "2611.27467",
@@ -1021,8 +1014,7 @@
    ],
    "kw_score": 8,
    "tldr": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators.",
-   "summary": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators.",
-   "citations": 0
+   "summary": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators."
   },
   {
    "id": "2611.27187",
@@ -1055,8 +1047,7 @@
    ],
    "kw_score": 8,
    "tldr": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation.",
-   "summary": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation. SCAP consistently improves performance across four different VLA architectures.",
-   "citations": 0
+   "summary": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation. SCAP consistently improves performance across four different VLA architectures."
   },
   {
    "id": "2611.28394",
@@ -1080,37 +1071,7 @@
    ],
    "kw_score": 7,
    "tldr": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
-   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
-   "citations": 0
-  },
-  {
-   "id": "2611.27552",
-   "title": "S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals",
-   "authors": [
-    "Kun Yang",
-    "Xuanyu Chen",
-    "Jing Tan",
-    "Yanjing Liu",
-    "Yubo Zhao",
-    "Renjing Xu",
-    "Addison Lin Wang"
-   ],
-   "abstract": "General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.",
-   "url": "https://arxiv.org/abs/2611.27552",
-   "pdf": "https://arxiv.org/pdf/2611.27552",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "FM",
-    "GenModel"
-   ],
-   "kw_score": 7,
-   "tldr": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone.",
-   "summary": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m.",
-   "citations": 0
+   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles."
   }
  ],
  "trending_ml": [

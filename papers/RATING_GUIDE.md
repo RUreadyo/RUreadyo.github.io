@@ -20,9 +20,11 @@ Output: write valid JSON to /tmp/ratings.json with exactly this shape:
 {"papers": {"<arxiv id>": {"relevance": 7, "quality": 6, "topic": "IL", "tldr": "...", "summary": "...", "why": "...", "by": "claude"}, ...},
  "overviews": {"YYYY-MM-DD": "...", ...}}
 
-## Daily routine (run from the repo root)
-1. `python3 scripts/fetch_papers.py --export-candidates /tmp/cands.json` (lists only papers not yet rated).
-2. Rate every candidate in /tmp/cands.json as described above and write /tmp/ratings.json. Write overviews only for dates that have at least one paper.
-3. `python3 scripts/fetch_papers.py --import-ratings /tmp/ratings.json` (rebuilds the recent days with the new ratings, refreshes venues/citations, best.json).
-4. If `papers/data/impact.json` is missing or its "updated" date is more than 7 days old: `python3 scripts/impact.py` (Semantic Scholar may rate-limit; if it fails, skip it).
-5. `git add papers/data && git commit -m "papers: digest $(date -u +%F)" && git push`. If the push is rejected, `git pull --rebase` and push again.
+## Daily routine (Claude routine, run from the repo root; NO network needed)
+The GitHub Action fetches arXiv each weekday at 13:00 UTC and saves the papers to papers/data/cache/window.json.
+The routine only rates them (the cloud sandbox cannot reach arXiv, so never fetch):
+1. `python3 scripts/fetch_papers.py --offline --export-candidates /tmp/cands.json` (lists only papers not yet rated).
+   If it reports 0 candidates, stop: there is nothing to do and nothing to commit.
+2. Rate every candidate in /tmp/cands.json as described above and write /tmp/ratings.json. Write overviews only for dates that have at least one paper. Validate: `python3 -c 'import json;json.load(open("/tmp/ratings.json"))'`.
+3. `python3 scripts/fetch_papers.py --offline --import-ratings /tmp/ratings.json` (rebuilds the recent days and best.json with the new ratings).
+4. `git add papers/data && git commit -m "papers: Claude ratings $(date -u +%F)" && git push`. If the push is rejected, `git pull --rebase` and push again.

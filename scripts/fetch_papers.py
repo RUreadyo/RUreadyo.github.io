@@ -442,6 +442,8 @@ def main():
     ap.add_argument("--export-candidates", help="write unrated candidates (per day) to this file and exit")
     ap.add_argument("--import-ratings", nargs="*", default=[], help="merge rating files into the cache")
     ap.add_argument("--candidates-per-day", type=int, default=None)
+    ap.add_argument("--offline", action="store_true",
+                    help="no network: reuse the papers saved by the last online run (cache/window.json); for the Claude routine")
     args = ap.parse_args()
 
     cfg = json.loads((PAPERS / "config.json").read_text())
@@ -453,11 +455,21 @@ def main():
         overviews.update(imp.get("overviews", {}))
         print(f"imported {len(imp.get('papers', {}))} ratings from {f}")
 
-    today = dt.date.fromisoformat(args.date)
-    window = args.backfill or cfg["lookback_days"]
-    since = today - dt.timedelta(days=window)
-    print(f"Fetching arXiv {since} → {today}")
-    papers = fetch_window(cfg, since, today)
+    if args.offline:
+        saved = load(CACHE / "window.json", {})
+        if not saved:
+            sys.exit("no cache/window.json yet: run online once (the GitHub Action does this daily)")
+        today, papers = dt.date.fromisoformat(saved["today"]), saved["papers"]
+        print(f"Offline: {len(papers)} papers saved on {saved['saved_at']}")
+    else:
+        today = dt.date.fromisoformat(args.date)
+        window = args.backfill or cfg["lookback_days"]
+        since = today - dt.timedelta(days=window)
+        print(f"Fetching arXiv {since} → {today}")
+        papers = fetch_window(cfg, since, today)
+        if not args.backfill:
+            dump(CACHE / "window.json", {"today": today.isoformat(), "saved_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+                                         "papers": papers})
     comp, tracked = compile_topics(cfg), set(cfg["tracked_authors"])
     by_day = defaultdict(list)
     for p in papers:
@@ -471,9 +483,10 @@ def main():
         rel = sorted((p for p in ps if p["kw_score"] > 2 or p["tracked_authors"]), key=lambda p: p["kw_score"], reverse=True)
         cands[day] = rel[:per_day] + [p for p in rel[per_day:] if p["tracked_authors"]]
 
+    out = {d: [{k: p[k] for k in ("id", "title", "authors", "categories", "abstract")} for p in c if p["id"] not in ratings]
+           for d, c in sorted(cands.items())}
+    out = {d: c for d, c in out.items() if c}
     if args.export_candidates:
-        out = {d: [{k: p[k] for k in ("id", "title", "authors", "categories", "abstract")} for p in c if p["id"] not in ratings]
-               for d, c in sorted(cands.items())}
         dump(Path(args.export_candidates), out, 1)
         print(f"exported {sum(map(len, out.values()))} candidates")
         return
@@ -496,7 +509,8 @@ def main():
                 overviews[day] = llm_overview(day, top)
             except Exception as e:
                 print(f"overview failed for {day}: {e!r}", file=sys.stderr)
-        trending = hf_trending(day, cfg.get("trending_ml", 10))
+        prev = load(DAYS / f"{day}.json", {})
+        trending = prev.get("trending_ml", []) if args.offline else hf_trending(day, cfg.get("trending_ml", 10))
         rated = sum("rated_by" in p for p in top + roundup)
         digest = {
             "date": day, "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -505,15 +519,24 @@ def main():
                       "relevant": len(relevant), "rated": rated},
             "top_picks": [slim(p) for p in top], "roundup": [slim(p) for p in roundup], "trending_ml": trending,
         }
+        # keep venue / citation info found by earlier online runs (Semantic Scholar) when rebuilding
+        old = {q["id"]: q for k in ("top_picks", "roundup") for q in prev.get(k, [])}
+        for q in digest["top_picks"] + digest["roundup"]:
+            o = old.get(q["id"], {})
+            for k in ("venue", "citations"):
+                if o.get(k) and not q.get(k):
+                    q[k] = o[k]
         dump(DAYS / f"{day}.json", digest, 1)
         index[day] = {"date": day, "top": len(top), "roundup": len(roundup), "papers": len(by_day[day]),
                       "trending": len(trending), "ranker": digest["ranker"]}
         print(f"  {day}: {len(top)} top, {len(roundup)} roundup, {len(trending)} trending ({digest['ranker']})")
-        time.sleep(0.5)
+        if not args.offline:
+            time.sleep(0.5)
 
     dump(CACHE / "overviews.json", overviews, 1)
     dump(DATA / "index.json", sorted(index.values(), key=lambda d: d["date"], reverse=True), 1)
-    refresh_s2(today)
+    if not args.offline:
+        refresh_s2(today)
     build_best(cfg, today)
     print("done")
 
