@@ -1,13 +1,13 @@
 {
  "date": "2026-11-21",
- "generated_at": "2026-11-24T23:31:39+00:00",
+ "generated_at": "2026-11-24T23:50:30+00:00",
  "ranker": "Claude",
- "overview": "A strong day for dexterous and contact-rich manipulation. TacitTouch distills a visuotactile flow-policy teacher into a vision-only student by matching denoising predictions, and DUO Policy gets precision from human video by switching state-dependently between a human-video hand policy and a robot correction policy. VTLA-RL adds sim-only RL post-training to visuotactile grasping policies. On the theory side, the CFG-in-autoregressive-models analysis and lifted multiple shooting for contact trajectory optimization are worth a look.",
+ "overview": "The top pick is the CFG error-activation paper, a rigorous Helmholtz-Hodge analysis of how guidance turns harmless score errors harmful, which bears directly on guided diffusion policies. ViewPACT shows proprioception acts as a shortcut and fixes viewpoint brittleness with privileged pose supervision, with real-robot gains. Most other papers are LLM/VLM RL or medical.",
  "stats": {
   "papers": 74,
   "cs_ro": 32,
   "relevant": 58,
-  "rated": 18
+  "rated": 20
  },
  "top_picks": [
   {
@@ -82,6 +82,35 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.28451",
+   "title": "Guidance-Induced Activation of Score Estimation Errors in Diffusion Models",
+   "authors": [
+    "Pengyu Luo",
+    "Yisha Yao",
+    "Bolun Li"
+   ],
+   "abstract": "Classifier-free guidance (CFG) combines conditional and unconditional score estimates to steer diffusion sampling. The weighted-solenoidal component of each score error has no instantaneous effect on the evolution of its corresponding reference density. Because the guided density in CFG generally differs from both reference densities, the combination of these solenoidal components can affect the evolution of the guided marginals. We call this mechanism guidance-induced error activation. Using a weighted Helmholtz-Hodge decomposition, we identify the activated error field, quantify its magnitude, and characterize when it vanishes. At fixed noise time, the activated error field varies continuously with guidance strength. Its weak first-order variation has two terms, one from reweighting the errors and one from the change in the guided density. For finite score errors, ODE characteristics and an SDE Feynman-Kac formula connect error-activation to the generated densities. For a class of finite Gaussian mixtures, error-activation can account for most of the KL divergence between the generated distributions by learned-score and exact-score CFG ODE samplers under strong guidance. Ideal score filtering removes the weighted-solenoidal errors and eliminates error-activation. Controlled experiments with Gaussian and Gamma mixtures illustrate how activation affects the generated densities. Qualitative CIFAR-10 comparisons suggest that filtering can help preserve object structure under strong guidance.",
+   "url": "https://arxiv.org/abs/2611.28451",
+   "pdf": "https://arxiv.org/pdf/2611.28451",
+   "primary": "stat.ML",
+   "categories": [
+    "stat.ML",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "published": "2026-11-21",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 9,
+   "relevance": 7,
+   "quality": 7,
+   "tldr": "Shows classifier-free guidance activates otherwise harmless solenoidal score errors, analyzed via weighted Helmholtz-Hodge decomposition.",
+   "summary": "Solenoidal score-error components don't affect their own reference density, but CFG's guided density differs, so these errors become active. The paper quantifies the activated error field, its dependence on guidance strength, and links it to generated densities via ODE/Feynman-Kac; for Gaussian mixtures it explains most of the KL error.",
+   "why": "Rigorous guidance theory explaining a hidden failure mode of CFG, squarely in my generative-theory interests.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.28752",
    "title": "VTLA-RL: Learning Visuotactile Policies for Load-Adaptive Grasping",
    "authors": [
@@ -147,7 +176,9 @@
    "why": "Rigorous guidance theory; relevant to generative-model understanding, though for AR not diffusion.",
    "venue": "NeurIPS 2026",
    "rated_by": "claude"
-  },
+  }
+ ],
+ "roundup": [
   {
    "id": "2611.28512",
    "title": "Lifted Multiple Shooting for Parallel-in-Time Contact-Rich Trajectory Optimization",
@@ -174,9 +205,7 @@
    "summary": "Non-smooth, multimodal contact dynamics hamper gradient-based trajectory optimization. Lifting contact impulses into decision variables lets state transitions use friction-cone-feasible impulses while consistency with the contact model is enforced separately, with implicit-differentiation sensitivities. IP-PAS, a parallel-in-time primal-dual solver, scales to long horizons and high-dimensional systems.",
    "why": "Contact-implicit trajectory optimization is useful for dexterous planning and demo generation.",
    "rated_by": "claude"
-  }
- ],
- "roundup": [
+  },
   {
    "id": "2611.28707",
    "title": "IRIS: Inverse Dynamics from Random Exploration with Eye-in-hand Sensing",
@@ -312,6 +341,39 @@
    "tldr": "NAT is a causal neural action tokenizer trained on 49k hours of cross-embodiment actions, beating FAST on unseen embodiments.",
    "summary": "Autoregressive VLAs need a universal action tokenizer. NAT is trained on robot, handheld, sim and human action data with a causal decoder enabling execution as tokens stream. It beats FAST/FAST+ across benchmarks and a real robot and narrows the gap to flow-matching heads with lower first-action latency.",
    "why": "Relevant to action representation choices vs. flow-matching heads in VLAs.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.29068",
+   "title": "ViewPACT: Multi-View Geometric Augmentation and Pose-Action Co-Training for Viewpoint-Robust Manipulation",
+   "authors": [
+    "Chenglang Tu",
+    "Feng Chen",
+    "Ruizhe Liu",
+    "Pei Zhou",
+    "Binbin Huang",
+    "Chen Xu",
+    "Yanchao Yang",
+    "Yi Ma",
+    "Shenghua Gao"
+   ],
+   "abstract": "Image policies are scalable but remain brittle to camera viewpoint changes. On LIBERO, we identify proprioception as an input shortcut: masking robot states sharply degrades several policies, while retraining from images alone recovers much of the loss. We introduce ViewPACT, an image policy trained with privileged geometric supervision. Auxiliary objectives recover end-effector and task-relevant object poses in the camera frame, while deployment requires only RGB observations. Joint geometric supervision improves mean simulation success from 37.4% to 78.4% under unseen external-camera viewpoints, with more modest gains under separately evaluated object, scene, and camera-intrinsic shifts. Across four real-robot tasks, combining simulated and real-image geometric supervision achieves 68.1% mean success, versus 3.1% for fixed-view behavior cloning and 30.6% for the strongest evaluated alternative. These results support geometric supervision for viewpoint robustness in the evaluated fixed-view demonstration setting.",
+   "url": "https://arxiv.org/abs/2611.29068",
+   "pdf": "https://arxiv.org/pdf/2611.29068",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-21",
+   "topics": [
+    "IL"
+   ],
+   "kw_score": 6,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "ViewPACT adds auxiliary end-effector and object pose prediction to image policies for camera-viewpoint robustness, finding proprioception is a shortcut.",
+   "summary": "Masking proprioception reveals it as a shortcut in LIBERO policies. ViewPACT trains RGB-only policies with privileged camera-frame pose supervision and multi-view augmentation, raising unseen-viewpoint success from 37.4% to 78.4% in sim and to 68.1% vs 30.6% on four real tasks.",
+   "why": "Useful diagnostic insight and simple recipe for viewpoint-robust BC policies.",
    "rated_by": "claude"
   },
   {
@@ -600,35 +662,6 @@
    "summary": "Extrapolation guidance is cheap but reward-agnostic; reward guidance needs full backprop. RadAG adversarially perturbs attention logits in a single block against the reward to form the guidance reference. It achieves efficient inference-time alignment.",
    "why": "Inference-time reward steering could transfer to diffusion policies.",
    "rated_by": "claude"
-  },
-  {
-   "id": "2611.29068",
-   "title": "ViewPACT: Multi-View Geometric Augmentation and Pose-Action Co-Training for Viewpoint-Robust Manipulation",
-   "authors": [
-    "Chenglang Tu",
-    "Feng Chen",
-    "Ruizhe Liu",
-    "Pei Zhou",
-    "Binbin Huang",
-    "Chen Xu",
-    "Yanchao Yang",
-    "Yi Ma",
-    "Shenghua Gao"
-   ],
-   "abstract": "Image policies are scalable but remain brittle to camera viewpoint changes. On LIBERO, we identify proprioception as an input shortcut: masking robot states sharply degrades several policies, while retraining from images alone recovers much of the loss. We introduce ViewPACT, an image policy trained with privileged geometric supervision. Auxiliary objectives recover end-effector and task-relevant object poses in the camera frame, while deployment requires only RGB observations. Joint geometric supervision improves mean simulation success from 37.4% to 78.4% under unseen external-camera viewpoints, with more modest gains under separately evaluated object, scene, and camera-intrinsic shifts. Across four real-robot tasks, combining simulated and real-image geometric supervision achieves 68.1% mean success, versus 3.1% for fixed-view behavior cloning and 30.6% for the strongest evaluated alternative. These results support geometric supervision for viewpoint robustness in the evaluated fixed-view demonstration setting.",
-   "url": "https://arxiv.org/abs/2611.29068",
-   "pdf": "https://arxiv.org/pdf/2611.29068",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-21",
-   "topics": [
-    "IL"
-   ],
-   "kw_score": 6,
-   "tldr": "We introduce ViewPACT, an image policy trained with privileged geometric supervision.",
-   "summary": "We introduce ViewPACT, an image policy trained with privileged geometric supervision. Joint geometric supervision improves mean simulation success from 37.4% to 78.4% under unseen external-camera viewpoints, with more modest gains under separately evaluated object, scene, and camera-intrinsic shifts."
   },
   {
    "id": "2611.28999",

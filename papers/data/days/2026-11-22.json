@@ -1,13 +1,13 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-24T23:31:39+00:00",
+ "generated_at": "2026-11-24T23:50:30+00:00",
  "ranker": "Claude",
- "overview": "RL and generative policies lead the day. JKO-GRPO adds Wasserstein proximal steps to Flow-GRPO for pi0-style VLAs, and Dr. Grasp-RL and FunGrasp-Zero push diverse and cross-embodiment dexterous grasping with RL. Two careful analysis papers stand out: 'Detecting Is Not Choosing' finds learned critics can flag danger but cannot rank candidate action chunks, and the REPA-for-VLAs study finds off-the-shelf alignment teachers do not help pi0.5. Force2Act combines chunked planning with reactive force experts.",
+ "overview": "zeta_0 turns humanoid VLAs (GR00T, Psi_0) into world action models by foreseeing both visual features and joint trajectories, with solid real-world gains. The ES-vs-policy-gradient analysis gives a clean dimension-vs-horizon picture of gradient estimator cost. DriveOddsBench's rank-calibration test for world models is a methodology that could transfer to robot video models.",
  "stats": {
   "papers": 84,
   "cs_ro": 44,
   "relevant": 66,
-  "rated": 18
+  "rated": 20
  },
  "top_picks": [
   {
@@ -258,6 +258,57 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.29277",
+   "title": "$ζ_0$: A Framework for World Action Models with Joint Scene and Body Foresight in Humanoid Control",
+   "authors": [
+    "Yizhi Chen",
+    "Zhanxiang Cao",
+    "Yitong Wang",
+    "Junyu Liu",
+    "Hongchu Zeng",
+    "Xinyi Peng",
+    "Chuxuan Huang",
+    "Yicheng Su",
+    "Zihao Zhou",
+    "Shengcheng Fu",
+    "Haoyang Li",
+    "Liyun Yan",
+    "Tianyue Zhan",
+    "Jianming Ma",
+    "Yang Zhang",
+    "Keqi Zhu",
+    "Xiaxi Si",
+    "Jinming Yao",
+    "Qiao Sun",
+    "Shizeng Zhang",
+    "Jiangwei Zhong",
+    "Yue Gao"
+   ],
+   "abstract": "World Action Models anticipate visual outcomes to guide robot actions, yet humanoid interaction also depends on how the robot's body responds. Visual foresight alone can miss body motion, while latent-distance losses do not directly supervise action responses. We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation. During training, a teacher conditioned on recorded futures provides a reference action response, and dual-response transfer trains the causal predictor to match it through the teacher and the executing policy. All components are trained jointly, and deployment uses only causally predicted futures. On seven HumanoidArena tasks, $ζ_0$ built on $Ψ_0$ and GR00T N1.7 reaches 63.6% and 79.5% mean success, 18.8 and 9.0 points above these bases. On six real-world tasks, it reaches 78.3% and 85.0%, gains of 16.7 and 10.0 points. On GR00T, its 79.5% tops all compared seven-task joint policies. Project page: https://chenyizhi123.github.io/zeta0-project/",
+   "url": "https://arxiv.org/abs/2611.29277",
+   "pdf": "https://arxiv.org/pdf/2611.29277",
+   "project": "https://chenyizhi123.github.io/zeta0-project/",
+   "code": "https://github.com/chenyizhi123/Zeta0",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "WM",
+    "FM"
+   ],
+   "kw_score": 7,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "zeta_0 turns humanoid VLAs into world action models by jointly foreseeing future visual features and joint trajectories in a shared latent.",
+   "summary": "A teacher conditioned on recorded futures provides reference action responses and dual-response transfer trains a causal predictor. Built on Psi_0 and GR00T N1.7, it gains 18.8 and 9.0 points on seven HumanoidArena tasks and 16.7 and 10.0 on six real tasks.",
+   "why": "Solid real-robot gains for world-action models on VLAs, relevant to unified video-action modeling.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.29240",
    "title": "Tacinf: A Unified Tactile Infrastructure for Robot Manipulation",
    "authors": [
@@ -337,6 +388,35 @@
    "tldr": "REINFORCE Look Back uses counterfactual world models' returns as baselines to separate action effects from environmental luck.",
    "summary": "In stochastic environments, imagining whole trajectories is hard. Counterfactual world models transform observed trajectories under alternative actions, and RLB uses counterfactual returns as baselines with proven unbiasedness and variance reduction. When dynamics are harder than action effects, this beats standard world-model RL.",
    "why": "Novel policy-gradient variance reduction; of RL fundamentals interest.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.29795",
+   "title": "Dimension Is Free, Horizon Is Not: When Evolution Strategies Rival Policy Gradients for LLM Fine-Tuning",
+   "authors": [
+    "Qiyao Liang",
+    "Kajetan Schweighofer",
+    "Xin Qiu",
+    "Risto Miikkulainen"
+   ],
+   "abstract": "Policy gradient (PG) methods such as GRPO dominate LLM fine-tuning, yet recent work showed that Evolution Strategies (ES) also scale to fine-tuning models with billions of parameters. Which method needs fewer samples, and on which tasks, remains unclear. We view the two methods as estimators of the same gradient that differ in where they explore. Because ES perturbs parameters, its noise grows with the number of parameters, and because PG samples actions, its noise grows with the number of generated tokens. Only noise along the directions that change the reward slows learning. The cost of ES then depends on the effective dimension, the number of independent skills a task requires rather than its parameter count, while the cost of PG depends on the effective horizon, which counts only the tokens that share both credit and weights with the reward-carrying ones. We train both methods on a synthetic task where the number of skills and the effective horizon can be varied separately. PG is cheaper when the horizon is short, ES becomes cheaper once it is long enough, and this crossover moves to longer horizons as the number of skills grows. We then measure the effective horizons of 20 NLP, math reasoning, and agentic tasks and compare the two methods with Qwen2.5-7B. PG leads on short-horizon tasks, the two tie on the moderate-horizon math ones, and no task has a horizon in the regime where the theory predicts an ES advantage. Terminal-Bench has a far longer horizon. There, in a preliminary comparison with Qwen3.5-4B, ES without any credit assignment reaches a higher success rate than the PG checkpoint released with Tmax, as the theory predicts. ES should thus have the advantage on long-horizon tasks with few independent skills and a nonvanishing reward signal. Current benchmarks are only at the onset of this regime, so ES should become more competitive as agentic tasks grow longer.",
+   "url": "https://arxiv.org/abs/2611.29795",
+   "pdf": "https://arxiv.org/pdf/2611.29795",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI",
+    "cs.LG"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "RL"
+   ],
+   "kw_score": 7,
+   "relevance": 5,
+   "quality": 7,
+   "tldr": "Analyzes when evolution strategies beat policy gradients for LLM fine-tuning: ES cost scales with effective dimension, PG with effective horizon.",
+   "summary": "Viewing ES and PG as estimators of the same gradient, ES noise grows with parameters and PG noise with tokens, but only reward-relevant directions matter. On a synthetic task varying skills and horizon, PG wins at short horizons and ES at long ones, with a predictable crossover.",
+   "why": "Clean policy-gradient theory insight with implications for long-horizon action sequences.",
    "rated_by": "claude"
   },
   {
@@ -608,182 +688,6 @@
    "summary": "Latent foresight aligned to future frames binds VLAs to training-scene appearance. Motion-Oriented Latent Reasoning uses semantic latents for stage planning and motion latents capturing how the scene should evolve. It generalizes better to scene changes.",
    "why": "Moderately relevant VLA reasoning design.",
    "rated_by": "claude"
-  },
-  {
-   "id": "2611.29294",
-   "title": "RSLaA: Self-Reconfiguring Roadside LiDARs as Agents for 3D Traffic Perception",
-   "authors": [
-    "Yang Ma",
-    "Yichen Sun",
-    "Yubing Zheng",
-    "Zhongxiang Feng",
-    "Zeyang Cheng",
-    "Said M. Easa"
-   ],
-   "abstract": "Cooperative perception with roadside LiDARs (RSLs) extends the sensing range of autonomous vehicles and resolves onboard-sensor occlusions, particularly at curves and intersections. Because infrastructure deployment is costly, existing work optimizes RSL configurations once, against road geometry and aggregated traffic statistics, and treats them as fixed thereafter. Traffic flow, however, is inherently dynamic, and a placement optimal on average can be far from optimal at any given moment. We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows. Since ground truth is unavailable at decision time, the framework centers on surrogate metrics computed solely from a probabilistic occupancy grid of historical observations, which predicts the next-window perception performance of candidate poses. We construct a co-simulation benchmark pairing five candidate surrogates with detector-agnostic ground-truth perception labels at every decision window, identifying the multi-view coverage metric J_mv as the most reliable predictor. Upon this validated surrogate we build two adaptive configuration methods, a receding-horizon (MPC) optimizer and a lightweight MAPPO-based multi-agent reinforcement learning scheme with centralized training and decentralized execution. Across 10 sites and 89 six-hour traffic scenarios (890 evaluation runs), adaptive configuration consistently improves the composite perception score over static deployment. Our results indicate that RSLs could be benefitted from being treated as agents.",
-   "url": "https://arxiv.org/abs/2611.29294",
-   "pdf": "https://arxiv.org/pdf/2611.29294",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.CV"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "RL",
-    "Control"
-   ],
-   "kw_score": 8,
-   "tldr": "We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows.",
-   "summary": "We introduce RSLaA (Roadside LiDARs as Agents), a framework in which each RSL adaptively adjusts its pose to the evolving traffic scene over decision-time windows. Across 10 sites and 89 six-hour traffic scenarios (890 evaluation runs), adaptive configuration consistently improves the composite perception score over static deployment."
-  },
-  {
-   "id": "2611.29275",
-   "title": "DriveOddsBench: Are Driving Video World Models Aligned with Real-World Odds?",
-   "authors": [
-    "Jiaxi Liu",
-    "Keshu Wu",
-    "Bin Ran",
-    "Xiaopeng Li"
-   ],
-   "abstract": "Video world models predict how a scene will evolve, and their sampled futures are increasingly used in place of the real one, from planning to simulation. These uses assume that the samples are aligned with real-world odds, with each future appearing among them as often as it would follow the same history in reality, yet current evaluations only score how real each sample looks. Testing this assumption on real driving data is hard for three reasons. Each recorded history has only one real future, so the true probabilities are unknown. Physical quantities must be read from video, where reading errors can look like model errors. Finally, the many possible analyses invite selective reporting. We introduce DriveOddsBench, a pre-registered benchmark that addresses all three. First, if the samples follow the real distribution, the rank of the real outcome among them is uniform in every history, so pooled ranks test them without probability labels. Second, one validated instrument reads the same quantities, such as the lead-vehicle gap and the ego motion, from the generated futures and from the real future, which first passes through the world model's autoencoder so that both are read alike. Third, all confirmatory analyses were frozen before any test clip was measured. We test eleven general and driving world models on 200 held-out Argoverse 2 histories in five scenario families, with 35,200 generated futures. None is aligned, and every model underestimates its uncertainty. The real outcome falls outside the range of all 16 samples in 28-61% of cases instead of the 11.8% expected under the real distribution. Five models are significantly skewed, in opposite directions, and the largest errors are in the ego motion. Nine models beat climatology without being aligned, and among these models neither type nor scale predicts which comes closest.",
-   "url": "https://arxiv.org/abs/2611.29275",
-   "pdf": "https://arxiv.org/pdf/2611.29275",
-   "project": "https://hhjj233.github.io/DriveOddsBench-page/",
-   "code": "https://github.com/hhjj233/DriveOddsBench",
-   "primary": "cs.CV",
-   "categories": [
-    "cs.CV",
-    "cs.AI",
-    "cs.LG",
-    "cs.RO"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "WM"
-   ],
-   "kw_score": 8,
-   "tldr": "We introduce DriveOddsBench, a pre-registered benchmark that addresses all three.",
-   "summary": "We introduce DriveOddsBench, a pre-registered benchmark that addresses all three. The real outcome falls outside the range of all 16 samples in 28-61% of cases instead of the 11.8% expected under the real distribution."
-  },
-  {
-   "id": "2611.29277",
-   "title": "$ζ_0$: A Framework for World Action Models with Joint Scene and Body Foresight in Humanoid Control",
-   "authors": [
-    "Yizhi Chen",
-    "Zhanxiang Cao",
-    "Yitong Wang",
-    "Junyu Liu",
-    "Hongchu Zeng",
-    "Xinyi Peng",
-    "Chuxuan Huang",
-    "Yicheng Su",
-    "Zihao Zhou",
-    "Shengcheng Fu",
-    "Haoyang Li",
-    "Liyun Yan",
-    "Tianyue Zhan",
-    "Jianming Ma",
-    "Yang Zhang",
-    "Keqi Zhu",
-    "Xiaxi Si",
-    "Jinming Yao",
-    "Qiao Sun",
-    "Shizeng Zhang",
-    "Jiangwei Zhong",
-    "Yue Gao"
-   ],
-   "abstract": "World Action Models anticipate visual outcomes to guide robot actions, yet humanoid interaction also depends on how the robot's body responds. Visual foresight alone can miss body motion, while latent-distance losses do not directly supervise action responses. We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation. During training, a teacher conditioned on recorded futures provides a reference action response, and dual-response transfer trains the causal predictor to match it through the teacher and the executing policy. All components are trained jointly, and deployment uses only causally predicted futures. On seven HumanoidArena tasks, $ζ_0$ built on $Ψ_0$ and GR00T N1.7 reaches 63.6% and 79.5% mean success, 18.8 and 9.0 points above these bases. On six real-world tasks, it reaches 78.3% and 85.0%, gains of 16.7 and 10.0 points. On GR00T, its 79.5% tops all compared seven-task joint policies. Project page: https://chenyizhi123.github.io/zeta0-project/",
-   "url": "https://arxiv.org/abs/2611.29277",
-   "pdf": "https://arxiv.org/pdf/2611.29277",
-   "project": "https://chenyizhi123.github.io/zeta0-project/",
-   "code": "https://github.com/chenyizhi123/Zeta0",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.CV",
-    "cs.LG"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "FM"
-   ],
-   "kw_score": 7,
-   "tldr": "We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation.",
-   "summary": "We present $ζ_0$, a framework that turns vision-language-action policies into World Action Models by foreseeing future visual features and measured joint trajectories in a shared latent representation. On seven HumanoidArena tasks, $ζ_0$ built on $Ψ_0$ and GR00T N1.7 reaches 63.6% and 79.5% mean success, 18.8 and 9.0 points above these bases."
-  },
-  {
-   "id": "2611.29748",
-   "title": "Performance Evaluation of Nonlinear Model Predictive and Sliding Mode Controllers on a 4-Cable Spatial CSPR in Simscape",
-   "authors": [
-    "Erfun Bayat Sarmadi",
-    "Ali Asadi",
-    "Moosa Ayati"
-   ],
-   "abstract": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables. The robot is modeled in two parallel ways: (i) via an analytical dynamic model with included cable elasticity and frictional losses, and (ii) in MATLAB Simscape Multibody, capturing realistic physical effects. Both controllers are implemented under identical reference trajectories, system constraints, and tuning strategies. Our results show that NMPC achieves superior tracking accuracy and stronger disturbance rejection compared to SMC, but at the cost of higher computational demand. Moreover, both controllers were tested on an analytical model of the robot and a Simscape model. The close agreement between the two, for both control schemes, confirms the accuracy of the analytical formulation and its consistency with the physics-based simulation. The study highlights the value of physics-based simulation as a complementary tool for validating advanced controllers under realistic conditions, and demonstrates that NMPC offers superior performance for the studied high-precision, constrained CSPR.",
-   "url": "https://arxiv.org/abs/2611.29748",
-   "pdf": "https://arxiv.org/pdf/2611.29748",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "eess.SY"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "Control"
-   ],
-   "kw_score": 6,
-   "tldr": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables.",
-   "summary": "This paper offers a comprehensive comparative study between Nonlinear Model Predictive Control (NMPC) and Sliding Mode Control (SMC) applied to a spatial Cable-Suspended Parallel Robot (CSPR) actuated by four cables. Our results show that NMPC achieves superior tracking accuracy and stronger disturbance rejection compared to SMC, but at the cost of higher computational demand."
-  },
-  {
-   "id": "2611.29548",
-   "title": "Real-Time Kinodynamic Multi-Agent Motion Planning",
-   "authors": [
-    "Jiarui Li",
-    "Runyu Zhang",
-    "Gioele Zardini"
-   ],
-   "abstract": "Coordinating large robot fleets, from warehouses to quadrotor swarms, requires collision-free trajectories that satisfy dynamic constraints and stay within speed and acceleration bounds. Existing kinodynamic multi-agent planners enforce these bounds during the search or through trajectory optimization after it, which limits fleet size and speed. We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots. TAKT analytically bounds the clearance lost when a discrete plan is smoothed and reserves this margin on the lattice. A closed-form convolution provably converts any valid plan into dynamically feasible trajectories with continuous-time collision avoidance. For robots spanning many lattice vertices, we introduce a diamond formulation that permits one-tick sideways yielding and adapt the Multi-Agent Path Finding (MAPF) solvers PIBT and LaCAM to it. With 50 robots, our planners run over 2,000 times faster than the strongest baseline in 2D halls and over 100 times in 3D, with comparable or lower makespan and cost. They plan about a thousand robots in seconds in 2D, and tens of seconds in 3D, and replan up to a thousand robots in real time.",
-   "url": "https://arxiv.org/abs/2611.29548",
-   "pdf": "https://arxiv.org/pdf/2611.29548",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.MA"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "Control"
-   ],
-   "kw_score": 6,
-   "tldr": "We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots.",
-   "summary": "We present Tickwise Actions to Kinodynamic Trajectories (TAKT), a framework that accounts for the dynamics before the search and reduces planning to a lattice search for double-integrator robots."
-  },
-  {
-   "id": "2611.29346",
-   "title": "Specification-Aware Sparse Differentiation: Planning under Signal Temporal Logic with Sparsemax Robustness",
-   "authors": [
-    "Sai Sandeep Damera",
-    "Ryan Matheu",
-    "John S. Baras",
-    "Calin Belta"
-   ],
-   "abstract": "Gradient-based optimal control under a Signal Temporal Logic (STL) specification involves solving a nonlinear program whose constraints are smoothed robustness functions of the trajectory, and automatic differentiation without knowledge of sparsity computes the Jacobian and the Hessian that its solver needs in full. This often renders the problem computationally intractable. The dynamics and the specification prescribe a sparsity pattern through the STL syntax, the windows of the temporal operators and the variables that the predicates read. Standard tools such as CasADi recover this pattern by structural detection. In this work, we propose a method to prescribe such a pattern directly from the task specification. We show that our method allows us to exploit SparseMax, a recently proposed smooth robustness operator that is certifiably sparse and sound. Its derivative is exactly zero at every operand at or below a data-dependent threshold, which structural detection cannot see. We derive the patterns that expose this trajectory-dependent sparsity to sparse automatic differentiation, with a margin test for their reuse and Hessians confined to the variables of each constraint's support. We demonstrate the method on a dual-arm coordination task in which two arms share a hand-off zone divided into cells and one until constraint per scheduled visit keeps the other arm out of a cell until the visitor has left it. The two scenes are a zone of five cells and a circle of 64 cells, with single solves and closed-loop re-planning on a rigid-body simulation. Our exact-Hessian interior-point solves are up to 27 times faster than those with the sound log-sum-exp robustness in CasADi and IPOPT.",
-   "url": "https://arxiv.org/abs/2611.29346",
-   "pdf": "https://arxiv.org/pdf/2611.29346",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "eess.SY"
-   ],
-   "published": "2026-11-22",
-   "topics": [
-    "Control"
-   ],
-   "kw_score": 6,
-   "tldr": "In this work, we propose a method to prescribe such a pattern directly from the task specification.",
-   "summary": "In this work, we propose a method to prescribe such a pattern directly from the task specification."
   },
   {
    "id": "2611.29338",

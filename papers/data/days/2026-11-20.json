@@ -1,13 +1,13 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-24T23:31:39+00:00",
+ "generated_at": "2026-11-24T23:50:30+00:00",
  "ranker": "Claude",
- "overview": "A day heavy on world models and guidance theory. Scalable Beckmann Maps is the standout for generative-model readers, showing how to bring CFG into teacher-free one-step transport maps. On the robot side, Interval Motion Supervision trains flow-matching VLAs from demos with missing action labels, and LS-MBPO does RL on frozen VLA action chunks inside a latent world model. A connecting theme is skepticism about learned world models: the round-trip check and capped world-model gradients both show model-predicted improvements often fail to hold.",
+ "overview": "A day of world-model and VLA deployment papers. GenPA argues image generators can be policies without future prediction, Ego4Gen generates 4D geometry and flow as a world-action interface, and PEA probes for invisible actuation shifts before running a VLA. Geo-Force offers a formal theory of virtual touch from depth geometry for those thinking about tactile substitutes.",
  "stats": {
   "papers": 155,
   "cs_ro": 87,
   "relevant": 104,
-  "rated": 17
+  "rated": 21
  },
  "top_picks": [
   {
@@ -121,6 +121,102 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.28308",
+   "title": "Probing Invisible Actuation Shifts for Test-time Calibration of Visuomotor Policies",
+   "authors": [
+    "Jie Liu",
+    "Hui Xie",
+    "Qinfeng Feng",
+    "Joaquin Vanschoren"
+   ],
+   "abstract": "Visuomotor policies such as vision-language-action models (VLAs) and world action models (WAMs) are increasingly deployed on robots whose cameras and controllers differ from those used to collect their training data. Such deployment introduces two kinds of shifts. Visual shifts, such as a moved camera, change the observed images; actuation shifts, such as a retuned controller, latency or an added payload, change only how commanded actions translate into robot motion. Invisible to the policy, actuation shifts sharply degrade its success, even under domain randomization. In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Specifically, before each episode, the robot executes a short probe that moves one arm axis at a time with known commands, so that gain, delay and drift leave separable traces. A closed-form identifier estimates them from the response, and PEA compensates every subsequent command so that the robot executes the motion the policy intends. The identifier requires no policy training and thus applies to any frozen visuomotor policy. Since visual shifts remain visible to the policy, PEA further adapts the frozen policy with a removable low-rank adapter, addressing coupled visual and actuation shifts. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy).",
+   "url": "https://arxiv.org/abs/2611.28308",
+   "pdf": "https://arxiv.org/pdf/2611.28308",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "FM"
+   ],
+   "kw_score": 11,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "PEA identifies actuation shifts (gain, delay, drift) via a short pre-episode probe and compensates commands for VLA/WAM policies at test time.",
+   "summary": "Actuation shifts from retuned controllers, latency or payload are invisible to visuomotor policies and hurt success even with domain randomization. PEA moves one axis at a time with known commands, identifies parameters in closed form, and compensates all subsequent commands, without policy training.",
+   "why": "Practical deployment trick for transferring VLAs across robots with different controllers.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.27513",
+   "title": "Ego4Gen: Generating Geometry-Grounded Motion Tokens as a World-Action Interface",
+   "authors": [
+    "Yang Liu",
+    "Chao Ye",
+    "Jiahao Zhang",
+    "Zeyuan Hou",
+    "Ruijie Fang",
+    "Xiyin Ni",
+    "Xinyang Ren",
+    "Weiyang Lin"
+   ],
+   "abstract": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation. Given a single egocentric image and a text prompt, Ego4Gen jointly generates temporally aligned RGB frames, dense point maps, and dense scene flow, explicitly pre dicting the evolution of scene appearance, spatial struc ture, and motion. Built on Cosmos3-Nano, Ego4Gen ex tends the pretrained generative backbone through modality routed LoRA and asymmetric attention, using geometric pseudo-labels from MotionCrafter to learn to predict future geometry and motion latents. These latents can either be decoded into explicit 3D structure and motion or mapped to robot actions. To this end, we also introduce FlowIn verse, a lightweight inverse dynamics network trained in two stages to translate predicted 4D latents into robot ac tions. Experiments show that these geometry and motion latents outperform the evaluated latent-action and video latent baselines in out-of-distribution settings. Closed loop policy evaluations further demonstrate their utility for translating predicted 4D futures into robot control. To gether, these results support geometry-grounded motion to kens as a world-action interface, connecting 4D future gen eration with robotic manipulation and suggesting a path to ward reduced reliance on action-labeled data.",
+   "url": "https://arxiv.org/abs/2611.27513",
+   "pdf": "https://arxiv.org/pdf/2611.27513",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "WM"
+   ],
+   "kw_score": 11,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "Ego4Gen extends Cosmos to jointly generate future RGB, point maps and scene flow from one egocentric image, plus an inverse dynamics model to actions.",
+   "summary": "Ego4Gen adds modality-routed LoRA and asymmetric attention to Cosmos3-Nano, using MotionCrafter pseudo-labels for future geometry/motion latents. FlowInverse maps predicted 4D latents to actions. Geometry/motion latents beat latent-action and video-latent baselines OOD and work in closed-loop evaluation.",
+   "why": "Relevant to video world models as policy interfaces, with 4D geometry rather than pixels.",
+   "rated_by": "claude"
+  }
+ ],
+ "roundup": [
+  {
+   "id": "2611.27446",
+   "title": "GenPA: Image Generators as Efficient Robot Policies",
+   "authors": [
+    "Zian Deng",
+    "Tianyi Zhang",
+    "Zilong Zheng",
+    "Ziyu Liu",
+    "Tao Zhang",
+    "Yao Lyu",
+    "Shengbo Eben Li"
+   ],
+   "abstract": "Pretrained visual generation models have shown great promise in robotic manipulation. However, a representative line of work still treats future visual prediction as the central link between visual generative pretraining and action learning, retaining it as a training objective even when future scenes are no longer generated at inference time. We argue that the instruction-following, spatial understanding, and visual imagination capabilities acquired through image generation pretraining can support control without future visual prediction: image generation models themselves can be directly adapted into powerful action learners. Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. The native image-editing interface accommodates different visual targets without task-specific perception heads, enabling comparisons of current-scene perception, future prediction, and their combinations within a common policy architecture. At deployment, GenPA requires only a single backbone forward pass and action regression, without visual generation or iterative action denoising. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks. Under compiled inference, GenPA takes 20.9 ms per action chunk on a single H100 GPU, achieving 1.7-3.4x speedups over strong VLA and WAM baselines. Our latency analysis further highlights architectural advantages of visual generation backbones for efficient robot control. Ablations across visual tasks and their combinations identify current-depth supervision as a simple, effective training recipe.",
+   "url": "https://arxiv.org/abs/2611.27446",
+   "pdf": "https://arxiv.org/pdf/2611.27446",
+   "project": "https://deng-zian.github.io/GenPA-website/",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 11,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "GenPA adapts a pretrained image-generation/editing model directly into a policy with a 19M action adapter, without future-frame prediction.",
+   "summary": "Prior work keeps future prediction as the link between visual generative pretraining and control. GenPA fine-tunes an image generator with a small action-regression adapter and reuses its editing objective for perception co-training, comparing current-scene, future and combined targets in one architecture. It reports strong efficiency and performance.",
+   "why": "Challenges the assumption that video/future prediction is needed to exploit generative pretraining for policies.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.27967",
    "title": "Task2Hand: A Contact-Grounded Skill for Parametric Dexterous-Hand Morphology Design",
    "authors": [
@@ -147,6 +243,33 @@
    "tldr": "An agentic design 'Skill' iterates dexterous hand morphology through contact, dynamics, and learning gates, producing a 16-DoF SAGE Hand.",
    "summary": "Designing dexterous hands requires repeated expert iteration over geometry, URDFs, grasps and policy training. Task2Hand packages this into gated checks where an agent revises bounded parameters and escalates to a human, yielding SAGE Hand with four fingers, 16 DoF and an opposable thumb. Under matched training it reaches 45.6% in-hand success on a hexagonal prism vs 37.3% for a baseline.",
    "why": "Hand co-design for in-hand manipulation touches core dexterity interests, though results are sim and modest.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.26992",
+   "title": "Geo-Force: A Theory of Force Sensing from Object Geometry",
+   "authors": [
+    "Abdullah Ayad"
+   ],
+   "abstract": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available. A virtual touch sensor that keeps the sensing surface of a tactile sensor but replaces its electronics with a touch signal predicted from the target object's geometry, as measured by a depth sensor, could close this gap, yet it is unclear what such a virtual sensor computes and when its output can be trusted. We give a formal answer. We define the Geometric Force as the force on each taxel of a virtual touch sensor, computed in three steps: rendering the surface to be touched as seen from the virtual sensor, predicting the touch signal with a touch map, learned or simulated, and estimating the force from that signal. We prove three properties of the Geometric Force. First, its force vectors only rotate under a change of coordinate frame. Second, it vanishes when the rendered surface does not touch the virtual sensor. Third, it is stable: its error grows at most linearly with the errors of the three steps for Lipschitz maps. The rendering error, in turn, depends on how well the surface is sampled or reconstructed and how accurately the sensor is placed. We then show a fundamental limit: geometry does not reveal the object's stiffness, so no touch map can predict touch exactly for objects of the same shape and different stiffness. Under an elastic contact model, all object-specific knowledge resides in the touch map. From these results, we derive requirements on the depth sensor and the objects, design rules, and the conditions under which such a virtual sensor fails.",
+   "url": "https://arxiv.org/abs/2611.26992",
+   "pdf": "https://arxiv.org/pdf/2611.26992",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "Tactile",
+    "Dex"
+   ],
+   "kw_score": 32,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "Formal theory of 'Geometric Force': virtual tactile force predicted from depth-sensed object geometry, with equivariance, vanishing and stability proofs.",
+   "summary": "Tactile sensors are fragile while depth cameras are common. The paper defines a virtual touch sensor that renders the surface, predicts a touch signal, and estimates force, and proves frame equivariance, zero force without contact, and linear error growth. It clarifies when such virtual tactile signals can be trusted.",
+   "why": "A theoretical grounding for vision-derived touch that may matter for hands lacking real tactile sensors.",
    "rated_by": "claude"
   },
   {
@@ -187,9 +310,7 @@
    "summary": "RL post-training of diffusion models often improves reward at the cost of overall quality. The authors view CFG and RL as correction vectors in prediction space, use the projection of the RL correction onto the CFG direction as a diagnostic, and propose Conditional Contrast Regularization to preserve it. Analysis and rotation interventions show the CFG direction carries quality information RL updates discard.",
    "why": "The CFG-vs-RL geometric view could inform RL fine-tuning of diffusion policies, though experiments are on images.",
    "rated_by": "claude"
-  }
- ],
- "roundup": [
+  },
   {
    "id": "2611.27074",
    "title": "Hindsight Forcing: Learning Better History from the Future in Autoregressive Video Diffusion",
@@ -568,51 +689,6 @@
    "rated_by": "claude"
   },
   {
-   "id": "2611.26992",
-   "title": "Geo-Force: A Theory of Force Sensing from Object Geometry",
-   "authors": [
-    "Abdullah Ayad"
-   ],
-   "abstract": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available. A virtual touch sensor that keeps the sensing surface of a tactile sensor but replaces its electronics with a touch signal predicted from the target object's geometry, as measured by a depth sensor, could close this gap, yet it is unclear what such a virtual sensor computes and when its output can be trusted. We give a formal answer. We define the Geometric Force as the force on each taxel of a virtual touch sensor, computed in three steps: rendering the surface to be touched as seen from the virtual sensor, predicting the touch signal with a touch map, learned or simulated, and estimating the force from that signal. We prove three properties of the Geometric Force. First, its force vectors only rotate under a change of coordinate frame. Second, it vanishes when the rendered surface does not touch the virtual sensor. Third, it is stable: its error grows at most linearly with the errors of the three steps for Lipschitz maps. The rendering error, in turn, depends on how well the surface is sampled or reconstructed and how accurately the sensor is placed. We then show a fundamental limit: geometry does not reveal the object's stiffness, so no touch map can predict touch exactly for objects of the same shape and different stiffness. Under an elastic contact model, all object-specific knowledge resides in the touch map. From these results, we derive requirements on the depth sensor and the objects, design rules, and the conditions under which such a virtual sensor fails.",
-   "url": "https://arxiv.org/abs/2611.26992",
-   "pdf": "https://arxiv.org/pdf/2611.26992",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.CV"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "Tactile",
-    "Dex"
-   ],
-   "kw_score": 32,
-   "tldr": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available.",
-   "summary": "Robots need contact forces to handle delicate objects, but tactile sensors are fragile and hard to integrate, whereas depth sensors, such as RGB-D cameras, are widely available."
-  },
-  {
-   "id": "2611.26950",
-   "title": "Mechanistic Analysis of Unified Proximity-Tactile Observation by a Capacitive Fingertip Array Constrained by a Metal Phalanx",
-   "authors": [
-    "Shun Cheng"
-   ],
-   "abstract": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression. Electrode-to-body parasitics exceed the useful proximity increment by one to three orders of magnitude, and crosstalk and time-division-multiplexing (TDM) settling prevent identifying the capacitance-to-digital converter (CDC) reading with the electrode-target capacitance. The array is modelled as a multi-conductor system (sensing electrodes, driven-shield nodes, phalanx ground and an external target). The CDC measurand follows from the Maxwell capacitance matrix, with each inactive termination in the observation operator. Three mechanisms are examined: driven-shield hiding of shield-branch current and gain/phase-mismatch leakage; distinct far- and near-field operators; and TDM settling as a frame-rate limit set by shield load. A single layer used for both proximity and force reads Delta C = Delta C_force + Delta C_dielectric(epsilon_target), so its force map cannot be material-independent. A dual-array stack is analysed: the outer array is grounded as a Faraday screen during contact, and the inner array reads silicone-gap compression. FEM simulations give a monotonic, nonlinear contact response (4.6 fF at 0.05 mm to 370 fF at 0.5 mm on a 1.08 pF base), a nylon-versus-metal difference of at most 0.3 fF at exported-matrix resolution (not mesh-converged), mutual-term cancellation under driven-shield readout, and about 1 fF crosstalk on the coarse mesh. In proximity mode, electrode-shield coupling of 1.47 pF makes 10^{-3}-10^{-4} mismatch a quantitative gate: a 15.9 fF increment at 5 mm equals the leakage at |epsilon_A| ~ 10^{-2}. Force map, mechanical crosstalk and all bench quantities remain unvalidated; the equations and FEM evidence are a baseline for prototype calibration, not measured performance claims.",
-   "url": "https://arxiv.org/abs/2611.26950",
-   "pdf": "https://arxiv.org/pdf/2611.26950",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "Tactile",
-    "Dex"
-   ],
-   "kw_score": 18,
-   "tldr": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression.",
-   "summary": "A capacitive fingertip array on a metal phalanx under thin silicone skin senses centimetre-scale conductive targets by fringing fields and contact force by dielectric compression."
-  },
-  {
    "id": "2611.27101",
    "title": "EgoSurgHands: An Egocentric 3D Hand Pose Dataset & Benchmark for Open Surgery Training",
    "authors": [
@@ -643,123 +719,6 @@
    "tldr": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
    "summary": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
    "venue": "NeurIPS 2026"
-  },
-  {
-   "id": "2611.28308",
-   "title": "Probing Invisible Actuation Shifts for Test-time Calibration of Visuomotor Policies",
-   "authors": [
-    "Jie Liu",
-    "Hui Xie",
-    "Qinfeng Feng",
-    "Joaquin Vanschoren"
-   ],
-   "abstract": "Visuomotor policies such as vision-language-action models (VLAs) and world action models (WAMs) are increasingly deployed on robots whose cameras and controllers differ from those used to collect their training data. Such deployment introduces two kinds of shifts. Visual shifts, such as a moved camera, change the observed images; actuation shifts, such as a retuned controller, latency or an added payload, change only how commanded actions translate into robot motion. Invisible to the policy, actuation shifts sharply degrade its success, even under domain randomization. In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Specifically, before each episode, the robot executes a short probe that moves one arm axis at a time with known commands, so that gain, delay and drift leave separable traces. A closed-form identifier estimates them from the response, and PEA compensates every subsequent command so that the robot executes the motion the policy intends. The identifier requires no policy training and thus applies to any frozen visuomotor policy. Since visual shifts remain visible to the policy, PEA further adapts the frozen policy with a removable low-rank adapter, addressing coupled visual and actuation shifts. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy).",
-   "url": "https://arxiv.org/abs/2611.28308",
-   "pdf": "https://arxiv.org/pdf/2611.28308",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "FM"
-   ],
-   "kw_score": 11,
-   "tldr": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution.",
-   "summary": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy)."
-  },
-  {
-   "id": "2611.27513",
-   "title": "Ego4Gen: Generating Geometry-Grounded Motion Tokens as a World-Action Interface",
-   "authors": [
-    "Yang Liu",
-    "Chao Ye",
-    "Jiahao Zhang",
-    "Zeyuan Hou",
-    "Ruijie Fang",
-    "Xiyin Ni",
-    "Xinyang Ren",
-    "Weiyang Lin"
-   ],
-   "abstract": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation. Given a single egocentric image and a text prompt, Ego4Gen jointly generates temporally aligned RGB frames, dense point maps, and dense scene flow, explicitly pre dicting the evolution of scene appearance, spatial struc ture, and motion. Built on Cosmos3-Nano, Ego4Gen ex tends the pretrained generative backbone through modality routed LoRA and asymmetric attention, using geometric pseudo-labels from MotionCrafter to learn to predict future geometry and motion latents. These latents can either be decoded into explicit 3D structure and motion or mapped to robot actions. To this end, we also introduce FlowIn verse, a lightweight inverse dynamics network trained in two stages to translate predicted 4D latents into robot ac tions. Experiments show that these geometry and motion latents outperform the evaluated latent-action and video latent baselines in out-of-distribution settings. Closed loop policy evaluations further demonstrate their utility for translating predicted 4D futures into robot control. To gether, these results support geometry-grounded motion to kens as a world-action interface, connecting 4D future gen eration with robotic manipulation and suggesting a path to ward reduced reliance on action-labeled data.",
-   "url": "https://arxiv.org/abs/2611.27513",
-   "pdf": "https://arxiv.org/pdf/2611.27513",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "WM"
-   ],
-   "kw_score": 11,
-   "tldr": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation.",
-   "summary": "We present Ego4Gen (Egocentric 4D Future Generation), a world model for 4D future generation in robotic manipu lation. Experiments show that these geometry and motion latents outperform the evaluated latent-action and video latent baselines in out-of-distribution settings."
-  },
-  {
-   "id": "2611.27446",
-   "title": "GenPA: Image Generators as Efficient Robot Policies",
-   "authors": [
-    "Zian Deng",
-    "Tianyi Zhang",
-    "Zilong Zheng",
-    "Ziyu Liu",
-    "Tao Zhang",
-    "Yao Lyu",
-    "Shengbo Eben Li"
-   ],
-   "abstract": "Pretrained visual generation models have shown great promise in robotic manipulation. However, a representative line of work still treats future visual prediction as the central link between visual generative pretraining and action learning, retaining it as a training objective even when future scenes are no longer generated at inference time. We argue that the instruction-following, spatial understanding, and visual imagination capabilities acquired through image generation pretraining can support control without future visual prediction: image generation models themselves can be directly adapted into powerful action learners. Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. The native image-editing interface accommodates different visual targets without task-specific perception heads, enabling comparisons of current-scene perception, future prediction, and their combinations within a common policy architecture. At deployment, GenPA requires only a single backbone forward pass and action regression, without visual generation or iterative action denoising. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks. Under compiled inference, GenPA takes 20.9 ms per action chunk on a single H100 GPU, achieving 1.7-3.4x speedups over strong VLA and WAM baselines. Our latency analysis further highlights architectural advantages of visual generation backbones for efficient robot control. Ablations across visual tasks and their combinations identify current-depth supervision as a simple, effective training recipe.",
-   "url": "https://arxiv.org/abs/2611.27446",
-   "pdf": "https://arxiv.org/pdf/2611.27446",
-   "project": "https://deng-zian.github.io/GenPA-website/",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.CV"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "FM",
-    "IL"
-   ],
-   "kw_score": 11,
-   "tldr": "Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training.",
-   "summary": "Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks."
-  },
-  {
-   "id": "2611.27299",
-   "title": "Re-JEPA: Coupling Representation Prediction and Signal Reconstruction for State-Conditioned EMG Tracking",
-   "authors": [
-    "Yijian Yang",
-    "Tao Chen",
-    "Xiaodong Yang",
-    "Zongheng Guo",
-    "Heng Liu",
-    "Lun Shu",
-    "Chen Luo",
-    "Junhao Tu",
-    "Lei Shu",
-    "Mingzhou Wu",
-    "Yifan Liu",
-    "Zhuanghui Zhang",
-    "Zhenqiang Liu",
-    "Shilei Wen"
-   ],
-   "abstract": "Improving continuous hand tracking from surface electromyography (sEMG) requires generalization across users and motion types while maintaining sensitivity to subtle movements. Joint-embedding predictive architectures (JEPAs) learn latent representation spaces through contextual prediction, but their effectiveness for tracking depends on which motion-relevant details these representations preserve and how those details are interpreted as the hand state evolves. We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding. During pretraining without kinematic labels, Re-JEPA predicts continuous latent targets at multiple levels from visible EMG patches and reconstructs masked amplitude and phase attributes from the fused predictions. Signal reconstruction imposes an additional constraint on the contextual predictor, encouraging its outputs to retain information needed for signal recovery. For downstream tracking, the Gated Persistent Motion (GPM) decoder conditions EMG-token readout on recurrent state tokens and motion history, then generates continuous trajectories through gated state updates and incremental pose prediction. Under the emg2pose tracking protocol, Re-JEPA reduces angular MAE after full fine-tuning by approximately 10.3%, 19.3%, and 14.9% relative to vemg2pose on the cross-user, cross-stage, and joint cross-user-stage splits, respectively.",
-   "url": "https://arxiv.org/abs/2611.27299",
-   "pdf": "https://arxiv.org/pdf/2611.27299",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-20",
-   "topics": [
-    "WM",
-    "FM"
-   ],
-   "kw_score": 11,
-   "tldr": "We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding.",
-   "summary": "We introduce Re-JEPA, a tracking framework that couples representation prediction with signal reconstruction and incorporates state-conditioned motion decoding. Improving continuous hand tracking from surface electromyography (sEMG) requires generalization across users and motion types while maintaining sensitivity to subtle movements."
   },
   {
    "id": "2611.27182",
@@ -1072,6 +1031,57 @@
    "kw_score": 7,
    "tldr": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
    "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles."
+  },
+  {
+   "id": "2611.27552",
+   "title": "S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals",
+   "authors": [
+    "Kun Yang",
+    "Xuanyu Chen",
+    "Jing Tan",
+    "Yanjing Liu",
+    "Yubo Zhao",
+    "Renjing Xu",
+    "Addison Lin Wang"
+   ],
+   "abstract": "General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.",
+   "url": "https://arxiv.org/abs/2611.27552",
+   "pdf": "https://arxiv.org/pdf/2611.27552",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "FM",
+    "GenModel"
+   ],
+   "kw_score": 7,
+   "tldr": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone.",
+   "summary": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m."
+  },
+  {
+   "id": "2611.27121",
+   "title": "Portable Active Recovery under Timed and Position-Dependent Visual Outages",
+   "authors": [
+    "Jinyuan Zhang",
+    "Shengshuo Jiao"
+   ],
+   "abstract": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion. On stereo visual-inertial quadrotors without external localization, an exogenous timed blackout and an endogenous position-dependent dark zone appear identical at loss onset yet require opposite responses: hover-and-wait completes 93/96 timed blackouts but 0/96 spatial outages (13 hard failures), whereas blind continuation traverses many spatial zones yet fails heavily during timed blackouts. We formulate visual-outage recovery as a worst-condition active-observability problem and introduce a portable recovery module at the reference interface of an unchanged host controller with zero retraining. Using deployable telemetry alone, the module coordinates visual-loss detection, jerk-limited braking, bounded backward probing, settled rejoining, height-integral trim, and an optional gated prior-map branch. On a preregistered 48-scene benchmark (1,920 flights), our full MPPI configuration reaches 88.5% [81.2, 94.8] worst-condition completion, outperforming development-selected DATT-L1 by +29.2 pp [17.7, 40.6] and exceeding all six external baselines after Bonferroni correction. Attached without retraining to SimpleFlight, the module lifts worst-condition completion by +17.7 pp [7.3, 28.1] to 86.5% (and 90% across 1.0x/1.25x speeds, 0/80 hard failures). Trace diagnostics reveal that survival hinges on visual-inertial re-acquisition asymmetry at vision return -- not blind IMU drift suppression - and uncover a bias-drift map crossover confirmed on 72 held-out EuRoC windows.",
+   "url": "https://arxiv.org/abs/2611.27121",
+   "pdf": "https://arxiv.org/pdf/2611.27121",
+   "primary": "cs.AI",
+   "categories": [
+    "cs.AI",
+    "cs.RO"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "Control"
+   ],
+   "kw_score": 7,
+   "tldr": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion.",
+   "summary": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion. On a preregistered 48-scene benchmark (1,920 flights), our full MPPI configuration reaches 88.5% [81.2, 94.8] worst-condition completion, outperforming development-selected DATT-L1 by +29.2 pp [17.7, 40.6] and exceeding all six external baselines after Bonferroni correction."
   }
  ],
  "trending_ml": [

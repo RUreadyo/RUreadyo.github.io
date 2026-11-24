@@ -1,13 +1,13 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-24T23:31:39+00:00",
+ "generated_at": "2026-11-24T23:50:30+00:00",
  "ranker": "Claude",
- "overview": "The strongest day of the batch for core interests. DexDuet learns contact-preserving bimanual dexterity from a single human demo, and DelayOPSD fixes asynchronous action-chunk execution by distilling a synchronous teacher on on-policy rollouts. OVOGO (offline RL for flow VLAs), iTDM (fixing baseline drift in diffusion RL) and SOAR (one-step DCT action generation) cover the generative-policy side, while EgoStudy gives controlled evidence on scaling egocentric human data. Human-data-driven world models (Native LAM, DexLatentWorld, VeriTouch) form a connecting theme.",
+ "overview": "NoveltyGate finds that input novelty, not approximation error, decides which pi0.5 tokens need exact compute, an insightful error-reliance gap for fast VLA inference. ProMix makes VLA data-mixture optimization cheap via a small proxy, and ViDiHand2 improves metric hand reconstruction from video for human-to-robot dexterous data. WAVE's frozen-skill warping is a neat interface idea for multi-object RL.",
  "stats": {
   "papers": 185,
   "cs_ro": 98,
   "relevant": 130,
-  "rated": 19
+  "rated": 23
  },
  "top_picks": [
   {
@@ -366,6 +366,32 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.31099",
+   "title": "NoveltyGate: Novelty, Not Error, Decides Which VLA Prefix Tokens to Compute Exactly",
+   "authors": [
+    "Lemeng Qi"
+   ],
+   "abstract": "Flow-matching vision-language-action (VLA) models such as $π_{0.5}$ re-encode the camera images and the instruction with a 2B-parameter backbone at every control step, and the feed-forward layers of this prefix account for most of its compute. A natural way to save this compute is to send most tokens through a low-rank MLP and compute exactly only the tokens whose approximation error is large. We find that this intuition is wrong. Even a verifier that knows every token's exact error picks the wrong tokens, producing 1.3--1.7$\\times$ larger action deviation than a simple test of whether a token's input is novel, that is, whether it falls outside the subspace seen during calibration. Large errors concentrate in tokens the policy relies on little, such as the third-person camera, while the novelty test favors the wrist camera, a view the action depends on heavily. We call this the error--reliance gap. Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP. Deciding once per layer instead of once per matrix product avoids moving wide intermediate tensors and keeps every shape static, so the whole prefix runs as a single CUDA graph. On LIBERO, NoveltyGate accelerates the $π_{0.5}$ prefix by up to 1.61$\\times$, stays 2.7--2.9$\\times$ closer to the original policy than channel pruning and low-rank compression at equal compute, and preserves closed-loop task success.",
+   "url": "https://arxiv.org/abs/2611.31099",
+   "pdf": "https://arxiv.org/pdf/2611.31099",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM"
+   ],
+   "kw_score": 15,
+   "relevance": 6,
+   "quality": 7,
+   "tldr": "NoveltyGate routes pi0.5 prefix tokens to exact or low-rank MLPs by input novelty, not approximation error, for faster VLA inference.",
+   "summary": "Even an oracle error-based verifier picks the wrong tokens, giving 1.3-1.7x larger action deviation than a novelty test, because large errors concentrate in tokens the policy barely relies on (third-person camera) while the wrist camera matters most. NoveltyGate is training-free and routes per layer before computation.",
+   "why": "Fast-inference trick for flow VLAs with an insightful error-reliance gap finding.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.30209",
    "title": "RoboAda: Adapting Frozen Robot Policies at Test Time to Physics They Cannot See",
    "authors": [
@@ -469,6 +495,71 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.29873",
+   "title": "ProMix: Efficient Data Mixture Optimization for Robotic Imitation via Proxy-Reference DRO",
+   "authors": [
+    "Qie Sima",
+    "Wei Xue",
+    "Yike Guo"
+   ],
+   "abstract": "Vision-Language-Action (VLA) models excel in open-world manipulation, yet their performance often saturates when training data are naively pooled across heterogeneous robots, tasks, and environments. Distributionally robust data mixture optimization, exemplified by Re-Mix, can recover much of this performance, but its weight search requires training full-scale policies twice on the entire corpus, placing it out of reach for most laboratories. We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights transfer, without re-tuning, to VLA backbones up to 7B parameters. We further provide, to our knowledge, the first controlled analysis of the reference model's role in robotic DRO, showing that removing it induces over-pessimism toward noisy, low-quality domains (-3.8% average and -14.3% worst-domain success rate), and that entropy regularization is needed to prevent weight collapse. Evaluated on 9500 real-world episodes from the Open-X Embodiment dataset, ProMix improves the average success rate over uniform mixing from 68.4% to 76.2%, matching Re-Mix within evaluation noise while reducing mixture-optimization cost to a backbone-independent 11 GPU-hours - versus 16 GPU-hours at the 50M comparison scale and 192 GPU-hours at 7B for full-scale searches - with a +17.1% absolute gain on the worst-case domain.",
+   "url": "https://arxiv.org/abs/2611.29873",
+   "pdf": "https://arxiv.org/pdf/2611.29873",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 15,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "ProMix learns VLA data-mixture weights with a 15M proxy via proxy-reference DRO, transferring to backbones up to 7B.",
+   "summary": "Re-Mix-style DRO needs full-scale training twice. ProMix uses a small proxy against a frozen reference, and weights transfer without re-tuning. Removing the reference causes over-pessimism toward noisy domains (-3.8% avg, -14.3% worst-domain), and entropy regularization prevents collapse.",
+   "why": "Cheap data-mixture optimization is directly relevant to robot foundation model training recipes.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.30597",
+   "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
+   "authors": [
+    "Yuxi Wang",
+    "Yufei Liu",
+    "Chengkai Jin",
+    "Qingyue Chen",
+    "Wenqi Ouyang",
+    "Tianyi Wei",
+    "Kerui Ren",
+    "Siyuan Huang",
+    "Zhiqi Shen",
+    "Hongsheng Li",
+    "Xingang Pan"
+   ],
+   "abstract": "Learning robot manipulation from egocentric human videos requires accurate metric 3D hand motion. Recent methods leverage pretrained video diffusion model (VDM) priors to recover occluded hands directly from full-frame videos, but their appearance-based depth regression generalizes poorly to unseen cameras. In this work, we propose ViDiHand2, a geometry-driven framework that reformulates VDM-based hand depth estimation from direct regression into fine-grained geometric constraint solving. Specifically, we introduce Fine-Grained Geometric Lifting and Clip-Level Ray Fitting, which recover metric depth by enforcing geometric consistency between pixel-aligned 2D joints and the metric structure of MANO hands, while leveraging temporal observations across the clip. Since the lifting relies on these 2D joints, to improve robustness under occlusion and image truncation, we further develop Confidence-Gated Fusion to adaptively combine geometrically lifted joints with MANO predictions according to localization confidence. Finally, we enhance the VDM backbone to better capture spatial-temporal representations and produce the per-frame 2D joint and MANO predictions that both steps rely on. Extensive experiments on seven public datasets demonstrate that ViDiHand2 consistently outperforms 18 baselines, reducing in-the-wild absolute joint error by 42% and detection failures by 8.82x compared with the best baseline on each metric, while running at 57 FPS. The code is available at https://github.com/NTUYWANG103/ViDiHand.",
+   "url": "https://arxiv.org/abs/2611.30597",
+   "pdf": "https://arxiv.org/pdf/2611.30597",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Dex",
+    "Video",
+    "GenModel"
+   ],
+   "kw_score": 13,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "ViDiHand2 recovers metric 3D hand motion from in-the-wild video by combining video diffusion priors with MANO geometric constraint solving.",
+   "summary": "Appearance-based depth regression generalizes poorly across cameras. ViDiHand2 lifts 2D joints with fine-grained geometric constraints and clip-level ray fitting, with confidence-gated fusion under occlusion, improving metric hand reconstruction.",
+   "why": "Better metric hand motion from egocentric video directly feeds human-to-robot dexterous data pipelines.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.30145",
    "title": "RMR-VLA: Recurrent Memory Reasoning for Vision-Language-Action Models",
    "authors": [
@@ -530,6 +621,38 @@
    "tldr": "ActField is a continuous-time JEPA world model integrating an action-conditioned latent vector field over physical time.",
    "summary": "Discrete-interval JEPA world models leave action-effect dynamics implicit. ActField separates action-independent and action-induced evolution in a continuous latent ODE with reference conditioning and multi-step loss. It improves prediction on LIBERO, DROID and BEHAVIOR.",
    "why": "Continuous-time latent dynamics for manipulation world models.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.30765",
+   "title": "Object Count Generalization Is an Interface Problem: Warping a Frozen Skill Instead of Retraining It",
+   "authors": [
+    "Paul Mattes",
+    "Ayman Abdeldayem",
+    "Denis Shcherba",
+    "Wojciech Samek",
+    "Marc Toussaint"
+   ],
+   "abstract": "Reinforcement learning policies for robot manipulation degrade when the number of objects N in the scene grows beyond the training range. This is a covariate shift that also changes the dimension of the state. We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights. WAVE has three parts. First, a selection policy picks the one object the robot works on next. Second, a warping policy reads a local view of the scene around that object, whose size does not depend on N. It emits a multiplier and an offset for every quantity the skill reads and every action it outputs. Third, the skill acts under this affine warp. It is shown a scene that holds a single object, while the warp steers it around the objects it is not shown and edits the actions that are sent to the robot. Both the selection and warping policies are trained with PPO on the multi-object reward and use the skill as a black box, so WAVE is task-general and skill-agnostic. It requires only that the skill was trained on the same embodiment and that every object has a goal pose. We also bound the number of attempts needed to place all N objects, assuming positive expected net progress per attempt, and measure this progress for each object count. We evaluate WAVE on cube arrangement tasks with a gantry robot and with a Franka Panda arm. Trained with at most nine cubes, it generalizes zero-shot to several times its training count, on the gantry to scenes of up to thirty cubes. Published methods that learn multi-object manipulation show count generalization up to six objects. Fine-tuning the skill, learning from the same local view without it, and an entity transformer, even when distilled from the pretrained skill, all collapse within their training counts under the same training budget.",
+   "url": "https://arxiv.org/abs/2611.30765",
+   "pdf": "https://arxiv.org/pdf/2611.30765",
+   "project": "https://hhi-robot-learning.github.io/wave-website/",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "RL",
+    "IL"
+   ],
+   "kw_score": 12,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "WAVE extends a frozen single-object RL skill to many objects by learning object selection and affine warps of its inputs and actions with PPO.",
+   "summary": "Object-count growth shifts and resizes the state. WAVE's selection and warping policies, trained with PPO on the multi-object reward, steer the black-box skill via per-quantity multipliers and offsets, avoiding retraining.",
+   "why": "A clean interface-level idea for skill reuse, moderately relevant.",
    "rated_by": "claude"
   },
   {
@@ -734,113 +857,6 @@
    "venue": "NeurIPS 2026"
   },
   {
-   "id": "2611.31099",
-   "title": "NoveltyGate: Novelty, Not Error, Decides Which VLA Prefix Tokens to Compute Exactly",
-   "authors": [
-    "Lemeng Qi"
-   ],
-   "abstract": "Flow-matching vision-language-action (VLA) models such as $π_{0.5}$ re-encode the camera images and the instruction with a 2B-parameter backbone at every control step, and the feed-forward layers of this prefix account for most of its compute. A natural way to save this compute is to send most tokens through a low-rank MLP and compute exactly only the tokens whose approximation error is large. We find that this intuition is wrong. Even a verifier that knows every token's exact error picks the wrong tokens, producing 1.3--1.7$\\times$ larger action deviation than a simple test of whether a token's input is novel, that is, whether it falls outside the subspace seen during calibration. Large errors concentrate in tokens the policy relies on little, such as the third-person camera, while the novelty test favors the wrist camera, a view the action depends on heavily. We call this the error--reliance gap. Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP. Deciding once per layer instead of once per matrix product avoids moving wide intermediate tensors and keeps every shape static, so the whole prefix runs as a single CUDA graph. On LIBERO, NoveltyGate accelerates the $π_{0.5}$ prefix by up to 1.61$\\times$, stays 2.7--2.9$\\times$ closer to the original policy than channel pruning and low-rank compression at equal compute, and preserves closed-loop task success.",
-   "url": "https://arxiv.org/abs/2611.31099",
-   "pdf": "https://arxiv.org/pdf/2611.31099",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.LG"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "FM"
-   ],
-   "kw_score": 15,
-   "tldr": "Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP.",
-   "summary": "Building on it, we propose NoveltyGate, a training-free method that routes each prefix token, once per layer and before any multiplication, to either a low-rank or the original MLP."
-  },
-  {
-   "id": "2611.29873",
-   "title": "ProMix: Efficient Data Mixture Optimization for Robotic Imitation via Proxy-Reference DRO",
-   "authors": [
-    "Qie Sima",
-    "Wei Xue",
-    "Yike Guo"
-   ],
-   "abstract": "Vision-Language-Action (VLA) models excel in open-world manipulation, yet their performance often saturates when training data are naively pooled across heterogeneous robots, tasks, and environments. Distributionally robust data mixture optimization, exemplified by Re-Mix, can recover much of this performance, but its weight search requires training full-scale policies twice on the entire corpus, placing it out of reach for most laboratories. We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights transfer, without re-tuning, to VLA backbones up to 7B parameters. We further provide, to our knowledge, the first controlled analysis of the reference model's role in robotic DRO, showing that removing it induces over-pessimism toward noisy, low-quality domains (-3.8% average and -14.3% worst-domain success rate), and that entropy regularization is needed to prevent weight collapse. Evaluated on 9500 real-world episodes from the Open-X Embodiment dataset, ProMix improves the average success rate over uniform mixing from 68.4% to 76.2%, matching Re-Mix within evaluation noise while reducing mixture-optimization cost to a backbone-independent 11 GPU-hours - versus 16 GPU-hours at the 50M comparison scale and 192 GPU-hours at 7B for full-scale searches - with a +17.1% absolute gain on the worst-case domain.",
-   "url": "https://arxiv.org/abs/2611.29873",
-   "pdf": "https://arxiv.org/pdf/2611.29873",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "FM",
-    "IL"
-   ],
-   "kw_score": 15,
-   "tldr": "We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights…",
-   "summary": "We present ProMix, a compute-efficient instantiation of the proxy-reference DRO recipe for robotic imitation learning: a 15M-parameter proxy learns per-domain sampling weights by minimizing worst-case excess loss against a frozen reference model, and the learned weights transfer, without re-tuning, to VLA backbones up to 7B parameters. We further provide, to our knowledge, the first controlled analysis of the reference model's role in robotic DRO, showing that removing it induces over-pessimism toward noisy, low-quality domains (-3.8% average and -14.3% worst-domain success rate), and that entropy regularization is needed to prevent weight collapse."
-  },
-  {
-   "id": "2611.30007",
-   "title": "One Latent World for Heterogeneous LiDARs: A Scan Pattern Agnostic 4D World Model via Direct Ray Decoding",
-   "authors": [
-    "Minwoo Jung",
-    "Dongjae Lee",
-    "DongGuw Lee",
-    "Yeong Sang Park",
-    "Maurice Fallon",
-    "Ayoung Kim"
-   ],
-   "abstract": "LiDAR world models generate and predict metric 3D observations in the form of LiDAR scans. They typically synthesize scans following the scan pattern of their training sensor or render them from an intermediate 3D surface or field. However, following one scan pattern limits transfer to LiDARs with other patterns, and rendering from intermediate geometry can cause incorrect depths and false returns. In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration. Our decoder predicts the hit probability and depth of each ray directly from the latent, combining global scene context with local features retrieved at a preliminary depth. Without an intermediate surface or field, it reduces incorrect depths and false returns, and as each ray is decoded independently from one latent, LiDARs that share a ray receive the same return and observe one consistent scene. Finally, a diffusion transformer generates scenes in this latent and predicts 4D sequences from observed latents warped by the given ego and object motion. On KITTI-360 and nuScenes, our model generates realistic scenes and reduces the registration error between predicted frames by about 70% relative to the best compared world model. Its decoder yields 19 to 28% lower depth error than the rendering used by other world models, and generated scans benefit several downstream tasks. Our code will be open-sourced. More details are available at https://minwoo0611.github.io/OneLatentWorld.",
-   "url": "https://arxiv.org/abs/2611.30007",
-   "pdf": "https://arxiv.org/pdf/2611.30007",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "WM"
-   ],
-   "kw_score": 14,
-   "tldr": "In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration.",
-   "summary": "In this paper, we propose a scan pattern agnostic 4D LiDAR world model that decouples the scene from sensor observation, so one spatial latent can be observed by heterogeneous LiDARs at the same mounting position without regeneration. On KITTI-360 and nuScenes, our model generates realistic scenes and reduces the registration error between predicted frames by about 70% relative to the best compared world model."
-  },
-  {
-   "id": "2611.31240",
-   "title": "Pruning Autonomous Driving VLAs: What to Preserve for Reasoning and Action",
-   "authors": [
-    "Seongchan Kim",
-    "Soowon Son",
-    "Sangoh Kim",
-    "Hyunah Ko",
-    "Eunbeen Hong",
-    "Hyunkoo Lee",
-    "Sanghyun Lee",
-    "WonJun Moon",
-    "Kihong Kim",
-    "Dongyeon Son",
-    "Woongchan Nam",
-    "Seungryong Kim"
-   ],
-   "abstract": "Reasoning vision-language-action (VLA) models for autonomous driving use chain-of-thought (CoT) reasoning to guide action generation, but incur substantial memory and computational costs. We study structured pruning for these models, focusing on preserving both scene understanding and trajectory prediction. Our analysis of Taylor importance in Alpamayo-1.5-10B shows that reasoning and trajectory objectives assign different importance to the same vision-language model (VLM) structures. In the action expert, MLP channels exhibit more stable importance rankings across denoising steps than query heads, and a small fraction of channels accounts for most of the measured importance. Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods. At a higher reduction of 30.0%, MoOP degrades much less than every other method, as it is the only one whose reasoning does not collapse. Removing 93.75% of expert MLP channels increases total parameter reduction to 39.4%, with nearly unchanged open-loop errors relative to VLM-only pruning and competitive closed-loop performance. The resulting model achieves a 1.37x end-to-end inference speedup and 36.6% lower peak memory than the dense model, without post-pruning fine-tuning.",
-   "url": "https://arxiv.org/abs/2611.31240",
-   "pdf": "https://arxiv.org/pdf/2611.31240",
-   "project": "https://cvlab-kaist.github.io/MoOP",
-   "primary": "cs.CV",
-   "categories": [
-    "cs.CV",
-    "cs.LG",
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "FM"
-   ],
-   "kw_score": 13,
-   "tldr": "Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels.",
-   "summary": "Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods."
-  },
-  {
    "id": "2611.30658",
    "title": "Active Observation for Robust Visual Servoing in Robotic Manipulation",
    "authors": [
@@ -867,59 +883,6 @@
    "tldr": "To address this, we present an active observation framework in which one arm of an existing dual-arm platform carries an RGB-D camera as an active observer while the other executes grasping.",
    "summary": "To address this, we present an active observation framework in which one arm of an existing dual-arm platform carries an RGB-D camera as an active observer while the other executes grasping. Across 50 randomized trials per object, the system achieves 94% grasp success versus 76% for a reactive viewpoint baseline and 64% for a fixed camera.",
    "venue": "Science"
-  },
-  {
-   "id": "2611.30765",
-   "title": "Object Count Generalization Is an Interface Problem: Warping a Frozen Skill Instead of Retraining It",
-   "authors": [
-    "Paul Mattes",
-    "Ayman Abdeldayem",
-    "Denis Shcherba",
-    "Wojciech Samek",
-    "Marc Toussaint"
-   ],
-   "abstract": "Reinforcement learning policies for robot manipulation degrade when the number of objects N in the scene grows beyond the training range. This is a covariate shift that also changes the dimension of the state. We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights. WAVE has three parts. First, a selection policy picks the one object the robot works on next. Second, a warping policy reads a local view of the scene around that object, whose size does not depend on N. It emits a multiplier and an offset for every quantity the skill reads and every action it outputs. Third, the skill acts under this affine warp. It is shown a scene that holds a single object, while the warp steers it around the objects it is not shown and edits the actions that are sent to the robot. Both the selection and warping policies are trained with PPO on the multi-object reward and use the skill as a black box, so WAVE is task-general and skill-agnostic. It requires only that the skill was trained on the same embodiment and that every object has a goal pose. We also bound the number of attempts needed to place all N objects, assuming positive expected net progress per attempt, and measure this progress for each object count. We evaluate WAVE on cube arrangement tasks with a gantry robot and with a Franka Panda arm. Trained with at most nine cubes, it generalizes zero-shot to several times its training count, on the gantry to scenes of up to thirty cubes. Published methods that learn multi-object manipulation show count generalization up to six objects. Fine-tuning the skill, learning from the same local view without it, and an entity transformer, even when distilled from the pretrained skill, all collapse within their training counts under the same training budget.",
-   "url": "https://arxiv.org/abs/2611.30765",
-   "pdf": "https://arxiv.org/pdf/2611.30765",
-   "project": "https://hhi-robot-learning.github.io/wave-website/",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.AI"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL",
-    "IL"
-   ],
-   "kw_score": 12,
-   "tldr": "We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights.",
-   "summary": "We propose WAVE (Warping Actions and Views of an Expert), which extends a pretrained single-object skill to many objects without updating its weights."
-  },
-  {
-   "id": "2611.30265",
-   "title": "SGPC: Safety-Guiding Policy Constraint for Stable Off-Policy Safe Reinforcement Learning",
-   "authors": [
-    "Yifan Liu",
-    "Nan Zhang",
-    "Yang Cong"
-   ],
-   "abstract": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility. In primal-dual methods, the coupled optimization of cumulative reward and constraint penalties through adaptive Lagrange multipliers may induce oscillatory policy updates near the safety boundary and amplify the effect of unreliable reward estimates outside the safe set. To address these issues, we formulate a new constrained optimization problem (COP) for safe RL by introducing a Safety-Guiding Policy (SGP) and a corresponding Safety-Guiding Policy Constraint (SGPC). The proposed COP augments the standard COP in safe RL with a conditional safety-guidance constraint. During actor updates, the current actor is evaluated using the learned cost critic. If it is predicted to be outside the safe set, SGP provides a nearby lower-cost training reference, and SGPC guides actor optimization toward this reference. Once the policy enters the safe set, the added constraint becomes inactive, and the formulation reduces to the original COP. This formulation leads to a plug-in actor-training constraint that can be integrated into off-policy safe RL algorithms. By applying primal-dual optimization to the auxiliary COP, we finally derive an SGPC-based off-policy safe RL algorithm and implement it in two representative off-policy algorithms, yielding SAC-SGPC and TD3-SGPC. Experiments on multiple Safety-Gymnasium benchmarks demonstrate that SGPC achieves a better optimality-safety trade-off by substantially reducing constraint violations and cost oscillations while maintaining competitive or better task returns.",
-   "url": "https://arxiv.org/abs/2611.30265",
-   "pdf": "https://arxiv.org/pdf/2611.30265",
-   "primary": "cs.LG",
-   "categories": [
-    "cs.LG",
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL",
-    "GenModel"
-   ],
-   "kw_score": 12,
-   "tldr": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility.",
-   "summary": "Off-policy safe reinforcement learning (RL) faces a challenging trade-off between task optimality and constraint feasibility. Experiments on multiple Safety-Gymnasium benchmarks demonstrate that SGPC achieves a better optimality-safety trade-off by substantially reducing constraint violations and cost oscillations while maintaining competitive or better task returns."
   },
   {
    "id": "2611.30511",
@@ -1245,6 +1208,63 @@
    "kw_score": 8,
    "tldr": "Personalization of powered prosthesis control to individual user needs remains a significant challenge.",
    "summary": "Personalization of powered prosthesis control to individual user needs remains a significant challenge. All participants reached the goal within 8-18 tuning steps (1.7-4.2 minutes of walking), reducing the knee-kinematic feature error by 64-90% on average."
+  },
+  {
+   "id": "2611.30836",
+   "title": "Can Multimodal Fusion MakeSense for Embodied Vision in Degraded Sensing?",
+   "authors": [
+    "Cheng-Ru Chou",
+    "Shih-Yu Lai",
+    "Pei-Lin Chiang",
+    "Shou-Po Tsai",
+    "Jing-Zhe Huang",
+    "Fukuharu Tanaka",
+    "Hirozumi Yamaguchi",
+    "Bing-Yu Chen",
+    "Yu-Lun Liu",
+    "Hsun-Ping Hsieh"
+   ],
+   "abstract": "Embodied vision systems rely on complementary sensors to perceive and act as conditions change. Even models that accept arbitrary sensor subsets can exhibit negative fusion: adding a sensor increases prediction error. We propose MakeSense, a multimodal fusion framework that preserves sensor-specific evidence in private streams and combines information through shared bottleneck tokens. Training pairs full and subset views of the same degraded observations, penalizing higher error with more sensors. Where geometry permits, the distance readout uses range measurements alone, while the rest of the prediction draws on all available inputs. Paired tests across five datasets reveal helpful and harmful sensor additions. MakeSense reduces negative fusion on MM-Fi. With lightweight adapters and per-dataset training, the same design improves UAV localization on MMAUD, cooperative 3D detection on V2X-Real, few-shot pose transfer to RELI11D, and command prediction on Humanoid-Everyday, where a world model trained on the frozen core's outputs forecasts future fused states more accurately than a linear baseline at longer tested horizons. MakeSense supports embodied sensing across human activity, aerial systems, robotics, and autonomous driving.",
+   "url": "https://arxiv.org/abs/2611.30836",
+   "pdf": "https://arxiv.org/pdf/2611.30836",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG",
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "WM"
+   ],
+   "kw_score": 8,
+   "tldr": "We propose MakeSense, a multimodal fusion framework that preserves sensor-specific evidence in private streams and combines information through shared bottleneck tokens.",
+   "summary": "We propose MakeSense, a multimodal fusion framework that preserves sensor-specific evidence in private streams and combines information through shared bottleneck tokens. With lightweight adapters and per-dataset training, the same design improves UAV localization on MMAUD, cooperative 3D detection on V2X-Real, few-shot pose transfer to RELI11D, and command prediction on Humanoid-Everyday, where a world model trained on the frozen core's outputs forecasts future fused states more accurately than a linear baseline at longer tested horizons."
+  },
+  {
+   "id": "2611.30667",
+   "title": "LLM-Guided Compositional Continual Learning for Robot Manipulation with Gated Low-Rank Experts",
+   "authors": [
+    "Nilay Kushawaha",
+    "Abdalla Swikir",
+    "Fares Abu-Dakka"
+   ],
+   "abstract": "General-purpose manipulation robots must acquire new skills over time without forgetting prior ones or retraining from scratch. We present a continual learning framework that represents each skill as a dedicated expert sub- network in a Progressive Neural Network (PNN). New tasks reuse prior knowledge through low-rank adaptation (LoRA) modules on lateral connections controlled by learnable per-parent gates, enabling explicit attenuation of individual transfer paths while reducing the parameter cost of dense PNN laterals. For long-horizon deployment, a frozen local large language model decomposes natural-language instructions into sub-tasks, routes them to suitable experts, and requests a new expert only when the library is insufficient. Using a shared task-space action interface, we evaluate the framework on twelve MetaWorld tasks and in a Sawyer-to-Panda-to-UR5e cross-embodiment transfer experiment, showing improved task success relative to learning from scratch when demonstrations are limited. Real-robot manipulation experiments further demonstrate that the proposed framework supports compositional execution and expert orchestration.",
+   "url": "https://arxiv.org/abs/2611.30667",
+   "pdf": "https://arxiv.org/pdf/2611.30667",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 8,
+   "tldr": "We present a continual learning framework that represents each skill as a dedicated expert sub- network in a Progressive Neural Network (PNN).",
+   "summary": "We present a continual learning framework that represents each skill as a dedicated expert sub- network in a Progressive Neural Network (PNN). Using a shared task-space action interface, we evaluate the framework on twelve MetaWorld tasks and in a Sawyer-to-Panda-to-UR5e cross-embodiment transfer experiment, showing improved task success relative to learning from scratch when demonstrations are limited."
   }
  ],
  "trending_ml": [

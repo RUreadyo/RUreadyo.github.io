@@ -1,13 +1,13 @@
 {
  "date": "2026-11-19",
- "generated_at": "2026-11-24T23:31:39+00:00",
+ "generated_at": "2026-11-24T23:50:30+00:00",
  "ranker": "Claude",
- "overview": "Tactile and uncertainty work leads. TacInno supervises visuotactile VLAs only with the tactile change that vision and actions cannot predict, a neat answer to why policies ignore touch. CoMP fixes variance collapse when propagating epistemic uncertainty through flow-policy ODEs. TipDex-VTLA gates tactile refinement by visual reliability for dexterous hands. On world models, O2LaF reuses video-DiT priors for latent actions and Skill-JEPA shows that much of the difficulty of long-horizon planning comes from the action space.",
+ "overview": "The standout is the radial-attention analysis of pi0.5, which shows the supposed action sink at chunk endpoints is just a RoPE artifact and that the executed prefix carries the signal, a careful 'why' study of action chunking in flow VLAs. TacHOI uses touch as a metric ruler for reconstructing hand-object interactions from egocentric video, and the JEPA-planner stall diagnosis (Unstick) explains why latent world-model planning gets stuck. RefreshGrad is a cheap data-sampling trick for diffusion policies worth a skim.",
  "stats": {
   "papers": 201,
   "cs_ro": 91,
   "relevant": 150,
-  "rated": 13
+  "rated": 19
  },
  "top_picks": [
   {
@@ -81,6 +81,39 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.26385",
+   "title": "Beyond the Sink Interpretation: Radial Attention in Flow-Based VLA Policies",
+   "authors": [
+    "Yuxi Zheng",
+    "Yueqian Lin",
+    "Yudong Liu",
+    "Zijia Tang",
+    "Junyu Pan",
+    "Yiheng Wang",
+    "Hai Helen Li",
+    "Yiran Chen"
+   ],
+   "abstract": "Prior work calls the high attention on the first and last action tokens of a flow-based VLA policy a radial action sink, and uses these tokens to set the execution horizon. In language models, a sink is a token with high incoming attention, a small value, and little effect on the output. We test whether that profile holds, not the horizon rule, in one $π_{0.5}$ checkpoint on five RoboCasa tasks. The two endpoints receive 5.4% of action-key mass, 1.4 percentage points above their uniform share, and rotary positional encoding produces this excess: directly in shallow layers and through upstream action-token RoPE deeper in the network. The endpoints do not fit the sink profile. Their value norms stay near the action-token mean in all 18 layers. On 250 paired episodes, masking them or zeroing their values changes success by less than 4 points, and replacing their value directions with those of another observation lowers it by 3.2 to 7.2 points across three donors, whereas the same replacement on two non-endpoint tokens in the executed prefix lowers it by 28.4 points. The token that does fit the sink profile on mass and value norm is the prefix BOS; on this checkpoint, zeroing its value raises success in two paired runs, by +13.2 points (95% CI [+7.0, +19.4]) and +6.0 points ([+0.2, +11.8]). Inside the action chunk, a relative-offset routing profile estimated on other tasks keeps 75% of action-token spread and keeps closed-loop success on three held-out tasks (42.7% against a 38.7% baseline), while uniform or shuffled routing drops success to 3-4%. High attention mass alone does not tell what a token does.",
+   "url": "https://arxiv.org/abs/2611.26385",
+   "pdf": "https://arxiv.org/pdf/2611.26385",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 14,
+   "relevance": 7,
+   "quality": 7,
+   "tldr": "Shows the 'radial action sink' endpoint attention in pi0.5 is a RoPE artifact, not a true sink, via value-norm and ablation analysis.",
+   "summary": "Prior work treats high attention on first/last action tokens of flow VLAs as an attention sink. Analyzing a pi0.5 checkpoint on five RoboCasa tasks, the endpoints get only 1.4pp excess attention from RoPE, have normal value norms, and masking them changes success <4 points, while swapping values of executed-prefix tokens drops success 28.4 points. The token that matters is elsewhere in the executed prefix.",
+   "why": "A careful mechanistic 'why' analysis of action chunking in flow VLAs, exactly my preferred style.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.25683",
    "title": "TipDex-VTLA: Learning to Refine Actions with Visual Reliability and Tactile Feedback for Dexterous Manipulation",
    "authors": [
@@ -112,6 +145,38 @@
    "why": "Visuotactile dexterous policy robustness.",
    "rated_by": "claude"
   },
+  {
+   "id": "2611.26764",
+   "title": "TacHOI: Contact-Aware Object Reconstruction and Tracking for Egocentric Videos",
+   "authors": [
+    "Jackson Codd",
+    "Haoyu Li",
+    "Xianyi Cheng"
+   ],
+   "abstract": "Egocentric videos offer a scalable source of human demonstrations for robot learning. However, recovering metric object geometry and motion from monocular video is hindered by scale-depth ambiguity and hand-induced occlusion, while image-derived contact and shape priors alone cannot uniquely determine metric scale. We introduce TacHOI, a training-free framework that integrates tactile contact with monocular vision for joint hand-object reconstruction and tracking, without requiring object templates or depth sensors. Starting from pretrained visual estimates, TacHOI uses tactile contact to constrain object depth relative to the estimated hand, while spatially separated contacts on a metrically calibrated hand provide a physical ruler for object extent. It incorporates these constraints into a joint optimization of hand poses, object trajectories, and anisotropic object scale alongside visual alignment. Across 100 ARCTIC and HO3D sequences with synthesized tactile observations, TacHOI achieves the lowest median ADD-S* among the evaluated baselines, reducing error from 15.6 to 3.6 cm on ARCTIC and achieving 2.8 cm on HO3D. Additional experiments on OpenTouch demonstrate its applicability to measured tactile observations.",
+   "url": "https://arxiv.org/abs/2611.26764",
+   "pdf": "https://arxiv.org/pdf/2611.26764",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "Tactile",
+    "Dex",
+    "IL"
+   ],
+   "kw_score": 16,
+   "relevance": 7,
+   "quality": 6,
+   "tldr": "TacHOI fuses tactile contact with monocular egocentric video to reconstruct and track hands and objects at metric scale, training-free.",
+   "summary": "Monocular egocentric video suffers scale-depth ambiguity and hand occlusion. TacHOI uses tactile contacts on a calibrated hand as depth constraints and a 'physical ruler' in a joint optimization of hand pose, object trajectory and anisotropic scale. On 100 ARCTIC/HO3D sequences with synthesized touch, median ADD-S* drops from 15.6 to 3.6 cm.",
+   "why": "Touch-augmented human demos are a promising data source for dexterous policy learning, though tactile here is synthesized.",
+   "rated_by": "claude"
+  }
+ ],
+ "roundup": [
   {
    "id": "2611.26617",
    "title": "One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning",
@@ -150,37 +215,33 @@
    "rated_by": "claude"
   },
   {
-   "id": "2611.26825",
-   "title": "Skill-JEPA: Learning Planner-Aligned Action Spaces for World Models",
+   "id": "2611.25415",
+   "title": "Stuck in Place: Stall Diagnosis and Remedies for JEPA Planners",
    "authors": [
-    "Tomás Couso Coddou",
-    "Christ Devia",
-    "Rex G. Liu",
-    "Rodrigo Toro Icarte"
+    "Junhyeok Lee",
+    "Dongheon Lee",
+    "Kyu Sung Choi"
    ],
-   "abstract": "World models based on Joint-Embedding Predictive Architectures (JEPAs) learn from pixels to predict the outcome of actions in a latent space. To reach a goal, a planner samples many candidate action sequences, uses the model to predict where each one leads, and executes the best one. However, standard planners draw their candidates from a Gaussian, while the model has only seen the structured, state-dependent actions of its training data. Its predictions for such candidates are unreliable, and planning fails more often as goals move farther away. We propose Skill-JEPA, which learns an action space aligned with the planner. A variational autoencoder conditioned on the current state encodes short action sequences into latent skills with a standard Gaussian prior, and decodes them back into actions. The world model predicts the effect of skills rather than raw actions, and the planner searches over skills starting from that same Gaussian, so its candidates resemble the model's training data. Skill-JEPA adds a single module, trained end-to-end with the world model, and leaves the planner untouched, with no subgoals, hierarchy, or hand-designed skills. Across three JEPA world models and four benchmarks, average success on goals 80 steps away rises from 42% with raw actions to 62%; the gains grow with goal distance and hold across four planners. On AntMaze, a quadruped locomotion task, success on goals two maze cells away rises from 0.4% to 38%. This suggests that part of the difficulty of reaching distant goals lies in the action space, and can be removed without changing the planner.",
-   "url": "https://arxiv.org/abs/2611.26825",
-   "pdf": "https://arxiv.org/pdf/2611.26825",
-   "code": "https://github.com/tcouso/Skill-JEPA",
+   "abstract": "Joint-embedding predictive architecture (JEPA) world models plan from pixels with model predictive control, yet often fail on tasks their model should handle. Test-time adaptation attributes such failures to model error under distribution shift and updates the weights on the current episode, without checking this attribution against the planning loop itself. We follow the executed planning loop on pushing tasks. In most settings, with and without distribution shift, nearly all failures (at least 96%) are stalls, where the object stays in place while the model predicts progress. The warm-started gradient-descent (GD) planner then returns nearly the same plan, a fixed point where the agent mostly idles. We propose Unstick, which pairs on-policy fine-tuning before deployment with a fixed-weight loop breaker: a residual memory of the episode's prediction errors or random re-initialization at every replan. With GD, Unstick recovers most of the adaptation gain on pushing tasks with the memory, and with re-initialization most of it on shape shifts but much less on visual shifts. A large part of what limits these planners under GD is thus a fixed point of the planning loop, present with and without distribution shift, which a planner with fixed weights can break. Code is available at https://github.com/jhlee0619/unstick.",
+   "url": "https://arxiv.org/abs/2611.25415",
+   "pdf": "https://arxiv.org/pdf/2611.25415",
    "primary": "cs.RO",
    "categories": [
-    "cs.RO",
-    "cs.LG"
+    "cs.RO"
    ],
    "published": "2026-11-19",
    "topics": [
-    "WM"
+    "WM",
+    "Control"
    ],
-   "kw_score": 16,
-   "relevance": 5,
+   "kw_score": 14,
+   "relevance": 6,
    "quality": 7,
-   "tldr": "Skill-JEPA learns a state-conditioned VAE skill space with Gaussian prior so planners' samples match world-model training data.",
-   "summary": "Gaussian planner candidates are off-distribution for JEPA models; planning over latent skills raises success on 80-step goals from 42% to 62% across three models and four planners, and AntMaze far-goal success from 0.4% to 38%.",
-   "why": "Clear insight on action-space mismatch in world-model planning.",
+   "tldr": "Diagnoses JEPA world-model planner failures as stalls at GD-planner fixed points and proposes Unstick loop breakers.",
+   "summary": "JEPA planners with MPC often fail on pushing tasks; test-time adaptation blames model error. Tracing the planning loop shows >=96% of failures are stalls where the warm-started GD planner returns nearly the same plan. Unstick combines on-policy fine-tuning with residual error memory or random re-initialization, recovering most adaptation gains.",
+   "why": "Rigorous diagnosis of why latent world-model planning fails, useful for anyone planning with V-JEPA-style models.",
    "rated_by": "claude"
-  }
- ],
- "roundup": [
+  },
   {
    "id": "2611.25336",
    "title": "MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models",
@@ -214,6 +275,36 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.26825",
+   "title": "Skill-JEPA: Learning Planner-Aligned Action Spaces for World Models",
+   "authors": [
+    "Tomás Couso Coddou",
+    "Christ Devia",
+    "Rex G. Liu",
+    "Rodrigo Toro Icarte"
+   ],
+   "abstract": "World models based on Joint-Embedding Predictive Architectures (JEPAs) learn from pixels to predict the outcome of actions in a latent space. To reach a goal, a planner samples many candidate action sequences, uses the model to predict where each one leads, and executes the best one. However, standard planners draw their candidates from a Gaussian, while the model has only seen the structured, state-dependent actions of its training data. Its predictions for such candidates are unreliable, and planning fails more often as goals move farther away. We propose Skill-JEPA, which learns an action space aligned with the planner. A variational autoencoder conditioned on the current state encodes short action sequences into latent skills with a standard Gaussian prior, and decodes them back into actions. The world model predicts the effect of skills rather than raw actions, and the planner searches over skills starting from that same Gaussian, so its candidates resemble the model's training data. Skill-JEPA adds a single module, trained end-to-end with the world model, and leaves the planner untouched, with no subgoals, hierarchy, or hand-designed skills. Across three JEPA world models and four benchmarks, average success on goals 80 steps away rises from 42% with raw actions to 62%; the gains grow with goal distance and hold across four planners. On AntMaze, a quadruped locomotion task, success on goals two maze cells away rises from 0.4% to 38%. This suggests that part of the difficulty of reaching distant goals lies in the action space, and can be removed without changing the planner.",
+   "url": "https://arxiv.org/abs/2611.26825",
+   "pdf": "https://arxiv.org/pdf/2611.26825",
+   "code": "https://github.com/tcouso/Skill-JEPA",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "WM"
+   ],
+   "kw_score": 16,
+   "relevance": 5,
+   "quality": 7,
+   "tldr": "Skill-JEPA learns a state-conditioned VAE skill space with Gaussian prior so planners' samples match world-model training data.",
+   "summary": "Gaussian planner candidates are off-distribution for JEPA models; planning over latent skills raises success on 80-step goals from 42% to 62% across three models and four planners, and AntMaze far-goal success from 0.4% to 38%.",
+   "why": "Clear insight on action-space mismatch in world-model planning.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.26865",
    "title": "FlowScope: 3D Scene Flow Pretraining Improves Surgical Robot Policies",
    "authors": [
@@ -244,6 +335,38 @@
    "tldr": "FlowScope pretrains an ACT trunk on unlabeled surgical stereo video by forecasting metric 3D scene flow.",
    "summary": "On 1.35M clinical clips, scene-flow pretraining raises real needle pickup from 54% to 90%; metric 3D flow beats kinematics, 2D tracks, and depth as pretraining signals, and gains hold with a flow-matching head.",
    "why": "Medical domain, but the scene-flow pretraining insight transfers to manipulation.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.25398",
+   "title": "RefreshGrad: An Online Adaptive Data-sampling Method for Diffusion-based Visuomotor Learning",
+   "authors": [
+    "Dijia Zhan",
+    "Jinyi Li",
+    "Xuemiao Xu",
+    "Yan Zhou",
+    "Yu Liu",
+    "Shaoshan Liu",
+    "Jie Tang"
+   ],
+   "abstract": "Training vision-language-action (VLA) policies from demonstrations typically samples trajectory segments uniformly or relies on static offline data curation before training. However, we find that demonstration data vary sharply in supervision value across temporal windows, and that each window's value to the policy evolves substantially during training rather than being fixed or captured by raw loss alone. Motivated by this finding, we propose RefreshGrad, an online adaptive data-sampling framework that periodically scores temporal windows from the evolving policy using five policy-native signals and dynamically adjusts their sampling weights during training. RefreshGrad focuses optimization on informative, learnable windows without altering the policy architecture, training objective, or inference cost. Across ten LIBERO-Plus manipulation tasks, RefreshGrad boosts average success from 60.7% (Uniform) and 68.2% (FAKTUAL) to 76.1% under visual perturbations, and from 57.4% and 73.3% to 81.3% in clean scenes.",
+   "url": "https://arxiv.org/abs/2611.25398",
+   "pdf": "https://arxiv.org/pdf/2611.25398",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "IL",
+    "FM"
+   ],
+   "kw_score": 13,
+   "relevance": 6,
+   "quality": 5,
+   "tldr": "RefreshGrad adaptively reweights temporal windows of demonstrations during diffusion/VLA policy training using policy-native signals.",
+   "summary": "Demo windows differ in supervision value and that value shifts during training. RefreshGrad periodically scores windows with five policy-native signals and resamples accordingly, without changing architecture or inference. On ten LIBERO-Plus tasks, success rises from 60.7% to 76.1% under perturbations and 57.4% to 81.3% clean.",
+   "why": "Simple data-sampling trick for diffusion policies me could try, though sim-only evidence.",
    "rated_by": "claude"
   },
   {
@@ -384,6 +507,38 @@
    "rated_by": "claude"
   },
   {
+   "id": "2611.26389",
+   "title": "ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step",
+   "authors": [
+    "Kaiwen Zhang",
+    "Yiming Gao",
+    "Zeqi Xiao",
+    "Xintao Wang",
+    "Pengfei Wan",
+    "Kun Gai",
+    "Xingang Pan"
+   ],
+   "abstract": "Current leading video generation models can synthesize highly realistic videos, while still frequently violating physical and logical constraints in multi-step reasoning and planning, even after training with large-scale reasoning data or existing diffusion RL methods. We attribute these failures to the conventional video training paradigm, which treats a solution as a fixed-length clip rather than a chain of decisions. We present ViDecide, a decision-centric framework that trains video diffusion models to predict state transitions causally and decide when to stop, with a decision-focused training schedule. We further propose Corrective Fine-tuning (CFT), which corrects failed decisions by mapping their noise to the model's own successful continuations, achieving stable improvement without policy-gradient optimization. Across abstract games, planning tasks, and a new benchmark of multi-step robot planning, ViDecide achieves an average strict success rate of 83.8%, far above 23.3% for standard fine-tuning and 67.8% for the strongest prior method, and generalizes to larger puzzles and unseen layouts. Our framework therefore unlocks greater potential for video generation models as reliable reasoners and planners in the visual world. Project page: https://kevin-thu.github.io/ViDecide.",
+   "url": "https://arxiv.org/abs/2611.26389",
+   "pdf": "https://arxiv.org/pdf/2611.26389",
+   "project": "https://kevin-thu.github.io/ViDecide",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "Video"
+   ],
+   "kw_score": 15,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "ViDecide trains video diffusion models to predict state transitions causally and decide when to stop, plus corrective fine-tuning without policy gradients.",
+   "summary": "Video generators fail multi-step reasoning because clips are treated as fixed-length solutions. ViDecide frames generation as a chain of decisions with causal transition prediction and a stop decision, and Corrective Fine-tuning maps failed noise to the model's own successful continuations. Strict success averages 83.8% vs 23.3% standard fine-tuning and 67.8% best prior, including a robot planning benchmark.",
+   "why": "Noise-remapping fine-tuning is a neat RL-free improvement idea relevant to steering generative policies.",
+   "rated_by": "claude"
+  },
+  {
    "id": "2611.26444",
    "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
    "authors": [
@@ -492,87 +647,35 @@
    "rated_by": "claude"
   },
   {
-   "id": "2611.26764",
-   "title": "TacHOI: Contact-Aware Object Reconstruction and Tracking for Egocentric Videos",
+   "id": "2611.25847",
+   "title": "TrajCal: Trajectory-Calibrated Time Schedules for Few-Step Flow Sampling",
    "authors": [
-    "Jackson Codd",
-    "Haoyu Li",
-    "Xianyi Cheng"
+    "Junchi Zhang",
+    "Zihan Gu",
+    "Jiangcan Jia",
+    "Lulu Zhao",
+    "Wenbo Su",
+    "Hua Zhang"
    ],
-   "abstract": "Egocentric videos offer a scalable source of human demonstrations for robot learning. However, recovering metric object geometry and motion from monocular video is hindered by scale-depth ambiguity and hand-induced occlusion, while image-derived contact and shape priors alone cannot uniquely determine metric scale. We introduce TacHOI, a training-free framework that integrates tactile contact with monocular vision for joint hand-object reconstruction and tracking, without requiring object templates or depth sensors. Starting from pretrained visual estimates, TacHOI uses tactile contact to constrain object depth relative to the estimated hand, while spatially separated contacts on a metrically calibrated hand provide a physical ruler for object extent. It incorporates these constraints into a joint optimization of hand poses, object trajectories, and anisotropic object scale alongside visual alignment. Across 100 ARCTIC and HO3D sequences with synthesized tactile observations, TacHOI achieves the lowest median ADD-S* among the evaluated baselines, reducing error from 15.6 to 3.6 cm on ARCTIC and achieving 2.8 cm on HO3D. Additional experiments on OpenTouch demonstrate its applicability to measured tactile observations.",
-   "url": "https://arxiv.org/abs/2611.26764",
-   "pdf": "https://arxiv.org/pdf/2611.26764",
-   "primary": "cs.RO",
+   "abstract": "Flow matching enables high-quality image and video generation, but its iterative sampling process requires repeated evaluations of large neural networks. Existing few-step methods can distort the output and reduce its agreement with a many-step reference. We propose TrajCal, a training-free calibration framework for few-step sampling. Based on scatter search, a well-established metaheuristic for difficult optimization problems, TrajCal starts with diverse seed schedules, deforms and combines these candidates, and selects one fixed schedule by final output fidelity for reuse on new inputs. For both image and video generation, TrajCal achieves higher reference fidelity than all compared baselines at low evaluation budgets while maintaining competitive visual quality. The search is effective even with randomly generated seeds, while trajectory-based seeds further improve fidelity. For cross-style generalization, photography-calibrated schedules also improve fidelity on unseen image styles.",
+   "url": "https://arxiv.org/abs/2611.25847",
+   "pdf": "https://arxiv.org/pdf/2611.25847",
+   "primary": "cs.CV",
    "categories": [
-    "cs.RO",
     "cs.CV"
    ],
    "published": "2026-11-19",
    "topics": [
-    "Dex",
-    "Tactile",
-    "IL"
+    "GenModel",
+    "Video"
    ],
-   "kw_score": 16,
-   "tldr": "We introduce TacHOI, a training-free framework that integrates tactile contact with monocular vision for joint hand-object reconstruction and tracking, without requiring object templates or depth sensors.",
-   "summary": "We introduce TacHOI, a training-free framework that integrates tactile contact with monocular vision for joint hand-object reconstruction and tracking, without requiring object templates or depth sensors. Across 100 ARCTIC and HO3D sequences with synthesized tactile observations, TacHOI achieves the lowest median ADD-S* among the evaluated baselines, reducing error from 15.6 to 3.6 cm on ARCTIC and achieving 2.8 cm on HO3D."
-  },
-  {
-   "id": "2611.26485",
-   "title": "An Open-Source ROS 2 Framework for Shared Control in Surgical Teleoperation: Integrating the Haply Inverse3 with the da Vinci Research Kit",
-   "authors": [
-    "Balint Varga",
-    "Sebastian Fritz",
-    "Gergely Kiss",
-    "Kristof Takacs",
-    "Peter Galambos"
-   ],
-   "abstract": "Surgical teleoperation deprives surgeons of touch, forcing visual inference of tissue forces; the commercial platforms now restoring force feedback remain closed, preventing open research on haptic shared control. This paper provides a system contribution: it presents an open-source, ROS 2-native framework that integrates the compact, three-degree-of-freedom (3-DOF) Haply Inverse3 haptic device with the da~Vinci Research Kit (dVRK). The framework includes a novel mapping strategy that combines 3-DOF translational device input with separately tracked VerseGrip orientation into 6-DOF patient-side manipulator commands. Two virtual-fixture-inspired guidance modes serve as reference implementations to evaluate the framework in a within-subjects user study on a teleoperated hot-wire benchmark task in simulation, and the architecture is further demonstrated on physical dVRK hardware. Relative to unassisted manual control, linear guidance significantly reduced both the number of wire contacts and the task completion time, whereas the progressive-stiffness guidance produced consistent but statistically non-significant trends in the same direction. Subjective ratings of workload, agency, and satisfaction showed favorable descriptive trends for the guidance modes. The results demonstrate the feasibility of haptic shared control with a compact device coupled to the dVRK and provide an openly available, reproducible platform for future research. They further suggest that simpler linear feedback may be more robust for inexperienced operators than more complex profiles.",
-   "url": "https://arxiv.org/abs/2611.26485",
-   "pdf": "https://arxiv.org/pdf/2611.26485",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "eess.SY"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "Tactile",
-    "IL",
-    "GenModel"
-   ],
-   "kw_score": 14,
-   "tldr": "This paper provides a system contribution: it presents an open-source, ROS 2-native framework that integrates the compact, three-degree-of-freedom (3-DOF) Haply Inverse3 haptic device with the da~Vinci Research Kit (dVRK).",
-   "summary": "This paper provides a system contribution: it presents an open-source, ROS 2-native framework that integrates the compact, three-degree-of-freedom (3-DOF) Haply Inverse3 haptic device with the da~Vinci Research Kit (dVRK)."
-  },
-  {
-   "id": "2611.26385",
-   "title": "Beyond the Sink Interpretation: Radial Attention in Flow-Based VLA Policies",
-   "authors": [
-    "Yuxi Zheng",
-    "Yueqian Lin",
-    "Yudong Liu",
-    "Zijia Tang",
-    "Junyu Pan",
-    "Yiheng Wang",
-    "Hai Helen Li",
-    "Yiran Chen"
-   ],
-   "abstract": "Prior work calls the high attention on the first and last action tokens of a flow-based VLA policy a radial action sink, and uses these tokens to set the execution horizon. In language models, a sink is a token with high incoming attention, a small value, and little effect on the output. We test whether that profile holds, not the horizon rule, in one $π_{0.5}$ checkpoint on five RoboCasa tasks. The two endpoints receive 5.4% of action-key mass, 1.4 percentage points above their uniform share, and rotary positional encoding produces this excess: directly in shallow layers and through upstream action-token RoPE deeper in the network. The endpoints do not fit the sink profile. Their value norms stay near the action-token mean in all 18 layers. On 250 paired episodes, masking them or zeroing their values changes success by less than 4 points, and replacing their value directions with those of another observation lowers it by 3.2 to 7.2 points across three donors, whereas the same replacement on two non-endpoint tokens in the executed prefix lowers it by 28.4 points. The token that does fit the sink profile on mass and value norm is the prefix BOS; on this checkpoint, zeroing its value raises success in two paired runs, by +13.2 points (95% CI [+7.0, +19.4]) and +6.0 points ([+0.2, +11.8]). Inside the action chunk, a relative-offset routing profile estimated on other tasks keeps 75% of action-token spread and keeps closed-loop success on three held-out tasks (42.7% against a 38.7% baseline), while uniform or shuffled routing drops success to 3-4%. High attention mass alone does not tell what a token does.",
-   "url": "https://arxiv.org/abs/2611.26385",
-   "pdf": "https://arxiv.org/pdf/2611.26385",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "FM",
-    "IL"
-   ],
-   "kw_score": 14,
-   "tldr": "Prior work calls the high attention on the first and last action tokens of a flow-based VLA policy a radial action sink, and uses these tokens to set the execution horizon.",
-   "summary": "Prior work calls the high attention on the first and last action tokens of a flow-based VLA policy a radial action sink, and uses these tokens to set the execution horizon. The two endpoints receive 5.4% of action-key mass, 1.4 percentage points above their uniform share, and rotary positional encoding produces this excess: directly in shallow layers and through upstream action-token RoPE deeper in the network."
+   "kw_score": 15,
+   "relevance": 4,
+   "quality": 4,
+   "tldr": "TrajCal uses scatter search to find a fixed few-step time schedule for flow-matching samplers that best matches many-step outputs.",
+   "summary": "Few-step flow sampling distorts outputs relative to many-step references. TrajCal searches over time schedules with a scatter-search metaheuristic and picks one schedule by final output fidelity, reusable across inputs. It improves reference fidelity at low NFE for image and video generation.",
+   "why": "Training-free schedule tuning could cheaply speed flow policies, but the contribution is incremental.",
+   "rated_by": "claude"
   },
   {
    "id": "2611.26054",
@@ -599,116 +702,6 @@
    "tldr": "In this paper, we introduce a deep reinforcement learning framework that does not rely on prior data such as demonstrations and enables robots such as the K1 humanoid to learn to skateboard using model-free learning.",
    "summary": "In this paper, we introduce a deep reinforcement learning framework that does not rely on prior data such as demonstrations and enables robots such as the K1 humanoid to learn to skateboard using model-free learning. One challenging task is skateboarding, which requires simultaneous interaction with the ground and a passive but movable platform to achieve forward motion.",
    "venue": "Humanoids 2026"
-  },
-  {
-   "id": "2611.25587",
-   "title": "Cognitive-Horizon Action Chunking: Memory-Guided Adaptive Reasoning for Embodied Navigation",
-   "authors": [
-    "Weile Gong",
-    "Zijian Lu",
-    "Jiahao Zheng",
-    "Bo Xu",
-    "Yiping Zuo",
-    "Jiajia Guo",
-    "Xin He",
-    "Weijun Wang",
-    "Weibei Fan"
-   ],
-   "abstract": "Multimodal foundation models are advancing embodied navigation, but frequent inference incurs substantial computational cost. We present Cognitive-Horizon Action Chunking (CHAC), a training-free framework for memory-guided adaptive reasoning with a frozen navigation policy. Retained visual context, completion cues, and controller feedback determine the cognitive horizon, or how many cached waypoints the robot executes before refreshing its prediction. At the policy's stop request, local visitation history guides a bounded correction with at most one extra movement and no additional model calls. CHAC reduces vision-language model calls by 33.4% on HM3D-OVON and 64.7% on R2R-CE, with success-rate decreases of 0.63 and 10.82 percentage points, respectively. Success rate and success weighted by path length improve per model call on both benchmarks. Across four physical navigation tasks with 40 runs per method, CHAC achieves 18 successes versus 14 for native execution, reducing model calls by 54.9% and GPU inference time by 49.7%.",
-   "url": "https://arxiv.org/abs/2611.25587",
-   "pdf": "https://arxiv.org/pdf/2611.25587",
-   "code": "https://github.com/phare111/chac",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "IL",
-    "FM"
-   ],
-   "kw_score": 14,
-   "tldr": "We present Cognitive-Horizon Action Chunking (CHAC), a training-free framework for memory-guided adaptive reasoning with a frozen navigation policy.",
-   "summary": "We present Cognitive-Horizon Action Chunking (CHAC), a training-free framework for memory-guided adaptive reasoning with a frozen navigation policy. CHAC reduces vision-language model calls by 33.4% on HM3D-OVON and 64.7% on R2R-CE, with success-rate decreases of 0.63 and 10.82 percentage points, respectively."
-  },
-  {
-   "id": "2611.25415",
-   "title": "Stuck in Place: Stall Diagnosis and Remedies for JEPA Planners",
-   "authors": [
-    "Junhyeok Lee",
-    "Dongheon Lee",
-    "Kyu Sung Choi"
-   ],
-   "abstract": "Joint-embedding predictive architecture (JEPA) world models plan from pixels with model predictive control, yet often fail on tasks their model should handle. Test-time adaptation attributes such failures to model error under distribution shift and updates the weights on the current episode, without checking this attribution against the planning loop itself. We follow the executed planning loop on pushing tasks. In most settings, with and without distribution shift, nearly all failures (at least 96%) are stalls, where the object stays in place while the model predicts progress. The warm-started gradient-descent (GD) planner then returns nearly the same plan, a fixed point where the agent mostly idles. We propose Unstick, which pairs on-policy fine-tuning before deployment with a fixed-weight loop breaker: a residual memory of the episode's prediction errors or random re-initialization at every replan. With GD, Unstick recovers most of the adaptation gain on pushing tasks with the memory, and with re-initialization most of it on shape shifts but much less on visual shifts. A large part of what limits these planners under GD is thus a fixed point of the planning loop, present with and without distribution shift, which a planner with fixed weights can break. Code is available at https://github.com/jhlee0619/unstick.",
-   "url": "https://arxiv.org/abs/2611.25415",
-   "pdf": "https://arxiv.org/pdf/2611.25415",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "WM",
-    "Control"
-   ],
-   "kw_score": 14,
-   "tldr": "We propose Unstick, which pairs on-policy fine-tuning before deployment with a fixed-weight loop breaker: a residual memory of the episode's prediction errors or random re-initialization at every replan.",
-   "summary": "We propose Unstick, which pairs on-policy fine-tuning before deployment with a fixed-weight loop breaker: a residual memory of the episode's prediction errors or random re-initialization at every replan. In most settings, with and without distribution shift, nearly all failures (at least 96%) are stalls, where the object stays in place while the model predicts progress."
-  },
-  {
-   "id": "2611.25580",
-   "title": "FlashX: Scaling Robotic Experience Reuse for Embodied Agents with CBA-Based NAND Flash",
-   "authors": [
-    "Yuseon Choi",
-    "Sanghyeon Park",
-    "Eunjong Lee",
-    "Hanseo Lee",
-    "Sangjin Kim"
-   ],
-   "abstract": "Embodied agents are emerging as a promising paradigm for complex robotic tasks, leveraging Vision-Language-Action (VLA) and World Action Models (WAMs) to generate actions through Diffusion Transformer (DiT)-based iterative denoising. However, existing models often struggle to generalize to out-of-distribution (OOD) environments. We observe that retrieving successful experiences and using them to warm-start denoising enables agents to better adapt to unfamiliar situations while reducing computational overhead. This creates a new opportunity to improve task accuracy and inference efficiency simultaneously, in contrast to conventional acceleration techniques that trade accuracy for computation. However, realizing this opportunity requires scaling experience banks, introducing substantial storage and search overhead that challenges the capacity, bandwidth, and power constraints of edge systems. We propose FlashX, a CMOS Directly Bonded to Array (CBA)-based NAND flash architecture for scalable experience reuse in embodied agents. FlashX exploits CBA's high internal bandwidth for parallel pSLC key search, employing interleaved Compute-in-Flash (CIF) engines to sustain sensing throughput while retaining dense TLC latent storage. Proprioception-aware clustering further reduces search overhead and enables incremental experience acquisition without global reclustering. Evaluations across VLA and WAM workloads demonstrate up to 12.24\\%p and 7.43\\%p improvements in task success under dense and compute-efficient configurations, respectively. FlashX achieves 2.57$\\times$ higher search throughput than the strongest prior NAND search architecture under pSLC sensing, with a further 9.7$\\times$ search reduction through clustering. This delivers 1.29--3.95$\\times$ end-to-end speedup and 1.12--2.34$\\times$ energy efficiency improvement over SSD-based retrieval.",
-   "url": "https://arxiv.org/abs/2611.25580",
-   "pdf": "https://arxiv.org/pdf/2611.25580",
-   "primary": "cs.AR",
-   "categories": [
-    "cs.AR",
-    "cs.AI",
-    "cs.RO"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "FM"
-   ],
-   "kw_score": 13,
-   "tldr": "We propose FlashX, a CMOS Directly Bonded to Array (CBA)-based NAND flash architecture for scalable experience reuse in embodied agents.",
-   "summary": "We propose FlashX, a CMOS Directly Bonded to Array (CBA)-based NAND flash architecture for scalable experience reuse in embodied agents. This creates a new opportunity to improve task accuracy and inference efficiency simultaneously, in contrast to conventional acceleration techniques that trade accuracy for computation."
-  },
-  {
-   "id": "2611.25398",
-   "title": "RefreshGrad: An Online Adaptive Data-sampling Method for Diffusion-based Visuomotor Learning",
-   "authors": [
-    "Dijia Zhan",
-    "Jinyi Li",
-    "Xuemiao Xu",
-    "Yan Zhou",
-    "Yu Liu",
-    "Shaoshan Liu",
-    "Jie Tang"
-   ],
-   "abstract": "Training vision-language-action (VLA) policies from demonstrations typically samples trajectory segments uniformly or relies on static offline data curation before training. However, we find that demonstration data vary sharply in supervision value across temporal windows, and that each window's value to the policy evolves substantially during training rather than being fixed or captured by raw loss alone. Motivated by this finding, we propose RefreshGrad, an online adaptive data-sampling framework that periodically scores temporal windows from the evolving policy using five policy-native signals and dynamically adjusts their sampling weights during training. RefreshGrad focuses optimization on informative, learnable windows without altering the policy architecture, training objective, or inference cost. Across ten LIBERO-Plus manipulation tasks, RefreshGrad boosts average success from 60.7% (Uniform) and 68.2% (FAKTUAL) to 76.1% under visual perturbations, and from 57.4% and 73.3% to 81.3% in clean scenes.",
-   "url": "https://arxiv.org/abs/2611.25398",
-   "pdf": "https://arxiv.org/pdf/2611.25398",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-19",
-   "topics": [
-    "FM",
-    "IL"
-   ],
-   "kw_score": 13,
-   "tldr": "Motivated by this finding, we propose RefreshGrad, an online adaptive data-sampling framework that periodically scores temporal windows from the evolving policy using five policy-native signals and dynamically adjusts their sampling weights during training.",
-   "summary": "Motivated by this finding, we propose RefreshGrad, an online adaptive data-sampling framework that periodically scores temporal windows from the evolving policy using five policy-native signals and dynamically adjusts their sampling weights during training. Across ten LIBERO-Plus manipulation tasks, RefreshGrad boosts average success from 60.7% (Uniform) and 68.2% (FAKTUAL) to 76.1% under visual perturbations, and from 57.4% and 73.3% to 81.3% in clean scenes."
   },
   {
    "id": "2611.26596",
@@ -1072,6 +1065,30 @@
    "tldr": "We propose a novel, two-part framework for this task.",
    "summary": "We propose a novel, two-part framework for this task.",
    "venue": "IROS"
+  },
+  {
+   "id": "2611.26706",
+   "title": "Latent Space Planning with Sequential Monte Carlo",
+   "authors": [
+    "Hrishikesh Viswanath",
+    "Anindita Ghosh",
+    "Uttaran Bhattacharya",
+    "Aniket Bera"
+   ],
+   "abstract": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal. Sampling-based planners often struggle at longer horizons, while gradient-based methods can become trapped in local minima. Meanwhile, model predictive path integral control (MPPI), a complementary approach, alternates between estimating an expectation under a cost-weighted distribution from samples and updating the plan from this estimate. Its samples, however, are drawn afresh at every iteration from a Gaussian proposal and reach the target distribution only through importance weights. Moreover, a target distribution favoring goal-reaching trajectories can be difficult to define directly, motivating a sequence of intermediate distributions. Sequential Monte Carlo (SMC) provides a natural mechanism for evolving such a sequence through importance weighting and resampling. Motivated by this, we formulate latent-space planning as optimization guided by SMC, which moves a population of action sequences while a gradient-based optimizer updates the plan. Inspired by classical planning, we further introduce a PDE-derived cost-to-go that guides the evolution of the sample distribution using the structure of the latent state space. On navigation and manipulation tasks with visual and proprioceptive world models, our formulation outperforms gradient-based planners by $29$ and $50$, sampling-based planners by $35$ and MPPI by $7$ percentage points in average success rate, while succeeding in fewer iterations than gradient-based planners and within 4\\% of MPPI.",
+   "url": "https://arxiv.org/abs/2611.26706",
+   "pdf": "https://arxiv.org/pdf/2611.26706",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "Control"
+   ],
+   "kw_score": 7,
+   "tldr": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal.",
+   "summary": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal. On navigation and manipulation tasks with visual and proprioceptive world models, our formulation outperforms gradient-based planners by $29$ and $50$, sampling-based planners by $35$ and MPPI by $7$ percentage points in average success rate, while succeeding in fewer iterations than gradient-based planners and within 4\\% of MPPI."
   }
  ],
  "trending_ml": [
