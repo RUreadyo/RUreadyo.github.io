@@ -1,0 +1,610 @@
+{
+ "date": "2026-11-08",
+ "generated_at": "2026-11-24T09:59:25+00:00",
+ "ranker": "Claude",
+ "overview": "DexForesight is the top pick, distilling an action-conditioned 3D hand-and-scene world model into dexterous policy latents with real-robot gains. For generative-model theory, EbbFlow improves MeanFlow training with a PINN-style temporal curriculum and a TTS paper neatly diagnoses why first-step CFG hurts few-step flow sampling. ObjectWorld's full-object 3D flow and the RoboEval RL-on-pi0.5 recipe are practical takeaways for world models and RL fine-tuning of VLAs.",
+ "stats": {
+  "papers": 76,
+  "cs_ro": 39,
+  "relevant": 57,
+  "rated": 13
+ },
+ "top_picks": [
+  {
+   "id": "2611.11166",
+   "title": "DexForesight: Grounding Dexterous Policies with Implicit Spatial Foresight",
+   "authors": [
+    "Zhongxi Chen",
+    "Yi Yang",
+    "Xinyi Chen",
+    "Mingzhe Ye",
+    "Yaping Li",
+    "Zhihong Liu",
+    "Congsheng Xu",
+    "Haonan Wang",
+    "Zhijie Deng"
+   ],
+   "abstract": "Dexterous manipulation requires rich spatial foresight over both the surrounding scene and the robot hand. Existing world-action models often acquire such predictive knowledge through explicit future prediction. We introduce DexForesight, a framework that learns spatial foresight implicitly by injecting dynamics-aware world representations into the latent space of a dexterous policy. During training, DexForesight learns an action-conditioned spatial world model from offline scene depth, kinematic hand geometry, and demonstration trajectories. The world model predicts 3D hand-point motion and visual feature changes, capturing both articulated hand dynamics and scene changes under demonstrated actions, including the motion of fingers occluded from the cameras. We then freeze the world model and align policy queries with its predictive world queries, transferring the learned spatial dynamics into policy latents and using them to condition action generation. At deployment, only the policy is retained, operating on RGB observations, language, and robot state without depth input or explicit future prediction. On 11 DexJoCo simulation tasks, DexForesight improves the overall success rate of the base policy from 49.4% to 60.5%. On three real-robot dexterous manipulation tasks, DexForesight achieves 58.3% success, compared with 50.0% for the strongest baseline. Project page https://dexforesight.github.io/",
+   "url": "https://arxiv.org/abs/2611.11166",
+   "pdf": "https://arxiv.org/pdf/2611.11166",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "Dex",
+    "WM"
+   ],
+   "kw_score": 24,
+   "relevance": 8,
+   "quality": 7,
+   "tldr": "DexForesight distills an action-conditioned 3D hand-point and scene world model into dexterous policy latents, dropping depth and future prediction at deployment.",
+   "summary": "Dexterous policies need spatial foresight including occluded fingers. DexForesight trains a world model predicting 3D hand-point motion and visual feature changes from depth, hand kinematics and demos, then aligns policy queries to its frozen predictive queries. It lifts DexJoCo success from 49.4% to 60.5% over 11 tasks and reaches 58.3% vs 50.0% on three real dexterous tasks.",
+   "why": "Dexterous policy with implicit world-model foresight, core interest.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11464",
+   "title": "Off-Policy RL with Online Inference Tuning: My Solution to the CoRL 2026 RoboEval Challenge",
+   "authors": [
+    "Ilia Larchenko"
+   ],
+   "abstract": "The CoRL 2026 RoboEval challenge has eight bimanual tasks, and it ranks a policy not only on whether it succeeds but on how: every stage of the task, done safely, efficiently and with both arms in coordination, scored against human demonstrations. My solution has two parts. The generic part, carried over from my LeHome challenge solution, is off-policy RL on a $π_{0.5}$-based policy that is also its own value function. It is trained with AWR and RECAP on advantages of the exact official score, in a loop where every rollout is at the same time a Thompson-sampling trial of about 20 inference parameters. Out of the box, it took the policy to 0.85 RDS on held-out seeds in two days (and it was still very far from convergence). The competition-specific part adds data that local exploration cannot find: generated demonstrations that reach the full reward, and recovery episodes that start from the policy's own failures. The submitted policy reaches 0.990 RDS on held-out seeds and 0.987 on the official seeds.",
+   "url": "https://arxiv.org/abs/2611.11464",
+   "pdf": "https://arxiv.org/pdf/2611.11464",
+   "project": "https://huggingface.co/IliaLarchenko/RoboEvalSolution",
+   "code": "https://github.com/IliaLarchenko/RoboEvalSolution",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV",
+    "cs.LG"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "RLGen",
+    "RL",
+    "Dex",
+    "IL"
+   ],
+   "kw_score": 18,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "Challenge report: off-policy RL (AWR + RECAP) on a pi0.5 policy that is its own value function, plus Thompson-sampled inference parameters, wins RoboEval.",
+   "summary": "The solution fine-tunes pi0.5 with advantage-weighted regression and RECAP on the official score, treating each rollout as a Thompson-sampling trial over ~20 inference parameters. Generic RL reaches 0.85 RDS in two days; with generated full-reward demos and recovery episodes it reaches 0.990 on held-out seeds.",
+   "why": "Practical recipe for RL fine-tuning of VLAs.",
+   "venue": "CoRL 2026",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11220",
+   "title": "EbbFlow: PINN-Inspired Progressive Curriculum for MeanFlow Training",
+   "authors": [
+    "Mengfan Yuan",
+    "Xunheng Kuang",
+    "Jianbin Chen",
+    "Lei He"
+   ],
+   "abstract": "MeanFlow learns interval-average velocity for few-step generation, but its fixed temporal sampler mixes diagonal and interior supervision throughout training. We interpret temporal coordinates as collocation points: diagonal samples provide a stochastic boundary target, whereas finite intervals supply a differential-consistency target. The diagonal fraction controls how often the consistency component appears, while interval length enters its gradient through an explicit factor. Motivated by this distinction, EbbFlow uses Temporal Supervision Allocation (TSA) to schedule the diagonal fraction and interval geometry. It starts with diagonal supervision, then admits interior samples and expands their maximum interval; a left-anchored interval law preserves coverage across time. The per-sample loss, target, backbone, and inference procedure remain unchanged. In matched class-conditional ImageNet $256\\times 256$ runs without classifier-free guidance (DiT-B/2, one training seed per method, 400k updates), EbbFlow achieves 50k-sample FID of 39.65 at one network evaluation and 36.02 at two-evaluation ODE sampling, versus 44.82 and 39.86 for MeanFlow. Gradient probes show a mid-training difference in component geometry. Ablations support allocation scheduling and left-anchored intervals, although a fixed full-horizon variant performs better at one evaluation. These results suggest that temporal sampling is a useful training control whose benefits depend on the inference protocol.",
+   "url": "https://arxiv.org/abs/2611.11220",
+   "pdf": "https://arxiv.org/pdf/2611.11220",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 22,
+   "relevance": 7,
+   "quality": 6,
+   "tldr": "EbbFlow schedules MeanFlow's diagonal vs interval temporal sampling as a PINN-style curriculum, improving one-step ImageNet FID from 44.82 to 39.65.",
+   "summary": "MeanFlow's fixed temporal sampler mixes boundary (diagonal) and differential-consistency (interval) supervision. Viewing them as PINN collocation points, EbbFlow starts with diagonal supervision and progressively expands left-anchored intervals, leaving loss, target and inference unchanged. On ImageNet 256 DiT-B/2 without CFG it reaches FID 39.65 (1-NFE) and 36.02 (2-NFE) vs 44.82 and 39.86, though a fixed full-horizon variant does better at 1-NFE.",
+   "why": "Practical MeanFlow training insight, relevant to one-step generation interest.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11089",
+   "title": "Control-Aware Command Generation for Asynchronous Control and Action Inference with Vision-Based Policies towards Fast Execution",
+   "authors": [
+    "Takayuki Osa",
+    "Kazuki Ota"
+   ],
+   "abstract": "Vision-based control policies, including vision-language-action models, have enabled robots to perform increasingly complex tasks. However, their execution speed is often limited by the high computational cost of action inference. In this work, we investigate what can be achieved at the control level without modifying the underlying policy learning process. We introduce an asynchronous inference and control framework that enables fast task execution while maintaining smooth and stable robot motions. By formulating the generation of continuous target positions from discontinuous model predictions as a tracking control problem, our method makes asynchronous inference practical for real robots. We further accelerate execution through adaptive action skipping based on the variance of predicted positions. Experiments with Action Chunking Transformer and OpenVLA-OFT on a bimanual robot demonstrate substantial speedups while preserving high task success rates.",
+   "url": "https://arxiv.org/abs/2611.11089",
+   "pdf": "https://arxiv.org/pdf/2611.11089",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "IL",
+    "FM",
+    "Dex"
+   ],
+   "kw_score": 21,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "Formulates asynchronous chunked policy execution as tracking control to generate smooth targets, plus variance-based adaptive action skipping for faster execution.",
+   "summary": "Vision-based policy execution is limited by inference latency. The authors generate continuous targets from discontinuous asynchronous predictions via a tracking-control formulation and skip actions when predicted-position variance is low. With ACT and OpenVLA-OFT on a bimanual robot, execution speeds up substantially while keeping high success.",
+   "why": "Practical take on real-time chunk execution, related to real-time chunking.",
+   "venue": "NeurIPS 2026 Workshop",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11085",
+   "title": "ObjectWorld: Scaling Object-Centric World Models with A Large-Scale 3D Full-Object Flow Dataset",
+   "authors": [
+    "Haonan Chen",
+    "Sicheng Isabella Lu",
+    "Haitian Li",
+    "Jiajin Wu",
+    "Hexiang Wei",
+    "Jiawei Zhang",
+    "Xin Fei",
+    "Yiwen Hou",
+    "Chenrui Tie",
+    "Chongkai Gao",
+    "Sheng Wang",
+    "Lin Shao"
+   ],
+   "abstract": "Generative world modeling from large-scale visual data offers a promising path toward scalable robot manipulation. This calls for an intermediate representation that can be supervised at scale and remains actionable for downstream control. We propose 3D full-object flow, an object-centric motion representation that assigns dense 3D trajectories to points across the complete surface of a target object, including its occluded regions. By extending visible-surface object flow to the full object geometry, this representation makes complete object motion explicit and applies uniformly to both rigid and deformable objects. To realize the potential of this representation at scale, we introduce a 1210-hour full-object flow dataset that addresses the scarcity of large-scale supervision for complete 3D object motion. The dataset integrates diverse real-world videos and physical simulations, with a scalable annotation pipeline for recovering full-object motion from real-world observations and quality metrics for systematically assessing annotation quality. We then train a world model that takes an image and a task description as input and predicts dense full-object flow over the reconstructed object geometry. Experiments show reliable annotation quality, data-scalable flow prediction, and effective downstream manipulation across novel scenes and robot embodiments. Project website with additional results and videos: https://nus-lins-lab.github.io/ObjectWorld/.",
+   "url": "https://arxiv.org/abs/2611.11085",
+   "pdf": "https://arxiv.org/pdf/2611.11085",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "WM",
+    "FM"
+   ],
+   "kw_score": 10,
+   "relevance": 6,
+   "quality": 7,
+   "tldr": "ObjectWorld introduces 3D full-object flow, a 1210-hour dataset, and a world model predicting dense full-object trajectories from image and task text.",
+   "summary": "World models need an actionable intermediate representation supervisable at scale. Full-object flow assigns 3D trajectories over complete object surfaces incl. occluded parts, for rigid and deformable objects; a 1210-hour real+sim dataset with an annotation pipeline trains an image+text-conditioned flow predictor. It shows data-scalable prediction and downstream manipulation across scenes and embodiments.",
+   "why": "Object-flow world models as an embodiment-agnostic interface, useful for learning from video.",
+   "rated_by": "claude"
+  }
+ ],
+ "roundup": [
+  {
+   "id": "2611.11521",
+   "title": "K-PWM: Control-Oriented Structured Bilinear World Models under Partial Observation",
+   "authors": [
+    "Santosh Mohan Rajkumar",
+    "Sriram Narayanan",
+    "Samuel E. Otto",
+    "Debdipta Goswami"
+   ],
+   "abstract": "World models learn internal simulators of environment dynamics for prediction, planning, and control, yet learning them from limited, noisy, and partial observations remains challenging. While much progress has focused on pixel-based observations, many physical systems instead provide vector-valued measurements that reveal only part of the underlying state. We introduce K-PWM, a probabilistic world model for prediction and control under partial observation. K-PWM couples Koopman-bilinear latent dynamics with a nonlinear observation decoder and performs probabilistic latent-state inference through the learned model via extended Kalman filtering and smoothing, without a separately trained inference network. Its bilinear structure enables exact propagation of the maintained Gaussian belief through the latent transition and efficient rollouts for uncertainty-aware model predictive path integral (MPPI) control. For training K-PWM, we present a generalized expectation conditional maximization (GECM) procedure with closed-form updates for the generators, noise covariances, and latent prior, complemented by gradient-based decoder learning. A Koopman-consistent initialization selects the latent dimension from data and initializes the action-dependent dynamics. With limited training data, K-PWM achieves lower long-horizon prediction error than the evaluated baselines on partially observed Gymnasium MuJoCo systems, while substantially reducing training time relative to the strongest prediction baseline. On high-dimensional MuJoCo Menagerie robots, it achieves competitive tracking accuracy with low per-step computation times, demonstrating potential for real-time deployment. These results support structured probabilistic dynamics as a data- and compute-efficient approach to world modeling and control under partial observation.",
+   "url": "https://arxiv.org/abs/2611.11521",
+   "pdf": "https://arxiv.org/pdf/2611.11521",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG",
+    "eess.SY",
+    "math.DS"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "WM",
+    "Control"
+   ],
+   "kw_score": 25,
+   "relevance": 4,
+   "quality": 6,
+   "tldr": "K-PWM couples Koopman-bilinear latent dynamics with EKF inference and closed-form GECM training for data-efficient partially observed world modeling and MPPI.",
+   "summary": "Learning world models from partial vector observations is hard. K-PWM uses bilinear latent dynamics enabling exact Gaussian belief propagation, EKF/smoothing inference without an encoder network, and closed-form EM updates. It achieves lower long-horizon error on partially observed MuJoCo tasks with less training time and competitive real-time tracking on Menagerie robots.",
+   "why": "Structured world model for MPPI control; moderately relevant.",
+   "venue": "NeurIPS 2026",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.12978",
+   "title": "Trajectory-Regularized Distribution Distillation for One-Step Generation",
+   "authors": [
+    "An Zhao",
+    "Yixiang Zhou",
+    "Zejian Li",
+    "Yi Guo",
+    "Pei Chen",
+    "Lingyun Sun"
+   ],
+   "abstract": "Distilling flow matching models for one-step generation generally follows two paradigms. Trajectory alignment supervises the student with the teacher's probability flow ODE, but its performance degrades under very small sampling budgets. Distribution matching directly optimizes the generated distribution, but estimating its reverse Kullback-Leibler gradient typically requires a separate network to track the evolving student score. We propose trajectory-regularized distribution distillation (TRD), which combines distribution-level and trajectory-level supervision through a momentum-mixture policy predicted in a single student forward pass. This policy serves simultaneously as a one-step generator, an estimator of the student's marginal velocity that removes the need for a second trainable network in distribution matching, and a closed-form time-dependent velocity field supervised along the teacher ODE trajectory. Experiments on SANA-1.6B and Stable Diffusion 3.5 show that TRD outperforms representative consistency and distribution matching baselines in generation quality and training efficiency for both one-step and few-step generation, with a trade-off in sample diversity.",
+   "url": "https://arxiv.org/abs/2611.12978",
+   "pdf": "https://arxiv.org/pdf/2611.12978",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.AI"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 19,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "TRD combines distribution matching and teacher-trajectory supervision via a momentum-mixture policy in one student pass for one-step flow distillation.",
+   "summary": "Trajectory alignment degrades at tiny budgets while distribution matching needs an extra score network. TRD's single-pass momentum-mixture policy acts as one-step generator, student marginal velocity estimator and trajectory-supervised velocity field. On SANA-1.6B and SD3.5 it beats consistency and DMD baselines in quality and efficiency, with some diversity loss.",
+   "why": "One-step distillation method; relevant to fast generative policies.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11500",
+   "title": "ForeAct: Geometry-Guided Action Learning from World Representations",
+   "authors": [
+    "Wei Lu",
+    "Jiaxi Zhang",
+    "Yunheng Wang",
+    "Taowen Wang",
+    "Yuetong Fang",
+    "Zhenhui Zhang",
+    "Shuning Zhang",
+    "Zizhao Yuan",
+    "Yixiao Feng",
+    "Zecui Zeng",
+    "Renjing Xu"
+   ],
+   "abstract": "Robotic manipulation requires representations that capture both scene geometry and its evolution during interaction. Existing approaches have largely treated these two aspects separately. World action models capture such dynamics by coupling action prediction with future video generation, but their reliance on iterative diffusion or rectified-flow inference leads to high computational cost, while their representations lack explicit spatial structure. Explicitly modeling scene geometry typically requires auxiliary modules that increase both parameter count and computational cost. Conversely, geometry-centric policies primarily recover observed spatial structure and often lack explicit supervision for anticipating future geometric changes during interaction. To address these limitations, we introduce ForeAct, which repurposes a pretrained video world model as a single-pass representation backbone for low-latency control. ForeAct directly processes the clean latent of the current observation in one forward pass, eliminating future-frame synthesis and iterative denoising while retaining the backbone's pretrained spatiotemporal priors. Rather than introducing a separate geometry backbone, ForeAct uses learnable tokens supervised by next-frame relative depth to shape the shared video representation through bidirectional self-attention. This compact interface turns the spatial knowledge already encoded in the backbone into a future-aware representation for action generation, with little parameter overhead. The lightweight geometry readout is used only during training and removed at deployment, enabling low-latency, geometry-aware control without depth input or an external geometry backbone. Without additional large-scale pretraining, ForeAct achieves 96.6% average success on LIBERO, 63.5% on SimplerEnv-Bridge, and a 74.4% success rate across 90 real-world rollouts.",
+   "url": "https://arxiv.org/abs/2611.11500",
+   "pdf": "https://arxiv.org/pdf/2611.11500",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "WM",
+    "Video",
+    "FM"
+   ],
+   "kw_score": 14,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "ForeAct uses a pretrained video world model as a single-pass representation backbone with next-frame depth tokens for low-latency geometry-aware control.",
+   "summary": "WAMs are costly due to iterative denoising and lack explicit geometry. ForeAct encodes only the clean current latent in one pass, with learnable tokens supervised by next-frame relative depth during training only. It gets 96.6% on LIBERO, 63.5% on SimplerEnv-Bridge and 74.4% over 90 real rollouts.",
+   "why": "Efficient use of video world-model priors for policies.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11421",
+   "title": "GenRM-Flow: Generators are Process-aware Reward Models in Flow Matching",
+   "authors": [
+    "Siming Fu",
+    "Ruizhe He",
+    "Zheming Fu",
+    "Zeyue Xue",
+    "Fengkai Liu",
+    "Yufei Jiao",
+    "Jie Huang",
+    "Xiaoxiao Ma",
+    "Xuan Yang",
+    "Lihui Luo"
+   ],
+   "abstract": "Aligning video generation models with human preference depends critically on the quality of the reward model that scores generated videos. Current video reward models, however, source their reward signal from a model's representational rather than generative capacity: they either repurpose vision-language models as pixel-space scorers, or train auxiliary scoring heads on top of frozen generator features. The generator's actual ability to predict velocities, denoise latents, and produce videos plays no role in scoring its own generations. We argue that this overlooks a structural property of offline preference learning. Any preference optimization objective that approximates an offline preference dataset mathematically targets a strictly defined KL-constrained optimal policy. By isolating the reward term from this analytical solution and mapping the exact generation log-likelihood to its flow-matching surrogate, the empirical reward emerges deterministically as the relative difference in continuous-time velocity-prediction errors. We formalize this equivalence into GenRM-Flow, a framework where a preference-tuned video generator inherently operates as a process-aware reward model directly in the noisy latent space. We further show theoretically that distinct fine-tuning objectives, whether contrastive like DPO and IPO or non-contrastive like RWR, are alternative optimization pathways toward the same optimal policy, each inducing a reward readout from the generator's velocity-prediction errors. Furthermore, the extracted process reward seamlessly substitutes external VLM scorers in FlowAWR. Operating purely on native latent outputs without auxiliary reward networks, this generative reward drives measurable improvements in downstream video generation.",
+   "url": "https://arxiv.org/abs/2611.11421",
+   "pdf": "https://arxiv.org/pdf/2611.11421",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel",
+    "Video",
+    "RL"
+   ],
+   "kw_score": 15,
+   "relevance": 5,
+   "quality": 7,
+   "tldr": "GenRM-Flow shows a preference-tuned flow model's velocity-error differences are an implicit process reward in noisy latent space.",
+   "summary": "Video reward models ignore the generator's own generative capacity. From the KL-constrained optimal policy of offline preference objectives, the implicit reward is the relative velocity-prediction error difference, unifying DPO, IPO and RWR as paths to the same optimum. This generator-derived reward replaces VLM scorers in FlowAWR and improves video generation.",
+   "why": "Theory linking flow matching and implicit rewards, transferable to RL with flow policies.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11179",
+   "title": "Guidance at Pure Noise Erodes Speaker Similarity in Few-Step Token-Conditioned Flow-Matching TTS",
+   "authors": [
+    "Jaeho Lee",
+    "Han-Lim Choi"
+   ],
+   "abstract": "Text-to-speech systems built from a language model and a flow-matching mel decoder now run the decoder with two to four Euler steps instead of the official ten or more. At two steps the word error rate (WER) is unchanged, but speaker similarity (SIM) drops by one to six points. This paper shows that most of this loss comes from classifier-free guidance on the first step. At pure noise the network can only return the conditional mean, so guidance shifts every trajectory by nearly the same vector. Later steps do not remove this shift, and its size grows with the length of the first step, so it is negligible with ten or more steps and accounts for most of the loss with two. Two training-free samplers are derived from this analysis. First-step unguided sampling (FSU) leaves the first step unguided and recovers $84$--$91\\%$ of the two-step SIM loss on CosyVoice~2/3 with no significant WER increase. FSU-Mid replaces the two Euler steps by one midpoint step with an unguided first evaluation, recovers $77$--$85\\%$ on IndexTTS-2 and matches the ten-step teacher on CosyVoice~2 and GLM-TTS. Both use three network function evaluations, one fewer than the official two-step sampler, and FSU-Mid gives the highest mean recovery among eight published guidance rules re-run at two steps on four decoders.",
+   "url": "https://arxiv.org/abs/2611.11179",
+   "pdf": "https://arxiv.org/pdf/2611.11179",
+   "code": "https://github.com/16jhlee/FSU",
+   "primary": "cs.SD",
+   "categories": [
+    "cs.SD",
+    "cs.AI"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 15,
+   "relevance": 5,
+   "quality": 7,
+   "tldr": "Shows CFG at the first (pure-noise) step causes speaker-similarity loss in few-step flow TTS; skipping guidance on step one recovers most of it.",
+   "summary": "At pure noise the network returns the conditional mean, so guidance shifts all trajectories by a near-constant vector whose size grows with first-step length. First-step unguided sampling recovers 84-91% of the 2-step SIM loss on CosyVoice, and a midpoint variant matches the 10-step teacher on some decoders, with fewer NFEs.",
+   "why": "Clean analysis of guidance in few-step flow sampling, applicable beyond speech.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11517",
+   "title": "InfCoiL: Coordinated Planner-Controller Learning for Closed-Loop Physics-Based Human-Object Interaction",
+   "authors": [
+    "Yude Zou",
+    "Yifei Yao",
+    "Yiwei Hao",
+    "Hanqing Wang",
+    "Xing Gao"
+   ],
+   "abstract": "Text- and goal-conditioned human-object interaction (HOI) provides an intuitive interface for specifying high-level intents in physics-based character animation. Mapping such intents to physically plausible, contact-rich behaviors naturally calls for a generative planner and a physics-based controller, yet existing planner-controller systems either execute plans open-loop or close the loop while keeping the planner fixed, so execution feedback never reshapes what is planned. We present InfCoiL, a closed-loop framework for physics-based HOI from coordinated planner-controller learning. InfCoiL couples a morphology-aware flow-matching planner with a unified multi-morphology controller through a shared morphology interface in an autoregressive plan-and-execute loop, and alternately fine-tunes both components with reinforcement learning from the same physical rollouts. To optimize the flow-matching planner online, we introduce Semantic Flow Policy Optimization (SFPO), which stochasticizes selected denoising transitions with channel-wise semantic covariance over heterogeneous HOI features and assigns group-relative, sequence-level rewards from complete closed-loop executions. On held-out OMOMO sequences, InfCoiL outperforms open-loop hierarchical baselines in goal-reaching task success and physical tracking accuracy. Project page: https://infcoil.github.io/",
+   "url": "https://arxiv.org/abs/2611.11517",
+   "pdf": "https://arxiv.org/pdf/2611.11517",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.LG"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "RLGen",
+    "Dex",
+    "RL"
+   ],
+   "kw_score": 13,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "InfCoiL jointly RL-fine-tunes a flow-matching HOI planner and physics controller in closed loop, introducing Semantic Flow Policy Optimization.",
+   "summary": "Planner-controller HOI systems keep the planner fixed. InfCoiL alternates RL fine-tuning of a morphology-aware flow planner and multi-morphology controller from shared rollouts; SFPO stochasticizes selected denoising steps with semantic covariance and uses group-relative sequence rewards. It beats open-loop hierarchical baselines on OMOMO.",
+   "why": "RL fine-tuning of flow planners, though for character animation.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11650",
+   "title": "FlowEval: How Much Adaptation Does an Embodied Foundation Model Need at Deployment?",
+   "authors": [
+    "Zhang Xi-Jia",
+    "Roman Yakunin",
+    "Shivang Chopra",
+    "Chengyue Huang",
+    "Che Chen",
+    "Siddharth Karamcheti",
+    "Zsolt Kira"
+   ],
+   "abstract": "Large-scale pretraining is reducing the amount of adaptation required to deploy embodied foundation models, but it is not guaranteed that a pretrained model already provide the level of performance required in every deployment. Practitioners therefore need to understand how well a pretrained model matches a target deployment and how much adaptation data is left to be collected. We study whether a small set of successful target-domain demonstrations can reveal whether and how much target-domain data will be required before any adaptation. We introduce FlowEval, a set of training-free metrics that use the flow-matching objective to probe an embodied foundation model with a set of demonstrations. FlowEval quantifies predictive disagreement on successful target demonstrations to assess how well a pretrained model fits a target deployment. Across four embodied foundation model families: Pi-0.5, MolmoAct2, GR00T, and DreamZero, FlowEval distinguishes seen from unseen deployments across real-world and simulated manipulation. Further, by finetuning Pi-0.5 and GR00T on 17 RoboCasa365 manipulation tasks, we showed that FlowEval correlates with how success rate improves as additional adaptation data is provided. Together, these results suggest that FlowEval can serve as a lightweight, training-free diagnostic of how much model--deployment adaptation may be required.",
+   "url": "https://arxiv.org/abs/2611.11650",
+   "pdf": "https://arxiv.org/pdf/2611.11650",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 9,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "FlowEval uses flow-matching loss disagreement on a few target demos to predict how much adaptation an embodied foundation model needs.",
+   "summary": "Practitioners need to know how much target data to collect. FlowEval probes models with flow-matching objectives on successful target demos, distinguishing seen from unseen deployments across pi0.5, MolmoAct2, GR00T and DreamZero, and correlating with success gains when fine-tuning pi0.5 and GR00T on 17 RoboCasa tasks.",
+   "why": "Useful training-free diagnostic for VLA fine-tuning.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11554",
+   "title": "Kimodo-Policy: Learning Kinematic Action Models for Humanoid Loco-Manipulation",
+   "authors": [
+    "Yunheng Wang",
+    "Jiaxi Zhang",
+    "Wei Lu",
+    "Yuetong Fang",
+    "Taowen Wang",
+    "Yixiao Feng",
+    "Shuning Zhang",
+    "Junzhe Xu",
+    "Yichi Wang",
+    "Zizhao Yuan",
+    "Kailun Huang",
+    "Lusong Li",
+    "Mingqian Zhou",
+    "Zecui Zeng",
+    "Renjing Xu"
+   ],
+   "abstract": "Humanoid loco-manipulation requires continuous coordination of high-dimensional whole-body motion to realize task objectives. While vision-language-action models and world action models transfer semantic and visual-dynamics priors to robot control, these priors do not necessarily capture the structure of robot motion. We introduce Kinematic Action Models (KAMs), a paradigm that treats whole-body motion as a direct pretraining target and uses a pretrained motion generator as the primary action-generation backbone. KAMs ground learned temporal and cross-body coordination priors through task conditioning, visual observations, and execution feedback. We present Kimodo-Policy as an initial instantiation, combining a frozen Kimodo text-to-motion backbone with lightweight ControlNet-based visual conditioning. A root-body-hand hierarchy coordinates locomotion and manipulation, while motion-history conditioning and repeated action-chunk prediction bridge motion synthesis and closed-loop control. Following large-scale loco-manipulation pretraining, the policy achieves the highest overall success among compared policies on multi-task HumanoidArena (72.14%), competitive performance on SIMPLE, and 60% mean success across eight real-world tasks, with 678M parameters (92M trainable). Ablations support the contribution of the pretrained motion backbone. Together, these results provide initial evidence for motion generation as a complementary foundation for humanoid action learning.",
+   "url": "https://arxiv.org/abs/2611.11554",
+   "pdf": "https://arxiv.org/pdf/2611.11554",
+   "project": "https://kimodo-policy.github.io/",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.CV"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 11,
+   "relevance": 4,
+   "quality": 6,
+   "tldr": "Kimodo-Policy uses a frozen text-to-motion generator with ControlNet visual conditioning as the action backbone for humanoid loco-manipulation.",
+   "summary": "VLA priors don't capture motion structure. Kinematic Action Models pretrain on whole-body motion; Kimodo-Policy adds ControlNet conditioning, a root-body-hand hierarchy and history-conditioned chunking. It gets 72.14% on HumanoidArena and 60% across eight real tasks with 92M trainable params.",
+   "why": "ControlNet-style fine-tuning of motion priors; humanoid-focused.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.11131",
+   "title": "CrossLiDAR: Controllable Multi-Sensor LiDAR Sequence Generation",
+   "authors": [
+    "Khanh Nguyen",
+    "Thomas Walker",
+    "Hichem Telli",
+    "Carlos de la Torre-Ortiz",
+    "Stefano Fiorini",
+    "Salah Eddine Bekhouche",
+    "Mohammed-En-Nadhir Zighem",
+    "Wassim Swaileh",
+    "Tinghuai Wang"
+   ],
+   "abstract": "High-fidelity LiDAR simulation remains a bottleneck for scalable development and validation of autonomous systems. Existing generators can synthesize realistic scans, but they are typically constrained to a single sensor configuration, offer limited control over structure and geometry, and drift in long-horizon 4D generation. We present CrossLiDAR, a unified transformer-based framework capable of generating controllable and spatio-temporally consistent multi-sensor LiDAR sequences. Our approach leverages a rectified flow objective with a Multi-Modal Diffusion Transformer (MM-DiT) backbone, within a compact latent space of range images. To support multiple LiDAR sensors, an Inter-sensor Module enables interaction across sensors, while a ControlNet-style branch provides structural conditioning (e.g., BEV priors or 3D bounding boxes). For modeling the temporal consistency, CrossLiDAR generates short $N$-frame sequences and extends them autoregressively to improve long-horizon coherence. Our model significantly outperforms state-of-the-art baselines, achieving an average improvement of 29.56\\% in JSD and 15.36\\% in MMD evaluated on nuScenes and the Waymo Dataset. CrossLiDAR bridges the gap to modern autonomous-driving simulation by enabling calibration-consistent multi-sensor LiDAR rollouts over long horizons for controllable, scenario-based testing.",
+   "url": "https://arxiv.org/abs/2611.11131",
+   "pdf": "https://arxiv.org/pdf/2611.11131",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 10,
+   "tldr": "We present CrossLiDAR, a unified transformer-based framework capable of generating controllable and spatio-temporally consistent multi-sensor LiDAR sequences.",
+   "summary": "We present CrossLiDAR, a unified transformer-based framework capable of generating controllable and spatio-temporally consistent multi-sensor LiDAR sequences. For modeling the temporal consistency, CrossLiDAR generates short $N$-frame sequences and extends them autoregressively to improve long-horizon coherence.",
+   "venue": "WACV 2027"
+  },
+  {
+   "id": "2611.11665",
+   "title": "HINT-VLM: Humanoid Interactive Navigation over Rough Terrain with Embodiment-Grounded Vision-Language Model",
+   "authors": [
+    "Ziwon Yoon",
+    "Seok Hwan Kim",
+    "Yiyu Chen",
+    "Quan Nguyen",
+    "Lu Gan",
+    "Ye Zhao"
+   ],
+   "abstract": "Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles. However, most traditional navigation methods assume non-interactive environments and focus only on traversal. While Navigation Among Movable Obstacles (NAMO) approaches relax this assumption, prior efforts have largely focused on flat environments and reactive interaction, rather than predicting object movability and planning ahead. These limitations become critical in outdoor rough-terrain scenarios, where robots must jointly reason about terrain traversability and object movability. In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. The GP corrects the VLM-derived movability prior to produce embodiment-grounded probabilistic movability estimates, which are then incorporated into hierarchical uncertainty-aware planning. The proposed approach allows humanoids to jointly leverage locomotion and manipulation for efficient and safe navigation, representing the first solution to NAMO in rough terrain through predictive movability reasoning and probabilistic VLM integration.",
+   "url": "https://arxiv.org/abs/2611.11665",
+   "pdf": "https://arxiv.org/pdf/2611.11665",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "FM"
+   ],
+   "kw_score": 6,
+   "tldr": "In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model.",
+   "summary": "In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles."
+  },
+  {
+   "id": "2611.11580",
+   "title": "Qubit-to-Motion: Traceable Action Provenance in Hybrid QRL for Robotic Bin-Packing Sequencing",
+   "authors": [
+    "Hassen Nigatu",
+    "Howard Li"
+   ],
+   "abstract": "Hybrid quantum reinforcement learning has been explored for robotic decision-making, but evaluations often emphasize task success, return, or convergence, leaving unresolved whether quantum circuit outputs influence constrained actions and remain traceable through robot execution. We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Four Pauli-$Z$ readouts provide the sole learned input to the actor and critic, while a support mask enforces admissible object selection. Each decision is recorded and linked via step indices and SHA-256 fingerprints to a sealed route, deterministic Cartesian and inverse-kinematics waypoints, prescribed joint motion, and MuJoCo contact replay. A frozen checkpoint is evaluated across five deterministic 30-object scene variants. All 150 placements satisfy support, containment, and settling criteria. A fixed-state zero-readout intervention changes $90.0\\pm0.0\\%$ of decisions, demonstrating dependence on the joint circuit representation. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration. These results establish reproducible decision-to-contact traceability. The implementation is available at \\href{https://anonymous.4open.science/r/Qubit-to-Motion-Quantum-Reinforcement-Learning-F7DC}{\\textcolor{linkpink}{the anonymous repository}}.",
+   "url": "https://arxiv.org/abs/2611.11580",
+   "pdf": "https://arxiv.org/pdf/2611.11580",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "RL"
+   ],
+   "kw_score": 5,
+   "tldr": "We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement.",
+   "summary": "We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration."
+  },
+  {
+   "id": "2611.11698",
+   "title": "Compute Regeneration through Re-Productization: Reorganizing Retired Edge AI Silicon into a Delivered Multilingual Service Robot",
+   "authors": [
+    "Hongyu Luo",
+    "Sun Tie",
+    "John Wang"
+   ],
+   "abstract": "Useful edge hardware can lose product support while retaining substantial computation. We treat this as systems design: compute regeneration here means re-productization, retaining the compute module while redesigning the surrounding product organization. Our case is GEdgeBot, a multilingual service robot built around a retired 32 GB Jetson AGX Xavier. A source-grounded inventory shows the box alone supplies inference, while the combined system exposes five on-device AI services, a seven-language speech chain, three sensing domains, and one deterministic seven-byte control boundary. AI and orchestration stay on the Xavier; finite motor-pulse generation on an STM32F407. Audits cover the six-mode control state machine, readiness barriers and sound orientation. Historical single-prototype measurements report 1,782 MB GPU memory with YOLO, Whisper-small, and NLLB-200 resident, a direct-control p99 deviation rising from 0.24 to 49.93 ms under concurrent AI load, and six of six trigger-to-follow demonstrations at 4.35 s mean latency, with conversational voice unavailable. A November campaign restores an isolated inference stack, re-measures AI workloads, and repeats control-frame runs. Driving two execution organisations with the same 6,000 measured 50 ms frame intervals shows the finite-pulse boundary removes host jitter from the pulse train but not the command start phase; its stopping bound is host-enforced, while the MCU 16-bit pulse field is unclamped. A six-check static audit exposes a host--MCU queue mismatch, and a 14-scenario replay executes the audited main() dispatcher across six modes with zero physical device opens and 54 contract-checked frames. Results support an existence claim and a reproducible architectural hypothesis, not fleet-level reliability. The 208 direct-control ratio remains unreplicated; MCU waveform capture and on-site fault injection remain open.",
+   "url": "https://arxiv.org/abs/2611.11698",
+   "pdf": "https://arxiv.org/pdf/2611.11698",
+   "project": "https://doi.org/10.5281/zenodo.24152092",
+   "code": "https://github.com/gravity-link/gedge_bot_paper",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AR"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "IL"
+   ],
+   "kw_score": 4,
+   "tldr": "Useful edge hardware can lose product support while retaining substantial computation.",
+   "summary": "Useful edge hardware can lose product support while retaining substantial computation."
+  },
+  {
+   "id": "2611.11648",
+   "title": "PA-SaR: Perception-Aware Learning, Control, and Coordination for Multi-Robot Search and Rescue",
+   "authors": [
+    "Jokūbas Dimša",
+    "Maria Grouev",
+    "Filip Keerberg",
+    "Nicolas Laplagne",
+    "Tigo Schutgens",
+    "Sven Schoonebeek",
+    "Anahita Jamshidnejad"
+   ],
+   "abstract": "Autonomous SaR requires robots to explore unknown or partially known environments, avoid hazards, coordinate team activities, and guide discovered victims to safety. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses. We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. PA- SaR distinguishes environmental ground-truth, robot-specific perceptions, and simulated victim behavior. This provides a common basis for integrating complementary mechanisms and analyzing their interactions across mission stages. We demonstrate the framework through single- and multi-robot simulation studies incorporating model-predictive and learning-based exploration, perception-based safety shielding, event-driven task allocation, and adaptive victim guidance. The results show trade-offs between collision avoidance and search completion, indicate that supervisory allocation improves search completion beyond information sharing alone, and demonstrate that increased exploration does not necessarily yield more rescues. Adaptive guidance increases rescues relative to continuous leading, without a detected improvement in mean or final victim trust or a reduction in mortality. These findings support evaluating local control, team coordination, and evacuation as related but distinct aspects of autonomous SaR within the considered simulation environments.",
+   "url": "https://arxiv.org/abs/2611.11648",
+   "pdf": "https://arxiv.org/pdf/2611.11648",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.MA",
+    "eess.SY"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 4,
+   "tldr": "We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives.",
+   "summary": "We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses."
+  },
+  {
+   "id": "2611.11164",
+   "title": "Tutorial: Vision-Based Formation Control with Differential-Drive Robots",
+   "authors": [
+    "Christian Marowski",
+    "Byung-Cheol Min"
+   ],
+   "abstract": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python. ArUco markers are used to estimate robot positions and orientations, while desired pairwise displacement vectors define a circular formation. By comparing measured and desired relative positions, the controller computes movement vectors that are converted into differential-drive wheel commands, with basic proximity-sensor-based obstacle avoidance. The tutorial guides readers through hardware and software setup, robot pose estimation, formation geometry, feedback control, system integration, and formation-error evaluation. Motivated by the need to bridge the gap between theoretical understanding and practical implementation in robotics education, we emphasize how mathematical concepts are translated into coordinated behaviors on physical robots. Although the implementation uses a specific robotic platform, the underlying perception and formation-control principles can be adapted to other differential-drive robots and simulation environments. The accompanying open-source GitHub repository provides the Python implementation, setup instructions, and demonstrations to support hands-on learning and further exploration of multi-robot systems.",
+   "url": "https://arxiv.org/abs/2611.11164",
+   "pdf": "https://arxiv.org/pdf/2611.11164",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-08",
+   "topics": [
+    "IL"
+   ],
+   "kw_score": 4,
+   "tldr": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python.",
+   "summary": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python."
+  }
+ ],
+ "trending_ml": []
+}

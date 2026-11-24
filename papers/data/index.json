@@ -1,8 +1,242 @@
 [
  {
-  "date": "2026-11-24",
-  "top": 15,
-  "roundup": 40,
-  "ranker": "keywords"
+  "date": "2026-11-23",
+  "top": 9,
+  "roundup": 30,
+  "papers": 185,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-22",
+  "top": 5,
+  "roundup": 28,
+  "papers": 84,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-21",
+  "top": 5,
+  "roundup": 18,
+  "papers": 74,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-20",
+  "top": 5,
+  "roundup": 30,
+  "papers": 155,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-19",
+  "top": 5,
+  "roundup": 30,
+  "papers": 201,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-18",
+  "top": 6,
+  "roundup": 30,
+  "papers": 175,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-17",
+  "top": 5,
+  "roundup": 30,
+  "papers": 179,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-16",
+  "top": 7,
+  "roundup": 30,
+  "papers": 145,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-15",
+  "top": 8,
+  "roundup": 13,
+  "papers": 71,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-14",
+  "top": 5,
+  "roundup": 6,
+  "papers": 61,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-13",
+  "top": 5,
+  "roundup": 19,
+  "papers": 92,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-12",
+  "top": 5,
+  "roundup": 22,
+  "papers": 111,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-11",
+  "top": 5,
+  "roundup": 29,
+  "papers": 114,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-10",
+  "top": 5,
+  "roundup": 17,
+  "papers": 112,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-09",
+  "top": 5,
+  "roundup": 30,
+  "papers": 163,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-08",
+  "top": 5,
+  "roundup": 14,
+  "papers": 76,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-07",
+  "top": 7,
+  "roundup": 19,
+  "papers": 96,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-06",
+  "top": 5,
+  "roundup": 30,
+  "papers": 138,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-05",
+  "top": 7,
+  "roundup": 30,
+  "papers": 153,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-04",
+  "top": 6,
+  "roundup": 28,
+  "papers": 106,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-03",
+  "top": 9,
+  "roundup": 30,
+  "papers": 149,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-02",
+  "top": 6,
+  "roundup": 30,
+  "papers": 172,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-11-01",
+  "top": 6,
+  "roundup": 13,
+  "papers": 70,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-31",
+  "top": 5,
+  "roundup": 20,
+  "papers": 74,
+  "trending": 0,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-30",
+  "top": 6,
+  "roundup": 30,
+  "papers": 140,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-29",
+  "top": 10,
+  "roundup": 30,
+  "papers": 187,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-28",
+  "top": 5,
+  "roundup": 11,
+  "papers": 84,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-27",
+  "top": 6,
+  "roundup": 30,
+  "papers": 158,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-26",
+  "top": 5,
+  "roundup": 30,
+  "papers": 132,
+  "trending": 10,
+  "ranker": "Claude"
+ },
+ {
+  "date": "2026-10-25",
+  "top": 5,
+  "roundup": 17,
+  "papers": 71,
+  "trending": 0,
+  "ranker": "Claude"
  }
 ]

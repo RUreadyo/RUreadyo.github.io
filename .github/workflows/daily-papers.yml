@@ -26,6 +26,17 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/fetch_papers.py
+      - name: Refresh 10-year impact list (weekly)
+        continue-on-error: true
+        run: |
+          python - <<'PY' && python scripts/impact.py || true
+          import json, datetime, sys
+          try:
+              d = json.load(open("papers/data/impact.json"))["updated"]
+              sys.exit(0 if (datetime.date.today() - datetime.date.fromisoformat(d)).days > 7 else 1)
+          except FileNotFoundError:
+              sys.exit(0)
+          PY
       - name: Commit digest
         run: |
           git config user.name "paper-digest-bot"
@@ -33,4 +44,4 @@ jobs:
           git add papers/data
           git diff --cached --quiet && { echo "no changes"; exit 0; }
           git commit -m "papers: digest $(date -u +%F)"
-          git push
+          git pull --rebase && git push

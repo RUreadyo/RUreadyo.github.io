@@ -1,0 +1,337 @@
+{
+ "date": "2026-11-14",
+ "generated_at": "2026-11-24T09:59:29+00:00",
+ "ranker": "Claude",
+ "overview": "'Explicit Regularization for Flow Matching' examines why empirical flow matching memorizes near the data and how to regularize it, which is core generative-model theory. On policies, ResWAM supervises only future feature residuals for cheaper world-action models, and 'Refinement vs. Replanning' studies how chunked diffusion policies should spend inference compute. Ego2Sim2Humanoid and MARS round out the day with human-video-to-robot data and RL-refined VLA skills, and the MPPI exploration-as-feedback paper is a neat control insight.",
+ "stats": {
+  "papers": 61,
+  "cs_ro": 30,
+  "relevant": 41,
+  "rated": 10
+ },
+ "top_picks": [
+  {
+   "id": "2611.19587",
+   "title": "Explicit Regularization for Flow Matching",
+   "authors": [
+    "Lars Ruthotto",
+    "Eran Treister"
+   ],
+   "abstract": "Learning the underlying probability distribution from samples is a core problem in statistics and applied mathematics. Generative models based on diffusion and flow matching learn a velocity field whose flow transports a known distribution to the data distribution. They produce novel, realistic samples, although the empirical learning problem is ill posed near the data distribution. Its minimizer transports the samples onto the training data, and small perturbations of the data change the velocity field strongly near the end of the flow. The observed generalization is often attributed to implicit regularization by the network parameterization, early stopping of the training, and the time integration during sampling. Explicit regularization has advanced the theory and computation of many inverse problems and has recently been proposed to prevent memorization in generative models. With a regularizer on the magnitude of the velocity, however, the field approaches the memorizing velocity unless the regularization parameter grows to infinity fast enough, and it then stays bounded by a constant that is small only for large parameters. We show that penalizing the derivatives of order $k$ of the velocity renders the $D$-dimensional empirical problem well posed uniformly in time if $2k > D$ and the training points are in general position. Our experiments in one and two dimensions discretize the velocity with splines and use direct solvers for the regularized least-squares problems to exclude optimization error. Refining the discretization in space and time changes the error of the Hessian-regularized flows only marginally, whereas without the regularizer the error tends to that of memorization. These flows generalize, with errors comparable to or lower than those of well-tuned kernel density estimates.",
+   "url": "https://arxiv.org/abs/2611.19587",
+   "pdf": "https://arxiv.org/pdf/2611.19587",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "math.NA"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 8,
+   "relevance": 7,
+   "quality": 7,
+   "tldr": "Analyzes ill-posedness of empirical flow matching near data and proposes explicit regularization to avoid memorization.",
+   "summary": "The empirical minimizer transports samples onto training data, so small data perturbations strongly change the velocity near t=1. The authors study explicit regularizers beyond velocity magnitude for better-posed flow matching.",
+   "why": "Generative-model theory on flow matching generalization, a core interest.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19559",
+   "title": "ResWAM: Learning What Changes, Not What Stays, for World-Action Models",
+   "authors": [
+    "Chongyu Fan",
+    "Gaowen Liu",
+    "Ramana Rao Kompella",
+    "Jason Corso",
+    "Sijia Liu"
+   ],
+   "abstract": "World-action models (WAMs) augment vision-language-action policies (VLAs) with future prediction so that the policy can anticipate how its actions will affect the physical world. Existing WAMs supervise complete future observations. However, observations typically change little over an action chunk, so the future loss is dominated by copying static background content rather than learning task-relevant robot and object motion, limiting policy learning. Moreover, existing WAMs rely on large video generation models or separate world models, incurring heavy training and inference compute that hinders closed-loop deployment. To improve policy performance, we propose visual residual learning, supervising only the feature change from the current frame to the future frame in a frozen DINOv3 space. Compared with complete future features, this residual learning target yields a higher feature rank with richer and more diverse representations of scene changes, and spatially concentrates on the robot arm and manipulated objects rather than the background. To further improve computational efficiency, we present ResWAM, a residual world-action model with 2.3B parameters in total, including a lightweight 0.5B dual-branch DiT that jointly trains an action branch and a residual branch via conditional flow matching. Without robot pretraining (i.e., pretraining on external robot action trajectories beyond the benchmark demonstrations), ResWAM achieves top average success rates on LIBERO-Plus (81.1%), RoboTwin 2.0 (93.8%), and RoboDojo (9.40% success, 13.41 score) at the lowest training (2.7-4.0 TFLOPs) and inference compute (1.0-1.4 TFLOPs), and leads real-robot Open, Put, and Stack (80.0% average, +10.0% over $π_{0.5}$) at 92.7 ms latency.",
+   "url": "https://arxiv.org/abs/2611.19559",
+   "pdf": "https://arxiv.org/pdf/2611.19559",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "WM",
+    "IL",
+    "FM",
+    "Video"
+   ],
+   "kw_score": 23,
+   "relevance": 7,
+   "quality": 6,
+   "tldr": "World-action model supervising only the DINOv3 feature change from current to future frame instead of full future features.",
+   "summary": "Full-future losses are dominated by copying static background. ResWAM's visual residual target yields higher-rank, more diverse representations of robot/object motion, improving policy learning without heavy video generators.",
+   "why": "Simple, cheap auxiliary objective for VLA/WAM policies.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19196",
+   "title": "Ego2Sim2Humanoid: Agentic Real-to-Sim for Learning Loco-Manipulation VLAs without Robot Demonstrations",
+   "authors": [
+    "Chen Liu",
+    "Nikolaus Correll"
+   ],
+   "abstract": "Imitation learning for visuomotor policies typically relies on teleoperated robot demonstrations, which are costly because every episode requires a trained operator controlling a physical robot in real time through teleoperation interfaces and wearable body-tracking hardware. Egocentric glasses capture human demonstrations without a robot or handheld grippers, yet they track only the head and in-view human hands, and directly copying human motion to a robot with different stature, arm reach and hand morphology fails to produce feasible contacts. \\method{} converts egocentric glasses recordings into physically verified robot training trajectories. An agentic real-to-sim stage reconstructs collision and textured visual assets from the recorded RGB-D and head streams, completes unseen surfaces when needed, and predicts target contact bands on the manipulated objects. During motion adaptation, a grasp planner turns each contact band into a feasible robot wrist pose and finger closure, bilevel stance optimization plans collision-free standing postures that keep hand targets reachable, and a whole-body motion generator synthesizes lower-body locomotion and out-of-view arm motion. Two-stage motion correction then blends visibility transitions kinematically and trains a reinforcement-learning tracking policy in physics simulation under agent-designed semantic rewards, completing manipulation phases even when the object leaves the camera view. Rendering the reconstructed scene through the robot's onboard camera along the optimized rollout yields synchronized robot-view images, proprioception and verified action labels. Fine-tuned exclusively on this converted dataset, without real-robot demonstrations, GR00T N1.7 performed loco-manipulation tasks autonomously on a Unitree G1. Project page: https://robonana.github.io/ego2sim2humanoid/",
+   "url": "https://arxiv.org/abs/2611.19196",
+   "pdf": "https://arxiv.org/pdf/2611.19196",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "Dex",
+    "IL"
+   ],
+   "kw_score": 12,
+   "relevance": 7,
+   "quality": 6,
+   "tldr": "Converts egocentric-glasses human recordings into physically verified humanoid loco-manipulation trajectories via agentic real-to-sim.",
+   "summary": "Reconstructs assets from RGB-D/head streams, predicts contact bands, plans grasps and adapts motion to robot morphology, training VLAs without robot demonstrations.",
+   "why": "Human-video-to-robot data pipeline with contact reasoning.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19034",
+   "title": "Refinement vs. Replanning: Inference Compute Allocation in Robot Policies",
+   "authors": [
+    "Alba Maria Tellez Fernandez"
+   ],
+   "abstract": "A frozen chunked robot policy can spend deployment-time inference compute in two coupled ways: more work within each policy call to refine a predicted action chunk, or more frequent policy calls to replan from fresh observations. We study this allocation without updating model weights. Our evaluation procedure reports success with both nominal compute rate and complete attempt cost, selects comparisons on discovery tasks, and tests prespecified comparisons on held-out tasks. Comparisons added after inspecting the held-out results only summarize observed patterns. We demonstrate the procedure with one frozen SmolVLA checkpoint in synchronous LIBERO simulation, using denoising count as the refinement control and fixing chunk length at K=50. Arithmetic and latency characterize cost differently: at d=10, 82.1% of counted arithmetic is independent of denoising, whereas a descriptive affine fit to fixed-input host time assigns 17.7% to its intercept. At h=2, d=2 succeeds on 139/160 attempts versus 122/160 for d=5 (+10.6 percentage points; task-conditional 95% interval: +4.4 to +16.9), while using 5.9% less arithmetic per control step. Executing h=5 rather than h=2 at d=2 yields 138/160 versus 139/160 successes and 60.7% lower arithmetic per attempt; equivalence is not established. The case study shows why deployment adaptation must evaluate generation effort and feedback frequency jointly; it does not define a universal setting.",
+   "url": "https://arxiv.org/abs/2611.19034",
+   "pdf": "https://arxiv.org/pdf/2611.19034",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.LG"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "FM",
+    "IL"
+   ],
+   "kw_score": 8,
+   "relevance": 7,
+   "quality": 5,
+   "tldr": "Studies how a frozen chunked policy should split inference compute between denoising refinement and more frequent replanning.",
+   "summary": "Using SmolVLA on LIBERO with K=50 chunks and denoising count as refinement control, it provides a pre-registered evaluation protocol and shows arithmetic and latency cost accounting diverge.",
+   "why": "Directly about action chunking and diffusion-step tradeoffs, though small-scale.",
+   "venue": "NeurIPS 2026 Workshop",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19324",
+   "title": "MARS: Dynamic Routing of Reinforcement-Learned Atomic Skills for Multi-Stage Robotic Manipulation",
+   "authors": [
+    "Zequan Zeng",
+    "Junqin Yang",
+    "Kai Wang"
+   ],
+   "abstract": "Vision-Language-Action (VLA) models have demonstrated strong capabilities in multi-task robotic manipulation. However, they still face limitations in control precision and execution stability during critical manipulation stages, such as object grasping, alignment and insertion. To combine general-purpose manipulation capabilities with task-specific fine-grained control, while enabling effective coordination between generalist and specialized policies throughout multi-stage manipulation tasks, this paper proposes MARS (Modular Atomic-skill Routing System), a dynamic routing framework for reinforcement learning-based atomic skills. MARS integrates a frozen generalist VLA policy with multiple independently trained atomic skill policies. Using a shared RL Token state representation and the reference action of VLA, specialized control policies are optimized through reinforcement learning for different cr`itical manipulation stages. For high-level policy selection, we develop a dynamic router that integrates temporal context and skill semantics. The router employs Mamba-based recurrent encoding and a historical feature window to capture state evolution during manipulation. Skill descriptions of candidate policies are encoded into semantic queries, and attention mechanisms are used to establish correspondences between skill semantics and temporal state features. Experimental results show that MARS achieves an average Macro-F1 score of 90.47% across four LIBERO task suites under fixed-trajectory evaluation, outperforming an MLP-based router by 7.08 percentage points. In the simulated Tube Transport task, the full-task success rate increases from 20.04% to 85.67%. These results demonstrate that stage-specific reinforcement learning and temporal state-aware dynamic policy routing can improve multi-policy coordination and overall task execution performance in multi-stage robotic manipulation.",
+   "url": "https://arxiv.org/abs/2611.19324",
+   "pdf": "https://arxiv.org/pdf/2611.19324",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "RLGen",
+    "FM",
+    "RL",
+    "Control"
+   ],
+   "kw_score": 15,
+   "relevance": 6,
+   "quality": 5,
+   "tldr": "Routes between a frozen VLA and RL-trained atomic skill policies (anchored to VLA reference actions) for precise multi-stage manipulation.",
+   "summary": "MARS trains specialist RL policies for grasping, alignment and insertion using shared RL Token states and VLA reference actions, dynamically switching during execution.",
+   "why": "RL refinement of VLA policies for precision stages.",
+   "rated_by": "claude"
+  }
+ ],
+ "roundup": [
+  {
+   "id": "2611.19252",
+   "title": "Exploration as Feedback in Model Predictive Path Integral Control",
+   "authors": [
+    "Junsei Ito",
+    "Kohei Honda",
+    "Yasuaki Wasa"
+   ],
+   "abstract": "This paper investigates how exploration affects closed-loop stability in model predictive path integral (MPPI) control. With a warm start, MPPI optimizes a control sequence by sampling candidates around the previous solution, and their covariance, the exploration covariance, is typically tuned to balance solution quality and computational cost. Small exploration is attractive because most samples then contribute to the solution, and existing stability analyses treat reduced exploration only as a bias toward the previous solution. Whether insufficient exploration can destabilize the closed loop has therefore remained open. We show that, for linear quadratic (LQ) problems with infinitely many samples, the exploration covariance also determines the feedback gain, i.e., how strongly MPPI updates the previous solution in response to the current state. With small exploration at a fixed temperature, MPPI nearly repeats the previous solution and fails to stabilize an exponentially unstable plant. Because a single covariance governs both exploration and feedback, stability and sample efficiency are in structural conflict: stabilization requires large exploration, which leaves few samples that contribute to the solution. To resolve this conflict, we propose Stabilizing Subspace MPPI (SS-MPPI), which computes the control inputs required for stabilization and samples only the rest. For LQ problems, SS-MPPI remains stable with small exploration and is thus sample-efficient. Simulations of an inverted pendulum and a quadruped robot confirm the analysis, showing that MPPI fails under small exploration, whereas SS-MPPI remains stable even with few samples.",
+   "url": "https://arxiv.org/abs/2611.19252",
+   "pdf": "https://arxiv.org/pdf/2611.19252",
+   "primary": "eess.SY",
+   "categories": [
+    "eess.SY"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "Control",
+    "RL"
+   ],
+   "kw_score": 8,
+   "relevance": 5,
+   "quality": 7,
+   "tldr": "Shows MPPI's exploration covariance sets its effective feedback gain, so too little exploration can destabilize the loop.",
+   "summary": "For LQ problems with infinite samples, small exploration at fixed temperature makes MPPI nearly repeat its previous solution, yielding weak feedback and instability.",
+   "why": "Clean MPPI insight for practitioners.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19660",
+   "title": "PSK: A Matrix-Free Single-Loop Method for K-Level Physics-Based Control",
+   "authors": [
+    "Zherong Pan"
+   ],
+   "abstract": "Physics-based control is central to robot learning, but differentiating through implicit physics steps typically requires Hessian or Karush--Kuhn--Tucker (KKT) linear solves; we ask whether gradient steps suffice. Each simulation step minimizes an energy under many contact and collision constraints. Without constraints, we view control over $K$ steps as $K$-level optimization with strongly convex lower levels, recast as one min--max problem. Our Penalized Single-loop $K$-level method (PSK) uses only gradients and a projection, updates all levels in parallel, and reaches an $ε$-stationary control in $O(ε^{-3})$ iterations, with a $K$-independent exponent but a $K$-dependent constant. Contact-rich constraints, however, typically violate a constraint qualification (CQ). We replace each constraint by a smooth wall that acts on a band of constant width. Under mild assumptions that need no CQ, every exact solution of the banded lower levels is then feasible and banded Fritz--John, and PSK keeps the $O(ε^{-3})$ complexity. Without a CQ that is uniform in the band width, however, a shrinking band loses the $K$-independent exponent: with width $ε$ and fixed $K\\geq2$, deterministic zero-respecting methods need $Ω(ε^{-(K+3)/4})$ calls on a hard instance whose control dimension grows with $1/ε$. We prove our assumptions for smoothed kinematic and dynamic multi-robot navigation among segment obstacles. In navigation experiments, PSK, tuned per case, reaches every goal with sixteen levels and, at equal time, reaches a lower loss than tuned unrolling in 17 of 18 cases, while implicit differentiation is lower in 10.",
+   "url": "https://arxiv.org/abs/2611.19660",
+   "pdf": "https://arxiv.org/pdf/2611.19660",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "math.NA"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "Control",
+    "Dex"
+   ],
+   "kw_score": 6,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "Gradient-only single-loop method for K-step physics-based control through contact without KKT solves.",
+   "summary": "PSK recasts K-level optimization as min-max with O(eps^-3) convergence and banded smooth walls handling contact constraints without constraint qualification.",
+   "why": "Relevant to contact-implicit differentiable control.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19566",
+   "title": "Bellman Residual Bracketing: Resolving the Sample Complexity of Discounted and Average-Reward RL",
+   "authors": [
+    "Matthew Zurek",
+    "Yudong Chen"
+   ],
+   "abstract": "We study the sample complexity of the empirical planning or plug-in approach for reinforcement learning (RL) with a generative model. We show the discounted plug-in approach finds an $\\varepsilon$-optimal policy with $O(SA (1-γ)^{-3} \\varepsilon^{-2} \\log(SA/δ))$ samples, where $S, A, γ, δ$ are the state and action sizes, discount factor, and failure probability, respectively. In the average-reward setting, we show that discounted plug-in and direct (undiscounted) plug-in achieve $O(SAH\\varepsilon^{-2}\\log(SA/δ))$ and $O(SAD\\varepsilon^{-2}\\log(SA/δ))$ complexities, respectively, where $H$ upper-bounds the optimal bias span and $D$ is the diameter. Combining with our lower bounds for nonadaptive generative models, these results resolve the minimax sample complexity of discounted RL and average-reward RL --- in both the span- and diameter-based classes --- up to constant factors. Our main technical contribution is a novel Bellman residual bracketing technique which improves the efficiency of prior absorbing-MDP-based concentration analyses.",
+   "url": "https://arxiv.org/abs/2611.19566",
+   "pdf": "https://arxiv.org/pdf/2611.19566",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.IT",
+    "math.OC",
+    "math.PR",
+    "stat.ML"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "RL"
+   ],
+   "kw_score": 5,
+   "relevance": 4,
+   "quality": 8,
+   "tldr": "Resolves minimax sample complexity of plug-in RL with a generative model for discounted and average-reward settings.",
+   "summary": "Proves O(SA(1-gamma)^-3 eps^-2) for discounted and span/diameter-based bounds for average reward, matching lower bounds via Bellman residual bracketing.",
+   "why": "Strong RL theory, but far from practice.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19572",
+   "title": "Spectral Steering: Local Inverse Geometry for Frozen Diffusion Generators",
+   "authors": [
+    "Angelo Moroncelli",
+    "Alessandro Leanza",
+    "Loris Roveda"
+   ],
+   "abstract": "A frozen diffusion generator may need to change several output properties while preserving others. We study when guidance faithfully realizes such a structured request and whether local inverse correction improves its direction. Our account links this benefit to the interaction between the request and the objective-specific remaining-sampler Jacobian: conditioning alone is insufficient. Spectral steering combines a request-specific cosine-gain predictor with damped inverse correction and fixed-time relinearization for finite edits. Scalar nulls and matched-movement controls test the predicted mechanism. Across 8,923 instances in a retrospectively identified local regime, predicted and realized gains correlate at Spearman 0.79, versus -0.11 for condition number. Experiments span images, audio, robotics, and control and planning, including complex character motion generation. On 50 paired inpainting cases, four corrections improve unobserved-pixel PSNR over Adam by 3.25 dB at equal total derivative traversals. Together, the analysis and controls connect request-dependent geometry to directional gains and establish where these gains translate into downstream performance.",
+   "url": "https://arxiv.org/abs/2611.19572",
+   "pdf": "https://arxiv.org/pdf/2611.19572",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.AI",
+    "cs.CV",
+    "cs.RO"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "GenModel"
+   ],
+   "kw_score": 4,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "Steers frozen diffusion generators with local inverse Jacobian corrections and predicts when guidance will succeed.",
+   "summary": "Spectral steering's predicted gain correlates with realized gain at Spearman 0.79 over 8,923 instances across images, audio, robotics and motion generation.",
+   "why": "Guidance analysis applicable to diffusion policies.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19183",
+   "title": "WA-JEPA: Goal-Aware Predictive Feedback Action Refinement for a World-Action Model",
+   "authors": [
+    "Tao An",
+    "Weihang Liang",
+    "Tianqi Wang",
+    "Chuqing Cao",
+    "Wenming Tan",
+    "Kai Zhang",
+    "Haibo Lei",
+    "Tao Xie",
+    "Lijun Zhao",
+    "Ruifeng Li"
+   ],
+   "abstract": "JEPA-based world models predict action consequences in latent space, but representative planning approaches rely on candidate-action search, requiring repeated evaluation of action sequences and incurring substantial online computational cost. Direct action generation avoids this search, yet how to leverage latent predictions to guide action generation given task goals remains a key challenge in translating learned physical dynamics into effective decisions. We introduce WA-JEPA, a world-action model that couples action generation, action-conditioned latent prediction, and goal-aware feedback. The model first generates an action proposal and predicts the resulting future scenes and proprioceptive states, then refines the proposal through two complementary feedback paths, using the task goal as a reference. Goal-discrepancy residual feedback (GDRF) uses differences between the latent representations of predicted scenes and the task goal to guide chunk-wise action refinement. Future-scene context feedback (FSCF) preserves fine-grained predicted scene representations to guide subsequent action refinement. Jointly learned from offline demonstrations, this process iteratively updates the same plan before execution, making future predictions directly participate in action generation without candidate-action search. We evaluate short-horizon goal reaching, long-horizon tasks, and full-task execution. The results show that goal-aware predictive feedback supports competitive task performance while maintaining a compact model and low online computational cost. Code is available at https://github.com/Dovisya/WA-JEPA.",
+   "url": "https://arxiv.org/abs/2611.19183",
+   "pdf": "https://arxiv.org/pdf/2611.19183",
+   "code": "https://github.com/Dovisya/WA-JEPA",
+   "primary": "cs.CV",
+   "categories": [
+    "cs.CV"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "WM",
+    "IL"
+   ],
+   "kw_score": 10,
+   "relevance": 5,
+   "quality": 5,
+   "tldr": "JEPA world-action model that refines action proposals using goal-discrepancy feedback from latent predictions.",
+   "summary": "WA-JEPA generates an action, predicts future latents, and corrects via goal-aware residual paths, avoiding costly candidate search.",
+   "why": "V-JEPA-style WAM; moderate.",
+   "rated_by": "claude"
+  },
+  {
+   "id": "2611.19047",
+   "title": "Certify, Then Select: Viability-Aware Runtime Steering of Frozen Diffusion Policies",
+   "authors": [
+    "Angelo Moroncelli",
+    "Loris Roveda"
+   ],
+   "abstract": "Diffusion policies, which generate short action sequences by denoising random noise, are a leading way to learn robot skills from demonstrations. Once deployed, they meet constraints the demonstrations never contained, and retraining for each is impractical. A safety filter edits the policy's action to satisfy them, but the edit ignores the task, and a large edit can leave the policy where it cannot continue. We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest. We prove that a certified step is safe whatever the critic does; that, whenever a certified sample exists, the executed chunk stays within log N nats of the policy conditioned on feasibility, while a safety-filter projection can be singular to it; and that an exact closed-loop identity splits the gain of ranking into availability, spread and the critic's target. Certifying the next chunk is not enough: a generative controller can have safe actions available now and none later. We characterise the safe control authority of a frozen policy under finite sampling, and CAST-V preserves it through a policy-conditioned viability, estimated with a model under a finite-sample guarantee or learned from the controller's own logs (CAST-VL). On robomimic manipulation, a planar quadrotor, a MuJoCo humanoid and a unicycle, with frozen policies, CAST raises joint task-and-constraint success above the output filter in nearly every setting; certifying before ranking is decisive where a filter's edit is large, and viability removes most dead ends that one-step certification cannot see. Project page: https://clmoro.github.io/cast.",
+   "url": "https://arxiv.org/abs/2611.19047",
+   "pdf": "https://arxiv.org/pdf/2611.19047",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.LG",
+    "eess.SY"
+   ],
+   "published": "2026-11-14",
+   "topics": [
+    "IL"
+   ],
+   "kw_score": 4,
+   "tldr": "We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest.",
+   "summary": "We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest."
+  }
+ ],
+ "trending_ml": []
+}
