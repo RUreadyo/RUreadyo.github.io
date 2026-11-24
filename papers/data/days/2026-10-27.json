@@ -446,7 +446,7 @@
    "summary": "Avoids tendon-driven actuation trade-offs using linkages for robustness, load and control simplicity while retaining anthropomorphic kinematics.",
    "why": "New dexterous hand hardware.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.36859",
@@ -1079,7 +1079,7 @@
    "tldr": "We present REACH, an RL-based hierarchical framework that enables a Unitree G1 humanoid to traverse height-constrained environments through variable-height bipedal walking and crawling.",
    "summary": "We present REACH, an RL-based hierarchical framework that enables a Unitree G1 humanoid to traverse height-constrained environments through variable-height bipedal walking and crawling.",
    "venue": "Humanoids 2026",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.37441",
@@ -1300,7 +1300,7 @@
    "url": "https://arxiv.org/abs/2610.33966",
    "pdf": "https://arxiv.org/pdf/2610.33966",
    "hf": "https://huggingface.co/papers/2610.33966",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.34415",

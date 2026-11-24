@@ -630,7 +630,7 @@
    "summary": "Counterfactuals preserve execution details; supports human-hand conditioning via keypoints and improves LIBERO and real-robot demo following.",
    "why": "In-context IL with JEPA objectives; moderately relevant.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 2
   },
   {
    "id": "2610.39825",
@@ -861,7 +861,7 @@
    "kw_score": 12,
    "tldr": "To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations.",
    "summary": "To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations. Our core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations.",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2610.40401",

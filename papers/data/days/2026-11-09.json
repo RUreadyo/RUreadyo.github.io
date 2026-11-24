@@ -39,7 +39,8 @@
    "summary": "It's unclear how much LIBERO success needs generalization. Retrieval without training reaches 91.7% and degrades least under LIBERO-Plus; across nine VLAs, fine-tuning mainly makes the backbone a better retrieval key with actions staying close to demos. A Local Action Consistency metric tracks retrieval success and can guide key training.",
    "why": "Important 'understanding' paper questioning what VLAs and benchmarks measure.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12806",
@@ -84,7 +85,8 @@
    "tldr": "LingBot-Touch is a tactile foundation model unifying piezoresistive, magnetic and visuotactile sensors into plug-and-play tokens for diffusion policies and VLAs.",
    "summary": "Heterogeneous tactile sensors have sensor-specific physics that fragment data. LingBot-Touch learns a unified, extensible tactile representation whose tokens plug into diffusion policy and VLAs such as pi0.5 and LingBot-VLA. Sim and real experiments across hardware platforms show substantial gains on complex dexterous tasks with low compute.",
    "why": "Cross-sensor tactile representation for dexterous policies, squarely in scope.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12286",
@@ -124,7 +126,8 @@
    "tldr": "VLA-MOPD consolidates flow-matching VLA specialists via on-policy distillation that supervises every intermediate ODE step at student-visited states.",
    "summary": "Merging task specialists is hard: RL gives sparse credit and offline/endpoint distillation misses student states and intermediate flow states. VLA-MOPD has the student roll out, queries routed frozen teachers at each visited observation and ODE state, and applies masked per-step matching with an optional reference term. It lifts LIBERO from 75.4% to 98.9%, RoboTwin 2.0 from 73.0% to 89.3%, and a real Piper from 70% to 90%.",
    "why": "On-policy distillation for flow policies; directly usable technique.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12879",
@@ -157,7 +160,8 @@
    "tldr": "Grasping-the-Future is a flow-matching model of joint 3D hand-object motion trained with masked completion on 3D interactions reconstructed from internet videos.",
    "summary": "Anticipating hand and object motion requires 3D supervision. A unified flow-matching model with masked spatiotemporal completion handles forecasting, conditional hand/object prediction and goal-directed generation, with contact constraints. A scalable pipeline reconstructs interactions from internet videos; it outperforms released forecasters and retargets plausibly to a robot hand.",
    "why": "Human hand-object priors from video, relevant to learning dexterity from human data.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12111",
@@ -193,7 +197,8 @@
    "tldr": "GAP learns in simulation how to adapt dexterous piano-playing actions between executions via a gradient guidance network, transferring the prior to hardware.",
    "summary": "Sim-trained dexterous policies degrade on hardware and real adaptation is costly. GAP learns from paired executions how action adjustments affect performance and uses its gradients to adjust subsequent attempts. It gives ~2.4x the F1 gain of a fast-adaptation baseline in sim, generalizes to held-out pieces, and improves real F1 by 3.6-23% after ~7 minutes per piece.",
    "why": "Sim-to-real adaptation for multi-finger dexterity.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -226,7 +231,8 @@
    "summary": "Teacher-student distillation suffers an imitation gap when teachers use unavailable information. RAIL constrains the teacher to a shared representation during training, reducing the gap without reward shaping or student RL and beating direct RL from raw observations, with zero-shot transfer to new tasks.",
    "why": "Relevant to privileged-teacher distillation used in dexterous sim-to-real.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11887",
@@ -256,7 +262,8 @@
    "tldr": "Analyzes nearest-of-m (conditional IMLE) one-step world models on frozen DINO tokens as random-codebook distortion, with pre-registered predictions.",
    "summary": "One-step stochastic world models avoid flow-matching cost. With m=16, nearest-of-m covers enumerated futures better than 50-step flow matching at 1/30 latency and stays on-manifold; a random-codebook view predicts memorization, mode flattening and under-dispersion. Per-step matching cuts long-horizon error by a third on stochastic Push-T, though planning doesn't improve (reported negative).",
    "why": "Rigorous analysis of one-step generative world models vs flow matching.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12383",
@@ -290,7 +297,8 @@
    "tldr": "PCTac is an open-source mechanochromic photonic-crystal fingertip whose hue field directly encodes load, boosting Diffusion Policy success on real tasks.",
    "summary": "Visuotactile sensors infer force indirectly from deformation. PCTac's structural-color hue changes repeatably with normal load; integrated into Diffusion Policy across 90 rollouts on three tasks, hue gets 75.6% vs 66.7% (PCTac RGB), 63.3% (Wedge RGB) and 32.2% (vision only).",
    "why": "New tactile hardware with policy-learning validation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11854",
@@ -323,7 +331,8 @@
    "tldr": "DASH decouples a slow VLM backbone from a fast flow-matching action head running asynchronously, holding 20 Hz control regardless of backbone size.",
    "summary": "In synchronous VLAs, bigger backbones mean stale observations and lower control rate. DASH runs System 2 and a System 1 flow head (with its own ResNet for fresh vision) as concurrent processes, trains with desynchronization and aggregates overlapping chunks. It keeps 20 Hz from 0.8B to 8B backbones vs 9.7 to 4.1 Hz synchronous with higher success, and improves real dexterous humanoid pick-and-place.",
    "why": "Relevant to real-time/async chunked execution for dexterous VLAs.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11798",
@@ -352,7 +361,8 @@
    "tldr": "PAIR contrastively aligns joint image-ray representations by robot proprioception for viewpoint-robust Diffusion Policy and VLA training.",
    "summary": "Viewpoint changes entangle appearance with task state. PAIR pulls together observations with similar robot states across viewpoints in an image+camera-ray representation, usable for DP training or VLA post-training. It beats BC without ray conditioning by 12.7pp in sim and 26.7pp in real under camera variation.",
    "why": "Practical robustness trick for diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12643",
@@ -384,7 +394,8 @@
    "summary": "Mixing sim and real data biases solutions toward inaccurate simulators. The authors use simulation solely for variance reduction in policy evaluation, extend it to actor-critic and offline RL, and improve over mixing on MuJoCo.",
    "why": "Principled sim-real RL idea; small-scale evidence.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12676",
@@ -414,7 +425,8 @@
    "summary": "The study varies data size, updates and sim vs real demos. A short learning-rate cool-down adds up to 31 points and is needed to compare checkpoints; validation loss and action error don't predict success; sim demos help when real data is scarce. Filtered BC, RECAP-style advantage conditioning, coaching and residual RL gave no measurable gain over BC.",
    "why": "Useful practical lessons and honest negative results on VLA fine-tuning.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12017",
@@ -443,7 +455,8 @@
    "tldr": "BetaGrasp conditions a DP3 point-cloud diffusion policy on a grasp-taxonomy label to select grasp modes on a LEAP hand for climbing holds.",
    "summary": "The point-cloud encoder fails to distinguish holds, so unconditioned DP3 always produces a jug grasp (25% correct type) vs 94% with the label. On 80 hardware trials with a slip-force testbed, average slip force rises from 9.6 to 14.3 N and full slips drop from 44% to 10%.",
    "why": "Small but clear insight on mode collapse in dexterous diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11780",
@@ -471,7 +484,8 @@
    "tldr": "Shows planners exploit persistent round-to-nearest quantization error in low-bit world models; shared, redrawn dither fixes most damage.",
    "summary": "Low-bit world models can collapse planning success by up to 100 points even with small one-step error. The cause is error that persists across planner iterations and is shared across candidates; dither shared by candidates and redrawn each iteration recovers a median 95% of damage in TD-MPC2 and works in DINO-WM. A W8A4 TD-MPC2 runs rollouts 1.9-3.3x faster than FP32, with pre-registered hypotheses.",
    "why": "Insightful analysis of planner-model interaction, relevant to TD-MPC2 users.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.13013",
@@ -498,7 +512,8 @@
    "tldr": "FaST factorizes synthetic transition generation into state, action, dynamics, reward and terminal models, enabling best-of-N advantage-targeted action synthesis for offline RL.",
    "summary": "Diffusion generators like SynthER model transitions monolithically. FaST matches SynthER with TD3+BC/IQL while generating 90x faster, and best-of-10 action synthesis beats real data on 11/12 D4RL medium settings (+8.9 points avg).",
    "why": "Offline RL data augmentation; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12678",
@@ -529,7 +544,8 @@
    "tldr": "Library of Hands keeps a world model frozen and corrects only the command-to-action map, identified from image pairs and cached for returning setups.",
    "summary": "Rotating commands by 90 degrees drops a LeWM planner from 77.5% to 7.8%. LoH infers the action best explaining observed changes through the frozen model and stores identified 'hands', raising success from 28.6% to 62.3% on three sim tasks with little cost when nothing changes.",
    "why": "Clever training-free adaptation for world-model planners.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11821",
@@ -560,7 +576,8 @@
    "tldr": "DTO aligns text-to-image diffusion at inference by optimizing intermediate scores and noises directly, without backprop through the denoiser.",
    "summary": "Inference-time alignment usually needs costly backprop. DTO treats scores and noises as variables and uses Reward-Optimized Score Guidance interpolating with pretrained predictions, with a reward-improvement guarantee. It outperforms inference-time alignment baselines on three models and two benchmarks.",
    "why": "Inference-time steering idea possibly transferable to diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.13113",
@@ -590,7 +607,8 @@
    "tldr": "Compares 24 intrinsic motivation objectives with three representation strategies for building reusable world models in model-based RL.",
    "summary": "Integrating curiosity, entropy and competency objectives into one MBRL framework, curiosity with observation reconstruction is strongest overall, and episodic plus lifelong novelty gives best zero-shot and few-shot transfer in compositional vision tasks.",
    "why": "Broad empirical study; tangential.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12162",
@@ -639,7 +657,8 @@
    "tldr": "State-of-the-art report on differentiable physics simulation, separating which object gradients refer to from how backward passes are realized, including contact.",
    "summary": "The report classifies methods by referent (executed computation, converged equation, continuous dynamics) and realization (autodiff, adjoint, custom), adds a contact taxonomy, measures four mechanisms by which useful gradients are lost, and reviews when zeroth-order methods win, closing with a checklist and diagnostic tool.",
    "why": "Useful reference if considering differentiable sim for contact-rich control.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.12732",
@@ -670,7 +689,8 @@
    "tldr": "Adds backward-dynamics and inverse-dynamics latent losses to LeWorldModel, improving performance and planning efficiency.",
    "summary": "Decoder-free JEPA-style world models rely on forward prediction plus an entropy term. Sigma-LeWM adds backward and inverse dynamics predictors to structure latents, giving gains on world-model benchmarks and two simulated manipulation tasks.",
    "why": "Incremental JEPA world-model improvement.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.12102",
@@ -698,7 +718,8 @@
    "kw_score": 13,
    "tldr": "In this paper, we propose SPARK (Simple Post-training for Adapting pRetrained Knowledge), a post-training method that adapts foundation models to robot control.",
    "summary": "In this paper, we propose SPARK (Simple Post-training for Adapting pRetrained Knowledge), a post-training method that adapts foundation models to robot control. Experiments across multiple robotics benchmarks show that SPARK consistently improves success rates and generalization over vanilla foundation models, and further demonstrate that these gains transfer to real-world robot manipulation.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.11941",
@@ -723,7 +744,8 @@
    "kw_score": 13,
    "tldr": "In this paper, we show that a coding agent can autonomously develop and refine object-flipping strategies through iterative learning in physics simulations across diverse object geometries.",
    "summary": "In this paper, we show that a coding agent can autonomously develop and refine object-flipping strategies through iterative learning in physics simulations across diverse object geometries. Progressive skill acquisition, from basic handover to toppling and pushing, robust grasping and sensing, and thin-object manipulation with recovery, improves task success from 24.7% to 95.0%.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.13311",
@@ -746,7 +768,8 @@
    ],
    "kw_score": 12,
    "tldr": "Flow matching robot policies commonly use a fixed Euler step count selected from offline accuracy sweeps.",
-   "summary": "Flow matching robot policies commonly use a fixed Euler step count selected from offline accuracy sweeps. On five of those inputs, accuracy sweeps require 4--9 Euler steps at 5% terminal error and 87--112 at 1%."
+   "summary": "Flow matching robot policies commonly use a fixed Euler step count selected from offline accuracy sweeps. On five of those inputs, accuracy sweeps require 4--9 Euler steps at 5% terminal error and 87--112 at 1%.",
+   "citations": 0
   },
   {
    "id": "2611.12409",
@@ -773,7 +796,8 @@
    "kw_score": 12,
    "tldr": "We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility.",
    "summary": "We present a zero-shot vision-language framework for execution-aware bimanual manipulation that jointly reasons about task objectives and physical feasibility.",
-   "venue": "Humanoids 2026"
+   "venue": "Humanoids 2026",
+   "citations": 0
   },
   {
    "id": "2611.12226",
@@ -796,7 +820,8 @@
    ],
    "kw_score": 12,
    "tldr": "We present and evaluate a game-theoretic model predictive control planner for cooperative goal reaching and adversarial pursuit-evasion with drones.",
-   "summary": "We present and evaluate a game-theoretic model predictive control planner for cooperative goal reaching and adversarial pursuit-evasion with drones."
+   "summary": "We present and evaluate a game-theoretic model predictive control planner for cooperative goal reaching and adversarial pursuit-evasion with drones.",
+   "citations": 0
   },
   {
    "id": "2611.12136",
@@ -828,7 +853,8 @@
    ],
    "kw_score": 12,
    "tldr": "To train the Cerebellum for natural, route-faithful motion, we develop a physics-grounded data engine that improves physical tracking of motion references along collision-aware routes and pairs the resulting demonstrations with rendered visual observations.",
-   "summary": "To train the Cerebellum for natural, route-faithful motion, we develop a physics-grounded data engine that improves physical tracking of motion references along collision-aware routes and pairs the resulting demonstrations with rendered visual observations. In simulation, our navigation VLA outperforms OmniNav and DualVLN in single-goal success and motion smoothness, with fewer collisions and falls."
+   "summary": "To train the Cerebellum for natural, route-faithful motion, we develop a physics-grounded data engine that improves physical tracking of motion references along collision-aware routes and pairs the resulting demonstrations with rendered visual observations. In simulation, our navigation VLA outperforms OmniNav and DualVLN in single-goal success and motion smoothness, with fewer collisions and falls.",
+   "citations": 1
   },
   {
    "id": "2611.11947",
@@ -855,7 +881,8 @@
    ],
    "kw_score": 12,
    "tldr": "Robot demonstration datasets combine demonstrations from teleoperators of uneven experience, so collection teams need to know how many demonstrations from one group match those from another.",
-   "summary": "Robot demonstration datasets combine demonstrations from teleoperators of uneven experience, so collection teams need to know how many demonstrations from one group match those from another. In fact, it needs 13% more than that, and this excess persists at every time limit from 20 to 200 seconds."
+   "summary": "Robot demonstration datasets combine demonstrations from teleoperators of uneven experience, so collection teams need to know how many demonstrations from one group match those from another. In fact, it needs 13% more than that, and this excess persists at every time limit from 20 to 200 seconds.",
+   "citations": 0
   },
   {
    "id": "2611.11868",
@@ -879,7 +906,8 @@
    ],
    "kw_score": 12,
    "tldr": "Exploration in deep reinforcement learning (RL) for continuous control is commonly driven by temporally uncorrelated Gaussian (white) action noise, which leads to jerky motions with locally constrained exploration.",
-   "summary": "Exploration in deep reinforcement learning (RL) for continuous control is commonly driven by temporally uncorrelated Gaussian (white) action noise, which leads to jerky motions with locally constrained exploration. Motivated by these findings, we inquire whether scheduling changes to the noise colour over the course of training can outperform white noise for continuous control robotics."
+   "summary": "Exploration in deep reinforcement learning (RL) for continuous control is commonly driven by temporally uncorrelated Gaussian (white) action noise, which leads to jerky motions with locally constrained exploration. Motivated by these findings, we inquire whether scheduling changes to the noise colour over the course of training can outperform white noise for continuous control robotics.",
+   "citations": 0
   },
   {
    "id": "2611.12334",
@@ -911,7 +939,8 @@
    "kw_score": 11,
    "tldr": "We propose an alternative: structure is the component of a radar spectrum that remains reconstructable under localized corruption, while noise is the component that does not.",
    "summary": "We propose an alternative: structure is the component of a radar spectrum that remains reconstructable under localized corruption, while noise is the component that does not. We also demonstrate the importance of Doppler organization: treating Doppler as a primary spatial dimension in an x-y-D representation, with height encoded as features, substantially outperforms naive channel stacking and enables effective learning from dense 4D spectra.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.12295",
@@ -935,7 +964,8 @@
    ],
    "kw_score": 11,
    "tldr": "To this end, we propose a task-oriented active context sharing framework that transforms robot observations into compact representations, preserving critical information under constrained communication budgets.",
-   "summary": "To this end, we propose a task-oriented active context sharing framework that transforms robot observations into compact representations, preserving critical information under constrained communication budgets."
+   "summary": "To this end, we propose a task-oriented active context sharing framework that transforms robot observations into compact representations, preserving critical information under constrained communication budgets.",
+   "citations": 0
   },
   {
    "id": "2611.12804",
@@ -959,7 +989,8 @@
    "kw_score": 10,
    "tldr": "This paper proposes a new paradigm of stochastic challenges.",
    "summary": "This paper proposes a new paradigm of stochastic challenges.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.12087",
@@ -1003,7 +1034,8 @@
    ],
    "kw_score": 10,
    "tldr": "We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history.",
-   "summary": "We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history. Embodied navigation requires agents to achieve persistent spatial awareness and long-horizon execution stability in open-world environments."
+   "summary": "We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history. Embodied navigation requires agents to achieve persistent spatial awareness and long-horizon execution stability in open-world environments.",
+   "citations": 3
   },
   {
    "id": "2611.11815",
@@ -1028,7 +1060,8 @@
    ],
    "kw_score": 10,
    "tldr": "This paper asks a different question.",
-   "summary": "This paper asks a different question."
+   "summary": "This paper asks a different question.",
+   "citations": 0
   },
   {
    "id": "2611.12870",
@@ -1064,7 +1097,8 @@
    ],
    "kw_score": 9,
    "tldr": "World action models jointly predict video and actions conditioned on language.",
-   "summary": "World action models jointly predict video and actions conditioned on language. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization."
+   "summary": "World action models jointly predict video and actions conditioned on language. Under a fixed training budget, mixing egocentric videos and UMI demonstrations improves control generalization.",
+   "citations": 0
   },
   {
    "id": "2611.12113",
@@ -1085,7 +1119,8 @@
    ],
    "kw_score": 9,
    "tldr": "We propose Motion Belief Action (MBA), a decision layer on the scene map.",
-   "summary": "We propose Motion Belief Action (MBA), a decision layer on the scene map."
+   "summary": "We propose Motion Belief Action (MBA), a decision layer on the scene map.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -1141,7 +1176,8 @@
    "org": "Zhejiang University",
    "url": "https://arxiv.org/abs/2611.08264",
    "pdf": "https://arxiv.org/pdf/2611.08264",
-   "hf": "https://huggingface.co/papers/2611.08264"
+   "hf": "https://huggingface.co/papers/2611.08264",
+   "citations": 1
   },
   {
    "id": "2611.09124",
@@ -1167,7 +1203,8 @@
    "org": "AutoLab",
    "url": "https://arxiv.org/abs/2611.09124",
    "pdf": "https://arxiv.org/pdf/2611.09124",
-   "hf": "https://huggingface.co/papers/2611.09124"
+   "hf": "https://huggingface.co/papers/2611.09124",
+   "citations": 0
   },
   {
    "id": "2611.06043",
@@ -1211,7 +1248,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.08175",
    "pdf": "https://arxiv.org/pdf/2611.08175",
-   "hf": "https://huggingface.co/papers/2611.08175"
+   "hf": "https://huggingface.co/papers/2611.08175",
+   "citations": 0
   },
   {
    "id": "2611.04720",
@@ -1275,7 +1313,8 @@
    "org": "The Fin AI",
    "url": "https://arxiv.org/abs/2611.06808",
    "pdf": "https://arxiv.org/pdf/2611.06808",
-   "hf": "https://huggingface.co/papers/2611.06808"
+   "hf": "https://huggingface.co/papers/2611.06808",
+   "citations": 0
   },
   {
    "id": "2611.06856",
@@ -1310,7 +1349,8 @@
    "org": "Kolors Team, Kuaishou Technology",
    "url": "https://arxiv.org/abs/2611.06856",
    "pdf": "https://arxiv.org/pdf/2611.06856",
-   "hf": "https://huggingface.co/papers/2611.06856"
+   "hf": "https://huggingface.co/papers/2611.06856",
+   "citations": 1
   },
   {
    "id": "2611.09017",
@@ -1339,7 +1379,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.09017",
    "pdf": "https://arxiv.org/pdf/2611.09017",
-   "hf": "https://huggingface.co/papers/2611.09017"
+   "hf": "https://huggingface.co/papers/2611.09017",
+   "citations": 2
   },
   {
    "id": "2611.06748",
@@ -1363,7 +1404,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.06748",
    "pdf": "https://arxiv.org/pdf/2611.06748",
-   "hf": "https://huggingface.co/papers/2611.06748"
+   "hf": "https://huggingface.co/papers/2611.06748",
+   "citations": 1
   }
  ]
 }

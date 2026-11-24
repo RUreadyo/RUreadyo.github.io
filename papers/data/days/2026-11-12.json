@@ -36,7 +36,8 @@
    "tldr": "Plug-in perception modules that estimate object velocity/acceleration and refine pose for vision-based in-hand manipulation.",
    "summary": "Off-the-shelf pose estimators give static states, leaving controllers to infer dynamics from noise. VOKE adds a Pluggable Kinematics Module predicting linear/angular velocity and acceleration from temporal visual features and a kinematics-guided pose refinement module, with a downstream in-hand manipulation study.",
    "why": "Directly targets perception for dexterous in-hand manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17159",
@@ -65,7 +66,8 @@
    "tldr": "Regularizes IL policies so the same state perturbation shifts outputs consistently across nearby states, via a Jacobian-induced inner product.",
    "summary": "InneR shows the action-space inner product induces a state-space inner product through the policy Jacobian (Fisher information for stochastic policies) and penalizes inconsistency across states, improving robustness to sensor noise, scene variation and compounding error.",
    "why": "A principled, plausibly usable robustness regularizer for BC policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17394",
@@ -103,7 +105,8 @@
    "tldr": "Coding-agent data engine that writes code policies from VLA failure states to generate corrective demos for post-training.",
    "summary": "Agentic-Teacher analyzes failed rollouts, picks intervention states, iteratively develops validated code policies, then collects continuations with temporally correlated action noise and idle-frame removal for effective VLA supervision.",
    "why": "Practical failure-driven data recipe for VLA fine-tuning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.16728",
@@ -152,7 +155,8 @@
    "tldr": "Cross-embodiment pretraining over human, robot and sim data with modality-specific tokenizers/experts and a latent future-prediction objective.",
    "summary": "EgoX's Modular Embodiment Dreamer shares a transformer trunk across embodiments while keeping per-modality tokenizers and action experts, plus an embodiment-dreaming loss predicting future latents, then fine-tunes on the target robot.",
    "why": "Relevant to leveraging egocentric human data in policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17110",
@@ -183,7 +187,8 @@
    "tldr": "Latent action model aligned with language semantics so human and robot latent actions correspond without paired data.",
    "summary": "SALA uses language descriptions of unpaired human and robot clips to make latent actions cluster by action rather than appearance, enabling scaling with both human video and robot data.",
    "why": "Relevant to human-video pretraining for policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -217,7 +222,8 @@
    "tldr": "Video diffusion model converting third-person footage into first-person views of a chosen actor, plus a lightweight paired-capture app.",
    "summary": "Built on a pretrained video DiT with geometric guidance and mask/hand-keypoint supervision; camera geometry is stochastically dropped so inference needs no calibration.",
    "why": "Synthetic egocentric hand-object data could feed human-to-robot learning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17034",
@@ -243,7 +249,8 @@
    "tldr": "Review of the control-Gibbs distribution unifying max-entropy control, control-as-inference, MPPI and EBM control.",
    "summary": "Positions the Gibbs distribution over control sequences as central, reviews dynamic programming extensions for closed-loop distributions and sampling methods.",
    "why": "Nice conceptual bridge between MPPI and energy-based/diffusion samplers.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.16374",
@@ -286,7 +293,8 @@
    "tldr": "Simulation benchmark of 112 manipulation tasks stratified into four calibrated difficulty levels including dexterous hands.",
    "summary": "ManiLadder calibrates difficulty using a fixed-data flow-matching IL policy's success rate across rigid, deformable, bimanual and dexterous tasks.",
    "why": "Possibly useful benchmark incl. dexterous tasks.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.16645",
@@ -317,7 +325,8 @@
    "tldr": "Learned GP-based continuity priors over action history for sampling proposals in visual world-model planning.",
    "summary": "LG-DKGP combines neural continuation and temporal GP residual to initialize planning search, reaching 87.07% macro success over five sim tasks.",
    "why": "Connects action temporal structure to planning; modest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17336",
@@ -354,7 +363,8 @@
    "tldr": "Lifts a pretrained latent video DiT to generate frames directly in pixel space with a convolutional head.",
    "summary": "PixVid finds x-prediction with larger noise shift is key; finetuned from Wan2.1-14B on ~1.3M clips it matches the latent baseline while enabling framewise, faster interactive generation.",
    "why": "Insight on x-prediction/noise shift relevant to generative modeling and interactive world models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17603",
@@ -379,7 +389,8 @@
    "tldr": "Minimax sample complexity of offline KL-regularized RL in stochastic MDPs.",
    "summary": "Proves an Omega(KCH^3/(eps max{eps,beta})) lower bound and matching pessimistic soft value iteration upper bound, plus coverage results for reference-policy data.",
    "why": "Theory relevant to KL-regularized fine-tuning, but abstract.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17529",
@@ -406,7 +417,8 @@
    "tldr": "Learns a residual adapter on frozen I-JEPA embeddings as a better goal cost for world-model planning via expanding curriculum.",
    "summary": "Trained from trajectory ordering without progress labels, improving planning success on DotWall and PointMaze.",
    "why": "Goal costs for latent world-model planning; toy settings.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.16589",
@@ -442,7 +454,8 @@
    "tldr": "Adds geometry-foundation-model features to temporal memory with a relevance/complementarity scoring rule for VLAs.",
    "summary": "STVLA evaluates on LIBERO, LIBERO-Mem, MIKASA-Robo and SimplerEnv.",
    "why": "Memory-augmented VLA, incremental.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.16918",
@@ -465,7 +478,8 @@
    "kw_score": 10,
    "tldr": "We propose CT-SGAL-LIO, a continuous-time refinement module that smooths the posterior pose stream of a discrete SGal(3) estimator without modifying the estimator itself.",
    "summary": "We propose CT-SGAL-LIO, a continuous-time refinement module that smooths the posterior pose stream of a discrete SGal(3) estimator without modifying the estimator itself. State-of-the-art LiDAR-inertial odometry methods, including those on richer state manifolds, achieve strong global accuracy, yet their pose stream alternates between propagation and correction and can oscillate over short horizons even when globally accurate.",
-   "venue": "ICRA 2027"
+   "venue": "ICRA 2027",
+   "citations": 0
   },
   {
    "id": "2611.16872",
@@ -515,7 +529,8 @@
    ],
    "kw_score": 9,
    "tldr": "Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction.",
-   "summary": "Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction. Across eight real-world manipulation tasks spanning alignment, multi-object handling, and bimanual coordination, the resulting frozen programs achieve 92.1\\% success (221/240 trials)."
+   "summary": "Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction. Across eight real-world manipulation tasks spanning alignment, multi-object handling, and bimanual coordination, the resulting frozen programs achieve 92.1\\% success (221/240 trials).",
+   "citations": 0
   },
   {
    "id": "2611.16439",
@@ -541,7 +556,8 @@
    ],
    "kw_score": 9,
    "tldr": "We introduce HALO, a human-aligned data collection system for whole-body mobile manipulation.",
-   "summary": "We introduce HALO, a human-aligned data collection system for whole-body mobile manipulation. Compared with Mobile ALOHA and VR teleoperation, HALO enables up to 2.9x faster demonstration collection while maintaining comparable or higher success rates."
+   "summary": "We introduce HALO, a human-aligned data collection system for whole-body mobile manipulation. Compared with Mobile ALOHA and VR teleoperation, HALO enables up to 2.9x faster demonstration collection while maintaining comparable or higher success rates.",
+   "citations": 0
   },
   {
    "id": "2611.16422",
@@ -564,7 +580,8 @@
    ],
    "kw_score": 8,
    "tldr": "Whole-body motion tracking lets a humanoid robot follow reference motions, but training a tracking policy for a library of motions has usually taken hours of GPU time.",
-   "summary": "Whole-body motion tracking lets a humanoid robot follow reference motions, but training a tracking policy for a library of motions has usually taken hours of GPU time."
+   "summary": "Whole-body motion tracking lets a humanoid robot follow reference motions, but training a tracking policy for a library of motions has usually taken hours of GPU time.",
+   "citations": 1
   },
   {
    "id": "2611.16337",
@@ -589,7 +606,8 @@
    ],
    "kw_score": 7,
    "tldr": "At disaster sites and on unstable slopes, robot contact can collapse uninspected terrain, requiring retreat upon support loss.",
-   "summary": "At disaster sites and on unstable slopes, robot contact can collapse uninspected terrain, requiring retreat upon support loss. This scalability and improved sample efficiency enable over 50 times faster policy convergence with comparable retreat performance."
+   "summary": "At disaster sites and on unstable slopes, robot contact can collapse uninspected terrain, requiring retreat upon support loss. This scalability and improved sample efficiency enable over 50 times faster policy convergence with comparable retreat performance.",
+   "citations": 0
   },
   {
    "id": "2611.16221",
@@ -610,7 +628,8 @@
    ],
    "kw_score": 7,
    "tldr": "We present BWM-Forge, a code-driven framework for controllable video generation in robotics.",
-   "summary": "We present BWM-Forge, a code-driven framework for controllable video generation in robotics. Compared with LingBot-World Base Cam on these tasks, BWM-Forge achieves higher aesthetic quality, imaging quality, subject and background consistency, motion smoothness, and RoboJudge-9B physical adherence and instruction alignment scores."
+   "summary": "We present BWM-Forge, a code-driven framework for controllable video generation in robotics. Compared with LingBot-World Base Cam on these tasks, BWM-Forge achieves higher aesthetic quality, imaging quality, subject and background consistency, motion smoothness, and RoboJudge-9B physical adherence and instruction alignment scores.",
+   "citations": 0
   },
   {
    "id": "2611.17213",
@@ -634,7 +653,8 @@
    "kw_score": 6,
    "tldr": "To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems.",
    "summary": "To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems. By ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration.",
-   "venue": "RA-L"
+   "venue": "RA-L",
+   "citations": 10
   },
   {
    "id": "2611.16632",
@@ -660,7 +680,8 @@
    ],
    "kw_score": 6,
    "tldr": "We present Reins, a harness in which an off-the-shelf model operates a dual-arm robot with 3D perception tools and atomic actions that report contact and grip.",
-   "summary": "We present Reins, a harness in which an off-the-shelf model operates a dual-arm robot with 3D perception tools and atomic actions that report contact and grip. With natural-language prompts and no task-specific code, GPT-6.1 Sol succeeds in 88% of real episodes on five tasks; without the harness, it fails every shell game, taking 8 times as long."
+   "summary": "We present Reins, a harness in which an off-the-shelf model operates a dual-arm robot with 3D perception tools and atomic actions that report contact and grip. With natural-language prompts and no task-specific code, GPT-6.1 Sol succeeds in 88% of real episodes on five tasks; without the harness, it fails every shell game, taking 8 times as long.",
+   "citations": 0
   },
   {
    "id": "2611.16282",
@@ -684,7 +705,8 @@
    ],
    "kw_score": 6,
    "tldr": "To address this, we propose Viewpoint-Invariant Navigation from Exocentric Cameras (VINE).",
-   "summary": "To address this, we propose Viewpoint-Invariant Navigation from Exocentric Cameras (VINE)."
+   "summary": "To address this, we propose Viewpoint-Invariant Navigation from Exocentric Cameras (VINE).",
+   "citations": 0
   },
   {
    "id": "2611.16877",
@@ -710,7 +732,8 @@
    ],
    "kw_score": 4,
    "tldr": "Rather than introducing yet another heuristic, this paper presents a rigorous theoretical analysis of existing error bounds and algorithms to further develop the mathematical foundation for IPP.",
-   "summary": "Rather than introducing yet another heuristic, this paper presents a rigorous theoretical analysis of existing error bounds and algorithms to further develop the mathematical foundation for IPP."
+   "summary": "Rather than introducing yet another heuristic, this paper presents a rigorous theoretical analysis of existing error bounds and algorithms to further develop the mathematical foundation for IPP.",
+   "citations": 0
   },
   {
    "id": "2611.16671",
@@ -734,7 +757,8 @@
    ],
    "kw_score": 4,
    "tldr": "Planning for a heterogeneous robot team from a scene image and an instruction involves two kinds of decisions.",
-   "summary": "Planning for a heterogeneous robot team from a scene image and an instruction involves two kinds of decisions. NSDL outperforms end-to-end planners and formalize-then-plan baselines on both benchmarks and with three backbones from 3B to 8B; the 7B model reaches 97.0% out-of-distribution accuracy on VIKI-L2."
+   "summary": "Planning for a heterogeneous robot team from a scene image and an instruction involves two kinds of decisions. NSDL outperforms end-to-end planners and formalize-then-plan baselines on both benchmarks and with three backbones from 3B to 8B; the 7B model reaches 97.0% out-of-distribution accuracy on VIKI-L2.",
+   "citations": 0
   },
   {
    "id": "2611.16473",
@@ -756,7 +780,8 @@
    "kw_score": 4,
    "tldr": "Until recently, the biggest obstacles to natural spoken interaction with social robots were speech recognition errors and turn-taking failures.",
    "summary": "Until recently, the biggest obstacles to natural spoken interaction with social robots were speech recognition errors and turn-taking failures. This short paper looks back at earlier methods for improving speech recognition and turn-taking in interaction with social robots, and then looks at what can be done today, arguing that multimodal bidirectional streaming is needed to reduce the frequency of turn-taking failures.",
-   "venue": "HRI 2026 Workshop"
+   "venue": "HRI 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.17142",
@@ -787,7 +812,8 @@
    ],
    "kw_score": 3,
    "tldr": "We propose FORGE, a force-aware multi-granularity control system with a coarse-to-fine command space spanning velocity navigation, planar foot placement, wrist-pose tracking, and optional force-conditioning inputs.",
-   "summary": "We propose FORGE, a force-aware multi-granularity control system with a coarse-to-fine command space spanning velocity navigation, planar foot placement, wrist-pose tracking, and optional force-conditioning inputs."
+   "summary": "We propose FORGE, a force-aware multi-granularity control system with a coarse-to-fine command space spanning velocity navigation, planar foot placement, wrist-pose tracking, and optional force-conditioning inputs.",
+   "citations": 0
   },
   {
    "id": "2611.16507",
@@ -812,7 +838,8 @@
    ],
    "kw_score": 3,
    "tldr": "Low-impedance grippers make the dynamics of a grasp matter.",
-   "summary": "Low-impedance grippers make the dynamics of a grasp matter."
+   "summary": "Low-impedance grippers make the dynamics of a grasp matter.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -863,7 +890,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.13410",
    "pdf": "https://arxiv.org/pdf/2611.13410",
-   "hf": "https://huggingface.co/papers/2611.13410"
+   "hf": "https://huggingface.co/papers/2611.13410",
+   "citations": 0
   },
   {
    "id": "2610.39671",
@@ -934,7 +962,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.10193",
    "pdf": "https://arxiv.org/pdf/2611.10193",
-   "hf": "https://huggingface.co/papers/2611.10193"
+   "hf": "https://huggingface.co/papers/2611.10193",
+   "citations": 0
   },
   {
    "id": "2611.08286",
@@ -964,7 +993,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.08286",
    "pdf": "https://arxiv.org/pdf/2611.08286",
-   "hf": "https://huggingface.co/papers/2611.08286"
+   "hf": "https://huggingface.co/papers/2611.08286",
+   "citations": 0
   },
   {
    "id": "2611.13028",
@@ -985,7 +1015,8 @@
    "org": "OpenMOSS",
    "url": "https://arxiv.org/abs/2611.13028",
    "pdf": "https://arxiv.org/pdf/2611.13028",
-   "hf": "https://huggingface.co/papers/2611.13028"
+   "hf": "https://huggingface.co/papers/2611.13028",
+   "citations": 0
   },
   {
    "id": "2611.12304",
@@ -1012,7 +1043,8 @@
    "org": "MIT HAN Lab",
    "url": "https://arxiv.org/abs/2611.12304",
    "pdf": "https://arxiv.org/pdf/2611.12304",
-   "hf": "https://huggingface.co/papers/2611.12304"
+   "hf": "https://huggingface.co/papers/2611.12304",
+   "citations": 1
   },
   {
    "id": "2603.27343",
@@ -1054,7 +1086,8 @@
    "org": "Johns Hopkins University",
    "url": "https://arxiv.org/abs/2611.08538",
    "pdf": "https://arxiv.org/pdf/2611.08538",
-   "hf": "https://huggingface.co/papers/2611.08538"
+   "hf": "https://huggingface.co/papers/2611.08538",
+   "citations": 0
   }
  ]
 }

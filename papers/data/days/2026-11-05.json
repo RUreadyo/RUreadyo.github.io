@@ -41,7 +41,8 @@
    "summary": "Gradient guidance fails on multimodal policies (averaging can pass through obstacles), rejection is slow and projection is implausible. CS-Pi projects each draw to the nearest safe action, renoises proportionally to the projection distance, and reruns the unmodified flow policy until safe. It reaches 81% safe success on a shelf pick-and-place and 55% on a Franka vs 55% and 40% for projection.",
    "why": "Clean, usable idea for constrained sampling from flow-matching policies.",
    "venue": "CoRL 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.07881",
@@ -73,7 +74,8 @@
    "tldr": "TactileLab adds rigid-body 'tactile flow' shear simulation to IsaacLab for scalable RL, plus real-to-sim tactile translation for sim-to-real dexterous manipulation.",
    "summary": "Simulating tactile shear with soft-body physics is too slow for large-scale RL. TactileLab estimates dense tangential contact motion from rigid-body sim as a 'tactile flow' field alongside contact depth, pairs it with a long-horizon proprio+tactile policy architecture, and maps real tactile images to simulated flow/depth. Policies show emergent contact-aware behavior and deploy on real dual-arm and in-hand dexterous tasks across several sensor designs.",
    "why": "Directly on target: scalable shear-aware tactile sim and sim-to-real for in-hand dexterity.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08458",
@@ -105,7 +107,8 @@
    "tldr": "Distills sim RL rollouts into a frozen flow-matching action decoder with latent task context, then learns only a visual-to-latent interface from few demos.",
    "summary": "Visual dexterous policies need many demos while sim RL with privileged info learns rich control. Latent RL Prior distills RL rollouts into a proprio- and latent-conditioned flow-matching decoder, then freezes it and trains a visual interface to its latent with action supervision only, also shareable across arms for bimanual tasks. It beats full fine-tuning of pi0.5 and GR00T N1.7 in low-data regimes and matches full-data baselines with 5-10x fewer demos in sim.",
    "why": "Combines RL-trained control priors with flow policies for data-efficient dexterity, a method you could use.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08338",
@@ -140,7 +143,8 @@
    "tldr": "GPWM is a generative 3D particle world model combining flow matching and diffusion forcing across rigid, deformable, cloth and granular materials, enabling noise-space planning.",
    "summary": "Video world models model appearance, not 3D physics. GPWM is an object-aware multi-resolution transformer trained with flow matching plus diffusion forcing on a 25.5M-frame ParticleWorlds corpus, reducing prediction error 31% on average over the best per-domain baselines across six domains, with one unified model. Planning by searching the model's latent noise over joint actuator-object motion beats action-space search on contact-rich pushing and picking.",
    "why": "Generative world model for contact-rich manipulation with noise-space planning, close to your WM/GenModel interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.07275",
@@ -171,7 +175,8 @@
    "tldr": "LARBRID fine-tunes pretrained diffusion/flow policies via RL over initial noise using a linear-MDP representation bridging noise and action values.",
    "summary": "Noise-space RL fine-tuning of diffusion policies suffers 'noise aliasing' between noise and action values. The authors define a Latent Noise Linear MDP and derive a Bridge Equation aligning values via a shared noise-action representation, with near-optimal guarantees. LARBRID gives up to 2-3x performance gains on locomotion and manipulation tasks.",
    "why": "Directly in your noise-space steering of diffusion policies interest, with theory.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08156",
@@ -207,7 +212,8 @@
    "tldr": "La-JEPA trains a compact policy from scratch in V-JEPA 2.1 feature space with auxiliary future-feature prediction, matching larger world-action models.",
    "summary": "World-action models inherit costly video-generation backbones. La-JEPA trains a policy transformer natively in frozen V-JEPA 2.1 features, predicting future features with actions during training and only actions at inference. It achieves SOTA on RoboTwin 2.0 and LIBERO-Plus among non-embodied-pretrained policies, runs 2-5x faster than Fast-WAM, scales to 2.1B, and matches pi0.5 on four real tasks; JEPA features beat video VAE latents especially OOD.",
    "why": "Useful evidence that JEPA latents beat video VAE latents for control, relevant to V-JEPA world-model interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.08240",
@@ -241,7 +247,8 @@
    "tldr": "FewStepRL systematically adapts diffusion RL objectives (FlowGRPO, AWM, DiffusionNFT, ReFL) to few-step average-velocity models via an x-space gradient decomposition.",
    "summary": "RL post-training of diffusion is dominated by many-step rollouts; few-step models predict average velocities incompatible with existing objectives. The authors express objectives in x-space, decompose gradients into self-regression toward an anchor plus reward augmentation, and compute anchors from few-step flow maps. Reward-gradient methods work best when gradients are affordable; otherwise DiffusionNFT-style methods reach high reward quickly.",
    "why": "Unifying view of RL for few-step/flow-map models, transferable to fast generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -271,7 +278,8 @@
    "summary": "One-step MeanFlow generators can only use a fixed CFG scale, yet optimal guidance varies with noise level and content. The interval-integrated CFG identity folds any guidance field into the MeanFlow training target with no discretization error; AGAVE adds a learnable temporal schedule, motion-saliency spatial modulation and frame asymmetry with fewer than ten scalars. It beats one-step baselines on VBench, UCF-101 and MSR-VTT and matches multi-step guided sampling.",
    "why": "Neat MeanFlow + guidance theory result, relevant to one-step generation interests.",
    "venue": "WACV 2027",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.07532",
@@ -305,7 +313,8 @@
    "summary": "Real-world RL overfits to scene appearance. S2C decomposes into VLM-based semantic focusing for coarse spatial guidance and residual HIL RL with force feedback for contact refinement, plus object-centric background augmentation. Across six real contact-rich tasks it outperforms baselines and remains robust to visual and positional variations.",
    "why": "Contact-rich real-world RL recipe; solid but incremental.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08576",
@@ -344,7 +353,8 @@
    "tldr": "Q-OIL models real human interventions as progress-triggered and adds optimistic bonuses on intervention transitions with decoupled critics for RL from interventions.",
    "summary": "Human-in-the-loop algorithms are developed with unrealistic simulated humans. From participant data, humans intervene when progress stalls and give suboptimal corrections; a progress-based human model better ranks algorithms. Q-OIL adds optimistic bonuses to intervention transitions with decoupled critics to prevent backup to pre-intervention states, gaining 10-50% success in sim and real and improving pretrained VLAs on two bimanual tasks.",
    "why": "Practical RL fine-tuning from interventions, including for VLAs.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.07294",
@@ -377,7 +387,8 @@
    "summary": "Noise-warping for motion control breaks i.i.d. Gaussian noise and requires expensive correction. HME applies per-location orthogonal Householder transformations driven by motion, exactly preserving per-frame Gaussian structure while correlating frames. It matches or beats SOTA motion control with 2.7x speedup over noise warping.",
    "why": "Elegant noise-structure trick; mild relevance to noise conditioning ideas.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08577",
@@ -442,7 +453,8 @@
    "tldr": "Meituan's MR0 VLA trains on 15k robot hours with a discrete-to-flow-matching recipe, CFG-DAgger with 'Rollback' correction data, and async chunk merging.",
    "summary": "MR0 combines 147M vision-language samples and 15,060 robot hours over 12 embodiments with a three-stage recipe: discrete action-token pretraining, flow-matching mid-training, real-world post-training. Rollback pairs replaced policy segments with human corrections for positive/negative supervision in CFG-DAgger without value learning, and asynchronous chunk merging handles latency. It reaches 93.6% on RoboTwin 2.0, beats pi0.5 under matched HG-DAgger, and gets 70% on Ethernet insertion.",
    "why": "Industrial VLA recipe with useful details on CFG-based correction learning and async chunking.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 2
   },
   {
    "id": "2611.08407",
@@ -483,7 +495,8 @@
    "summary": "Humanoids are trained as solitary agents. A high-level tokenized sequence model generates reactive robot motion and predicts occluded partner motion, executed by a low-level tracker on a G1. A two-phase adaptive retargeting procedure builds a 260-hour HHI benchmark from five mocap datasets.",
    "why": "Human motion retargeting for interaction; tangential to dexterity.",
    "venue": "CoRL 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08698",
@@ -518,7 +531,8 @@
    "tldr": "VICTR uses a demo-conditioned progress estimator to retrieve stage-matched demo chunks for in-context learning in a post-trained pi0.5.",
    "summary": "Retrieval-based ICL for VLAs relies on visual similarity, which misses execution stage. VICTR's In-Context Value Function Estimator predicts task progress conditioned on a reference demo video, and uses it to retrieve matching chunks for an ICL-trained pi0.5. On unseen OOD real tasks success rises from 6.2% to 23.8% and progress from 28.9% to 55.5%.",
    "why": "Interesting ICL angle for VLAs, though absolute success remains low.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08462",
@@ -550,7 +564,8 @@
    "tldr": "OopsieRecover infers the intent of a few corrective demos via abduction and encodes it as spatial costs that steer a VLA away from failures.",
    "summary": "DAgger-style recovery needs many corrections and generalizes poorly. OopsieRecover uses abductive reasoning over a handful of corrective demos to produce dense spatial representations and conditional costs that steer the VLA's action sampling. Across 6 tasks, a few corrections let the VLA recover in novel object, pose and scene variations.",
    "why": "Inference-time steering of VLAs with semantic costs; moderately relevant to policy steering.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.07513",
@@ -583,7 +598,8 @@
    "tldr": "Concertina generates continuous action tokens blockwise inside a shared diffusion VLM backbone with no separate action expert.",
    "summary": "Decoupled VLAs either discretize actions or bolt on an action expert. Concertina encodes each control step as a continuous latent token denoised by the diffusion VLM's own corrupt-and-reconstruct operator, using 0.21% action parameters in a 4.46B model. It reaches 98.15% on LIBERO, 85.9% on LIBERO-Plus and 4.142 on CALVIN ABC-D.",
    "why": "Interesting architectural take on unified diffusion VLAs; sim-only benchmarks.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08373",
@@ -619,7 +635,8 @@
    "tldr": "SLA continually pretrains pi0.5 with alignment between intermediate visual embeddings and a frozen 3D perception model's features across heterogeneous robot data.",
    "summary": "VLAs inherit 2D visual representations. SLA adds gated multi-layer visual-to-3D feature alignment during continual pretraining and post-training, using partial depth/calibration and state dropout, with no inference-time cost. The abstract reports the recipe but no headline numbers.",
    "why": "Relevant VLA training recipe for spatial grounding; results unclear from abstract.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 2
   },
   {
    "id": "2611.08209",
@@ -650,7 +667,8 @@
    "tldr": "RoboARCade benchmarks frontier multimodal agents directly acting as robot controllers on long-horizon MuJoCo manipulation tasks.",
    "summary": "Agentic robot control uses LLM agents as policies. RoboARCade provides harder long-horizon tasks across three embodiments with pluggable interfaces; GPT-6 Astra scores 49.8% vs 43.6% for Claude Fable 5.1. Failures come mainly from strategy choice and imprecise execution, agents falsely claim success on 24-39% of subtasks, and one in-context demo raises Astra from 53.5% to 73.0%.",
    "why": "Informative snapshot of LLM agents as policies, but not your core direction.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08425",
@@ -685,7 +703,8 @@
    "tldr": "VLA-Tug probes VLA latent layers for early, calibrated failure detection with bounded error rates and failure-mode classification.",
    "summary": "VLAs need cheap, calibrated runtime monitors. VLA-Tug supervises a lightweight probe on pre-failure segments, improving early detection by up to 30% at matched FPR, keeping error bounds valid in up to 86% of runs on unseen tasks (vs 21%), and predicting failure modes (+44% top-3). A 3,180-episode annotated dataset is released.",
    "why": "Deployment monitoring for VLAs; moderately tangential.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.07730",
@@ -715,7 +734,8 @@
    "kw_score": 17,
    "tldr": "Selecting a next motion in a populated scene is not just a matter of avoiding what is currently in the way: an action can be locally feasible yet drift onto the road instead of the crosswalk, cut into a stream of crossing pedestrians, or bottleneck a narrow passage.",
    "summary": "Selecting a next motion in a populated scene is not just a matter of avoiding what is currently in the way: an action can be locally feasible yet drift onto the road instead of the crosswalk, cut into a stream of crossing pedestrians, or bottleneck a narrow passage.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.08578",
@@ -744,7 +764,8 @@
    "kw_score": 14,
    "tldr": "We propose, HaNDF, object-conditional neural distance fields as data-driven priors for modeling the plausible hand-object configurations, in the product manifold of hand articulations.",
    "summary": "We propose, HaNDF, object-conditional neural distance fields as data-driven priors for modeling the plausible hand-object configurations, in the product manifold of hand articulations.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.08295",
@@ -771,7 +792,8 @@
    "kw_score": 14,
    "tldr": "To address this gap, and ultimately enable activation-optimizing rehabilitation robot behavior, we present a personalizable transformer-based model mapping individuals' muscle activations (as measured via surface electromyography) to prescribed contact force trajectories when…",
    "summary": "To address this gap, and ultimately enable activation-optimizing rehabilitation robot behavior, we present a personalizable transformer-based model mapping individuals' muscle activations (as measured via surface electromyography) to prescribed contact force trajectories when interacting with an end-effector rehabilitation robot. Robot-mediated rehabilitation has the potential to deliver high-intensity, individualized therapy, but existing systems (which have not consistently improved outcomes) typically prescribe kinematic trajectories rather than explicitly targeting the neuromotor activations thought to support recovery.",
-   "venue": "CoRL"
+   "venue": "CoRL",
+   "citations": 0
   },
   {
    "id": "2611.07441",
@@ -795,7 +817,8 @@
    "kw_score": 13,
    "tldr": "We present a reproducible evaluation harness wrapper based on a previous study at 200-rollout scale on serverless commodity GPUs, at a cost of approximately $3.50 USD and 38 minutes of wall-clock per replication (4.4 L4-GPU-hours across eight parallel shards).",
    "summary": "We present a reproducible evaluation harness wrapper based on a previous study at 200-rollout scale on serverless commodity GPUs, at a cost of approximately $3.50 USD and 38 minutes of wall-clock per replication (4.4 L4-GPU-hours across eight parallel shards). Using the harness, we report a partially controlled negative result on action chunking with sparse data: three independently trained chunked checkpoints produce zero genuine successes across 780 rollouts, while three single-step checkpoints range from 2.6% to 11.8% success rate.",
-   "venue": "IROS 2026 Workshop"
+   "venue": "IROS 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.08372",
@@ -825,7 +848,8 @@
    ],
    "kw_score": 12,
    "tldr": "We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions.",
-   "summary": "We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection."
+   "summary": "We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.",
+   "citations": 0
   },
   {
    "id": "2611.07912",
@@ -853,7 +877,8 @@
    ],
    "kw_score": 12,
    "tldr": "World action models (WAMs) for autonomous driving couple the driving policy and the visual world model in a single generative network whose objectives are fixed post-training.",
-   "summary": "World action models (WAMs) for autonomous driving couple the driving policy and the visual world model in a single generative network whose objectives are fixed post-training. On the NAVSIM v2 hard-split, guidance improves all three frozen, publicly released WAMs by 1.8 to 3.6 EPDMS, averaged over three sampler seeds, and adds less than 10% to the sampling time per step."
+   "summary": "World action models (WAMs) for autonomous driving couple the driving policy and the visual world model in a single generative network whose objectives are fixed post-training. On the NAVSIM v2 hard-split, guidance improves all three frozen, publicly released WAMs by 1.8 to 3.6 EPDMS, averaged over three sampler seeds, and adds less than 10% to the sampling time per step.",
+   "citations": 0
   },
   {
    "id": "2611.08144",
@@ -879,7 +904,8 @@
    "kw_score": 11,
    "tldr": "Robot reinforcement learning increasingly runs environments outside the trainer: in another process, on another machine, in another language.",
    "summary": "Robot reinforcement learning increasingly runs environments outside the trainer: in another process, on another machine, in another language. Unless every value was wrong, a learning-curve threshold caught at most one run in ten, and a comparison with ten fault-free seeds at most 21%.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.07411",
@@ -901,7 +927,8 @@
    ],
    "kw_score": 11,
    "tldr": "We introduce the kinematic hypothesis context, a zero-rate conditioning signal that both ends build from joint states, the robot model and the camera calibration.",
-   "summary": "We introduce the kinematic hypothesis context, a zero-rate conditioning signal that both ends build from joint states, the robot model and the camera calibration. On LIBERO, the context saves 23.9% bit rate over a capacity-matched history-conditioned codec and 40-56% over x264, x265 and SVT-AV1, and needs 23.2% fewer bits than DCVC-RT at equal policy action deviation; trained to lower rates, it matches DCVC-RT in PSNR."
+   "summary": "We introduce the kinematic hypothesis context, a zero-rate conditioning signal that both ends build from joint states, the robot model and the camera calibration. On LIBERO, the context saves 23.9% bit rate over a capacity-matched history-conditioned codec and 40-56% over x264, x265 and SVT-AV1, and needs 23.2% fewer bits than DCVC-RT at equal policy action deviation; trained to lower rates, it matches DCVC-RT in PSNR.",
+   "citations": 0
   },
   {
    "id": "2611.08364",
@@ -925,7 +952,8 @@
    ],
    "kw_score": 10,
    "tldr": "We propose Stability-Hybrid On-Policy Reinforcement Learning (SHORE), which combines a learned stability probability of a placement with an on-policy estimate of its return conditional on stability.",
-   "summary": "We propose Stability-Hybrid On-Policy Reinforcement Learning (SHORE), which combines a learned stability probability of a placement with an on-policy estimate of its return conditional on stability. On the expanded 60-box set, SHORE achieves 0.734 space utilization versus 0.588 for the GOPT state-of-the-art baseline, with a higher placement-failure frequency (1.03\\% vs. 0.63\\%), trading more risk for greater packed volume."
+   "summary": "We propose Stability-Hybrid On-Policy Reinforcement Learning (SHORE), which combines a learned stability probability of a placement with an on-policy estimate of its return conditional on stability. On the expanded 60-box set, SHORE achieves 0.734 space utilization versus 0.588 for the GOPT state-of-the-art baseline, with a higher placement-failure frequency (1.03\\% vs. 0.63\\%), trading more risk for greater packed volume.",
+   "citations": 0
   },
   {
    "id": "2611.08009",
@@ -952,7 +980,8 @@
    ],
    "kw_score": 10,
    "tldr": "This paper introduces the robotic implementation and experimental validation of its most advanced architecture: the Harmonic-Passive Motion Paradigm (H-PMP), an evolution of the Passive Motion Paradigm designed to mimic human-like interaction.",
-   "summary": "This paper introduces the robotic implementation and experimental validation of its most advanced architecture: the Harmonic-Passive Motion Paradigm (H-PMP), an evolution of the Passive Motion Paradigm designed to mimic human-like interaction. The results demonstrate that the H-PMP achieves a seamless trade-off between admittance and impedance behaviours."
+   "summary": "This paper introduces the robotic implementation and experimental validation of its most advanced architecture: the Harmonic-Passive Motion Paradigm (H-PMP), an evolution of the Passive Motion Paradigm designed to mimic human-like interaction. The results demonstrate that the H-PMP achieves a seamless trade-off between admittance and impedance behaviours.",
+   "citations": 0
   },
   {
    "id": "2611.07779",
@@ -979,7 +1008,9 @@
    ],
    "kw_score": 10,
    "tldr": "Tactile sensing provides information about object properties that can improve robotic grasping and manipulation.",
-   "summary": "Tactile sensing provides information about object properties that can improve robotic grasping and manipulation. Increasing the number of sensing elements improved recognition performance across all approaches."
+   "summary": "Tactile sensing provides information about object properties that can improve robotic grasping and manipulation. Increasing the number of sensing elements improved recognition performance across all approaches.",
+   "citations": 2,
+   "venue": "IEEE Sensors Journal 2026"
   },
   {
    "id": "2611.07679",
@@ -1004,7 +1035,8 @@
    "kw_score": 8,
    "tldr": "Humanoid locomotion policies trained without an explicit smoothness objective tend to produce jerky, high-energy gaits that stress actuators.",
    "summary": "Humanoid locomotion policies trained without an explicit smoothness objective tend to produce jerky, high-energy gaits that stress actuators. On MuJoCo Humanoid-v5 at 2.6M steps, PhySA lowers joint acceleration by 26 to 32% relative to vanilla PPO, Text2Reward, and Eureka (three seeds), at the cost of shorter episodes.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.08398",
@@ -1029,7 +1061,9 @@
    ],
    "kw_score": 6,
    "tldr": "This paper presents a tactile display technology that offers both softness and temperature change.",
-   "summary": "This paper presents a tactile display technology that offers both softness and temperature change. Mechanical evaluations demonstrate controllable stiffness increase of 300%, whilst thermal characterisation showed strong surface uniformity and a range of achievable temperatures from 10°C up to 50°C, with closed-loop control maintaining a 0.2°C error from a setpoint."
+   "summary": "This paper presents a tactile display technology that offers both softness and temperature change. Mechanical evaluations demonstrate controllable stiffness increase of 300%, whilst thermal characterisation showed strong surface uniformity and a range of achievable temperatures from 10°C up to 50°C, with closed-loop control maintaining a 0.2°C error from a setpoint.",
+   "citations": 1,
+   "venue": "EuroHaptics 2026"
   },
   {
    "id": "2611.08318",
@@ -1064,7 +1098,8 @@
    ],
    "kw_score": 6,
    "tldr": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks.",
-   "summary": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions."
+   "summary": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions.",
+   "citations": 3
   },
   {
    "id": "2611.08056",
@@ -1091,7 +1126,8 @@
    ],
    "kw_score": 6,
    "tldr": "We present a progressive imitation framework that learns terrain-appropriate humanoid parkour skills and subsequently adapts their hand--knee support.",
-   "summary": "We present a progressive imitation framework that learns terrain-appropriate humanoid parkour skills and subsequently adapts their hand--knee support. On the Noetix E1, the policy achieves 96.34\\% hybrid success in simulation and transfers without real-world policy fine-tuning, completing 29 of 30 individual obstacle trials and four of five hybrid courses."
+   "summary": "We present a progressive imitation framework that learns terrain-appropriate humanoid parkour skills and subsequently adapts their hand--knee support. On the Noetix E1, the policy achieves 96.34\\% hybrid success in simulation and transfers without real-world policy fine-tuning, completing 29 of 30 individual obstacle trials and four of five hybrid courses.",
+   "citations": 0
   },
   {
    "id": "2611.08039",
@@ -1119,7 +1155,8 @@
    ],
    "kw_score": 6,
    "tldr": "We present HITCH (Harness Interfaces To Command Humanoids), a harness in which perception returns the 3D position of any point the VLM selects in its image, and execution turns commands for the pelvis, torso, hands, walking, and gaze into whole-body motion with a learned…",
-   "summary": "We present HITCH (Harness Interfaces To Command Humanoids), a harness in which perception returns the 3D position of any point the VLM selects in its image, and execution turns commands for the pelvis, torso, hands, walking, and gaze into whole-body motion with a learned tracker. Without task-specific trajectories, the fine-tuned model completes 51% of SIMPLE episodes and 42.5% of HumanoidArena episodes, and adding five trajectories per SIMPLE task raises its SIMPLE success to 95%."
+   "summary": "We present HITCH (Harness Interfaces To Command Humanoids), a harness in which perception returns the 3D position of any point the VLM selects in its image, and execution turns commands for the pelvis, torso, hands, walking, and gaze into whole-body motion with a learned tracker. Without task-specific trajectories, the fine-tuned model completes 51% of SIMPLE episodes and 42.5% of HumanoidArena episodes, and adding five trajectories per SIMPLE task raises its SIMPLE success to 95%.",
+   "citations": 1
   },
   {
    "id": "2611.07900",
@@ -1143,7 +1180,8 @@
    "kw_score": 6,
    "tldr": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection.",
    "summary": "Knowledge of the hidden interior structure of an object, including the presence and location of cavities, is essential for predictive simulation, robotic manipulation, and nondestructive inspection. On the SfC benchmark, our method improves hidden-structure reconstruction and future prediction over the density-based SfC baseline.",
-   "venue": "WACV 2027"
+   "venue": "WACV 2027",
+   "citations": 0
   },
   {
    "id": "2611.07272",
@@ -1165,7 +1203,8 @@
    ],
    "kw_score": 6,
    "tldr": "VREgo trains manipulation policies from demonstrations recorded on consumer VR headsets; we instantiate it with EgoKit on one such headset, the PICO 4 Ultra.",
-   "summary": "VREgo trains manipulation policies from demonstrations recorded on consumer VR headsets; we instantiate it with EgoKit on one such headset, the PICO 4 Ultra. After adapting the training trajectories and adding task-specific execution rules that use simulator object positions, the system met both placement criteria in 93.8% of episodes across four evaluation noise seeds."
+   "summary": "VREgo trains manipulation policies from demonstrations recorded on consumer VR headsets; we instantiate it with EgoKit on one such headset, the PICO 4 Ultra. After adapting the training trajectories and adding task-specific execution rules that use simulator object positions, the system met both placement criteria in 93.8% of episodes across four evaluation noise seeds.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -1255,7 +1294,8 @@
    "org": "BenchFlow",
    "url": "https://arxiv.org/abs/2611.06910",
    "pdf": "https://arxiv.org/pdf/2611.06910",
-   "hf": "https://huggingface.co/papers/2611.06910"
+   "hf": "https://huggingface.co/papers/2611.06910",
+   "citations": 0
   },
   {
    "id": "2611.06918",
@@ -1288,7 +1328,8 @@
    "org": "MMLab@NTU",
    "url": "https://arxiv.org/abs/2611.06918",
    "pdf": "https://arxiv.org/pdf/2611.06918",
-   "hf": "https://huggingface.co/papers/2611.06918"
+   "hf": "https://huggingface.co/papers/2611.06918",
+   "citations": 0
   },
   {
    "id": "2611.06728",
@@ -1327,7 +1368,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.06728",
    "pdf": "https://arxiv.org/pdf/2611.06728",
-   "hf": "https://huggingface.co/papers/2611.06728"
+   "hf": "https://huggingface.co/papers/2611.06728",
+   "citations": 0
   },
   {
    "id": "2611.06483",
@@ -1351,7 +1393,8 @@
    "org": "Chinese Academic of Science Institute of Automation",
    "url": "https://arxiv.org/abs/2611.06483",
    "pdf": "https://arxiv.org/pdf/2611.06483",
-   "hf": "https://huggingface.co/papers/2611.06483"
+   "hf": "https://huggingface.co/papers/2611.06483",
+   "citations": 0
   },
   {
    "id": "2610.37257",
@@ -1433,7 +1476,7 @@
    "url": "https://arxiv.org/abs/2611.05320",
    "pdf": "https://arxiv.org/pdf/2611.05320",
    "hf": "https://huggingface.co/papers/2611.05320",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.06518",
@@ -1471,7 +1514,8 @@
    "org": "Tencent Hunyuan",
    "url": "https://arxiv.org/abs/2611.06518",
    "pdf": "https://arxiv.org/pdf/2611.06518",
-   "hf": "https://huggingface.co/papers/2611.06518"
+   "hf": "https://huggingface.co/papers/2611.06518",
+   "citations": 0
   },
   {
    "id": "2611.05609",

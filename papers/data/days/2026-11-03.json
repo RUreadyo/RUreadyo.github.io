@@ -109,7 +109,7 @@
    "summary": "Keeps the demonstrated motion and swaps the human for a target robot specified by a reference image, translating keyframes autoregressively and conditioning on hand skeletons. An inverse dynamics model infers actions from synthesized videos. Raises novel-task success including bimanual from 2% to 60% with no robot demos of those tasks and matches teleop-only training at about a third of the cost.",
    "why": "Synthetic dexterous data from human video, in line with DreamGen-style ideas you track.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.05119",
@@ -1225,7 +1225,7 @@
    "kw_score": 6,
    "tldr": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
    "summary": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
-   "citations": 0
+   "citations": 1
   }
  ],
  "trending_ml": [
@@ -1380,7 +1380,7 @@
    "url": "https://arxiv.org/abs/2610.40191",
    "pdf": "https://arxiv.org/pdf/2610.40191",
    "hf": "https://huggingface.co/papers/2610.40191",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.03126",
@@ -1415,7 +1415,7 @@
    "url": "https://arxiv.org/abs/2611.03126",
    "pdf": "https://arxiv.org/pdf/2611.03126",
    "hf": "https://huggingface.co/papers/2611.03126",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.01560",
@@ -1460,7 +1460,7 @@
    "url": "https://arxiv.org/abs/2611.01560",
    "pdf": "https://arxiv.org/pdf/2611.01560",
    "hf": "https://huggingface.co/papers/2611.01560",
-   "citations": 3
+   "citations": 5
   },
   {
    "id": "2611.02074",

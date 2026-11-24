@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-24T09:59:34+00:00",
+ "generated_at": "2026-11-24T22:54:31+00:00",
  "ranker": "Claude",
  "overview": "A day heavy on world models and guidance theory. Scalable Beckmann Maps is the standout for generative-model readers, showing how to bring CFG into teacher-free one-step transport maps. On the robot side, Interval Motion Supervision trains flow-matching VLAs from demos with missing action labels, and LS-MBPO does RL on frozen VLA action chunks inside a latent world model. A connecting theme is skepticism about learned world models: the round-trip check and capped world-model gradients both show model-predicted improvements often fail to hold.",
  "stats": {
@@ -46,7 +46,8 @@
    "tldr": "Adds classifier-free guidance and a scalable training recipe to Beckmann Transport Models for teacher-free one-step generation.",
    "summary": "Beckmann Transport Models learn one-step generative maps without distillation but lacked CFG and scalable training. SBM observes that the BTM current is a positive multiple of an autonomous denoising field, so CFG can be applied using the map's own conditional/null predictions, with characterized bias. Guidance provably shifts basin boundaries toward condition-favored modes while keeping single-NFE sampling.",
    "why": "One-step generation theory with guidance is directly in my generative-model interests and relevant to fast policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27645",
@@ -320,7 +321,8 @@
    "tldr": "ScaleEvals evaluates generalist policies through reset-free autonomous play with VLM task proposal and grading across a fleet.",
    "summary": "Real-world policy evaluation is bottlenecked by resets and grading. ScaleEvals uses a VLM AutoPrompter and AutoGrader (90.7% human agreement) with Bradley-Terry scoring over 3,000+ rollouts on DROID and YAM, cutting human labor by 98%. Rankings correlate with manual evaluation (r=0.94).",
    "why": "Scalable real-world evaluation is valuable infrastructure for anyone training generalist policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28289",
@@ -356,7 +358,8 @@
    "tldr": "InteR-VLA trains VLAs on diverse task-completing demos so they stay competent when safety filters intervene.",
    "summary": "Safety filters can push robots into states poorly covered by training data. InteR-VLA uses diverse demonstrations under the same data budget to broaden state coverage and mitigate intervention-induced shift. Real-world experiments raise safe success rate up to 90% from 0% for nominal training.",
    "why": "Demonstration diversity vs. distribution shift is a useful IL data insight.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26981",
@@ -416,7 +419,8 @@
    "tldr": "BigSmall lets a 14B AR video model plan the opening chunk and a 1.3B model render the rest, keeping most quality at ~3x speed.",
    "summary": "The authors find that in AR video diffusion, letting the large model generate only the first chunk retains 95% of its semantic advantage, while the reverse retains 16%. BigSmall is a training-free planner-renderer sampler with a lazy cross-model KV cache. On VBench it is 3.02x faster than the 14B model.",
    "why": "Interesting insight about where capacity matters in autoregressive video diffusion; tangential to robotics.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27648",
@@ -507,7 +511,8 @@
    "tldr": "Neural Fidelity Calibration uses conditional flow matching to infer simulator parameters and residual dynamics online for sim-to-real fine-tuning.",
    "summary": "Domain randomization needs expert knowledge and calibration covers few parameters. NFC infers physical parameters and latent residual fidelity with flow matching, samples realistic environments for real-to-sim fine-tuning, and triggers adaptation only on anomalies. It targets agile locomotion sim-to-real.",
    "why": "Generative sim calibration is transferable to sim-to-real for hands, though shown on agile robots.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 3
   },
   {
    "id": "2611.27173",
@@ -632,7 +637,8 @@
    ],
    "kw_score": 11,
    "tldr": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution.",
-   "summary": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy)."
+   "summary": "In this work, we propose PEA, a test-time calibration method that identifies actuation shifts through active probing before task execution. Experiments on LIBERO with a WAM and a VLA show that, without any policy training, the identifier of PEA recovers most of the success lost to actuation shifts and generalizes to shifts unseen during training (e.g., from 61.0% to 89.7% on LIBERO-Spatial with Cosmos-Policy).",
+   "citations": 0
   },
   {
    "id": "2611.27513",
@@ -917,7 +923,8 @@
    ],
    "kw_score": 8,
    "tldr": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
-   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction."
+   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
+   "citations": 0
   },
   {
    "id": "2611.27939",
@@ -1071,7 +1078,8 @@
    ],
    "kw_score": 7,
    "tldr": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
-   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles."
+   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
+   "citations": 0
   },
   {
    "id": "2611.27552",
@@ -1156,7 +1164,7 @@
    "summary": "A diagnostic benchmark of 180 simulated manipulation configurations evaluates whether embodied systems can combine history-based reasoning, precise execution, and closed-loop environmental feedback, revealing that single-view competence does not transfer to composed tasks.",
    "upvotes": 56,
    "github": "https://github.com/Mind2Act/Mind2Act_World",
-   "stars": 48,
+   "stars": 51,
    "project": "https://mind2act-world.com/",
    "org": "Mind2Act-World",
    "url": "https://arxiv.org/abs/2611.26444",
@@ -1180,7 +1188,7 @@
    "summary": "WeVisForensics coordinates self-evolving visual and audio forensic inspector agents under a dual-timescale reinforcement learning policy to detect generated-video artifacts with localized evidence and high accuracy.",
    "upvotes": 55,
    "github": "https://github.com/Tencent/WeVisForensics",
-   "stars": 63,
+   "stars": 64,
    "project": "https://tencent.github.io/WeVisForensics",
    "org": "Tencent",
    "url": "https://arxiv.org/abs/2611.21373",
@@ -1209,7 +1217,7 @@
    "summary": "WeMM-Video is a family of Chinese-English bilingual omni-modal foundation models that unify text, image, audio, and video processing for joint audio-visual perception and reasoning, using hybrid thinking modes and large-scale training to achieve strong open-source video understanding results.",
    "upvotes": 50,
    "github": "https://github.com/Tencent/WeMM-Video",
-   "stars": 136,
+   "stars": 147,
    "project": "",
    "org": "Tencent",
    "url": "https://arxiv.org/abs/2611.26409",
@@ -1228,9 +1236,9 @@
    ],
    "abstract": "Diffusion distillation accelerates image and video generation by compressing a pretrained teacher's iterative sampling process into a few network evaluations. Distribution-based methods achieve this by matching the student's output distribution to the teacher's. This matching is often driven by reverse-KL objectives, whose mode-seeking bias favors dominant teacher modes at the expense of diversity across samples. We introduce Posterior Matching Distillation (PMD), a new member of the distribution-based distillation family that combines mode-covering posterior sampling with any-step generation. At zero population loss, PMD recovers the teacher's full posterior of clean images at each trained noise level. Its stochastic student supports any-step sampling budgets within the trained timestep grid without further training. To learn these posteriors, PMD matches exponentially reweighted averages of student samples conditioned on a fixed noisy state to corresponding teacher posterior means. Under Gaussian corruption, exponentially tilted posterior mean is a single teacher evaluation at a shifted input. We prove that, matching tilted means over an open neighborhood uniquely identifies the full posterior. PMD thus supervises the entire conditional distribution through a family of mean constraints, without any auxiliary student-score network. Experiments on SDXL and FLUX.2 [klein] 4B demonstrate that PMD achieves the best FID among 4-step methods on both models, while maintaining competitive or leading performance across prompt-alignment and perceptual-quality metrics.",
    "summary": "Posterior Matching Distillation trains a stochastic student to match a teacher diffusion model’s full posterior via tilted mean constraints, enabling high-quality few-step image generation without auxiliary score networks.",
-   "upvotes": 44,
+   "upvotes": 46,
    "github": "https://github.com/yesiltepe-hidir/PMD",
-   "stars": 15,
+   "stars": 17,
    "project": "https://pmd-distillation.github.io/",
    "org": "NVIDIA",
    "url": "https://arxiv.org/abs/2611.26629",
@@ -1268,9 +1276,9 @@
    ],
    "abstract": "Code2Video uses agent-authored 3D proxies to guide video generation, enabling explicit control over structure and dynamics. However, how to construct proxies and prompts for optimal downstream quality remains underexplored, as do the capabilities and limitations of this paradigm. Through controlled experiments and blinded human evaluation, we study proxy granularity, physics simulation, and prompting. The results reveal task-dependent trade-offs: coarse proxies favor natural motion, while medium-grained proxies favor consistency. Physics simulation and proxy-aligned prompting further improve average quality. Guided by these findings, we introduce Coda-DaVinci, a task-adaptive agentic framework for Code2Video generation that selects between proxy-guided and direct generation, adapts modeling granularity to each entity, and coordinates simulation with proxy-grounded prompting. Its multi-agent harness preserves scene assets and guides repairs through visual inspection and independent review. Experiments demonstrate leading instruction following on VTR and scene consistency on R2M, improved physical plausibility over direct generation, and higher visual realism than the compared Code2Video baselines. Long-video evaluations further show gains in event structure and consistency across successive interactions, while revealing limitations in transition stability and adherence to scene settings.",
    "summary": "A task-adaptive agentic framework utilizes 3D proxies, physics simulation, and multi-agent coordination to enhance the structural control, physical plausibility, and visual realism of generated videos.",
-   "upvotes": 40,
+   "upvotes": 41,
    "github": "https://github.com/FrankYang-17/Coda",
-   "stars": 38,
+   "stars": 42,
    "project": "https://coda-davinci.github.io/",
    "org": "KlingAI Research",
    "url": "https://arxiv.org/abs/2611.26595",
@@ -1293,9 +1301,9 @@
    ],
    "abstract": "We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-frame methods favor sharpness. To overcome this trade-off, we train a single, scalable network that processes both images and video and predicts depth maps at native resolution. Depth Pro 2 produces depth maps that are metrically accurate, sharp, and temporally consistent all at once, outperforming prior work in all of these dimensions. We release a family of models that define a new Pareto frontier in terms of metric accuracy, sharpness, temporal consistency, and runtime. We release code and weights at https://apple-aiml-research.github.io/ml-depth-pro-2/",
    "summary": "A single scalable network estimates dense metric depth for images and video at native resolution, jointly improving metric accuracy, boundary sharpness, and temporal consistency.",
-   "upvotes": 37,
+   "upvotes": 38,
    "github": "https://github.com/apple-aiml-research/ml-depth-pro-2",
-   "stars": 632,
+   "stars": 684,
    "project": "https://apple-aiml-research.github.io/ml-depth-pro-2/",
    "org": "Apple",
    "url": "https://arxiv.org/abs/2611.26603",
@@ -1333,9 +1341,9 @@
    ],
    "abstract": "3D Gaussian Splatting enables object-level operations on Gaussian primitives, yet existing segmentation methods are largely trained and evaluated through rendered views. This mismatch can produce accurate rendered masks from incomplete 3D selections since alpha-blended feature supervision concentrates learning on dominant contributors while leaving occluded or low-contribution Gaussians weakly supervised. We propose VODA, a plug-and-play supervision objective that exploits local depth structure to group per-pixel contributors and directly supervises all Gaussians in selected depth clusters, bypassing contribution-weighted gradient delivery. To evaluate volumetric completeness, we introduce Removal-3D, a synthetic object-removal benchmark, and the Removal Depth Error (RDE), a metric comparing predicted and ground-truth depth changes. Across four rendering-based baselines, VODA consistently improves volumetric segmentation on Removal-3D while maintaining or improving performance on LERF and ScanNet. Further analysis shows that VODA recovers lower-contribution Gaussians, while simple gradient reweighting and spatial propagation fail to reproduce comparable gains.",
    "summary": "A plug-and-play objective, VODA, groups per-pixel contributors by local depth to supervise all Gaussians in selected depth clusters, improving volumetric segmentation and enabling evaluation via Removal-3D and Removal Depth Error.",
-   "upvotes": 35,
+   "upvotes": 36,
    "github": "https://github.com/jhxcho/voda",
-   "stars": 28,
+   "stars": 29,
    "project": "https://jhxcho.github.io/voda/",
    "org": "Yonsei University",
    "url": "https://arxiv.org/abs/2611.21383",
@@ -1369,7 +1377,7 @@
    "summary": "Egocentric video captioning requires fine-grained detail and accurate timing, yet current multimodal large language models (MLLMs) often miss brief actions, confuse their order, or misinterpret the wearer's motion. Existing caption formats also offer limited support for combining detailed narration with precise…",
    "upvotes": 26,
    "github": "https://github.com/cactusqq/EgoCaptioner",
-   "stars": 10,
+   "stars": 11,
    "project": "https://cactusqq.github.io/EgoCaptioner/",
    "org": "KlingAI Research",
    "url": "https://arxiv.org/abs/2611.26380",
@@ -1378,27 +1386,32 @@
    "citations": 0
   },
   {
-   "id": "2611.26073",
-   "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+   "id": "2611.21885",
+   "title": "Language Models Can Rewrite Their Own Weights",
    "authors": [
-    "Nagham Omar",
-    "Rotem Dror",
-    "Almog Gueta",
-    "Avigdor Gal",
-    "Roi Reichart",
-    "Nitay Calderon"
+    "Jiajun Fan",
+    "Neil He",
+    "Changyi Yang",
+    "Andy Mao",
+    "Xi Zhu",
+    "Chaoran Cheng",
+    "Kaiqu Liang",
+    "Shuaike Shen",
+    "Zetian Li",
+    "Ruihan Guo",
+    "Ge Liu"
    ],
-   "abstract": "Large language models (LLMs) are increasingly used as judges and graders to replace human annotators, raising the question of when such replacement is statistically justified. To support such decisions, the Alternative Annotator Test (Alt-Test) was introduced for dense settings where all items are annotated by the same annotators. However, in many large-scale annotation settings, items are annotated by different subsets of annotators. We therefore propose the Alternative Annotator Test with Resampled Annotations (AltRA-Test), a statistical test that does not require that all items are annotated by the same annotators. AltRA-Test uses a bootstrap that resamples items, draws k human annotations for each item, and substitutes one of them with an LLM annotation. This produces paired all-human and mixed human-LLM panels. A replacement is supported when the inter-annotator agreement (IAA) of the mixed panel is statistically non-inferior to the IAA of the all-human panel, i.e., when the LLM preserves the signal that the human annotators share. We establish that AltRA-Test is a consistent test of asymptotic level alpha. We then evaluate it through simulations and real-world experiments in which we test 18 LLMs and 5 prompting techniques on 20 datasets across text, image, audio, and video. Across these evaluations, about 100 items often suffice for the test. In simulations, where we know whether the LLM is a better or a worse annotator than the humans, AltRA-Test makes more correct replacement decisions than existing baselines. In real-world data experiments, LLMs pass the test in about half of the setups, depending mainly on the task. Since replacement is not always justified, we encourage researchers to test it for their task.",
-   "summary": "A statistical test, AltRA-Test, determines when large language models can replace human annotators by comparing inter-annotator agreement in resampled mixed human-LLM panels, and evaluations show it often requires about 100 items and makes better replacement decisions than baselines.",
+   "abstract": "Language models are trained once, frozen and deployed: improving one again takes another training run, and a prompt, a scaffold or extra computation at inference is gone once the task ends. A frontier model has been shown to edit the weights of a much smaller one. We ask whether a model can rewrite its own weights to make itself better, and find that it can, by its own reasoning, with no gradients and no training; we call this self-rewriting. Given its weights, graded answers and the ability to run itself, a 27B model diagnoses its failure and edits the weights behind it. It surpasses itself: its own edit makes it 6.6 points more accurate on 490 problems it never saw, in a test fixed in advance, and another session's edit also makes it significantly better. It keeps getting better: it submits an edit only when its own tests support it, each edit replacing the last, and over its first eight such sessions its accuracy only rises. Unlike test-time scaling, the gain persists in its weights and adds no cost per answer; unlike training, it needs no pre- or post-training infrastructure, only an open model and hours on one GPU. It repairs a damaged copy of itself: it locates the corrupted matrix and rewrites it with values of its own, never reading the undamaged weights; found on text math problems alone, the repair lifts the copy on six image benchmarks it never saw from 7% to 70% accuracy, 83% of the undamaged model's. And the ability emerges with scale: across four sizes of one family, the 2B model makes no edit and the 4B and 9B models break themselves; only the 27B model works on itself as a human would, comparing its hidden states on answers that finish and on answers that run out of tokens, weakening the direction that separates them. Like a human, a model need not separate training from inference; improving a language model may come to take a conversation rather than a training run.",
+   "summary": "Language models are trained once, frozen and deployed: improving one again takes another training run, and a prompt, a scaffold or extra computation at inference is gone once the task ends. A frontier model has been shown to edit the weights of a much smaller one. We ask whether a model can rewrite its own weights to…",
    "upvotes": 24,
    "github": "",
    "stars": 0,
-   "project": "",
-   "org": "Technion Israel institute of technology",
-   "url": "https://arxiv.org/abs/2611.26073",
-   "pdf": "https://arxiv.org/pdf/2611.26073",
-   "hf": "https://huggingface.co/papers/2611.26073",
-   "citations": 0
+   "project": "https://www.jiajunfan.com/projects/self-rewriting/",
+   "org": "UniversityofIllinoisUrbanaChampaign",
+   "url": "https://arxiv.org/abs/2611.21885",
+   "pdf": "https://arxiv.org/pdf/2611.21885",
+   "hf": "https://huggingface.co/papers/2611.21885",
+   "citations": 3
   }
  ]
 }

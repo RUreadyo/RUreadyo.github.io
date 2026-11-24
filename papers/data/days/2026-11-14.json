@@ -35,7 +35,8 @@
    "tldr": "Analyzes ill-posedness of empirical flow matching near data and proposes explicit regularization to avoid memorization.",
    "summary": "The empirical minimizer transports samples onto training data, so small data perturbations strongly change the velocity near t=1. The authors study explicit regularizers beyond velocity magnitude for better-posed flow matching.",
    "why": "Generative-model theory on flow matching generalization, a core interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19559",
@@ -67,7 +68,8 @@
    "tldr": "World-action model supervising only the DINOv3 feature change from current to future frame instead of full future features.",
    "summary": "Full-future losses are dominated by copying static background. ResWAM's visual residual target yields higher-rank, more diverse representations of robot/object motion, improving policy learning without heavy video generators.",
    "why": "Simple, cheap auxiliary objective for VLA/WAM policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19196",
@@ -94,7 +96,8 @@
    "tldr": "Converts egocentric-glasses human recordings into physically verified humanoid loco-manipulation trajectories via agentic real-to-sim.",
    "summary": "Reconstructs assets from RGB-D/head streams, predicts contact bands, plans grasps and adapts motion to robot morphology, training VLAs without robot demonstrations.",
    "why": "Human-video-to-robot data pipeline with contact reasoning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19034",
@@ -123,7 +126,8 @@
    "summary": "Using SmolVLA on LIBERO with K=50 chunks and denoising count as refinement control, it provides a pre-registered evaluation protocol and shows arithmetic and latency cost accounting diverge.",
    "why": "Directly about action chunking and diffusion-step tradeoffs, though small-scale.",
    "venue": "NeurIPS 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19324",
@@ -153,7 +157,8 @@
    "tldr": "Routes between a frozen VLA and RL-trained atomic skill policies (anchored to VLA reference actions) for precise multi-stage manipulation.",
    "summary": "MARS trains specialist RL policies for grasping, alignment and insertion using shared RL Token states and VLA reference actions, dynamically switching during execution.",
    "why": "RL refinement of VLA policies for precision stages.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -183,7 +188,8 @@
    "tldr": "Shows MPPI's exploration covariance sets its effective feedback gain, so too little exploration can destabilize the loop.",
    "summary": "For LQ problems with infinite samples, small exploration at fixed temperature makes MPPI nearly repeat its previous solution, yielding weak feedback and instability.",
    "why": "Clean MPPI insight for practitioners.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19660",
@@ -210,7 +216,8 @@
    "tldr": "Gradient-only single-loop method for K-step physics-based control through contact without KKT solves.",
    "summary": "PSK recasts K-level optimization as min-max with O(eps^-3) convergence and banded smooth walls handling contact constraints without constraint qualification.",
    "why": "Relevant to contact-implicit differentiable control.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19566",
@@ -240,7 +247,8 @@
    "tldr": "Resolves minimax sample complexity of plug-in RL with a generative model for discounted and average-reward settings.",
    "summary": "Proves O(SA(1-gamma)^-3 eps^-2) for discounted and span/diameter-based bounds for average reward, matching lower bounds via Bellman residual bracketing.",
    "why": "Strong RL theory, but far from practice.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19572",
@@ -270,7 +278,8 @@
    "tldr": "Steers frozen diffusion generators with local inverse Jacobian corrections and predicts when guidance will succeed.",
    "summary": "Spectral steering's predicted gain correlates with realized gain at Spearman 0.79 over 8,923 instances across images, audio, robotics and motion generation.",
    "why": "Guidance analysis applicable to diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19183",
@@ -306,7 +315,8 @@
    "tldr": "JEPA world-action model that refines action proposals using goal-discrepancy feedback from latent predictions.",
    "summary": "WA-JEPA generates an action, predicts future latents, and corrects via goal-aware residual paths, avoiding costly candidate search.",
    "why": "V-JEPA-style WAM; moderate.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19047",
@@ -330,7 +340,8 @@
    ],
    "kw_score": 4,
    "tldr": "We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest.",
-   "summary": "We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest."
+   "summary": "We propose CAST (Certified Action Selection at Test time): draw a few action chunks from the frozen policy, certify each with a barrier condition, and execute the certified chunk that a learned value ensemble ranks highest.",
+   "citations": 0
   }
  ],
  "trending_ml": []

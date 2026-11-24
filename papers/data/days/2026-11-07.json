@@ -45,7 +45,8 @@
    "tldr": "SimDuoReal shows bimanual dexterous behaviors (regrasp, in-hand adjustment, handover) emerge from one object-centric RL reward, distilled into one real-world policy.",
    "summary": "Hand-designing bimanual arm-hand coordination is task-specific. RL policies trained with a shared object-pose reward across varied environments discover pre-grasp, regrasp, in-hand adjustment and handover; experts are refined on transitions and distilled with DAgger and RL into a single policy. On hardware it succeeds in 61/80 (76.3%) trials across four tasks with unseen objects, and 85.0% vs 60.4% on sim barcode scanning.",
    "why": "Squarely in core interests: emergent bimanual dexterity with sim-to-real.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10343",
@@ -76,7 +77,8 @@
    "tldr": "GUARD steers diffusion/flow policies with gradients of a Q-function trained on sparse rewards plus dense anomaly scores from the policy's training distribution.",
    "summary": "Generative policies drift into unsupported states under covariate shift. GUARD learns anomaly scores from training data, propagates them with sparse task rewards through a Q-function, and uses its gradients to steer denoising without modifying the base policy. It reaches 96.0%/80.0% on Adroit under nominal/perturbed dynamics (+21/+20pp) and gains 40 and 25pp on real in-hand screwdriver rotation and reorientation.",
    "why": "Q-steering of generative policies for dexterous in-hand tasks with sim-to-real, core RLGen + Dex.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10949",
@@ -112,7 +114,8 @@
    "summary": "Sliding-window BC data can be fit by a high-Lipschitz unimodal policy, so diffusion policies memorize. Querying the demonstrator multiple times from identical observations resolves this; larger k better matches the conditional distribution on a synthetic task. On 2D truck unloading it yields a closer policy and substantially improves best-of-N and expert iteration.",
    "why": "Sharp insight on diffusion policy multimodality vs memorization, relevant to RL fine-tuning and search.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10490",
@@ -142,7 +145,8 @@
    "summary": "Contacts are often hidden even from wrist cameras. Holding demos and architecture fixed across three contact-rich tasks, wrist cameras add 18.3-28.3pp over scene vision while tactile instead adds 31.7-60.0pp and beats vision-with-wrist on all three tasks. Six task families including insertion, occluded retrieval and tool use are evaluated.",
    "why": "Careful sensing ablation directly informing tactile policy design.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10647",
@@ -172,7 +176,8 @@
    "summary": "Uniform taxel placement is an untested default. With teacher, training and candidates fixed, few taxels chosen from contact statistics match many uniform ones, rarely contacted taxels equal no tactile input, and tensor layout doesn't matter even for CNNs, on in-palm rotation and grasping with three hands. The authors distill reporting guidelines for tactile policy studies.",
    "why": "Rigorous 'understanding' paper on tactile design for dexterous hands.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10993",
@@ -201,7 +206,8 @@
    "tldr": "DPDP replaces a diffusion planner's behavior prior at execution with a value-optimized diffusion policy, composing scores to execute plans with valuable actions.",
    "summary": "Diffusion policies are value-aware but myopic; diffusion planners are far-sighted but execute with behavior-only inverse dynamics. Treating the executor as a posterior, DPDP swaps in a value-optimized diffusion policy prior, sampled training-free by composing scores with Langevin correction or amortized via a preference objective. On D4RL it improves its base planner, matches reactive diffusion policies on locomotion and leads on long-horizon navigation.",
    "why": "Principled score composition for diffusion RL, from Mingyuan Zhou's group.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10967",
@@ -233,7 +239,8 @@
    "tldr": "BAT-WAM bridges vision, hand joint states and whole-hand touch in a world-action model with separate codebooks linked by an RGB-conditioned latent bridge.",
    "summary": "Dexterous WAMs need hand state and contact, which may be missing. BAT-WAM learns tactile and action codebooks connected via a continuous RGB-conditioned bridge, reducing tactile reconstruction RMSE by 34.7-38.8% vs HandTouch and future tactile RMSE by 85.6% vs OpenWAM. Real-robot dexterous experiments show gains including on unseen objects and scenes.",
    "why": "Tactile + dexterous world-action modeling, on-topic.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -266,7 +273,8 @@
    "tldr": "RAGu retrieves geometrically warped in-the-wild DROID trajectories and uses them to guide a VLA's flow-matching inference in new domains.",
    "summary": "VLAs break under small domain shifts. RAGu calibrates source demos into the target setup, does coarse-to-fine retrieval of the trajectory most compatible with the base VLA, and guides flow-matching sampling instead of retraining. It lifts real-world VLA success from 20% to 80% and beats related baselines in sim and cross-embodiment humanoid settings.",
    "why": "Training-free guidance of flow-based VLAs via retrieval; usable idea.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10877",
@@ -296,7 +304,8 @@
    "tldr": "Unifies predictive sampling, MPPI, CEM and variants as one Sequential Monte Carlo algorithm with proposal, update and resampling axes.",
    "summary": "Sampling-based MPC is treated as distinct algorithms. Framing them as SMC with three design axes, resampling cuts collisions 30% at long horizons, and programmable proposals raise push-T success from 1% to 100% in sim and 10% to 90% on a Franka FR3.",
    "why": "Clean unifying view of MPPI-style control with real contact-rich results.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10451",
@@ -327,7 +336,8 @@
    "summary": "Robot handwriting usually mounts the pen rigidly. This work couples grasp retention, tip motion and contact force: a grasp controller, BC from IK demos and RL with ink/force/time/retention rewards. The policy improves completion, precision and force regulation and generalizes to unseen English and Chinese text.",
    "why": "Dexterous tool-use testbed; sim-only.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10553",
@@ -360,7 +370,8 @@
    "summary": "BFMs support zero-shot RL in fixed environments, while meta-RL handles novel environments with supervised tasks. The authors identify four challenges to extend BFMs and propose MetaBFM, mixing supervised reward-following with unsupervised learning and interpolating exploration and reward inference at test time. It recovers in-distribution meta-RL performance while generalizing to new rewards.",
    "why": "Conceptual RL bridge; limited manipulation relevance.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10443",
@@ -390,7 +401,8 @@
    "summary": "VLAs need 3D understanding without external 3D inputs at inference. SPARK-VLA preserves the original visual pathway, adds a distilled spatial LoRA branch, and routes tokens using action-loss-gradient supervision. It performs strongly on LIBERO, LIBERO-Plus, CALVIN and real tasks with a 0.5B backbone.",
    "why": "Parameter-efficient 3D-aware VLA; incremental.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10872",
@@ -421,7 +433,8 @@
    "summary": "Humanoid whole-body teleop data is costly. DreamVLA uses generated motions as references for sim RL, then distills to a VLA with a DAgger variant that restarts the RL expert from failed learner states with the same reference suffix. Evaluated on humanoid picking, drawer opening, button pressing and walk-and-pick, with ablations.",
    "why": "Synthetic-motion-to-policy pipeline; humanoid focus, sim only.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10806",
@@ -453,7 +466,8 @@
    "tldr": "WARP-JEPA replaces test-time gradient planning in frozen hierarchical JEPA world models with learned multi-candidate trajectory proposers.",
    "summary": "H-JEPA planning spends up to 97.7% of runtime on gradient optimization. WARP-JEPA trains a world-model-in-the-loop transformer and residual MLP proposers with rollout costs and best-of-K BC, giving 9.6-18.8x faster inference and up to +33.3pp success across 30 frozen models on four benchmarks.",
    "why": "Amortized planning for JEPA world models; relevant to V-JEPA interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10660",
@@ -486,7 +500,8 @@
    "tldr": "DIAL trains latent world models with rollout alignment and inverse dynamics, then uses inverse+forward rollouts to initialize CEM planning.",
    "summary": "Teacher-forced latent dynamics mismatch planning, and CEM starts from goal-agnostic proposals. DIAL aligns autoregressive rollouts, adds multi-step inverse supervision, and initializes CEM with a dynamics-informed action sequence. It beats latent world model and planning baselines on four visual control benchmarks.",
    "why": "Incremental latent-planning improvement.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10392",
@@ -521,7 +536,8 @@
    "tldr": "LCWM-Bench unifies 15 datasets for language-conditioned world modeling; Tiresias plans with a diffusion policy proposer, ranker and video world model verification.",
    "summary": "Language-conditioned world modeling is fragmented. The benchmark pairs 142,987 episodes with 428,961 instructions across navigation, robotics, games and driving; Tiresias generates diffusion-policy candidates, ranks them, imagines with a video world model and visually verifies. It is competitive, with ablations showing complementary ranking and verification.",
    "why": "Benchmark-level contribution to video world models for planning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10769",
@@ -552,7 +568,8 @@
    "tldr": "Beam search over perturbed action chunks with simulator rollouts improves a frozen ACT policy on PushT, gated by a one-step-ahead check.",
    "summary": "Test-time search for chunking policies: beam search raises PushT success from 0% to 18%, and the OSA gate cuts runtime ~3x. Larger budgets don't consistently help; no VLA or real-robot evaluation.",
    "why": "Relevant idea but weak, sim-cloned evaluation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.10822",
@@ -576,7 +593,8 @@
    "kw_score": 17,
    "tldr": "We introduce Adaptive Internal Computation (AIC), an iterative policy that learns when to stop refining its latent representation and act.",
    "summary": "We introduce Adaptive Internal Computation (AIC), an iterative policy that learns when to stop refining its latent representation and act. We show that when only some states benefit from further refinement, an ideal state-dependent allocator outperforms every state-independent stopping schedule at the same expected depth.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.10748",
@@ -602,7 +620,8 @@
    "kw_score": 10,
    "tldr": "We propose REINS, a harness built on three LLM-planner couplings: LLM outputs are (i) grounded to a learned variable-level dynamics model, (ii) verified via calibrated predicates and forward rollout, and (iii) consolidated into an indexed rule memory that serves future scenes…",
    "summary": "We propose REINS, a harness built on three LLM-planner couplings: LLM outputs are (i) grounded to a learned variable-level dynamics model, (ii) verified via calibrated predicates and forward rollout, and (iii) consolidated into an indexed rule memory that serves future scenes in O(log n) without re-invoking the LLM. Without modifying LLM weights, REINS attains 98%+ compliance, nearly 50% collision reduction, and 1.9-4.6 ms latency on simulated and real-world benchmarks at the tactical decision layer, with LLM invocation rate monotonically declining as memory matures.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.10720",
@@ -628,7 +647,8 @@
    "kw_score": 10,
    "tldr": "Vision-Language Models (VLMs) are increasingly adopted as end-to-end driving planners, yet they suffer from cross-city domain shift.",
    "summary": "Vision-Language Models (VLMs) are increasingly adopted as end-to-end driving planners, yet they suffer from cross-city domain shift. We challenge this view on two counts: (i) domain shift in VLM trajectory planners is inherently structured across modality and layer, and (ii) a locate-then-repair recipe matched to this structure outperforms every uniform-objective baseline.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.10994",
@@ -658,7 +678,8 @@
    ],
    "kw_score": 8,
    "tldr": "To address this gap, we introduce RoboMoCap, a large-scale multimodal dataset combining egocentric vision with marker-based optical motion capture, specifically designed for locomotion-centric humanoid learning.",
-   "summary": "To address this gap, we introduce RoboMoCap, a large-scale multimodal dataset combining egocentric vision with marker-based optical motion capture, specifically designed for locomotion-centric humanoid learning."
+   "summary": "To address this gap, we introduce RoboMoCap, a large-scale multimodal dataset combining egocentric vision with marker-based optical motion capture, specifically designed for locomotion-centric humanoid learning.",
+   "citations": 0
   },
   {
    "id": "2611.10664",
@@ -683,7 +704,9 @@
    ],
    "kw_score": 8,
    "tldr": "This paper presents enhancements to the DINOBot framework for imitation learning of object-object interactions.",
-   "summary": "This paper presents enhancements to the DINOBot framework for imitation learning of object-object interactions. We introduce two key contributions aimed at improving the accuracy and efficiency of alignment in imitation-based robotic tasks."
+   "summary": "This paper presents enhancements to the DINOBot framework for imitation learning of object-object interactions. We introduce two key contributions aimed at improving the accuracy and efficiency of alignment in imitation-based robotic tasks.",
+   "citations": 0,
+   "venue": "International Conference on Advanced Robotics 2025"
   },
   {
    "id": "2611.10778",
@@ -708,7 +731,8 @@
    ],
    "kw_score": 6,
    "tldr": "In this work, we propose a quadratic programming-based parameter optimization framework that guarantees passivity by modulating the desired inertia to compensate for energy injected by stiffness variations, while preserving a critically damped system.",
-   "summary": "In this work, we propose a quadratic programming-based parameter optimization framework that guarantees passivity by modulating the desired inertia to compensate for energy injected by stiffness variations, while preserving a critically damped system. Comparisons with an energy tank approach and a nonpassivity-based method demonstrate that the proposed framework achieves less conservative stiffness tracking without requiring an energy reservoir or damping overhead."
+   "summary": "In this work, we propose a quadratic programming-based parameter optimization framework that guarantees passivity by modulating the desired inertia to compensate for energy injected by stiffness variations, while preserving a critically damped system. Comparisons with an energy tank approach and a nonpassivity-based method demonstrate that the proposed framework achieves less conservative stiffness tracking without requiring an energy reservoir or damping overhead.",
+   "citations": 0
   },
   {
    "id": "2611.10699",
@@ -734,7 +758,8 @@
    "kw_score": 6,
    "tldr": "We introduce PLS-GS, a probabilistic LiDAR scaffold for Gaussian Splatting that exploits this complementary sensing setting to construct a compact 3DGS representation aligned to the measured surface.",
    "summary": "We introduce PLS-GS, a probabilistic LiDAR scaffold for Gaussian Splatting that exploits this complementary sensing setting to construct a compact 3DGS representation aligned to the measured surface.",
-   "venue": "WACV 2027"
+   "venue": "WACV 2027",
+   "citations": 0
   },
   {
    "id": "2611.10430",
@@ -760,7 +785,8 @@
    ],
    "kw_score": 6,
    "tldr": "In this work, we train agents to act under uncertainty according to specified, belief-dependent rules.",
-   "summary": "In this work, we train agents to act under uncertainty according to specified, belief-dependent rules. In either case, the learned policy attains a success rate above 90% in Scavenger, compared with at most 5% for RL."
+   "summary": "In this work, we train agents to act under uncertainty according to specified, belief-dependent rules. In either case, the learned policy attains a success rate above 90% in Scavenger, compared with at most 5% for RL.",
+   "citations": 0
   },
   {
    "id": "2611.10366",
@@ -785,7 +811,8 @@
    ],
    "kw_score": 4,
    "tldr": "We introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation.",
-   "summary": "We introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. In AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively."
+   "summary": "We introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. In AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively.",
+   "citations": 0
   }
  ],
  "trending_ml": []

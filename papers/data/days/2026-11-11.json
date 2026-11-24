@@ -45,7 +45,8 @@
    "summary": "Removal manipulation (adhesive detachment, cleaning, occluded retrieval) depends on partially observable contact states. DexRemo expresses fingertip forces in a shared wrist frame and trains ACT policies fusing vision, proprioception, fingertip pose and force; six core tasks benchmark the value of force sensing.",
    "why": "Contact-rich dexterous hardware + force-aware action-chunking policies, core interests.",
    "venue": "T-RO",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15491",
@@ -78,7 +79,8 @@
    "summary": "On two dynamic sim benchmarks and three real tasks, the best prediction horizon is ~1 s, short horizons help more with async execution, and trajectory-continuity methods beat pure latency reduction. Changing execution horizon matched RL adaptation gains on a conveyor task.",
    "why": "Rigorous empirical guidance on action chunking and real-time chunk execution.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15082",
@@ -107,7 +109,8 @@
    "summary": "Using paired persistence controls on 27k egocentric future-retrieval trials, the predictor adds +0.291 top-1 for V-JEPA 2.1 but only ~+0.03 for V-JEPA 2, and is negative for some models.",
    "why": "Careful analysis of V-JEPA-style world models used for robot learning.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15974",
@@ -161,7 +164,8 @@
    "tldr": "Video-action model with web/industrial video pretraining and an action expert for data-efficient industrial manipulation.",
    "summary": "FLUX-mimic jointly trains video and action on four automotive manufacturing tasks, studying how much action data is needed.",
    "why": "Evidence for video-pretrained policies in precise real tasks.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15078",
@@ -190,7 +194,8 @@
    "tldr": "Crowdsources multiple alternative actions per visited robot state via a web 3D interface to widen IL datasets.",
    "summary": "CrowdMAPS lets non-experts annotate keyframe goal poses; increasing width from 1 to 10 actions per state improves sample efficiency across five real tasks.",
    "why": "Interesting data-scaling axis for multimodal generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -221,7 +226,8 @@
    "tldr": "Learns per-demonstrator latent expertise and state-action optimality scores from mixed-quality data, then uses them for online policy optimization.",
    "summary": "LEOS-IL handles heterogeneous imperfect demonstrators without labels, integrating the scoring model into offline-to-online training.",
    "why": "Relevant to learning from low-quality data.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14969",
@@ -263,7 +269,8 @@
    "tldr": "Production VLA fleet-serving system coordinating heterogeneous computation with robot timing constraints.",
    "summary": "XInfer exploits parallelism while protecting time-critical feedback, giving 1.26-3.75x effective robot capacity over prior serving systems on three VLAs.",
    "why": "Systems for VLA inference; relevant only if deploying fleets.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15048",
@@ -291,7 +298,8 @@
    "summary": "Proposes inspecting forced responses to action perturbations rather than only reconstruction or task success.",
    "why": "Short evaluation perspective; modest substance.",
    "venue": "CoRL Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15215",
@@ -323,7 +331,8 @@
    "tldr": "World model with adaptive fast-slow timescales to respond to, stabilize, and retain sudden dynamics changes.",
    "summary": "AFTER-WM, inspired by predictive coding, balances responsiveness, stability and persistence when payloads change during interaction.",
    "why": "World-model adaptation; moderate relevance.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15381",
@@ -356,7 +365,8 @@
    "tldr": "Low-cost mobile bimanual SO-101 platform benchmarking four VLAs on long-horizon toilet cleaning.",
    "summary": "With 250 demos, pi0 performs best (60% strict, 70% relaxed, 90% with interventions) while progress- and memory-augmented variants fail to help.",
    "why": "Reproducible VLA comparison on cheap hardware; limited insight.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15937",
@@ -386,7 +396,8 @@
    "tldr": "Adds role-specific mask grounding and geometric tokens to pretrained VLAs for obstacle-aware manipulation in clutter.",
    "summary": "MOSAIC predicts target/destination/obstacle masks and injects depth-derived tokens into the action expert.",
    "why": "Incremental VLA augmentation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.15659",
@@ -417,7 +428,8 @@
    "tldr": "Lightweight policy using 6-DoF grasp hypotheses as explicit geometric priors with point clouds and language.",
    "summary": "GraSLA binds task-relevant grasp hypotheses to scene and instruction via cross-attention and decodes continuous actions.",
    "why": "Gripper-centric; modest relevance.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18761",
@@ -442,7 +454,8 @@
    ],
    "kw_score": 10,
    "tldr": "Single-pass primitive decoders such as LocateAnything and VFlash predict all quantized coordinate tokens of a geometric primitive in one forward pass, enabling fast, System-1 visual planning.",
-   "summary": "Single-pass primitive decoders such as LocateAnything and VFlash predict all quantized coordinate tokens of a geometric primitive in one forward pass, enabling fast, System-1 visual planning. First, expressing inputs and outputs in the SE(2) frame of the object's initial pose lowers decision regret by 1.9-2.2x for each of five decoders, and the object-frame model trained on 128 families matches the world-frame model trained on 512."
+   "summary": "Single-pass primitive decoders such as LocateAnything and VFlash predict all quantized coordinate tokens of a geometric primitive in one forward pass, enabling fast, System-1 visual planning. First, expressing inputs and outputs in the SE(2) frame of the object's initial pose lowers decision regret by 1.9-2.2x for each of five decoders, and the object-frame model trained on 128 families matches the world-frame model trained on 512.",
+   "citations": 0
   },
   {
    "id": "2611.15490",
@@ -470,7 +483,8 @@
    ],
    "kw_score": 10,
    "tldr": "We introduce ActionCodec2, a non-neural streaming tokenizer that releases actions incrementally while keeping trajectory reconstruction error within a prescribed tolerance.",
-   "summary": "We introduce ActionCodec2, a non-neural streaming tokenizer that releases actions incrementally while keeping trajectory reconstruction error within a prescribed tolerance. With the same VLA backbone, ActionCodec2 outperforms the compared tokenizers on three simulation benchmarks and in zero-shot real-robot evaluation."
+   "summary": "We introduce ActionCodec2, a non-neural streaming tokenizer that releases actions incrementally while keeping trajectory reconstruction error within a prescribed tolerance. With the same VLA backbone, ActionCodec2 outperforms the compared tokenizers on three simulation benchmarks and in zero-shot real-robot evaluation.",
+   "citations": 0
   },
   {
    "id": "2611.14981",
@@ -496,7 +510,8 @@
    ],
    "kw_score": 10,
    "tldr": "We present a unified pipeline that transforms a single RGB image into a humanoid motion reference.",
-   "summary": "We present a unified pipeline that transforms a single RGB image into a humanoid motion reference. The complete pipeline achieves a success rate of 89% in simulation and 70% across 50 physical trials on the Unitree G1, demonstrating its effectiveness in generating executable humanoid motion references from single RGB images."
+   "summary": "We present a unified pipeline that transforms a single RGB image into a humanoid motion reference. The complete pipeline achieves a success rate of 89% in simulation and 70% across 50 physical trials on the Unitree G1, demonstrating its effectiveness in generating executable humanoid motion references from single RGB images.",
+   "citations": 0
   },
   {
    "id": "2611.14853",
@@ -522,7 +537,8 @@
    ],
    "kw_score": 9,
    "tldr": "We propose a novel framework that modulates traditional Social Force, guided by Model Predictive Control (MPC) to plan ahead, bounded by Control Barrier Functions (CBF) to increase safety for robot groups repositioning behaviors.",
-   "summary": "We propose a novel framework that modulates traditional Social Force, guided by Model Predictive Control (MPC) to plan ahead, bounded by Control Barrier Functions (CBF) to increase safety for robot groups repositioning behaviors."
+   "summary": "We propose a novel framework that modulates traditional Social Force, guided by Model Predictive Control (MPC) to plan ahead, bounded by Control Barrier Functions (CBF) to increase safety for robot groups repositioning behaviors.",
+   "citations": 0
   },
   {
    "id": "2611.15781",
@@ -548,7 +564,8 @@
    ],
    "kw_score": 8,
    "tldr": "This work extends a previous MPC framework by integrating obstacle and pedestrian detection, Koopman-based motion prediction, and online prediction-error estimation directly within the collision-avoidance mechanism.",
-   "summary": "This work extends a previous MPC framework by integrating obstacle and pedestrian detection, Koopman-based motion prediction, and online prediction-error estimation directly within the collision-avoidance mechanism."
+   "summary": "This work extends a previous MPC framework by integrating obstacle and pedestrian detection, Koopman-based motion prediction, and online prediction-error estimation directly within the collision-avoidance mechanism.",
+   "citations": 0
   },
   {
    "id": "2611.15524",
@@ -576,7 +593,8 @@
    ],
    "kw_score": 8,
    "tldr": "Instead, we develop a fully automated synthetic data collection pipeline, using re-projection of known 3D coordinates to generate labels automatically and domain randomization to bridge the reality gap.",
-   "summary": "Instead, we develop a fully automated synthetic data collection pipeline, using re-projection of known 3D coordinates to generate labels automatically and domain randomization to bridge the reality gap. When evaluated on a real NICO humanoid robot, our pipeline achieves an F1-score of 0.906 for card-to-zone assignment, thus providing the perceptual foundation for a robot that can autonomously play Chef's Hat against human players."
+   "summary": "Instead, we develop a fully automated synthetic data collection pipeline, using re-projection of known 3D coordinates to generate labels automatically and domain randomization to bridge the reality gap. When evaluated on a real NICO humanoid robot, our pipeline achieves an F1-score of 0.906 for card-to-zone assignment, thus providing the perceptual foundation for a robot that can autonomously play Chef's Hat against human players.",
+   "citations": 0
   },
   {
    "id": "2611.15020",
@@ -608,7 +626,8 @@
    ],
    "kw_score": 8,
    "tldr": "We evaluate Genie Sim Benchmark through paired real-simulation tasks and complementary system-identification studies.",
-   "summary": "We evaluate Genie Sim Benchmark through paired real-simulation tasks and complementary system-identification studies. Across 22 robot-task pairs spanning 16 task names, task-specific pi0.5 policies fine-tuned on real-robot data achieve a descriptive Score correlation of 0.9686, MAE 0.0405, RMSE 0.0520, with simulation-real differences from -0.110 to +0.080."
+   "summary": "We evaluate Genie Sim Benchmark through paired real-simulation tasks and complementary system-identification studies. Across 22 robot-task pairs spanning 16 task names, task-specific pi0.5 policies fine-tuned on real-robot data achieve a descriptive Score correlation of 0.9686, MAE 0.0405, RMSE 0.0520, with simulation-real differences from -0.110 to +0.080.",
+   "citations": 0
   },
   {
    "id": "2611.15011",
@@ -632,7 +651,8 @@
    ],
    "kw_score": 8,
    "tldr": "Imitation policies can fail through compounding errors, while existing refinement methods often require additional on-policy learning or expensive online planning.",
-   "summary": "Imitation policies can fail through compounding errors, while existing refinement methods often require additional on-policy learning or expensive online planning. Across four manipulation tasks, our framework achieves the highest success rate among evaluated baselines, adding only 4.2 ms of mean refinement latency per control step, excluding base-policy sampling."
+   "summary": "Imitation policies can fail through compounding errors, while existing refinement methods often require additional on-policy learning or expensive online planning. Across four manipulation tasks, our framework achieves the highest success rate among evaluated baselines, adding only 4.2 ms of mean refinement latency per control step, excluding base-policy sampling.",
+   "citations": 0
   },
   {
    "id": "2611.15650",
@@ -655,7 +675,8 @@
    ],
    "kw_score": 7,
    "tldr": "Persistent deformation complicates elasto-plastic manipulation by coupling physical interaction with spatially distributed shape changes.",
-   "summary": "Persistent deformation complicates elasto-plastic manipulation by coupling physical interaction with spatially distributed shape changes. A compact multilayer perceptron (MLP), trained on 52 force--volume pairs at four levels, achieves a held-out RMSE of 1.857 N and $R^2=0.440$."
+   "summary": "Persistent deformation complicates elasto-plastic manipulation by coupling physical interaction with spatially distributed shape changes. A compact multilayer perceptron (MLP), trained on 52 force--volume pairs at four levels, achieves a held-out RMSE of 1.857 N and $R^2=0.440$.",
+   "citations": 0
   },
   {
    "id": "2611.15093",
@@ -680,7 +701,8 @@
    ],
    "kw_score": 7,
    "tldr": "We present PreNav, an ObjectNav framework on semi-static environments.",
-   "summary": "We present PreNav, an ObjectNav framework on semi-static environments. Experiments on a Gibson ObjectNav benchmark show that PreNav outperforms a strong online baseline under matched structural priors, using a generator trained only on room-level ScanNet++ scenes and applied to floor-level Gibson without fine-tuning."
+   "summary": "We present PreNav, an ObjectNav framework on semi-static environments. Experiments on a Gibson ObjectNav benchmark show that PreNav outperforms a strong online baseline under matched structural priors, using a generator trained only on room-level ScanNet++ scenes and applied to floor-level Gibson without fine-tuning.",
+   "citations": 0
   },
   {
    "id": "2611.15834",
@@ -730,7 +752,8 @@
    ],
    "kw_score": 6,
    "tldr": "Generated touch could extend robot learning beyond recorded contacts.",
-   "summary": "Generated touch could extend robot learning beyond recorded contacts. On ObjectFolder Real, the classifier loses 6.5 to 9.7 points on reconstructions from three 16x discrete tokenizers and 0.3 points on those from the Stable Diffusion VAE (SD-VAE)."
+   "summary": "Generated touch could extend robot learning beyond recorded contacts. On ObjectFolder Real, the classifier loses 6.5 to 9.7 points on reconstructions from three 16x discrete tokenizers and 0.3 points on those from the Stable Diffusion VAE (SD-VAE).",
+   "citations": 0
   },
   {
    "id": "2611.15802",
@@ -760,7 +783,8 @@
    ],
    "kw_score": 6,
    "tldr": "We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact.",
-   "summary": "We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact."
+   "summary": "We present RUMI, a handheld universal manipulation interface matched to the Robotiq 2F-85 with exchangeable fingertip sensors that preserves the target gripper geometry while enabling natural input before contact and force measurement after contact.",
+   "citations": 0
   },
   {
    "id": "2611.15651",
@@ -787,7 +811,8 @@
    ],
    "kw_score": 6,
    "tldr": "To address this, we introduce Embodied-Corrector.",
-   "summary": "To address this, we introduce Embodied-Corrector. Experiments show stronger failure analysis and corrective planning: with a frozen VLA, composite task success improves by 6.1 percentage points; with fixed GPT-5.5 execution, manipulation and navigation tasks improve by 13.9 percentage points."
+   "summary": "To address this, we introduce Embodied-Corrector. Experiments show stronger failure analysis and corrective planning: with a frozen VLA, composite task success improves by 6.1 percentage points; with fixed GPT-5.5 execution, manipulation and navigation tasks improve by 13.9 percentage points.",
+   "citations": 0
   },
   {
    "id": "2611.15565",
@@ -811,7 +836,8 @@
    ],
    "kw_score": 6,
    "tldr": "We introduce GenGenIK, a generative modeling approach that supports mobile bases, multiple end-effectors and targets, scene awareness, and preferences over robot behavior within a common interface.",
-   "summary": "We introduce GenGenIK, a generative modeling approach that supports mobile bases, multiple end-effectors and targets, scene awareness, and preferences over robot behavior within a common interface. Experiments show that GenGenIK outperforms existing methods in both solve rate and runtime across tasks such as bimanual lift and flip-up, while allowing flexible control over the sampled distribution and remaining effective under partial scene observations."
+   "summary": "We introduce GenGenIK, a generative modeling approach that supports mobile bases, multiple end-effectors and targets, scene awareness, and preferences over robot behavior within a common interface. Experiments show that GenGenIK outperforms existing methods in both solve rate and runtime across tasks such as bimanual lift and flip-up, while allowing flexible control over the sampled distribution and remaining effective under partial scene observations.",
+   "citations": 0
   },
   {
    "id": "2611.15066",
@@ -839,7 +865,8 @@
    ],
    "kw_score": 6,
    "tldr": "We propose MiniPose, a practical pipeline for miniature-based real RGB-D data collection that addresses both the data-acquisition burden and the sim-to-real gap.",
-   "summary": "We propose MiniPose, a practical pipeline for miniature-based real RGB-D data collection that addresses both the data-acquisition burden and the sim-to-real gap. Mixing at most 1,000 miniature images per pipe type, less than 10\\% of the training data, with 10,000 synthetic images improves the mean ADD-S AUC across pipe types over synthetic-only training for both estimators."
+   "summary": "We propose MiniPose, a practical pipeline for miniature-based real RGB-D data collection that addresses both the data-acquisition burden and the sim-to-real gap. Mixing at most 1,000 miniature images per pipe type, less than 10\\% of the training data, with 10,000 synthetic images improves the mean ADD-S AUC across pipe types over synthetic-only training for both estimators.",
+   "citations": 0
   },
   {
    "id": "2611.14985",
@@ -865,7 +892,8 @@
    ],
    "kw_score": 6,
    "tldr": "We present ILA, an Interface-Level Adapter for compliant humanoid motion tracking without dedicated interaction sensors.",
-   "summary": "We present ILA, an Interface-Level Adapter for compliant humanoid motion tracking without dedicated interaction sensors. We evaluate ILA with three humanoid motion trackers and achieve a 63.6--75.4% reduction in guidance-target error compared with their original policies."
+   "summary": "We present ILA, an Interface-Level Adapter for compliant humanoid motion tracking without dedicated interaction sensors. We evaluate ILA with three humanoid motion trackers and achieve a 63.6--75.4% reduction in guidance-target error compared with their original policies.",
+   "citations": 0
   },
   {
    "id": "2611.15280",
@@ -901,7 +929,8 @@
    ],
    "kw_score": 5,
    "tldr": "First, we introduce a unified learning framework that treats local navigation and locomotion as a joint optimization problem, bypassing the twist or pose command interface of classical control hierarchies.",
-   "summary": "First, we introduce a unified learning framework that treats local navigation and locomotion as a joint optimization problem, bypassing the twist or pose command interface of classical control hierarchies. We show that autonomous, high-speed trail navigation can be achieved through a single idea: encoding the trail as a semantic layer of the terrain."
+   "summary": "First, we introduce a unified learning framework that treats local navigation and locomotion as a joint optimization problem, bypassing the twist or pose command interface of classical control hierarchies. We show that autonomous, high-speed trail navigation can be achieved through a single idea: encoding the trail as a semantic layer of the terrain.",
+   "citations": 0
   },
   {
    "id": "2611.15112",
@@ -925,7 +954,8 @@
    ],
    "kw_score": 5,
    "tldr": "We present Elastra, a simulation framework for modeling this interaction and supporting the training and evaluation of robot control policies.",
-   "summary": "We present Elastra, a simulation framework for modeling this interaction and supporting the training and evaluation of robot control policies."
+   "summary": "We present Elastra, a simulation framework for modeling this interaction and supporting the training and evaluation of robot control policies.",
+   "citations": 0
   },
   {
    "id": "2611.15368",
@@ -954,7 +984,8 @@
    ],
    "kw_score": 4,
    "tldr": "In this paper, we propose Bind-WAM, a binding-uncertainty-guided WAM for selective future imagination.",
-   "summary": "In this paper, we propose Bind-WAM, a binding-uncertainty-guided WAM for selective future imagination. World Action Models (WAMs) can improve robot learning by jointly predicting future visual states and actions, but generating a visual future at every replanning step is expensive and sometimes unnecessary."
+   "summary": "In this paper, we propose Bind-WAM, a binding-uncertainty-guided WAM for selective future imagination. World Action Models (WAMs) can improve robot learning by jointly predicting future visual states and actions, but generating a visual future at every replanning step is expensive and sometimes unnecessary.",
+   "citations": 0
   },
   {
    "id": "2611.15277",
@@ -979,7 +1010,8 @@
    ],
    "kw_score": 4,
    "tldr": "We present DroneDiffusion, a perception-aware diffusion planner for local 3-D UAV trajectory generation that explicitly models and avoids failure zones caused by lens flare, overexposure, and reflective surfaces.",
-   "summary": "We present DroneDiffusion, a perception-aware diffusion planner for local 3-D UAV trajectory generation that explicitly models and avoids failure zones caused by lens flare, overexposure, and reflective surfaces. Reliability conditioning raises the mean perceptual reliability along generated trajectories to 0.71, compared with 0.63 for a geometric baseline, while guidance halves the collision rate of the learned prior from 14.7% to 7.8%."
+   "summary": "We present DroneDiffusion, a perception-aware diffusion planner for local 3-D UAV trajectory generation that explicitly models and avoids failure zones caused by lens flare, overexposure, and reflective surfaces. Reliability conditioning raises the mean perceptual reliability along generated trajectories to 0.71, compared with 0.63 for a geometric baseline, while guidance halves the collision rate of the learned prior from 14.7% to 7.8%.",
+   "citations": 1
   },
   {
    "id": "2611.15217",
@@ -1030,7 +1062,8 @@
    ],
    "kw_score": 4,
    "tldr": "In this paper, we present insights from the EU-funded Horizon Europe project ROADVIEW, which aims to develop robust, weather-aware perception and control modules for connected and automated vehicles operating under severe conditions, including snow, rain, and fog.",
-   "summary": "In this paper, we present insights from the EU-funded Horizon Europe project ROADVIEW, which aims to develop robust, weather-aware perception and control modules for connected and automated vehicles operating under severe conditions, including snow, rain, and fog."
+   "summary": "In this paper, we present insights from the EU-funded Horizon Europe project ROADVIEW, which aims to develop robust, weather-aware perception and control modules for connected and automated vehicles operating under severe conditions, including snow, rain, and fog.",
+   "citations": 0
   },
   {
    "id": "2611.14958",
@@ -1056,7 +1089,8 @@
    ],
    "kw_score": 4,
    "tldr": "In this work we present EM-ViT, a monocular depth estimation model that learns to adapt online relative depth inputs from a foundation model prior to the metric scale with observations collected during robotic operations.",
-   "summary": "In this work we present EM-ViT, a monocular depth estimation model that learns to adapt online relative depth inputs from a foundation model prior to the metric scale with observations collected during robotic operations."
+   "summary": "In this work we present EM-ViT, a monocular depth estimation model that learns to adapt online relative depth inputs from a foundation model prior to the metric scale with observations collected during robotic operations.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -1078,7 +1112,8 @@
    "org": "KAIST AI",
    "url": "https://arxiv.org/abs/2611.14320",
    "pdf": "https://arxiv.org/pdf/2611.14320",
-   "hf": "https://huggingface.co/papers/2611.14320"
+   "hf": "https://huggingface.co/papers/2611.14320",
+   "citations": 0
   },
   {
    "id": "2611.12885",
@@ -1100,7 +1135,8 @@
    "org": "ArcheOne-AI",
    "url": "https://arxiv.org/abs/2611.12885",
    "pdf": "https://arxiv.org/pdf/2611.12885",
-   "hf": "https://huggingface.co/papers/2611.12885"
+   "hf": "https://huggingface.co/papers/2611.12885",
+   "citations": 1
   },
   {
    "id": "2611.13001",
@@ -1123,7 +1159,8 @@
    "org": "Stable AI",
    "url": "https://arxiv.org/abs/2611.13001",
    "pdf": "https://arxiv.org/pdf/2611.13001",
-   "hf": "https://huggingface.co/papers/2611.13001"
+   "hf": "https://huggingface.co/papers/2611.13001",
+   "citations": 0
   },
   {
    "id": "2611.14033",
@@ -1150,7 +1187,8 @@
    "org": "Tsinghua University",
    "url": "https://arxiv.org/abs/2611.14033",
    "pdf": "https://arxiv.org/pdf/2611.14033",
-   "hf": "https://huggingface.co/papers/2611.14033"
+   "hf": "https://huggingface.co/papers/2611.14033",
+   "citations": 0
   },
   {
    "id": "2611.14210",
@@ -1168,7 +1206,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.14210",
    "pdf": "https://arxiv.org/pdf/2611.14210",
-   "hf": "https://huggingface.co/papers/2611.14210"
+   "hf": "https://huggingface.co/papers/2611.14210",
+   "citations": 1
   },
   {
    "id": "2611.12426",
@@ -1196,7 +1235,8 @@
    "org": "LongCat",
    "url": "https://arxiv.org/abs/2611.12426",
    "pdf": "https://arxiv.org/pdf/2611.12426",
-   "hf": "https://huggingface.co/papers/2611.12426"
+   "hf": "https://huggingface.co/papers/2611.12426",
+   "citations": 0
   },
   {
    "id": "2611.10649",
@@ -1218,7 +1258,8 @@
    "org": "HUAWEI Computing Systems Lab",
    "url": "https://arxiv.org/abs/2611.10649",
    "pdf": "https://arxiv.org/pdf/2611.10649",
-   "hf": "https://huggingface.co/papers/2611.10649"
+   "hf": "https://huggingface.co/papers/2611.10649",
+   "citations": 0
   },
   {
    "id": "2611.12177",
@@ -1264,7 +1305,8 @@
    "org": "MLL Lab",
    "url": "https://arxiv.org/abs/2611.12177",
    "pdf": "https://arxiv.org/pdf/2611.12177",
-   "hf": "https://huggingface.co/papers/2611.12177"
+   "hf": "https://huggingface.co/papers/2611.12177",
+   "citations": 2
   },
   {
    "id": "2611.14309",
@@ -1286,7 +1328,8 @@
    "org": "The Chinese University of Hong Kong",
    "url": "https://arxiv.org/abs/2611.14309",
    "pdf": "https://arxiv.org/pdf/2611.14309",
-   "hf": "https://huggingface.co/papers/2611.14309"
+   "hf": "https://huggingface.co/papers/2611.14309",
+   "citations": 0
   },
   {
    "id": "2611.07464",
@@ -1319,7 +1362,8 @@
    "org": "The Fin AI",
    "url": "https://arxiv.org/abs/2611.07464",
    "pdf": "https://arxiv.org/pdf/2611.07464",
-   "hf": "https://huggingface.co/papers/2611.07464"
+   "hf": "https://huggingface.co/papers/2611.07464",
+   "citations": 0
   }
  ]
 }

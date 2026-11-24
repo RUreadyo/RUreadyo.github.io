@@ -333,7 +333,7 @@
    "summary": "Finds 100 ms latency can nearly halve success on moving targets, with sensitivity varying by task and policy; async execution partially recovers. An empirical model predicts success from limited calibration with 5.7-7.8% RMSE to guide configuration choice.",
    "why": "Useful empirical grounding for real-time chunking and fast inference decisions.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.03520",
@@ -686,7 +686,7 @@
    "summary": "Maintains task history as language updated on detected events. On 10 real non-Markovian tasks (56 variants), +12.8 pts intra-episode over best baseline, 78% compositional subtask success, 4.5x less memory and 2.5x faster than keyframes.",
    "why": "Memory for VLAs; moderately relevant to history-conditioned policies.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.03091",

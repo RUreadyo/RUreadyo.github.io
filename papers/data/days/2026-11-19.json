@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "generated_at": "2026-11-24T09:59:33+00:00",
+ "generated_at": "2026-11-24T22:54:31+00:00",
  "ranker": "Claude",
  "overview": "Tactile and uncertainty work leads. TacInno supervises visuotactile VLAs only with the tactile change that vision and actions cannot predict, a neat answer to why policies ignore touch. CoMP fixes variance collapse when propagating epistemic uncertainty through flow-policy ODEs. TipDex-VTLA gates tactile refinement by visual reliability for dexterous hands. On world models, O2LaF reuses video-DiT priors for latent actions and Skill-JEPA shows that much of the difficulty of long-horizon planning comes from the action space.",
  "stats": {
@@ -1116,9 +1116,9 @@
    ],
    "abstract": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
    "summary": "Jeveration repurposes a frozen vision-language model to generate coherent images and perform image-to-image and dense prediction tasks in a single forward pass with fast 512x512 generation.",
-   "upvotes": 152,
+   "upvotes": 155,
    "github": "https://github.com/Carol-lyh/Jeveration",
-   "stars": 155,
+   "stars": 163,
    "project": "https://carol-lyh.github.io/Jeveration/",
    "org": "National University of Singapore",
    "url": "https://arxiv.org/abs/2611.24738",
@@ -1151,7 +1151,7 @@
    "summary": "Streaming video LLMs can continuously observe the world, yet often handle user requests in isolation. We introduce ALIVE, an interactive streaming video model supporting proactive monitoring, streaming task coordination, and feedback-seeking interaction. We construct ALIVE-SFT-288K and ALIVE-RL-3K for two-stage…",
    "upvotes": 42,
    "github": "https://github.com/lijinzhao30/ALIVE",
-   "stars": 53,
+   "stars": 57,
    "project": "https://lijinzhao30.github.io/ALIVE/",
    "org": "Tsinghua University",
    "url": "https://arxiv.org/abs/2611.21366",
@@ -1210,13 +1210,13 @@
    "summary": "Games are a rich testbed for visual agents, demanding perception, long-horizon planning, and precise control. However, collecting human gameplay is costly, and learning from gameplay videos requires inferring missing actions. Existing datasets also cover a limited range of games, often without explicit tasks or…",
    "upvotes": 29,
    "github": "https://github.com/game2player/Game2Player",
-   "stars": 27,
+   "stars": 28,
    "project": "https://game2player.github.io/",
    "org": "University of Illinois at Urbana-Champaign",
    "url": "https://arxiv.org/abs/2611.24154",
    "pdf": "https://arxiv.org/pdf/2611.24154",
    "hf": "https://huggingface.co/papers/2611.24154",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.11318",
@@ -1236,7 +1236,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.11318",
    "pdf": "https://arxiv.org/pdf/2611.11318",
-   "hf": "https://huggingface.co/papers/2611.11318"
+   "hf": "https://huggingface.co/papers/2611.11318",
+   "citations": 0
   },
   {
    "id": "2611.24654",
@@ -1279,7 +1280,8 @@
    "org": "Technion Israel institute of technology",
    "url": "https://arxiv.org/abs/2611.17600",
    "pdf": "https://arxiv.org/pdf/2611.17600",
-   "hf": "https://huggingface.co/papers/2611.17600"
+   "hf": "https://huggingface.co/papers/2611.17600",
+   "citations": 0
   },
   {
    "id": "2611.24789",
@@ -1347,7 +1349,7 @@
    "summary": "Visual proxies decouple explicit world-state simulation from photorealistic video synthesis, offering a controllable interface for both offline clip creation and real-time interactive streaming. Yet a practical renderer must address two challenges. Upstream proxies vary from coarse layouts to fine articulated geometry…",
    "upvotes": 19,
    "github": "https://github.com/inclusionAI/CodeWorldModel",
-   "stars": 176,
+   "stars": 182,
    "project": "https://www.inclusion-ai.org/CodeWorldModel/",
    "org": "inclusionAI",
    "url": "https://arxiv.org/abs/2611.22925",

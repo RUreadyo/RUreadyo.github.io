@@ -43,7 +43,8 @@
    "tldr": "Rebuilds human demos with an 880-taxel glove in MuJoCo so dexterous policies learn correct contact forces, closing a vision-only 'force gap'.",
    "summary": "Vision-based real-to-sim-to-real recovers hand motion but not touch: pose imitation grips at 0.31x recorded force and physics replay at 1.55x. TouchTwin reconstructs TouchScale recordings (head/wrist RGB-D plus tactile glove) in MuJoCo with agent-written physics-tested objects and a per-subject tactile hand replaying recorded touch, scaling human touch data for dexterous policies.",
    "why": "Human hand data plus tactile sensing plus sim-to-real for hands: core.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18976",
@@ -76,7 +77,8 @@
    "tldr": "Tactile-driven motor adaptation enables zero-shot sim-to-real forceful multi-finger humanoid manipulation, demonstrated on round-doorknob opening.",
    "summary": "Forceful multi-finger tasks need adaptation to uncertain contact dynamics. TMA structures policy learning around tactile-observable interactions, uses cone geometry as a contact inductive bias, and adapts motor behavior online from tactile history within a whole-body system, transferring zero-shot to real doorknob opening.",
    "why": "Tactile sim-to-real for multi-fingered hands, squarely in core interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17626",
@@ -103,7 +105,8 @@
    "tldr": "Trains joint world-action generators by differentiating task loss through dynamics-constrained trajectory optimization.",
    "summary": "WATO uses generated actions and states as references in a differentiable trajectory optimization during training only; at deployment it samples and ranks with a world model. Across 7 visual control environments it raises success from 79.9% for imitation joint WAMs.",
    "why": "Combines generative trajectory models with trajectory optimization; a novel training signal.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17631",
@@ -131,7 +134,8 @@
    "tldr": "Careful study of pretrained visual representations vs contact-centric representations for contact-rich insertion policies.",
    "summary": "Compares vision foundation model features with an explicit contact-centric representation on two insertion tasks under controlled occlusion and tolerance perturbations, testing real-world transfer; finds subtle task dependence.",
    "why": "Rigorous understanding paper on contact-rich IL (Posa/Jayaraman).",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17755",
@@ -161,7 +165,8 @@
    "tldr": "Vertex-aligned decoder for dense per-vertex hand contact estimation from a single RGB image.",
    "summary": "VACO samples image features at each projected MANO vertex, setting SOTA on five benchmarks with +20.7 pp F1.",
    "why": "Hand contact extraction from images can supervise learning from human video.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -201,7 +206,8 @@
    "tldr": "RL-trains an open 27B reasoning model in simulation to output end-effector poses and control real robots without demos.",
    "summary": "PEAR scales robot-use RL in sim; skills generalize beyond training tasks and transfer to real robots, approaching proprietary robot-use agents.",
    "why": "Interesting alternate VLA paradigm, though coarse control.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.18298",
@@ -232,7 +238,8 @@
    "tldr": "A VLM writes staged cost programs for a shared sampling-based MPC to perform contact-rich manipulation via real-to-sim digital twins.",
    "summary": "Objectives as Policies builds a digital twin, has the VLM generate stage costs and completion conditions from a cost library, and runs sampling MPC.",
    "why": "Combines VLMs with contact-rich MPC; relevant to control interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18891",
@@ -261,7 +268,8 @@
    "tldr": "Merges VLA and base VLM weights via SVD-decomposed task vectors with learned per-component coefficients to restore VL skills.",
    "summary": "Learns scalar mixing per singular component to preserve both action prediction and vision-language capabilities, beating merging baselines.",
    "why": "Cheap fix for VLA catastrophic forgetting.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18372",
@@ -291,7 +299,8 @@
    "tldr": "Life-cycle survey of 89 VLA works organized along seven design, training and deployment axes, comparing 22 models.",
    "summary": "Covers inputs/memory, architecture, action output, intermediate predictions, pretraining data, post-training, and real-time execution, from RT-2 through late 2026.",
    "why": "Useful VLA reference map.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17831",
@@ -320,7 +329,8 @@
    "tldr": "Shows VLMs ignore dynamics encoded by V-JEPA and builds counterfactual supervision to make the LM read them.",
    "summary": "A linear probe reads speed from frozen V-JEPA at 87% while the VLM is at chance; dynamics lie in a shared subspace for predictive encoders but not SigLIP. Pixel-transformed answer-balanced videos fix this.",
    "why": "Insight on V-JEPA representations, indirectly relevant to VLA encoders.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18390",
@@ -346,7 +356,8 @@
    "tldr": "Sampling-based MPC with contraction-certified feedback in each rollout plus CBF-verified execution for safety.",
    "summary": "CS-MPC proves stochastic stability and probabilistic safety, matching MPPI tracking with 7-20x fewer rollouts on rover, quadrotor and asteroid landing.",
    "why": "Improves MPPI efficiency; control interest but not manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18549",
@@ -375,7 +386,8 @@
    "tldr": "Simple large-patch DiT for pixel-space video diffusion without autoencoder, competitive with latent baselines.",
    "summary": "JVT studies patch embeddings, registers and adaLN; supports joint RGB-disparity generation improving camera following.",
    "why": "Pixel-space diffusion design insights.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18919",
@@ -404,7 +416,8 @@
    "tldr": "Mines persistent RL grasping failures and gets human VR grasp-point demos to fix them.",
    "summary": "Humans contribute only grasp points in VR, returned to training of a point-cloud grasping policy.",
    "why": "Human-in-the-loop RL; gripper grasping.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.17751",
@@ -430,7 +443,8 @@
    "tldr": "Controlled study of which cross-view consistency matters for multi-view augmentation in Diffusion Policy.",
    "summary": "Appearance inconsistencies cost little; geometric anti-coupling drops LIBERO success by 3.3 pp, with notable reliance on wrist-view geometry.",
    "why": "Small but careful augmentation insight for diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.18305",
@@ -453,7 +467,8 @@
    "kw_score": 10,
    "tldr": "In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe visual disturbances.",
    "summary": "In this paper, we present PROOF (Perceptive Robustness via Out-of-Distribution Fallback for Legged Locomotion), a perceptive locomotion framework that enables robust locomotion under severe visual disturbances. Vision-based perceptive locomotion has enabled legged robots to achieve agile and terrain-aware locomotion across complex environments.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.18546",
@@ -474,7 +489,8 @@
    "kw_score": 6,
    "tldr": "In this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption.",
    "summary": "In this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption. Additionally, real-time implementation of this model can be achieved, meeting the demand for computational efficiency in robotic applications.",
-   "venue": "IJRR"
+   "venue": "IJRR",
+   "citations": 0
   },
   {
    "id": "2611.18365",
@@ -506,7 +522,9 @@
    ],
    "kw_score": 5,
    "tldr": "This work demonstrates that \\ac{RL} and sim-to-real transfer enable dynamic autonomous control of heavy machinery, directly contributing to greater automation in heavy equipment sectors.",
-   "summary": "This work demonstrates that \\ac{RL} and sim-to-real transfer enable dynamic autonomous control of heavy machinery, directly contributing to greater automation in heavy equipment sectors. Automation of heavy machinery offers the opportunity to improve productivity in mechanized industries such as construction, mining, and material handling."
+   "summary": "This work demonstrates that \\ac{RL} and sim-to-real transfer enable dynamic autonomous control of heavy machinery, directly contributing to greater automation in heavy equipment sectors. Automation of heavy machinery offers the opportunity to improve productivity in mechanized industries such as construction, mining, and material handling.",
+   "citations": 0,
+   "venue": "Science Robotics 2026"
   },
   {
    "id": "2611.18003",
@@ -532,7 +550,8 @@
    ],
    "kw_score": 5,
    "tldr": "We introduce a body-aligned virtual joint space upstream of this mapping: policy actions and observations follow a common anatomical convention, and a deterministic kinematic layer maps virtual targets to native ones, leaving the existing transmission and low-level control…",
-   "summary": "We introduce a body-aligned virtual joint space upstream of this mapping: policy actions and observations follow a common anatomical convention, and a deterministic kinematic layer maps virtual targets to native ones, leaving the existing transmission and low-level control stack unchanged."
+   "summary": "We introduce a body-aligned virtual joint space upstream of this mapping: policy actions and observations follow a common anatomical convention, and a deterministic kinematic layer maps virtual targets to native ones, leaving the existing transmission and low-level control stack unchanged.",
+   "citations": 0
   },
   {
    "id": "2611.18982",
@@ -553,7 +572,8 @@
    ],
    "kw_score": 4,
    "tldr": "This paper argues that the robotics and AI community should adopt disclosure standards for demonstration videos.",
-   "summary": "This paper argues that the robotics and AI community should adopt disclosure standards for demonstration videos. Using evidence from behavioral science, we design a disclosure intervention and demonstrate that the inclusion of clear disclosures in robot demonstration videos significantly improves discernment of visual and behavioral authenticity, as well as understanding robots' capabilities."
+   "summary": "This paper argues that the robotics and AI community should adopt disclosure standards for demonstration videos. Using evidence from behavioral science, we design a disclosure intervention and demonstrate that the inclusion of clear disclosures in robot demonstration videos significantly improves discernment of visual and behavioral authenticity, as well as understanding robots' capabilities.",
+   "citations": 0
   },
   {
    "id": "2611.18359",
@@ -591,7 +611,8 @@
    ],
    "kw_score": 4,
    "tldr": "Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance.",
-   "summary": "Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy."
+   "summary": "Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy.",
+   "citations": 1
   },
   {
    "id": "2611.17720",
@@ -624,7 +645,8 @@
    ],
    "kw_score": 4,
    "tldr": "We introduce Ego2Flow, a closed-loop benchmark for assessing the traffic-system impact of autonomous driving on maps distilled from real-world cities.",
-   "summary": "We introduce Ego2Flow, a closed-loop benchmark for assessing the traffic-system impact of autonomous driving on maps distilled from real-world cities. Compared with existing construction methods, our framework achieves the lowest average displacement error between planning outputs from paired real and simulated observations."
+   "summary": "We introduce Ego2Flow, a closed-loop benchmark for assessing the traffic-system impact of autonomous driving on maps distilled from real-world cities. Compared with existing construction methods, our framework achieves the lowest average displacement error between planning outputs from paired real and simulated observations.",
+   "citations": 0
   },
   {
    "id": "2611.17658",
@@ -647,7 +669,8 @@
    ],
    "kw_score": 4,
    "tldr": "Imitation policies for robot manipulation are often trained on noisy object positions, and they learn to discount the noisy reading.",
-   "summary": "Imitation policies for robot manipulation are often trained on noisy object positions, and they learn to discount the noisy reading. Post hoc, lower $α$ went with lower success, steeply for diffusion, and a registered prospective test confirmed this for diffusion on Can at two new noise levels: the measured $α$ predicted success before any rollout, within 0.03 (95% intervals $\\pm 0.08$), although training noise predicts it equally well."
+   "summary": "Imitation policies for robot manipulation are often trained on noisy object positions, and they learn to discount the noisy reading. Post hoc, lower $α$ went with lower success, steeply for diffusion, and a registered prospective test confirmed this for diffusion on Can at two new noise levels: the measured $α$ predicted success before any rollout, within 0.03 (95% intervals $\\pm 0.08$), although training noise predicts it equally well.",
+   "citations": 0
   },
   {
    "id": "2611.17802",
@@ -673,7 +696,8 @@
    ],
    "kw_score": 3,
    "tldr": "Service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions.",
-   "summary": "Service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions. Averaged over the eight conditions, the proposed model achieved an identification accuracy of 0.89 while inferring the number of person concepts from the observations, which is comparable to k-means clustering that was supplied with the true number of participants (0.88)."
+   "summary": "Service robots in domestic and office environments must identify users to provide personalized services based on their preferences and previous interactions. Averaged over the eight conditions, the proposed model achieved an identification accuracy of 0.89 while inferring the number of person concepts from the observations, which is comparable to k-means clustering that was supplied with the true number of participants (0.88).",
+   "citations": 0
   },
   {
    "id": "2611.17638",
@@ -697,7 +721,8 @@
    ],
    "kw_score": 3,
    "tldr": "Here, we present an AI-guided robotic in situ printing platform for fabricating wireless wound electrotherapy devices directly on transparent wound dressings.",
-   "summary": "Here, we present an AI-guided robotic in situ printing platform for fabricating wireless wound electrotherapy devices directly on transparent wound dressings."
+   "summary": "Here, we present an AI-guided robotic in situ printing platform for fabricating wireless wound electrotherapy devices directly on transparent wound dressings.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -720,7 +745,8 @@
    "org": "National University of Singapore",
    "url": "https://arxiv.org/abs/2611.15777",
    "pdf": "https://arxiv.org/pdf/2611.15777",
-   "hf": "https://huggingface.co/papers/2611.15777"
+   "hf": "https://huggingface.co/papers/2611.15777",
+   "citations": 3
   },
   {
    "id": "2611.14815",
@@ -742,7 +768,8 @@
    "org": "NVIDIA",
    "url": "https://arxiv.org/abs/2611.14815",
    "pdf": "https://arxiv.org/pdf/2611.14815",
-   "hf": "https://huggingface.co/papers/2611.14815"
+   "hf": "https://huggingface.co/papers/2611.14815",
+   "citations": 0
   },
   {
    "id": "2611.13004",
@@ -769,7 +796,8 @@
    "org": "LongCat",
    "url": "https://arxiv.org/abs/2611.13004",
    "pdf": "https://arxiv.org/pdf/2611.13004",
-   "hf": "https://huggingface.co/papers/2611.13004"
+   "hf": "https://huggingface.co/papers/2611.13004",
+   "citations": 0
   },
   {
    "id": "2611.15131",
@@ -805,7 +833,8 @@
    "org": "inclusionAI",
    "url": "https://arxiv.org/abs/2611.15131",
    "pdf": "https://arxiv.org/pdf/2611.15131",
-   "hf": "https://huggingface.co/papers/2611.15131"
+   "hf": "https://huggingface.co/papers/2611.15131",
+   "citations": 0
   },
   {
    "id": "2611.16748",
@@ -835,7 +864,8 @@
    "org": "DAGroup-PKU",
    "url": "https://arxiv.org/abs/2611.16748",
    "pdf": "https://arxiv.org/pdf/2611.16748",
-   "hf": "https://huggingface.co/papers/2611.16748"
+   "hf": "https://huggingface.co/papers/2611.16748",
+   "citations": 0
   },
   {
    "id": "2611.15844",
@@ -858,7 +888,8 @@
    "org": "Fundamental AI Lab at UTN",
    "url": "https://arxiv.org/abs/2611.15844",
    "pdf": "https://arxiv.org/pdf/2611.15844",
-   "hf": "https://huggingface.co/papers/2611.15844"
+   "hf": "https://huggingface.co/papers/2611.15844",
+   "citations": 0
   },
   {
    "id": "2611.17167",
@@ -884,7 +915,8 @@
    "org": "Zhejiang University",
    "url": "https://arxiv.org/abs/2611.17167",
    "pdf": "https://arxiv.org/pdf/2611.17167",
-   "hf": "https://huggingface.co/papers/2611.17167"
+   "hf": "https://huggingface.co/papers/2611.17167",
+   "citations": 1
   },
   {
    "id": "2611.17060",
@@ -921,7 +953,8 @@
    "org": "Ropedia",
    "url": "https://arxiv.org/abs/2611.17060",
    "pdf": "https://arxiv.org/pdf/2611.17060",
-   "hf": "https://huggingface.co/papers/2611.17060"
+   "hf": "https://huggingface.co/papers/2611.17060",
+   "citations": 0
   },
   {
    "id": "2611.05984",
@@ -974,7 +1007,8 @@
    "org": "NVIDIA",
    "url": "https://arxiv.org/abs/2611.17331",
    "pdf": "https://arxiv.org/pdf/2611.17331",
-   "hf": "https://huggingface.co/papers/2611.17331"
+   "hf": "https://huggingface.co/papers/2611.17331",
+   "citations": 1
   }
  ]
 }

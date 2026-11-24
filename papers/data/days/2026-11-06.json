@@ -43,7 +43,8 @@
    "tldr": "BATCH aligns human and robot behaviors via cycle-consistent temporal representations, then co-trains an autoregressive video-action diffusion model with alignment and style transfer.",
    "summary": "Human demos differ from robot data in embodiment, viewpoint and timing. BATCH learns self-supervised cycle-consistent temporal correspondences between human and robot videos and uses them for behavior-aligned co-training and human-to-robot style transfer in a video-action diffusion model. On real tasks it generalizes better to unseen configurations than unaligned co-training and prior cross-embodiment baselines.",
    "why": "Learning from human demos with video-action diffusion, from Shuran Song's group.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.09672",
@@ -88,7 +89,8 @@
    "tldr": "ODEAction replaces action-chunk prediction with an ODE over action evolution time, generating actions recursively from the current action.",
    "summary": "Chunked VLA outputs create discontinuities at chunk boundaries. ODEAction learns an Action Transition Field and integrates it from the current action to produce subsequent actions with explicit dependencies, as a modular action head. On LIBERO, EBench, RoboTwin and real robots it improves success and trajectory smoothness over chunk-based baselines, especially for fine manipulation.",
    "why": "Directly challenges action chunking, reminiscent of streaming flow policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.09293",
@@ -117,7 +119,8 @@
    "tldr": "MDF++ is a visuo-tactile world-action model learning multisensory latents end-to-end with a diffusion backbone, beating frozen-encoder WAMs on contact-rich tasks.",
    "summary": "WAMs use frozen reconstruction encoders poorly suited for control. MDF++ learns visuo-tactile representations end-to-end with a multi-task strategy exploiting cross-modal correlations to avoid collapse. On real bolt screwing and nut mating it outperforms frozen-representation WAMs by up to 50%.",
    "why": "Tactile + world-action modeling for contact-rich manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08939",
@@ -151,7 +154,8 @@
    "tldr": "RevoSim simulates 285 piezoresistive taxels and five visuotactile fingertips on the BrainCo Revo3 hand at up to 4,096 parallel envs.",
    "summary": "Dexterous tactile RL needs fast multimodal tactile simulation. RevoSim jointly generates pressure, depth, RGB and marker-displacement signals for the Revo3 hand, scaling to 4,096 environments on one RTX 5090. In-hand manipulation and grasping policies are trained in sim; real transfer is left for future work.",
    "why": "Useful tactile-hand simulation infrastructure, but no sim-to-real yet.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.09096",
@@ -183,7 +187,8 @@
    "summary": "AR video diffusion discards the intermediate predictions of previous chunks. TraF uses denoising trajectories as context, trained first on pseudo-trajectories from Gaussian interpolation of ground truth, then on the student's own rollouts with a teacher. It scores 85.15 on VBench (+0.84 over Self Forcing) and has the best quality on 30-second (6x horizon) generation.",
    "why": "Fresh idea in the diffusion forcing / AR video line you follow.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -218,7 +223,8 @@
    "summary": "BC fails when expert data come from biased or incomplete state distributions. DrilDICE derives a feasible distributionally robust BC objective using stationary distribution correction ratio estimation. It outperforms offline IL baselines across diverse covariate-shift scenarios.",
    "why": "Principled BC robustness idea; benchmarks likely low-dimensional.",
    "venue": "NeurIPS 2024",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 23
   },
   {
    "id": "2611.09892",
@@ -261,7 +267,8 @@
    "tldr": "Apple's AMP1 harness lets a generalist AI model directly command manipulators, outperforming VLAs and WAMs zero-shot in sim and on 104/108 real trials.",
    "summary": "The paper argues generalist agents can control manipulators more reliably than specialist policies. AMP1 provides no motor skills yet reaches 85.6% zero-shot on RoboLab-120 vs 49.2% for the best VLA, succeeds on 104 of 108 real trials (15-20x fewer failures), and with cross-episode memory cuts RoboDojo bimanual failures 4.6x.",
    "why": "Provocative challenge to the VLA paradigm; worth knowing even if far from dexterous control.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.09036",
@@ -303,7 +310,8 @@
    "tldr": "ToolDex is an ego-exo multi-camera human demonstration dataset of creative tool use with hand, tool and object annotations and benchmarks.",
    "summary": "Real-world creative tool-use data is scarce. ToolDex records humans selecting and repurposing objects as tools with egocentric plus eight exocentric cameras, annotating hands, tools, targets and deformable interactions. Benchmarks cover tool-use reasoning, sparse-view 3D/4D reconstruction and robot policy learning.",
    "why": "Human hand-object data source for dexterous tool use.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08917",
@@ -333,7 +341,8 @@
    "summary": "Shared fine-tuning gives no locus for reusable skills. The authors find per-skill LoRA updates occupy a distinguishable low-dimensional subspace, then build a primitive bank with skill residuals and a router supervised by an action-derived oracle. On RoboCasa365 it gets 56.43% atomic and 20.00% composite success vs 17.86%/17.50% for pi0.5-LoRA.",
    "why": "Modest gains on continual VLA adaptation.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.09124",
@@ -369,7 +378,8 @@
    "tldr": "A2-MEAS couples a history- and world-model-augmented VLA with learned 'correction codes' from a MetaBrain agent for failure recovery, topping BEHAVIOR 2026.",
    "summary": "Sustained autonomy needs efficient control and recovery. A2-WLA adds motion-aware history and a latent world model to a VLA; correction codes combining language, spatial evidence and history are distilled into weights or applied at test time. It gets 0.6411 Q-score on all 100 BEHAVIOR 2026 tasks, 95.05% on RoboTwin 2.0, 57.92% vs 26.67% for pi0.5 on 12 real tasks, and 4x training throughput.",
    "why": "Big systems result with strong numbers; history-conditioning and recovery are relevant pieces.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08872",
@@ -398,7 +408,8 @@
    "tldr": "Lodos is a parallel rigid-body simulator built for fast detailed mesh-mesh contact, about 10x throughput over existing simulators.",
    "summary": "Parallel simulators rely on primitive collision approximations; mesh-mesh collisions slow throughput. Lodos redesigns broadphase, narrowphase and contact dynamics, matching established simulators in faithfulness with roughly an order of magnitude higher throughput in the detailed mesh setting.",
    "why": "Could matter for contact-rich dexterous sim with complex geometry.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.09625",
@@ -428,7 +439,8 @@
    "tldr": "TT-MBRL encodes episodic memory into world model weights via test-time gradient descent, setting SOTA on Memory Maze.",
    "summary": "MBRL struggles with long-term memory. TT-MBRL fine-tunes the world model per episode at test time to store observations in parameters rather than context. It improves across architectures on Memory Maze 2D, sets SOTA on 3D Memory Maze, and keeps performance on DMC and Atari 100k.",
    "why": "Interesting test-time-training angle on world-model memory.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08977",
@@ -460,7 +472,8 @@
    "tldr": "Energy-Based Reasoners frame looped latent reasoning as gradient descent on a learned energy, with exploration-based training, hitting 99.9% on Sudoku-Extreme.",
    "summary": "Looped models lack a measure of progress. EBRs learn an energy over latent states, iterate gradient descent on it with an energy-based stopping signal, and use exploration-based training to shape the landscape. They match or beat recurrent reasoners with 345x less inference compute on Sudoku-Extreme and achieve SOTA solution coverage on multi-solution tasks.",
    "why": "Relevant to energy-based / equilibrium-style generative modeling interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 2
   },
   {
    "id": "2611.09417",
@@ -488,7 +501,8 @@
    "tldr": "Future-informed actor-critic conditions the critic on action-dependent future features and derives a corresponding policy gradient.",
    "summary": "Prior hindsight critics only use exogenous future features. The authors define a future-informed value function that can condition on endogenous features and derive an unbiased future-informed policy gradient. It outperforms standard actor-critic under noisy and sparse rewards.",
    "why": "Policy-gradient theory contribution; small-scale experiments.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.09684",
@@ -525,7 +539,8 @@
    "tldr": "SURE trains VLAs with a probabilistic transposed-conv action decoder over bins and Soft-DTW chunk alignment to model spatial and temporal demo variability.",
    "summary": "Pointwise action supervision ignores that nearby actions and different speeds are equally valid. SURE models spatial uncertainty via local correlations among action bins and temporal variations with Soft-DTW alignment. With 10% of demos or 20% of steps it matches or beats baseline VLAs on LIBERO, RoboTwin 2.0 and real tasks.",
    "why": "Data-efficiency idea related to action representation; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.08920",
@@ -553,7 +568,8 @@
    "tldr": "HOC2R extracts hand-object contact trajectories from human videos with frozen DINOv3/SAM 2.1 features for robot motion transfer.",
    "summary": "Human videos lack robot-usable motion cues. HOC2R adds learned heads for hand-object association and contact localization, supporting contact counting in untrimmed videos and two-finger contact localization. It improves contact-count accuracy from 58.1% to 71.4% and halves localization error vs adapted VRB2, succeeding on 3 of 6 robot sequences.",
    "why": "Human-video-to-robot contact extraction; relevant to learning from human data but gripper-focused and modest results.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.08895",
@@ -579,7 +595,8 @@
    "tldr": "Mechanistic study finds OpenVLA ignores negated instructions and localizes where its goal representation can be edited.",
    "summary": "Using LIBERO-Goal, OpenVLA executed the forbidden task in 79% of negated rollouts. Activation patching shows goals depend on instruction tokens before layer 12 and on the last prompt token after layer 16; steering at layer 8 redirected 12/18 rollouts while later fixed vectors redirected none of 158. Goal probes detect non-compliance better than failure detectors.",
    "why": "Nice interpretability analysis of VLAs, but OpenVLA-specific.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.10061",
@@ -610,7 +627,8 @@
    "kw_score": 20,
    "tldr": "We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space.",
    "summary": "We introduce UniLatent, a cross-embodiment transfer framework that reduces the embodiment-induced observation gap in a shared latent space. Across three simulation tasks and two target robot arms, UniLatent reaches up to 93% zero-shot success, exceeding the strongest pixel-translation baseline by over 30 points on average.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.09777",
@@ -636,7 +654,8 @@
    "kw_score": 15,
    "tldr": "Snake robots can leverage their hyper-redundant morphology for both locomotion and manipulation through distributed body contact but whole-body loco-manipulation is particularly challenging since the entire body serves simultaneously as propulsive mechanism and manipulation…",
    "summary": "Snake robots can leverage their hyper-redundant morphology for both locomotion and manipulation through distributed body contact but whole-body loco-manipulation is particularly challenging since the entire body serves simultaneously as propulsive mechanism and manipulation tool Prior work on wheeled legged and snake robot platforms has decoupled these functions through dedicated appendages body segmentation or grippers We present closed-loop loco-manipulation with our snake robot COBRA without this distinction such that any part of the body may make contact We develop a contact-implicit dynamic model unifying robot-ground robot-object and object-ground interactions within a Moreau-Jean time-stepping framework and formulate a trajectory optimization over the full-order dynamics guided by a geometric planner and nominal proportional controller to autonomously push an object to a goal location during sidewinding We validate the planner and controller on hardware across varied configurations and present simulation results for a simplified trajectory optimization that resolves robot-object and object-ground contacts",
-   "venue": "IROS 2026"
+   "venue": "IROS 2026",
+   "citations": 0
   },
   {
    "id": "2611.08936",
@@ -662,7 +681,8 @@
    "kw_score": 13,
    "tldr": "Motivated by this observation, we propose Ordered Policy Optimization (\\textsc{OPO}).",
    "summary": "Motivated by this observation, we propose Ordered Policy Optimization (\\textsc{OPO}). Experiments conducted on MuJoCo and Atari benchmarks demonstrate that this simple modification achieves strong performance relative to established baselines.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.09266",
@@ -695,7 +715,8 @@
    ],
    "kw_score": 11,
    "tldr": "We present SUGARv2, a unified framework for learning diverse visual humanoid loco-manipulation skills through interaction reference synthesis and a shared training pipeline.",
-   "summary": "We present SUGARv2, a unified framework for learning diverse visual humanoid loco-manipulation skills through interaction reference synthesis and a shared training pipeline. Across five humanoid loco-manipulation tasks, SUGARv2 achieves a mean success rate of 91.0% in simulation."
+   "summary": "We present SUGARv2, a unified framework for learning diverse visual humanoid loco-manipulation skills through interaction reference synthesis and a shared training pipeline. Across five humanoid loco-manipulation tasks, SUGARv2 achieves a mean success rate of 91.0% in simulation.",
+   "citations": 0
   },
   {
    "id": "2611.09864",
@@ -721,7 +742,8 @@
    ],
    "kw_score": 10,
    "tldr": "Therefore, we propose Grasp-TAGS, a task-aware grasp selection framework for goal-conditioned large-object rearrangement.",
-   "summary": "Therefore, we propose Grasp-TAGS, a task-aware grasp selection framework for goal-conditioned large-object rearrangement. Experiments demonstrate that Grasp-TAGS improves rearrangement success over both fixed single-grasp policies and random grasp selection, achieving an average success rate of 89.84% compared with 79.87% for the best-performing single-grasp policies, an improvement of 9.97 percentage points."
+   "summary": "Therefore, we propose Grasp-TAGS, a task-aware grasp selection framework for goal-conditioned large-object rearrangement. Experiments demonstrate that Grasp-TAGS improves rearrangement success over both fixed single-grasp policies and random grasp selection, achieving an average success rate of 89.84% compared with 79.87% for the best-performing single-grasp policies, an improvement of 9.97 percentage points.",
+   "citations": 0
   },
   {
    "id": "2611.09605",
@@ -749,7 +771,8 @@
    ],
    "kw_score": 10,
    "tldr": "We propose DKWBC, a dynamics-informed whole-body control framework that combines explicit model-based tracking with a learned balancing residual.",
-   "summary": "We propose DKWBC, a dynamics-informed whole-body control framework that combines explicit model-based tracking with a learned balancing residual."
+   "summary": "We propose DKWBC, a dynamics-informed whole-body control framework that combines explicit model-based tracking with a learned balancing residual.",
+   "citations": 0
   },
   {
    "id": "2611.09005",
@@ -772,7 +795,8 @@
    ],
    "kw_score": 9,
    "tldr": "We propose a hierarchical algorithm in which, at the high level, a reinforcement learning policy produces a dynamic, blob-like elliptical patch that morphs its shape in real time, squeezing, stretching, and orienting itself around obstacles and through tight spaces.",
-   "summary": "We propose a hierarchical algorithm in which, at the high level, a reinforcement learning policy produces a dynamic, blob-like elliptical patch that morphs its shape in real time, squeezing, stretching, and orienting itself around obstacles and through tight spaces. FastFunnels achieves an 89% completion rate at 7.73 m/s, while all baselines either fail to complete the track or succeed only at very low speeds (0.07-1.79 m/s, about 40% completion rate)."
+   "summary": "We propose a hierarchical algorithm in which, at the high level, a reinforcement learning policy produces a dynamic, blob-like elliptical patch that morphs its shape in real time, squeezing, stretching, and orienting itself around obstacles and through tight spaces. FastFunnels achieves an 89% completion rate at 7.73 m/s, while all baselines either fail to complete the track or succeed only at very low speeds (0.07-1.79 m/s, about 40% completion rate).",
+   "citations": 0
   },
   {
    "id": "2611.08857",
@@ -796,7 +820,8 @@
    ],
    "kw_score": 9,
    "tldr": "This is why we introduce \\method{}, which learns humanoid locomotion from minutes of samples with a reward that only requires the onboard Inertial Measurement Unit (IMU).",
-   "summary": "This is why we introduce \\method{}, which learns humanoid locomotion from minutes of samples with a reward that only requires the onboard Inertial Measurement Unit (IMU). Compared to learning without these two components, it reduces the falls during training by 81%, while without them the robot learns only in over an hour."
+   "summary": "This is why we introduce \\method{}, which learns humanoid locomotion from minutes of samples with a reward that only requires the onboard Inertial Measurement Unit (IMU). Compared to learning without these two components, it reduces the falls during training by 81%, while without them the robot learns only in over an hour.",
+   "citations": 0
   },
   {
    "id": "2611.09708",
@@ -825,7 +850,8 @@
    ],
    "kw_score": 8,
    "tldr": "Wearable haptic interfaces deliver physical stimuli to the skin, yet perceived locations vary widely across users and diverge from actuator locations, particularly for emergent tactile-feedback techniques.",
-   "summary": "Wearable haptic interfaces deliver physical stimuli to the skin, yet perceived locations vary widely across users and diverge from actuator locations, particularly for emergent tactile-feedback techniques."
+   "summary": "Wearable haptic interfaces deliver physical stimuli to the skin, yet perceived locations vary widely across users and diverge from actuator locations, particularly for emergent tactile-feedback techniques.",
+   "citations": 0
   },
   {
    "id": "2611.09670",
@@ -850,7 +876,8 @@
    ],
    "kw_score": 8,
    "tldr": "Robots increasingly plan by searching against a reward model learned from human preferences.",
-   "summary": "Robots increasingly plan by searching against a reward model learned from human preferences. On HalfCheetah and Hopper with crowd-sourced labels, and on Meta-World drawer-open and plate-slide with synthetic and blind human labels, harder MPPI search cuts true return by up to 76% while held-out label accuracy stays at 0.75-0.97; with human labels the drawer opens in 0 of 20 runs, against 10 of 10 for the cloned policy the planner starts from."
+   "summary": "Robots increasingly plan by searching against a reward model learned from human preferences. On HalfCheetah and Hopper with crowd-sourced labels, and on Meta-World drawer-open and plate-slide with synthetic and blind human labels, harder MPPI search cuts true return by up to 76% while held-out label accuracy stays at 0.75-0.97; with human labels the drawer opens in 0 of 20 runs, against 10 of 10 for the cloned policy the planner starts from.",
+   "citations": 0
   },
   {
    "id": "2611.09376",
@@ -875,7 +902,8 @@
    ],
    "kw_score": 8,
    "tldr": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows.",
-   "summary": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows. Three independent sessions on $π_{0.5}$ all improve success on 765 held-out paraphrases; the best raises success from 86.3\\% to 92.0\\% (48 repairs, four regressions; exact paired $p=1.31\\times10^{-10}$)."
+   "summary": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows. Three independent sessions on $π_{0.5}$ all improve success on 765 held-out paraphrases; the best raises success from 86.3\\% to 92.0\\% (48 repairs, four regressions; exact paired $p=1.31\\times10^{-10}$).",
+   "citations": 5
   },
   {
    "id": "2611.09340",
@@ -905,7 +933,8 @@
    ],
    "kw_score": 8,
    "tldr": "We introduce an inferencetime obstacle-guidance framework for pretrained relative-action diffusion policies.",
-   "summary": "We introduce an inferencetime obstacle-guidance framework for pretrained relative-action diffusion policies. Real-robot experiments across seven obstacleconstrained scenarios spanning four manipulation tasks show that our method achieves 105/140 (75.0%) collision-free task successes, compared with 8/140 (5.7%) for absolute-action pointwise guidance."
+   "summary": "We introduce an inferencetime obstacle-guidance framework for pretrained relative-action diffusion policies. Real-robot experiments across seven obstacleconstrained scenarios spanning four manipulation tasks show that our method achieves 105/140 (75.0%) collision-free task successes, compared with 8/140 (5.7%) for absolute-action pointwise guidance.",
+   "citations": 0
   },
   {
    "id": "2611.08814",
@@ -932,7 +961,8 @@
    ],
    "kw_score": 8,
    "tldr": "To address this, we present an object-centric reinforcement learning framework that treats each part as an agent and learns a shared policy for continuous assembly control.",
-   "summary": "To address this, we present an object-centric reinforcement learning framework that treats each part as an agent and learns a shared policy for continuous assembly control."
+   "summary": "To address this, we present an object-centric reinforcement learning framework that treats each part as an agent and learns a shared policy for continuous assembly control.",
+   "citations": 0
   },
   {
    "id": "2611.09270",
@@ -955,7 +985,8 @@
    ],
    "kw_score": 6,
    "tldr": "To overcome these limitations, we introduce Execution-Grounded Traversability (EGT), defined as the probability that a vehicle-controller pair can execute a candidate path while meeting trajectory-level tracking and progress requirements.",
-   "summary": "To overcome these limitations, we introduce Execution-Grounded Traversability (EGT), defined as the probability that a vehicle-controller pair can execute a candidate path while meeting trajectory-level tracking and progress requirements. Across 650 simulated trials on unseen terrains, EGT reduces safe-path rejection to 2.2% (versus 11.4%-39.5% for pose-margin and force-angle baselines) and unsafe acceptance to 7.7%."
+   "summary": "To overcome these limitations, we introduce Execution-Grounded Traversability (EGT), defined as the probability that a vehicle-controller pair can execute a candidate path while meeting trajectory-level tracking and progress requirements. Across 650 simulated trials on unseen terrains, EGT reduces safe-path rejection to 2.2% (versus 11.4%-39.5% for pose-margin and force-angle baselines) and unsafe acceptance to 7.7%.",
+   "citations": 0
   },
   {
    "id": "2611.09145",
@@ -982,7 +1013,8 @@
    "kw_score": 6,
    "tldr": "We introduce Augmentron, a geometry-aware pipeline that generates reusable scene representations and renders them through recorded camera poses.",
    "summary": "We introduce Augmentron, a geometry-aware pipeline that generates reusable scene representations and renders them through recorded camera poses. Across three physical manipulation tasks, replacing half of the real world training dataset with Augmentron data improves model success across three tasks for both in out-of-distribution distractor objects, and out-of-distribution workspace variation evaluations.",
-   "venue": "NeurIPS 2026 Workshop"
+   "venue": "NeurIPS 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.09130",
@@ -1003,7 +1035,8 @@
    "kw_score": 6,
    "tldr": "We propose a planner-verified counterfactual (CF) test: holding the grasp pose fixed, we insert a solid obstacle into the approach corridor, add its points to the model input, and let a planner re-derive the label, which flips from feasible to infeasible.",
    "summary": "We propose a planner-verified counterfactual (CF) test: holding the grasp pose fixed, we insert a solid obstacle into the approach corridor, add its points to the model input, and let a planner re-derive the label, which flips from feasible to infeasible.",
-   "venue": "WACV 2027"
+   "venue": "WACV 2027",
+   "citations": 0
   },
   {
    "id": "2611.09059",
@@ -1026,7 +1059,8 @@
    ],
    "kw_score": 6,
    "tldr": "We propose a time-domain optimization method for robust readout of cross-point resistive arrays.",
-   "summary": "We propose a time-domain optimization method for robust readout of cross-point resistive arrays. By exploiting the full waveform, the proposed method improves robustness under noisy observation conditions."
+   "summary": "We propose a time-domain optimization method for robust readout of cross-point resistive arrays. By exploiting the full waveform, the proposed method improves robustness under noisy observation conditions.",
+   "citations": 0
   },
   {
    "id": "2611.08898",
@@ -1051,7 +1085,8 @@
    ],
    "kw_score": 6,
    "tldr": "To address the resulting partial-observation control problem, this paper proposes FATHOM, a world-model-guided diffusion action-trajectory selection framework for sparse-marker AUV tracking.",
-   "summary": "To address the resulting partial-observation control problem, this paper proposes FATHOM, a world-model-guided diffusion action-trajectory selection framework for sparse-marker AUV tracking. Active light markers improve robustness to appearance variation, but provide deliberately sparse observations that can become incomplete or corrupted by occlusion, reflections, and detection noise during dynamic motion."
+   "summary": "To address the resulting partial-observation control problem, this paper proposes FATHOM, a world-model-guided diffusion action-trajectory selection framework for sparse-marker AUV tracking. Active light markers improve robustness to appearance variation, but provide deliberately sparse observations that can become incomplete or corrupted by occlusion, reflections, and detection noise during dynamic motion.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -1088,7 +1123,8 @@
    "org": "NVIDIA",
    "url": "https://arxiv.org/abs/2611.08449",
    "pdf": "https://arxiv.org/pdf/2611.08449",
-   "hf": "https://huggingface.co/papers/2611.08449"
+   "hf": "https://huggingface.co/papers/2611.08449",
+   "citations": 1
   },
   {
    "id": "2611.04277",
@@ -1142,7 +1178,8 @@
    "org": "HKUSTGZ",
    "url": "https://arxiv.org/abs/2611.08373",
    "pdf": "https://arxiv.org/pdf/2611.08373",
-   "hf": "https://huggingface.co/papers/2611.08373"
+   "hf": "https://huggingface.co/papers/2611.08373",
+   "citations": 2
   },
   {
    "id": "2611.07392",
@@ -1174,7 +1211,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.07392",
    "pdf": "https://arxiv.org/pdf/2611.07392",
-   "hf": "https://huggingface.co/papers/2611.07392"
+   "hf": "https://huggingface.co/papers/2611.07392",
+   "citations": 0
   },
   {
    "id": "2611.06741",
@@ -1199,7 +1237,8 @@
    "org": "MMLab-CUHK",
    "url": "https://arxiv.org/abs/2611.06741",
    "pdf": "https://arxiv.org/pdf/2611.06741",
-   "hf": "https://huggingface.co/papers/2611.06741"
+   "hf": "https://huggingface.co/papers/2611.06741",
+   "citations": 0
   },
   {
    "id": "2611.03743",
@@ -1277,7 +1316,8 @@
    "org": "DAGroup-PKU",
    "url": "https://arxiv.org/abs/2611.06817",
    "pdf": "https://arxiv.org/pdf/2611.06817",
-   "hf": "https://huggingface.co/papers/2611.06817"
+   "hf": "https://huggingface.co/papers/2611.06817",
+   "citations": 1
   },
   {
    "id": "2611.05376",
@@ -1320,7 +1360,8 @@
    "org": "Nace.AI",
    "url": "https://arxiv.org/abs/2611.07854",
    "pdf": "https://arxiv.org/pdf/2611.07854",
-   "hf": "https://huggingface.co/papers/2611.07854"
+   "hf": "https://huggingface.co/papers/2611.07854",
+   "citations": 0
   },
   {
    "id": "2611.00883",
@@ -1343,7 +1384,7 @@
    "url": "https://arxiv.org/abs/2611.00883",
    "pdf": "https://arxiv.org/pdf/2611.00883",
    "hf": "https://huggingface.co/papers/2611.00883",
-   "citations": 0
+   "citations": 1
   }
  ]
 }

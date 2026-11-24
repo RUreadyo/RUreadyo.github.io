@@ -225,7 +225,7 @@
    "summary": "Humanoid VLAs need costly whole-body demos. HuGe uses three VLA architectures that output latent motion tokens plus hand signals, trained in three stages (egocentric pretraining, humanoid adaptation, fine-tuning) with pseudo-proprioception via sim playback and arm re-rendering to bridge embodiment gaps.",
    "why": "Egocentric human-data transfer is relevant, but the focus is humanoid whole-body control, not dexterity.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2610.34105",

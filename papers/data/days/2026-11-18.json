@@ -964,7 +964,8 @@
    "kw_score": 12,
    "tldr": "Cities are sensed by many platforms at once: on-board cameras, LiDAR and radar on autonomous vehicles, roadside units at intersections, drones and satellites overhead, and the GNSS traces of millions of trips.",
    "summary": "Cities are sensed by many platforms at once: on-board cameras, LiDAR and radar on autonomous vehicles, roadside units at intersections, drones and satellites overhead, and the GNSS traces of millions of trips. We (i) formalize USR and five desiderata for it, and relate it to bird's-eye-view (BEV) features, occupancy, vectorized maps, neural fields and 3D Gaussians, scene graphs, road-network graphs, language tokens, and world-model latents; (ii) organize sensing platforms, cross-view (ground-aerial) matching, fusion operators, 3D geometric foundation models, end-to-end and vision-language-action models, and generative world models and data engines in one taxonomy that spans sensors to decisions; (iii) compile 26 urban datasets and simulators across ego, cooperative (V2X), aerial, trajectory, and language settings, with a metric glossary, a cross-benchmark results snapshot, a trend analysis, and a platform-coverage gap analysis; and (iv) review applications and propose, as an outlook, USR-5, a five-test protocol with explicit references and one aggregate score for measuring whether a state is shared, together with a research agenda of six open problems covering cross-city and cross-sensor transfer, uncertainty, efficiency, sim-to-real evaluation, and governance.",
-   "venue": "WACV 2027 Workshop"
+   "venue": "WACV 2027 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.24470",
@@ -1413,7 +1414,8 @@
    "org": "SLAI-AITP",
    "url": "https://arxiv.org/abs/2611.17621",
    "pdf": "https://arxiv.org/pdf/2611.17621",
-   "hf": "https://huggingface.co/papers/2611.17621"
+   "hf": "https://huggingface.co/papers/2611.17621",
+   "citations": 0
   },
   {
    "id": "2611.22055",
@@ -1457,7 +1459,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.19800",
    "pdf": "https://arxiv.org/pdf/2611.19800",
-   "hf": "https://huggingface.co/papers/2611.19800"
+   "hf": "https://huggingface.co/papers/2611.19800",
+   "citations": 0
   },
   {
    "id": "2611.21099",
@@ -1479,7 +1482,7 @@
    "url": "https://arxiv.org/abs/2611.21099",
    "pdf": "https://arxiv.org/pdf/2611.21099",
    "hf": "https://huggingface.co/papers/2611.21099",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.18856",
@@ -1505,7 +1508,8 @@
    "org": "Google",
    "url": "https://arxiv.org/abs/2611.18856",
    "pdf": "https://arxiv.org/pdf/2611.18856",
-   "hf": "https://huggingface.co/papers/2611.18856"
+   "hf": "https://huggingface.co/papers/2611.18856",
+   "citations": 1
   },
   {
    "id": "2611.23226",
@@ -1551,7 +1555,8 @@
    "org": "",
    "url": "https://arxiv.org/abs/2611.15348",
    "pdf": "https://arxiv.org/pdf/2611.15348",
-   "hf": "https://huggingface.co/papers/2611.15348"
+   "hf": "https://huggingface.co/papers/2611.15348",
+   "citations": 0
   },
   {
    "id": "2611.23143",

@@ -242,7 +242,7 @@
    "summary": "World models are usually used forward-only. Rollback exploits their rewindability to attribute success to individual decisions, yielding action-level supervision without a learned value model, with a scalable distributed training system.",
    "why": "Interesting use of video world models for policy improvement.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.35594",
@@ -275,7 +275,7 @@
    "why": "Few-step video generation; moderately relevant to video interests.",
    "venue": "NeurIPS 2026",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.35010",
@@ -411,7 +411,7 @@
    "why": "World-model adaptation for planning; secondary interest.",
    "venue": "CoRL 2026 Workshop",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2610.34717",
@@ -487,7 +487,7 @@
    "summary": "Under direct control the agent is competitive with post-trained policies, leading short-horizon tasks; combining it with policies via a harness is analyzed across manipulation demands.",
    "why": "Useful snapshot of frontier-model robot control vs VLAs.",
    "rated_by": "claude",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2610.35103",
@@ -1066,7 +1066,7 @@
    "kw_score": 6,
    "tldr": "We introduce EmbodiedLab, a simulated laboratory of 35 such experiments.",
    "summary": "We introduce EmbodiedLab, a simulated laboratory of 35 such experiments. With native control, the strongest of seven frontier agents succeeds on 41.4% of the tasks.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.35252",

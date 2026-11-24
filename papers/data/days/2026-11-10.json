@@ -42,7 +42,8 @@
    "tldr": "Adapts long-action-chunk policies with off-policy RL by learning only how long to execute each chunk.",
    "summary": "RL fine-tuning of long-chunk policies is sample-hungry due to high-dimensional chunks. ExRL adds a lightweight adapter predicting execution length per chunk, trained with off-policy RL, giving sample-efficient adaptation across diverse long-chunk policies in sim and real with little tuning.",
    "why": "Squarely at action chunking + RL fine-tuning of generative policies; simple and usable.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14092",
@@ -80,7 +81,8 @@
    "tldr": "Generates diverse, physically executable dexterous robot demos by expanding human hand-object interaction sequences in simulation for VLA training.",
    "summary": "Teleoperated dexterous demos are costly and human HOI datasets usually only reproduce given interactions. DexSeed groups human sequences by grasp mode, retargets with InteractionMesh, augments arm trajectories across objects and placements, and realizes them under arm-tracking dynamics in physics sim to produce executable arm+finger actions with visuals for VLA training.",
    "why": "Directly on human-hand-data-to-dexterous-policy pipelines, a core interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14488",
@@ -107,7 +109,8 @@
    "tldr": "Shows memory-augmented VLAs use elapsed time as a shortcut for progress, failing under pauses (phantom progress).",
    "summary": "On RoboMME counting tasks, brief pauses or wrist fidgets drop success from 47 to 16 and 44 to 10 of 50, because time-stamped uniformly-sampled memory lets elapsed time predict progress. Rescaling timestamps alone shifts stopping behavior; the paper diagnoses and addresses this temporal shortcut.",
    "why": "A sharp understanding paper on history-conditioned policies, a stated interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14420",
@@ -139,7 +142,8 @@
    "tldr": "Extracts scene-free latent actions from frozen V-JEPA 2 frame-pair embeddings to train action-conditioned video world models from unlabeled video.",
    "summary": "Latent action models learned from scratch trade expressiveness for scene separation. OnlyAct starts from V-JEPA 2 embeddings of frame pairs, which already carry action information, and learns to extract action while discarding scene content, improving generalization to unseen domains.",
    "why": "Relevant to latent-action pretraining and V-JEPA-style world models for policy learning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14383",
@@ -170,7 +174,8 @@
    "tldr": "A tutorial casting most of ML (generative, discriminative, representation, RL) through the energy-based model lens.",
    "summary": "Bo Dai and Yilun Du present EBMs via energy, inference, and learning choices, showing learning methods share a contrastive structure. They connect GANs, flows, diffusion, autoregressive models, contrastive learning and EBM policies in RL under one framework.",
    "why": "Useful reference for energy-based/equilibrium-matching views of generative policies, though a tutorial rather than new results.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -211,7 +216,8 @@
    "summary": "UGG treats generation and geometric prediction as conditional completion with heterogeneous noise levels, enabling training on partially-annotated datasets and inference-time search over scene hypotheses. It beats non-unified baselines.",
    "why": "Diffusion-forcing-style per-modality noise is a transferable idea; application is vision.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.14432",
@@ -249,7 +255,8 @@
    "tldr": "Engineering report of a single pi0.5-based VLA solving 100 BEHAVIOR household tasks, emphasizing longer training and variance reduction.",
    "summary": "Building on their 1st-place 2025 solution, the team mostly trained longer and reduced gradient noise, adding stage embeddings, a 21-D action space, and variance-reduced multi-sample flow matching with a noise-vs-compute model. Q rose from 0.260 to 0.371 on shared tasks, 0.392 over 100 tasks (9th place).",
    "why": "Practical training-recipe lessons for flow-matching VLAs.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.13732",
@@ -287,7 +294,8 @@
    "tldr": "Action codec aligning actions, visual changes and language into a shared intent space, decoded per embodiment for cross-embodiment policies.",
    "summary": "CIALLO pretrains on eight embodiments and adapts to a new robot from a <=10s recording by updating embodiment embeddings only. A Qwen3.5-4B policy predicts intent, needing no large-scale robot-action pretraining, with 20 demos per task.",
    "why": "Relevant to action representations and cheap VLA recipes.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.13592",
@@ -316,7 +324,8 @@
    "tldr": "Few-shot residual corrections adapt a frozen latent world model to dynamics shifts from three interaction episodes.",
    "summary": "Corrections learned from latent prediction errors are applied inside the predictor and on predicted latents. On a real robot, success under CoM and friction shifts recovers from near zero to 90% and 100%.",
    "why": "Practical world-model adaptation with real-robot results.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14834",
@@ -348,7 +357,8 @@
    "tldr": "Trains a compact action-chunk verifier from a frozen VLA's own rollouts and uses it to pick the best of sampled candidates.",
    "summary": "Expensive verifiers add latency to VLA best-of-N selection. HDH collects autonomous rollouts, trains a lightweight success-score verifier on action chunks, and selects among frozen-VLA candidates; it reaches 82.3% on four LIBERO-10 tasks and +22.6% on three real tasks.",
    "why": "Cheap test-time improvement for generative policies without fine-tuning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.14048",
@@ -390,7 +400,8 @@
    "tldr": "World action model inserting an interaction-centric latent reasoning expert between world and action experts in a Mixture-of-Transformers.",
    "summary": "LaST0.5 learns a compact latent supervised by robot-object interaction cues to bridge world modeling and action generation, with adaptive world-to-action reasoning.",
    "why": "Unified video-action model design, an 'also interested' area.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.13610",
@@ -427,7 +438,8 @@
    "tldr": "Survey of learning robot manipulation from egocentric human video, organized into four transfer paradigms.",
    "summary": "Ego2Robot learning is categorized as explicit embodiment transfer, action/task supervision, egocentric representation pretraining, and latent action/dynamics modeling. The survey traces what each extracts from human video and reviews datasets and benchmarks.",
    "why": "Handy overview for human-video-to-robot work, relevant to dexterous learning from human data.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.13818",
@@ -454,7 +466,8 @@
    "kw_score": 10,
    "tldr": "This work presents the 2nd-place solution (Team IF1001) to the 2026 BEHAVIOR Challenge, which evaluates mobile manipulation across 100 household tasks.",
    "summary": "This work presents the 2nd-place solution (Team IF1001) to the 2026 BEHAVIOR Challenge, which evaluates mobile manipulation across 100 household tasks. We improve Cosmos 3 by using richer visual history, task-progress conditioning, and task-group and skill-specific LoRA adapters.",
-   "venue": "CoRL 2026"
+   "venue": "CoRL 2026",
+   "citations": 0
   },
   {
    "id": "2611.14365",
@@ -480,7 +493,8 @@
    ],
    "kw_score": 7,
    "tldr": "Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface…",
-   "summary": "Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface aligned with the pretrained VDM prior without any added module or architectural change. On RoboCasa, MetaWAM reaches 68.9% success while collapsing the per-signal frames into one and cutting inference latency by 39%, and attains 85.0% success on three real-world Franka tasks."
+   "summary": "Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface aligned with the pretrained VDM prior without any added module or architectural change. On RoboCasa, MetaWAM reaches 68.9% success while collapsing the per-signal frames into one and cutting inference latency by 39%, and attains 85.0% success on three real-world Franka tasks.",
+   "citations": 1
   },
   {
    "id": "2611.14274",
@@ -504,7 +518,8 @@
    ],
    "kw_score": 7,
    "tldr": "As a common decision backbone, we introduce Geometry-Pointer-Flow (GPF), a geometry-grounded policy that separates grasp-location selection from grasp-conditioned motion generation.",
-   "summary": "As a common decision backbone, we introduce Geometry-Pointer-Flow (GPF), a geometry-grounded policy that separates grasp-location selection from grasp-conditioned motion generation. Its geometry-only variant reduces one-step executed shape error by 32.8% relative to a DLO-specific diffusion policy, while using 18.7 times fewer parameters and achieving approximately 193 times faster inference."
+   "summary": "As a common decision backbone, we introduce Geometry-Pointer-Flow (GPF), a geometry-grounded policy that separates grasp-location selection from grasp-conditioned motion generation. Its geometry-only variant reduces one-step executed shape error by 32.8% relative to a DLO-specific diffusion policy, while using 18.7 times fewer parameters and achieving approximately 193 times faster inference.",
+   "citations": 0
   },
   {
    "id": "2611.13690",
@@ -533,7 +548,8 @@
    ],
    "kw_score": 7,
    "tldr": "This paper proposes a closed-loop autonomous excavation framework for continuous inference of excavator joint states using onboard visual observations and control-related temporal information.",
-   "summary": "This paper proposes a closed-loop autonomous excavation framework for continuous inference of excavator joint states using onboard visual observations and control-related temporal information. Across 20 autonomous excavation trials, the framework achieved a 95% task-completion rate, with an average joint-state-inference-and-control latency of 10.11 ms per step."
+   "summary": "This paper proposes a closed-loop autonomous excavation framework for continuous inference of excavator joint states using onboard visual observations and control-related temporal information. Across 20 autonomous excavation trials, the framework achieved a 95% task-completion rate, with an average joint-state-inference-and-control latency of 10.11 ms per step.",
+   "citations": 0
   },
   {
    "id": "2611.14373",
@@ -557,7 +573,8 @@
    ],
    "kw_score": 6,
    "tldr": "In this paper, we present a nonlinear MPCC in all six Degrees of Freedom (DoF) for a holonomic AUV and alleviate the inaccuracies in the dynamics by augmenting the nominal model employed with residual dynamics learned via Gaussian Process (GP) regression.",
-   "summary": "In this paper, we present a nonlinear MPCC in all six Degrees of Freedom (DoF) for a holonomic AUV and alleviate the inaccuracies in the dynamics by augmenting the nominal model employed with residual dynamics learned via Gaussian Process (GP) regression."
+   "summary": "In this paper, we present a nonlinear MPCC in all six Degrees of Freedom (DoF) for a holonomic AUV and alleviate the inaccuracies in the dynamics by augmenting the nominal model employed with residual dynamics learned via Gaussian Process (GP) regression.",
+   "citations": 0
   },
   {
    "id": "2611.13685",
@@ -588,7 +605,8 @@
    ],
    "kw_score": 6,
    "tldr": "In this paper, we investigate how human egocentric videos can benefit robot policy learning without action supervision.",
-   "summary": "In this paper, we investigate how human egocentric videos can benefit robot policy learning without action supervision. We find that representations learned from egocentric videos improve downstream performance on out-of-distribution robot tasks, with further gains as video data scales."
+   "summary": "In this paper, we investigate how human egocentric videos can benefit robot policy learning without action supervision. We find that representations learned from egocentric videos improve downstream performance on out-of-distribution robot tasks, with further gains as video data scales.",
+   "citations": 1
   },
   {
    "id": "2611.14111",
@@ -613,7 +631,8 @@
    ],
    "kw_score": 5,
    "tldr": "To address this limitation, we introduce Acquisition-State Telemetry (AST), a model free architecture that evaluates ongoing information acquisition from observable evidence relative to declared task requirements.",
-   "summary": "To address this limitation, we introduce Acquisition-State Telemetry (AST), a model free architecture that evaluates ongoing information acquisition from observable evidence relative to declared task requirements."
+   "summary": "To address this limitation, we introduce Acquisition-State Telemetry (AST), a model free architecture that evaluates ongoing information acquisition from observable evidence relative to declared task requirements.",
+   "citations": 0
   },
   {
    "id": "2611.13903",
@@ -639,7 +658,8 @@
    ],
    "kw_score": 4,
    "tldr": "In this paper we investigate how a representative outdoor open-vocabulary method transfers to maritime environments and which adaptations are needed.",
-   "summary": "In this paper we investigate how a representative outdoor open-vocabulary method transfers to maritime environments and which adaptations are needed. The resulting representation reduces physical-entity fragmentation beyond both the baseline and our geometry-semantic consolidation component alone, supports correspondence of fixed local places across repeated maritime traversals, and improves contextual retrieval on our reviewed queries over tested baselines."
+   "summary": "In this paper we investigate how a representative outdoor open-vocabulary method transfers to maritime environments and which adaptations are needed. The resulting representation reduces physical-entity fragmentation beyond both the baseline and our geometry-semantic consolidation component alone, supports correspondence of fixed local places across repeated maritime traversals, and improves contextual retrieval on our reviewed queries over tested baselines.",
+   "citations": 0
   },
   {
    "id": "2611.13819",
@@ -665,7 +685,8 @@
    ],
    "kw_score": 4,
    "tldr": "Human gameplay supplies paired observations, actions, and visual consequences that can supplement robot-policy training.",
-   "summary": "Human gameplay supplies paired observations, actions, and visual consequences that can supplement robot-policy training. Across four LIBERO suites, aggregate success increases from 1,718/2,000 (85.90%) to 1,811/2,000 (90.55%), a gain of 4.65 percentage points."
+   "summary": "Human gameplay supplies paired observations, actions, and visual consequences that can supplement robot-policy training. Across four LIBERO suites, aggregate success increases from 1,718/2,000 (85.90%) to 1,811/2,000 (90.55%), a gain of 4.65 percentage points.",
+   "citations": 0
   },
   {
    "id": "2611.13669",
@@ -693,7 +714,8 @@
    ],
    "kw_score": 4,
    "tldr": "Here, we present GenEA, a novel agent representation capable of reasoning over multi-step, long-horizon embodied plans.",
-   "summary": "Here, we present GenEA, a novel agent representation capable of reasoning over multi-step, long-horizon embodied plans. Crucially, GenEA consistently outperforms strong alternative models, including plausible heuristics, standard task-and-motion planning, and a state-of-the-art vision-language model."
+   "summary": "Here, we present GenEA, a novel agent representation capable of reasoning over multi-step, long-horizon embodied plans. Crucially, GenEA consistently outperforms strong alternative models, including plausible heuristics, standard task-and-motion planning, and a state-of-the-art vision-language model.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -730,7 +752,8 @@
    "org": "Robbyant",
    "url": "https://arxiv.org/abs/2611.12806",
    "pdf": "https://arxiv.org/pdf/2611.12806",
-   "hf": "https://huggingface.co/papers/2611.12806"
+   "hf": "https://huggingface.co/papers/2611.12806",
+   "citations": 0
   },
   {
    "id": "2611.12762",
@@ -836,7 +859,8 @@
    "org": "Shanghai AI Laboratory",
    "url": "https://arxiv.org/abs/2611.12762",
    "pdf": "https://arxiv.org/pdf/2611.12762",
-   "hf": "https://huggingface.co/papers/2611.12762"
+   "hf": "https://huggingface.co/papers/2611.12762",
+   "citations": 0
   },
   {
    "id": "2611.11995",
@@ -873,7 +897,8 @@
    "org": "University of Washington",
    "url": "https://arxiv.org/abs/2611.11995",
    "pdf": "https://arxiv.org/pdf/2611.11995",
-   "hf": "https://huggingface.co/papers/2611.11995"
+   "hf": "https://huggingface.co/papers/2611.11995",
+   "citations": 0
   },
   {
    "id": "2611.10771",
@@ -905,7 +930,8 @@
    "org": "OpenEnvision",
    "url": "https://arxiv.org/abs/2611.10771",
    "pdf": "https://arxiv.org/pdf/2611.10771",
-   "hf": "https://huggingface.co/papers/2611.10771"
+   "hf": "https://huggingface.co/papers/2611.10771",
+   "citations": 1
   },
   {
    "id": "2611.12886",
@@ -925,7 +951,8 @@
    "org": "Nanjing University",
    "url": "https://arxiv.org/abs/2611.12886",
    "pdf": "https://arxiv.org/pdf/2611.12886",
-   "hf": "https://huggingface.co/papers/2611.12886"
+   "hf": "https://huggingface.co/papers/2611.12886",
+   "citations": 0
   },
   {
    "id": "2610.42148",
@@ -968,7 +995,8 @@
    "org": "Google",
    "url": "https://arxiv.org/abs/2611.08452",
    "pdf": "https://arxiv.org/pdf/2611.08452",
-   "hf": "https://huggingface.co/papers/2611.08452"
+   "hf": "https://huggingface.co/papers/2611.08452",
+   "citations": 0
   },
   {
    "id": "2611.08240",
@@ -991,7 +1019,8 @@
    "org": "Tencent Hunyuan",
    "url": "https://arxiv.org/abs/2611.08240",
    "pdf": "https://arxiv.org/pdf/2611.08240",
-   "hf": "https://huggingface.co/papers/2611.08240"
+   "hf": "https://huggingface.co/papers/2611.08240",
+   "citations": 0
   },
   {
    "id": "2611.11558",
@@ -1018,7 +1047,8 @@
    "org": "TokenRhythm",
    "url": "https://arxiv.org/abs/2611.11558",
    "pdf": "https://arxiv.org/pdf/2611.11558",
-   "hf": "https://huggingface.co/papers/2611.11558"
+   "hf": "https://huggingface.co/papers/2611.11558",
+   "citations": 0
   },
   {
    "id": "2611.12870",
@@ -1045,7 +1075,8 @@
    "org": "Shanghai Jiao Tong University",
    "url": "https://arxiv.org/abs/2611.12870",
    "pdf": "https://arxiv.org/pdf/2611.12870",
-   "hf": "https://huggingface.co/papers/2611.12870"
+   "hf": "https://huggingface.co/papers/2611.12870",
+   "citations": 0
   }
  ]
 }

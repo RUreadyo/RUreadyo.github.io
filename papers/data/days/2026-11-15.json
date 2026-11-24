@@ -38,7 +38,8 @@
    "tldr": "Frames imitation as triangular transport from an empirical action-chunk reference, giving OT, flow-matching, and stochastic-interpolant policies.",
    "summary": "Diffusion Policy fixes a Gaussian source; this work makes the reference distribution a design choice by casting policies as the second block of a triangular transport map, using the empirical demo action-chunk distribution as source. Three instances (OTP, FMP, SIP) match Diffusion/Consistency Policy on Push-T and robomimic Square with much smaller networks; OTP produces a chunk in one evaluation of a 0.23M-parameter net.",
    "why": "Directly relevant to source-distribution choice and few-step generative policies, tying stochastic interpolants to IL.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20273",
@@ -74,7 +75,8 @@
    "tldr": "Single Transformer-XL RL policy for dexterous grasping across 18 arm-hand pairs, transferring to unseen hands and real robots.",
    "summary": "Cross-embodiment dexterous grasping is addressed with a canonical joint interface with validity masks, kinematic-tree-biased attention, and Transformer-XL memory to infer dynamics. Trained on 4 arms x 6 hands it gets 89% seen / 51% held-out-pair success, grasps with 4 new hands zero-shot, and distilled students transfer zero-shot to a real Flexiv arm.",
    "why": "Cross-embodiment sim-to-real for multi-fingered hands, a core interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20202",
@@ -101,7 +103,8 @@
    "tldr": "DAPPT learns sim-to-real dexterous tool use with deformables by tracking procedural trajectories conditioned on domain parameters, without simulating materials.",
    "summary": "Dexterous tasks with sand or play-dough are too slow to simulate for RL. DAPPT trains domain-aware RL policies tracking parameterized procedural trajectories, distills them into sensorimotor policies, and selects domain parameters to maximize task metrics; across six tasks (scooping, rod rolling, spray triggering, etc.) it gives 1.5-3.8x task metrics and zero-shot real transfer.",
    "why": "Clever sim-to-real recipe extending dexterous RL to non-rigid tool use (Jia Deng group).",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19712",
@@ -128,7 +131,8 @@
    "tldr": "Shows closed-form diffusion policy weights equal the solution of a regularized behavioral control problem, yielding chi^2-projected behavioral denoising.",
    "summary": "Building on findings that low-data diffusion policies retrieve/combine demos, the authors prove the closed-form diffusion policy's combination weights uniquely solve a regularized behavioral (data-driven) control problem. A training-free chi^2-projected variant limits extrapolation and performs well on four nonlinear control tasks.",
    "why": "A rigorous 'why diffusion policies work' link to data-driven control (Manchester lab).",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20185",
@@ -167,7 +171,8 @@
    "summary": "RoboKit pairs sampling with multi-seed optimizers and hybrid geometry/rendering/physics representations, running 2-60x faster than task-specific baselines across seven tasks. Distilled policies are 9-240x faster at comparable accuracy and RL reaches baseline scores up to 2.1x sooner.",
    "why": "Useful tooling for grasp synthesis and optimization-based data generation for hands.",
    "venue": "CoRL 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.19822",
@@ -209,7 +214,8 @@
    "tldr": "FlipTest shows 11 video world models fail counterfactual minimal-pair tests of world state, below random guessing.",
    "summary": "Using 1,680 frames across 25 tasks, minimal pairs whose true futures differ test whether predictions flip appropriately; the best model gets 18.3% pair accuracy (random 25%) and flips indiscriminately, while a VLM and coding agent track the boundary.",
    "why": "Important caution for using video models as world simulators for policy evaluation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20010",
@@ -240,7 +246,8 @@
    "tldr": "PlanDiv makes VLA test-time candidates differ by latent plan rather than noise, decoded by a masked-diffusion executor.",
    "summary": "Test-time resampling from one decoder yields candidates differing only by noise, with diminishing returns. PlanDiv proposes K latent plans learned from demos and decodes a chunk per plan in one backbone pass, ranking by likelihood; 8 plans raise CALVIN ABC->D 5-chain success from 56.9% to 69.9% (vs <=64.9% for resampling) and win on real Franka multi-solution tasks (51/54 vs 40/54).",
    "why": "Clean analysis of test-time scaling for generative action heads with a controlled same-plan baseline.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20314",
@@ -272,7 +279,8 @@
    "summary": "Instead of diffusion/flow matching, NF-VLA uses conditional autoregressive normalizing flows with a deep-shallow architecture trained by maximum likelihood on Gaussian-smoothed action chunks, then uses the learned density's score for one refinement step. From a VLM without robot pretraining it reaches 98.35% on LIBERO and 72.6% on LIBERO-Plus.",
    "why": "An alternative generative policy class with tractable density, useful for RL likelihoods.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -305,7 +313,8 @@
    "summary": "When latency, remounting, or wear changes actuation, ReGround detects shift, learns deployed dynamics from task-agnostic babbling, and tracks the policy's intended motion near its plan. Across two VLAs, 8 LIBERO tasks, and 5 shifts it restores near-oracle success, e.g. pi0.5 from 0.16 to 0.90 under 400 ms latency.",
    "why": "Practical inference-time robustness for deployed VLAs.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19771",
@@ -340,7 +349,8 @@
    "tldr": "JEPA world model on single-depth-camera point clouds that plans in latent space and transfers zero-shot to real gripper and dexterous hand.",
    "summary": "JEPA4R predicts future latent embeddings of point clouds, with a decoder visualizing imagined 4D points (1.1 cm error over 200 steps) and a policy head on frozen latents. It beats pixel JEPAs on OGBench cube/scene tasks, scores 98.4% MetaWorld and 88.0% Adroit Relocate, and runs zero-shot real after digital-twin training.",
    "why": "V-JEPA-style 3D world model with dexterous-hand deployment; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19825",
@@ -371,7 +381,8 @@
    "tldr": "FP2 is a flow-matching diffusion-transformer policy for offline multi-objective RL with pre/mid/post-training stages.",
    "summary": "Foundation Pareto Flow Policy trains a multimodal DiT with flow matching on large MORL data, then curated data, then few-shot new tasks. It beats prior methods on most D4MORL tasks with zero-shot Pareto interpolation/extrapolation.",
    "why": "Flow policies in offline RL, but MORL benchmark focus.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.20196",
@@ -405,7 +416,8 @@
    "tldr": "Fuses egocentric RGB and 128-channel forearm sEMG with per-DoF queries to regress 20 hand joint angles.",
    "summary": "A DoF-query Transformer decoder adaptively fuses ViT image and EMG features; on 10 participants it achieves R^2 0.88 and 2.80 deg MAE vs 0.82/3.21 for vision only, with better occlusion robustness.",
    "why": "Potential human-hand data capture modality for dexterous learning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19998",
@@ -444,7 +456,8 @@
    "tldr": "MoViC drives humanoid whole-body control in real time from monocular RGB video via reconstruction, retargeting, and a behavior foundation model.",
    "summary": "The system combines monocular human motion reconstruction with retargeting and a transformer tracker using a compact frequency-domain motion representation, plus extrapolation bridging 10 Hz vision to a 50 Hz controller. Hardware demos show dynamic tracking and device-free teleoperation of manipulation.",
    "why": "Humanoid teleoperation; tangential to dexterous manipulation learning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.19709",
@@ -471,7 +484,8 @@
    "kw_score": 8,
    "tldr": "Flow-matching robot policies generate each action chunk through repeated network evaluations, one per denoising step.",
    "summary": "Flow-matching robot policies generate each action chunk through repeated network evaluations, one per denoising step. Caching the first of two steps, refreshed every fourth call, saves at most 11--14% of a call by our cost model.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.20100",
@@ -497,7 +511,8 @@
    ],
    "kw_score": 6,
    "tldr": "We introduce EgoSwarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations.",
-   "summary": "We introduce EgoSwarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations. SwarmVLA achieves a mean success rate of 72.2% across three categories of multi-robot collaborative tasks."
+   "summary": "We introduce EgoSwarm, the first robot learning framework for learning decentralized multi-robot collaboration from human swarm demonstrations. SwarmVLA achieves a mean success rate of 72.2% across three categories of multi-robot collaborative tasks.",
+   "citations": 0
   },
   {
    "id": "2611.19775",
@@ -522,7 +537,8 @@
    ],
    "kw_score": 6,
    "tldr": "We propose a recovery-guided model-based diffusion (MBD) framework for safety-critical legged locomotion.",
-   "summary": "We propose a recovery-guided model-based diffusion (MBD) framework for safety-critical legged locomotion. Across 50 paired randomized Unitree Go2 obstacle-avoidance trials, our approach achieves zero collisions and 98% strict-clearance success, while requiring substantially less computation than long-horizon MBD baselines."
+   "summary": "We propose a recovery-guided model-based diffusion (MBD) framework for safety-critical legged locomotion. Across 50 paired randomized Unitree Go2 obstacle-avoidance trials, our approach achieves zero collisions and 98% strict-clearance success, while requiring substantially less computation than long-horizon MBD baselines.",
+   "citations": 0
   },
   {
    "id": "2611.20306",
@@ -549,7 +565,8 @@
    ],
    "kw_score": 5,
    "tldr": "We present OntoCBF, which compiles a domain ontology with a class taxonomy, typed relations, safety axioms and a dynamics profile per robot class into a control barrier function filter with one quadratic program per agent.",
-   "summary": "We present OntoCBF, which compiles a domain ontology with a class taxonomy, typed relations, safety axioms and a dynamics profile per robot class into a control barrier function filter with one quadratic program per agent. In a simulated warehouse where humans ignore the robots, a filter written for the design classes violates safety in 89-100 % of the episodes with unseen classes."
+   "summary": "We present OntoCBF, which compiles a domain ontology with a class taxonomy, typed relations, safety axioms and a dynamics profile per robot class into a control barrier function filter with one quadratic program per agent. In a simulated warehouse where humans ignore the robots, a filter written for the design classes violates safety in 89-100 % of the episodes with unseen classes.",
+   "citations": 0
   },
   {
    "id": "2611.20019",
@@ -574,7 +591,8 @@
    ],
    "kw_score": 5,
    "tldr": "Reinforcement learning agents learn from mistakes, yet their decisions can be difficult to trace back to those experiences.",
-   "summary": "Reinforcement learning agents learn from mistakes, yet their decisions can be difficult to trace back to those experiences."
+   "summary": "Reinforcement learning agents learn from mistakes, yet their decisions can be difficult to trace back to those experiences.",
+   "citations": 0
   },
   {
    "id": "2611.19969",
@@ -600,7 +618,8 @@
    ],
    "kw_score": 5,
    "tldr": "We propose a world-model reinforcement learning framework combines imagined policy improvement with direct value and policy calibration from finalized interactions, balancing AV progress with HDV interaction burden.",
-   "summary": "We propose a world-model reinforcement learning framework combines imagined policy improvement with direct value and policy calibration from finalized interactions, balancing AV progress with HDV interaction burden. Simulation experiments at an unsignalized intersection achieve a 100% success and reductions in following-HDV acceleration variation of 65.5% and 44.0% relative to PIWM and DreamerV3, respectively."
+   "summary": "We propose a world-model reinforcement learning framework combines imagined policy improvement with direct value and policy calibration from finalized interactions, balancing AV progress with HDV interaction burden. Simulation experiments at an unsignalized intersection achieve a 100% success and reductions in following-HDV acceleration variation of 65.5% and 44.0% relative to PIWM and DreamerV3, respectively.",
+   "citations": 0
   },
   {
    "id": "2611.20320",
@@ -624,7 +643,8 @@
    ],
    "kw_score": 4,
    "tldr": "This paper presents a course referenced formulation of trail following in arc length, in which each follower takes the direction of its fitted trail as its heading reference.",
-   "summary": "This paper presents a course referenced formulation of trail following in arc length, in which each follower takes the direction of its fitted trail as its heading reference."
+   "summary": "This paper presents a course referenced formulation of trail following in arc length, in which each follower takes the direction of its fitted trail as its heading reference.",
+   "citations": 0
   },
   {
    "id": "2611.19979",
@@ -648,7 +668,8 @@
    ],
    "kw_score": 4,
    "tldr": "We present an open, low-cost testbed for measuring these costs: a self-built SO-101 arm runs two demonstration-trained ACT policies that reset each other, with a vision-based success detector and a ledger that records the time, joint travel, and human interventions of every…",
-   "summary": "We present an open, low-cost testbed for measuring these costs: a self-built SO-101 arm runs two demonstration-trained ACT policies that reset each other, with a vision-based success detector and a ledger that records the time, joint travel, and human interventions of every attempt. Its first two conditions, run on hardware for 51 minutes of robot time, show that a fixed retry limit did not reduce the share of execution time lost to failures (36%, against 27% for a feasibility rule; not significant) and saved no robot time."
+   "summary": "We present an open, low-cost testbed for measuring these costs: a self-built SO-101 arm runs two demonstration-trained ACT policies that reset each other, with a vision-based success detector and a ledger that records the time, joint travel, and human interventions of every attempt. Its first two conditions, run on hardware for 51 minutes of robot time, show that a fixed retry limit did not reduce the share of execution time lost to failures (36%, against 27% for a feasibility rule; not significant) and saved no robot time.",
+   "citations": 0
   }
  ],
  "trending_ml": []

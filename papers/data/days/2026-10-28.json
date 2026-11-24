@@ -168,7 +168,8 @@
    "tldr": "Measures demo- and step-efficiency of fine-tuning six VLAs (pi0, pi0.5, GR00T N1-N1.7) on LIBERO suites.",
    "summary": "Models within two points at full data differ up to 3x with 50 demos; pi0.5 needs 2-5x fewer demos than pi0 and is most sample-efficient at every budget, especially on long-horizon tasks.",
    "why": "Practical guidance on choosing VLAs for low-data fine-tuning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   }
  ],
  "roundup": [
@@ -572,7 +573,7 @@
    "url": "https://arxiv.org/abs/2610.36729",
    "pdf": "https://arxiv.org/pdf/2610.36729",
    "hf": "https://huggingface.co/papers/2610.36729",
-   "citations": 5
+   "citations": 6
   },
   {
    "id": "2610.37666",
@@ -629,7 +630,7 @@
    "url": "https://arxiv.org/abs/2610.36068",
    "pdf": "https://arxiv.org/pdf/2610.36068",
    "hf": "https://huggingface.co/papers/2610.36068",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.36077",

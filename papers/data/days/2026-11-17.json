@@ -270,7 +270,7 @@
    "summary": "A lightweight predictor forecasts next-boundary observations to precompute a speculative KV cache and chunk, accepted or selectively repaired when real inputs arrive. On LIBERO it gives 2.67x and 1.27x query speedups for pi0.5 and OpenVLA-OFT at comparable success.",
    "why": "Relevant to real-time chunked execution of VLAs.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.23499",
@@ -1461,7 +1461,8 @@
    "org": "Nanyang Technological University",
    "url": "https://arxiv.org/abs/2611.19937",
    "pdf": "https://arxiv.org/pdf/2611.19937",
-   "hf": "https://huggingface.co/papers/2611.19937"
+   "hf": "https://huggingface.co/papers/2611.19937",
+   "citations": 0
   },
   {
    "id": "2611.20218",
@@ -1503,7 +1504,8 @@
    "org": "Tokenwave.AI",
    "url": "https://arxiv.org/abs/2611.20218",
    "pdf": "https://arxiv.org/pdf/2611.20218",
-   "hf": "https://huggingface.co/papers/2611.20218"
+   "hf": "https://huggingface.co/papers/2611.20218",
+   "citations": 0
   },
   {
    "id": "2611.07222",
@@ -1522,7 +1524,8 @@
    "org": "SAINT Machines",
    "url": "https://arxiv.org/abs/2611.07222",
    "pdf": "https://arxiv.org/pdf/2611.07222",
-   "hf": "https://huggingface.co/papers/2611.07222"
+   "hf": "https://huggingface.co/papers/2611.07222",
+   "citations": 0
   },
   {
    "id": "2611.21607",
@@ -1574,7 +1577,8 @@
    "org": "Carnegie Mellon University",
    "url": "https://arxiv.org/abs/2611.17834",
    "pdf": "https://arxiv.org/pdf/2611.17834",
-   "hf": "https://huggingface.co/papers/2611.17834"
+   "hf": "https://huggingface.co/papers/2611.17834",
+   "citations": 0
   },
   {
    "id": "2611.21479",
@@ -1621,7 +1625,8 @@
    "org": "Tencent Hunyuan",
    "url": "https://arxiv.org/abs/2611.20882",
    "pdf": "https://arxiv.org/pdf/2611.20882",
-   "hf": "https://huggingface.co/papers/2611.20882"
+   "hf": "https://huggingface.co/papers/2611.20882",
+   "citations": 0
   }
  ]
 }

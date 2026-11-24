@@ -83,7 +83,7 @@
    "summary": "Instead of predicting action values, a neural ODE learns the action's dynamics by matching integrated actions to targets over short chunks (IL) or single steps (RL), with a diversity head for multimodality. Versus flow matching after one epoch: 5.9x success, 5.4x generalization, 10.8x faster generation; best on 14 real tasks spanning single-arm, bimanual, dexterous and humanoid robots. Also speeds up humanoid motion-tracking RL.",
    "why": "A direct challenger to flow-matching policies and action chunking with broad real-robot evidence, including dexterous hands.",
    "rated_by": "claude",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.02171",
@@ -462,7 +462,7 @@
    "summary": "uni-robot-agent lets an open Qwen model score 31.39 on RoboDojo vs 28.97 for a GPT-based agent, and perform on 19 real tasks. Analysis links robot use to four general model capabilities.",
    "why": "Agentic zero-shot manipulation; different paradigm.",
    "rated_by": "claude",
-   "citations": 3
+   "citations": 5
   },
   {
    "id": "2611.02218",

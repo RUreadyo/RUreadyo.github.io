@@ -42,7 +42,8 @@
    "tldr": "DexForesight distills an action-conditioned 3D hand-point and scene world model into dexterous policy latents, dropping depth and future prediction at deployment.",
    "summary": "Dexterous policies need spatial foresight including occluded fingers. DexForesight trains a world model predicting 3D hand-point motion and visual feature changes from depth, hand kinematics and demos, then aligns policy queries to its frozen predictive queries. It lifts DexJoCo success from 49.4% to 60.5% over 11 tasks and reaches 58.3% vs 50.0% on three real dexterous tasks.",
    "why": "Dexterous policy with implicit world-model foresight, core interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11464",
@@ -75,7 +76,8 @@
    "summary": "The solution fine-tunes pi0.5 with advantage-weighted regression and RECAP on the official score, treating each rollout as a Thompson-sampling trial over ~20 inference parameters. Generic RL reaches 0.85 RDS in two days; with generated full-reward demos and recovery episodes it reaches 0.990 on held-out seeds.",
    "why": "Practical recipe for RL fine-tuning of VLAs.",
    "venue": "CoRL 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11220",
@@ -103,7 +105,8 @@
    "tldr": "EbbFlow schedules MeanFlow's diagonal vs interval temporal sampling as a PINN-style curriculum, improving one-step ImageNet FID from 44.82 to 39.65.",
    "summary": "MeanFlow's fixed temporal sampler mixes boundary (diagonal) and differential-consistency (interval) supervision. Viewing them as PINN collocation points, EbbFlow starts with diagonal supervision and progressively expands left-anchored intervals, leaving loss, target and inference unchanged. On ImageNet 256 DiT-B/2 without CFG it reaches FID 39.65 (1-NFE) and 36.02 (2-NFE) vs 44.82 and 39.86, though a fixed full-horizon variant does better at 1-NFE.",
    "why": "Practical MeanFlow training insight, relevant to one-step generation interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11089",
@@ -132,7 +135,8 @@
    "summary": "Vision-based policy execution is limited by inference latency. The authors generate continuous targets from discontinuous asynchronous predictions via a tracking-control formulation and skip actions when predicted-position variance is low. With ACT and OpenVLA-OFT on a bimanual robot, execution speeds up substantially while keeping high success.",
    "why": "Practical take on real-time chunk execution, related to real-time chunking.",
    "venue": "NeurIPS 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11085",
@@ -169,7 +173,8 @@
    "tldr": "ObjectWorld introduces 3D full-object flow, a 1210-hour dataset, and a world model predicting dense full-object trajectories from image and task text.",
    "summary": "World models need an actionable intermediate representation supervisable at scale. Full-object flow assigns 3D trajectories over complete object surfaces incl. occluded parts, for rigid and deformable objects; a 1210-hour real+sim dataset with an annotation pipeline trains an image+text-conditioned flow predictor. It shows data-scalable prediction and downstream manipulation across scenes and embodiments.",
    "why": "Object-flow world models as an embodiment-agnostic interface, useful for learning from video.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 2
   }
  ],
  "roundup": [
@@ -205,7 +210,8 @@
    "summary": "Learning world models from partial vector observations is hard. K-PWM uses bilinear latent dynamics enabling exact Gaussian belief propagation, EKF/smoothing inference without an encoder network, and closed-form EM updates. It achieves lower long-horizon error on partially observed MuJoCo tasks with less training time and competitive real-time tracking on Menagerie robots.",
    "why": "Structured world model for MPPI control; moderately relevant.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.12978",
@@ -236,7 +242,8 @@
    "tldr": "TRD combines distribution matching and teacher-trajectory supervision via a momentum-mixture policy in one student pass for one-step flow distillation.",
    "summary": "Trajectory alignment degrades at tiny budgets while distribution matching needs an extra score network. TRD's single-pass momentum-mixture policy acts as one-step generator, student marginal velocity estimator and trajectory-supervised velocity field. On SANA-1.6B and SD3.5 it beats consistency and DMD baselines in quality and efficiency, with some diversity loss.",
    "why": "One-step distillation method; relevant to fast generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11500",
@@ -274,7 +281,8 @@
    "tldr": "ForeAct uses a pretrained video world model as a single-pass representation backbone with next-frame depth tokens for low-latency geometry-aware control.",
    "summary": "WAMs are costly due to iterative denoising and lack explicit geometry. ForeAct encodes only the clean current latent in one pass, with learnable tokens supervised by next-frame relative depth during training only. It gets 96.6% on LIBERO, 63.5% on SimplerEnv-Bridge and 74.4% over 90 real rollouts.",
    "why": "Efficient use of video world-model priors for policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11421",
@@ -310,7 +318,8 @@
    "tldr": "GenRM-Flow shows a preference-tuned flow model's velocity-error differences are an implicit process reward in noisy latent space.",
    "summary": "Video reward models ignore the generator's own generative capacity. From the KL-constrained optimal policy of offline preference objectives, the implicit reward is the relative velocity-prediction error difference, unifying DPO, IPO and RWR as paths to the same optimum. This generator-derived reward replaces VLM scorers in FlowAWR and improves video generation.",
    "why": "Theory linking flow matching and implicit rewards, transferable to RL with flow policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11179",
@@ -338,7 +347,8 @@
    "tldr": "Shows CFG at the first (pure-noise) step causes speaker-similarity loss in few-step flow TTS; skipping guidance on step one recovers most of it.",
    "summary": "At pure noise the network returns the conditional mean, so guidance shifts all trajectories by a near-constant vector whose size grows with first-step length. First-step unguided sampling recovers 84-91% of the 2-step SIM loss on CosyVoice, and a midpoint variant matches the 10-step teacher on some decoders, with fewer NFEs.",
    "why": "Clean analysis of guidance in few-step flow sampling, applicable beyond speech.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11517",
@@ -370,7 +380,8 @@
    "tldr": "InfCoiL jointly RL-fine-tunes a flow-matching HOI planner and physics controller in closed loop, introducing Semantic Flow Policy Optimization.",
    "summary": "Planner-controller HOI systems keep the planner fixed. InfCoiL alternates RL fine-tuning of a morphology-aware flow planner and multi-morphology controller from shared rollouts; SFPO stochasticizes selected denoising steps with semantic covariance and uses group-relative sequence rewards. It beats open-loop hierarchical baselines on OMOMO.",
    "why": "RL fine-tuning of flow planners, though for character animation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11650",
@@ -402,7 +413,8 @@
    "tldr": "FlowEval uses flow-matching loss disagreement on a few target demos to predict how much adaptation an embodied foundation model needs.",
    "summary": "Practitioners need to know how much target data to collect. FlowEval probes models with flow-matching objectives on successful target demos, distinguishing seen from unseen deployments across pi0.5, MolmoAct2, GR00T and DreamZero, and correlating with success gains when fine-tuning pi0.5 and GR00T on 17 RoboCasa tasks.",
    "why": "Useful training-free diagnostic for VLA fine-tuning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.11554",
@@ -445,7 +457,8 @@
    "tldr": "Kimodo-Policy uses a frozen text-to-motion generator with ControlNet visual conditioning as the action backbone for humanoid loco-manipulation.",
    "summary": "VLA priors don't capture motion structure. Kinematic Action Models pretrain on whole-body motion; Kimodo-Policy adds ControlNet conditioning, a root-body-hand hierarchy and history-conditioned chunking. It gets 72.14% on HumanoidArena and 60% across eight real tasks with 92M trainable params.",
    "why": "ControlNet-style fine-tuning of motion priors; humanoid-focused.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.11131",
@@ -477,7 +490,8 @@
    "kw_score": 10,
    "tldr": "We present CrossLiDAR, a unified transformer-based framework capable of generating controllable and spatio-temporally consistent multi-sensor LiDAR sequences.",
    "summary": "We present CrossLiDAR, a unified transformer-based framework capable of generating controllable and spatio-temporally consistent multi-sensor LiDAR sequences. For modeling the temporal consistency, CrossLiDAR generates short $N$-frame sequences and extends them autoregressively to improve long-horizon coherence.",
-   "venue": "WACV 2027"
+   "venue": "WACV 2027",
+   "citations": 0
   },
   {
    "id": "2611.11665",
@@ -503,7 +517,8 @@
    ],
    "kw_score": 6,
    "tldr": "In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model.",
-   "summary": "In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles."
+   "summary": "In this work, we address NAMO for humanoid robots in cluttered outdoor rough terrain by proposing a hybrid planning framework that combines semantic priors from a Vision-Language Model (VLM) with embodied robot interaction data through a Gaussian process (GP) residual model. Humanoid robots have achieved significant progress in locomotion and manipulation, enabling traversal over rough terrain and richer interaction with the environment, such as moving obstacles.",
+   "citations": 0
   },
   {
    "id": "2611.11580",
@@ -526,7 +541,8 @@
    ],
    "kw_score": 5,
    "tldr": "We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement.",
-   "summary": "We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration."
+   "summary": "We present \\texttt{Qubit-to-Motion}, an evidence-centered framework for support-constrained sequencing and simulated robotic placement. Mean macro travel is $34.537\\pm0.206$~m, inference requires $8.60\\pm1.27$~ms per route, and replay achieves $8.764\\pm0.220~μ$m mean final position error with 0.356~mm maximum interpenetration.",
+   "citations": 0
   },
   {
    "id": "2611.11698",
@@ -552,7 +568,8 @@
    ],
    "kw_score": 4,
    "tldr": "Useful edge hardware can lose product support while retaining substantial computation.",
-   "summary": "Useful edge hardware can lose product support while retaining substantial computation."
+   "summary": "Useful edge hardware can lose product support while retaining substantial computation.",
+   "citations": 0
   },
   {
    "id": "2611.11648",
@@ -581,7 +598,8 @@
    ],
    "kw_score": 4,
    "tldr": "We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives.",
-   "summary": "We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses."
+   "summary": "We introduce PA-SaR, a mathematical and architectural framework for coordinating heterogeneous local control, learning-based exploration, supervisory task allocation, and adaptive approach-lead victim guidance around mission-level objectives. Improving individual capabilities of robots does not necessarily improve mission outcomes: safer motion can restrict the exploration behavior, faster discovery can increase the rescue demand, and effective guidance depends on victim responses.",
+   "citations": 0
   },
   {
    "id": "2611.11164",
@@ -603,7 +621,8 @@
    ],
    "kw_score": 4,
    "tldr": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python.",
-   "summary": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python."
+   "summary": "This tutorial presents a step-by-step introduction to multi-robot formation control using differential- drive robots, an overhead camera, and Python.",
+   "citations": 0
   }
  ],
  "trending_ml": []

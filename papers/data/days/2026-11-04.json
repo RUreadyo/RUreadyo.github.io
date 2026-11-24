@@ -40,7 +40,8 @@
    "tldr": "MAC-v2 makes long-horizon model-based value expansion work from pixels using a reconstruction-free latent world model with action chunking.",
    "summary": "Pixel-based value expansion suffers compounding representation and dynamics errors. MAC-v2 learns latents from prediction and control objectives and uses action chunks to cut recursive predictions. Strong results vs model-free and model-based offline RL on visual OGBench, MMBench2, Robomimic and LIBERO-10; analyses show long horizons, chunking and latent objectives are each essential.",
    "why": "Levine-group work tying action chunking to world-model RL from pixels.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06905",
@@ -94,7 +95,8 @@
    "tldr": "Shows generalist robot policies can be improved online across many tasks simultaneously with value-based RL, generalizing to untrained tasks.",
    "summary": "Builds structured evaluations for multi-task online improvement and studies value estimation, policy extraction and resource allocation. The right recipe improves many tasks at once and boosts unseen tasks; training task distribution and value-based RL are critical.",
    "why": "Directly on RL fine-tuning of foundation policies, with systematic design analysis.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.07055",
@@ -129,7 +131,8 @@
    "tldr": "Competitive flow matching adds a latent code with winner-take-all loss over K velocity candidates to cover modes, plus a new guidance.",
    "summary": "Standard FM collapses multiple valid targets into a mean velocity. Sampling K candidates via a low-dim code and training only the best enables mode specialization and 'auxiliary conditioning scaling' guidance. On ImageNet-256 at 67% recall, FD drops from 19.22 to 5.91 on SiT with <3% of pretraining compute.",
    "why": "New angle on flow-matching mode coverage and guidance, directly in your generative-modeling interests and relevant to multimodal policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06817",
@@ -193,7 +196,8 @@
    "tldr": "Open recipe scaling egocentric human-video pretraining of world-action models to 50k hours, finding log-linear scaling to robot success.",
    "summary": "Curates Open-HumanWAM-50K with hand motion and language annotations; HumanWAM-Vanilla pretrained on human video alone reaches 92.1% on RoboTwin Clean2Clean after post-training. Joint human-robot goal-conditioned pretraining reaches 84.6% on Clean2Random and shows in-context adaptation on real robots. Data, pipelines and checkpoints released.",
    "why": "Large open resource on learning from egocentric human data via world-action models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 1
   },
   {
    "id": "2611.06673",
@@ -223,7 +227,8 @@
    "tldr": "Controlled 720-trial real-robot study isolating which tactile cues (RGB, depth/normal, marker flow) help contact-rich imitation learning.",
    "summary": "Derives tactile RGB, normal/depth maps and marker-flow from one vision-based tactile stream and compares them with identical demos and backbone. Tactile raises success from 57.8% to 78.9%; marker flow alone reaches 74.4%; cue-factorized encoders help and cross-attention fusion matches pretrained tactile encoders.",
    "why": "Actionable guidance on tactile representations for your contact-rich policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06724",
@@ -252,7 +257,8 @@
    "tldr": "Full-stack survey of dexterous hands in the foundation-model era covering hardware, data, cross-embodiment transfer, learning and evaluation.",
    "summary": "Reviews work from 2024 to Nov 2026 in five layers with tactile and human hand-object perspectives, plus comparative tables and case analyses. Concludes human data value depends on kinematic/visual/contact alignment, shared action spaces do not remove embodiment constraints, and task completion does not establish physical correctness. Lists eleven open problems.",
    "why": "A timely map of your core field; useful reference rather than new results.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -316,7 +322,8 @@
    "tldr": "Velocity Adversarial Distillation unifies score distillation, Fisher and moment matching via a critic comparing student and teacher velocity fields.",
    "summary": "Argues student-score estimation at intermediate steps is unreliable and uses flow-matching velocities built from the student's sampling process. VA-TDM adds trajectory distribution matching with online velocity learning, giving SOTA four-step text-to-image and text-to-video results and scaling to 33B.",
    "why": "Few-step distillation theory/method relevant to fast generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 2
   },
   {
    "id": "2611.06270",
@@ -348,7 +355,8 @@
    "tldr": "NextGAN trains a critic by regressing its input gradient onto feature displacements, enabling simple one/few-step adaptation up to 14B.",
    "summary": "Equivalent to adversarial training with gradient-energy penalty. One-step ImageNet FID 2.87 (pixel JiT-B), 1.54 (DiT-XL/1), 1.36 adversarial; Wan2.1-1.3B tops VBench among 1.3B methods at one and two steps.",
    "why": "One-step generation method; relevant to fast generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06918",
@@ -390,7 +398,8 @@
    "tldr": "Encoder-free NEO-VLA lets a flow-matching action expert read visual tokens across backbone depths, beating encoder-based VLAs.",
    "summary": "Tokenizes images with light patch convs that evolve jointly with language, letting the action expert tap multiple depths. Native architectures outperform encoder-based ones under controlled comparisons, and action-critical signals peak before the final layer.",
    "why": "Architectural insight for VLA design.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06710",
@@ -416,7 +425,8 @@
    "tldr": "Measurement study of seven VLA inference optimizations across seven VLAs and four GPUs, with stacking guidelines.",
    "summary": "Analyzes how CPU launch overhead, memory bandwidth and kernel efficiency shape gains from CUDA graphs, compilation, pruning and quantization, and how methods interact. Derives VLA-Triage guidelines for latency budgets.",
    "why": "Practical reference for fast VLA deployment.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06184",
@@ -449,7 +459,8 @@
    "summary": "The monitor checks subtask completion after each chunk so the expensive planner is called only ~3.6 times per episode. Achieves 79.13% success, 34.6 pts over the best non-oracle baseline.",
    "why": "Karen Liu group; practical hierarchical memory design but system-engineering focused.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 4
   },
   {
    "id": "2611.05847",
@@ -477,7 +488,7 @@
    "summary": "Shows Euclidean goal costs in LeWorldModel lose temporal contrast at long offsets. T2G trains on latent triples without rewards and lifts average planning success from 32.7% to 63.0%, rivaling hierarchical H-JEPA.",
    "why": "Simple fix for JEPA world-model planning; moderately relevant.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.06442",
@@ -512,7 +523,8 @@
    "tldr": "TwinBridge uses Gaussian-splat digital twins to pretrain policies and distill dense visual rewards for real-world lab RL.",
    "summary": "Simulator states provide event-based progress rewards, distilled into a visual reward model for human-in-the-loop real RL. Reaches 98% success on five lab tasks within 25 minutes of real interaction each.",
    "why": "Practical real-world RL fine-tuning recipe; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06447",
@@ -543,7 +555,8 @@
    "tldr": "Auto-derived target/robot regions supervise VLA attention allocation and contrastive alignment to reduce visual shortcuts.",
    "summary": "Generates candidate regions from interaction-induced visual changes refined by segmentation, then adds attention-allocation and contrastive losses. Gains of 6.5-25.2% across backbones in sim and real.",
    "why": "Incremental VLA training improvement.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.06120",
@@ -632,7 +645,8 @@
    ],
    "kw_score": 9,
    "tldr": "We present cuRoboV2-Fast, a GPU-accelerated planner that reduces both planning latency and execution time for collision-free, payload-aware, torque-limited motions.",
-   "summary": "We present cuRoboV2-Fast, a GPU-accelerated planner that reduces both planning latency and execution time for collision-free, payload-aware, torque-limited motions. With a 3,kg payload, cuRoboV2-Fast achieves 4.4 ms mean planning time on RTX 5090, 14.7x faster than cuRoboV2."
+   "summary": "We present cuRoboV2-Fast, a GPU-accelerated planner that reduces both planning latency and execution time for collision-free, payload-aware, torque-limited motions. With a 3,kg payload, cuRoboV2-Fast achieves 4.4 ms mean planning time on RTX 5090, 14.7x faster than cuRoboV2.",
+   "citations": 0
   },
   {
    "id": "2611.06654",
@@ -686,7 +700,8 @@
    ],
    "kw_score": 9,
    "tldr": "We propose Compounding Physical RSI, a self-evolving policy framework that turns execution failures into heritable capability.",
-   "summary": "We propose Compounding Physical RSI, a self-evolving policy framework that turns execution failures into heritable capability. This staged structure calls for Recursive Self-Improvement (RSI), in which a policy iteratively executes, diagnoses failures, and updates itself."
+   "summary": "We propose Compounding Physical RSI, a self-evolving policy framework that turns execution failures into heritable capability. This staged structure calls for Recursive Self-Improvement (RSI), in which a policy iteratively executes, diagnoses failures, and updates itself.",
+   "citations": 0
   },
   {
    "id": "2611.06475",
@@ -718,7 +733,8 @@
    ],
    "kw_score": 8,
    "tldr": "To address this gap, we introduce RoboCasa-Mem, a new benchmark comprising nine mobile manipulation tasks that require agents to use interaction history at key decision points.",
-   "summary": "To address this gap, we introduce RoboCasa-Mem, a new benchmark comprising nine mobile manipulation tasks that require agents to use interaction history at key decision points."
+   "summary": "To address this gap, we introduce RoboCasa-Mem, a new benchmark comprising nine mobile manipulation tasks that require agents to use interaction history at key decision points.",
+   "citations": 0
   },
   {
    "id": "2611.06359",
@@ -743,7 +759,8 @@
    ],
    "kw_score": 8,
    "tldr": "Vortex grippers are commonly integrated into automated systems for handling objects with complex geometries in packaging, sorting, and assembling.",
-   "summary": "Vortex grippers are commonly integrated into automated systems for handling objects with complex geometries in packaging, sorting, and assembling."
+   "summary": "Vortex grippers are commonly integrated into automated systems for handling objects with complex geometries in packaging, sorting, and assembling.",
+   "citations": 0
   },
   {
    "id": "2611.06702",
@@ -772,7 +789,8 @@
    ],
    "kw_score": 7,
    "tldr": "This paper presents a planner-conditioned air-ground assistance method that evaluates how uncertain map information affects the UGV's current MPPI rollouts.",
-   "summary": "This paper presents a planner-conditioned air-ground assistance method that evaluates how uncertain map information affects the UGV's current MPPI rollouts. When navigation remains degraded, we score the same rollouts under resolved map hypotheses, select the map layer with the largest useful improvement, request the corresponding aerial measurement, fuse the returned information, and replan."
+   "summary": "This paper presents a planner-conditioned air-ground assistance method that evaluates how uncertain map information affects the UGV's current MPPI rollouts. When navigation remains degraded, we score the same rollouts under resolved map hypotheses, select the map layer with the largest useful improvement, request the corresponding aerial measurement, fuse the returned information, and replan.",
+   "citations": 0
   },
   {
    "id": "2611.06863",
@@ -795,7 +813,8 @@
    "kw_score": 6,
    "tldr": "Code-as-policy agents often use execution feedback to retry failed programs.",
    "summary": "Code-as-policy agents often use execution feedback to retry failed programs. Additional sampling and task guidance can also improve success, leaving the contribution of failure-specific feedback unclear.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.06689",
@@ -820,7 +839,8 @@
    ],
    "kw_score": 6,
    "tldr": "This paper explores the cognitive effects of haptic feedback to improve vehicle safety in such environments.",
-   "summary": "This paper explores the cognitive effects of haptic feedback to improve vehicle safety in such environments. Results demonstrate that while encountering an unseen cross-current significantly increases an operator's physical and temporal demand, the introduction of haptic feedback mitigates these factors and improves self-assessed performance."
+   "summary": "This paper explores the cognitive effects of haptic feedback to improve vehicle safety in such environments. Results demonstrate that while encountering an unseen cross-current significantly increases an operator's physical and temporal demand, the introduction of haptic feedback mitigates these factors and improves self-assessed performance.",
+   "citations": 0
   },
   {
    "id": "2611.07229",
@@ -848,7 +868,8 @@
    ],
    "kw_score": 5,
    "tldr": "We introduce Spatial-UMI-Dream, a 5B spatial World Action Model (WAM) pretrained on 605 hours of RGB-D UMI data through two-stage training -- world-only adaptation followed by joint world-action learning -- to jointly predict future RGB, fisheye-aligned metric depth, and…",
-   "summary": "We introduce Spatial-UMI-Dream, a 5B spatial World Action Model (WAM) pretrained on 605 hours of RGB-D UMI data through two-stage training -- world-only adaptation followed by joint world-action learning -- to jointly predict future RGB, fisheye-aligned metric depth, and actions. On RoboTwin-UMI, Spatial-UMI-Dream achieves 79.10% in-domain success and 72.15% under combined embodiment and environment shifts, exceeding the strongest evaluated baseline in each setting by 4.65 and 10.30 percentage points, respectively."
+   "summary": "We introduce Spatial-UMI-Dream, a 5B spatial World Action Model (WAM) pretrained on 605 hours of RGB-D UMI data through two-stage training -- world-only adaptation followed by joint world-action learning -- to jointly predict future RGB, fisheye-aligned metric depth, and actions. On RoboTwin-UMI, Spatial-UMI-Dream achieves 79.10% in-domain success and 72.15% under combined embodiment and environment shifts, exceeding the strongest evaluated baseline in each setting by 4.65 and 10.30 percentage points, respectively.",
+   "citations": 0
   },
   {
    "id": "2611.06564",
@@ -876,7 +897,8 @@
    ],
    "kw_score": 5,
    "tldr": "We present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data.",
-   "summary": "We present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data."
+   "summary": "We present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data.",
+   "citations": 0
   },
   {
    "id": "2611.05929",
@@ -924,7 +946,8 @@
    ],
    "kw_score": 4,
    "tldr": "This paper presents an adaptive hybrid vision-force controller for robotic grippers to effectively manipulate laboratory squeeze bottles to dispense liquid.",
-   "summary": "This paper presents an adaptive hybrid vision-force controller for robotic grippers to effectively manipulate laboratory squeeze bottles to dispense liquid. Results demonstrated that the proposed adaptive hybrid vision-force controller achieved more accurate liquid dispensing with a mean absolute error (MAE) of 6.54 mL compared to a MAE of 15.92 mL from the pure force controller, while also replicating the human action recorded from the EMG signal more closely."
+   "summary": "This paper presents an adaptive hybrid vision-force controller for robotic grippers to effectively manipulate laboratory squeeze bottles to dispense liquid. Results demonstrated that the proposed adaptive hybrid vision-force controller achieved more accurate liquid dispensing with a mean absolute error (MAE) of 6.54 mL compared to a MAE of 15.92 mL from the pure force controller, while also replicating the human action recorded from the EMG signal more closely.",
+   "citations": 0
   },
   {
    "id": "2611.06908",
@@ -956,7 +979,8 @@
    ],
    "kw_score": 4,
    "tldr": "We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes.",
-   "summary": "We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments."
+   "summary": "We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments.",
+   "citations": 0
   },
   {
    "id": "2611.06802",
@@ -982,7 +1006,8 @@
    ],
    "kw_score": 4,
    "tldr": "We propose Conservative DeepReach (ConDR) which aims to learn a subsolution of the HJI VI such that the learned unsafe set contains the true one.",
-   "summary": "We propose Conservative DeepReach (ConDR) which aims to learn a subsolution of the HJI VI such that the learned unsafe set contains the true one. DeepReach improves scalability by replacing the grid with a neural value function trained on the HJ-Isaacs (HJI) variational inequality (VI), but penalizes both sides of the residual equally."
+   "summary": "We propose Conservative DeepReach (ConDR) which aims to learn a subsolution of the HJI VI such that the learned unsafe set contains the true one. DeepReach improves scalability by replacing the grid with a neural value function trained on the HJ-Isaacs (HJI) variational inequality (VI), but penalizes both sides of the residual equally.",
+   "citations": 0
   },
   {
    "id": "2611.06768",
@@ -1012,7 +1037,8 @@
    ],
    "kw_score": 4,
    "tldr": "In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform…",
-   "summary": "In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction."
+   "summary": "In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction.",
+   "citations": 1
   },
   {
    "id": "2611.06653",
@@ -1034,7 +1060,8 @@
    "kw_score": 4,
    "tldr": "A robot action can satisfy shape and range constraints yet carry the wrong semantics: axes may be permuted, signs inverted, rotations rescaled, or gripper polarity reversed.",
    "summary": "A robot action can satisfy shape and range constraints yet carry the wrong semantics: axes may be permuted, signs inverted, rotations rescaled, or gripper polarity reversed. On ten LIBERO Spatial tasks comprising 432 source episodes, a capacity-controlled comparison at 2.5% empirical clean false-positive rate gives 46.1% recall for a ridge forward residual, 61.0% for a four-component joint Gaussian mixture, and 65.7% for the exact conditional of that same mixture.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.06378",
@@ -1061,7 +1088,8 @@
    ],
    "kw_score": 4,
    "tldr": "We propose UniLoop, a unified framework that reuses the hierarchical representations of the pretrained geometric foundation model throughout this pipeline.",
-   "summary": "We propose UniLoop, a unified framework that reuses the hierarchical representations of the pretrained geometric foundation model throughout this pipeline. Experiments on place recognition, loop verification, and relative pose estimation show that UniLoop improves loop-closure robustness and accuracy while reducing redundant backbone computation relative to modular pipelines."
+   "summary": "We propose UniLoop, a unified framework that reuses the hierarchical representations of the pretrained geometric foundation model throughout this pipeline. Experiments on place recognition, loop verification, and relative pose estimation show that UniLoop improves loop-closure robustness and accuracy while reducing redundant backbone computation relative to modular pipelines.",
+   "citations": 0
   },
   {
    "id": "2611.06118",
@@ -1157,7 +1185,7 @@
    "url": "https://arxiv.org/abs/2611.04916",
    "pdf": "https://arxiv.org/pdf/2611.04916",
    "hf": "https://huggingface.co/papers/2611.04916",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2611.00617",
@@ -1420,7 +1448,7 @@
    "url": "https://arxiv.org/abs/2611.05275",
    "pdf": "https://arxiv.org/pdf/2611.05275",
    "hf": "https://huggingface.co/papers/2611.05275",
-   "citations": 0
+   "citations": 1
   }
  ]
 }
