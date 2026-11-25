@@ -182,7 +182,7 @@
     <p class="eyebrow">A visual tutorial</p>
     <h1>Robot Learning <span>Primer</span></h1>
     <p class="lede">From PD loops to diffusion policies, PPO, and VLAs: the core equations, the intuition behind them, and what to read next.</p>
-    <div class="pills"><span>Control</span><span>Imitation learning</span><span>Diffusion &amp; flow</span><span>Reinforcement learning</span><span>Sim-to-real</span><span>Dexterity</span><span>VLAs</span><span>World models</span></div>
+    <div class="pills"><span>Control</span><span>Imitation learning</span><span>Diffusion &amp; flow</span><span>Reinforcement learning</span><span>Sim-to-real</span><span>Dexterity</span><span>VLAs</span><span>World models</span><span>Agentic robotics</span></div>
   </header>
 
   <div class="wrap">
@@ -203,6 +203,7 @@
       <li><a href="#dex">Dexterous manipulation</a></li>
       <li><a href="#fm">Foundation models / VLAs</a></li>
       <li><a href="#wm">World models &amp; video</a></li>
+      <li><a href="#agentic">Agentic robotics</a></li>
       <li><a href="#practice">Practical checklist</a></li>
       <li><a href="#reading">Reading path</a></li>
     </ol>
@@ -662,8 +663,61 @@
 </section>
 
 <!-- ============================================================ 15 -->
+<section id="agentic" style="--c: var(--purple)">
+  <h2><span class="num">15</span>Agentic robotics</h2>
+  <p>A VLA maps one instruction to motor commands for a few seconds. An <b>agentic</b> system wraps a reasoning model around such skills and runs it in a loop: look at the scene, plan, call a tool (a VLA skill, a perception model, a motion planner, code, search, a human), check what happened, and re-plan. It is the robotics version of LLM agents that use tools, and it targets long-horizon tasks, recovery from failure, and instructions that need world knowledge.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 680 262" role="img" aria-label="Agentic robot loop: an orchestrator model calls skills and tools and re-plans from their results">
+      <rect class="node" x="10" y="30" width="150" height="54" rx="12"/><text class="b" x="85" y="53" text-anchor="middle">Goal</text><text class="sm" x="85" y="72" text-anchor="middle">“pack for a rainy trip”</text>
+      <rect class="node" x="10" y="150" width="150" height="54" rx="12"/><text class="b" x="85" y="173" text-anchor="middle">Memory</text><text class="sm" x="85" y="192" text-anchor="middle">past steps, scene, user</text>
+      <path class="ln" d="M160 57 L206 92" marker-end="url(#a-mu)"/>
+      <path class="ln" d="M160 177 L206 150" marker-end="url(#a-mu)"/><path class="ln" d="M206 168 L164 190" marker-end="url(#a-mu)"/>
+      <g style="--k: var(--purple)"><rect class="nk" x="210" y="62" width="190" height="122" rx="14"/><text class="b" x="305" y="106" text-anchor="middle" style="font-size:15px">Orchestrator</text><text class="sm" x="305" y="128" text-anchor="middle">VLM / LLM, “System 2”</text><text class="sm" x="305" y="146" text-anchor="middle">reason · plan · re-plan</text></g>
+      <g style="--k: var(--orange)"><rect class="nk" x="456" y="8" width="214" height="44" rx="10"/><text class="b" x="563" y="35" text-anchor="middle">VLA skill · “System 1”</text></g>
+      <g style="--k: var(--teal)"><rect class="nk" x="456" y="62" width="214" height="44" rx="10"/><text class="b" x="563" y="89" text-anchor="middle">Perception · success check</text></g>
+      <g style="--k: var(--blue)"><rect class="nk" x="456" y="116" width="214" height="44" rx="10"/><text class="b" x="563" y="143" text-anchor="middle">Code · motion planner</text></g>
+      <g style="--k: var(--green)"><rect class="nk" x="456" y="170" width="214" height="44" rx="10"/><text class="b" x="563" y="197" text-anchor="middle">Search · ask a human</text></g>
+      <path class="ln" d="M400 90 L452 32" style="stroke: var(--purple)" marker-end="url(#a-pu)"/>
+      <path class="ln" d="M400 104 L452 84" style="stroke: var(--purple)" marker-end="url(#a-pu)"/>
+      <path class="ln" d="M400 140 L452 138" style="stroke: var(--purple)" marker-end="url(#a-pu)"/>
+      <path class="ln" d="M400 160 L452 190" style="stroke: var(--purple)" marker-end="url(#a-pu)"/>
+      <path class="ln dash" d="M563 214 V244 H305 V188" marker-end="url(#a-mu)"/>
+      <text class="sm" x="434" y="238" text-anchor="middle">results, observations, success / failure</text>
+    </svg>
+    <figcaption><b>Figure 11.</b> The agentic loop. A reasoning model picks the next step and the tool for it; skills act on the robot; their results (and a success check) come back so the plan can change. Memory carries state across a long task.</figcaption>
+  </figure>
+
+  <h3>How the planner talks to the robot</h3>
+  <p>The main design choice is the interface between the slow reasoning model and the fast controller:</p>
+  <ul>
+    <li><b>Language subtasks</b> (SayCan, Hi Robot, \(\pi_{0.5}\)'s high-level step, Gemini Robotics 1.5): the planner says "pick up the blue umbrella" and a language-conditioned VLA executes it. Simple and general; limited by what the low-level policy can do.</li>
+    <li><b>Code</b> (Code as Policies, ProgPrompt): the planner writes a program over perception and motion APIs. Precise loops, conditions and arithmetic; brittle when the API doesn't fit the task.</li>
+    <li><b>Spatial intermediates</b> (VoxPoser, MOKA, ReKep): the planner outputs keypoints, affordance maps or constraints, and an optimizer or planner turns them into motion. Grounded in geometry, but mostly for kinematic tasks.</li>
+    <li><b>One model, two speeds</b> (GR00T N1, Figure's Helix, \(\pi_{0.5}\)): a single network with a slow VLM part and a fast action part, trained end to end. Less modular, but no hand-designed interface.</li>
+  </ul>
+
+  <h3>Closing the loop</h3>
+  <ul>
+    <li><b>Feedback:</b> after each step, feed back success detection, scene descriptions or human corrections, then re-plan (Inner Monologue). Without this an open-loop plan can't recover from a single failed grasp.</li>
+    <li><b>Thinking before acting:</b> newer embodied-reasoning models (Gemini Robotics-ER, Cosmos-Reason) are trained to reason about space, physics and progress before choosing the next step.</li>
+    <li><b>Memory:</b> long tasks need a record of what was done and where things are, such as a log of past steps or a spatial index of objects seen (ReMEmbR).</li>
+    <li><b>Asking for help:</b> calibrated uncertainty tells the agent when to ask a person instead of guessing (KnowNo).</li>
+  </ul>
+
+  <h3>Agents that do robot learning</h3>
+  <p>Agents also automate parts of the research loop itself:</p>
+  <ul>
+    <li><b>Rewards:</b> an LLM writes and iterates on reward code from training feedback (Eureka, Text2Reward), including domain randomization ranges for sim-to-real (DrEureka).</li>
+    <li><b>Tasks and environments:</b> generate simulation scenes and tasks for training (RoboGen, GenSim).</li>
+    <li><b>Data collection:</b> a VLM proposes tasks across a robot fleet, filters them for safety and feasibility, and scores the outcomes (AutoRT, SOAR), producing data for self-improvement.</li>
+  </ul>
+
+  <div class="card"><h4>Where it breaks</h4><p>Most failures still come from the low-level skill, not the plan. A planner can't recover from a skill that doesn't exist. Calling a large model each step adds seconds of latency. Errors compound over long horizons, and a confident wrong success check is worse than none. Physical actions can't be undone the way a code edit can, so unsafe-action filters, safety rules for the planner (ASIMOV) and human confirmation for irreversible steps matter more than in software agents. Evaluation is hard too: report success per subtask and over the whole task, plus how often the agent recovers from failures.</p></div>
+</section>
+
+<!-- ============================================================ 16 -->
 <section id="practice" style="--c: var(--amber)">
-  <h2><span class="num">15</span>Practical checklist</h2>
+  <h2><span class="num">16</span>Practical checklist</h2>
   <ol>
     <li>Get the <b>controller and action space</b> right first: control rate, gains, delta vs. absolute, the frame actions are expressed in.</li>
     <li><b>Normalize</b> actions and proprioception, per dataset when mixing datasets.</li>
@@ -675,9 +729,9 @@
   </ol>
 </section>
 
-<!-- ============================================================ 16 -->
+<!-- ============================================================ 17 -->
 <section id="reading" style="--c: var(--blue)">
-  <h2><span class="num">16</span>Reading path</h2>
+  <h2><span class="num">17</span>Reading path</h2>
   <ul class="refs">
     <li><b>Foundations</b> · Sutton &amp; Barto, <i>Reinforcement Learning</i> · Lynch &amp; Park, <i>Modern Robotics</i> · Levine's CS285 · Tedrake's <i>Underactuated Robotics</i> and <i>Robotic Manipulation</i></li>
     <li><b>Imitation learning</b> · DAgger · ACT/ALOHA · Diffusion Policy · UMI · Consistency Policy · Real-Time Chunking · Streaming Flow Policy</li>
@@ -687,6 +741,7 @@
     <li><b>Dexterity</b> · OpenAI Rubik's cube · In-hand rotation (Qi et al.) · DexMV · DexCap · Sequential Dexterity · DextrAH-G · LEAP Hand</li>
     <li><b>Foundation models</b> · RT-2 · OpenVLA · Octo · π0 / π0.5 · TRI LBM · GR00T N1</li>
     <li><b>World models</b> · Dreamer · Diffusion Forcing · UVA · V-JEPA 2 · DreamGen · Genie</li>
+    <li><b>Agentic robotics</b> · SayCan · Inner Monologue · Code as Policies · VoxPoser · ReKep · KnowNo · AutoRT · Eureka · Hi Robot · Gemini Robotics 1.5 / ER</li>
   </ul>
 </section>
 
