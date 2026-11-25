@@ -524,7 +524,7 @@ def main():
         for q in digest["top_picks"] + digest["roundup"]:
             o = old.get(q["id"], {})
             for k in ("venue", "citations"):
-                if o.get(k) and not q.get(k):
+                if o.get(k) is not None and q.get(k) in (None, ""):
                     q[k] = o[k]
         dump(DAYS / f"{day}.json", digest, 1)
         index[day] = {"date": day, "top": len(top), "roundup": len(roundup), "papers": len(by_day[day]),

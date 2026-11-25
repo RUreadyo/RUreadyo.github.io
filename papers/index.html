@@ -255,7 +255,7 @@ function card(p, opts = {}) {
   const pills = (p.topics || []).slice(0, 2).map(x => `<span class="pill" style="--c:${tc(x)}">${esc(TOPICS[x] || x)}</span>`).join("");
   const rel = p.relevance != null ? `<span class="rel" title="Relevance to my interests">relevance <span class="bar"><i style="width:${p.relevance * 10}%"></i></span> ${p.relevance}/10</span>` : "";
   const follow = p.tracked_authors?.length ? `<span class="badge follow" title="Author from a group I follow (papers/config.json → tracked_authors)">★ ${esc(p.tracked_authors.slice(0, 2).join(", "))}${p.tracked_authors.length > 2 ? " +" + (p.tracked_authors.length - 2) : ""}</span>` : "";
-  const cite = p.citations ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations} citations · Semantic Scholar</span>` : "";
+  const cite = p.citations != null ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations} citations · Semantic Scholar</span>` : "";
   const sumText = p.summary && p.summary !== p.tldr ? p.summary : "";
   return `<article class="card" style="--tc:${tc(t)}">
     <div class="meta-row">${pills}${venueBadge(p.venue)}${follow}${cite}${rel}</div>
