@@ -15,6 +15,7 @@ Already-built conference-years are skipped unless --refresh (proceedings don't c
 """
 import argparse
 import ast
+import difflib
 import datetime as dt
 import html
 import json
@@ -247,8 +248,8 @@ ARXIV_CACHE = ROOT / "papers" / "data" / "cache" / "arxiv_titles.json"
 def arxiv_by_title(title, cache):
     """Authors / abstract / id for a title via the arXiv API (3 s politeness delay; cached)."""
     k = norm(title)
-    if k in cache:
-        return cache[k]
+    if cache.get(k) or (k in cache and cache.get("_miss_" + k) == dt.date.today().isoformat()):
+        return cache.get(k)
     q = re.sub(r"[^A-Za-z0-9 ]", " ", title)
     q = " AND ".join(f"ti:{w}" for w in q.split() if len(w) > 2)[:900]
     raw = get("https://export.arxiv.org/api/query?" + urllib.parse.urlencode({"search_query": q, "max_results": 3}), tries=2) or ""
@@ -256,12 +257,14 @@ def arxiv_by_title(title, cache):
     hit = None
     for e in raw.split("<entry>")[1:]:
         t = " ".join(html.unescape(re.search(r"<title>(.*?)</title>", e, re.S).group(1)).split())
-        if norm(t) == k or (len(k) > 30 and (norm(t).startswith(k[:40]))):
+        if norm(t) == k or (len(k) > 30 and norm(t).startswith(k[:40])) or difflib.SequenceMatcher(None, norm(t), k).ratio() > 0.9:
             hit = {"arxiv": re.search(r"<id>https?://arxiv.org/abs/([\d.]+)", e).group(1),
                    "authors": [html.unescape(a) for a in re.findall(r"<name>(.*?)</name>", e)],
                    "abstract": " ".join(html.unescape(re.search(r"<summary>(.*?)</summary>", e, re.S).group(1)).split())}
             break
     cache[k] = hit
+    if not hit:
+        cache["_miss_" + k] = dt.date.today().isoformat()  # retried on later days
     return hit
 
 
@@ -278,7 +281,7 @@ def from_corl_site(year):
     page = html.unescape(page)
     sess = [(m.start(), m.group(1)) for m in re.finditer(r'<h3[^>]*class="(oral|spotlight|poster)[^"]*"', page)]
     best = {}
-    for m in re.finditer(r'<li class="paper"><a href="([^"]+)"[^>]*>(.*?)</a>', page, re.S):
+    for m in re.finditer(r'<(?:li|tr) class="paper">(?:<td[^>]*>[^<]*</td><td>)?<a href="([^"]+)"[^>]*>(.*?)</a>', page, re.S):
         title = clean_tex(" ".join(html.unescape(re.sub(r"<[^>]+>", "", m.group(2))).split()))
         kind = next((k for pos, k in reversed(sess) if pos < m.start()), "poster")
         honor = {"oral": "Oral", "spotlight": "Spotlight"}.get(kind, "")
