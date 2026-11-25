@@ -44,7 +44,8 @@
    "tldr": "TacInno supervises visuotactile VLAs with discrete codes of 'tactile innovation' that vision and actions cannot predict.",
    "summary": "Much tactile change is predictable from vision and actions, so VLAs ignore touch; a tokenizer conditioned on vision and actions compresses only the unexplained future tactile change into codes the policy learns to predict as an auxiliary target. It gets 87.5% on six sim and 70.5% on four real tasks, +10.7/+9.0 over the best visuotactile baseline.",
    "why": "Clever insight on why tactile input is underused, applicable to tactile dexterous policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26855",
@@ -78,7 +79,8 @@
    "tldr": "CoMP propagates epistemic uncertainty through flow-matching policy ODEs correctly, fixing BayesDiff's O(1/T) variance collapse.",
    "summary": "The authors prove BayesDiff's variance decays as O(1/T) with Euler steps, introduce EKF/UKF-style recursions carrying state-weight cross-covariance, and widen last-layer posteriors with observation embeddings. On three manipulation benchmarks it improves failure detection and demo selection.",
    "why": "Rigorous uncertainty estimation for pretrained flow policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26385",
@@ -111,7 +113,8 @@
    "tldr": "Shows the 'radial action sink' endpoint attention in pi0.5 is a RoPE artifact, not a true sink, via value-norm and ablation analysis.",
    "summary": "Prior work treats high attention on first/last action tokens of flow VLAs as an attention sink. Analyzing a pi0.5 checkpoint on five RoboCasa tasks, the endpoints get only 1.4pp excess attention from RoPE, have normal value norms, and masking them changes success <4 points, while swapping values of executed-prefix tokens drops success 28.4 points. The token that matters is elsewhere in the executed prefix.",
    "why": "A careful mechanistic 'why' analysis of action chunking in flow VLAs, exactly my preferred style.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25683",
@@ -143,7 +146,8 @@
    "tldr": "TipDex-VTLA gates tactile-forecast-based action refinement by estimated visual reliability for illumination-robust dexterous manipulation.",
    "summary": "Visual reliability is learned from a reference policy's action sensitivity to lighting, and predicted-vs-measured touch discrepancies gate bounded corrections. On four real dexterous tasks it gets 87.5% normal and 73.8% under unseen lighting.",
    "why": "Visuotactile dexterous policy robustness.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26764",
@@ -173,7 +177,8 @@
    "tldr": "TacHOI fuses tactile contact with monocular egocentric video to reconstruct and track hands and objects at metric scale, training-free.",
    "summary": "Monocular egocentric video suffers scale-depth ambiguity and hand occlusion. TacHOI uses tactile contacts on a calibrated hand as depth constraints and a 'physical ruler' in a joint optimization of hand pose, object trajectory and anisotropic scale. On 100 ARCTIC/HO3D sequences with synthesized touch, median ADD-S* drops from 15.6 to 3.6 cm.",
    "why": "Touch-augmented human demos are a promising data source for dexterous policy learning, though tactile here is synthesized.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -212,7 +217,8 @@
    "tldr": "O2LaF initializes both inverse and forward latent-action dynamics from one pretrained video DiT to learn transferable actions from unlabeled video.",
    "summary": "A feed-forward transition encoder with action queries and a causal action-conditioned generator are both adapted from the same video DiT and trained end-to-end through a compact bottleneck. It sets state of the art in few-shot action probing and zero-shot action transfer across embodiments, and also works with V-JEPA2 priors.",
    "why": "Leveraging video generation priors for latent actions, relevant to video-action models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25415",
@@ -240,7 +246,8 @@
    "tldr": "Diagnoses JEPA world-model planner failures as stalls at GD-planner fixed points and proposes Unstick loop breakers.",
    "summary": "JEPA planners with MPC often fail on pushing tasks; test-time adaptation blames model error. Tracing the planning loop shows >=96% of failures are stalls where the warm-started GD planner returns nearly the same plan. Unstick combines on-policy fine-tuning with residual error memory or random re-initialization, recovering most adaptation gains.",
    "why": "Rigorous diagnosis of why latent world-model planning fails, useful for anyone planning with V-JEPA-style models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25336",
@@ -272,7 +279,8 @@
    "summary": "Mixed sim and real training improves regime-wise prediction and real-world MPC performance.",
    "why": "Structured world model for manipulation.",
    "venue": "CoRL 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26825",
@@ -302,7 +310,8 @@
    "tldr": "Skill-JEPA learns a state-conditioned VAE skill space with Gaussian prior so planners' samples match world-model training data.",
    "summary": "Gaussian planner candidates are off-distribution for JEPA models; planning over latent skills raises success on 80-step goals from 42% to 62% across three models and four planners, and AntMaze far-goal success from 0.4% to 38%.",
    "why": "Clear insight on action-space mismatch in world-model planning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26865",
@@ -335,7 +344,8 @@
    "tldr": "FlowScope pretrains an ACT trunk on unlabeled surgical stereo video by forecasting metric 3D scene flow.",
    "summary": "On 1.35M clinical clips, scene-flow pretraining raises real needle pickup from 54% to 90%; metric 3D flow beats kinematics, 2D tracks, and depth as pretraining signals, and gains hold with a flow-matching head.",
    "why": "Medical domain, but the scene-flow pretraining insight transfers to manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25398",
@@ -367,7 +377,8 @@
    "tldr": "RefreshGrad adaptively reweights temporal windows of demonstrations during diffusion/VLA policy training using policy-native signals.",
    "summary": "Demo windows differ in supervision value and that value shifts during training. RefreshGrad periodically scores windows with five policy-native signals and resamples accordingly, without changing architecture or inference. On ten LIBERO-Plus tasks, success rises from 60.7% to 76.1% under perturbations and 57.4% to 81.3% clean.",
    "why": "Simple data-sampling trick for diffusion policies me could try, though sim-only evidence.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25656",
@@ -399,7 +410,8 @@
    "tldr": "A2-VLA uses an embodied agent to discover and verify tool affordances in reconstructed scenes and conditions pi0.5 on them for unseen tools.",
    "summary": "The agent hypothesizes functional regions and geometric properties, validates extraction skills in simulation, and builds a reusable library. It reaches 86.1% simulated cross-tool retargeting and +30.7 points over pi0.5 on three real tool-use tasks.",
    "why": "Tool-use generalization for VLAs; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25553",
@@ -433,7 +445,8 @@
    "tldr": "TwoPass self-conditions action-conditioned video prediction on its own draft, achieving SOTA with 4 NFE.",
    "summary": "Self-generated draft training and draft-reuse refinement keep the flow matching objective while cutting calls from 50-59 to 4 on Bridge and Language Table.",
    "why": "Fast video world models for policy evaluation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25667",
@@ -469,7 +482,8 @@
    "tldr": "CauSyncVLA predicts current perceptual memory from delayed visuals and executed actions, warm-starting flow correction for asynchronous control.",
    "summary": "A causal latent world model updates memory and predictive flow warm-starting aligns the unexecuted horizon; LIBERO-10 reaches 93.8% at 5.04x throughput.",
    "why": "Relevant to real-time chunking with flow policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26565",
@@ -504,7 +518,8 @@
    "tldr": "PhyDEX benchmark of dynamic throwing shows VLAs (<3% success) lack physical property reasoning.",
    "summary": "35K automatically generated trajectories across nine tasks; giving ground-truth physical properties roughly doubles success.",
    "why": "Highlights physics blindness in VLAs.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26389",
@@ -536,7 +551,8 @@
    "tldr": "ViDecide trains video diffusion models to predict state transitions causally and decide when to stop, plus corrective fine-tuning without policy gradients.",
    "summary": "Video generators fail multi-step reasoning because clips are treated as fixed-length solutions. ViDecide frames generation as a chain of decisions with causal transition prediction and a stop decision, and Corrective Fine-tuning maps failed noise to the model's own successful continuations. Strict success averages 83.8% vs 23.3% standard fine-tuning and 67.8% best prior, including a robot planning benchmark.",
    "why": "Noise-remapping fine-tuning is a neat RL-free improvement idea relevant to steering generative policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26444",
@@ -609,7 +625,8 @@
    "tldr": "Mind2Act World benchmark separates history reasoning, precise execution, and their composition across 30 sim manipulation tasks.",
    "summary": "The strongest agent gets 52.7% Mind and 39.0% Act but only 12.0% Mind2Act; end-to-end policies retain little task state.",
    "why": "Diagnostic benchmark highlighting memory limits of policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26744",
@@ -644,7 +661,8 @@
    "tldr": "FORTH pairs forward-only tactile encoding, zeroth-order adapters, and a slip gate to ground VLA force control.",
    "summary": "It argues proxy losses don't imply force grounding; a slip-triggered gate achieves 29x lower peak grip force on a deformable shell, with 97.6% on LIBERO and 7.12x less activation memory.",
    "why": "Tactile grip control idea, but the framing is diffuse.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.25847",
@@ -675,7 +693,8 @@
    "tldr": "TrajCal uses scatter search to find a fixed few-step time schedule for flow-matching samplers that best matches many-step outputs.",
    "summary": "Few-step flow sampling distorts outputs relative to many-step references. TrajCal searches over time schedules with a scatter-search metaheuristic and picks one schedule by final output fidelity, reusable across inputs. It improves reference fidelity at low NFE for image and video generation.",
    "why": "Training-free schedule tuning could cheaply speed flow policies, but the contribution is incremental.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26054",
@@ -701,7 +720,8 @@
    "kw_score": 14,
    "tldr": "In this paper, we introduce a deep reinforcement learning framework that does not rely on prior data such as demonstrations and enables robots such as the K1 humanoid to learn to skateboard using model-free learning.",
    "summary": "In this paper, we introduce a deep reinforcement learning framework that does not rely on prior data such as demonstrations and enables robots such as the K1 humanoid to learn to skateboard using model-free learning. One challenging task is skateboarding, which requires simultaneous interaction with the ground and a passive but movable platform to achieve forward motion.",
-   "venue": "Humanoids 2026"
+   "venue": "Humanoids 2026",
+   "citations": 0
   },
   {
    "id": "2611.26596",
@@ -725,7 +745,8 @@
    ],
    "kw_score": 11,
    "tldr": "We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics.",
-   "summary": "We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates."
+   "summary": "We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates.",
+   "citations": 0
   },
   {
    "id": "2611.26302",
@@ -750,7 +771,8 @@
    ],
    "kw_score": 11,
    "tldr": "This paper addresses the finite-budget exposure-aware informative path planning (IPP) problem for a fleet of mobile sensing agents.",
-   "summary": "This paper addresses the finite-budget exposure-aware informative path planning (IPP) problem for a fleet of mobile sensing agents. Across the radar, plume, and wildfire field families, the EA-IPP agent achieves the lowest GP reconstruction RMSE among the evaluated baselines while retaining D-optimal information within $10\\%$ of the non-learning information baseline."
+   "summary": "This paper addresses the finite-budget exposure-aware informative path planning (IPP) problem for a fleet of mobile sensing agents. Across the radar, plume, and wildfire field families, the EA-IPP agent achieves the lowest GP reconstruction RMSE among the evaluated baselines while retaining D-optimal information within $10\\%$ of the non-learning information baseline.",
+   "citations": 0
   },
   {
    "id": "2611.26161",
@@ -774,7 +796,8 @@
    ],
    "kw_score": 11,
    "tldr": "We propose One View, One Action (OVOA-VLA), which learns to predict actions in each view's camera frame, allowing the same physical motion to provide diverse, observation-aligned supervision across views.",
-   "summary": "We propose One View, One Action (OVOA-VLA), which learns to predict actions in each view's camera frame, allowing the same physical motion to provide diverse, observation-aligned supervision across views. Two complementary directed attention graphs model both directions of interaction between the base and view-specific experts, jointly leveraging view-specific action supervision to improve base-frame prediction."
+   "summary": "We propose One View, One Action (OVOA-VLA), which learns to predict actions in each view's camera frame, allowing the same physical motion to provide diverse, observation-aligned supervision across views. Two complementary directed attention graphs model both directions of interaction between the base and view-specific experts, jointly leveraging view-specific action supervision to improve base-frame prediction.",
+   "citations": 0
   },
   {
    "id": "2611.25866",
@@ -798,7 +821,8 @@
    ],
    "kw_score": 11,
    "tldr": "This paper proposes EAGLE, an Explicit spatial-belief Agent for Geo-Localization and Exploration.",
-   "summary": "This paper proposes EAGLE, an Explicit spatial-belief Agent for Geo-Localization and Exploration. EAGLE achieves state-of-the-art average success rates of 78.1%, 76.4%, and 76.8% on MASA, xBD zero-shot transfer, and the MM-GAG zero-shot aerial-goal split, respectively, without using a VLM or cached visual tokens at inference."
+   "summary": "This paper proposes EAGLE, an Explicit spatial-belief Agent for Geo-Localization and Exploration. EAGLE achieves state-of-the-art average success rates of 78.1%, 76.4%, and 76.8% on MASA, xBD zero-shot transfer, and the MM-GAG zero-shot aerial-goal split, respectively, without using a VLM or cached visual tokens at inference.",
+   "citations": 0
   },
   {
    "id": "2611.25529",
@@ -826,7 +850,8 @@
    ],
    "kw_score": 11,
    "tldr": "We present CoachSI, a self-improvement method in which a frozen, off-the-shelf vision-language model (VLM) coaches the policy in language: it watches the robot and names the next step in the format of the policy's atomic instructions, and never outputs an action.",
-   "summary": "We present CoachSI, a self-improvement method in which a frozen, off-the-shelf vision-language model (VLM) coaches the policy in language: it watches the robot and names the next step in the format of the policy's atomic instructions, and never outputs an action. Self-improvement from the policy's own experience does not close this gap: experience collected by the policy alone stays within its own distribution and reproduces what it can already do."
+   "summary": "We present CoachSI, a self-improvement method in which a frozen, off-the-shelf vision-language model (VLM) coaches the policy in language: it watches the robot and names the next step in the format of the policy's atomic instructions, and never outputs an action. Self-improvement from the policy's own experience does not close this gap: experience collected by the policy alone stays within its own distribution and reproduces what it can already do.",
+   "citations": 0
   },
   {
    "id": "2611.26420",
@@ -850,7 +875,8 @@
    ],
    "kw_score": 10,
    "tldr": "A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces.",
-   "summary": "A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and $π_{0.5}$ in both individual and long-horizon evaluations."
+   "summary": "A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and $π_{0.5}$ in both individual and long-horizon evaluations.",
+   "citations": 0
   },
   {
    "id": "2611.26390",
@@ -873,7 +899,8 @@
    ],
    "kw_score": 10,
    "tldr": "We present SpecFlow, a conditional flow-matching framework that treats the Discrete Cosine Transform (DCT) coefficients of future accelerations as its generative state.",
-   "summary": "We present SpecFlow, a conditional flow-matching framework that treats the Discrete Cosine Transform (DCT) coefficients of future accelerations as its generative state. Under best-of-20 evaluation, SpecFlow achieves average minADE/minFDE of 0.15/0.22 on ETH/UCY, 0.69/0.86 at four seconds on NBA, and 7.38/11.57 on SDD."
+   "summary": "We present SpecFlow, a conditional flow-matching framework that treats the Discrete Cosine Transform (DCT) coefficients of future accelerations as its generative state. Under best-of-20 evaluation, SpecFlow achieves average minADE/minFDE of 0.15/0.22 on ETH/UCY, 0.69/0.86 at four seconds on NBA, and 7.38/11.57 on SDD.",
+   "citations": 0
   },
   {
    "id": "2611.25980",
@@ -898,7 +925,8 @@
    ],
    "kw_score": 10,
    "tldr": "To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations.",
-   "summary": "To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD."
+   "summary": "To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD.",
+   "citations": 0
   },
   {
    "id": "2611.25462",
@@ -923,7 +951,8 @@
    ],
    "kw_score": 9,
    "tldr": "This paper evaluates demonstration-free hierarchical pipelines for MiniGrid navigation and robotic manipulation, comparing their training requirements and task performance with flat reinforcement learning baselines.",
-   "summary": "This paper evaluates demonstration-free hierarchical pipelines for MiniGrid navigation and robotic manipulation, comparing their training requirements and task performance with flat reinforcement learning baselines. Across unseen navigation layouts, the hierarchical pipeline substantially outperforms the evaluated flat DQN baselines while requiring fewer training interactions."
+   "summary": "This paper evaluates demonstration-free hierarchical pipelines for MiniGrid navigation and robotic manipulation, comparing their training requirements and task performance with flat reinforcement learning baselines. Across unseen navigation layouts, the hierarchical pipeline substantially outperforms the evaluated flat DQN baselines while requiring fewer training interactions.",
+   "citations": 0
   },
   {
    "id": "2611.26196",
@@ -950,7 +979,8 @@
    ],
    "kw_score": 8,
    "tldr": "We present EmbodyAgent, an end-to-end post-training framework with three tightly coupled pipelines: (1) a black-box data synthesis pipeline that queries a strong teacher under a forced think-then-code contract and filters trajectories by task success; (2) an SFT pipeline that…",
-   "summary": "We present EmbodyAgent, an end-to-end post-training framework with three tightly coupled pipelines: (1) a black-box data synthesis pipeline that queries a strong teacher under a forced think-then-code contract and filters trajectories by task success; (2) an SFT pipeline that distills the explanation-and-program targets into an open-weight 9B VLM with both vision and language encoders trainable; and (3) an online RL pipeline that optimizes student-generated episodes via group-relative advantage with a runtime-error-penalized outcome reward. Under a strictly separated evaluation protocol on ten LIBERO Spatial tasks (disjoint state splits, greedy test-time decoding, training-only safeguards), held-out success on 100 test states rises from 0/100 (base 9B VLM) to 14/100 (after SFT) and 84/100 (after RL), while training rollout success climbs from 8.4% to 87.7% and median model calls per episode drop from 36 to 11."
+   "summary": "We present EmbodyAgent, an end-to-end post-training framework with three tightly coupled pipelines: (1) a black-box data synthesis pipeline that queries a strong teacher under a forced think-then-code contract and filters trajectories by task success; (2) an SFT pipeline that distills the explanation-and-program targets into an open-weight 9B VLM with both vision and language encoders trainable; and (3) an online RL pipeline that optimizes student-generated episodes via group-relative advantage with a runtime-error-penalized outcome reward. Under a strictly separated evaluation protocol on ten LIBERO Spatial tasks (disjoint state splits, greedy test-time decoding, training-only safeguards), held-out success on 100 test states rises from 0/100 (base 9B VLM) to 14/100 (after SFT) and 84/100 (after RL), while training rollout success climbs from 8.4% to 87.7% and median model calls per episode drop from 36 to 11.",
+   "citations": 0
   },
   {
    "id": "2611.25637",
@@ -975,7 +1005,8 @@
    ],
    "kw_score": 8,
    "tldr": "We propose \\emph{FedDIA}, which scores each client by how much its local training improves the global model it received, amplified by the difficulty of its environment.",
-   "summary": "We propose \\emph{FedDIA}, which scores each client by how much its local training improves the global model it received, amplified by the difficulty of its environment."
+   "summary": "We propose \\emph{FedDIA}, which scores each client by how much its local training improves the global model it received, amplified by the difficulty of its environment.",
+   "citations": 0
   },
   {
    "id": "2611.25320",
@@ -1002,7 +1033,8 @@
    ],
    "kw_score": 8,
    "tldr": "Residual reinforcement learning corrects an imitation-trained base policy using a limited budget of environment interaction.",
-   "summary": "Residual reinforcement learning corrects an imitation-trained base policy using a limited budget of environment interaction. In a task with several phases, this budget must be divided among the phases, and the phase in which the base policy fails is not necessarily the phase in which a correction most improves task completion."
+   "summary": "Residual reinforcement learning corrects an imitation-trained base policy using a limited budget of environment interaction. In a task with several phases, this budget must be divided among the phases, and the phase in which the base policy fails is not necessarily the phase in which a correction most improves task completion.",
+   "citations": 0
   },
   {
    "id": "2611.26902",
@@ -1033,7 +1065,8 @@
    ],
    "kw_score": 7,
    "tldr": "We present Baton, which hands the large model the small model's visual memory, its key-value (KV) cache over the history.",
-   "summary": "We present Baton, which hands the large model the small model's visual memory, its key-value (KV) cache over the history. On RoboMME, Baton beats the small model alone, a pruned or shortened re-watch, and a text memory; as the escalation channel of a cascade it matches re-watching to within about one point at 28-47% less compute, and 8x less per escalation at 64 frames."
+   "summary": "We present Baton, which hands the large model the small model's visual memory, its key-value (KV) cache over the history. On RoboMME, Baton beats the small model alone, a pruned or shortened re-watch, and a text memory; as the escalation channel of a cascade it matches re-watching to within about one point at 28-47% less compute, and 8x less per escalation at 64 frames.",
+   "citations": 1
   },
   {
    "id": "2611.26842",
@@ -1064,7 +1097,8 @@
    "kw_score": 7,
    "tldr": "We propose a novel, two-part framework for this task.",
    "summary": "We propose a novel, two-part framework for this task.",
-   "venue": "IROS"
+   "venue": "IROS",
+   "citations": 0
   },
   {
    "id": "2611.26706",
@@ -1088,7 +1122,8 @@
    ],
    "kw_score": 7,
    "tldr": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal.",
-   "summary": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal. On navigation and manipulation tasks with visual and proprioceptive world models, our formulation outperforms gradient-based planners by $29$ and $50$, sampling-based planners by $35$ and MPPI by $7$ percentage points in average success rate, while succeeding in fewer iterations than gradient-based planners and within 4\\% of MPPI."
+   "summary": "Planning with learned world models amounts to finding action sequences whose predicted rollouts reach a goal. On navigation and manipulation tasks with visual and proprioceptive world models, our formulation outperforms gradient-based planners by $29$ and $50$, sampling-based planners by $35$ and MPPI by $7$ percentage points in average success rate, while succeeding in fewer iterations than gradient-based planners and within 4\\% of MPPI.",
+   "citations": 0
   }
  ],
  "trending_ml": [

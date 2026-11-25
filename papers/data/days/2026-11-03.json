@@ -1056,7 +1056,7 @@
    "kw_score": 10,
    "tldr": "We introduce 3D World Simulator, an action-conditioned multimodal world modeling framework that jointly predicts appearance, geometry, and tactile observations from a unified 3D representation.",
    "summary": "We introduce 3D World Simulator, an action-conditioned multimodal world modeling framework that jointly predicts appearance, geometry, and tactile observations from a unified 3D representation.",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.04352",
@@ -1161,7 +1161,7 @@
    "kw_score": 7,
    "tldr": "We present WayTrace, a hierarchical system that connects web-map directions to robot motion through language.",
    "summary": "We present WayTrace, a hierarchical system that connects web-map directions to robot motion through language.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.04096",
@@ -1223,7 +1223,7 @@
    "kw_score": 6,
    "tldr": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
    "summary": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
-   "citations": 1
+   "citations": 2
   }
  ],
  "trending_ml": [
@@ -1458,7 +1458,7 @@
    "url": "https://arxiv.org/abs/2611.01560",
    "pdf": "https://arxiv.org/pdf/2611.01560",
    "hf": "https://huggingface.co/papers/2611.01560",
-   "citations": 5
+   "citations": 11
   },
   {
    "id": "2611.02074",
@@ -1525,7 +1525,7 @@
    "url": "https://arxiv.org/abs/2610.27954",
    "pdf": "https://arxiv.org/pdf/2610.27954",
    "hf": "https://huggingface.co/papers/2610.27954",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.02112",

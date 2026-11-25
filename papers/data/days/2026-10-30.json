@@ -291,7 +291,7 @@
    "summary": "Long-horizon planning suffers from compounding errors and rigid macro-actions. ID-WM decouples state-space reachability from local control, letting the planner choose feasible subgoals while the low level grounds them into precise actions (authors include Zichen Jeff Cui and Nicolas Ballas).",
    "why": "World-model planning from the JEPA/Pinto-adjacent line; relevant.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.41540",
@@ -1221,7 +1221,7 @@
    "url": "https://arxiv.org/abs/2610.39302",
    "pdf": "https://arxiv.org/pdf/2610.39302",
    "hf": "https://huggingface.co/papers/2610.39302",
-   "citations": 9
+   "citations": 10
   },
   {
    "id": "2610.38568",

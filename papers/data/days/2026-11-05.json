@@ -213,7 +213,7 @@
    "summary": "World-action models inherit costly video-generation backbones. La-JEPA trains a policy transformer natively in frozen V-JEPA 2.1 features, predicting future features with actions during training and only actions at inference. It achieves SOTA on RoboTwin 2.0 and LIBERO-Plus among non-embodied-pretrained policies, runs 2-5x faster than Fast-WAM, scales to 2.1B, and matches pi0.5 on four real tasks; JEPA features beat video VAE latents especially OOD.",
    "why": "Useful evidence that JEPA latents beat video VAE latents for control, relevant to V-JEPA world-model interest.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 3
   },
   {
    "id": "2611.08240",
@@ -454,7 +454,7 @@
    "summary": "MR0 combines 147M vision-language samples and 15,060 robot hours over 12 embodiments with a three-stage recipe: discrete action-token pretraining, flow-matching mid-training, real-world post-training. Rollback pairs replaced policy segments with human corrections for positive/negative supervision in CFG-DAgger without value learning, and asynchronous chunk merging handles latency. It reaches 93.6% on RoboTwin 2.0, beats pi0.5 under matched HG-DAgger, and gets 70% on Ethernet insertion.",
    "why": "Industrial VLA recipe with useful details on CFG-based correction learning and async chunking.",
    "rated_by": "claude",
-   "citations": 2
+   "citations": 4
   },
   {
    "id": "2611.08407",
@@ -668,7 +668,7 @@
    "summary": "Agentic robot control uses LLM agents as policies. RoboARCade provides harder long-horizon tasks across three embodiments with pluggable interfaces; GPT-6 Astra scores 49.8% vs 43.6% for Claude Fable 5.1. Failures come mainly from strategy choice and imprecise execution, agents falsely claim success on 24-39% of subtasks, and one in-context demo raises Astra from 53.5% to 73.0%.",
    "why": "Informative snapshot of LLM agents as policies, but not your core direction.",
    "rated_by": "claude",
-   "citations": 0,
+   "citations": 1,
    "topics": []
   },
   {
@@ -1102,7 +1102,7 @@
    "kw_score": 6,
    "tldr": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks.",
    "summary": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions.",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.08056",
@@ -1299,7 +1299,7 @@
    "url": "https://arxiv.org/abs/2611.06910",
    "pdf": "https://arxiv.org/pdf/2611.06910",
    "hf": "https://huggingface.co/papers/2611.06910",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.06918",
@@ -1480,7 +1480,7 @@
    "url": "https://arxiv.org/abs/2611.05320",
    "pdf": "https://arxiv.org/pdf/2611.05320",
    "hf": "https://huggingface.co/papers/2611.05320",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.06518",

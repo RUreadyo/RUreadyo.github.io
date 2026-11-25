@@ -80,7 +80,7 @@
    "summary": "VLAs re-encode observations at every step despite semantics changing slowly. Leap-VLA runs the VLM at ~1 Hz with cached context and a fast flow-matching expert with a compact visual encoder, conditioned on cache age via AdaLN and trained with age-ramped corruption. On LIBERO, holds 95.2% at 1 s refresh vs 96.3% matched; a forward-only soft-nudge RTC variant reaches 97.1%.",
    "why": "Touches fast VLA inference and real-time chunking, both on your list; LIBERO-only though.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.01215",
@@ -393,7 +393,7 @@
    "summary": "Analyzes how historical context is read in autoregressive long video generation, separating denoising from KV committing. Finds older context helps denoising but degrades later blocks when used during committing. Commit Forcing, where committing reads only the previous block's KV, improves 60s VBench on all 6 generators and wins 82.9% human preference on 120s videos.",
    "why": "Useful insight for long-horizon AR video/world models, related to diffusion forcing interests.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.00951",

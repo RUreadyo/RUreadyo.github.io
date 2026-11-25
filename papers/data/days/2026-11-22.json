@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-24T23:50:30+00:00",
+ "generated_at": "2026-11-25T22:08:14+00:00",
  "ranker": "Claude",
  "overview": "zeta_0 turns humanoid VLAs (GR00T, Psi_0) into world action models by foreseeing both visual features and joint trajectories, with solid real-world gains. The ES-vs-policy-gradient analysis gives a clean dimension-vs-horizon picture of gradient estimator cost. DriveOddsBench's rank-calibration test for world models is a methodology that could transfer to robot video models.",
  "stats": {
@@ -40,7 +40,8 @@
    "tldr": "JKO-GRPO augments Flow-GRPO for flow-matching VLAs with Wasserstein proximal (JKO) steps using transport targets from group advantages.",
    "summary": "Flow-GRPO and pi_RL reweight sampled actions by advantage but ignore distances between them. JKO-GRPO treats each state's action group as an empirical distribution, builds transport targets via a soft discrete c-transform of group-relative advantages, and regresses the deterministic flow sampler onto them alongside clipped Flow-GRPO without KL. It improves RL fine-tuning of pi0/pi0.5-style VLAs.",
    "why": "RL fine-tuning of flow VLAs with optimal transport is a core RL+generative-policy topic.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29195",
@@ -76,7 +77,8 @@
    "tldr": "FunGrasp-Zero trains an RL graph-attention policy conditioned on object-centric contact-map potential fields for zero-shot cross-embodiment functional grasping.",
    "summary": "Functional grasping methods tie task representation to one hand via retargeted poses. FunGrasp-Zero represents intent as a cross-embodiment contact map mapped onto heterogeneous hands, builds attractive/repulsive hand-object potential fields, and conditions a graph attention RL policy on them. It enables zero-shot transfer to unseen hand morphologies.",
    "why": "Cross-embodiment dexterous functional grasping is squarely in my core area.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29610",
@@ -104,7 +106,8 @@
    "tldr": "A time-reversed curriculum with coordinated resets lets a PPO MLP policy learn diverse multimodal dexterous grasps with closed-loop robustness.",
    "summary": "Generative grasp methods are diverse but open-loop, while RL policies are robust but collapse to few strategies. Dr. Grasp-RL uses a time-reversed curriculum and coordinated resets so a simple PPO policy captures multiple grasp-pose modes while remaining closed-loop. Experiments show both diversity and robustness.",
    "why": "Simple RL trick for diverse dexterous grasping; directly usable.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29208",
@@ -132,7 +135,8 @@
    "tldr": "Force2Act plans motion and relative force per action chunk and uses a mixture of force experts for reactive compliance within chunks.",
    "summary": "Force-aware policies reproduce demonstrated force levels and fail when more force is needed. Force2Act plans motion and force relative to measured interaction once per chunk and uses a Mixture of Force Experts to regulate force each control step. It introduces Force2Act-Bench with five contact-rich tasks.",
    "why": "Combines action chunking with reactive force control for contact-rich manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29553",
@@ -162,7 +166,8 @@
    "summary": "Sampling several VLA action chunks and filtering with a world model can improve safety: with the simulator as exact model, safety rises 11.5-25.7 points on LIBERO. But learned critics reach pooled AUROC 0.864 for detection yet only ~0.55 within-decision ranking, and dynamics/video models do no better; 3.18 mm state error removes 70% of the gain. Selection, not detection, is the bottleneck.",
    "why": "Sharp analysis relevant to test-time selection and world-model-based evaluation of chunked policies.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -195,7 +200,8 @@
    "tldr": "Shows REPA-style feature alignment for VLAs rarely helps and proposes a behavioral structure metric to pick teachers.",
    "summary": "VLA representation alignment teachers are chosen heuristically. Across 14 teachers and 16 tasks, no encoder improves pi0.5 clean success by more than 1 point and all reduce perturbed success by 10-39 points. A behavioral structure metric, measuring whether feature-near states have similar expert actions, predicts which teachers help.",
    "why": "Rigorous negative result on a popular VLA fine-tuning trick.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29383",
@@ -226,7 +232,8 @@
    "summary": "Test-time scaling for flow VLAs usually needs large candidate sets or external correctors. They adapt P&P, a mode-seeking self-refinement procedure from video generation, with modifications for action data. Over 400 LIBERO episodes with SmolVLA it improves the baseline by 5.3 points.",
    "why": "Noise-space refinement of flow policies relates to steering diffusion policies at test time.",
    "venue": "CoRL 2026 Workshop",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29178",
@@ -255,7 +262,8 @@
    "summary": "Replay buffers are memory-heavy and slow at credit assignment, while eligibility traces enable streaming updates. The authors show adaptive vector step sizes must be part of the trace to keep forward-backward equivalence, and derive corresponding optimizers. This advances deep streaming RL.",
    "why": "RL fundamentals; background interest.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29277",
@@ -306,7 +314,8 @@
    "tldr": "zeta_0 turns humanoid VLAs into world action models by jointly foreseeing future visual features and joint trajectories in a shared latent.",
    "summary": "A teacher conditioned on recorded futures provides reference action responses and dual-response transfer trains a causal predictor. Built on Psi_0 and GR00T N1.7, it gains 18.8 and 9.0 points on seven HumanoidArena tasks and 16.7 and 10.0 on six real tasks.",
    "why": "Solid real-robot gains for world-action models on VLAs, relevant to unified video-action modeling.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29240",
@@ -353,7 +362,8 @@
    "tldr": "Tacinf is an open-source tactile stack spanning sim data, benchmark, VTLA policy learning, handheld collection and sim-to-real evaluation.",
    "summary": "Force-aware manipulation lacks integrated tactile infrastructure. Tacinf combines Tabero sim benchmark, VTLA policy training, Tacumi handheld data collection with the deployment gripper, and Taco sim-to-real evaluation. A model fine-tuned only on tactile sim data transfers zero-shot to real.",
    "why": "Open tactile infrastructure is practically useful for tactile policy research.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29259",
@@ -388,7 +398,8 @@
    "tldr": "REINFORCE Look Back uses counterfactual world models' returns as baselines to separate action effects from environmental luck.",
    "summary": "In stochastic environments, imagining whole trajectories is hard. Counterfactual world models transform observed trajectories under alternative actions, and RLB uses counterfactual returns as baselines with proven unbiasedness and variance reduction. When dynamics are harder than action effects, this beats standard world-model RL.",
    "why": "Novel policy-gradient variance reduction; of RL fundamentals interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29795",
@@ -417,7 +428,8 @@
    "tldr": "Analyzes when evolution strategies beat policy gradients for LLM fine-tuning: ES cost scales with effective dimension, PG with effective horizon.",
    "summary": "Viewing ES and PG as estimators of the same gradient, ES noise grows with parameters and PG noise with tokens, but only reward-relevant directions matter. On a synthetic task varying skills and horizon, PG wins at short horizons and ES at long ones, with a predictable crossover.",
    "why": "Clean policy-gradient theory insight with implications for long-horizon action sequences.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29279",
@@ -454,7 +466,8 @@
    "tldr": "A2I-VLA aligns force-tactile representations to semantics with future-wrench prediction, then integrates them into a VLA.",
    "summary": "Integrating force and touch into VLAs is hampered by representational gaps. Stage I learns aligned force-tactile features with cross-modal alignment, hierarchical fusion, and future wrench plus action prediction; Stage II integrates them into a VLA. It targets contact-rich manipulation.",
    "why": "Force/tactile VLAs are relevant, though the recipe is incremental.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29662",
@@ -485,7 +498,8 @@
    "tldr": "Compares mixture density, tokenized and flow-matching skill-effect models for multimodal object-pose outcomes of contact-rich skills.",
    "summary": "Deterministic models average over distinct outcomes like sliding vs toppling. The authors learn multimodal distributions over object pose changes from partial point clouds and actions with three model classes plus latent dynamics. Multimodal models better predict which outcome occurs and reduce floating/interpenetration artifacts.",
    "why": "Multimodal contact-outcome modeling relevant to contact-rich planning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29693",
@@ -519,7 +533,8 @@
    "tldr": "HandiVid is a 200K-clip curated egocentric dataset with hand annotations for hand-driven interactive video generation.",
    "summary": "Egocentric datasets lack diversity, interactions and reliable hand annotations simultaneously. HandiVid merges public, online and synthetic videos with quality filtering, SAM 3-aided hand detection, 3D hand reconstruction and VLM interaction validation. It supports hand-conditioned interactive video models.",
    "why": "Hand-object video data may help human-to-robot dexterous learning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29618",
@@ -551,7 +566,8 @@
    "tldr": "Mass Forcing branches continuations from student-generated prefixes to make DMD distillation of AR video mass-aware and avoid mode collapse.",
    "summary": "DMD's reverse-KL objective collapses AR video students to few modes, and coverage-oriented initialization is transient. Mass Forcing moves on-policy supervision to individual states by branching several continuations from shared prefixes. It preserves diversity and dynamics.",
    "why": "Insight into mode-seeking distillation; relevant to few-step generative models generally.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29453",
@@ -583,7 +599,8 @@
    "tldr": "Decomposes latent world-model prediction error into shared offset and action-dependent parts to design slow-fast test-time training.",
    "summary": "Test-time training of world models helps planning but what it corrects is unclear. On PushObj, the shared offset accounts for 91% of AdaJEPA's gain and is partly episode-specific; sft-JEPA uses fast episodic and slow persistent learners accordingly. This improves planning under shift.",
    "why": "Clean analysis of TTT for world-model planning.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29123",
@@ -617,7 +634,8 @@
    "tldr": "PlanNudge freezes a diffusion driving planner and trains an MLP RL policy to output small speed/curvature nudges.",
    "summary": "RL fine-tuning diffusion planners is complicated by iterative denoising and receding horizon. Observing small adjustments avert many failures, PlanNudge learns a lightweight residual nudge policy. It improves closed-loop safety while preserving pretrained behavior.",
    "why": "Residual RL on frozen diffusion policies is transferable to manipulation despite driving domain.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29377",
@@ -653,7 +671,8 @@
    "tldr": "Contact Harness guides a VLM agent with optimized skills and compliant force control to perform zero-shot contact-rich insertion.",
    "summary": "VLM agents lack contact-state awareness. Contact Harness interprets force/tactile feedback via reusable prompt skills and compliant execution, with no fine-tuning or demos. It achieves 90.7% full insertion across 15 connector types on real robots.",
    "why": "Zero-shot contact-rich skill via agents; an alternative to learned policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29339",
@@ -687,7 +706,8 @@
    "tldr": "Redirects VLA latent visual reasoning from predicting future frames to motion-oriented interaction latents for better generalization.",
    "summary": "Latent foresight aligned to future frames binds VLAs to training-scene appearance. Motion-Oriented Latent Reasoning uses semantic latents for stage planning and motion latents capturing how the scene should evolve. It generalizes better to scene changes.",
    "why": "Moderately relevant VLA reasoning design.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29338",
@@ -746,7 +766,8 @@
    ],
    "kw_score": 6,
    "tldr": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation.",
-   "summary": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation."
+   "summary": "Autonomous UAV guidance in emergency response, infrastructure monitoring, and cargo transportation requires reliable navigation.",
+   "citations": 0
   },
   {
    "id": "2611.29839",
@@ -770,7 +791,8 @@
    ],
    "kw_score": 5,
    "tldr": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented.",
-   "summary": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented."
+   "summary": "We present Dynamics Forcing, a training scheme that keeps real video as the only supervision and reshapes how history is presented.",
+   "citations": 0
   },
   {
    "id": "2611.29800",
@@ -797,7 +819,8 @@
    ],
    "kw_score": 5,
    "tldr": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles.",
-   "summary": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles."
+   "summary": "Safety-critical scenarios are rare in recorded driving and must be generated to test and train motion planners of automated vehicles.",
+   "citations": 0
   },
   {
    "id": "2611.29818",
@@ -819,7 +842,8 @@
    "kw_score": 4,
    "tldr": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back.",
    "summary": "A home robot that helps with chores needs to know where objects are, but people move objects according to routines that change and later change back. The rule outperforms every summary-only memory, and giving language models the sighting history closes the gap.",
-   "venue": "CoRL 2026 Workshop"
+   "venue": "CoRL 2026 Workshop",
+   "citations": 0
   },
   {
    "id": "2611.29682",
@@ -835,7 +859,7 @@
     "Yuxiang Gao",
     "Jiayuan Gu"
    ],
-   "abstract": "Successful manipulation requires a policy to understand where things are and how they will move, yet action demonstrations leave this spatiotemporal structure implicit. While explicit 4D supervision has proven effective, reducing the cost of dense 4D prediction remains challenging. This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. At its core is a query-based decoder attached to a pretrained policy, which casts many spatialtemporal tasks into one unified interface (e.g. depth, 2D/3D point motion, multi-view correspondence, and hand-eye relations). This design enables efficient training and inference without sacrificing expressivity: the policy learns rich 4D structure from a small number of sampled queries during training, while the decoder can be removed at inference with zero additional overhead. Across multiple backbones, simulated environments, and real-world settings, \\method achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster. Probing analyses further reveal that this 4D structure is recoverable from the policy.",
+   "abstract": "Successful manipulation requires a policy to understand where things are and how they will move, yet action demonstrations leave this spatiotemporal structure implicit. While explicit 4D supervision has proven effective, reducing the cost of dense 4D prediction remains challenging. This paper introduces SparQ4D, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. At its core is a query-based decoder attached to a pretrained policy, which casts many spatialtemporal tasks into one unified interface (e.g. depth, 2D/3D point motion, multi-view correspondence, and hand-eye relations). This design enables efficient training and inference without sacrificing expressivity: the policy learns rich 4D structure from a small number of sampled queries during training, while the decoder can be removed at inference with zero additional overhead. Across multiple backbones, simulated environments, and real-world settings, SparQ4D achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster. Probing analyses further reveal that this 4D structure is recoverable from the policy.",
    "url": "https://arxiv.org/abs/2611.29682",
    "pdf": "https://arxiv.org/pdf/2611.29682",
    "primary": "cs.RO",
@@ -847,8 +871,9 @@
     "IL"
    ],
    "kw_score": 4,
-   "tldr": "This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates.",
-   "summary": "This paper introduces \\method, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. Across multiple backbones, simulated environments, and real-world settings, \\method achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster."
+   "tldr": "This paper introduces SparQ4D, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates.",
+   "summary": "This paper introduces SparQ4D, a lightweight yet expressive decoder that efficiently injects holistic 4D scene understanding into policies and improves success rates. Across multiple backbones, simulated environments, and real-world settings, SparQ4D achieves state-of-the-art manipulation performance, outperforming competing methods while training up to $5\\times$ faster.",
+   "citations": 0
   },
   {
    "id": "2611.29558",
@@ -873,7 +898,8 @@
    ],
    "kw_score": 4,
    "tldr": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time.",
-   "summary": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time."
+   "summary": "We introduce AWAIT, a simulation benchmark that evaluates task completion within action windows while accounting for decision and execution time.",
+   "citations": 0
   },
   {
    "id": "2611.29421",
@@ -896,7 +922,8 @@
    ],
    "kw_score": 4,
    "tldr": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation…",
-   "summary": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation continuously during tracking."
+   "summary": "We propose vision-language-model (VLM)-based adaptive colour calibration and compare it with two rule-based methods, which re-measure the colours from detections made with the design colours: Initial colour update does so once after tracking starts, and Colour adaptation continuously during tracking.",
+   "citations": 0
   },
   {
    "id": "2611.29637",
@@ -921,7 +948,8 @@
    ],
    "kw_score": 3,
    "tldr": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy.",
-   "summary": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy. In 30,000 evaluation episodes, each run to its end, the policy timed out in fewer than 0.5% at every tested crowd density."
+   "summary": "This paper presents TASC, a navigation system for a non-holonomic service robot that integrates an attention-based crowd encoder, an anticipatory collision feature, and a continuous-control policy. In 30,000 evaluation episodes, each run to its end, the policy timed out in fewer than 0.5% at every tested crowd density.",
+   "citations": 0
   }
  ],
  "trending_ml": []

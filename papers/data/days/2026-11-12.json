@@ -655,7 +655,7 @@
    "tldr": "To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems.",
    "summary": "To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems. By ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration.",
    "venue": "RA-L",
-   "citations": 10,
+   "citations": 11,
    "topics": []
   },
   {

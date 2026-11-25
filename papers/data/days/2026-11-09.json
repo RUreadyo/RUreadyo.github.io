@@ -127,7 +127,7 @@
    "summary": "Merging task specialists is hard: RL gives sparse credit and offline/endpoint distillation misses student states and intermediate flow states. VLA-MOPD has the student roll out, queries routed frozen teachers at each visited observation and ODE state, and applies masked per-step matching with an optional reference term. It lifts LIBERO from 75.4% to 98.9%, RoboTwin 2.0 from 73.0% to 89.3%, and a real Piper from 70% to 90%.",
    "why": "On-policy distillation for flow policies; directly usable technique.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.12879",
@@ -1037,7 +1037,7 @@
    "kw_score": 10,
    "tldr": "We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history.",
    "summary": "We present Compass 1, the first embodied navigation foundation model to unify language understanding and video generation while enabling memory backtracking through nearly 2mins of visual history. Embodied navigation requires agents to achieve persistent spatial awareness and long-horizon execution stability in open-world environments.",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.11815",

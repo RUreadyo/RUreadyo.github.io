@@ -99,7 +99,7 @@
    "summary": "VLAs fail in short precision-critical phases where RL specialists help but require switching. REPAIR queries specialists for multiple action candidates, weights them by critic value, and trains with weighted flow matching first on assisted rollouts then on the VLA's own states. Achieves 100% on six real tasks (30 trials each) with lower jerk than specialist-assisted execution.",
    "why": "Strong real-robot RL+flow-VLA fine-tuning recipe directly on your list.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 2
   },
   {
    "id": "2611.03294",
@@ -1398,7 +1398,7 @@
    "url": "https://arxiv.org/abs/2610.42136",
    "pdf": "https://arxiv.org/pdf/2610.42136",
    "hf": "https://huggingface.co/papers/2610.42136",
-   "citations": 0
+   "citations": 2
   },
   {
    "id": "2610.34722",

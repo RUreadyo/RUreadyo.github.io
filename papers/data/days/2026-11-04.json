@@ -132,7 +132,7 @@
    "summary": "Standard FM collapses multiple valid targets into a mean velocity. Sampling K candidates via a low-dim code and training only the best enables mode specialization and 'auxiliary conditioning scaling' guidance. On ImageNet-256 at 67% recall, FD drops from 19.22 to 5.91 on SiT with <3% of pretraining compute.",
    "why": "New angle on flow-matching mode coverage and guidance, directly in your generative-modeling interests and relevant to multimodal policies.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.06817",
@@ -900,7 +900,7 @@
    "kw_score": 5,
    "tldr": "We present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data.",
    "summary": "We present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.05929",
@@ -1040,7 +1040,7 @@
    "kw_score": 4,
    "tldr": "In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform…",
    "summary": "In this work, we study embodied recursive self-improvement (RSI) through real-world exploration, code refinement, and deployment using PyRUA-REAL, a framework in which coding agents retain interaction experience as persistent memory and reusable executable skills that inform subsequent exploration and improvement. Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction.",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.06653",
@@ -1188,7 +1188,7 @@
    "url": "https://arxiv.org/abs/2611.04916",
    "pdf": "https://arxiv.org/pdf/2611.04916",
    "hf": "https://huggingface.co/papers/2611.04916",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.00617",

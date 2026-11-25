@@ -81,7 +81,7 @@
    "summary": "Sensing and morphology gaps hamper human-to-robot dexterous transfer. Matched visual and fingertip-tactile interfaces on human and robot establish correspondence, and Tac-Retarget uses measured contact to align fingertip patches and their spatial relations, requiring no object mesh, pose estimate or simulation.",
    "why": "Tactile-conditioned retargeting of human data for dexterous hands is a core interest.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.41028",

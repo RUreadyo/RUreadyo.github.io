@@ -236,7 +236,7 @@
    "summary": "Few sim frameworks cover the full dexterous workflow. DexSuite assembles 10 arms and 12 end-effectors, standard APIs, a 16-pair benchmark across contact complexities, and demonstrations from teleop, scripts and policies.",
    "why": "Potentially useful infrastructure for dexterous policy research.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   }
  ],
  "roundup": [
@@ -313,7 +313,7 @@
    "summary": "State-value critics give no action discrimination once outcomes converge, stalling PPO. Adding an action-conditioned value critic combined with GAE provides relative action credit, helping long-horizon contact-rich manipulation from scratch.",
    "why": "Clear diagnosis of a PPO failure mode for manipulation RL.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.37865",
@@ -534,7 +534,7 @@
    "summary": "Video world models are too slow for control. PDRVLA's module extracts physical tokens supervised by future feature prediction and a frozen video world model, trained on public data with human-to-robot synthesis and ECoT; reaches 99.3% on LIBERO among four sim benchmarks.",
    "why": "Another foresight-features-for-VLA approach; benchmark-heavy.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.37582",

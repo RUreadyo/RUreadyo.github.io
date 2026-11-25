@@ -905,7 +905,7 @@
    "kw_score": 8,
    "tldr": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows.",
    "summary": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows. Three independent sessions on $π_{0.5}$ all improve success on 765 held-out paraphrases; the best raises success from 86.3\\% to 92.0\\% (48 repairs, four regressions; exact paired $p=1.31\\times10^{-10}$).",
-   "citations": 5
+   "citations": 7
   },
   {
    "id": "2611.09340",

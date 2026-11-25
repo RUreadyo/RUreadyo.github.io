@@ -488,7 +488,7 @@
    "summary": "Under direct control the agent is competitive with post-trained policies, leading short-horizon tasks; combining it with policies via a harness is analyzed across manipulation demands.",
    "why": "Useful snapshot of frontier-model robot control vs VLAs.",
    "rated_by": "claude",
-   "citations": 3
+   "citations": 5
   },
   {
    "id": "2610.35103",
@@ -657,7 +657,7 @@
    "kw_score": 9,
    "tldr": "We present E0.5, a geometry-native world-action model built directly on 3D foundation models.",
    "summary": "We present E0.5, a geometry-native world-action model built directly on 3D foundation models. Experiments on RoboTwin 2.0 first demonstrate the effectiveness of E0.5 without embodied-data pretraining, achieving success rates of 89.90\\% and 50.09\\% under clean and randomized settings, respectively.",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2610.35165",

@@ -1,12 +1,12 @@
 {
  "date": "2026-11-21",
- "generated_at": "2026-11-24T23:50:30+00:00",
+ "generated_at": "2026-11-25T22:08:14+00:00",
  "ranker": "Claude",
  "overview": "The top pick is the CFG error-activation paper, a rigorous Helmholtz-Hodge analysis of how guidance turns harmless score errors harmful, which bears directly on guided diffusion policies. ViewPACT shows proprioception acts as a shortcut and fixes viewpoint brittleness with privileged pose supervision, with real-robot gains. Most other papers are LLM/VLM RL or medical.",
  "stats": {
-  "papers": 74,
+  "papers": 75,
   "cs_ro": 32,
-  "relevant": 58,
+  "relevant": 59,
   "rated": 20
  },
  "top_picks": [
@@ -44,7 +44,8 @@
    "tldr": "TacitTouch distills a visuotactile diffusion/flow teacher into a vision-only student by matching denoising predictions and action features.",
    "summary": "Tactile sensors add hardware burden, and tactile-imagination methods propagate reconstruction errors. TacitTouch has a frozen visuotactile teacher supervise the vision-only student's denoising predictions and intermediate action representations at matched noisy action and flow time, so the student behaves as if it could feel touch. It targets contact-rich manipulation without tactile sensors at deployment.",
    "why": "Combines tactile sensing, contact-rich manipulation and flow/diffusion policy distillation, all core interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29101",
@@ -79,7 +80,8 @@
    "tldr": "DUO Policy splits a skill into a human-video-pretrained hand policy for free-space motion and a robot policy for precise corrections, with a learned gate.",
    "summary": "Co-training on human and robot data treats sources as equally useful everywhere. DUO observes human data helps where precision demands are low, while robot data matters near precision-critical states; it uses a hand policy from human video, a robot policy from sparse in-hand data, and a gate learned from interventions. This enables fine-grained tasks like insertion with little robot data.",
    "why": "Clear insight on leveraging human video for precise manipulation, a core interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28451",
@@ -108,7 +110,8 @@
    "tldr": "Shows classifier-free guidance activates otherwise harmless solenoidal score errors, analyzed via weighted Helmholtz-Hodge decomposition.",
    "summary": "Solenoidal score-error components don't affect their own reference density, but CFG's guided density differs, so these errors become active. The paper quantifies the activated error field, its dependence on guidance strength, and links it to generated densities via ODE/Feynman-Kac; for Gaussian mixtures it explains most of the KL error.",
    "why": "Rigorous guidance theory explaining a hidden failure mode of CFG, squarely in my generative-theory interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28752",
@@ -142,7 +145,8 @@
    "tldr": "VTLA-RL trains visuotactile VLA grasping policies with joint motion/force actions and sim-only RL post-training for varying loads.",
    "summary": "Mass and slip are hard to infer from vision, and fixed-load demos lack contact adjustments. VTLA-RL shares a visual encoder for tactile-image histories and RGB, outputs motion and bilateral force targets, pretrains on mixed real/sim demos, then applies two-stage multi-task RL in sim only and deploys zero-shot to real robots. They compare tactile representations and RL routes.",
    "why": "Visuotactile policies with RL fine-tuning of a BC prior and sim-to-real is squarely in my interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29002",
@@ -175,7 +179,8 @@
    "summary": "CFG works in AR image models but its mechanism is unclear. They show texture info lives in the conditional-unconditional logit difference while both logits are dominated by previous-token repetition, and prove via training dynamics of shallow transformers that this stems from texture sparsity. CFG thus removes shared repetition semantics.",
    "why": "Rigorous guidance theory; relevant to generative-model understanding, though for AR not diffusion.",
    "venue": "NeurIPS 2026",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -204,7 +209,8 @@
    "tldr": "Lifted multiple shooting with contact impulses as variables plus a parallel-in-time interior-point solver for contact-rich trajectory optimization.",
    "summary": "Non-smooth, multimodal contact dynamics hamper gradient-based trajectory optimization. Lifting contact impulses into decision variables lets state transitions use friction-cone-feasible impulses while consistency with the contact model is enforced separately, with implicit-differentiation sensitivities. IP-PAS, a parallel-in-time primal-dual solver, scales to long horizons and high-dimensional systems.",
    "why": "Contact-implicit trajectory optimization is useful for dexterous planning and demo generation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28707",
@@ -235,7 +241,8 @@
    "tldr": "IRIS pretrains an eye-in-hand inverse dynamics model on random exploration data to ground video-planned subgoals into actions.",
    "summary": "Imagine-then-execute pipelines are bottlenecked by IDMs trained on few task demos and by scarce eye-in-hand video. IRIS pretrains an execution-aware IDM on task-agnostic random exploration with eye-in-hand sensing to generalize action grounding. This decouples video planning from precise execution.",
    "why": "Video-planner + IDM pipelines are a key route for using video models in manipulation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28943",
@@ -274,7 +281,8 @@
    "tldr": "SANA-Robot is a 4.5B world action model with hybrid linear/sliding-window memory that runs in real time on edge devices.",
    "summary": "World action models are slow and lack long-term memory. SANA-Robot uses linear attention for constant-size global memory plus sliding-window softmax, and varies noise on action vs video tokens to act as policy or simulator. It supports minute-level memory tasks at constant inference speed with full-stack infrastructure.",
    "why": "Unified video-action models with long memory are in my world-model interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28732",
@@ -312,7 +320,8 @@
    "tldr": "Entangle is an in-context world-action model that imitates a single human video, trained with video-to-video generated human contexts.",
    "summary": "Human-video in-context learning faces misaligned pairs and shortcut learning. Entangle converts robot videos into matched human contexts via video generation, adds real pairs, and uses variable-length windows with an intra-task contrastive loss. It generalizes to unseen tasks and contexts.",
    "why": "Learning from human videos with WAMs aligns with human-data and world-model interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28873",
@@ -341,7 +350,8 @@
    "tldr": "NAT is a causal neural action tokenizer trained on 49k hours of cross-embodiment actions, beating FAST on unseen embodiments.",
    "summary": "Autoregressive VLAs need a universal action tokenizer. NAT is trained on robot, handheld, sim and human action data with a causal decoder enabling execution as tokens stream. It beats FAST/FAST+ across benchmarks and a real robot and narrows the gap to flow-matching heads with lower first-action latency.",
    "why": "Relevant to action representation choices vs. flow-matching heads in VLAs.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29068",
@@ -374,7 +384,8 @@
    "tldr": "ViewPACT adds auxiliary end-effector and object pose prediction to image policies for camera-viewpoint robustness, finding proprioception is a shortcut.",
    "summary": "Masking proprioception reveals it as a shortcut in LIBERO policies. ViewPACT trains RGB-only policies with privileged camera-frame pose supervision and multi-view augmentation, raising unseen-viewpoint success from 37.4% to 78.4% in sim and to 68.1% vs 30.6% on four real tasks.",
    "why": "Useful diagnostic insight and simple recipe for viewpoint-robust BC policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28675",
@@ -402,7 +413,8 @@
    "tldr": "A contact-adaptive low-DoF anthropomorphic hand plus a swing-twist motion glove performs complex teleoperated manipulation without tactile sensing.",
    "summary": "Replicating human hands involves trade-offs among DoF, force and durability. The authors design a hand with contact-adaptive fingers, slender form and sustained grip, plus a quaternion swing-twist motion glove and forearm interface for teleoperation. Demonstrations show complex tasks with limited active DoF.",
    "why": "Hand hardware and teleop interface relevant to dexterous data collection.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28616",
@@ -439,7 +451,8 @@
    "tldr": "SWAN learns a multimodal action-chunk policy (mixture of factor analyzers) with advantage-aware improvement to guide MPPI in MBRL.",
    "summary": "MPPI planning latency grows with refinement iterations, and action-level planner imitation misses full H-step proposals. SWAN combines multimodal k-MPPI with an MFA action-chunk policy and advantage-aware target improvement. This yields stronger guidance with fewer planning iterations.",
    "why": "Action-chunk policies distilled from planners link TD-MPC-style RL with chunking.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29096",
@@ -472,7 +485,8 @@
    "tldr": "JEPA-Tuner regularizes VLA fine-tuning with action-conditioned future latent prediction and enables asynchronous execution.",
    "summary": "Action-supervised VLA fine-tuning ignores how committed actions shape future observations. JEPA-Tuner trains a predictor to match guidance encoded from future observations given current guidance and committed actions, and trains the action expert on both observed and predicted guidance. Predicted guidance then supports asynchronous execution.",
    "why": "Predictive regularization plus asynchronous chunk execution touches real-time chunking interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28628",
@@ -500,7 +514,8 @@
    "tldr": "Proves near-minimax sample complexity O(SAH^4/eps^2) for sample-based NPG in tabular finite-horizon MDPs with a matching lower bound.",
    "summary": "It asks whether direct policy optimization reaches the statistical limit. Sample-based NPG with backward sweeps achieves last-iterate guarantees under three schedules, and an information-theoretic lower bound matches up to logs. This settles NPG's sample efficiency in this setting.",
    "why": "Policy-gradient theory; of background interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28551",
@@ -534,7 +549,8 @@
    "tldr": "PhysPPF gives VLAs compact 3D physical tokens covering what/where/how plus past and future dynamics.",
    "summary": "VLAs model spatial and temporal reasoning separately. PhysPPF distills perception teachers into What-Where-How token groups at training time and models past/future transitions in the same physical token space. This targets precise 3D contact and long-horizon tasks without test-time 3D encoders.",
    "why": "Another VLA representation add-on; moderate relevance.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28867",
@@ -565,7 +581,8 @@
    "tldr": "LIBERO-MOR benchmarks VLA robustness to 22 perturbations across vision, language, proprioception, action and environment.",
    "summary": "High clean success hides robustness gaps. LIBERO-MOR applies 22 perturbations at three severities on 40 LIBERO tasks with paired clean/perturbed protocol and evaluates seven VLAs. It reveals shared vulnerabilities and model-specific failure patterns.",
    "why": "Useful robustness diagnostics for VLA researchers.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28839",
@@ -597,7 +614,8 @@
    "tldr": "SG-LL predicts a spatially grounded near-future latent relative to the present to guide VLA action generation.",
    "summary": "Future prediction in VLAs is often not grounded in control-relevant spatial state. SG-LL distills geometric priors into spatial tokens, learns a current-conditioned bottleneck latent of future information, and predicts it to guide actions. It improves precise manipulation.",
    "why": "Incremental VLA representation work.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28803",
@@ -633,7 +651,8 @@
    "tldr": "Counterfactual Action Steering uses action differences under counterfactual instructions to fix trajectory hijacking when instructions switch mid-execution.",
    "summary": "VLAs and WAMs fail to redirect when instructions change mid-episode. CAS identifies interfering tasks, queries the policy with counterfactual instructions and steers away using target-counterfactual action differences, training-free. It improves on LIBERO-Goal-Switch and CALVIN-Custom-Switch across five policies.",
    "why": "CFG-like inference-time steering for policies; moderately interesting.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28809",
@@ -661,7 +680,8 @@
    "tldr": "RadAG builds a CFG-style reference by perturbing one block's attention logits against a reward, steering toward reward without full backprop.",
    "summary": "Extrapolation guidance is cheap but reward-agnostic; reward guidance needs full backprop. RadAG adversarially perturbs attention logits in a single block against the reward to form the guidance reference. It achieves efficient inference-time alignment.",
    "why": "Inference-time reward steering could transfer to diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28999",
@@ -684,7 +704,8 @@
    "kw_score": 6,
    "tldr": "This paper presents a decentralized microscopic control framework for swarm navigation in obstacle environments, given a precomputed macroscopic trajectory represented by Gaussian mixture models (GMMs).",
    "summary": "This paper presents a decentralized microscopic control framework for swarm navigation in obstacle environments, given a precomputed macroscopic trajectory represented by Gaussian mixture models (GMMs). Simulation results demonstrate improved efficiency and obstacle avoidance compared to conventional APF-based methods",
-   "venue": "CDC"
+   "venue": "CDC",
+   "citations": 0
   },
   {
    "id": "2611.28978",
@@ -711,7 +732,8 @@
    ],
    "kw_score": 6,
    "tldr": "Marine robots face partial observability, non-stationary dynamics, and sparse communication, motivating WMs that learn compact predictive states for planning.",
-   "summary": "Marine robots face partial observability, non-stationary dynamics, and sparse communication, motivating WMs that learn compact predictive states for planning."
+   "summary": "Marine robots face partial observability, non-stationary dynamics, and sparse communication, motivating WMs that learn compact predictive states for planning.",
+   "citations": 0
   },
   {
    "id": "2611.28720",
@@ -735,7 +757,8 @@
    ],
    "kw_score": 6,
    "tldr": "We introduce Probabilistic Modes and Constrained Optimization trajectory prediction (ProMo-CoOp), a two-stage data-driven framework.",
-   "summary": "We introduce Probabilistic Modes and Constrained Optimization trajectory prediction (ProMo-CoOp), a two-stage data-driven framework. Experiments show that ProMo-CoOp outperforms state-of-the-art baselines, and that STL-based constraints can further improve performance when the predicted predicate satisfactions are reliable."
+   "summary": "We introduce Probabilistic Modes and Constrained Optimization trajectory prediction (ProMo-CoOp), a two-stage data-driven framework. Experiments show that ProMo-CoOp outperforms state-of-the-art baselines, and that STL-based constraints can further improve performance when the predicted predicate satisfactions are reliable.",
+   "citations": 0
   },
   {
    "id": "2611.28779",
@@ -765,7 +788,8 @@
    ],
    "kw_score": 3,
    "tldr": "We introduce FastWorld, a natively lightweight world-model framework for efficient autonomous driving planning.",
-   "summary": "We introduce FastWorld, a natively lightweight world-model framework for efficient autonomous driving planning. On NAVSIMv1, FastWorld achieves 92.2 PDMS at 132 FPS on a single 4090 GPU."
+   "summary": "We introduce FastWorld, a natively lightweight world-model framework for efficient autonomous driving planning. On NAVSIMv1, FastWorld achieves 92.2 PDMS at 132 FPS on a single 4090 GPU.",
+   "citations": 0
   }
  ],
  "trending_ml": []

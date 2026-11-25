@@ -256,7 +256,7 @@
    "summary": "Building on their 1st-place 2025 solution, the team mostly trained longer and reduced gradient noise, adding stage embeddings, a 21-D action space, and variance-reduced multi-sample flow matching with a noise-vs-compute model. Q rose from 0.260 to 0.371 on shared tasks, 0.392 over 100 tasks (9th place).",
    "why": "Practical training-recipe lessons for flow-matching VLAs.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.13732",

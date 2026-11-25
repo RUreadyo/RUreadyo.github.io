@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-24T23:50:30+00:00",
+ "generated_at": "2026-11-25T22:08:13+00:00",
  "ranker": "Claude",
  "overview": "A day of world-model and VLA deployment papers. GenPA argues image generators can be policies without future prediction, Ego4Gen generates 4D geometry and flow as a world-action interface, and PEA probes for invisible actuation shifts before running a VLA. Geo-Force offers a formal theory of virtual touch from depth geometry for those thinking about tactile substitutes.",
  "stats": {
@@ -46,7 +46,8 @@
    "tldr": "Adds classifier-free guidance and a scalable training recipe to Beckmann Transport Models for teacher-free one-step generation.",
    "summary": "Beckmann Transport Models learn one-step generative maps without distillation but lacked CFG and scalable training. SBM observes that the BTM current is a positive multiple of an autonomous denoising field, so CFG can be applied using the map's own conditional/null predictions, with characterized bias. Guidance provably shifts basin boundaries toward condition-favored modes while keeping single-NFE sampling.",
    "why": "One-step generation theory with guidance is directly in my generative-model interests and relevant to fast policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27645",
@@ -83,7 +84,8 @@
    "tldr": "LS-MBPO improves frozen VLAs with a residual policy trained in a lightweight latent world model using subchunk rollouts.",
    "summary": "Model-based RL for VLAs usually relies on expensive video world models. LS-MBPO uses a latent world model with Hierarchical Forcing to curb compounding errors and Latent Subchunk Rollouts that refine frozen-VLA action chunks with a residual policy, plus a progress-conditioned branch-start curriculum. It aims for efficient imagination-based VLA improvement.",
    "why": "RL fine-tuning of VLAs with action chunks via world models is a direct fit to my RL-for-BC interests.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27171",
@@ -118,7 +120,8 @@
    "tldr": "Trains flow-matching VLAs with interval motion supervision to learn from demonstrations with missing action labels.",
    "summary": "Egocentric demos often have gaps in action labels but reliable endpoint poses. They add a composition objective constraining aggregate motion of missing actions plus a shared interval branch, while keeping flow matching on reliable actions. On LIBERO with 70.5% missing actions it reaches 87.9%, and 59.6% vs 48.8% (masking) on five real tasks.",
    "why": "Learning from incomplete/corrupted demonstrations with flow policies matches my low-quality-data interest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28308",
@@ -146,7 +149,8 @@
    "tldr": "PEA identifies actuation shifts (gain, delay, drift) via a short pre-episode probe and compensates commands for VLA/WAM policies at test time.",
    "summary": "Actuation shifts from retuned controllers, latency or payload are invisible to visuomotor policies and hurt success even with domain randomization. PEA moves one axis at a time with known commands, identifies parameters in closed form, and compensates all subsequent commands, without policy training.",
    "why": "Practical deployment trick for transferring VLAs across robots with different controllers.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27513",
@@ -178,7 +182,8 @@
    "tldr": "Ego4Gen extends Cosmos to jointly generate future RGB, point maps and scene flow from one egocentric image, plus an inverse dynamics model to actions.",
    "summary": "Ego4Gen adds modality-routed LoRA and asymmetric attention to Cosmos3-Nano, using MotionCrafter pseudo-labels for future geometry/motion latents. FlowInverse maps predicted 4D latents to actions. Geometry/motion latents beat latent-action and video-latent baselines OOD and work in closed-loop evaluation.",
    "why": "Relevant to video world models as policy interfaces, with 4D geometry rather than pixels.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   }
  ],
  "roundup": [
@@ -214,7 +219,8 @@
    "tldr": "GenPA adapts a pretrained image-generation/editing model directly into a policy with a 19M action adapter, without future-frame prediction.",
    "summary": "Prior work keeps future prediction as the link between visual generative pretraining and control. GenPA fine-tunes an image generator with a small action-regression adapter and reuses its editing objective for perception co-training, comparing current-scene, future and combined targets in one architecture. It reports strong efficiency and performance.",
    "why": "Challenges the assumption that video/future prediction is needed to exploit generative pretraining for policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27967",
@@ -243,7 +249,8 @@
    "tldr": "An agentic design 'Skill' iterates dexterous hand morphology through contact, dynamics, and learning gates, producing a 16-DoF SAGE Hand.",
    "summary": "Designing dexterous hands requires repeated expert iteration over geometry, URDFs, grasps and policy training. Task2Hand packages this into gated checks where an agent revises bounded parameters and escalates to a human, yielding SAGE Hand with four fingers, 16 DoF and an opposable thumb. Under matched training it reaches 45.6% in-hand success on a hexagonal prism vs 37.3% for a baseline.",
    "why": "Hand co-design for in-hand manipulation touches core dexterity interests, though results are sim and modest.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26992",
@@ -270,7 +277,8 @@
    "tldr": "Formal theory of 'Geometric Force': virtual tactile force predicted from depth-sensed object geometry, with equivariance, vanishing and stability proofs.",
    "summary": "Tactile sensors are fragile while depth cameras are common. The paper defines a virtual touch sensor that renders the surface, predicts a touch signal, and estimates force, and proves frame equivariance, zero force without contact, and linear error growth. It clarifies when such virtual tactile signals can be trusted.",
    "why": "A theoretical grounding for vision-derived touch that may matter for hands lacking real tactile sensors.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27288",
@@ -309,7 +317,8 @@
    "tldr": "Regularizes RL fine-tuning of diffusion models to preserve the pretrained CFG correction direction, reducing reward hacking.",
    "summary": "RL post-training of diffusion models often improves reward at the cost of overall quality. The authors view CFG and RL as correction vectors in prediction space, use the projection of the RL correction onto the CFG direction as a diagnostic, and propose Conditional Contrast Regularization to preserve it. Analysis and rotation interventions show the CFG direction carries quality information RL updates discard.",
    "why": "The CFG-vs-RL geometric view could inform RL fine-tuning of diffusion policies, though experiments are on images.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27074",
@@ -340,7 +349,8 @@
    "tldr": "Hindsight Forcing routes gradients from future chunks back to history in AR video diffusion via a latent straight-through bridge.",
    "summary": "Self-rollout training of AR video diffusion truncates cross-chunk gradients, causing drift. Hindsight Forcing does full multi-step forward rollouts but backpropagates future losses to one selected denoising step per historical chunk, training context writing and denoising jointly. This reduces long-horizon drift and collapse.",
    "why": "Relevant to my interest in autoregressive video diffusion / self-forcing training.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27338",
@@ -373,7 +383,8 @@
    "tldr": "Latent Jacobian Steer maps joint-space perturbations through a policy-Jacobian inverse into latents to elicit contact-rich behaviors from a frozen humanoid controller.",
    "summary": "Exploring raw joints breaks coordination while latent exploration is hard to steer. LJS samples task-relevant joint-action perturbations, maps them via a damped inverse of the policy Jacobian to latent commands, executes them through the frozen behavioral foundation model and evaluates in sim. This elicits out-of-distribution contact-rich behaviors.",
    "why": "Steering a frozen pretrained policy's latent space resembles noise-space steering of diffusion policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27124",
@@ -402,7 +413,8 @@
    "tldr": "Shows latent world model planning can produce adversarial plans and adds a cheap action read-back check to CEM/MPPI.",
    "summary": "On DINO-WM and LeWM, more CEM iterations lower predicted cost but lose up to half of already-solved problems. They propose an action read-back network that penalizes mismatches between planned actions and predicted states. With 0.2-3.1% more planning time it improves CEM and MPPI on three tasks.",
    "why": "Sharp insight on failure modes of planning with learned world models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28411",
@@ -435,7 +447,8 @@
    "tldr": "ScaleEvals evaluates generalist policies through reset-free autonomous play with VLM task proposal and grading across a fleet.",
    "summary": "Real-world policy evaluation is bottlenecked by resets and grading. ScaleEvals uses a VLM AutoPrompter and AutoGrader (90.7% human agreement) with Bradley-Terry scoring over 3,000+ rollouts on DROID and YAM, cutting human labor by 98%. Rankings correlate with manual evaluation (r=0.94).",
    "why": "Scalable real-world evaluation is valuable infrastructure for anyone training generalist policies.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28289",
@@ -471,7 +484,8 @@
    "tldr": "InteR-VLA trains VLAs on diverse task-completing demos so they stay competent when safety filters intervene.",
    "summary": "Safety filters can push robots into states poorly covered by training data. InteR-VLA uses diverse demonstrations under the same data budget to broaden state coverage and mitigate intervention-induced shift. Real-world experiments raise safe success rate up to 90% from 0% for nominal training.",
    "why": "Demonstration diversity vs. distribution shift is a useful IL data insight.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.26981",
@@ -504,7 +518,8 @@
    "tldr": "ViewDreamer is a multi-view robot video world model handling variable camera sets via shared slot tokens.",
    "summary": "Robot data uses varying camera numbers and placements. ViewDreamer keeps per-view generation from a pretrained single-view model and couples views through slot tokens grouped by visual foundation models, with a view-count curriculum. It improves cross-view consistency on RoboView-Bench and carries over to world-action and action-conditioned models.",
    "why": "Multi-view video world models matter for robot policy learning and evaluation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28402",
@@ -530,7 +545,8 @@
    "tldr": "BigSmall lets a 14B AR video model plan the opening chunk and a 1.3B model render the rest, keeping most quality at ~3x speed.",
    "summary": "The authors find that in AR video diffusion, letting the large model generate only the first chunk retains 95% of its semantic advantage, while the reverse retains 16%. BigSmall is a training-free planner-renderer sampler with a lazy cross-model KV cache. On VBench it is 3.02x faster than the 14B model.",
    "why": "Interesting insight about where capacity matters in autoregressive video diffusion; tangential to robotics.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27648",
@@ -557,7 +573,8 @@
    "tldr": "Caps per-rollout action-gradient norms when backpropagating through a learned world model for humanoid motion tracking.",
    "summary": "First-order world-model policy gradients are dominated by a few unverified large-gradient rollouts. The simulator confirms 94% of predicted change for small gradients but 1% for gradients above 30x median, so they cap at 10x median and adjust start sampling and resets. Trained on 223 h of motion, the tracker generalizes to 353 unseen motions.",
    "why": "Rigorous analysis of model-based policy gradients; transferable insight for RL with learned models.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27344",
@@ -588,7 +605,8 @@
    "tldr": "MoReWorld focuses action-conditioned video world model learning on predicted motion regions to improve interaction fidelity.",
    "summary": "Video world models optimize global reconstruction and miss contact details. MoReWorld predicts a motion region from history and actions and uses it for local motion prediction, region-aware loss, and gated conditioning. This reduces hallucinated contacts in robot video prediction.",
    "why": "Incremental but relevant to video world models for policy evaluation.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.28274",
@@ -654,7 +672,8 @@
    "tldr": "PACE-WM conditions a JEPA world model on executed-action history and predicts futures in parallel for faster visual planning.",
    "summary": "Similar observations can hide different motion states. PACE-WM uses a recurrent memory of executed actions to condition a causal Transformer predicting multiple futures in parallel, and a RAMP action-scoring rule. It reaches 98% average success and plans 7-9x faster than LeWM.",
    "why": "History conditioning in world models parallels history-conditioned policies; moderately relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27011",
@@ -686,7 +705,8 @@
    "tldr": "Force-guided stage segmentation and an RL-refined retry policy let VLAs recover from failed grasps.",
    "summary": "VLAs often keep transporting after a failed grasp. FoRe splits demonstrations by force into approach-grasp and transport stages, trains a retry policy refined by local RL from post-failure states, and gates stages with force plus gripper status. It improves autonomous recovery on pick-and-place.",
    "why": "Practical force-based recovery, but narrow pick-and-place scope.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.27101",
@@ -718,7 +738,8 @@
    "kw_score": 13,
    "tldr": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
    "summary": "We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   },
   {
    "id": "2611.27182",
@@ -746,7 +767,8 @@
    ],
    "kw_score": 11,
    "tldr": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts.",
-   "summary": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts. Compared with a turn-based harness using the same agent and tools, TRIP halves the rate of human contact with the strongest policy, raising safety from 61.3% to 81.3%, without sacrificing task success (38.7% vs. 31.0%)."
+   "summary": "We propose TRIP, a training-free, event-driven harness in which the agent programs its own interrupts. Compared with a turn-based harness using the same agent and tools, TRIP halves the rate of human contact with the strongest policy, raising safety from 61.3% to 81.3%, without sacrificing task success (38.7% vs. 31.0%).",
+   "citations": 0
   },
   {
    "id": "2611.27047",
@@ -778,7 +800,8 @@
    ],
    "kw_score": 11,
    "tldr": "We propose BeyondEgo to extend VLA perception in space and time.",
-   "summary": "We propose BeyondEgo to extend VLA perception in space and time. On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts."
+   "summary": "We propose BeyondEgo to extend VLA perception in space and time. On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts.",
+   "citations": 0
   },
   {
    "id": "2611.27282",
@@ -803,7 +826,8 @@
    ],
    "kw_score": 10,
    "tldr": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it.",
-   "summary": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it. In experiments on real cloth and foam manipulation, HermiteTwin outperforms the state-of-the-art spring--mass twin across reconstruction, resimulation, and future prediction."
+   "summary": "To bridge this gap, we present HermiteTwin, a framework that reconstructs a physical digital twin of a thin deformable object from multiview video of a robot manipulating it. In experiments on real cloth and foam manipulation, HermiteTwin outperforms the state-of-the-art spring--mass twin across reconstruction, resimulation, and future prediction.",
+   "citations": 0
   },
   {
    "id": "2611.27179",
@@ -829,7 +853,8 @@
    ],
    "kw_score": 10,
    "tldr": "In this work, we propose three improvements to bridge these gaps.",
-   "summary": "In this work, we propose three improvements to bridge these gaps. First, we adopt a rectified flow framework to reduce the required inference steps to one while achieving comparable or even superior performance."
+   "summary": "In this work, we propose three improvements to bridge these gaps. First, we adopt a rectified flow framework to reduce the required inference steps to one while achieving comparable or even superior performance.",
+   "citations": 0
   },
   {
    "id": "2611.26969",
@@ -855,7 +880,8 @@
    ],
    "kw_score": 9,
    "tldr": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes.",
-   "summary": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes. Evaluating vision-language-action models and a world-action model across 5.4K episodes, we find that all policies achieve success rates below 20%, revealing substantial limitations in dynamic manipulation."
+   "summary": "To this end, we propose RoboDyna, a benchmark for evaluating the physical understanding and action capabilities of manipulation policies in dynamic scenes. Evaluating vision-language-action models and a world-action model across 5.4K episodes, we find that all policies achieve success rates below 20%, revealing substantial limitations in dynamic manipulation.",
+   "citations": 0
   },
   {
    "id": "2611.28387",
@@ -880,7 +906,8 @@
    ],
    "kw_score": 8,
    "tldr": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
-   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction."
+   "summary": "Second, we propose a scalable physics-anchored world model that combines a modal-slosh and roll prior, an estimate of the hidden liquid state from the vehicle's own motion history (no sensor in the tank), and a learned correction.",
+   "citations": 0
   },
   {
    "id": "2611.27939",
@@ -902,7 +929,8 @@
    ],
    "kw_score": 8,
    "tldr": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next.",
-   "summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy."
+   "summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy.",
+   "citations": 0
   },
   {
    "id": "2611.27638",
@@ -932,7 +960,8 @@
    ],
    "kw_score": 8,
    "tldr": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons.",
-   "summary": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons. Although fine-tuning improves fact accuracy, the two learned components we test show no detectable benefit from reading them."
+   "summary": "Driving models that reason may describe a hazard correctly while choosing their path for other reasons. Although fine-tuning improves fact accuracy, the two learned components we test show no detectable benefit from reading them.",
+   "citations": 0
   },
   {
    "id": "2611.27467",
@@ -973,7 +1002,8 @@
    ],
    "kw_score": 8,
    "tldr": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators.",
-   "summary": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators."
+   "summary": "We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators.",
+   "citations": 0
   },
   {
    "id": "2611.27187",
@@ -1006,7 +1036,8 @@
    ],
    "kw_score": 8,
    "tldr": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation.",
-   "summary": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation. SCAP consistently improves performance across four different VLA architectures."
+   "summary": "Single-modality action-expert pretraining controls competition from visual shortcuts before vision--language--action (VLA) adaptation. SCAP consistently improves performance across four different VLA architectures.",
+   "citations": 0
   },
   {
    "id": "2611.28394",
@@ -1030,7 +1061,8 @@
    ],
    "kw_score": 7,
    "tldr": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
-   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles."
+   "summary": "Autonomous powered wheelchairs (PWs) operating in human-centered environments must combine efficient multi-destination path planning with continuous collision avoidance strategies in the presence of static and dynamic obstacles.",
+   "citations": 0
   },
   {
    "id": "2611.27552",
@@ -1058,7 +1090,8 @@
    ],
    "kw_score": 7,
    "tldr": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone.",
-   "summary": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m."
+   "summary": "In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m.",
+   "citations": 0
   },
   {
    "id": "2611.27121",
@@ -1081,7 +1114,8 @@
    ],
    "kw_score": 7,
    "tldr": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion.",
-   "summary": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion. On a preregistered 48-scene benchmark (1,920 flights), our full MPPI configuration reaches 88.5% [81.2, 94.8] worst-condition completion, outperforming development-selected DATT-L1 by +29.2 pp [17.7, 40.6] and exceeding all six external baselines after Bonferroni correction."
+   "summary": "When a camera blackout depends on physical position rather than elapsed time, stable hovering prevents visual recovery and mission completion. On a preregistered 48-scene benchmark (1,920 flights), our full MPPI configuration reaches 88.5% [81.2, 94.8] worst-condition completion, outperforming development-selected DATT-L1 by +29.2 pp [17.7, 40.6] and exceeding all six external baselines after Bonferroni correction.",
+   "citations": 0
   }
  ],
  "trending_ml": [
@@ -1137,7 +1171,7 @@
    "summary": "A diagnostic benchmark of 180 simulated manipulation configurations evaluates whether embodied systems can combine history-based reasoning, precise execution, and closed-loop environmental feedback, revealing that single-view competence does not transfer to composed tasks.",
    "upvotes": 56,
    "github": "https://github.com/Mind2Act/Mind2Act_World",
-   "stars": 51,
+   "stars": 53,
    "project": "https://mind2act-world.com/",
    "org": "Mind2Act-World",
    "url": "https://arxiv.org/abs/2611.26444",
@@ -1159,9 +1193,9 @@
    ],
    "abstract": "Recent advances in video generation call for reliable detection grounded in explicit forensic evidence. However, current methods primarily depend on single-pass chain-of-thought reasoning that overlooks brief or localized artifacts, or on predefined multi-agent workflows that offer limited flexibility in selecting relevant inspections. Even with adaptive investigation, optimizing the investigation policy alone does not directly improve the forensic capabilities of fixed experts. We introduce WeVisForensics, an agentic framework in which a main investigator agent coordinates a self-evolving library of forensic inspector sub-agents spanning visual and audio cues. The investigator learns which artifact type to examine, over which window, and when to conclude, and these interactions provide shared feedback for both levels of agents. Our dual-timescale policy optimization strategy, DTPO, closes this loop through fast reinforcement learning of the investigator and slower refinement of the inspectors, guided by annotated artifact intervals, to report subtle artifacts they once dismissed. Furthermore, we curate ForenCue-30K, combining role-specific forensic annotations and interaction trajectories to supervise individual inspections and their coordination, with an accompanying reinforcement-learning pool. Experiments show that WeVisForensics averages 95.2% detection accuracy across in-domain, out-of-domain and agentic benchmarks, 9.0% above the strongest prior detector, while grounding its verdicts in localized evidence.",
    "summary": "WeVisForensics coordinates self-evolving visual and audio forensic inspector agents under a dual-timescale reinforcement learning policy to detect generated-video artifacts with localized evidence and high accuracy.",
-   "upvotes": 55,
+   "upvotes": 56,
    "github": "https://github.com/Tencent/WeVisForensics",
-   "stars": 64,
+   "stars": 67,
    "project": "https://tencent.github.io/WeVisForensics",
    "org": "Tencent",
    "url": "https://arxiv.org/abs/2611.21373",
@@ -1188,10 +1222,10 @@
    ],
    "abstract": "Video understanding, particularly with accompanying audio, remains a central challenge in multimodal intelligence. In this report, we introduce WeMM-Video, a family of Chinese-English bilingual omni-modal foundation models spanning 2B, 4B, 9B, and 35B-A3B variants. Centering on joint audio-visual perception and reasoning, WeMM-Video unifies text, image, audio, and video processing within a hybrid-thinking paradigm, seamlessly supporting both a non-thinking instruct mode for fast, direct responses and a thinking mode for explicit step-by-step reasoning. The models are trained on a large-scale multimodal corpus of approximately 1.2 trillion tokens through progressive pre-training and a multi-stage post-training pipeline incorporating multi-teacher OPD, anti-repetition MrDPO, and specialist RL. Evaluated across more than 120 benchmarks, WeMM-Video demonstrates superior performance in omni-modal video understanding and reasoning, while maintaining highly competitive capabilities across general audio, silent video, image, and text tasks. Specifically, in omni-modal video evaluations, our flagship WeMM-Video-35B-A3B establishes a new open-source state of the art, substantially outperforming proprietary models such as Qwen3.5-Omni-Flash and Seed2.0-Mini-0428 while narrowing the gap with the strong Gemini-3.0-Flash, and our compact WeMM-Video-9B surpasses the larger open-source Qwen3-Omni-30B-A3B-Instruct. We publicly release the WeMM-Video family along with our evaluation and reproduction pipeline to foster further research and development in the open-source community.",
    "summary": "WeMM-Video is a family of Chinese-English bilingual omni-modal foundation models that unify text, image, audio, and video processing for joint audio-visual perception and reasoning, using hybrid thinking modes and large-scale training to achieve strong open-source video understanding results.",
-   "upvotes": 50,
+   "upvotes": 49,
    "github": "https://github.com/Tencent/WeMM-Video",
-   "stars": 147,
-   "project": "",
+   "stars": 171,
+   "project": "https://tencent.github.io/WeMM-Video/",
    "org": "Tencent",
    "url": "https://arxiv.org/abs/2611.26409",
    "pdf": "https://arxiv.org/pdf/2611.26409",
@@ -1209,9 +1243,9 @@
    ],
    "abstract": "Diffusion distillation accelerates image and video generation by compressing a pretrained teacher's iterative sampling process into a few network evaluations. Distribution-based methods achieve this by matching the student's output distribution to the teacher's. This matching is often driven by reverse-KL objectives, whose mode-seeking bias favors dominant teacher modes at the expense of diversity across samples. We introduce Posterior Matching Distillation (PMD), a new member of the distribution-based distillation family that combines mode-covering posterior sampling with any-step generation. At zero population loss, PMD recovers the teacher's full posterior of clean images at each trained noise level. Its stochastic student supports any-step sampling budgets within the trained timestep grid without further training. To learn these posteriors, PMD matches exponentially reweighted averages of student samples conditioned on a fixed noisy state to corresponding teacher posterior means. Under Gaussian corruption, exponentially tilted posterior mean is a single teacher evaluation at a shifted input. We prove that, matching tilted means over an open neighborhood uniquely identifies the full posterior. PMD thus supervises the entire conditional distribution through a family of mean constraints, without any auxiliary student-score network. Experiments on SDXL and FLUX.2 [klein] 4B demonstrate that PMD achieves the best FID among 4-step methods on both models, while maintaining competitive or leading performance across prompt-alignment and perceptual-quality metrics.",
    "summary": "Posterior Matching Distillation trains a stochastic student to match a teacher diffusion model’s full posterior via tilted mean constraints, enabling high-quality few-step image generation without auxiliary score networks.",
-   "upvotes": 46,
+   "upvotes": 47,
    "github": "https://github.com/yesiltepe-hidir/PMD",
-   "stars": 17,
+   "stars": 19,
    "project": "https://pmd-distillation.github.io/",
    "org": "NVIDIA",
    "url": "https://arxiv.org/abs/2611.26629",
@@ -1249,9 +1283,9 @@
    ],
    "abstract": "Code2Video uses agent-authored 3D proxies to guide video generation, enabling explicit control over structure and dynamics. However, how to construct proxies and prompts for optimal downstream quality remains underexplored, as do the capabilities and limitations of this paradigm. Through controlled experiments and blinded human evaluation, we study proxy granularity, physics simulation, and prompting. The results reveal task-dependent trade-offs: coarse proxies favor natural motion, while medium-grained proxies favor consistency. Physics simulation and proxy-aligned prompting further improve average quality. Guided by these findings, we introduce Coda-DaVinci, a task-adaptive agentic framework for Code2Video generation that selects between proxy-guided and direct generation, adapts modeling granularity to each entity, and coordinates simulation with proxy-grounded prompting. Its multi-agent harness preserves scene assets and guides repairs through visual inspection and independent review. Experiments demonstrate leading instruction following on VTR and scene consistency on R2M, improved physical plausibility over direct generation, and higher visual realism than the compared Code2Video baselines. Long-video evaluations further show gains in event structure and consistency across successive interactions, while revealing limitations in transition stability and adherence to scene settings.",
    "summary": "A task-adaptive agentic framework utilizes 3D proxies, physics simulation, and multi-agent coordination to enhance the structural control, physical plausibility, and visual realism of generated videos.",
-   "upvotes": 41,
+   "upvotes": 42,
    "github": "https://github.com/FrankYang-17/Coda",
-   "stars": 42,
+   "stars": 46,
    "project": "https://coda-davinci.github.io/",
    "org": "KlingAI Research",
    "url": "https://arxiv.org/abs/2611.26595",
@@ -1274,9 +1308,9 @@
    ],
    "abstract": "We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-frame methods favor sharpness. To overcome this trade-off, we train a single, scalable network that processes both images and video and predicts depth maps at native resolution. Depth Pro 2 produces depth maps that are metrically accurate, sharp, and temporally consistent all at once, outperforming prior work in all of these dimensions. We release a family of models that define a new Pareto frontier in terms of metric accuracy, sharpness, temporal consistency, and runtime. We release code and weights at https://apple-aiml-research.github.io/ml-depth-pro-2/",
    "summary": "A single scalable network estimates dense metric depth for images and video at native resolution, jointly improving metric accuracy, boundary sharpness, and temporal consistency.",
-   "upvotes": 38,
+   "upvotes": 40,
    "github": "https://github.com/apple-aiml-research/ml-depth-pro-2",
-   "stars": 684,
+   "stars": 742,
    "project": "https://apple-aiml-research.github.io/ml-depth-pro-2/",
    "org": "Apple",
    "url": "https://arxiv.org/abs/2611.26603",
@@ -1350,7 +1384,7 @@
    "summary": "Egocentric video captioning requires fine-grained detail and accurate timing, yet current multimodal large language models (MLLMs) often miss brief actions, confuse their order, or misinterpret the wearer's motion. Existing caption formats also offer limited support for combining detailed narration with precise…",
    "upvotes": 26,
    "github": "https://github.com/cactusqq/EgoCaptioner",
-   "stars": 11,
+   "stars": 12,
    "project": "https://cactusqq.github.io/EgoCaptioner/",
    "org": "KlingAI Research",
    "url": "https://arxiv.org/abs/2611.26380",
