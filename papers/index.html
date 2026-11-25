@@ -255,7 +255,7 @@ function card(p, opts = {}) {
   const pills = (p.topics || []).slice(0, 2).map(x => `<span class="pill" style="--c:${tc(x)}">${esc(TOPICS[x] || x)}</span>`).join("");
   const rel = p.relevance != null ? `<span class="rel" title="Relevance to my interests">relevance <span class="bar"><i style="width:${p.relevance * 10}%"></i></span> ${p.relevance}/10</span>` : "";
   const follow = p.tracked_authors?.length ? `<span class="badge follow" title="Author from a group I follow (papers/config.json → tracked_authors)">★ ${esc(p.tracked_authors.slice(0, 2).join(", "))}${p.tracked_authors.length > 2 ? " +" + (p.tracked_authors.length - 2) : ""}</span>` : "";
-  const cite = p.citations ? `<span class="badge cite">${p.citations} citations</span>` : "";
+  const cite = p.citations ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations} citations · Semantic Scholar</span>` : "";
   const sumText = p.summary && p.summary !== p.tldr ? p.summary : "";
   return `<article class="card" style="--tc:${tc(t)}">
     <div class="meta-row">${pills}${venueBadge(p.venue)}${follow}${cite}${rel}</div>
@@ -342,7 +342,7 @@ function list(items, opts) {
 function impactCard(p, i) {
   return `<article class="card" style="--tc:${tc(state.impactTopic)}">
     <div class="meta-row"><span class="badge cite" style="font-weight:800">#${i + 1}</span>${venueBadge(p.venue)}
-      <span class="badge cite">${p.citations.toLocaleString()} citations</span>
+      <span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations.toLocaleString()} citations · OpenAlex</span>
       <span class="badge cite">${p.per_year.toLocaleString()} / yr</span>
       <span class="rel">${p.year}</span></div>
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
@@ -753,7 +753,7 @@ async function s2Search() {
       const ax = p.externalIds?.ArXiv, raw = p.publicationVenue?.name || p.venue || "";
       const v = shortVenue(raw);
       return {title: p.title, authors: (p.authors || []).map(a => a.name), year: p.year, date: p.publicationDate,
-        venue: v ? `${v}${p.year ? " " + p.year : ""}` : "", rawVenue: raw, citations: p.citationCount, abstract: p.abstract || "",
+        venue: v ? `${v}${p.year ? " " + p.year : ""}` : "", rawVenue: raw, citations: p.citationCount, citeSrc: "Semantic Scholar", abstract: p.abstract || "",
         arxiv: ax, url: ax ? `https://arxiv.org/abs/${ax}` : p.url, pdf: ax ? `https://arxiv.org/pdf/${ax}` : p.openAccessPdf?.url || "", s2: p.url};
     });
   }
@@ -779,7 +779,7 @@ async function oaSearch() {
     for (const [t, ps] of Object.entries(inv)) for (const i of ps) words[i] = t;
     const v = shortVenue(pub);
     return {title: w.title, authors: (w.authorships || []).map(a => a.author.display_name), year: w.publication_year, date: w.publication_date,
-      venue: v ? `${v} ${w.publication_year}` : "", rawVenue: names.join(" | "), citations: w.cited_by_count, abstract: words.join(" "),
+      venue: v ? `${v} ${w.publication_year}` : "", rawVenue: names.join(" | "), citations: w.cited_by_count, citeSrc: "OpenAlex", abstract: words.join(" "),
       arxiv: ax, url: ax ? `https://arxiv.org/abs/${ax}` : (w.ids?.doi || w.id), pdf: ax ? `https://arxiv.org/pdf/${ax}` : ""};
   });
 }
@@ -823,7 +823,7 @@ function fullRow(p) {
 
 function resultCard(p) {
   return `<article class="card">
-    <div class="meta-row">${venueBadge(p.venue)}${p.citations != null ? `<span class="badge cite">${p.citations.toLocaleString()} citations</span>` : ""}${p.arxiv ? `<span class="badge cite">arXiv ${esc(p.arxiv)}</span>` : ""}<span class="rel">${esc(p.date || p.year || "")}</span></div>
+    <div class="meta-row">${venueBadge(p.venue)}${p.citations != null ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations.toLocaleString()} citations · ${p.citeSrc}</span>` : ""}${p.arxiv ? `<span class="badge cite">arXiv ${esc(p.arxiv)}</span>` : ""}<span class="rel">${esc(p.date || p.year || "")}</span></div>
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
     <p class="authors">${authors(p)}</p>
     ${p.abstract ? `<p class="summary">${esc(p.abstract.length > 300 ? p.abstract.slice(0, 300).replace(/\s\S*$/, "") + "…" : p.abstract)}</p>` : ""}
