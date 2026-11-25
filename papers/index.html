@@ -204,10 +204,14 @@ const CONF = {
   ICLR: {s2: "International Conference on Learning Representations,ICLR", rx: /learning representations|\biclr\b/i},
   IROS: {s2: "IEEE/RJS International Conference on Intelligent RObots and Systems,IROS", rx: /intelligent robots and systems|\biros\b/i},
   CVPR: {s2: "Computer Vision and Pattern Recognition,CVPR", rx: /computer vision and pattern recognition|\bcvpr\b/i},
+  ICCV: {s2: "IEEE International Conference on Computer Vision,ICCV", rx: /international conference on computer vision|\biccv\b/i},
+  ECCV: {s2: "European Conference on Computer Vision,ECCV", rx: /european conference on computer vision|\beccv\b/i},
+  "SIGGRAPH Asia": {s2: "SIGGRAPH Asia,ACM Transactions on Graphics", rx: /siggraph asia/i},
+  SIGGRAPH: {s2: "International Conference on Computer Graphics and Interactive Techniques,SIGGRAPH,ACM Transactions on Graphics", rx: /\bsiggraph\b(?! asia)/i},
+  "RA-L": {s2: "IEEE Robotics and Automation Letters", rx: /robotics and automation letters|\bra-l\b/i},
 };
-const SHORTV = [[/robotics and automation letters|\bra-l\b/i, "RA-L"], [/transactions on robotics/i, "T-RO"], [/science robotics/i, "Science Robotics"],
-  [/international journal of robotics research/i, "IJRR"], [/international conference on computer vision|\biccv\b/i, "ICCV"], [/european conference on computer vision|\beccv\b/i, "ECCV"],
-  [/transactions on machine learning research/i, "TMLR"], [/journal of machine learning research/i, "JMLR"], [/^arxiv/i, ""]];
+const SHORTV = [[/transactions on robotics/i, "T-RO"], [/science robotics/i, "Science Robotics"],
+  [/international journal of robotics research/i, "IJRR"], [/transactions on machine learning research/i, "TMLR"], [/journal of machine learning research/i, "JMLR"], [/^arxiv/i, ""]];
 function shortVenue(name) {
   if (!name) return "";
   for (const [k, c] of Object.entries(CONF)) if (c.rx.test(name)) return k;
@@ -218,7 +222,7 @@ const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitat
 const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", venue: "all", showAll: false,
   search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null,
   conf: {}, confYear: "all", confN: 25, bestYear: null, yearN: 40 };
-const ARCHIVE = ["CoRL", "RSS", "ICRA", "IROS", "ICLR", "ICML", "NeurIPS"];
+const ARCHIVE = ["CoRL", "RSS", "ICRA", "IROS", "RA-L", "ICLR", "ICML", "NeurIPS", "CVPR", "ICCV", "ECCV", "SIGGRAPH", "SIGGRAPH Asia"];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tc = t => `var(--t-${TOPICS[t] ? t : "Other"})`;
@@ -480,7 +484,7 @@ const BOOK = {CoRL: "Conference on Robot Learning (CoRL)", RSS: "Robotics: Scien
   ICRA: "IEEE International Conference on Robotics and Automation (ICRA)", IROS: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
   ICML: "International Conference on Machine Learning (ICML)", NeurIPS: "Advances in Neural Information Processing Systems (NeurIPS)",
   ICLR: "International Conference on Learning Representations (ICLR)", CVPR: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
-  ICCV: "IEEE/CVF International Conference on Computer Vision (ICCV)", ECCV: "European Conference on Computer Vision (ECCV)",
+  ICCV: "IEEE/CVF International Conference on Computer Vision (ICCV)", ECCV: "European Conference on Computer Vision (ECCV)", SIGGRAPH: "ACM SIGGRAPH Conference", "SIGGRAPH Asia": "ACM SIGGRAPH Asia Conference",
   AAAI: "AAAI Conference on Artificial Intelligence", Humanoids: "IEEE-RAS International Conference on Humanoid Robots (Humanoids)"};
 const JOURNAL = {"RA-L": "IEEE Robotics and Automation Letters", "T-RO": "IEEE Transactions on Robotics", IJRR: "The International Journal of Robotics Research",
   "Science Robotics": "Science Robotics", TMLR: "Transactions on Machine Learning Research", JMLR: "Journal of Machine Learning Research",
@@ -581,12 +585,14 @@ async function renderYear(c) {
 
 // ---------- Conferences tab: pick a conference, then a year (archive = official proceedings; current year also from the daily feed) ----------
 const CONF_SRC = {CoRL: "PMLR proceedings / corl.org", RSS: "roboticsproceedings.org", ICRA: "ICRA program (PaperCept)", IROS: "IROS program (PaperCept)",
-  ICLR: "iclr.cc", ICML: "icml.cc", NeurIPS: "neurips.cc"};
+  ICLR: "iclr.cc", ICML: "icml.cc", NeurIPS: "neurips.cc", CVPR: "cvpr.thecvf.com / CVF open access", ICCV: "iccv.thecvf.com / CVF open access",
+  ECCV: "eccv.ecva.net", SIGGRAPH: "ACM TOG + SIGGRAPH Conference Papers (via OpenAlex)", "SIGGRAPH Asia": "ACM TOG + SIGGRAPH Asia Conference Papers (via OpenAlex)",
+  "RA-L": "IEEE RA-L, by publication year (via OpenAlex)"};
 async function renderConfTab(c) {
   const k = state.confSel = state.confSel || "CoRL";
   if (!state.allPapers) { c.innerHTML = '<p class="empty">Loading conference papers…</p>'; await loadAllPapers().catch(() => []); if (state.view !== "conf") return; }
   const arch = state.conf[k]?.years || {};
-  const digest = state.allPapers.filter(p => p.kind === "digest" && (p.venue || "").startsWith(k + " ") && !/workshop/i.test(p.venue));
+  const digest = state.allPapers.filter(p => p.kind === "digest" && (p.venue || "").startsWith(k + " ") && !/workshop/i.test(p.venue) && !(k === "SIGGRAPH" && /^SIGGRAPH Asia/.test(p.venue)));
   const yearOf = p => p.year || +((p.venue || "").match(/\b(20\d\d)\b/) || [])[1];
   const years = [...new Set([...Object.keys(arch).map(Number), ...digest.map(yearOf)])].filter(Boolean).sort((a, b) => b - a);
   const archYears = Object.keys(arch).map(Number).sort((a, b) => b - a);

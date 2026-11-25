@@ -32,16 +32,25 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch_papers as fp  # noqa: E402  (keyword_score, compile_topics, extractive)
 
 UA = {"User-Agent": "Mozilla/5.0 (paper-digest)"}
-VIRTUAL = {"ICLR": "iclr", "ICML": "icml", "NeurIPS": "neurips"}
+VIRTUAL = {"ICLR": "iclr.cc", "ICML": "icml.cc", "NeurIPS": "neurips.cc",
+           "CVPR": "cvpr.thecvf.com", "ICCV": "iccv.thecvf.com", "ECCV": "eccv.ecva.net"}
+CVF = {"CVPR", "ICCV"}  # fallback: openaccess.thecvf.com listing when the virtual-site JSON is missing/partial
+# journals / SIGGRAPH via OpenAlex: list of (source id, issue or None)
+OPENALEX = {"SIGGRAPH": [("S185367456", "4"), ("S7407086393", None)],       # TOG issue 4 + conference papers
+            "SIGGRAPH Asia": [("S185367456", "6"), ("S7407088278", None)],  # TOG issue 6 + conference papers
+            "RA-L": [("S4210169774", None)]}
 CORL_PMLR = {2023: 229, 2024: 270, 2025: 305}
 RSS_VOL = {2023: "rss19", 2024: "rss20", 2025: "rss21", 2026: "rss22"}
-ROBOTICS = {"CoRL", "RSS", "ICRA", "IROS"}
+ROBOTICS = {"CoRL", "RSS", "ICRA", "IROS", "RA-L"}
 PAPERCEPT = {"ICRA", "IROS"}  # programs on ras.papercept.net (only recent years are public)
 # keep at most this many per conference-year (ML venues have thousands of papers)
-CAP = {"CoRL": 400, "RSS": 250, "ICLR": 150, "ICML": 150, "NeurIPS": 150, "ICRA": 300, "IROS": 250}
-MIN_SCORE = {"CoRL": 1, "RSS": 1, "ICLR": 10, "ICML": 10, "NeurIPS": 10, "ICRA": 7, "IROS": 7}
-HONOR_BONUS = {"Oral": 6, "Spotlight": 3, "Best Paper Award": 12, "Best Student Paper": 11, "Best Paper Finalist": 9}
-HONOR_RANK = ["Best Paper Award", "Best Student Paper", "Best Paper Finalist", "Oral", "Spotlight", ""]
+CAP = {"CoRL": 1500, "RSS": 600, "ICLR": 150, "ICML": 150, "NeurIPS": 150, "ICRA": 300, "IROS": 250,
+       "CVPR": 150, "ICCV": 150, "ECCV": 150, "SIGGRAPH": 100, "SIGGRAPH Asia": 100, "RA-L": 300}
+MIN_SCORE = {"CoRL": 0, "RSS": 0,  # 0 = keep every accepted paper (on-topic ones rank first)
+             "ICLR": 10, "ICML": 10, "NeurIPS": 10, "ICRA": 7, "IROS": 7,
+             "CVPR": 10, "ICCV": 10, "ECCV": 10, "SIGGRAPH": 7, "SIGGRAPH Asia": 7, "RA-L": 7}
+HONOR_BONUS = {"Oral": 6, "Spotlight": 3, "Highlight": 3, "Best Paper Award": 12, "Best Student Paper": 11, "Best Paper Finalist": 9}
+HONOR_RANK = ["Best Paper Award", "Best Student Paper", "Best Paper Finalist", "Oral", "Spotlight", "Highlight", ""]
 
 
 def get(url, binary=False, tries=4):
@@ -66,19 +75,24 @@ def arxiv_id(*urls):
 
 # ---------------------------------------------------------------- sources
 def from_virtual(conf, year):
-    raw = get(f"https://{VIRTUAL[conf]}.cc/static/virtual/data/{VIRTUAL[conf]}-{year}-orals-posters.json")
+    host = VIRTUAL[conf]
+    raw = get(f"https://{host}/static/virtual/data/{host.split('.')[0]}-{year}-orals-posters.json", tries=2)
     if not raw:
         return []
     try:
-        rows = json.loads(raw)["results"]
+        d = json.loads(raw)
+        rows = d["results"]
     except Exception:
+        return []
+    if d.get("next") not in (None, "None"):  # paginated stub (no abstracts, partial) -> let a fallback handle it
         return []
     out = {}
     for r in rows:
         if r.get("eventtype") not in ("Poster", "Oral", "Spotlight") or not r.get("name"):
             continue
         dec = (r.get("decision") or "") + " " + (r.get("eventtype") or "")
-        honor = "Oral" if re.search(r"oral", dec, re.I) else "Spotlight" if re.search(r"spotlight", dec, re.I) else ""
+        honor = ("Oral" if re.search(r"oral", dec, re.I) else "Spotlight" if re.search(r"spotlight", dec, re.I)
+                 else "Highlight" if re.search(r"highlight", dec, re.I) else "")
         al = r.get("authors") or []
         try:
             if isinstance(al, str):
@@ -91,10 +105,13 @@ def from_virtual(conf, year):
         prev = out.get(key)
         if prev and (prev["honor"] or not honor):
             continue
-        site = f"https://{VIRTUAL[conf]}.cc{r['virtualsite_url']}" if r.get("virtualsite_url") else ""
+        site = f"https://{host}{r['virtualsite_url']}" if r.get("virtualsite_url") else ""
         paper = r.get("paper_url") if r.get("paper_url") not in (None, "None") else ""
+        pdf = r.get("paper_pdf_url") if (r.get("paper_pdf_url") or "").startswith("http") else ""
+        if pdf.startswith("https://openaccess.thecvf.com") and "/html/" in pdf:
+            paper, pdf = paper or pdf, ""
         out[key] = {"title": title, "authors": authors, "abstract": " ".join((r.get("abstract") or "").split()),
-                    "url": paper or site, "site": site, "honor": honor,
+                    "url": paper or site, "site": site, "honor": honor, "pdf": pdf, "_page": site,
                     "code": r["url"] if "github.com" in (r.get("url") or "") else ""}
     return list(out.values())
 
@@ -300,12 +317,102 @@ def from_corl_site(year):
     return list(best.values())
 
 
+def from_cvf(conf, year):
+    """openaccess.thecvf.com listing: title, authors, html/pdf links (abstracts are fetched later, on demand)."""
+    raw = get(f"https://openaccess.thecvf.com/{conf}{year}?day=all", tries=2)
+    if not raw:
+        return []
+    out = []
+    for blk in raw.split('<dt class="ptitle">')[1:]:
+        m = re.search(r'<a href="([^"]+)">(.*?)</a>', blk, re.S)
+        if not m:
+            continue
+        page = "https://openaccess.thecvf.com" + m.group(1)
+        authors = [html.unescape(a) for a in re.findall(r'name="query_author" value="([^"]+)"', blk)]
+        pdf = re.search(r'href="(/content/[^"]+_paper\.pdf)"', blk)
+        ax = re.search(r"arxiv\.org/abs/(\d{4}\.\d{4,5})", blk)
+        out.append({"title": clean_tex(html.unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip()), "authors": authors,
+                    "abstract": "", "url": page, "_page": page, "honor": "", "code": "",
+                    "pdf": "https://openaccess.thecvf.com" + pdf.group(1) if pdf else "", "arxiv": ax.group(1) if ax else ""})
+    return out
+
+
+ABS_RX = [r'<div id="abstract">(.*?)</div>', r'abstract-text-inner">(.*?)</div>', r'<meta name="citation_abstract" content="([^"]*)"']
+
+
+def fetch_abstract(url, cache):
+    if url in cache:
+        return cache[url]
+    raw = get(url, tries=2) or ""
+    txt = ""
+    for rx in ABS_RX:
+        m = re.search(rx, raw, re.S)
+        if m:
+            txt = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))).split())
+            break
+    cache[url] = txt
+    return txt
+
+
+def from_openalex(conf, year):
+    out = {}
+    for src, issue in OPENALEX[conf]:
+        flt = f"primary_location.source.id:{src},publication_year:{year}" + (f",biblio.issue:{issue}" if issue else "")
+        page = 1  # page-based paging (cursor paging now returns 401 without an API key)
+        while page:
+            raw = get("https://api.openalex.org/works?" + urllib.parse.urlencode(
+                {"filter": flt, "per_page": 200, "page": page,
+                 "select": "title,authorships,abstract_inverted_index,doi,ids,cited_by_count,type"}), tries=3)
+            if not raw:
+                break
+            d = json.loads(raw)
+            for w in d["results"]:
+                t = clean_tex(html.unescape(re.sub(r"<[^>]+>", "", w.get("title") or "")).strip())
+                if not t or w.get("type") in ("erratum", "editorial", "paratext") or re.match(r"(front matter|table of contents|editorial|erratum)", t, re.I):
+                    continue
+                inv = w.get("abstract_inverted_index") or {}
+                pos = sorted((i, word) for word, idx in inv.items() for i in idx)
+                key = re.sub(r"\W", "", t.lower())
+                ids = w.get("ids") or {}
+                out[key] = {"title": t, "authors": [a["author"]["display_name"] for a in w.get("authorships") or [] if a.get("author")],
+                            "abstract": " ".join(x for _, x in pos), "url": w.get("doi") or ids.get("openalex", ""), "honor": "",
+                            "code": "", "citations": w.get("cited_by_count"),
+                            "arxiv": ""}
+            page = page + 1 if len(d["results"]) == 200 and page < 50 else None
+            time.sleep(0.3)
+    return list(out.values())
+
+
 # ---------------------------------------------------------------- build
 def build(conf, year, comp, tracked):
-    src = (from_virtual(conf, year) if conf in VIRTUAL else (from_pmlr(year) or from_corl_site(year)) if conf == "CoRL"
-           else from_papercept(conf, year) if conf in PAPERCEPT else from_rss(year))
+    if conf in OPENALEX:
+        src = from_openalex(conf, year)
+    elif conf in VIRTUAL:
+        src = from_virtual(conf, year) or (from_cvf(conf, year) if conf in CVF else [])
+    elif conf == "CoRL":
+        src = from_pmlr(year) or from_corl_site(year)
+    else:
+        src = from_papercept(conf, year) if conf in PAPERCEPT else from_rss(year)
     if not src:
         return None, None
+    # sources without abstracts (CVF listing, ECCV stub JSON): fetch abstracts for papers whose *title* is on-topic
+    need = [p for p in src if not p["abstract"] and p.get("_page")]
+    if need:
+        cpath = ROOT / "papers" / "data" / "cache" / "abstracts.json"
+        cache = json.loads(cpath.read_text()) if cpath.exists() else {}
+        pre = []
+        for p in need:
+            q = {"title": p["title"], "abstract": "", "authors": p["authors"], "categories": []}
+            fp.keyword_score(q, comp, tracked)
+            if q["topics"]:
+                pre.append((q["kw_score"], p))
+        pre.sort(key=lambda x: -x[0])
+        print(f"  {conf} {year}: fetching abstracts for {min(len(pre), 900)} of {len(src)} (title pre-filter)")
+        for i, (_, p) in enumerate(pre[:900]):
+            p["abstract"] = fetch_abstract(p["_page"], cache)
+            if i % 100 == 99:
+                cpath.write_text(json.dumps(cache))
+        cpath.write_text(json.dumps(cache))
     if conf == "CoRL":
         hon = corl_honors(year)
         for p in src:
@@ -315,7 +422,7 @@ def build(conf, year, comp, tracked):
     for p in src:
         q = {"title": p["title"], "abstract": p["abstract"], "authors": p["authors"], "categories": ["cs.RO"] if conf in ROBOTICS else []}
         fp.keyword_score(q, comp, tracked)
-        if not q["topics"] or q["kw_score"] < MIN_SCORE[conf]:
+        if (not q["topics"] and MIN_SCORE[conf] > 0) or q["kw_score"] < MIN_SCORE[conf]:
             continue
         ax = p.get("arxiv") or arxiv_id(p.get("url"), p.get("code"))
         tldr, summary = fp.extractive(p["abstract"]) if p["abstract"] else ("", "")
@@ -326,6 +433,7 @@ def build(conf, year, comp, tracked):
             "score": q["kw_score"] + HONOR_BONUS.get(p["honor"], 0), "tldr": tldr,
             "abstract": p["abstract"][:1800], "url": p["url"], "pdf": p.get("pdf") or (f"https://arxiv.org/pdf/{ax}" if ax else ""),
             **({"code": p["code"]} if p.get("code") else {}), **({"arxiv": ax} if ax else {}),
+            **({"citations": p["citations"]} if p.get("citations") is not None else {}),
         })
     scored.sort(key=lambda x: x["score"], reverse=True)
     print(f"{conf} {year}: {len(src)} papers, {len(scored)} on-topic, keeping {min(len(scored), CAP[conf])} "
@@ -335,7 +443,7 @@ def build(conf, year, comp, tracked):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", default="CoRL,RSS,ICRA,IROS,ICLR,ICML,NeurIPS")
+    ap.add_argument("--only", default="CoRL,RSS,ICRA,IROS,RA-L,ICLR,ICML,NeurIPS,CVPR,ICCV,ECCV,SIGGRAPH,SIGGRAPH Asia")
     ap.add_argument("--years", default=f"2023-{dt.date.today().year}")
     ap.add_argument("--refresh", action="store_true")
     a = ap.parse_args()

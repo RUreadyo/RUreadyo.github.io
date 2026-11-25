@@ -1,0 +1,2108 @@
+{
+"conf": "SIGGRAPH",
+"years": {
+"2026": [
+{
+"id": "SIGGRAPH2026-5",
+"title": "MUSIC: Learning Muscle-Driven Dexterous Hand Control",
+"authors": [
+"Pei Xu",
+"Yufei Ye",
+"Shuchun Sun",
+"Yu Ding",
+"Elizabeth Schumann",
+"C. Karen Liu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"RL",
+"Control"
+],
+"tracked_authors": [
+"C. Karen Liu"
+],
+"score": 27,
+"tldr": "We present a data-driven approach for physics-based, muscle-driven dexterous control that enables musculoskeletal hands to perform precise piano playing for novel pieces of music outside the reference dataset.",
+"abstract": "We present a data-driven approach for physics-based, muscle-driven dexterous control that enables musculoskeletal hands to perform precise piano playing for novel pieces of music outside the reference dataset. Our approach combines high-frequency muscle-level control with low-frequency latent-space coordination in a hierarchical architecture. At the low level, general single-hand policies are trained via reinforcement learning to generate dynamic muscle-tendon activations while tracking trajectories from a large reference motion dataset. The resulting tracking policies are then distilled into variational autoencoder (VAE) models, yielding smooth and structured latent spaces that abstract away low-level muscle dynamics. For the high level, we train piece-specific policies to operate in this latent space, coordinating bimanual motions based on specific goals, denoted by note events extracted from given musical scores, to synthesize performances beyond the reference data. High-level control is formulated as a decentralized multiagent reinforcement learning problem combined with adversarial learning for motion imitation. In addition, we present an enhanced musculoskeletal hand model that supports fine control of fingers for accurate low-level motion tracking and diverse high-level motion synthesis. We evaluate the control pipeline of our approach on a diverse piano repertoire spanning multiple musical styles and technical demands. Results demonstrate that our approach can synthesize coordinated bimanual motions with accurate key presses, and achieve the state-of-the-art performance of piano playing in physics-based dexterous control, while generalizing to sheet music that is not presented in the reference dataset. We also show that our musculoskeletal hand model demonstrate",
+"url": "https://doi.org/10.1145/3811402",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-18",
+"title": "AGILE: Hand-object Interaction Reconstruction from Video via Agentic Generation",
+"authors": [
+"Jin-Chuan Shi",
+"Binhong Ye",
+"Tao Liu",
+"X D Liu",
+"Yangjinhui Xu",
+"He Jl",
+"Zeju Li",
+"Hao Chen",
+"Chunhua Shen"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"FM",
+"Control"
+],
+"tracked_authors": [],
+"score": 23,
+"tldr": "To overcome these limitations, we introduce AGILE, a robust framework that shifts the paradigm from reconstruction to agentic generation for interaction learning.",
+"abstract": "Reconstructing dynamic hand-object interactions from monocular videos is critical for dexterous manipulation data collection and creating realistic digital twins for robotics and VR. However, current methods face two prohibitive barriers: (1) reliance on neural rendering often yields fragmented, non-simulation-ready geometries under heavy occlusion, and (2) dependence on brittle Structure-from-Motion (SfM) initialization leads to frequent failures on in-the-wild footage. To overcome these limitations, we introduce AGILE, a robust framework that shifts the paradigm from reconstruction to agentic generation for interaction learning. First, we employ an agentic pipeline where a Vision-Language Model (VLM) guides a generative model to synthesize a complete, watertight object mesh with high-fidelity texture, independent of video occlusions. Second, bypassing fragile SfM entirely, we propose a robust anchor-and-track strategy. We initialize the object pose at a single interaction onset frame using a foundation model and propagate it temporally by leveraging the strong visual similarity between our generated asset and video observations. Finally, a contact-aware optimization integrates semantic, geometric, and interaction stability constraints to enforce physical plausibility. Extensive experiments on HO3D, DexYCB, ARCTIC, and in-the-wild videos reveal that AGILE outperforms baselines in global geometric accuracy while demonstrating exceptional robustness on challenging sequences where prior arts frequently collapse. By prioritizing physical validity, our method produces simulation-ready assets validated via real-to-sim retargeting for robotic applications. Project page: agile-hoi.github.io.",
+"url": "https://doi.org/10.1145/3799902.3811134",
+"pdf": "",
+"citations": 10
+},
+{
+"id": "SIGGRAPH2026-0",
+"title": "ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting",
+"authors": [
+"David Müller",
+"Agon Serifi",
+"Sammy Christen",
+"Ruben Grandia",
+"Espen Knoop",
+"Moritz Bächer"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"RL",
+"IL"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a tracking policy using reinforcement learning.",
+"abstract": "Retargeting human kinematic reference motion onto a robot's morphology remains a formidable challenge. Existing methods often produce physical inconsistencies, such as foot sliding, self-collisions, or dynamically infeasible motions, which hinder downstream imitation learning. We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a tracking policy using reinforcement learning. To make the optimization tractable, we derive an approximate gradient for the upper-level loss. Our framework requires only a sparse set of semantic rigid-body correspondences and eliminates the need for manual tuning by identifying optimal values for a parameterization expressive enough to preserve characteristic motion across different embodiments. Moreover, by integrating retargeting directly with physics simulation, we produce physically plausible motions that facilitate robust imitation learning. We validate our method in simulation and on hardware, demonstrating challenging motions for morphologies that differ significantly from a human, including retargeting onto a quadruped.",
+"url": "https://doi.org/10.1145/3811378",
+"pdf": "",
+"citations": 15
+},
+{
+"id": "SIGGRAPH2026-1",
+"title": "UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors",
+"authors": [
+"Houyuan Chen",
+"Hong Li",
+"Xianghao Kong",
+"Tianrui Zhu",
+"Shaocong Xu",
+"Weiqing Xiao",
+"Yuwei Guo",
+"Chongjie Ye",
+"Lvmin Zhang",
+"Hao Zhao",
+"Anyi Rao"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "In this paper, we present UniVidX , a unified multimodal framework designed to leverage VDM priors to enable versatile video generation.",
+"abstract": "Recent progress has shown that video diffusion models (VDMs) can be repurposed to solve various multimodal graphics tasks. However, existing approaches predominantly train separate models for each specific problem setting. This practice locks models into fixed input-output mappings, and typically ignores the joint correlations across modalities. In this paper, we present UniVidX , a unified multimodal framework designed to leverage VDM priors to enable versatile video generation. Our goal is to (i) master diverse pixel-aligned tasks by formulating them as conditional generation problems within multimodal space, (ii) adapt to modality-specific distributions without compromising the backbone's native priors, and (iii) ensure cross-modal consistency during synthesis. Concretely, we propose three key designs: 1) Stochastic Condition Masking (SCM): by randomly partitioning modalities into clean conditions and noisy targets during training, we enable the model to learn omni-directional conditional generation rather than fixed mappings. 2) Decoupled Gated LoRA (DGL): we attach per-modality LoRAs and activate them when a modality serves as a generation target, thereby preserving the VDM's strong priors. 3) Cross-Modal Self-Attention (CMSA): we explicitly share keys/values across modalities while maintaining modality-specific queries, facilitating information exchange and inter-modal alignment. We validate our framework by instantiating it in two domains: 1) UniVid-Intrinsic for RGB videos and their intrinsic maps (albedo, irradiance, normal), and 2) UniVid-Alpha for blended RGB videos and their constituent RGBA layers. Experimental results demonstrate that both models achieve performance competitive with state-of-the-art methods across distinct tasks. Notably, they exhibit robu",
+"url": "https://doi.org/10.1145/3811304",
+"pdf": "",
+"citations": 10
+},
+{
+"id": "SIGGRAPH2026-2",
+"title": "DissolveStereo: Coarse Depth Injection for Zero-Shot Stereo Video Generation",
+"authors": [
+"Jian Shi",
+"Qian Wang",
+"Zhenyu Li",
+"Wenqing Cui",
+"Ramzi Idoughi",
+"Peter Wonka"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "We introduce DissolveStereo , a novel framework for zero-shot stereo video generation that leverages video diffusion priors without requiring paired training data.",
+"abstract": "Generating high-quality stereo videos requires consistent depth perception and temporal coherence across frames. Despite advances in image and video synthesis using diffusion models, producing high-quality stereo videos remains a challenging task due to the difficulty of maintaining consistent temporal and spatial coherence between left and right views. We introduce DissolveStereo , a novel framework for zero-shot stereo video generation that leverages video diffusion priors without requiring paired training data. Our key innovations include a noisy restart strategy to initialize stereo-aware latent representations and an iterative refinement process that progressively harmonizes the latent space, addressing issues like temporal flickering and view inconsistencies. Importantly, we propose the use of dissolved depth maps to streamline latent space operations by reducing high-frequency depth information. Our comprehensive evaluations, including quantitative metrics and user studies, demonstrate that DissolveStereo produces high-quality stereo videos with enhanced depth consistency and temporal smoothness. In terms of epipolar consistency, our method achieves an 11.7% improvement in MEt3R score over the current state-of-the-art. Furthermore, user studies indicate strong perceptual gains over the previous arts, with an 8.0% higher perceived frame quality and 10.9% higher perceived temporal coherence. Our code is in https://github.com/shijianjian/DissolveStereo.",
+"url": "https://doi.org/10.1145/3811390",
+"pdf": "",
+"citations": 10
+},
+{
+"id": "SIGGRAPH2026-12",
+"title": "MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation",
+"authors": [
+"Kaixing Yang",
+"Jiashu Zhu",
+"Xulong Tang",
+"Ziqiao Peng",
+"Xiangyue Zhang",
+"Puwei Wang",
+"Jiahong Wu",
+"Xiangxiang Chu",
+"Hongyan Liu",
+"Jun He"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "Accordingly, we present MACE-Dance, a music-driven dance video generation framework with cascaded Mixture-of-Experts (MoE).",
+"abstract": "With the rise of online dance‑video platforms and rapid advances in AIGC, music‑driven dance generation task has emerged as a compelling research direction. Despite substantial progress in related domains such as music-driven 3D dance generation, pose-driven image animation, and audio-driven talking-head synthesis, these approaches are not readily transferable to this task due to fundamental mismatches in generation targets and constraints. Moreover, research on music-driven dance video generation remains limited and fails to capture the inherently 3D nature of dance, resulting in compromised motion quality and visual appearance. Accordingly, we present MACE-Dance, a music-driven dance video generation framework with cascaded Mixture-of-Experts (MoE). The Motion Expert performs music-to-3D motion enforcing kinematic plausibility and artistic expressiveness, while the Appearance Expert carries out motion-and-reference conditioned video synthesis, preserving visual identity with spatiotemporal coherence. Specifically, the Motion Expert adopts Diffusion Model with BiMamba-Transformer hybrid architecture and Guidance-Free Training (GFT) strategy, achieving state-of-the-art (SOTA) performance in 3D dance generation task; the Appearance Expert adopts a decoupled Kinematic–Aesthetic fine-tuning strategy, achieving state-of-the-art (SOTA) performance in the pose-driven image animation task. To better benchmark this task, we curate a large-scale dataset, and design a motion–appearance evaluation protocol. Based on them, MACE-Dance also achieves the state-of-the-art (SOTA) performance. Code is available at https://github.com/AMAP-ML/MACE-Dance.",
+"url": "https://doi.org/10.1145/3799902.3811202",
+"pdf": "",
+"citations": 28
+},
+{
+"id": "SIGGRAPH2026-14",
+"title": "FreeOrbit4D: Training-Free Arbitrary Camera Redirection for Monocular Videos via Foreground-Complete 4D Reconstruction",
+"authors": [
+"Wei Cao",
+"Hao Zhang",
+"Fengrui Tian",
+"Yulun Wu",
+"Yingying Li",
+"Shenlong Wang",
+"Ning Yu",
+"Yaoyao Liu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 13,
+"tldr": "To address this, we present FreeOrbit4D, an effective training-free framework that tackles this geometric ambiguity by recovering a foreground-complete 4D proxy as structural grounding for video generation.",
+"abstract": "Camera redirection aims to replay a dynamic scene from a single monocular video under a user-specified camera trajectory. However, large-angle redirection is inherently ill-posed: a monocular video captures only a narrow spatio-temporal view of a dynamic 3D scene, providing severely limited observations of the underlying 4D world. The key challenge is therefore to recover a complete and coherent plenoptic representation from this limited input, with consistent geometry and coherent motion. While recent diffusion-based methods achieve impressive visual generation quality, they often break down under large-angle viewpoint changes far from the original trajectory, where missing visual grounding leads to severe geometric ambiguity and temporal inconsistency. To address this, we present FreeOrbit4D, an effective training-free framework that tackles this geometric ambiguity by recovering a foreground-complete 4D proxy as structural grounding for video generation. We obtain this proxy by decoupling foreground and background reconstructions: we unproject the monocular video into a static background and partial foreground point clouds in a unified global space, then leverage an object-centric multi-view diffusion model to synthesize multi-view images and reconstruct complete foreground point clouds in canonical object space. By aligning the canonical foreground point cloud to the global scene space via dense pixel-synchronized 3D–3D correspondences and projecting the foreground-complete 4D proxy onto target camera viewpoints, we provide geometric scaffolds (e.g., depth/visibility cues) that guide a conditional video diffusion model. Extensive experiments show that FreeOrbit4D produces more faithful and temporally coherent redirected videos under challenging large-angle trajector",
+"url": "https://doi.org/10.1145/3799902.3811122",
+"pdf": "",
+"citations": 18
+},
+{
+"id": "SIGGRAPH2026-6",
+"title": "Skinned Motion Retargeting with Spatially Adaptive Interaction Guidance",
+"authors": [
+"Soojin Choi",
+"Seokhyeon Hong",
+"Chaelin Kim",
+"Junghyun Nam",
+"Junhyuk Jeon",
+"Junyong Noh"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "In this paper, we present a geometry-aware motion retargeting framework that preserves interaction semantics by performing proximity matching over spatially adaptive anchors.",
+"abstract": "Retargeting motion across characters with varying body shapes while preserving interaction semantics, such as self-contact and near-body proximity, remains a challenging problem. While recent geometry-aware approaches address this by maintaining spatial relationships between predefined corresponding regions, their reliance on static correspondences often struggles when the target character exhibits exaggerated body proportions. In this paper, we present a geometry-aware motion retargeting framework that preserves interaction semantics by performing proximity matching over spatially adaptive anchors. Unlike prior methods with static anchor definitions, the proposed method dynamically repositions anchors to reachable regions on the target character. This is achieved via a Transformer-based anchor refinement strategy that predicts anchor displacements and constrains the translated anchors to remain on the target character geometry through differentiable soft projection. By incorporating pose-dependent spatial structures from the source character, the adapted anchors provide structurally coherent guidance for interaction-aware retargeting. Conditioned on these anchors, a graph-based autoencoder predicts target skeletal motion that preserves the spatial configuration of the source. To encourage task-aligned optimization between anchor adaptation and motion retargeting, we adopt an alternating training scheme in which each module is optimized in turn. Through extensive evaluations, we demonstrate that our method outperforms state-of-the-art approaches in preserving interaction fidelity across diverse character geometries. Code is available at Project Page .",
+"url": "https://doi.org/10.1145/3811354",
+"pdf": "",
+"citations": 2
+},
+{
+"id": "SIGGRAPH2026-8",
+"title": "A Few-Step Generative Model on Cumulative Flow Maps",
+"authors": [
+"Zhiqi Li",
+"Duowen Chen",
+"Yuchen Sun",
+"Bo Zhu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 11,
+"tldr": "We propose a unified, few-step generative modeling framework based on cumulative flow maps for long-range transport in probability space, inspired by flow-map techniques for physical transport and dynamics.",
+"abstract": "We propose a unified, few-step generative modeling framework based on cumulative flow maps for long-range transport in probability space, inspired by flow-map techniques for physical transport and dynamics. At its core is a cumulative-flow abstraction that connects local, instantaneous updates with finite-time transport, enabling generative models to reason about global state transitions. This perspective yields a unified few-step framework built on cumulative transport and cumulative parameterization that applies broadly to existing diffusion- and flow-based models without being tied to a specific prediction instantiation. Our formulation supports few-step and even one-step generation while preserving synthesis quality, requiring only minimal changes to time embeddings and training objectives, and no increase in model capacity. We demonstrate its effectiveness across diverse tasks, including image generation, geometric distribution modeling, joint prediction, and SDF generation, with reduced inference cost.",
+"url": "https://doi.org/10.1145/3811380",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-31",
+"title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models",
+"authors": [
+"Cheng-De Fan",
+"Chun-Wei Tuan Mu",
+"C C Chang",
+"Chin-Yang Lin",
+"Kun-Ru Wu",
+"Yu‐Chee Tseng",
+"Yu-Lun Liu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"Control"
+],
+"tracked_authors": [],
+"score": 11,
+"tldr": "We propose LongE2V, a novel approach that leverages pre-trained video diffusion priors to jointly handle event-based video reconstruction, prediction, and frame interpolation.",
+"abstract": "Recovering high-quality video from sparse event streams is a challenging task. Regression methods often blur textures, while existing generative models struggle with long-term stability. We propose LongE2V, a novel approach that leverages pre-trained video diffusion priors to jointly handle event-based video reconstruction, prediction, and frame interpolation. By fine-tuning a foundational video model, our approach achieves high data efficiency and superior perceptual quality. We introduce Autoregressive Unrolling and Adaptive Context Switching to mitigate temporal drift in extremely long sequences. We also propose Reencoding Alignment with Cross Residual Correction to ensure precise bidirectional consistency during frame interpolation. Furthermore, Event Voxel Density Augmentation ensures robustness across varying sensor resolutions. Extensive experiments on real-world benchmarks demonstrate that LongE2V outperforms state-of-the-art methods across all three tasks, exhibiting exceptional temporal coherence and zero-shot generalization.",
+"url": "https://doi.org/10.1145/3799902.3811151",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-13",
+"title": "OmniRoam: World Wandering via Long-Horizon Panoramic Video Generation",
+"authors": [
+"Yuheng Liu",
+"Xin Lin",
+"Xinke Li",
+"Yang Baihan",
+"Chen Wang",
+"Kalyan Sunkavalli",
+"Yannick Hold-Geoffroy",
+"Hao Tan",
+"Kai Zhang",
+"Xiaohui S. Xie",
+"Zifan Shi",
+"Yiwei Hu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We propose OmniRoam, a controllable panoramic video generation framework that exploits the rich per-frame scene coverage and inherent long-term spatial and temporal consistency of panoramic representation, enabling long-horizon scene wandering.",
+"abstract": "Modeling scenes using video generation models has garnered growing research interest in recent years. However, most existing approaches rely on perspective video models that synthesize only limited observations of a scene, leading to issues of completeness and global consistency. We propose OmniRoam, a controllable panoramic video generation framework that exploits the rich per-frame scene coverage and inherent long-term spatial and temporal consistency of panoramic representation, enabling long-horizon scene wandering. Our framework begins with a preview stage, where a trajectory-controlled video generation model creates a quick overview of the scene from a given input image or video. Then, in the refine stage, this video is temporally extended and spatially upsampled to produce long-range, high-resolution videos, thus enabling high-fidelity world wandering. To train our model, we introduce two panoramic video datasets that incorporate both synthetic and real-world captured videos. Experiments show that our framework consistently outperforms state-of-the-art methods in terms of visual quality, controllability, and long-term scene consistency, both qualitatively and quantitatively. We further showcase several extensions of this framework, including real-time video generation and 3D reconstruction. Code and data for this paper are at https://github.com/yuhengliu02/OmniRoam.",
+"url": "https://doi.org/10.1145/3799902.3811180",
+"pdf": "",
+"citations": 20
+},
+{
+"id": "SIGGRAPH2026-15",
+"title": "ReRoPE: Repurposing RoPE for Relative Camera Control",
+"authors": [
+"C B Li",
+"Yuanbo Yang",
+"J Shao",
+"Hongyu Zhou",
+"Katja Schwarz",
+"Yiyi Liao"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We introduce ReRoPE, a plug-and-play framework that incorporates relative camera information into pre-trained video diffusion models without compromising their generation capability.",
+"abstract": "Video generation with controllable camera viewpoints is essential for applications such as interactive content creation, gaming, and simulation. Existing methods typically adapt pre-trained video models using camera poses relative to a fixed reference, e.g., the first frame. However, these encodings lack shift-invariance, often leading to poor generalization and accumulated drift. While relative camera pose embeddings defined between arbitrary view pairs offer a more robust alternative, integrating them into pre-trained video diffusion models without prohibitive training costs or architectural changes remains challenging. We introduce ReRoPE, a plug-and-play framework that incorporates relative camera information into pre-trained video diffusion models without compromising their generation capability. Our approach is based on the insight that Rotary Positional Embeddings (RoPE) in existing models underutilize their full spectral bandwidth, particularly in the low-frequency components. By seamlessly injecting relative camera pose information into these underutilized bands, ReRoPE achieves precise control while preserving strong pre-trained generative priors. We evaluate our method on both image-to-video (I2V) and video-to-video (V2V) tasks in terms of camera control accuracy and visual fidelity. Our results demonstrate that ReRoPE offers a training-efficient path toward controllable, high-fidelity video generation. Project page: https://sisyphe-lee.github.io/ReRoPE/",
+"url": "https://doi.org/10.1145/3799902.3811226",
+"pdf": "",
+"citations": 17
+},
+{
+"id": "SIGGRAPH2026-17",
+"title": "MV-S2V: Multi-View Subject-Consistent Video Generation",
+"authors": [
+"Ziyang Song",
+"Xinyu Gong",
+"Bangya Liu",
+"Zelin Zhao"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "In this work, we propose and address the challenging Multi-View S2V (MV-S2V) task, which synthesizes videos from multiple reference views to enforce 3D-level subject consistency.",
+"abstract": "Existing Subject-to-Video Generation (S2V) methods have achieved high-fidelity and subject-consistent video generation, yet remain constrained to single-view subject references. This limitation renders the S2V task reducible to an S2I + I2V pipeline, failing to exploit the full potential of video subject control. In this work, we propose and address the challenging Multi-View S2V (MV-S2V) task, which synthesizes videos from multiple reference views to enforce 3D-level subject consistency. Regarding the scarcity of training data, we first develop a synthetic data curation pipeline to generate highly customized synthetic data, complemented by a small-scale real-world captured dataset to boost the training of MV-S2V. Another key issue lies in the potential confusion between cross-subject and cross-view references in conditional generation. To overcome this, we further introduce Temporally Shifted RoPE (TS-RoPE) to distinguish between different subjects and distinct views of the same subject in reference conditioning. Our framework achieves superior 3D subject consistency w.r.t. multi-view reference images and high-quality visual outputs, establishing a new meaningful direction for subject-driven video generation. Code and data are available at: https://szy-young.github.io/mv-s2v",
+"url": "https://doi.org/10.1145/3799902.3811131",
+"pdf": "",
+"citations": 10
+},
+{
+"id": "SIGGRAPH2026-22",
+"title": "Continuous Control of Editing Models via Adaptive-Origin Guidance",
+"authors": [
+"Alon Wolf",
+"Chen Katzir",
+"Kfir Aberman",
+"Or Patashnik"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel",
+"FM"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "To enable continuous control, we introduce Adaptive-Origin Guidance (AdaOr), a method that adjusts this standard guidance origin with an identity-conditioned adaptive origin, using an identity instruction corresponding to the identity manipulation.",
+"abstract": "Diffusion-based editing models have emerged as a powerful tool for semantic image and video manipulation. However, existing models lack a mechanism for smoothly controlling the intensity of text-guided edits. In standard text-conditioned generation, Classifier-Free Guidance (CFG) impacts prompt adherence, suggesting it as a potential control for edit intensity in editing models. However, we show that scaling CFG in these models does not produce a smooth transition between the input and the edited result. We attribute this behavior to the unconditional prediction, which serves as the guidance origin and dominates the generation at low guidance scales, while representing an arbitrary manipulation of the input content. To enable continuous control, we introduce Adaptive-Origin Guidance (AdaOr), a method that adjusts this standard guidance origin with an identity-conditioned adaptive origin, using an identity instruction corresponding to the identity manipulation. By interpolating this identity prediction with the standard unconditional prediction according to the edit strength, we ensure a continuous transition from the input to the edited result. We evaluate our method on image and video editing tasks, demonstrating that it provides smoother and more consistent control compared to current slider-based editing approaches. Our method incorporates an identity instruction into the standard training framework, enabling fine-grained control at inference time without per-edit procedure or reliance on specialized datasets. Additional results and videos are available at https://adaor-paper.github.io/.",
+"url": "https://doi.org/10.1145/3799902.3811077",
+"pdf": "",
+"citations": 4
+},
+{
+"id": "SIGGRAPH2026-25",
+"title": "Go-with-the-Track: Video Compositing and Motion Control with Point Tracking",
+"authors": [
+"Koichi Namekata",
+"Yash Kant",
+"Zhizheng Liu",
+"Ryan Burgert",
+"Yun Xu",
+"Kuan Heng Lin",
+"Emmett Steven",
+"Julien Philip",
+"Li Ma",
+"Andrea Vedaldi",
+"Paul E. Debevec",
+"Ning Yu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We present Go-with-the-Track , which unifies both capabilities by jointly conditioning on multiple reference images and reference-anchored point-tracks — extending conventional point-tracks to explicitly establish correspondences between generated frames and reference images,…",
+"abstract": "Filmmaking demands precise motion control and reference image compositing — capabilities that existing methods treat separately. Point-track-conditioned image-to-video models restrict content insertion to the first frame, while reference-to-video models lack fine-grained spatial-temporal control over how reference content integrates across frames. We present Go-with-the-Track , which unifies both capabilities by jointly conditioning on multiple reference images and reference-anchored point-tracks — extending conventional point-tracks to explicitly establish correspondences between generated frames and reference images, thus enabling precise compositing and motion control throughout the video. To achieve this, we introduce spatially-aware point-track embeddings that encode the full sequence of point-track coordinates using a coordinate-wise MLP followed by temporal pooling. This representation captures the spatial characteristics of each point-track (serving as a unique identifier), while the embedding similarity correlates directly with spatial proximity, enhancing the model’s ability to distinguish and associate point-tracks. We inject these point-track embeddings into a video diffusion transformer via a lightweight adapter, resolving the pixel-to-patch resolution mismatch while avoiding the substantial motion detail loss inherent in naive point-track subsampling. We use a hybrid training strategy to train jointly on dynamic, static, and synthetic scene video datasets to boost motion controllability. Experiments demonstrate that Go-with-the-Track achieves superior motion and reference control in a single model and enables new capabilities: multi-reference conditioned video generation with point-track driven compositing, as well as camera control for both static and dyn",
+"url": "https://doi.org/10.1145/3799902.3811093",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-30",
+"title": "CameraSquad: Achieving Content Consistency in Parallel Multi-Trajectory Camera-Controlled Video Generation",
+"authors": [
+"Zhufeng Xu",
+"Xia Gao",
+"Bailin Deng",
+"Yikang Ding",
+"Xiaoqiang Liu",
+"Haoxian Zhang",
+"Pengfei Wan",
+"Hongbo Fu",
+"Lin Gao"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We propose CameraSquad, a multi-trajectory camera control framework that supports both single-trajectory and parallel multi-trajectory generation.",
+"abstract": "Camera-controlled video generation is valuable for applications ranging from visual design to providing 2D supervision for 4D generation tasks. However, existing approaches are limited to single-trajectory generation, forcing users to process multiple trajectories in separate batches. This serial inference introduces content inconsistencies across viewpoints due to the inherent randomness of diffusion models. Explicit point cloud methods can only partially address this problem, as single-viewpoint back-projection suffers from sparsity and depth estimation errors. We propose CameraSquad, a multi-trajectory camera control framework that supports both single-trajectory and parallel multi-trajectory generation. Our method achieves precise camera control while preserving input video content through decoupled content and camera control mechanisms. To ensure viewpoint consistency in multi-trajectory mode, we design a dual-mode cross-view attention mechanism that maintains consistency across parallel trajectories while guaranteeing camera control precision. Extensive experiments demonstrate that CameraSquad achieves competitive performance in camera control accuracy, consistency maintenance, and generation quality compared to existing approaches. Our project page is available at https://rabberk.github.io/CameraSquad/.",
+"url": "https://doi.org/10.1145/3799902.3811048",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-33",
+"title": "VidSplat: Gaussian Splatting Reconstruction with Geometry-Guided Video Diffusion Priors",
+"authors": [
+"Jimin Tang",
+"Wenyuan Zhang",
+"Jie Zhou",
+"Zian Huang",
+"Kanle Shi",
+"Shenkun Xu",
+"Yu-Shen Liu",
+"Zhizhong Han"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "To address this limitation, we present VidSplat, a training-free generative reconstruction framework that leverages powerful video diffusion priors to iteratively synthesize novel views that compensate for missing input coverage, and thereby recover complete 3D scenes from…",
+"abstract": "Gaussian Splatting has achieved remarkable progress in multi-view surface reconstruction, yet it exhibits notable degradation when only few views are available. Although recent efforts alleviate this issue by enhancing multi-view consistency to produce plausible surfaces, they struggle to infer unseen, occluded, or weakly constrained regions beyond the input coverage. To address this limitation, we present VidSplat, a training-free generative reconstruction framework that leverages powerful video diffusion priors to iteratively synthesize novel views that compensate for missing input coverage, and thereby recover complete 3D scenes from sparse inputs. Specifically, we tackle two key challenges that enable the effective integration of generation and reconstruction. First, for 3D consistent generation, we elaborate a training-free, stage-wise denoising strategy that adaptively guides the denoising direction toward the underlying geometry using the rendered RGB and mask images. Second, to enhance the reconstruction, we develop an iterative mechanism that samples camera trajectories, explores unobserved regions, synthesizes novel views, and supplements training through confidence weighted refinement. VidSplat performs robustly to sparse input and even a single image. Extensive experiments on widely used benchmarks demonstrate our superior performance in sparse-view scene reconstruction. Project Page: https://tangjm24.github.io/VidSplat.",
+"url": "https://doi.org/10.1145/3799902.3811138",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-34",
+"title": "Workflow-friendly Anime In-betweening Using Video Generation Models",
+"authors": [
+"Akinobu Maejima",
+"Sosui Koga",
+"Kazuki Kumagai",
+"Takuya Funatomi",
+"Tatsuo Yotsukura",
+"Yasuhiro Mukaigawa"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We propose a framework which generates anime in-betweens while satisfying the technical standards of the traditional pipelines.",
+"abstract": "In-betweening is a labor-intensive process in anime production requiring skill and time especially for complex motions such as turning around. While vector-based interpolation methods struggle with such out-of-plane movements, recent video generation models address this issue with their motion prior; however the output is not aligned with the technical standard of the existing anime production workflows. We propose a framework which generates anime in-betweens while satisfying the technical standards of the traditional pipelines. This achieves state-of-the-art results, especially in complex out-of-plane motion scenarios. Our framework is unique and effective by filling the gap between existing video generation models and production-ready requirements.",
+"url": "https://doi.org/10.1145/3799818.3812070",
+"pdf": "",
+"citations": 0
+},
+{
+"id": "SIGGRAPH2026-3",
+"title": "M-ABD: Scalable, Efficient, and Robust Multi-Affine-Body Dynamics",
+"authors": [
+"Zhiyong He",
+"Dewen Guo",
+"Minghao Guo",
+"Yili Zhao",
+"Wojciech Matusik",
+"Hao Su",
+"Chenfanfu Jiang",
+"Peter Yichen Chen",
+"Yin Yang"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Control"
+],
+"tracked_authors": [
+"Hao Su"
+],
+"score": 9,
+"tldr": "This paper introduces a novel framework that leverages the linear kinematic mapping of Affine Body Dynamics (ABD).",
+"abstract": "Simulating large-scale articulated assemblies poses a significant challenge due to the numerical stiffness and geometric complexity of jointed structures. Conventional rigid body solvers struggle with the high nonlinearity induced by rotation parameterization. This difficulty becomes more pronounced for multiple two-way-coupled bodies. This paper introduces a novel framework that leverages the linear kinematic mapping of Affine Body Dynamics (ABD). As ABD targets near-rigid objects, the constitutive variations of different materials become negligible, which justifies a co-rotational approach to isolate geometric nonlinearities of the system. This insight enables the use of constant system matrices that can be pre-factorized throughout the simulation, even with fully implicit integration schemes. To manage the high DOF counts of large-scale systems, we map primal body coordinates onto a compact dual space defined by minimal joint degrees of freedom. By solving the resulting KKT systems, our method ensures exact constraint enforcement and physically accurate motion propagation. We provide a suite of specialized solvers tailored for diverse joint topologies, including chains, trees, closed loops, and irregular networks. Experimental results show that our approach achieves interactive rates for systems with hundreds of thousands of bodies on a single CPU core, while maintaining excellent stability at large time steps.",
+"url": "https://doi.org/10.1145/3811276",
+"pdf": "",
+"citations": 6
+},
+{
+"id": "SIGGRAPH2026-26",
+"title": "Relit-LiVE: Relight Video by Jointly Learning Environment Video",
+"authors": [
+"Weiqing Xiao",
+"Hong Li",
+"Xiaomin Yang",
+"Houyuan Chen",
+"Wenyi Li",
+"T. Liu",
+"Shaocong Xu",
+"Chongjie Ye",
+"Hao Zhao",
+"Beibei Wang"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 9,
+"tldr": "In this work, we present Relit-LiVE , a novel video relighting framework that produces physically consistent, temporally stable results without requiring prior knowledge of camera pose.",
+"abstract": "Recent advances have shown that large-scale video diffusion models can be repurposed as neural renderers by first decomposing videos into intrinsic scene representations and then performing forward rendering under novel illumination. While promising, this paradigm fundamentally relies on accurate intrinsic decomposition, which remains highly unreliable for real-world videos and often leads to distorted appearances, broken materials, and accumulated temporal artifacts during relighting. In this work, we present Relit-LiVE , a novel video relighting framework that produces physically consistent, temporally stable results without requiring prior knowledge of camera pose. Our key insight is to explicitly introduce raw reference images into the rendering process, enabling the model to recover critical scene cues that are inevitably lost or corrupted in intrinsic representations. Furthermore, we propose a novel environment video prediction formulation that simultaneously generates relit videos and per-frame environment maps aligned with each camera viewpoint in a single diffusion process. This joint prediction enforces strong geometric–illumination alignment and naturally supports dynamic lighting and camera motion, significantly improving physical consistency in video relighting while easing the requirement of known per-frame camera pose. To further enhance generalization, we introduce two complementary training strategies: (i) latent-space interpolation between relighting and rendering outputs to synthesize diverse, photorealistic multi-illumination data, and (ii) a cycle-consistent self-supervised illumination learning scheme that enforces temporal lighting coherence without additional annotations. Extensive experiments demonstrate that Relit-LiVE consistently outperforms ",
+"url": "https://doi.org/10.1145/3799902.3811200",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-4",
+"title": "Generative Modeling with Orbit-Space Particle Flow Matching",
+"authors": [
+"Sinan Wang",
+"Jinjin He",
+"Shenyifan Lu",
+"Ruicheng Wang",
+"Greg Turk",
+"Bo Zhu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present Orbit-Space Geometric Probability Paths (OGPP) , a particle-native flow-matching framework for generative modeling of particle systems.",
+"abstract": "We present Orbit-Space Geometric Probability Paths (OGPP) , a particle-native flow-matching framework for generative modeling of particle systems. OGPP is motivated by two insights: (i) particles are defined up to permutation symmetries , so anonymous indexing inflates per-index target variance and yields curved, hard-to-learn flows; (ii) particles live in physical space, so the flow's terminal velocity has physical meaning and can encode geometric attributes (e.g., surface normals). OGPP instantiates three key components: (1) orbit-space canonicalization of the probability-path terminal endpoint, (2) particle index embeddings for role specialization, and (3) geometric probability paths with arc-length-aware terminal velocities that generate normals as a byproduct of the flow. We evaluate OGPP on minimal-surface benchmarks, where it reduces metric error by up to two orders of magnitude in a single inference step; on ShapeNet, where it matches the state-of-the-art with 5× fewer steps and reaches airplane EMD comparable to DiT-3D with 26× fewer parameters and 5× fewer steps; and on single-shape encoding, where it produces normals and reconstructions competitive with 6D generators while operating entirely in 3D.",
+"url": "https://doi.org/10.1145/3811342",
+"pdf": "",
+"citations": 4
+},
+{
+"id": "SIGGRAPH2026-7",
+"title": "HumanFlow: Controllable Human Image Generation via Flow Matching",
+"authors": [
+"Wenzhuo Fan",
+"Hongsheng Zheng",
+"Jianchi Sun",
+"Fei Fang",
+"Hong Ding",
+"Chunxia Xiao"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present HumanFlow, a unified flow-matching-based framework that enables high-fidelity and controllable full-body human image generation under diverse human-centric control conditions.",
+"abstract": "We present HumanFlow, a unified flow-matching-based framework that enables high-fidelity and controllable full-body human image generation under diverse human-centric control conditions. Despite recent progress, controllable human image generation poses a fundamental challenge in balancing high visual fidelity with strict adherence to human-centric control conditions. HumanFlow formulates human image generation as a conditional flow-matching process with deterministic generation dynamics. To incorporate such human-centric control conditions into the pretrained model, we introduce a unified control framework with Control Encoder and Token-ControlNet. A Control Encoder maps diverse conditions into a unified latent representation that is spatially aligned with the image latent space. Token-ControlNet is a lightweight control network architecturally aligned with the FLUX double-stream design. To address accurate structural control over human bodies, we further propose the Human Topology Consistency Loss (HTCL). HTCL regularizes conditional flow matching by constraining generated human configurations to a union of statistically grounded topology manifolds defined by normalized bone ratios and joint angles. To support large-scale training and systematic evaluation, we construct MiCoGen, a multi-condition human image dataset comprising over one million full-body human images with aligned text descriptions and rich human-centric control conditions. Extensive quantitative and qualitative evaluations on the MiCoGen dataset show that HumanFlow consistently achieves improved structural consistency than the existing diffusion-based and flow-matching-based methods, while maintaining high visual fidelity.",
+"url": "https://doi.org/10.1145/3811361",
+"pdf": "",
+"citations": 2
+},
+{
+"id": "SIGGRAPH2026-9",
+"title": "BodyReLux: Temporally Consistent Full-Body Video Relighting",
+"authors": [
+"Li Ma",
+"Mingming He",
+"Xueming Yu",
+"David C. George",
+"Ahmet Levent Taşel",
+"Paul E. Debevec",
+"Julien Philip"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present BodyReLux, a subject-specific video diffusion-based framework for relighting full-body human performances in a temporally consistent way.",
+"abstract": "Being able to relight human performance is a fundamental task for post production and content creation. We present BodyReLux, a subject-specific video diffusion-based framework for relighting full-body human performances in a temporally consistent way. Our model is trained on a hybrid dataset of pixel-aligned video relighting pairs, covering a diverse combination of lighting conditions, performances and viewpoints. To acquire such dataset, we combine traditional static One-Light-at-a-Time (OLAT) capture and a novel dynamic performance capture in which two smoothly varying lighting sequences are rapidly interleaved. Because the lighting operates above the human flicker-fusion threshold, the interleaving does not appears to strobe. We train our video relighting model from a pretrained text-to-video model to fully leverage the generative priors for producing high quality videos. To achieve accurate lighting control, we introduce a new lighting conditioning method that represents each light source as a token. We further condition on sequences of lighting using masked attention to support dynamic lighting control. Together with a carefully designed data augmentation pipeline, we achieve photorealistic, robust, and temporally consistent video relighting of subject-specific human performances.",
+"url": "https://doi.org/10.1145/3811352",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-11",
+"title": "Matérn Noise for Triangulation-Agnostic Flow Matching on Meshes",
+"authors": [
+"Tianshu Kuai",
+"Arman Maesumi",
+"Daniel Ritchie",
+"Noam Aigerman"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "This paper tackles the task of learning to generate signals over triangle meshes in a triangulation-agnostic manner, meaning the trained model can be applied to different meshes and triangulations effectively.",
+"abstract": "This paper tackles the task of learning to generate signals over triangle meshes in a triangulation-agnostic manner, meaning the trained model can be applied to different meshes and triangulations effectively. Practically, the paper adapts the flow matching (FM) paradigm to a mesh-based, triangulation-agnostic setting. Theoretically, it proposes a specific noise distribution which is triangulation agnostic, to be used inside the FM model's denoising process. While noise distributions are usually trivial to devise for, e.g., images, devising a triangulation-agnostic distribution proves to be a much more difficult task. We formulate a mathematical definition of triangulation agnosticism of distributions, via their spectrum. We then show that a discretization of a specific Gaussian random field called a Matérn process holds these desired properties, and provides a simple and efficient sampling algorithm. We use it as our noise model, and adapt FM to the triangulation-agnostic setting by using a state-of-the-art approach for learning signals on meshes in the gradient domain—PoissonNet—as the denoiser. We conduct experiments on elaborate tasks such as sampling elastic rest states, and generating poses of humanoids. Our method is shown to be capable of producing highly realistic results for meshes of over one million triangles, significantly exceeding the state-of-the-art in quality and diversity.",
+"url": "https://doi.org/10.1145/3811309",
+"pdf": "",
+"citations": 0
+},
+{
+"id": "SIGGRAPH2026-16",
+"title": "Just-Dub-It: Video dubbing via Joint Audio-Visual Diffusion",
+"authors": [
+"Anthony Chen",
+"Naomi ken korem",
+"Tavi Halperin",
+"Matan Ben Yosef",
+"Urška Jelerčič",
+"Ofir Bibi",
+"Or Patashnik",
+"Daniel Cohen‐Or"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this work, we introduce a single-model approach that adapts a foundational audio-video diffusion model for video-to-video dubbing via a lightweight LoRA.",
+"abstract": "Audio-Visual Foundation Models, which are pretrained to jointly generate sound and visual content, have recently shown an unprecedented ability to model multi-modal generation and editing, opening new opportunities for downstream tasks. Among these tasks, video dubbing could greatly benefit from such priors, yet most existing solutions still rely on complex, task-specific pipelines that struggle in real-world settings. In this work, we introduce a single-model approach that adapts a foundational audio-video diffusion model for video-to-video dubbing via a lightweight LoRA. The LoRA enables the model to condition on an input audio-video while jointly generating translated audio and synchronized facial motion. To train this LoRA, we leverage the generative model itself to synthesize paired multilingual videos of the same speaker. Specifically, we generate multilingual videos with language switches within a single clip, and then inpaint the face and audio in each half to match the language of the other half. By leveraging the rich generative prior of the audio-visual model, our approach preserves speaker identity and lip synchronization while remaining robust to complex motion and real-world dynamics. We demonstrate that our approach produces high-quality dubbed videos with improved visual fidelity, lip synchronization, and robustness compared to existing dubbing pipelines. Code, model weights, and the synthesized paired-dubbing dataset are at https://justdubit.github.io/",
+"url": "https://doi.org/10.1145/3799902.3811061",
+"pdf": "",
+"citations": 12
+},
+{
+"id": "SIGGRAPH2026-19",
+"title": "MeshFlow: Mesh Generation with Equivariant Flow Matching",
+"authors": [
+"Qi Sun",
+"Kiyohiro Nakayama",
+"Jing Nathan Yan",
+"Qixing Huang",
+"Alexander M. Rush",
+"Leonidas J. Guibas",
+"Gordon Wetzstein",
+"Jing Liao",
+"Guandao Yang"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "Toward this goal, we propose a simple yet effective modification to the Diffusion Transformer architecture, resulting in a scalable network capable of modeling a velocity field while maintaining the desired equivariance.",
+"abstract": "Meshes are among the most common 3D scene representations, but directly generating meshes is challenging because the representation contains important symmetries, including permutation invariance of faces and vertices. MeshFlow learns to generate triangle meshes directly as triangle soups, avoiding the need to serialize meshes into long autoregressive sequences. We adopt equivariant optimal-transport flow matching models that respect the key symmetries of triangle soups: arbitrary permutations of faces and permutations of the vertices within each face. Toward this goal, we propose a simple yet effective modification to the Diffusion Transformer architecture, resulting in a scalable network capable of modeling a velocity field while maintaining the desired equivariance. We further introduce an optimal-transport-based training objective that improves convergence by eliminating supervision signals that violate these symmetries. MeshFlow achieves mesh quality comparable to state-of-the-art autoregressive mesh generators while providing about an 18$\\times$ speedup during inference. Project page is at https://qiisun.github.io/MeshFlow/.",
+"url": "https://doi.org/10.1145/3799902.3811195",
+"pdf": "",
+"citations": 7
+},
+{
+"id": "SIGGRAPH2026-20",
+"title": "MAViD: A Multimodal Framework for Audio-Visual Dialogue Understanding and Generation",
+"authors": [
+"Youxin Pang",
+"Jiajun Liu",
+"Lingfeng Tan",
+"Yong Zhang",
+"Feng Gao",
+"Xiang Deng",
+"Zhuoliang Kang",
+"Xiaoming Wei",
+"Yebin Liu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We propose MAViD, a novel Multimodal framework for Audio-Visual Dialogue understanding and generation.",
+"abstract": "We propose MAViD, a novel Multimodal framework for Audio-Visual Dialogue understanding and generation. Existing approaches primarily focus on non-interactive systems and are limited to producing constrained and unnatural human speech. The primary challenge of this task lies in effectively integrating understanding and generation capabilities, as well as achieving seamless multimodal audio-video fusion. To solve these problems, we propose a Conductor-Creator architecture that divides the dialogue system into two primary components. The Conductor is tasked with understanding, reasoning, and generating instructions by breaking them down into motion and speech components, thereby enabling fine-grained control over interactions. The Creator then delivers interactive responses based on these instructions. Furthermore, to address the difficulty of generating long videos with consistent identity, timbre, and tone using dual DiT structures, the Creator adopts a structure that combines autoregressive (AR) and diffusion models. The AR model is responsible for audio generation, while the diffusion model ensures high-quality video generation. Additionally, we propose a novel fusion module to enhance connections between contextually consecutive clips and modalities, enabling synchronized long-duration audio-visual content generation. Extensive experiments demonstrate that our framework can generate vivid and contextually coherent long-duration dialogue interactions and accurately interpret users' multimodal queries.",
+"url": "https://doi.org/10.1145/3799902.3811223",
+"pdf": "",
+"citations": 6
+},
+{
+"id": "SIGGRAPH2026-21",
+"title": "GR3EN: Generative Relighting for 3D Environments",
+"authors": [
+"Xiaoyan Xing",
+"Philipp Henzler",
+"Junhwa Hur",
+"Runze Li",
+"Jonathan T. Barron",
+"Pratul P. Srinivasan",
+"Dor Verbin"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present a method for relighting 3D reconstructions of large room-scale environments.",
+"abstract": "We present a method for relighting 3D reconstructions of large room-scale environments. Existing solutions for 3D scene relighting often require solving under-determined or ill-conditioned inverse rendering problems, and are as such unable to produce high-quality results on complex real-world scenes. Though recent progress in using generative image and video diffusion models for relighting has been promising, these techniques are either limited to 2D image and video relighting or 3D relighting of individual objects. Our approach enables controllable 3D relighting of room-scale scenes by distilling the outputs of a video-to-video relighting diffusion model into a 3D reconstruction. This side-steps the need to solve a difficult inverse rendering problem, and results in a flexible system that can relight 3D reconstructions of complex real-world scenes. We validate our approach on both synthetic and real-world datasets to show that it can faithfully render novel views of scenes under new lighting conditions.",
+"url": "https://doi.org/10.1145/3799902.3811181",
+"pdf": "",
+"citations": 4
+},
+{
+"id": "SIGGRAPH2026-23",
+"title": "R-DMesh: Video-Guided 3D Animation via Rectified Dynamic Mesh Flow",
+"authors": [
+"Zijie Wu",
+"Lixin Xu",
+"Puhua Jiang",
+"Sicong Liu",
+"Chunchao Guo",
+"Xiang Bai"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel",
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "To address this, we present Rectified Dynamic Mesh (R-DMesh), a unified framework designed to generate high-fidelity 4D meshes that are “rectified” to align with video context.",
+"abstract": "Video-guided 3D animation holds immense potential for content creation, offering intuitive and precise control over dynamic assets. However, practical deployment faces a critical yet frequently overlooked hurdle: the pose misalignment dilemma. In real-world scenarios, the initial pose of a user-provided static mesh rarely aligns with the starting frame of a reference video. Naively forcing a mesh to follow a mismatched trajectory inevitably leads to severe geometric distortion or animation failure. To address this, we present Rectified Dynamic Mesh (R-DMesh), a unified framework designed to generate high-fidelity 4D meshes that are “rectified” to align with video context. Unlike standard motion transfer approaches, our method introduces a novel VAE that explicitly disentangles the input into a conditional base mesh, relative motion trajectories, and a crucial rectification jump offset. This offset is learned to automatically transform the arbitrary pose of the input mesh to match the video’s initial state before animation begins. We process these components via a Triflow Attention mechanism, which leverages vertex-wise geometric features to modulate the three orthogonal flows, ensuring physical consistency and local rigidity during the rectification and animation process. For generation, we employ a Rectified Flow-based Diffusion Transformer conditioned on pre-trained video latents, effectively transferring rich spatio-temporal priors to the 3D domain. To support this task, we construct Video-RDMesh, a large-scale dataset of over 500k dynamic mesh sequences specifically curated to simulate pose misalignment. Extensive experiments demonstrate that R-DMesh not only solves the alignment problem but also enables robust downstream applications, including pose retargeting and",
+"url": "https://doi.org/10.1145/3799902.3811135",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-24",
+"title": "TopoCap: Learning Topology-Agnostic Motion Priors for Monocular Video-to-Animation",
+"authors": [
+"C.C. Pu",
+"Jia-Peng Zhang",
+"Meng-Hao Guo",
+"Yan‐Pei Cao",
+"Shi‐Min Hu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel",
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We introduce TopoCap, the first unified framework capable of extracting motion from monocular video and retargeting it onto characters with arbitrary, unseen skeletal topologies, i.e., from bipeds to hexapods and inanimate objects, without test-time optimization.",
+"abstract": "The explosion of generative 3D assets has created a massive demand for animation, yet current motion capture methods remain brittle, restricted to species-specific templates (e.g., SMPL) or requiring labor-intensive manual rigging. We introduce TopoCap, the first unified framework capable of extracting motion from monocular video and retargeting it onto characters with arbitrary, unseen skeletal topologies, i.e., from bipeds to hexapods and inanimate objects, without test-time optimization. Our key insight is that while skeletal structures are combinatorial and discrete, the underlying physics of motion occupy a continuous, low-dimensional manifold. We materialize this insight via a two-stage generative pipeline. First, we learn a Universal Motion Manifold using a Graph CVAE that compresses heterogeneous kinematic chains into a shared, fixed-length latent code. By explicitly conditioning the decoder on a structural embedding of the target rig, we disentangle motion dynamics from skeletal topology. Second, we treat video-to-animation as a conditional flow matching problem, predicting these topology-agnostic codes from visual features. To learn this generalized prior, we introduce Mobjaverse, a massive-scale dataset curated from Objaverse-XL. Comprising over 5,000 unique skeletal topologies and 2 million frames, it exceeds the structural diversity of existing datasets by two orders of magnitude. Extensive experiments demonstrate that TopoCapoutperforms specialist models on human and quadruped benchmarks while enabling zero-shot retargeting for the long tail of 3D creatures. Dataset is publicly available at https://huggingface.co/datasets/duckduckplz/Mobjaverse",
+"url": "https://doi.org/10.1145/3799902.3811159",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-27",
+"title": "Toward Richer Material Generation via Procedural Data Enhancement",
+"authors": [
+"Yunchen Yu",
+"Jacob Munkberg",
+"Jon Hasselgren",
+"Chris Cummings",
+"Steve Marschner",
+"Andrea Weidlich"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present a method that enhances such simple PBR materials to more expressive ones, by augmenting the single GGX specular lobe into a layered model that captures a broader range of non-diffuse effects.",
+"abstract": "Generative models for material creation are fundamentally limited by the quality and expressivity of available training data. Simple physically based rendering (PBR) materials, which combine a diffuse term with a single-lobe specular component, are commonly used for training but are insufficient to capture many important visual effects present in real materials. We present a method that enhances such simple PBR materials to more expressive ones, by augmenting the single GGX specular lobe into a layered model that captures a broader range of non-diffuse effects. Starting from a simple material, we procedurally construct a corresponding multi-lobe non-diffuse component guided by physical priors, enabling effects such as dust, clearcoat, and layered scattering. To provide a compact representation for downstream applications, we encode this non-diffuse component as a neural material with a shared 6D latent space, where each material instance is represented by two latent textures and decoded by a pretrained universal MLP. We further regularize the latent space to support material generation. The resulting neural material dataset enables training generative models for richer material creation. To demonstrate this application, we finetune a video diffusion model to produce neural latent textures that encode our multi-lobe material, and present generative results as proof of feasibility. Our procedural data enhancement approach is an important step toward improving expressivity in material generation.",
+"url": "https://doi.org/10.1145/3799902.3811210",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2026-28",
+"title": "Learning Sewing Patterns via Latent Flow Matching of Implicit Fields",
+"authors": [
+"Cong Cao",
+"Ren Li",
+"Corentin Dumery",
+"Hao Li"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this work, we introduce a sewing pattern modeling method based on an implicit representation.",
+"abstract": "Sewing patterns define the structural foundation of garments and are essential for applications such as fashion design, fabrication, and physical simulation. Despite progress in automated pattern generation, accurately modeling sewing patterns remains difficult due to the broad variability in panel geometry and seam arrangements. In this work, we introduce a sewing pattern modeling method based on an implicit representation. We represent each panel using a signed distance field that defines its boundary and an unsigned distance field that identifies seam endpoints, and encode these fields into a continuous latent space that enables differentiable meshing. A latent flow matching model learns distributions over panel combinations in this representation, and a stitching prediction module recovers seam relations from extracted edge segments. This formulation allows accurate modeling and generation of sewing patterns with complex structures. We further show that it can be used to estimate sewing patterns from images with improved accuracy relative to existing approaches, and supports applications such as pattern completion and refitting, providing a practical tool for digital fashion design.",
+"url": "https://doi.org/10.1145/3799902.3811055",
+"pdf": "",
+"citations": 2
+},
+{
+"id": "SIGGRAPH2026-29",
+"title": "Chem2Vid: Translating Chemical Equations into Videos for Chemistry Education via Chemically Constrained Diffusion",
+"authors": [
+"Babara Guzzetti Gaoyin Qian",
+"Qian Zhang",
+"Xiaoming Chen",
+"Yongquan Hu"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "This paper proposes Chem2Vid, a framework that constrains diffusion-based video generation with MLLM-based reasoning and chemical simulation.",
+"abstract": "In traditional chemistry education, dynamic processes and property changes in chemical reactions are difficult to visualize, while the cost and safety risks of real-world experiments further limit learning effectiveness. This paper proposes Chem2Vid, a framework that constrains diffusion-based video generation with MLLM-based reasoning and chemical simulation. Chem2Vid takes a chemical equation, a reference image, and quantitative reactant information as inputs, and predicts reaction dynamics under stoichiometric constraints through chemical simulation. These predictions are subsequently transformed into structured control signals that guide a diffusion model to generate chemically faithful videos, together with synchronized chemical property curves. The proposed framework enables a low-cost, low-risk virtual laboratory that enhances students’ understanding of dynamic chemical processes and quantitative relationships, providing an effective pathway for the digital transformation of chemistry education.",
+"url": "https://doi.org/10.1145/3799818.3812092",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-32",
+"title": "4D Human-Scene Reconstruction from Low-Overlap Captures",
+"authors": [
+"Minhyuk Hwang",
+"Sangmin Kim",
+"Seunguk Do",
+"Daneul Kim",
+"Jaesik Park"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "To address these limitations, we propose StudioRecon, a pipeline that reconstructs 4D human scenes from sparse, low-overlap cameras by decoupling background and humans.",
+"abstract": "Existing volumetric capture of dynamic human performance achieves high fidelity with dense camera arrays. However, in real-world scenarios, only a handful of low-overlap cameras are available, which degrades the output quality and leaves large areas unobserved. Recent 4D reconstruction methods have focused on low-overlap settings, yet they still produce noticeable artifacts in under-observed regions. Video diffusion models have emerged as another option, but they show geometrically inconsistent results for humans. To address these limitations, we propose StudioRecon, a pipeline that reconstructs 4D human scenes from sparse, low-overlap cameras by decoupling background and humans. We densify background supervision by synthesizing hundreds of camera-controlled novel views with a video diffusion model. We also robustly initialize deformable Gaussian humans with cross-view identity association and triangulated multi-view keypoint fitting. Finally, our recursive enhancement module with motion-adaptive consistency injection harmonizes the composed output, thereby further avoiding remaining artifacts. We achieve state-of-the-art novel view synthesis across four real-world datasets and demonstrate applications such as novel trajectory rendering and human replacement. Project page: https://sisyphm.github.io/studiorecon-page/.",
+"url": "https://doi.org/10.1145/3799902.3811165",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2026-10",
+"title": "LayerInbetween: Occlusion-Aware Stroke Correspondence and Inbetweening with Automatic Layering",
+"authors": [
+"Haoran Mo",
+"Zhongyue Guan",
+"Yixin Hu",
+"Zeyu Wang"
+],
+"venue": "SIGGRAPH 2026",
+"year": 2026,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "To reduce tedious effort, we present LayerInbetween , an occlusion-aware framework for vector stroke correspondence and automatic inbetweening.",
+"abstract": "The Hong Kong University of Science and Technology (Guangzhou), China and The Hong Kong University of Science and Technology, China Establishing one-to-one stroke correspondences is fundamental to vector-based animation inbetweening. Animators may face great challenges when handling occlusion, as occluded strokes must be drawn explicitly in keyframes and manually hidden frame by frame after stroke interpolation. To reduce tedious effort, we present LayerInbetween , an occlusion-aware framework for vector stroke correspondence and automatic inbetweening. It performs automatic layering to guide stroke tracing and correspondence finding for occluded strokes, and to resolve occlusion with layers in the inbetween frames. To predict occluded strokes, we propose a Global-Local Layer Transformation (GLLT) module that progressively improves the spatial alignment of strokes across keyframes via layer guidance, thereby indicating their potential positions. Our framework is trained on a synthetic dataset comprising 17k+ pairs of keyframes with occlusion and their stroke correspondences. Extensive experiments demonstrate the effectiveness of LayerInbetween compared with existing methods and its generalization capabilities to various types of drawings. In addition to its superior performance, our vector-based inbetweening method enables more flexible editing of 2D animation than raster-based video generation. Code and data for this paper are available at https://github.com/MarkMoHR/LayerInbetween.",
+"url": "https://doi.org/10.1145/3811364",
+"pdf": "",
+"citations": 0
+}
+],
+"2025": [
+{
+"id": "SIGGRAPH2025-1",
+"title": "Designing Pin-pression Gripper and Learning its Dexterous Grasping with Online In-hand Adjustment",
+"authors": [
+"Hewen Xiao",
+"Xiuping Liu",
+"Hang Zhao",
+"Jian Liu",
+"Kai Xu"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Dex",
+"RL",
+"Control"
+],
+"tracked_authors": [],
+"score": 30,
+"tldr": "We introduce a novel design of parallel-jaw grippers drawing inspiration from pin-pression toys.",
+"abstract": "We introduce a novel design of parallel-jaw grippers drawing inspiration from pin-pression toys. The proposed pin-pression gripper features a distinctive mechanism in which each finger integrates a 2D array of pins capable of independent extension and retraction. This unique design allows the gripper to instantaneously customize its finger's shape to conform to the object being grasped by dynamically adjusting the extension/retraction of the pins. In addition, the gripper excels in in-hand re-orientation of objects for enhanced grasping stability again via dynamically adjusting the pins. To learn the dynamic grasping skills of pin-pression grippers, we devise a dedicated reinforcement learning algorithm with careful designs of state representation and reward shaping. To achieve a more efficient grasp-while-lift grasping mode, we propose a curriculum learning scheme. Extensive evaluations demonstrate that our design, together with the learned skills, leads to highly flexible and robust grasping with much stronger generality to unseen objects than alternatives. We also highlight encouraging physical results of sim-to-real transfer on a physically manufactured pin-pression gripper, demonstrating the practical significance of our novel gripper design and grasping skill. Demonstration videos for this paper are available at https://github.com/siggraph-pin-pression-gripper/pin-pression-gripper-video.",
+"url": "https://doi.org/10.1145/3730880",
+"pdf": "",
+"citations": 3
+},
+{
+"id": "SIGGRAPH2025-4",
+"title": "CineMaster: A 3D-Aware and Controllable Framework for Cinematic Text-to-Video Generation",
+"authors": [
+"Qinghe Wang",
+"Yawen Luo",
+"Xiaoyu Shi",
+"Xu Jia",
+"Huchuan Lu",
+"Tianfan Xue",
+"Xintao Wang",
+"Pengfei Wan",
+"Di Zhang",
+"Kun Gai"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 26,
+"tldr": "In this work, we present CineMaster, a novel framework for 3D-aware and controllable text-to-video generation.",
+"abstract": "In this work, we present CineMaster, a novel framework for 3D-aware and controllable text-to-video generation. Our goal is to empower users with comparable controllability as professional film directors: precise placement of objects within the scene, flexible manipulation of both objects and camera in 3D space, and intuitive layout control over the rendered frames. To achieve this, CineMaster operates in two stages. In the first stage, we design an interactive workflow that allows users to intuitively construct 3D-aware control signals by positioning object bounding boxes and defining camera movements within the 3D space. In the second stage, these control signals—comprising rendered depth maps, camera trajectories, and object class labels—serve as the guidance for a text-to-video diffusion model, ensuring to generate the user-intended video content. Furthermore, to overcome the scarcity of in-the-wild datasets with 3D object motion and camera pose annotations, we carefully establish an automated data annotation pipeline that extracts 3D bounding boxes and camera trajectories from large-scale video data. Extensive qualitative and quantitative experiments demonstrate that CineMaster significantly outperforms existing methods and implements prominent 3D-aware text-to-video generation.",
+"url": "https://doi.org/10.1145/3721238.3730755",
+"pdf": "",
+"citations": 86
+},
+{
+"id": "SIGGRAPH2025-2",
+"title": "Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control",
+"authors": [
+"Zekai Gu",
+"Rui Yan",
+"Jiahao Lu",
+"Peng Li",
+"Zhiyang Dou",
+"Chenyang Si",
+"Zhen Dong",
+"Qifeng Liu",
+"Cheng Chung Lin",
+"Ziwei Liu",
+"Wenping Wang",
+"Yuan Liu"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 20,
+"tldr": "In this paper, we introduce Diffusion as Shader (DaS), a novel approach that supports multiple video control tasks within a unified architecture.",
+"abstract": "Diffusion models have demonstrated impressive performance in generating high-quality videos from text prompts or images. However, precise control over the video generation process—such as camera manipulation or content editing—remains a significant challenge. Existing methods for controlled video generation are typically limited to a single control type, lacking the flexibility to handle diverse control demands. In this paper, we introduce Diffusion as Shader (DaS), a novel approach that supports multiple video control tasks within a unified architecture. Our key insight is that achieving versatile video control necessitates leveraging 3D control signals, as videos are fundamentally 2D renderings of dynamic 3D content. Unlike prior methods limited to 2D control signals, DaS leverages 3D tracking videos as control inputs, making the video diffusion process inherently 3D-aware. This innovation allows DaS to achieve a wide range of video controls by simply manipulating the 3D tracking videos. A further advantage of using 3D tracking videos is their ability to effectively link frames, significantly enhancing the temporal consistency of the generated videos. With just 3 days of fine-tuning on 8 H800 GPUs using less than 10k videos, DaS demonstrates strong control capabilities across diverse tasks, including mesh-to-video generation, camera control, motion transfer, and object manipulation. More results are available in the supplementary materials.",
+"url": "https://doi.org/10.1145/3721238.3730607",
+"pdf": "",
+"citations": 216
+},
+{
+"id": "SIGGRAPH2025-20",
+"title": "Sketch-based Fluid Video Generation Using Motion-Guided Diffusion Models in Still Landscape Images",
+"authors": [
+"Hao Jin",
+"Haoran Xie"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 20,
+"tldr": "To solve these issues, this paper introduces a framework for generating landscape videos by animating fluid in still images under the guidance of motion sketches.",
+"abstract": "Integrating motion into static images not only enhances visual expressiveness but also creates a sense of immersion and temporal depth, establishing it as a longstanding and impactful theme in artistic expression. Fluid elements such as waterfall, river, and oceans are common features in landscape, but their complex dynamic characteristics pose significant challenges in modeling and controlling their motion within visual computing. Physics-based methods are often used in fluid animation to track particle movement. However, they are easily affected by boundary conditions. Recently, latent diffusion models have been applied to video generation tasks, demonstrating impressive capabilities in producing high-quality and temporally coherent results. However, it is challenging for the existing methods to animate fluid smooth and temporally consistent motion. To solve these issues, this paper introduces a framework for generating landscape videos by animating fluid in still images under the guidance of motion sketches. We propose a finetuned conditional latent diffusion model for generating motion field from user-provided sketches, which are subsequently integrated into a latent video diffusion model via a motion adapter to precisely control the fluid movement.",
+"url": "https://doi.org/10.1145/3721250.3743033",
+"pdf": "",
+"citations": 2
+},
+{
+"id": "SIGGRAPH2025-5",
+"title": "MotionCanvas: Cinematic Shot Design with Controllable Image-to-Video Generation",
+"authors": [
+"Jinbo Xing",
+"Long Mai",
+"Cusuh Ham",
+"Jiahui Huang",
+"Aniruddha Mahapatra",
+"Chi‐Wing Fu",
+"Tien‐Tsin Wong",
+"Feng Liu"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "This paper presents a method that allows users to design cinematic video shots in the context of image-to-video generation.",
+"abstract": "This paper presents a method that allows users to design cinematic video shots in the context of image-to-video generation. Shot design, a critical aspect of filmmaking, involves meticulously planning both camera movements and object motions in a scene. However, enabling intuitive shot design in modern image-to-video generation systems presents two main challenges: first, effectively capturing user intentions on the motion design, where both camera movements and scene-space object motions must be specified jointly; and second, representing motion information that can be effectively utilized by a video diffusion model to synthesize the image animations. To address these challenges, we introduce MotionCanvas, a method that integrates user-driven controls into image-to-video (I2V) generation models, allowing users to control both object and camera motions in a scene-aware manner. By connecting insights from classical computer graphics and contemporary video generation techniques, we demonstrate the ability to achieve 3D-aware motion control in I2V synthesis without requiring costly 3D-related training data. MotionCanvas enables users to intuitively depict scene-space motion intentions, and translates them into spatiotemporal motion-conditioning signals for video diffusion models. We demonstrate the effectiveness of our method on a wide range of real-world image content and shot-design scenarios, highlighting its potential to enhance the creative workflows in digital content creation and adapt to various image and video editing applications.",
+"url": "https://doi.org/10.1145/3721238.3730604",
+"pdf": "",
+"citations": 62
+},
+{
+"id": "SIGGRAPH2025-12",
+"title": "LayerFlow: A Unified Model for Layer-aware Video Generation",
+"authors": [
+"Sihui Ji",
+"Hao Luo",
+"Xi Chen",
+"Yuanpeng Tu",
+"Yiyang Wang",
+"Hengshuang Zhao"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "We present LayerFlow, a unified solution for layer-aware video generation.",
+"abstract": "We present LayerFlow, a unified solution for layer-aware video generation. Given per-layer prompts, LayerFlow generates videos for the transparent foreground, clean background, and blended scene. It also supports versatile variants like decomposing a blended video or generating the background for the given foreground and vice versa. Starting from a text-to-video diffusion transformer, we organize the videos of different layers as sub-clips, and leverage layer embeddings to distinguish each clip and the corresponding layer-wise prompts. In this way, we seamlessly support the aforementioned variants in one unified framework. For the lack of high-quality layer-wise training videos, we design a multi-stage training strategy to accommodate static images with high-quality layer annotations. Specifically, we first train the model with low-quality video data. Then, we tune a motion LoRA to make the model compatible with static frames. Afterward, we train the content LoRA on the mixture of image data with high-quality layered images along with copy-pasted video data. During inference, we remove the motion LoRA thus generating smooth videos with desired layers.",
+"url": "https://doi.org/10.1145/3721238.3730662",
+"pdf": "",
+"citations": 13
+},
+{
+"id": "SIGGRAPH2025-19",
+"title": "Mobius: Text to Seamless Looping Video Generation via Latent Shift",
+"authors": [
+"Xiuli Bi",
+"Jianfei Yuan",
+"Bo Liu",
+"Yong Zhang",
+"Xiaodong Cun",
+"Chi‐Man Pun",
+"Bin Xiao"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "We present Mobius, a novel method to generate seamlessly looping videos from text descriptions directly without any user annotations, thereby creating new visual materials for the multi-media presentation.",
+"abstract": "We present Mobius, a novel method to generate seamlessly looping videos from text descriptions directly without any user annotations, thereby creating new visual materials for the multi-media presentation. Our method repurposes the pre-trained video latent diffusion model for generating looping videos from text prompts without any training. During inference, we first construct a latent cycle by connecting the starting and ending noise of the videos. Given that the temporal consistency can be maintained by the context of the video diffusion model, we perform multi-frame latent denoising by gradually shifting the first-frame latent to the end in each step. As a result, the denoising context varies in each step while maintaining consistency throughout the inference process. Moreover, the latent cycle in our method can be of any length. This extends our latent-shifting approach to generate seamless looping videos beyond the scope of the video diffusion model’s context. Unlike previous cinemagraphs, the proposed method does not require an image as appearance, which will restrict the motions of the generated results. Instead, our method can produce more dynamic motion and better visual quality. We conduct multiple experiments and comparisons to verify the effectiveness of the proposed method, demonstrating its efficacy in different scenarios. All the code will be made available.",
+"url": "https://doi.org/10.1145/3721238.3730744",
+"pdf": "",
+"citations": 5
+},
+{
+"id": "SIGGRAPH2025-0",
+"title": "Interspatial Attention for Efficient 4D Human Video Generation",
+"authors": [
+"Ruizhi Shao",
+"Yinghao Xu",
+"Yujun Shen",
+"Ceyuan Yang",
+"Yang Zheng",
+"Changan Chen",
+"Yebin Liu",
+"Gordon Wetzstein"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"Dex",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 17,
+"tldr": "In this paper, we introduce a new interspatial attention (ISA) mechanism as a scalable building block for modern diffusion transformer (DiT)-based video generation models.",
+"abstract": "Generating photorealistic videos of digital humans in a controllable manner is crucial for a plethora of applications. Existing approaches either build on methods that employ template-based 3D representations or emerging video generation models but suffer from poor quality or limited consistency and identity preservation when generating individual or multiple digital humans. In this paper, we introduce a new interspatial attention (ISA) mechanism as a scalable building block for modern diffusion transformer (DiT)-based video generation models. ISA is a new type of cross attention that uses relative positional encodings tailored for the generation of human videos. Leveraging a custom-developed video variation autoencoder, we train a latent ISA-based diffusion model on a large corpus of video data. Our model achieves state-of-the-art performance for 4D human video synthesis, demonstrating remarkable motion consistency and identity preservation while providing precise control of the camera and body poses. Our code and model are publicly released at https://dsaurus.github.io/isa4d/.",
+"url": "https://doi.org/10.1145/3731165",
+"pdf": "",
+"citations": 12
+},
+{
+"id": "SIGGRAPH2025-17",
+"title": "DC-VSR: Spatially and Temporally Consistent Video Super-Resolution with Video Diffusion Prior",
+"authors": [
+"Janghyeok Han",
+"Gyujin Sim",
+"Geonung Kim",
+"Hyun-Seung Lee",
+"Kyuha Choi",
+"Young-Seok Han",
+"Sunghyun Cho"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "In this paper, we propose DC-VSR, a novel VSR approach to produce spatially and temporally consistent VSR results with realistic textures.",
+"abstract": "Video super-resolution (VSR) aims to reconstruct a high-resolution (HR) video from a low-resolution (LR) counterpart. Achieving successful VSR requires producing realistic HR details and ensuring both spatial and temporal consistency. To restore realistic details, diffusion-based VSR approaches have recently been proposed. However, the inherent randomness of diffusion, combined with their tile-based approach, often leads to spatio-temporal inconsistencies. In this paper, we propose DC-VSR, a novel VSR approach to produce spatially and temporally consistent VSR results with realistic textures. To achieve spatial and temporal consistency, DC-VSR adopts a novel Spatial Attention Propagation (SAP) scheme and a Temporal Attention Propagation (TAP) scheme that propagate information across spatio-temporal tiles based on the self-attention mechanism. To enhance high-frequency details, we also introduce Detail-Suppression Self-Attention Guidance (DSSAG), a novel diffusion guidance scheme. Comprehensive experiments demonstrate that DC-VSR achieves spatially and temporally consistent, high-quality VSR results, outperforming previous approaches.",
+"url": "https://doi.org/10.1145/3721238.3730719",
+"pdf": "",
+"citations": 6
+},
+{
+"id": "SIGGRAPH2025-3",
+"title": "VideoPainter: Any-length Video Inpainting and Editing with Plug-and-Play Context Control",
+"authors": [
+"Yuxuan Bian",
+"Zhaoyang Zhang",
+"Xuan Ju",
+"Mingdeng Cao",
+"Liangbin Xie",
+"Ying Shan",
+"Qiang Xu"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "To address these issues, we propose VideoPainter , an efficient dual-branch framework featuring a lightweight context encoder.",
+"abstract": "Video inpainting, crucial for the media industry, aims to restore corrupted content. However, current methods relying on limited pixel propagation or single-branch image inpainting architectures face challenges with generating fully masked objects, balancing background preservation with foreground generation, and maintaining ID consistency over long video. To address these issues, we propose VideoPainter , an efficient dual-branch framework featuring a lightweight context encoder. This plug-and-play encoder processes masked videos and injects background guidance into any pre-trained video diffusion transformer, generalizing across arbitrary mask types, enhancing background integration and foreground generation, and enabling user-customized control. We further introduce a strategy to resample inpainting regions for maintaining ID consistency in any-length video inpainting. Additionally, we develop a scalable dataset pipeline using advanced vision models and construct VPData and VPBench —the largest video inpainting dataset with segmentation masks and dense caption (>390K clips) —to support large-scale training and evaluation. We also show VideoPainter ’s promising potential in downstream applications such as video editing. Extensive experiments demonstrate VideoPainter ’s state-of-the-art performance in any-length video inpainting and editing across 8 key metrics, including video quality, mask region preservation, and textual coherence.",
+"url": "https://doi.org/10.1145/3721238.3730673",
+"pdf": "",
+"citations": 101
+},
+{
+"id": "SIGGRAPH2025-7",
+"title": "Motion Inversion for Video Customization",
+"authors": [
+"Luozhou Wang",
+"Ziyang Mai",
+"Guibao Shen",
+"Yixun Liang",
+"Xin Tao",
+"Pengfei Wan",
+"Di Zhang",
+"Yijun Li",
+"Ying-Cong Chen"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "In this work, we present a novel approach for motion customization in video generation, addressing the widespread gap in the exploration of motion representation within video generative models.",
+"abstract": "In this work, we present a novel approach for motion customization in video generation, addressing the widespread gap in the exploration of motion representation within video generative models. Recognizing the unique challenges posed by the spatiotemporal nature of video, our method introduces Motion Embeddings, a set of explicit, temporally coherent embeddings derived from a given video. These embeddings are designed to integrate seamlessly with the temporal transformer modules of video diffusion models, modulating self-attention computations across frames without compromising spatial integrity. Our approach provides a compact and efficient solution to motion representation, utilizing two types of embeddings: a Motion Query-Key Embedding to modulate the temporal attention map and a Motion Value Embedding to modulate the attention values. Additionally, we introduce an inference strategy that excludes spatial dimensions from the Motion Query-Key Embedding and applies a differential operation to the Motion Value Embedding, both designed to debias appearance and ensure the embeddings focus solely on motion. Our contributions include the introduction of a tailored motion embedding for customization tasks and a demonstration of the practical advantages and effectiveness of our method through extensive experiments.",
+"url": "https://doi.org/10.1145/3721238.3730735",
+"pdf": "",
+"citations": 41
+},
+{
+"id": "SIGGRAPH2025-10",
+"title": "AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning",
+"authors": [
+"Lucas N. Alegre",
+"Agon Serifi",
+"Ruben Grandia",
+"David Müller",
+"Espen Knoop",
+"Moritz Bächer"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"RL",
+"Control"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "To address these challenges, we propose a multi-objective reinforcement learning framework that trains a single policy conditioned on a set of weights, spanning the Pareto front of reward trade-offs.",
+"abstract": "Reinforcement learning (RL) has significantly advanced the control of physics-based and robotic characters that track kinematic reference motion. However, methods typically rely on a weighted sum of conflicting reward functions, requiring extensive tuning to achieve a desired behavior. Due to the computational cost of RL, this iterative process is a tedious, time-intensive task. Furthermore, for robotics applications, the weights need to be chosen such that the policy performs well in the real world, despite inevitable sim-to-real gaps. To address these challenges, we propose a multi-objective reinforcement learning framework that trains a single policy conditioned on a set of weights, spanning the Pareto front of reward trade-offs. Within this framework, weights can be selected and tuned after training, significantly speeding up iteration time. We demonstrate how this improved workflow can be used to perform highly dynamic motions with a robot character. Moreover, we explore how weight-conditioned policies can be leveraged in hierarchical settings, using a high-level policy to dynamically select weights according to the current task. We show that the multi-objective policy encodes a diverse spectrum of behaviors, facilitating efficient adaptation to novel tasks.",
+"url": "https://doi.org/10.1145/3721238.3730656",
+"pdf": "",
+"citations": 22
+},
+{
+"id": "SIGGRAPH2025-14",
+"title": "Splat4D: Diffusion-Enhanced 4D Gaussian Splatting for Temporally and Spatially Consistent Content Creation",
+"authors": [
+"Minghao Yin",
+"Yukang Cao",
+"Songyou Peng",
+"Kai Han"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"GenModel",
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "Generating high-quality 4D content from monocular videos-for applications such as digital humans and AR/VR-poses challenges in ensuring temporal and spatial consistency, preserving intricate details, and incorporating user guidance effectively.To overcome these challenges, we…",
+"abstract": "Generating high-quality 4D content from monocular videos-for applications such as digital humans and AR/VR-poses challenges in ensuring temporal and spatial consistency, preserving intricate details, and incorporating user guidance effectively.To overcome these challenges, we introduce Splat4D, a novel framework enabling high-fidelity 4D content generation from a monocular video.Splat4D achieves superior performance while maintaining faithful spatial-temporal coherence, by leveraging multi-view rendering, inconsistency identification, a video diffusion model, and an asymmetric U-Net for refinement.Through extensive evaluations on public benchmarks, Splat4D consistently demonstrates state-of-the-art performance across various metrics, underscoring the efficacy of our approach.Additionally, the versatility of Splat4D is validated in various applications such as text/image conditioned 4D generation, 4D human generation, and text-guided content editing, producing coherent outcomes following user instructions.",
+"url": "https://doi.org/10.1145/3721238.3730752",
+"pdf": "",
+"citations": 11
+},
+{
+"id": "SIGGRAPH2025-21",
+"title": "G-FED: G-Buffer Guided Frame Extrapolation in Video Diffusion Models",
+"authors": [
+"Pedro Antonio Pena",
+"Kishore Kumar",
+"Damian Andrysiak",
+"Kunal Tyagi",
+"Rama Harihara"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "In our pipeline, we propose the use of multiple control features and forward projections to denoise 1 sample per pixel frames & extrapolate a high-quality frame to generate a consistent and controllable sequence of high-quality frames.",
+"abstract": "Rendering near-final quality previews requires a great number of samples per pixel. Recently, diffusion models have shown superior denoising capabilities, but suffer from large variance. This is further amplified by the spatial and temporal inconsistencies introduced by diffusion models. In our pipeline, we propose the use of multiple control features and forward projections to denoise 1 sample per pixel frames & extrapolate a high-quality frame to generate a consistent and controllable sequence of high-quality frames.",
+"url": "https://doi.org/10.1145/3721250.3742972",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2025-6",
+"title": "VideoAnydoor: High-fidelity Video Object Insertion with Precise Motion Control",
+"authors": [
+"Yuanpeng Tu",
+"Hao Luo",
+"Xi Chen",
+"Sihui Ji",
+"Xiang Bai",
+"Hengshuang Zhao"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this paper, we propose VideoAnydoor, a zero-shot video object insertion framework with high-fidelity detail preservation and precise motion control.",
+"abstract": "Despite significant advancements in video generation, inserting a given object into videos remains a challenging task. The difficulty lies in preserving the appearance details of the reference object and accurately modeling coherent motion at the same time. In this paper, we propose VideoAnydoor, a zero-shot video object insertion framework with high-fidelity detail preservation and precise motion control. Starting from a text-to-video model, we utilize an ID extractor to inject the global identity and leverage a box sequence to control the overall motion. To preserve the detailed appearance and meanwhile support fine-grained motion control, we design a pixel warper. It takes the reference image with arbitrary key-points and the corresponding key-point trajectories as inputs. It warps the pixel details according to the trajectories and fuses the warped features with the diffusion U-Net, thus improving detail preservation and supporting users in manipulating the motion trajectories. In addition, we propose a training strategy involving both videos and static images with a reweight reconstruction loss to enhance insertion quality. VideoAnydoor demonstrates significant superiority over existing methods and naturally supports various downstream applications ( e.g., talking head generation, video virtual try-on, multi-region editing) without task-specific fine-tuning.",
+"url": "https://doi.org/10.1145/3721238.3730647",
+"pdf": "",
+"citations": 50
+},
+{
+"id": "SIGGRAPH2025-9",
+"title": "SkillMimic-V2: Learning Robust and Generalizable Interaction Skills from Sparse and Noisy Demonstrations",
+"authors": [
+"Runyi Yu",
+"Yinhuai Wang",
+"Qihan Zhao",
+"Hok Wai Tsui",
+"Jingbo Wang",
+"Ping Tan",
+"Qifeng Chen"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"IL",
+"RL",
+"Control"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "Building upon this insight, we present two data augmentation techniques: a Stitched Trajectory Graph (STG) that discovers potential transitions between demonstration skills, and a State Transition Field (STF) that establishes unique connections for arbitrary states within the…",
+"abstract": "We address a fundamental challenge in Reinforcement Learning from Interaction Demonstration (RLID): demonstration noise and coverage limitations. While existing data collection approaches provide valuable interaction demonstrations, they often yield sparse, disconnected, and noisy trajectories that fail to capture the full spectrum of possible skill variations and transitions. Our key insight is that despite noisy and sparse demonstrations, there exist infinite physically feasible trajectories that naturally bridge between demonstrated skills or emerge from their neighboring states, forming a continuous space of possible skill variations and transitions. Building upon this insight, we present two data augmentation techniques: a Stitched Trajectory Graph (STG) that discovers potential transitions between demonstration skills, and a State Transition Field (STF) that establishes unique connections for arbitrary states within the demonstration neighborhood. To enable effective RLID with augmented data, we develop an Adaptive Trajectory Sampling (ATS) strategy for dynamic curriculum generation and a historical encoding mechanism for memory-dependent skill learning. Our approach enables robust skill acquisition that significantly generalizes beyond the reference demonstrations. Extensive experiments across diverse interaction tasks demonstrate substantial improvements over state-of-the-art methods in terms of convergence stability, generalization capability, and recovery robustness.",
+"url": "https://doi.org/10.1145/3721238.3730640",
+"pdf": "",
+"citations": 38
+},
+{
+"id": "SIGGRAPH2025-13",
+"title": "High-Fidelity Novel View Synthesis via Splatting-Guided Diffusion",
+"authors": [
+"Xiang Zhang",
+"Yang Zhang",
+"Lukas Mehl",
+"Markus H. Groß",
+"Christopher Schroers"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this paper, we introduce SplatDiff , a pixel-splatting-guided video diffusion model designed to synthesize high-fidelity novel views from a single image.",
+"abstract": "Despite recent advances in Novel View Synthesis (NVS), generating high-fidelity views from single or sparse observations remains challenging. Existing splatting-based approaches often produce distorted geometry due to splatting errors. While diffusion-based methods leverage rich 3D priors to achieve improved geometry, they often suffer from texture hallucination. In this paper, we introduce SplatDiff , a pixel-splatting-guided video diffusion model designed to synthesize high-fidelity novel views from a single image. Specifically, we propose an aligned synthesis strategy for precise control of target viewpoints and geometry-consistent view synthesis. To mitigate texture hallucination, we design a texture bridge module that enables high-fidelity texture generation through adaptive feature fusion. In this manner, SplatDiff leverages the strengths of splatting and diffusion for geometrically consistent, high-fidelity view synthesis. Extensive experiments verify the state-of-the-art performance of SplatDiff in single-view NVS. Additionally, without extra training, SplatDiff shows remarkable zero-shot performance across diverse tasks, including sparse-view NVS and stereo video conversion.",
+"url": "https://doi.org/10.1145/3721238.3730669",
+"pdf": "",
+"citations": 13
+},
+{
+"id": "SIGGRAPH2025-15",
+"title": "Intersection-Free Garment Retargeting",
+"authors": [
+"Zizhou Huang",
+"Chrystiano Araújo",
+"Andrew Kunz",
+"Denis Zorin",
+"Daniele Panozzo",
+"Victor Brian Zordan"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this paper, the goal is to retarget artist-designed garments on a standard mannequin to a more general class of avatars.",
+"abstract": "Manual design of garments for avatars requires a large effort. Garment retargeting methods can save manual efforts by automatically deforming an existing garment design from one avatar to another. Previous methods are limited to human avatars with small variations in body shapes, while non-human avatars with unrealistic characteristics widely appear in games and animations. In this paper, the goal is to retarget artist-designed garments on a standard mannequin to a more general class of avatars. While there is a lack of training data of various avatars wearing garments, we propose a training-free method that performs optimizations on the mesh representation of the garments, with a combination of loss functions that preserve the geometrical features in the original design, guarantee intersection-free, and fit the garment adaptively to the avatars. Our method produces simulation-ready garment models that can be used later in avatar animations.",
+"url": "https://doi.org/10.1145/3721238.3730590",
+"pdf": "",
+"citations": 9
+},
+{
+"id": "SIGGRAPH2025-16",
+"title": "HOIGaze: Gaze Estimation During Hand-Object Interactions in Extended Reality Exploiting Eye-Hand-Head Coordination",
+"authors": [
+"Zhiming Hu",
+"Daniel F. B. Haeufle",
+"Syn Schmitt",
+"Andreas Bulling"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We present HOIGaze – a novel learning-based approach for gaze estimation during hand-object interactions (HOI) in extended reality (XR).",
+"abstract": "We present HOIGaze – a novel learning-based approach for gaze estimation during hand-object interactions (HOI) in extended reality (XR). HOIGaze addresses the challenging HOI setting by building on one key insight: Eye, hand, and head movements are closely coordinated during HOIs and this coordination can be exploited to identify samples that are most useful for gaze estimator training – as such, effectively denoising the training data. This denoising approach is in stark contrast to previous gaze estimation methods that treated all training samples as equal. Specifically, we propose: 1) a novel hierarchical framework that first recognises the hand currently visually attended to and then estimates gaze direction based on the attended hand; 2) a new gaze estimator that uses cross-modal Transformers to fuse head and hand-object features extracted using a convolutional neural network and a spatio-temporal graph convolutional network; and 3) a novel eye-head coordination loss that upgrades training samples belonging to the coordinated eye-head movements. We evaluate HOIGaze on the HOT3D and Aria digital twin (ADT) datasets and show that it significantly outperforms state-of-the-art methods, achieving an average improvement of 15.6% on HOT3D and 6.0% on ADT in mean angular error. To demonstrate the potential of our method, we further report significant performance improvements for the sample downstream task of eye-based activity recognition on ADT. Taken together, our results underline the significant information content available in eye-hand-head coordination and, as such, open up an exciting new direction for learning-based gaze estimation.",
+"url": "https://doi.org/10.1145/3721238.3730692",
+"pdf": "",
+"citations": 7
+},
+{
+"id": "SIGGRAPH2025-18",
+"title": "Sketch3DVE: Sketch-based 3D-Aware Scene Video Editing",
+"authors": [
+"Fenglin Liu",
+"Shi-Yang Li",
+"Yan‐Pei Cao",
+"Hongbo Fu",
+"Lin Gao"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "To address these issues, we propose Sketch3DVE, a sketch-based 3D-aware video editing method to enable detailed local manipulation of videos with significant viewpoint changes.",
+"abstract": "Recent video editing methods achieve attractive results in style transfer or appearance modification. However, editing the structural content of 3D scenes in videos remains challenging, particularly when dealing with significant viewpoint changes, such as large camera rotations or zooms. Key challenges include generating novel view content that remains consistent with the original video, preserving unedited regions, and translating sparse 2D inputs into realistic 3D video outputs. To address these issues, we propose Sketch3DVE, a sketch-based 3D-aware video editing method to enable detailed local manipulation of videos with significant viewpoint changes. To solve the challenge posed by sparse inputs, we employ image editing methods to generate edited results for the first frame, which are then propagated to the remaining frames of the video. We utilize sketching as an interaction tool for precise geometry control, while other mask-based image editing methods are also supported. To handle viewpoint changes, we perform a detailed analysis and manipulation of the 3D information in the video. Specifically, we utilize a dense stereo method to estimate a point cloud and the camera parameters of the input video. We then propose a point cloud editing approach that uses depth maps to represent the 3D geometry of newly edited components, aligning them effectively with the original 3D scene. To seamlessly merge the newly edited content with the original video while preserving the features of unedited regions, we introduce a 3D-aware mask propagation strategy and employ a video diffusion model to produce realistic edited videos. Extensive experiments demonstrate the superiority of Sketch3DVE in video editing.",
+"url": "https://doi.org/10.1145/3721238.3730623",
+"pdf": "",
+"citations": 5
+},
+{
+"id": "SIGGRAPH2025-22",
+"title": "AniDepth : Anime In-between Diffusion using Depth-guided Warped Line-art",
+"authors": [
+"Sosui Koga",
+"Hiroyuki Kubo",
+"Seitaro Shinagawa",
+"Yuki Fujimura",
+"Kazuya Kitano",
+"Akinobu Maejima",
+"Takuya Funatomi",
+"Yasuhiro Mukaigawa"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We propose AniDepth, a novel anime in-betweening method using a video diffusion model.",
+"abstract": "We propose AniDepth, a novel anime in-betweening method using a video diffusion model. Even if the model is fine-tuned on an anime dataset, it still suffers from the domain gap between anime and the natural image domain, due to the strong priors of the base model. Therefore, we convert anime illustration into depth map, which is a modality filling the gap between anime and realistic domains to fully exploit the model’s prior knowledge. In addition, by using line-arts as guide during the in-betweening, we enhance the fidelity of the generated line-arts details. Our approach first interpolates converted depth maps, warps line-arts based on the depth maps, then interpolates colored images with using the line-arts as the conditions, preserving complex line-art and flat coloring even under large movements. Experiments show that our method outperforms the existing diffusion method in quantitative evaluation, improves temporal smoothness, and reduces line-art distortion. Moreover, because it requires no extra training, it can be easily integrated into current production pipelines at low operational cost.",
+"url": "https://doi.org/10.1145/3721239.3734091",
+"pdf": "",
+"citations": 1
+},
+{
+"id": "SIGGRAPH2025-8",
+"title": "Drag Your Gaussian: Effective Drag-Based Editing with Score Distillation for 3D Gaussian Splatting",
+"authors": [
+"Yansong Qu",
+"Dian Chen",
+"Xinyang Li",
+"Xiaofan Li",
+"Shengchuan Zhang",
+"Liujuan Cao",
+"Rongrong Ji"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "To address these limitations, we introduce DYG, a 3D drag-based editing framework for 3DGS.",
+"abstract": "Recent advancements in generative models have significantly propelled 3D scene editing. While existing methods excel at text-guided texture modifications for 3D representations like 3D Gaussian Splatting (3DGS), they struggle with geometric transformations (e.g., rotating a character’s head) and lack precise spatial control over edits due to the inherent ambiguity of language-driven guidance. To address these limitations, we introduce DYG, a 3D drag-based editing framework for 3DGS. Users intuitively define editing regions using 3D masks and specify desired transformations through pairs of control points. DYG integrates the implicit triplane representation to establish the geometric scaffold of editing results, effectively overcoming suboptimal editing outcomes caused by the sparsity of 3DGS in the desired editing regions. Additionally, we incorporate a drag-based Latent Diffusion Model through the proposed Drag-SDS loss, enabling flexible, multi-view consistent, and fine-grained editing. Extensive experiments demonstrate that DYG enables effective drag-based editing, outperforming other baselines in terms of editing effect and quality. Additional results are available on our project page: https://quyans.github.io/Drag-Your-Gaussian/ .",
+"url": "https://doi.org/10.1145/3721238.3730600",
+"pdf": "",
+"citations": 40
+},
+{
+"id": "SIGGRAPH2025-11",
+"title": "Single View Garment Reconstruction Using Diffusion Mapping Via Pattern Coordinates",
+"authors": [
+"Ren Li",
+"Cong Cao",
+"Corentin Dumery",
+"Yingxuan You",
+"Hao Li",
+"Pascal Fua"
+],
+"venue": "SIGGRAPH 2025",
+"year": 2025,
+"topics": [
+"Dex",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "We present a novel method for high-fidelity 3D garment reconstruction from single images that bridges 2D and 3D representations.",
+"abstract": "Reconstructing 3D clothed humans from images is fundamental to applications like virtual try-on, avatar creation, and mixed reality. While recent advances have enhanced human body recovery, accurate reconstruction of garment geometry—especially for loose-fitting clothing—remains an open challenge. We present a novel method for high-fidelity 3D garment reconstruction from single images that bridges 2D and 3D representations. Our approach combines Implicit Sewing Patterns (ISP) with a generative diffusion model to learn rich garment shape priors in a 2D UV space. A key innovation is our mapping model that establishes correspondences between 2D image pixels, UV pattern coordinates, and 3D geometry, enabling joint optimization of both 3D garment meshes and the corresponding 2D patterns by aligning learned priors with image observations. Despite training exclusively on synthetically simulated cloth data, our method generalizes effectively to real-world images, outperforming existing approaches on both tight- and loose-fitting garments. The reconstructed garments maintain physical plausibility while capturing fine geometric details, enabling downstream applications including garment retargeting and texture manipulation.",
+"url": "https://doi.org/10.1145/3721238.3730651",
+"pdf": "",
+"citations": 19
+}
+],
+"2024": [
+{
+"id": "SIGGRAPH2024-8",
+"title": "Streetscapes: Large-scale Consistent Street View Generation Using Autoregressive Video Diffusion",
+"authors": [
+"Boyang Deng",
+"Richard P. Tucker",
+"Zhengqi Li",
+"Leonidas J. Guibas",
+"Noah Snavely",
+"Gordon Wetzstein"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 25,
+"tldr": "We present a method for generating Streetscapes—long sequences of views through an on-the-fly synthesized city-scale scene.",
+"abstract": "We present a method for generating Streetscapes—long sequences of views through an on-the-fly synthesized city-scale scene. Our generation is conditioned by language input (e.g., city name, weather), as well as an underlying map/layout hosting the desired trajectory. Compared to recent models for video generation or 3D view synthesis, our method can scale to much longer-range camera trajectories, spanning several city blocks, while maintaining visual quality and consistency. To achieve this goal, we build on recent work on video diffusion, used within an autoregressive framework that can easily scale to long sequences. In particular, we introduce a new temporal imputation method that prevents our autoregressive approach from drifting from the distribution of realistic city imagery. We train our Streetscapes system on a compelling source of data—posed imagery from Google Street View, along with contextual map data—which allows users to generate city views conditioned on any desired city layout, with controllable camera pose.",
+"url": "https://doi.org/10.1145/3641519.3657513",
+"pdf": "",
+"citations": 58
+},
+{
+"id": "SIGGRAPH2024-5",
+"title": "Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion",
+"authors": [
+"Shiyuan Yang",
+"Liang Hou",
+"Haibin Huang",
+"Chongyang Ma",
+"Pengfei Wan",
+"Di Zhang",
+"Xiaodong Chen",
+"Jing Liao"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "In this paper, we introduce Direct-a-Video, a system that allows users to independently specify motions for multiple objects as well as camera’s pan and zoom movements, as if directing a video.",
+"abstract": "Recent text-to-video diffusion models have achieved impressive progress. In practice, users often desire the ability to control object motion and camera movement independently for customized video creation. However, current methods lack the focus on separately controlling object motion and camera movement in a decoupled manner, which limits the controllability and flexibility of text-to-video models. In this paper, we introduce Direct-a-Video, a system that allows users to independently specify motions for multiple objects as well as camera’s pan and zoom movements, as if directing a video. We propose a simple yet effective strategy for the decoupled control of object motion and camera movement. Object motion is controlled through spatial cross-attention modulation using the model’s inherent priors, requiring no additional optimization. For camera movement, we introduce new temporal cross-attention layers to interpret quantitative camera movement parameters. We further employ an augmentation-based approach to train these layers in a self-supervised manner on a small-scale dataset, eliminating the need for explicit motion annotation. Both components operate independently, allowing individual or combined control, and can generalize to open-domain scenarios. Extensive experiments demonstrate the superiority and effectiveness of our method. Project page and code are available at https://direct-a-video.github.io/.",
+"url": "https://doi.org/10.1145/3641519.3657481",
+"pdf": "",
+"citations": 216
+},
+{
+"id": "SIGGRAPH2024-12",
+"title": "Hand-Object Interaction Controller (HOIC): Deep Reinforcement Learning for Reconstructing Interactions with Physics",
+"authors": [
+"Haoyu Hu",
+"Xinyu Yi",
+"Zhe Cao",
+"Jun‐Hai Yong",
+"Feng Xu"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"Dex",
+"RL"
+],
+"tracked_authors": [],
+"score": 14,
+"tldr": "Firstly, we propose object compensation control which establishes direct object control to make the network training more stable.",
+"abstract": "Hand manipulating objects is an important interaction motion in our daily activities. We faithfully reconstruct this motion with a single RGBD camera by a novel deep reinforcement learning method to leverage physics. Firstly, we propose object compensation control which establishes direct object control to make the network training more stable. Meanwhile, by leveraging the compensation force and torque, we seamlessly upgrade the simple point contact model to a more physical-plausible surface contact model, further improving the reconstruction accuracy and physical correctness. Experiments indicate that without involving any heuristic physical rules, this work still successfully involves physics in the reconstruction of hand-object interactions which are complex motions hard to imitate with deep reinforcement learning. Our code and data are available at https://github.com/hu-hy17/HOIC.",
+"url": "https://doi.org/10.1145/3641519.3657505",
+"pdf": "",
+"citations": 12
+},
+{
+"id": "SIGGRAPH2024-4",
+"title": "Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling",
+"authors": [
+"Xiaoyu Shi",
+"Zhaoyang Huang",
+"Fu-Yun Wang",
+"Weikang Bian",
+"Dasong Li",
+"Yi Zhang",
+"Manyuan Zhang",
+"Ka Chun Cheung",
+"Simon See",
+"Hongwei Qin",
+"Yifeng Dai",
+"Hongsheng Li"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"Video",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "We introduce Motion-I2V, a novel framework for consistent and controllable text-guided image-to-video generation (I2V).",
+"abstract": "We introduce Motion-I2V, a novel framework for consistent and controllable text-guided image-to-video generation (I2V). In contrast to previous methods that directly learn the complicated image-to-video mapping, Motion-I2V factorizes I2V into two stages with explicit motion modeling. For the first stage, we propose a diffusion-based motion field predictor, which focuses on deducing the trajectories of the reference image’s pixels. For the second stage, we propose motion-augmented temporal attention to enhance the limited 1-D temporal attention in video latent diffusion models. This module can effectively propagate reference image features to synthesized frames with the guidance of predicted trajectories from the first stage. Compared with existing methods, Motion-I2V can generate more consistent videos even in the presence of large motion and viewpoint variation. By training a sparse trajectory ControlNet for the first stage, Motion-I2V can support users to precisely control motion trajectories and motion regions with sparse trajectory and region. This offers more controllability of the I2V process than solely relying on textual instructions. Additionally, Motion-I2V’s second stage naturally supports zero-shot video-to-video translation. Both qualitative and quantitative comparisons demonstrate the advantages of Motion-I2V over prior approaches in consistent and controllable image-to-video generation. Please see our project page at https://xiaoyushi97.github.io/Motion-I2V/.",
+"url": "https://doi.org/10.1145/3641519.3657497",
+"pdf": "",
+"citations": 271
+},
+{
+"id": "SIGGRAPH2024-0",
+"title": "DiffPoseTalk: Speech-Driven Stylistic 3D Facial Animation and Head Pose Generation via Diffusion Models",
+"authors": [
+"Zhiyao Sun",
+"Tian Shan Lv",
+"Sheng Ye",
+"Matthieu Gaetan Lin",
+"Jenny Sheng",
+"Yu‐Hui Wen",
+"Minjing Yu",
+"Yong‐Jin Liu"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "In this paper, we propose DiffPoseTalk, a generative framework based on the diffusion model combined with a style encoder that extracts style embeddings from short reference videos.",
+"abstract": "The generation of stylistic 3D facial animations driven by speech presents a significant challenge as it requires learning a many-to-many mapping between speech, style, and the corresponding natural facial motion. However, existing methods either employ a deterministic model for speech-to-motion mapping or encode the style using a one-hot encoding scheme. Notably, the one-hot encoding approach fails to capture the complexity of the style and thus limits generalization ability. In this paper, we propose DiffPoseTalk, a generative framework based on the diffusion model combined with a style encoder that extracts style embeddings from short reference videos. During inference, we employ classifier-free guidance to guide the generation process based on the speech and style. In particular, our style includes the generation of head poses, thereby enhancing user perception. Additionally, we address the shortage of scanned 3D talking face data by training our model on reconstructed 3DMM parameters from a high-quality, in-the-wild audio-visual dataset. Extensive experiments and user study demonstrate that our approach outperforms state-of-the-art methods. The code and dataset are at https://diffposetalk.github.io.",
+"url": "https://doi.org/10.1145/3658221",
+"pdf": "",
+"citations": 187
+},
+{
+"id": "SIGGRAPH2024-3",
+"title": "MotionCtrl: A Unified and Flexible Motion Controller for Video Generation",
+"authors": [
+"Zhouxia Wang",
+"Ziyang Yuan",
+"Xintao Wang",
+"Yaowei Li",
+"Tianshui Chen",
+"Menghan Xia",
+"Ping Luo",
+"Ying Shan"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"Video"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "Therefore, this paper presents MotionCtrl, a unified and flexible motion controller for video generation designed to effectively and independently control camera and object motion.",
+"abstract": "Motions in a video primarily consist of camera motion, induced by camera movement, and object motion, resulting from object movement. Accurate control of both camera and object motion is essential for video generation. However, existing works either mainly focus on one type of motion or do not clearly distinguish between the two, limiting their control capabilities and diversity. Therefore, this paper presents MotionCtrl, a unified and flexible motion controller for video generation designed to effectively and independently control camera and object motion. The architecture and training strategy of MotionCtrl are carefully devised, taking into account the inherent properties of camera motion, object motion, and imperfect training data. Compared to previous methods, MotionCtrl offers three main advantages: 1) It effectively and independently controls camera motion and object motion, enabling more fine-grained motion control and facilitating flexible and diverse combinations of both types of motion. 2) Its motion conditions are determined by camera poses and trajectories, which are appearance-free and minimally impact the appearance or shape of objects in generated videos. 3) It is a relatively generalizable model that can adapt to a wide array of camera poses and trajectories once trained. Extensive qualitative and quantitative experiments have been conducted to demonstrate the superiority of MotionCtrl over existing methods. Project page: https://wzhouxiff.github.io/projects/MotionCtrl/ .",
+"url": "https://doi.org/10.1145/3641519.3657518",
+"pdf": "",
+"citations": 752
+},
+{
+"id": "SIGGRAPH2024-6",
+"title": "Taming Diffusion Probabilistic Models for Character Control",
+"authors": [
+"Rui Chen",
+"Mingyi Shi",
+"Shaoli Huang",
+"Ping Tan",
+"Taku Komura",
+"Xuelin Chen"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "We present a novel character control framework that effectively utilizes motion diffusion probabilistic models to generate high-quality and diverse character animations, responding in real-time to a variety of dynamic user-supplied control signals.",
+"abstract": "We present a novel character control framework that effectively utilizes motion diffusion probabilistic models to generate high-quality and diverse character animations, responding in real-time to a variety of dynamic user-supplied control signals. At the heart of our method lies a transformer-based Conditional Autoregressive Motion Diffusion Model (CAMDM), which takes as input the character’s historical motion and can generate a range of diverse potential future motions conditioned on high-level, coarse user control. To meet the demands for diversity, controllability, and computational efficiency required by a real-time controller, we incorporate several key algorithmic designs. These include separate condition tokenization, classifier-free guidance on past motion, and heuristic future trajectory extension, all designed to address the challenges associated with taming motion diffusion probabilistic models for character control. As a result, our work represents the first model that enables real-time generation of high-quality, diverse character animations based on user interactive control, supporting animating the character in multiple styles with a single unified model. We evaluate our method on a diverse set of locomotion skills, demonstrating the merits of our method over existing character controllers. The code and model are available at https://aiganimation.github.io/CAMDM/.",
+"url": "https://doi.org/10.1145/3641519.3657440",
+"pdf": "",
+"citations": 90
+},
+{
+"id": "SIGGRAPH2024-10",
+"title": "HeadArtist: Text-conditioned 3D Head Generation with Self Score Distillation",
+"authors": [
+"Hongyu Liu",
+"Xuan Wang",
+"Ziyu Wan",
+"Yujun Shen",
+"Yibing Song",
+"Jing Liao",
+"Qifeng Chen"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 9,
+"tldr": "We present HeadArtist for 3D head generation following human-language descriptions.",
+"abstract": "We present HeadArtist for 3D head generation following human-language descriptions. With a landmark-guided ControlNet serving as a generative prior, we come up with an efficient pipeline that optimizes a parameterized 3D head model under the supervision of the prior distillation itself. We call such a process self score distillation (SSD). In detail, given a sampled camera pose, we first render an image and its corresponding landmarks from the head model, and add some particular level of noise onto the image. The noisy image, landmarks, and text condition are then fed into a frozen ControlNet twice for noise prediction. We conduct two predictions via the same ControlNet structure but with different classifier-free guidance (CFG) weights. The difference between these two predicted results directs how the rendered image can better match the text of interest. Experimental results show that our approach produces high-quality 3D head sculptures with rich geometry and photo-realistic appearance, which significantly outperforms state-of-the-art methods. We also show that our pipeline supports editing operations on the generated heads, including both geometry deformation and appearance change. Project page:https://kumapowerliu.github.io/HeadArtist.",
+"url": "https://doi.org/10.1145/3641519.3657512",
+"pdf": "",
+"citations": 28
+},
+{
+"id": "SIGGRAPH2024-1",
+"title": "MoConVQ: Unified Physics-Based Motion Control via Scalable Discrete Representations",
+"authors": [
+"Heyuan Yao",
+"Zhenhua Song",
+"Yuyang Zhou",
+"Tenglong Ao",
+"Baoquan Chen",
+"Libin Liu"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"RL"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "In this work, we present MoConVQ, a novel unified framework for physics-based motion control leveraging scalable discrete representations.",
+"abstract": "In this work, we present MoConVQ, a novel unified framework for physics-based motion control leveraging scalable discrete representations. Building upon vector quantized variational autoencoders (VQ-VAE) and model-based reinforcement learning, our approach effectively learns motion embeddings from a large, unstructured dataset spanning tens of hours of motion examples. The resultant motion representation not only captures diverse motion skills but also offers a robust and intuitive interface for various applications. We demonstrate the versatility of MoConVQ through several applications: universal tracking control from various motion sources, interactive character control with latent motion representations using supervised learning, physics-based motion generation from natural language descriptions using the GPT framework, and, most interestingly, seamless integration with large language models (LLMs) with in-context learning to tackle complex and abstract tasks.",
+"url": "https://doi.org/10.1145/3658137",
+"pdf": "",
+"citations": 108
+},
+{
+"id": "SIGGRAPH2024-2",
+"title": "Analogist: Out-of-the-box Visual In-Context Learning with Image Diffusion Model",
+"authors": [
+"Zheng Gu",
+"Shiyuan Yang",
+"Jing Liao",
+"Jing Huo",
+"Yang Gao"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"GenModel",
+"RL"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "To address these challenges, we propose Analogist, a novel inference-based visual ICL approach that exploits both visual and textual prompting techniques using a text-to-image diffusion model pretrained for image inpainting.",
+"abstract": "Visual In-Context Learning (ICL) has emerged as a promising research area due to its capability to accomplish various tasks with limited example pairs through analogical reasoning. However, training-based visual ICL has limitations in its ability to generalize to unseen tasks and requires the collection of a diverse task dataset. On the other hand, existing methods in the inference-based visual ICL category solely rely on textual prompts, which fail to capture fine-grained contextual information from given examples and can be time-consuming when converting from images to text prompts. To address these challenges, we propose Analogist, a novel inference-based visual ICL approach that exploits both visual and textual prompting techniques using a text-to-image diffusion model pretrained for image inpainting. For visual prompting, we propose a self-attention cloning (SAC) method to guide the fine-grained structural-level analogy between image examples. For textual prompting, we leverage GPT-4V's visual reasoning capability to efficiently generate text prompts and introduce a cross-attention masking (CAM) operation to enhance the accuracy of semantic-level analogy guided by text prompts. Our method is out-of-the-box and does not require fine-tuning or optimization. It is also generic and flexible, enabling a wide range of visual tasks to be performed in an in-context manner. Extensive experiments demonstrate the superiority of our method over existing approaches, both qualitatively and quantitatively. Our project webpage is available at https://analogist2d.github.io.",
+"url": "https://doi.org/10.1145/3658136",
+"pdf": "",
+"citations": 37
+},
+{
+"id": "SIGGRAPH2024-7",
+"title": "Media2Face: Co-speech Facial Animation Generation With Multi-Modality Guidance",
+"authors": [
+"Qingcheng Zhao",
+"Pengyu Long",
+"Qixuan Zhang",
+"Dafei Qin",
+"Han Liang",
+"Longwen Zhang",
+"Yingliang Zhang",
+"Jingyi Yu",
+"Lan Xu"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "Finally, we propose Media2Face, a diffusion model in GNPFA latent space for co-speech facial animation generation, accepting rich multi-modality guidances from audio, text, and image.",
+"abstract": "The synthesis of 3D facial animations from speech has garnered considerable attention. Due to the scarcity of high-quality 4D facial data and well-annotated abundant multi-modality labels, previous methods often suffer from limited realism and a lack of flexible conditioning. We address this challenge through a trilogy. We first introduce Generalized Neural Parametric Facial Asset (GNPFA), an efficient variational auto-encoder mapping facial geometry and images to a highly generalized expression latent space, decoupling expressions and identities. Then, we utilize GNPFA to extract high-quality expressions and accurate head poses from a large array of videos. This presents the M2F-D dataset, a large, diverse, and scan-level co-speech 3D facial animation dataset with well-annotated emotion and style labels. Finally, we propose Media2Face, a diffusion model in GNPFA latent space for co-speech facial animation generation, accepting rich multi-modality guidances from audio, text, and image. Extensive experiments demonstrate that our model not only achieves high fidelity in facial animation synthesis but also broadens the scope of expressiveness and style adaptability in 3D facial animation.",
+"url": "https://doi.org/10.1145/3641519.3657413",
+"pdf": "",
+"citations": 77
+},
+{
+"id": "SIGGRAPH2024-9",
+"title": "SuperPADL: Scaling Language-Directed Physics-Based Control with Progressive Supervised Distillation",
+"authors": [
+"Jordan Juravsky",
+"Yunrong Guo",
+"Sanja Fidler",
+"Xue Bin Peng"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"RL",
+"GenModel",
+"FM"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "Inspired by these successes, in this work we introduce SuperPADL, a scalable framework for physics-based text-to-motion that leverages both RL and supervised learning to train controllers on thousands of diverse motion clips.",
+"abstract": "Physically-simulated models for human motion can generate high-quality responsive character animations, often in real-time. Natural language serves as a flexible interface for controlling these models, allowing expert and non-expert users to quickly create and edit their animations. Many recent physics-based animation methods, including those that use text interfaces, train control policies using reinforcement learning (RL). However, scaling these methods beyond several hundred motions has remained challenging. Meanwhile, kinematic animation models are able to successfully learn from thousands of diverse motions by leveraging supervised learning methods. Inspired by these successes, in this work we introduce SuperPADL, a scalable framework for physics-based text-to-motion that leverages both RL and supervised learning to train controllers on thousands of diverse motion clips. SuperPADL is trained in stages using progressive distillation, starting with a large number of specialized experts using RL. These experts are then iteratively distilled into larger, more robust policies using a combination of reinforcement learning and supervised learning. Our final SuperPADL controller is trained on a dataset containing over 5000 skills and runs in real time on a consumer GPU. Moreover, our policy can naturally transition between skills, allowing for users to interactively craft multi-stage animations. We experimentally demonstrate that SuperPADL significantly outperforms RL-based baselines at this large data scale.",
+"url": "https://doi.org/10.1145/3641519.3657492",
+"pdf": "",
+"citations": 34
+},
+{
+"id": "SIGGRAPH2024-11",
+"title": "Versatile Vision Foundation Model for Image and Video Colorization",
+"authors": [
+"Vukasin Bozic",
+"Abdelaziz Djelouah",
+"Yang Zhang",
+"Radu Timofte",
+"Markus H. Groß",
+"Christopher Schroers"
+],
+"venue": "SIGGRAPH 2024",
+"year": 2024,
+"topics": [
+"FM",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "In this work we show how a latent diffusion model, pre-trained on text-to-image synthesis, can be finetuned for image colorization and provide a flexible solution for a wide variety of scenarios: high quality direct colorization with diverse results, user guided colorization…",
+"abstract": "Image and video colorization are among the most common problems in image restoration. This is an ill-posed problem and a wide variety of methods have been proposed, ranging from more traditional computer vision strategies to most recent development with transformer-based or generative neural network models. In this work we show how a latent diffusion model, pre-trained on text-to-image synthesis, can be finetuned for image colorization and provide a flexible solution for a wide variety of scenarios: high quality direct colorization with diverse results, user guided colorization through colors hints, text prompts or reference image and finally video colorization. Some works already investigated using diffusion models for colorization, however the proposed solutions are often more complex and require training a side model guiding the denoising process (à la ControlNet). Not only is this approach increasing the number of parameters and compute time, it also results in sub optimal colorization as we show. Our evaluation demonstrates that our model is the only approach that offers a wide flexibility while either matching or outperforming existing methods specialized in each sub-task, by proposing a group of universal, architecture-agnostic mechanisms which could be applied to any pre-trained diffusion model.",
+"url": "https://doi.org/10.1145/3641519.3657509",
+"pdf": "",
+"citations": 15
+}
+],
+"2023": [
+{
+"id": "SIGGRAPH2023-11",
+"title": "Synthesizing Dexterous Nonprehensile Pregrasp for Ungraspable Objects",
+"authors": [
+"Sirui Chen",
+"Albert Wu",
+"C. Karen Liu"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Dex",
+"Control"
+],
+"tracked_authors": [
+"C. Karen Liu"
+],
+"score": 24,
+"tldr": "We present a novel method that combines graph search, optimal control, and a learning-based objective function to synthesize physically realistic and diverse nonprehensile pre-grasp motions that leverage the external contacts.",
+"abstract": "Daily objects embedded in a contextual environment are often ungraspable initially. Whether it is a book sandwiched by other books on a fully packed bookshelf or a piece of paper lying flat on the desk, a series of nonprehensile pregrasp maneuvers is required to manipulate the object into a graspable state. Humans are proficient at utilizing environmental contacts to achieve manipulation tasks that are otherwise impossible, but synthesizing such nonprehensile pregrasp behaviors is challenging to existing methods. We present a novel method that combines graph search, optimal control, and a learning-based objective function to synthesize physically realistic and diverse nonprehensile pre-grasp motions that leverage the external contacts. Since the “graspability” of an object in context with its surrounding is difficult to define, we utilize a dataset of dexterous grasps to learn a metric which implicitly takes into account the exposed surface of the object and the finger tip locations. Our method can efficiently discover hand and object trajectories that are certified to be physically feasible by the simulation and kinematically achievable by the dexterous hand. We evaluate our method on eight challenging scenarios where nonprehensile pre-grasps are required to succeed. We also show that our method can be applied to unseen objects different from those in the training dataset. Finally, we report quantitative analyses on generalization and robustness of our method, as well as an ablation study.",
+"url": "https://doi.org/10.1145/3588432.3591528",
+"pdf": "",
+"citations": 31
+},
+{
+"id": "SIGGRAPH2023-4",
+"title": "DOC: Differentiable Optimal Control for Retargeting Motions onto Legged Robots",
+"authors": [
+"Ruben Grandia",
+"Farbod Farshidian",
+"Espen Knoop",
+"Christian Schumacher",
+"Marco Hutter",
+"Moritz Bächer"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Control",
+"Dex"
+],
+"tracked_authors": [],
+"score": 19,
+"tldr": "In this paper, we present a Differentiable Optimal Control (DOC) framework that facilitates the transfer of rich motions from either animals or animations onto these robots.",
+"abstract": "Legged robots are designed to perform highly dynamic motions. However, it remains challenging for users to retarget expressive motions onto these complex systems. In this paper, we present a Differentiable Optimal Control (DOC) framework that facilitates the transfer of rich motions from either animals or animations onto these robots. Interfacing with either motion capture or animation data, we formulate retargeting objectives whose parameters make them agnostic to differences in proportions and numbers of degrees of freedom between input and robot. Optimizing these parameters over the manifold spanned by optimal state and control trajectories, we minimize the retargeting error. We demonstrate the utility and efficacy of our modeling by applying DOC to a Model-Predictive Control (MPC) formulation, showing retargeting results for a family of robots of varying proportions and mass distribution. With a hardware deployment, we further show that the retargeted motions are physically feasible, while MPC ensures that the robots retain their capability to react to unexpected disturbances.",
+"url": "https://doi.org/10.1145/3592454",
+"pdf": "",
+"citations": 39
+},
+{
+"id": "SIGGRAPH2023-6",
+"title": "Anatomically Detailed Simulation of Human Torso",
+"authors": [
+"Seung-Hwan Lee",
+"Yifeng Jiang",
+"C. Karen Liu"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Control"
+],
+"tracked_authors": [
+"C. Karen Liu"
+],
+"score": 16,
+"tldr": "This paper proposes a new torso model that aims to achieve high fidelity both in perception and in functionality, while being computationally feasible for simulation and optimal control tasks.",
+"abstract": "Many existing digital human models approximate the human skeletal system using rigid bodies connected by rotational joints. While the simplification is considered acceptable for legs and arms, it significantly lacks fidelity to model rich torso movements in common activities such as dancing, Yoga, and various sports. Research from biomechanics provides more detailed modeling for parts of the torso, but their models often operate in isolation and are not fast and robust enough to support computationally heavy applications and large-scale data generation for full-body digital humans. This paper proposes a new torso model that aims to achieve high fidelity both in perception and in functionality, while being computationally feasible for simulation and optimal control tasks. We build a detailed human torso model consisting of various anatomical components, including facets, ligaments, and intervertebral discs, by coupling efficient finite-element and rigid-body simulations. Given an existing motion capture sequence without dense markers placed on the torso, our new model is able to recover the underlying torso bone movements. Our method is remarkably robust that it can be used to automatically \"retrofit\" the entire Mixamo motion database of highly diverse human motions without user intervention. We also show that our model is computationally efficient for solving trajectory optimization of highly dynamic full-body movements, without relying any reference motion. Physiological validity of the model is validated against established literature.",
+"url": "https://doi.org/10.1145/3592425",
+"pdf": "",
+"citations": 4
+},
+{
+"id": "SIGGRAPH2023-8",
+"title": "Iterative α -(de)Blending: a Minimalist Deterministic Diffusion Model",
+"authors": [
+"Eric Heitz",
+"Laurent Belcour",
+"Thomas Chambon"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 13,
+"tldr": "We propose an alternative approach that requires no more than undergrad calculus and probability.",
+"abstract": "We derive a minimalist but powerful deterministic denoising-diffusion model. While denoising diffusion has shown great success in many domains, its underlying theory remains largely inaccessible to non-expert users. Indeed, an understanding of graduate-level concepts such as Langevin dynamics or score matching appears to be required to grasp how it works. We propose an alternative approach that requires no more than undergrad calculus and probability. We consider two densities and observe what happens when random samples from these densities are blended (linearly interpolated). We show that iteratively blending and deblending samples produces random paths between the two densities that converge toward a deterministic mapping. This mapping can be evaluated with a neural network trained to deblend samples. We obtain a model that behaves like deterministic denoising diffusion: it iteratively maps samples from one density (e.g., Gaussian noise) to another (e.g., cat images). However, compared to the state-of-the-art alternative, our model is simpler to derive, simpler to implement, more numerically stable, achieves higher quality results in our experiments, and has interesting connections to computer graphics.",
+"url": "https://doi.org/10.1145/3588432.3591540",
+"pdf": "",
+"citations": 77
+},
+{
+"id": "SIGGRAPH2023-9",
+"title": "Simulation and Retargeting of Complex Multi-Character Interactions",
+"authors": [
+"Yunbo Zhang",
+"Deepak Gopinath",
+"Yuting Ye",
+"Jessica K. Hodgins",
+"Greg Turk",
+"Jungdam Won"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Dex",
+"RL"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "We present a method for reproducing complex multi-character interactions for physically simulated humanoid characters using deep reinforcement learning.",
+"abstract": "We present a method for reproducing complex multi-character interactions for physically simulated humanoid characters using deep reinforcement learning. Our method learns control policies for characters that imitate not only individual motions, but also the interactions between characters, while maintaining balance and matching the complexity of reference data. Our approach uses a novel reward formulation based on an interaction graph that measures distances between pairs of interaction landmarks. This reward encourages control policies to efficiently imitate the character’s motion while preserving the spatial relationships of the interactions in the reference motion. We evaluate our method on a variety of activities, from simple interactions such as a high-five greeting to more complex interactions such as gymnastic exercises, Salsa dancing, and box carrying and throwing. This approach can be used to “clean-up” existing motion capture data to produce physically plausible interactions or to retarget motion to new characters with different sizes, kinematics or morphologies while maintaining the interactions in the original data.",
+"url": "https://doi.org/10.1145/3588432.3591491",
+"pdf": "",
+"citations": 68
+},
+{
+"id": "SIGGRAPH2023-2",
+"title": "DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance",
+"authors": [
+"Longwen Zhang",
+"Qiwei Qiu",
+"Hongyang Lin",
+"Qixuan Zhang",
+"Shi Cheng",
+"Wei Yang",
+"Ye Shi",
+"Sibei Yang",
+"Lan Xu",
+"Jingyi Yu"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "In this paper, we present Dream-Face, a progressive scheme to generate personalized 3D faces under text guidance.",
+"abstract": "Emerging Metaverse applications demand accessible, accurate and easy-to-use tools for 3D digital human creations in order to depict different cultures and societies as if in the physical world. Recent large-scale vision-language advances pave the way for novices to conveniently customize 3D content. However, the generated CG-friendly assets still cannot represent the desired facial traits for human characteristics. In this paper, we present Dream-Face, a progressive scheme to generate personalized 3D faces under text guidance. It enables layman users to naturally customize 3D facial assets that are compatible with CG pipelines, with desired shapes, textures and fine-grained animation capabilities. From a text input to describe the facial traits, we first introduce a coarse-to-fine scheme to generate the neutral facial geometry with a unified topology. We employ a selection strategy in the CLIP embedding space to generate coarse geometry, and subsequently optimize both the detailed displacements and normals using Score Distillation Sampling (SDS) from the generic Latent Diffusion Model (LDM). Then, for neutral appearance generation, we introduce a dual-path mechanism, which combines the generic LDM with a novel texture LDM to ensure both the diversity and textural specification in the UV space. We also employ a two-stage optimization to perform SDS in both the latent and image spaces to significantly provide compact priors for fine-grained synthesis. It also enables learning the mapping from the compact latent space into physically-based textures (diffuse albedo, specular intensity, normal maps, etc.). Our generated neutral assets naturally support blendshapes-based facial animations, thanks to the unified geometric topology. We further improve the animation ability with",
+"url": "https://doi.org/10.1145/3592094",
+"pdf": "",
+"citations": 129
+},
+{
+"id": "SIGGRAPH2023-5",
+"title": "Contact Edit: Artist Tools for Intuitive Modeling of Hand-Object Interactions",
+"authors": [
+"Arjun Lakshmipathy",
+"Nicole Feng",
+"Yu Xi Lee",
+"Moshe Mahler",
+"Nancy S. Pollard"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "This paper addresses this challenge by elevating contact areas to first-class primitives.",
+"abstract": "Posing high-contact interactions is challenging and time-consuming, with hand-object interactions being especially difficult due to the large number of degrees of freedom (DOF) of the hand and the fact that humans are experts at judging hand poses. This paper addresses this challenge by elevating contact areas to first-class primitives. We provide end-to-end art-directable (EAD) tools to model interactions based on contact areas, directly manipulate contact areas, and compute corresponding poses automatically. To make these operations intuitive and fast, we present a novel axis-based contact model that supports real-time approximately isometry-preserving operations on triangulated surfaces, permits movement between surfaces, and is both robust and scalable to large areas. We show that use of our contact model facilitates high quality posing even for unconstrained, high-DOF custom rigs intended for traditional keyframe-based animation pipelines. We additionally evaluate our approach with comparisons to prior art, ablation studies, user studies, qualitative assessments, and extensions to full-body interaction.",
+"url": "https://doi.org/10.1145/3592117",
+"pdf": "",
+"citations": 16
+},
+{
+"id": "SIGGRAPH2023-10",
+"title": "Neural Face Rigging for Animating and Retargeting Facial Meshes in the Wild",
+"authors": [
+"Dafei Qin",
+"Jun Saito",
+"Noam Aigerman",
+"Thibault Groueix",
+"Taku Komura"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"Dex"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "We propose an end-to-end deep-learning approach for automatic rigging and retargeting of 3D models of human faces in the wild.",
+"abstract": "We propose an end-to-end deep-learning approach for automatic rigging and retargeting of 3D models of human faces in the wild. Our approach, called Neural Face Rigging (NFR), holds three key properties: (i) NFR’s expression space maintains human-interpretable editing parameters for artistic controls; (ii) NFR is readily applicable to arbitrary facial meshes with different connectivity and expressions; (iii) NFR can encode and produce fine-grained details of complex expressions performed by arbitrary subjects. To the best of our knowledge, NFR is the first approach to provide realistic and controllable deformations of in-the-wild facial meshes, without the manual creation of blendshapes or correspondence. We design a deformation autoencoder and train it through a multi-dataset training scheme, which benefits from the unique advantages of two data sources: a linear 3DMM with interpretable control parameters as in FACS and 4D captures of real faces with fine-grained details. Through various experiments, we show NFR’s ability to automatically produce realistic and accurate facial deformations across a wide range of existing datasets and noisy facial scans in-the-wild, while providing artist-controlled, editable parameters.",
+"url": "https://doi.org/10.1145/3588432.3591556",
+"pdf": "",
+"citations": 52
+},
+{
+"id": "SIGGRAPH2023-0",
+"title": "Attend-and-Excite: Attention-Based Semantic Guidance for Text-to-Image Diffusion Models",
+"authors": [
+"Hila Chefer",
+"Yuval Alaluf",
+"Yael Vinker",
+"Lior Wolf",
+"Daniel Cohen‐Or"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "To help mitigate these failure cases, we introduce the concept of Generative Semantic Nursing (GSN) , where we seek to intervene in the generative process on the fly during inference time to improve the faithfulness of the generated images.",
+"abstract": "Recent text-to-image generative models have demonstrated an unparalleled ability to generate diverse and creative imagery guided by a target text prompt. While revolutionary, current state-of-the-art diffusion models may still fail in generating images that fully convey the semantics in the given text prompt. We analyze the publicly available Stable Diffusion model and assess the existence of catastrophic neglect , where the model fails to generate one or more of the subjects from the input prompt. Moreover, we find that in some cases the model also fails to correctly bind attributes ( e.g. , colors) to their corresponding subjects. To help mitigate these failure cases, we introduce the concept of Generative Semantic Nursing (GSN) , where we seek to intervene in the generative process on the fly during inference time to improve the faithfulness of the generated images. Using an attention-based formulation of GSN, dubbed Attend-and-Excite , we guide the model to refine the cross-attention units to attend to all subject tokens in the text prompt and strengthen --- or excite --- their activations, encouraging the model to generate all subjects described in the text prompt. We compare our approach to alternative approaches and demonstrate that it conveys the desired concepts more faithfully across a range of text prompts. Code is available at our project page: https://attendandexcite.github.io/Attend-and-Excite/.",
+"url": "https://doi.org/10.1145/3592116",
+"pdf": "",
+"citations": 1075
+},
+{
+"id": "SIGGRAPH2023-1",
+"title": "Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models",
+"authors": [
+"Simon Alexanderson",
+"Rajmund Nagy",
+"Jonas Beskow",
+"Gustav Eje Henter"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"GenModel"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "Diffusion models have experienced a surge of interest as highly expressive yet efficiently trainable probabilistic models.",
+"abstract": "Diffusion models have experienced a surge of interest as highly expressive yet efficiently trainable probabilistic models. We show that these models are an excellent fit for synthesising human motion that co-occurs with audio, e.g., dancing and co-speech gesticulation, since motion is complex and highly ambiguous given audio, calling for a probabilistic description. Specifically, we adapt the DiffWave architecture to model 3D pose sequences, putting Conformers in place of dilated convolutions for improved modelling power. We also demonstrate control over motion style, using classifier-free guidance to adjust the strength of the stylistic expression. Experiments on gesture and dance generation confirm that the proposed method achieves top-of-the-line motion quality, with distinctive styles whose expression can be made more or less pronounced. We also synthesise path-driven locomotion using the same model architecture. Finally, we generalise the guidance procedure to obtain product-of-expert ensembles of diffusion models and demonstrate how these may be used for, e.g., style interpolation, a contribution we believe is of independent interest.",
+"url": "https://doi.org/10.1145/3592458",
+"pdf": "",
+"citations": 356
+},
+{
+"id": "SIGGRAPH2023-3",
+"title": "GREIL-Crowds: Crowd Simulation with Deep Reinforcement Learning and Examples",
+"authors": [
+"Panayiotis Charalambous",
+"Julien Pettré",
+"Vassilis Vassiliades",
+"Yiorgos Chrysanthou",
+"Nuria Pelechano"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"RL"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "Inspired by recent advances in Deep Reinforcement Learning, we propose Guided REinforcement Learning (GREIL) Crowds, a method that learns a model for pedestrian behaviors which is guided by reference crowd data.",
+"abstract": "Simulating crowds with realistic behaviors is a difficult but very important task for a variety of applications. Quantifying how a person balances between different conflicting criteria such as goal seeking, collision avoidance and moving within a group is not intuitive, especially if we consider that behaviors differ largely between people. Inspired by recent advances in Deep Reinforcement Learning, we propose Guided REinforcement Learning (GREIL) Crowds, a method that learns a model for pedestrian behaviors which is guided by reference crowd data. The model successfully captures behaviors such as goal seeking, being part of consistent groups without the need to define explicit relationships and wandering around seemingly without a specific purpose. Two fundamental concepts are important in achieving these results: (a) the per agent state representation and (b) the reward function. The agent state is a temporal representation of the situation around each agent. The reward function is based on the idea that people try to move in situations/states in which they feel comfortable in. Therefore, in order for agents to stay in a comfortable state space, we first obtain a distribution of states extracted from real crowd data; then we evaluate states based on how much of an outlier they are compared to such a distribution. We demonstrate that our system can capture and simulate many complex and subtle crowd interactions in varied scenarios. Additionally, the proposed method generalizes to unseen situations, generates consistent behaviors and does not suffer from the limitations of other data-driven and reinforcement learning approaches.",
+"url": "https://doi.org/10.1145/3592459",
+"pdf": "",
+"citations": 62
+},
+{
+"id": "SIGGRAPH2023-7",
+"title": "Synthesizing Physical Character-Scene Interactions",
+"authors": [
+"Mohamed Hassan",
+"Yunrong Guo",
+"Tingwu Wang",
+"Michael J. Black",
+"Sanja Fidler",
+"Xue Bin Peng"
+],
+"venue": "SIGGRAPH 2023",
+"year": 2023,
+"topics": [
+"IL",
+"RL"
+],
+"tracked_authors": [],
+"score": 7,
+"tldr": "In contrast, we present a system that uses adversarial imitation learning and reinforcement learning to train physically-simulated characters that perform scene interaction tasks in a natural and life-like manner.",
+"abstract": "Movement is how people interact with and affect their environment. For realistic character animation, it is necessary to synthesize such interactions between virtual characters and their surroundings. Despite recent progress in character animation using machine learning, most systems focus on controlling an agent’s movements in fairly simple and homogeneous environments, with limited interactions with other objects. Furthermore, many previous approaches that synthesize human-scene interactions require significant manual labeling of the training data. In contrast, we present a system that uses adversarial imitation learning and reinforcement learning to train physically-simulated characters that perform scene interaction tasks in a natural and life-like manner. Our method learns scene interaction behaviors from large unstructured motion datasets, without manual annotation of the motion data. These scene interactions are learned using an adversarial discriminator that evaluates the realism of a motion within the context of a scene. The key novelty involves conditioning both the discriminator and the policy networks on scene context. We demonstrate the effectiveness of our approach through three challenging scene interaction tasks: carrying, sitting, and lying down, which require coordination of a character’s movements in relation to objects in the environment. Our policies learn to seamlessly transition between different behaviors like idling, walking, and sitting. By randomizing the properties of the objects and their placements during training, our method is able to generalize beyond the objects and scenarios depicted in the training dataset, producing natural character-scene interactions for a wide variety of object shapes and placements. The approach takes physics-bas",
+"url": "https://doi.org/10.1145/3588432.3591525",
+"pdf": "",
+"citations": 162
+}
+]
+},
+"updated": "2026-11-24"
+}
