@@ -3720,7 +3720,9 @@
 "abstract": "Deep generative models have various content creation applications such as graphic design, e-commerce, and virtual try-on. However, current works mainly focus on synthesizing realistic visual outputs, often ignoring other sensory modalities, such as touch, which limits physical interaction with users. In this work, we leverage deep generative models to create a multi-sensory experience where users can touch and see the synthesized object when sliding their fingers on a haptic surface. The main challenges lie in the significant scale discrepancy between vision and touch sensing and the lack of explicit mapping from touch sensing data to a haptic rendering device. To bridge this gap, we collect high-resolution tactile data with a GelSight sensor and create a new visuotactile clothing dataset. We then develop a conditional generative model that synthesizes both visual and tactile outputs from a single sketch. We evaluate our method regarding image quality and tactile rendering accuracy. Finally, we introduce a pipeline to render high-quality visual and tactile outputs on an electroadhesion-based haptic device for an immersive experience, allowing for challenging materials and editable sketch inputs.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Gao_Controllable_Visual-Tactile_Synthesis_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Gao_Controllable_Visual-Tactile_Synthesis_ICCV_2023_paper.pdf",
-"arxiv": "2305.03051"
+"arxiv": "2305.03051",
+"citations": 17,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-13",
@@ -3749,7 +3751,9 @@
 "abstract": "Despite tremendous progress in generating high-quality images using diffusion models, synthesizing a sequence of animated frames that are both photorealistic and temporally coherent is still in its infancy. While off-the-shelf billion-scale datasets for image generation are available, collecting similar video data of the same scale is still challenging. Also, training a video diffusion model is computationally much more expensive than its image counterpart. In this work, we explore finetuning a pretrained image diffusion model with video data as a practical solution for the video synthesis task. We find that naively extending the image noise prior to video noise prior in video diffusion leads to sub-optimal performance. Our carefully designed video noise prior leads to substantially better performance. Extensive experimental validation shows that our model, Preserve Your Own COrrelation (PYoCo), attains SOTA zero-shot text-to-video results on the UCF-101 and MSR-VTT benchmarks. It also achieves SOTA video generation quality on the small-scale UCF-101 benchmark with a 10x smaller model using significantly less computation than the prior art.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Ge_Preserve_Your_Own_Correlation_A_Noise_Prior_for_Video_Diffusion_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ge_Preserve_Your_Own_Correlation_A_Noise_Prior_for_Video_Diffusion_ICCV_2023_paper.pdf",
-"arxiv": "2305.10474"
+"arxiv": "2305.10474",
+"citations": 348,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-15",
@@ -3822,7 +3826,9 @@
 "abstract": "We tackle the task of reconstructing hand-object interactions from short video clips. Given an input video, our approach casts 3D inference as a per-video optimization and recovers a neural 3D representation of the object shape, as well as the time-varying motion and hand articulation. While the input video naturally provides some multi-view cues to guide 3D inference, these are insufficient on their own due to occlusions and limited viewpoint variations. To obtain accurate 3D, we augment the multi-view signals with generic data-driven priors to guide reconstruction. Specifically, we learn a diffusion network to model the conditional distribution of (geometric) renderings of objects conditioned on hand configuration and category label, and leverage it as a prior to guide the novel-view renderings of the reconstructed scene. We empirically evaluate our approach on egocentric videos across 6 object categories, and observe significant improvements over prior single-view and multi-view methods. Finally, we demonstrate our system's ability to reconstruct arbitrary clips from YouTube, showing both 1st and 3rd person interactions.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Ye_Diffusion-Guided_Reconstruction_of_Everyday_Hand-Object_Interaction_Clips_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ye_Diffusion-Guided_Reconstruction_of_Everyday_Hand-Object_Interaction_Clips_ICCV_2023_paper.pdf",
-"arxiv": "2309.05663"
+"arxiv": "2309.05663",
+"citations": 95,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-8",
@@ -3844,7 +3850,9 @@
 "abstract": "We introduce a novel generative model for video prediction based on latent flow matching, an efficient alternative to diffusion-based models. In contrast to prior work, we keep the high costs of modeling the past during training and inference at bay by conditioning only on a small random set of past frames at each integration step of the image generation process. Moreover, to enable the generation of high-resolution videos and to speed up the training, we work in the latent space of a pretrained VQGAN. Finally, we propose to approximate the initial condition of the flow ODE with the previous noisy frame. This allows to reduce the number of integration steps and hence, speed up the sampling at inference time. We call our model Random frame conditioned flow Integration for VidEo pRediction, or, in short, RIVER. We show that RIVER achieves superior or on par performance compared to prior work on common video prediction benchmarks, while requiring an order of magnitude fewer computational resources. Project website: https://araachie.github.io/river.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Davtyan_Efficient_Video_Prediction_via_Sparsely_Conditioned_Flow_Matching_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Davtyan_Efficient_Video_Prediction_via_Sparsely_Conditioned_Flow_Matching_ICCV_2023_paper.pdf",
-"arxiv": "2211.14575"
+"arxiv": "2211.14575",
+"citations": 67,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-11",
@@ -3869,7 +3877,9 @@
 "abstract": "The recent wave of large-scale text-to-image diffusion models has dramatically increased our text-based image generation abilities. These models can generate realistic images for a staggering variety of prompts and exhibit impressive compositional generalization abilities. Almost all use cases thus far have solely focused on sampling; however, diffusion models can also provide conditional density estimates, which are useful for tasks beyond image generation. In this paper, we show that the density estimates from large-scale text-to-image diffusion models like Stable Diffusion can be leveraged to perform zero-shot classification without any additional training. Our generative approach to classification, which we call Diffusion Classifier, attains strong results on a variety of benchmarks and outperforms alternative methods of extracting knowledge from diffusion models. Although a gap remains between generative and discriminative approaches on zero-shot recognition tasks, our diffusion-based approach has stronger multimodal compositional reasoning abilities than competing discriminative approaches. Finally, we use Diffusion Classifier to extract standard classifiers from class-conditional diffusion models trained on ImageNet. These models approach the performance of SOTA discriminative classifiers and exhibit strong \"effective robustness\" to distribution shift. Overall, our results are a step toward using generative over discriminative models for downstream tasks.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Li_Your_Diffusion_Model_is_Secretly_a_Zero-Shot_Classifier_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Your_Diffusion_Model_is_Secretly_a_Zero-Shot_Classifier_ICCV_2023_paper.pdf",
-"arxiv": "2303.16203"
+"arxiv": "2303.16203",
+"citations": 412,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-18",
@@ -3894,7 +3904,9 @@
 "abstract": "Text-driven content creation has evolved to be a transformative technique that revolutionizes creativity. Here we study the task of text-driven human video generation, where a video sequence is synthesized from texts describing the appearance and motions of a target performer. Compared to general text-driven video generation, human-centric video generation requires maintaining the appearance of synthesized human while performing complex motions. In this work, we present Text2Performer to generate vivid human videos with articulated motions from texts. Text2Performer has two novel designs: 1) decomposed human representation and 2) diffusion-based motion sampler. First, we decompose the VQVAE latent space into human appearance and pose representation in an unsupervised manner by utilizing the nature of human videos. In this way, the appearance is well maintained along the generated frames. Then, we propose continuous VQ-diffuser to sample a sequence of pose embeddings. Unlike existing VQ-based methods that operate in the discrete space, continuous VQ-diffuser directly outputs the continuous pose embeddings for better motion modeling. Finally, motion-aware masking strategy is designed to mask the pose embeddings spatial-temporally to enhance the temporal coherence. Moreover, to facilitate the task of text-driven human video generation, we contribute a Fashion-Text2Video dataset with manually annotated action labels and text descriptions. Extensive experiments demonstrate that Text2Performer generates high-quality human videos (up to 512x256 resolution) with diverse appearances and flexible motions. Our project page is https://yumingj.github.io/projects/Text2Performer.html",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Jiang_Text2Performer_Text-Driven_Human_Video_Generation_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Jiang_Text2Performer_Text-Driven_Human_Video_Generation_ICCV_2023_paper.pdf",
-"arxiv": "2304.08483"
+"arxiv": "2304.08483",
+"citations": 78,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-0",
@@ -3921,7 +3933,9 @@
 "abstract": "Large vision-language models have achieved outstanding performance, but their size and computational requirements make their deployment on resource-constrained devices and time-sensitive tasks impractical. Model distillation, the process of creating smaller, faster models that maintain the performance of larger models, is a promising direction towards the solution. This paper investigates the distillation of visual representations in large teacher vision-language models into lightweight student models using a small- or mid-scale dataset. Notably, this study focuses on open-vocabulary out-of-distribution (OOD) generalization, a challenging problem that has been overlooked in previous model distillation literature. We propose two principles from vision and language modality perspectives to enhance student's OOD generalization: (1) by better imitating teacher's visual representation space, and carefully promoting better coherence in vision-language alignment with the teacher; (2) by enriching the teacher's language representations with informative and finegrained semantic attributes to effectively distinguish between different labels. We propose several metrics and conduct extensive experiments to investigate their techniques. The results demonstrate significant improvements in zero-shot and few-shot student performance on open-vocabulary out-of-distribution classification, highlighting the effectiveness of our proposed approaches.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Li_Distilling_Large_Vision-Language_Model_with_Out-of-Distribution_Generalizability_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Distilling_Large_Vision-Language_Model_with_Out-of-Distribution_Generalizability_ICCV_2023_paper.pdf",
-"arxiv": "2307.03135"
+"arxiv": "2307.03135",
+"citations": 54,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-16",
@@ -3947,7 +3961,9 @@
 "abstract": "3D human motion generation is crucial for creative industry. Recent advances rely on generative models with domain knowledge for text-driven motion generation, leading to substantial progress in capturing common motions. However, the performance on more diverse motions remains unsatisfactory. In this work, we propose ReMoDiffuse, a diffusion-model-based motion generation framework that integrates a retrieval mechanism to refine the denoising process. ReMoDiffuse enhances the generalizability and diversity of text-driven motion generation with three key designs:1) Hybrid Retrieval finds appropriate references from the database in terms of both semantic and kinematic similarities. 2) Semantic-Modulated Transformer selectively absorbs retrieval knowledge, adapting to the difference between retrieved samples and the target motion sequence. 3) Condition Mixture better utilizes the retrieval database during inference, overcoming the scale sensitivity in classifier-free guidance. Extensive experiments demonstrate that \\name outperforms state-of-the-art methods by balancing both text-motion consistency and motion quality, especially for more diverse motion generation.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhang_ReMoDiffuse_Retrieval-Augmented_Motion_Diffusion_Model_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_ReMoDiffuse_Retrieval-Augmented_Motion_Diffusion_Model_ICCV_2023_paper.pdf",
-"arxiv": "2304.01116"
+"arxiv": "2304.01116",
+"citations": 395,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-19",
@@ -3973,7 +3989,9 @@
 "abstract": "In recent years, video generation has become a prominent generative tool and has drawn significant attention. However, there is little consideration in audio-to-video generation, though audio contains unique qualities like temporal semantics and magnitude. Hence, we propose The Power of Sound (TPoS) model to incorporate audio input that includes both changeable temporal semantics and magnitude. To generate video frames, TPoS utilizes a latent stable diffusion model with textual semantic information, which is then guided by the sequential audio embedding from our pretrained Audio Encoder. As a result, this method produces audio reactive video contents. We demonstrate the effectiveness of TPoS across various tasks and compare its results with current state-of-the-art techniques in the field of audio-to-video generation. More examples are available at https://ku-vai.github.io/TPoS/",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Jeong_The_Power_of_Sound_TPoS_Audio_Reactive_Video_Generation_with_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Jeong_The_Power_of_Sound_TPoS_Audio_Reactive_Video_Generation_with_ICCV_2023_paper.pdf",
-"arxiv": "2309.04509"
+"arxiv": "2309.04509",
+"citations": 48,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-12",
@@ -4026,7 +4044,9 @@
 "abstract": "Learning a policy with great generalization to unseen environments remains challenging but critical in visual reinforcement learning. Despite the success of augmentation combination in the supervised learning generalization, naively applying it to visual RL algorithms may damage the training efficiency, suffering from serve performance degradation. In this paper, we first conduct qualitative analysis and illuminate the main causes: (i) high-variance gradient magnitudes and (ii) gradient conflicts existed in various augmentation methods. To alleviate these issues, we propose a general policy gradient optimization framework, named Conflict-aware Gradient Agreement Augmentation (CG2A), and better integrate augmentation combination into visual RL algorithms to address the generalization bias. In particular, CG2A develops a Gradient Agreement Solver to adaptively balance the varying gradient magnitudes, and introduces a Soft Gradient Surgery strategy to alleviate the gradient conflicts. Extensive experiments demonstrate that CG2A significantly improves the generalization performance and sample efficiency of visual RL algorithms.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Liu_Improving_Generalization_in_Visual_Reinforcement_Learning_via_Conflict-aware_Gradient_Agreement_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Liu_Improving_Generalization_in_Visual_Reinforcement_Learning_via_Conflict-aware_Gradient_Agreement_ICCV_2023_paper.pdf",
-"arxiv": "2308.01194"
+"arxiv": "2308.01194",
+"citations": 41,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-21",
@@ -4048,7 +4068,9 @@
 "abstract": "Unconditional video generation is a challenging task that involves synthesizing high-quality videos that are both coherent and of extended duration. To address this challenge, researchers have used pretrained StyleGAN image generators for high-quality frame synthesis and focused on motion generator design. The motion generator is trained in an autoregressive manner using heavy 3D convolutional discriminators to ensure motion coherence during video generation. In this paper, we introduce a novel motion generator design that uses a learning-based inversion network for GAN. The encoder in our method captures rich and smooth priors from encoding images to latents, and given the latent of an initially generated frame as guidance, our method can generate smooth future latent by modulating the inversion encoder temporally. Our method enjoys the advantage of sparse training and naturally constrains the generation space of our motion generator with the inversion network guided by the initial frame, eliminating the need for heavy discriminators. Moreover, our method supports style transfer with simple fine-tuning when the encoder is paired with a pretrained StyleGAN generator. Extensive experiments conducted on various benchmarks demonstrate the superiority of our method in generating long and high-resolution videos with decent single-frame quality and temporal consistency. Code is available at https://github.com/johannwyh/StyleInV.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Wang_StyleInV_A_Temporal_Style_Modulated_Inversion_Network_for_Unconditional_Video_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Wang_StyleInV_A_Temporal_Style_Modulated_Inversion_Network_for_Unconditional_Video_ICCV_2023_paper.pdf",
-"arxiv": "2308.16909"
+"arxiv": "2308.16909",
+"citations": 24,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-5",
@@ -4100,7 +4122,9 @@
 "abstract": "Learning image classification and image generation using the same set of network parameters presents a formidable challenge. Recent advanced approaches perform well in one task often exhibit poor performance in the other. This work introduces an energy-based classifier and generator, namely EGC, which can achieve superior performance in both tasks using a single neural network. Unlike conventional classifiers that produce a label given an image (i.e., a conditional distribution p(y|x)), the forward pass in EGC is a classification model that yields a joint distribution p(x,y), enabling a diffusion model in its backward pass by marginalizing out the label y to estimate the score function. Furthermore, EGC can be adapted for unsupervised learning by considering the label as latent variables. EGC achieves competitive generation results compared with state-of-the-art approaches on ImageNet-1k, CelebA-HQ and LSUN Church, while achieving superior classification accuracy and robustness against adversarial attacks on CIFAR-10. This work marks the inaugural success in mastering both domains using a unified network parameter set. We believe that EGC bridges the gap between discriminative and generative learning.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Guo_EGC_Image_Generation_and_Classification_via_a_Diffusion_Energy-Based_Model_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Guo_EGC_Image_Generation_and_Classification_via_a_Diffusion_Energy-Based_Model_ICCV_2023_paper.pdf",
-"arxiv": "2304.02012"
+"arxiv": "2304.02012",
+"citations": 24,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-9",
@@ -4123,7 +4147,9 @@
 "abstract": "Classifier guidance---using the gradients of an image classifier to steer the generations of a diffusion model---has the potential to dramatically expand the creative control over image generation and editing. However, currently classifier guidance requires either training new noise-aware models to obtain accurate gradients or using a one-step denoising approximation of the final generation, which leads to misaligned gradients and sub-optimal control. We highlight this approximation's shortcomings and propose a novel guidance method: Direct Optimization of Diffusion Latents (DOODL), which enables plug-and-play guidance by optimizing diffusion latents w.r.t. the gradients of a pre-trained classifier on the true generated pixels, using an invertible diffusion process to achieve memory-efficient backpropagation. Showcasing the potential of more precise guidance, DOODL outperforms one-step classifier guidance on computational and human evaluation metrics across different forms of guidance: using CLIP guidance to improve generations of complex prompts from DrawBench, using fine-grained visual classifiers to expand the vocabulary of Stable Diffusion, enabling image-conditioned generation with a CLIP visual encoder, and improving image aesthetics using an aesthetic scoring network.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Wallace_End-to-End_Diffusion_Latent_Optimization_Improves_Classifier_Guidance_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Wallace_End-to-End_Diffusion_Latent_Optimization_Improves_Classifier_Guidance_ICCV_2023_paper.pdf",
-"arxiv": "2303.13703"
+"arxiv": "2303.13703",
+"citations": 144,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-1",
@@ -4143,7 +4169,9 @@
 "abstract": "Talking head video generation aims to animate a human face in a still image with dynamic poses and expressions using motion information derived from a target-driving video, while maintaining the person's identity in the source image. However, dramatic and complex motions in the driving video cause ambiguous generation, because the still source image cannot provide sufficient appearance information for occluded regions or delicate expression variations, which produces severe artifacts and significantly degrades the generation quality. To tackle this problem, we propose to learn a global facial representation space, and design a novel implicit identity representation conditioned memory compensation network, coined as MCNet, for high-fidelity talking head generation. Specifically, we devise a network module to learn a unified spatial facial meta-memory bank from all training samples, which can provide rich facial structure and appearance priors to compensate warped source facial features for the generation. Furthermore, we propose an effective query mechanism based on implicit identity representations learned from the discrete keypoints of the source image. It can greatly facilitate the retrieval of more correlated information from the memory bank for the compensation. Extensive experiments demonstrate that MCNet can learn representative and complementary facial memory, and can clearly outperform previous state-of-the-art talking head generation methods on VoxCeleb1 and CelebV datasets.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Hong_Implicit_Identity_Representation_Conditioned_Memory_Compensation_Network_for_Talking_Head_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Hong_Implicit_Identity_Representation_Conditioned_Memory_Compensation_Network_for_Talking_Head_ICCV_2023_paper.pdf",
-"arxiv": "2307.09906"
+"arxiv": "2307.09906",
+"citations": 89,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-2",
@@ -4167,7 +4195,9 @@
 "abstract": "How human interact with objects depends on the functional roles of the target objects, which introduces the problem of affordance-aware hand-object interaction. It requires a large number of human demonstrations for the learning and understanding of plausible and appropriate hand-object interactions. In this work, we present AffordPose, a large-scale dataset of hand-object interactions with affordance-driven hand pose. We first annotate the specific part-level affordance labels for each object, e.g. twist, pull, handle-grasp, etc, instead of the general intents such as use or handover, to indicate the purpose and guide the localization of the hand-object interactions. The fine-grained hand-object interactions reveal the influence of hand-centered affordances on the detailed arrangement of the hand poses, yet also exhibit a certain degree of diversity. We collect a total of 26.7K hand-object interactions, each including the 3D object shape, the part-level affordance label, and the manually adjusted hand poses. The comprehensive data analysis shows the common characteristics and diversity of hand-object interactions per affordance via the parameter statistics and contacting computation. We also conduct experiments on the tasks of hand-object affordance understanding and affordance-oriented hand-object interaction generation, to validate the effectiveness of our dataset in learning the fine-grained hand-object interactions. Project page: https://github.com/GentlesJan/AffordPose .",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Jian_AffordPose_A_Large-Scale_Dataset_of_Hand-Object_Interactions_with_Affordance-Driven_Hand_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Jian_AffordPose_A_Large-Scale_Dataset_of_Hand-Object_Interactions_with_Affordance-Driven_Hand_ICCV_2023_paper.pdf",
-"arxiv": "2309.08942"
+"arxiv": "2309.08942",
+"citations": 92,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-7",
@@ -4191,7 +4221,9 @@
 "abstract": "The recent introduction of the large-scale, long-form MAD and Ego4D datasets has enabled researchers to investigate the performance of current state-of-the-art methods for video grounding in the long-form setup, with interesting findings: current grounding methods alone fail at tackling this challenging task and setup due to their inability to process long video sequences. In this paper, we propose a method for improving the performance of natural language grounding in long videos by identifying and pruning out non-describable windows. We design a guided grounding framework consisting of a Guidance Model and a base grounding model. The Guidance Model emphasizes describable windows, while the base grounding model analyzes short temporal windows to determine which segments accurately match a given language query. We offer two designs for the Guidance Model: Query-Agnostic and Query-Dependent, which balance efficiency and accuracy. Experiments demonstrate that our proposed method outperforms state-of-the-art models by 4.1% in MAD and 4.52% in Ego4D (NLQ), respectively. Code, data and MAD's audio features necessary to reproduce our experiments are available at: https://github.com/waybarrios/guidance-based-video-grounding.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Barrios_Localizing_Moments_in_Long_Video_Via_Multimodal_Guidance_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Barrios_Localizing_Moments_in_Long_Video_Via_Multimodal_Guidance_ICCV_2023_paper.pdf",
-"arxiv": "2302.13372"
+"arxiv": "2302.13372",
+"citations": 37,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-14",
@@ -4214,7 +4246,9 @@
 "abstract": "Denoising diffusion models (DDMs) have attracted attention for their exceptional generation quality and diversity. This success is largely attributed to the use of class- or text-conditional diffusion guidance methods, such as classifier and classifier-free guidance. In this paper, we present a more comprehensive perspective that goes beyond the traditional guidance methods. From this generalized perspective, we introduce novel condition- and training-free strategies to enhance the quality of generated images. As a simple solution, blur guidance improves the suitability of intermediate samples for their fine-scale information and structures, enabling diffusion models to generate higher quality samples with a moderate guidance scale. Improving upon this, Self-Attention Guidance (SAG) uses the intermediate self-attention maps of diffusion models to enhance their stability and efficacy. Specifically, SAG adversarially blurs only the regions that diffusion models attend to at each iteration and guides them accordingly. Our experimental results show that our SAG improves the performance of various diffusion models, including ADM, IDDPM, Stable Diffusion, and DiT. Moreover, combining SAG with conventional guidance methods leads to further improvement.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Hong_Improving_Sample_Quality_of_Diffusion_Models_Using_Self-Attention_Guidance_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Hong_Improving_Sample_Quality_of_Diffusion_Models_Using_Self-Attention_Guidance_ICCV_2023_paper.pdf",
-"arxiv": "2210.00939"
+"arxiv": "2210.00939",
+"citations": 210,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "ICCV2023-20",
@@ -4234,7 +4268,9 @@
 "abstract": "In this paper, we present StyleLipSync, a style-based personalized lip-sync video generative model that can generate identity-agnostic lip-synchronizing video from arbitrary audio. To generate a video of arbitrary identities, we leverage expressive lip prior from the semantically rich latent space of a pre-trained StyleGAN, where we can also design a video consistency with a linear transformation. In contrast to the previous lip-sync methods, we introduce pose-aware masking that dynamically locates the mask to improve the naturalness over frames by utilizing a 3D parametric mesh predictor frame by frame. Moreover, we propose a few-shot lip-sync adaptation method for an arbitrary person by introducing a sync regularizer that preserves lip-sync generalization while enhancing the person-specific visual information. Extensive experiments demonstrate that our model can generate accurate lip-sync videos even with the zero-shot setting and enhance characteristics of an unseen face using a few seconds of target video through the proposed adaptation method.",
 "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Ki_StyleLipSync_Style-based_Personalized_Lip-sync_Video_Generation_ICCV_2023_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/ICCV2023/papers/Ki_StyleLipSync_Style-based_Personalized_Lip-sync_Video_Generation_ICCV_2023_paper.pdf",
-"arxiv": "2305.00521"
+"arxiv": "2305.00521",
+"citations": 22,
+"cite_src": "Semantic Scholar"
 }
 ]
 },

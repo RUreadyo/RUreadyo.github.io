@@ -441,11 +441,87 @@ def build(conf, year, comp, tracked):
     return scored[:CAP[conf]], full
 
 
+def s2_match(title):
+    url = "https://api.semanticscholar.org/graph/v1/paper/search/match?" + urllib.parse.urlencode({"query": title, "fields": "title"})
+    for t in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
+                d = (json.loads(r.read()).get("data") or [None])[0]
+            return d["paperId"] if d and norm(d["title"]) == norm(title) else ""
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return ""
+            time.sleep(5 * (t + 1))
+        except Exception:
+            time.sleep(5)
+    return None  # rate-limited / network: try again next run
+
+
+def add_citations(confs, budget=400):
+    """Semantic Scholar citation counts for archive papers (batch API, 500 ids per call).
+    Papers without an arXiv id / DOI are resolved by title (search/match), at most `budget` lookups per run;
+    resolved ids are cached in papers/data/cache/s2_ids.json so later runs only refresh counts."""
+    cpath = ROOT / "papers" / "data" / "cache" / "s2_ids.json"
+    idc = json.loads(cpath.read_text()) if cpath.exists() else {}
+    today = dt.date.today().isoformat()
+    for conf in confs:
+        path = OUT / f"{conf}.json"
+        if not path.exists():
+            continue
+        doc = json.loads(path.read_text())
+        papers = [p for ps in doc["years"].values() for p in ps]
+        ids = {}
+        for p in papers:
+            doi = re.search(r"doi\.org/(10\.[^\s?#]+)", p.get("url") or "")
+            i = f"ARXIV:{p['arxiv']}" if p.get("arxiv") else f"DOI:{doi.group(1)}" if doi else None
+            if not i:
+                k = norm(p["title"])
+                hit = idc.get(k)
+                if hit is None or (hit.startswith("_miss_") and hit[6:] < (dt.date.today() - dt.timedelta(days=14)).isoformat()):
+                    if budget > 0:
+                        budget -= 1
+                        pid = s2_match(p["title"])
+                        if pid is not None:
+                            idc[k] = hit = pid or f"_miss_{today}"
+                        time.sleep(1.1)
+                i = hit if hit and not hit.startswith("_miss_") else None
+            if i:
+                ids.setdefault(i, []).append(p)
+        keys, got = list(ids), 0
+        for b in range(0, len(keys), 500):
+            chunk = keys[b:b + 500]
+            for t in range(5):
+                try:
+                    req = urllib.request.Request("https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount",
+                                                 data=json.dumps({"ids": chunk}).encode(), headers={**UA, "content-type": "application/json"})
+                    with urllib.request.urlopen(req, timeout=120) as r:
+                        res = json.loads(r.read())
+                    break
+                except Exception as e:
+                    print(f"  S2 batch {conf}: {e} (retry {t + 1})", file=sys.stderr)
+                    time.sleep(10 * (t + 1))
+            else:
+                continue
+            for k, r in zip(chunk, res):
+                if r and r.get("citationCount") is not None:
+                    for p in ids[k]:
+                        p["citations"], p["cite_src"] = r["citationCount"], "Semantic Scholar"
+                        got += 1
+            time.sleep(3)
+        for p in papers:  # counts that came with the source (OpenAlex) keep their label
+            if p.get("citations") is not None and "cite_src" not in p:
+                p["cite_src"] = "OpenAlex"
+        path.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
+        cpath.write_text(json.dumps(idc))
+        print(f"{conf}: citations for {got} of {len(papers)} papers ({len(ids)} with arXiv/DOI ids)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="CoRL,RSS,ICRA,IROS,RA-L,ICLR,ICML,NeurIPS,CVPR,ICCV,ECCV,SIGGRAPH,SIGGRAPH Asia")
     ap.add_argument("--years", default=f"2023-{dt.date.today().year}")
     ap.add_argument("--refresh", action="store_true")
+    ap.add_argument("--no-cites", action="store_true", help="skip the Semantic Scholar citation refresh")
     a = ap.parse_args()
     y0, y1 = map(int, a.years.split("-"))
     cfg = json.loads((ROOT / "papers" / "config.json").read_text())
@@ -469,6 +545,8 @@ def main():
         doc["years"] = dict(sorted(doc["years"].items(), reverse=True))
         doc["updated"] = dt.date.today().isoformat()
         path.write_text(json.dumps(doc, indent=0, ensure_ascii=False))
+    if not a.no_cites:
+        add_citations(a.only.split(","))
     index = {c.stem: {y: len(v) for y, v in json.loads(c.read_text())["years"].items()} for c in sorted(OUT.glob("*.json")) if c.stem != "index"}
     (OUT / "index.json").write_text(json.dumps(index, indent=1))
     print("index:", index)

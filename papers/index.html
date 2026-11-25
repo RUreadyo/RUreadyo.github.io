@@ -254,12 +254,51 @@ function venueBadge(v) {
     (m ? `<span class="badge honor" title="Presentation / award">${/award|paper/i.test(m[1]) ? "🏆" : "★"} ${esc(m[1])}</span>` : "");
 }
 
+// ---------- citation badges: stored count if we have one, otherwise looked up live (Semantic Scholar title match, cached 7 days) ----------
+const CITE_TIP = "Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.";
+let citeCache = {}; try { citeCache = JSON.parse(localStorage.getItem("cites") || "{}"); } catch (e) {}
+function citeBadge(p) {
+  const src = p.citeSrc || p.cite_src || "Semantic Scholar";
+  if (p.citations != null) return `<span class="badge cite" title="${CITE_TIP}">${Number(p.citations).toLocaleString()} citations · ${esc(src)}</span>`;
+  const c = citeCache[normT(p.title)];
+  if (c && c[0] != null) return `<span class="badge cite" title="${CITE_TIP}">${c[0].toLocaleString()} citations · Semantic Scholar</span>`;
+  if (c) return "";  // looked up recently, not found
+  return `<span class="badge cite" data-ck="${esc(p.title)}" hidden></span>`;
+}
+let citeBusy = false;
+async function fillCites(root) {
+  if (citeBusy) return; citeBusy = true;
+  try {
+    const els = [...(root || document).querySelectorAll("[data-ck]")].slice(0, 12);
+    for (const el of els) {
+      if (!el.isConnected) continue;
+      const t = el.dataset.ck, k = normT(t);
+      let val = null;
+      for (let i = 0; i < 3; i++) {
+        const r = await fetch("https://api.semanticscholar.org/graph/v1/paper/search/match?fields=title,citationCount&query=" + encodeURIComponent(t)).catch(() => null);
+        if (r && r.status === 429) { await sleep(1500 * (i + 1)); continue; }
+        if (r && r.ok) { const d = (await r.json()).data?.[0]; if (d && normT(d.title) === k) val = d.citationCount; }
+        break;
+      }
+      citeCache[k] = [val, Date.now()];
+      document.querySelectorAll("[data-ck]").forEach(e => { if (normT(e.dataset.ck) === k) {
+        if (val != null) { e.textContent = `${val.toLocaleString()} citations · Semantic Scholar`; e.title = CITE_TIP; e.hidden = false; }
+        e.removeAttribute("data-ck"); } });
+      await sleep(1100);
+    }
+    const now = Date.now();
+    for (const [k, v] of Object.entries(citeCache)) if (now - v[1] > 7 * 864e5) delete citeCache[k];
+    try { localStorage.setItem("cites", JSON.stringify(citeCache)); } catch (e) {}
+  } finally { citeBusy = false; }
+  if ((root || document).querySelector("[data-ck]") && root?.isConnected) setTimeout(() => fillCites(root), 2000);
+}
+
 function card(p, opts = {}) {
   const t = (p.topics || [])[0];
   const pills = (p.topics || []).slice(0, 2).map(x => `<span class="pill" style="--c:${tc(x)}">${esc(TOPICS[x] || x)}</span>`).join("");
   const rel = p.relevance != null ? `<span class="rel" title="Relevance to my interests">relevance <span class="bar"><i style="width:${p.relevance * 10}%"></i></span> ${p.relevance}/10</span>` : "";
   const follow = p.tracked_authors?.length ? `<span class="badge follow" title="Author from a group I follow (papers/config.json → tracked_authors)">★ ${esc(p.tracked_authors.slice(0, 2).join(", "))}${p.tracked_authors.length > 2 ? " +" + (p.tracked_authors.length - 2) : ""}</span>` : "";
-  const cite = p.citations != null ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations} citations · Semantic Scholar</span>` : "";
+  const cite = citeBadge(p);
   const sumText = p.summary && p.summary !== p.tldr ? p.summary : "";
   return `<article class="card" style="--tc:${tc(t)}">
     <div class="meta-row">${pills}${venueBadge(p.venue)}${follow}${cite}${rel}</div>
@@ -622,6 +661,7 @@ async function renderConfTab(c) {
   c.querySelectorAll("[data-cy]").forEach(b => b.onclick = () => { state.confYear = +b.dataset.cy; state.confN = 25; renderConfTab(c); });
   c.querySelector("[data-ch]").onclick = () => { state.confHonor = !state.confHonor; state.confN = 25; renderConfTab(c); };
   const m = $("cmore"); if (m) m.onclick = () => { state.confN += 50; renderConfTab(c); };
+  fillCites(c);
 }
 
 // ---------- Search (live: Semantic Scholar, fallback OpenAlex; plus my own digest) ----------
@@ -746,6 +786,7 @@ function localMatches(pool) {
 async function s2Search() {
   const S = state.search, params = new URLSearchParams({query: S.q, fields: S2F});
   if (S.confs.length) params.set("venue", S.confs.map(k => CONF[k].s2).join(","));
+  params.set("fieldsOfStudy", "Computer Science,Engineering,Mathematics");
   const yr = yearRange(); if (yr) params.set("year", yr);
   let url;
   if (S.sort === "relevance") { params.set("limit", S.arxiv ? "100" : "40"); url = "https://api.semanticscholar.org/graph/v1/paper/search?" + params; }
@@ -767,7 +808,9 @@ async function s2Search() {
 }
 
 async function oaSearch() {
-  const S = state.search, f = [];
+  // computer science subfields + control/systems & electrical engineering + applied math/statistics (drops dinosaurs, genomics, …)
+  const SUB = [...Array(13).keys()].map(i => `subfields/${1700 + i}`).concat(["subfields/2207", "subfields/2208", "subfields/2604", "subfields/2611", "subfields/2613"]);
+  const S = state.search, f = ["primary_topic.subfield.id:" + SUB.join("|"), "type:article|preprint"];
   const yr = yearRange(); if (yr) f.push(`publication_year:${yr}`);
   const params = new URLSearchParams({search: S.q, "per-page": "100",
     sort: {relevance: "relevance_score:desc", citations: "cited_by_count:desc", newest: "publication_date:desc"}[S.sort],
@@ -819,7 +862,7 @@ async function runSearch() {
 }
 
 function fullRow(p) {
-  return `<article class="card"><div class="meta-row">${venueBadge(p.venue)}</div>
+  return `<article class="card"><div class="meta-row">${venueBadge(p.venue)}${citeBadge(p)}</div>
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
     <p class="authors" style="margin:0">${esc(p.authorsStr)}</p>
     <div class="links" style="margin-top:8px"><a href="${esc(p.url)}" target="_blank" rel="noopener">${/openreview/.test(p.url) ? "OpenReview" : "Paper"}</a>
@@ -829,7 +872,7 @@ function fullRow(p) {
 
 function resultCard(p) {
   return `<article class="card">
-    <div class="meta-row">${venueBadge(p.venue)}${p.citations != null ? `<span class="badge cite" title="Citation counts differ by source: Semantic Scholar and OpenAlex count different citing documents (preprints, duplicates), and Google Scholar updates on its own schedule, so a brand-new paper can read 0, 4 or 6 depending on where you look.">${p.citations.toLocaleString()} citations · ${p.citeSrc}</span>` : ""}${p.arxiv ? `<span class="badge cite">arXiv ${esc(p.arxiv)}</span>` : ""}<span class="rel">${esc(p.date || p.year || "")}</span></div>
+    <div class="meta-row">${venueBadge(p.venue)}${citeBadge(p)}${p.arxiv ? `<span class="badge cite">arXiv ${esc(p.arxiv)}</span>` : ""}<span class="rel">${esc(p.date || p.year || "")}</span></div>
     <h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
     <p class="authors">${authors(p)}</p>
     ${p.abstract ? `<p class="summary">${esc(p.abstract.length > 300 ? p.abstract.slice(0, 300).replace(/\s\S*$/, "") + "…" : p.abstract)}</p>` : ""}
@@ -840,7 +883,7 @@ function resultCard(p) {
 
 function showResults() {
   const r = state.sres, S = state.search, box = $("sres"); if (!r || !box) return;
-  const where = S.arxiv ? "arXiv" : S.confs.length ? S.confs.join(", ") : "CoRL, RSS, ICLR, ICML, NeurIPS + my digest";
+  const where = S.arxiv ? "arXiv" : S.confs.length ? S.confs.join(", ") : `${ARCHIVE.length} conferences/journals + my digest`;
   const shown = r.local.slice(0, r.n);
   box.innerHTML = extLinks() +
     `<div class="section-h"><h2>Conference papers &amp; my digest</h2><span>${r.local.length.toLocaleString()} match${r.local.length === 1 ? "" : "es"} in ${r.pool.toLocaleString()} papers · ${esc(where)}</span></div>` +
@@ -850,6 +893,7 @@ function showResults() {
     `<div class="section-h"><h2>More from the literature</h2><span>${r.remote ? `${r.remote.length} other results · via ${r.source}` : "searching…"}</span></div>` +
     (r.remote == null ? '<p class="empty">Searching Semantic Scholar…</p>' : r.err ? `<p class="empty">${esc(r.err)}</p>` : r.remote.length ? r.remote.map(resultCard).join("") : `<p class="empty">Nothing else found.</p>`);
   const m = $("smore"); if (m) m.onclick = () => { r.n += 30; showResults(); };
+  fillCites(box);
 }
 
 async function getJSON(u) { const r = await fetch(u, {cache: "no-cache"}); if (!r.ok) throw new Error(u); return r.json(); }
