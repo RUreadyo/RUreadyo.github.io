@@ -508,21 +508,43 @@ async function renderTrending(c) {
     state.trendAll = [...by.values()].map(p => ({...p, cluster: clusterOf(p)}));
     if (state.view !== "ml") return;
   }
-  const period = state.trendPeriod || "month", cut = new Date(Date.now() - (period === "week" ? 7 : 31) * 864e5).toISOString().slice(0, 10);
-  const f = p => p.day >= cut && (!state.q || (p.title + " " + p.summary + " " + (p.org || "")).toLowerCase().includes(state.q));
-  const items = state.trendAll.filter(f).sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+  const period = state.trendPeriod || "month";
+  const isYear = /^\d{4}$/.test(period);
+  if (isYear && !state.trendArch) {
+    c.innerHTML = '<p class="empty">Loading the monthly archive…</p>';
+    const d = await getJSON("data/trending.json").catch(() => ({months: {}}));
+    state.trendArch = d.months || {};
+    if (state.view !== "ml") return;
+  }
+  const qf = p => !state.q || (p.title + " " + p.summary + " " + (p.org || "")).toLowerCase().includes(state.q);
+  let pool;
+  if (isYear) {  // top papers of each month (from data/trending.json), optionally one month
+    const mon = state.trendMonth, by = new Map();
+    for (const [m, l] of Object.entries(state.trendArch)) if (m.startsWith(period) && (!mon || m === `${period}-${mon}`))
+      for (const p of l) if (!by.has(p.id) || p.upvotes > by.get(p.id).upvotes) by.set(p.id, {...p, cluster: clusterOf(p)});
+    pool = [...by.values()];
+  } else {
+    const cut = new Date(Date.now() - (period === "week" ? 7 : 31) * 864e5).toISOString().slice(0, 10);
+    pool = state.trendAll.filter(p => p.day >= cut);
+  }
+  const items = pool.filter(qf).sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
   const groups = [...ML_CLUSTERS.map(([n]) => n), "Other"].map(n => [n, items.filter(p => p.cluster === n)]).filter(([, l]) => l.length);
   const sel = state.trendCluster && groups.some(([n]) => n === state.trendCluster) ? state.trendCluster : null;
   const open = state.trendOpen || (state.trendOpen = {});
-  c.innerHTML = `<div class="filters"><span class="lbl">Period</span>${[["week", "This week"], ["month", "Last 30 days"]].map(([k, v]) => `<button class="chip ${period === k ? "on" : ""}" data-tp="${k}">${v}</button>`).join("")}</div>
+  const nowY = new Date().getUTCFullYear(), yrs = Array.from({length: nowY - 2022}, (_, i) => String(nowY - i));
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const monthRow = isYear ? `<div class="filters"><span class="lbl">Month</span><button class="chip ${!state.trendMonth ? "on" : ""}" data-tm2="">Whole year</button>${MONTHS.map((n, i) => {
+      const mm = String(i + 1).padStart(2, "0"); return state.trendArch[`${period}-${mm}`] ? `<button class="chip ${state.trendMonth === mm ? "on" : ""}" data-tm2="${mm}">${n}</button>` : ""; }).join("")}</div>` : "";
+  c.innerHTML = `<div class="filters"><span class="lbl">Period</span>${[["week", "This week"], ["month", "Last 30 days"], ...yrs.map(y => [y, y])].map(([k, v]) => `<button class="chip ${period === k ? "on" : ""}" data-tp="${k}">${v}</button>`).join("")}</div>${monthRow}
     <div class="filters"><span class="lbl">Theme</span><button class="chip ${!sel ? "on" : ""}" data-tc="">All themes</button>${groups.map(([n, l]) => `<button class="chip ${sel === n ? "on" : ""}" data-tc="${esc(n)}">${esc(n)} <span style="opacity:.6">${l.length}</span></button>`).join("")}</div>
-    <p class="note">Most upvoted papers on Hugging Face Daily Papers, grouped by theme so the rest of ML stays visible. Within each theme, sorted by upvotes.</p>
+    <p class="note">Most upvoted papers on Hugging Face Daily Papers, grouped by theme so the rest of ML stays visible. Within each theme, sorted by upvotes.${isYear ? " Year view: the top 50 papers of each month." : ""}</p>
     ${groups.filter(([n]) => !sel || n === sel).map(([n, l]) => {
       const lim = sel || open[n] ? l.length : 6;
       return `<div class="section-h"><h2>${esc(n)}</h2><span>${l.length} papers</span></div><div class="grid">${l.slice(0, lim).map(mlCard).join("")}</div>
         ${l.length > lim ? `<button class="more" data-to="${esc(n)}">Show ${l.length - lim} more ${esc(n.toLowerCase())}</button>` : ""}`;
     }).join("") || '<p class="empty">Nothing trending in this window.</p>'}`;
-  c.querySelectorAll("[data-tp]").forEach(b => b.onclick = () => { state.trendPeriod = b.dataset.tp; renderTrending(c); });
+  c.querySelectorAll("[data-tp]").forEach(b => b.onclick = () => { state.trendPeriod = b.dataset.tp; state.trendMonth = null; state.trendOpen = {}; renderTrending(c); });
+  c.querySelectorAll("[data-tm2]").forEach(b => b.onclick = () => { state.trendMonth = b.dataset.tm2 || null; state.trendOpen = {}; renderTrending(c); });
   c.querySelectorAll("[data-tc]").forEach(b => b.onclick = () => { state.trendCluster = b.dataset.tc || null; renderTrending(c); });
   c.querySelectorAll("[data-to]").forEach(b => b.onclick = () => { open[b.dataset.to] = true; renderTrending(c); });
 }

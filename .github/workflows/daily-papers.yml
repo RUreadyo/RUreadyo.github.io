@@ -37,6 +37,9 @@ jobs:
           except FileNotFoundError:
               sys.exit(0)
           PY
+      - name: Update trending-ML monthly archive
+        continue-on-error: true
+        run: timeout 300 python scripts/trending_archive.py || true
       - name: Update conference archive (new proceedings only; weekly)
         continue-on-error: true
         run: |
