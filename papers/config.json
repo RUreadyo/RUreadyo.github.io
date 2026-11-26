@@ -289,7 +289,19 @@
         "vlm-based planner": 5,
         "language-model planner": 5,
         "agent framework": 4
-      }
+      },
+      "require": [
+        "robot",
+        "robots",
+        "robotic",
+        "robotics",
+        "embodied",
+        "manipulation",
+        "humanoid",
+        "navigation",
+        "locomotion",
+        "mobile manipulator"
+      ]
     }
   },
   "tracked_authors": [

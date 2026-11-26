@@ -132,9 +132,19 @@ def fetch_window(cfg, since, until):
 
 
 # --------------------------------------------------------------------------- scoring
+def _rx(kw):
+    return re.compile(r"(?<![a-z0-9])" + re.escape(kw.lower()) + r"(?![a-z0-9])")
+
+
 def compile_topics(cfg):
-    return {k: [(re.compile(r"(?<![a-z0-9])" + re.escape(kw.lower()) + r"(?![a-z0-9])"), w)
-                for kw, w in t["keywords"].items()] for k, t in cfg["topics"].items()}
+    comp = {k: [(_rx(kw), w) for kw, w in t["keywords"].items()] for k, t in cfg["topics"].items()}
+    # topics with "require": only assigned when one of those words also appears (e.g. Agentic needs a robot context)
+    REQUIRES.clear()
+    REQUIRES.update({k: [_rx(w) for w in t["require"]] for k, t in cfg["topics"].items() if t.get("require")})
+    return comp
+
+
+REQUIRES = {}
 
 
 def keyword_score(p, comp, tracked):
@@ -142,7 +152,7 @@ def keyword_score(p, comp, tracked):
     per = {}
     for key, pats in comp.items():
         s = sum(2 * w if rx.search(title) else w if rx.search(abst) else 0 for rx, w in pats)
-        if s:
+        if s and (key not in REQUIRES or any(rx.search(title) or rx.search(abst) for rx in REQUIRES[key])):
             per[key] = s
     p["tracked_authors"] = [a for a in p["authors"] if a in tracked]
     p["topics"] = sorted(per, key=per.get, reverse=True)[:3]

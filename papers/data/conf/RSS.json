@@ -631,6 +631,35 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p081.pdf"
 },
 {
+"id": "RSS2026-73",
+"title": "Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control",
+"authors": [
+"William Chen",
+"Jagdeep Singh Bhatia",
+"Catherine Glossop",
+"Nikhil Mathihalli",
+"Andy Tang",
+"Ria Doshi",
+"Danny Driess",
+"Karl Pertsch",
+"Sergey Levine"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"FM",
+"Agentic"
+],
+"tracked_authors": [
+"Sergey Levine"
+],
+"score": 30,
+"tldr": "Pretrained vision-language models (VLMs) can make semantic and visual inferences across diverse settings, providing valuable common-sense priors for robotic control.",
+"abstract": "Pretrained vision-language models (VLMs) can make semantic and visual inferences across diverse settings, providing valuable common-sense priors for robotic control. However, effectively grounding this knowledge in robot behaviors remains an open challenge. Prior methods often employ a hierarchical approach where VLMs reason over high-level commands to be executed by separate low-level policies, e.g., vision-language-action models (VLAs). The interface between VLMs and VLAs is usually *natural language task instructions*, which fundamentally limits how much VLM reasoning can steer low-level behavior. We thus introduce Steerable Policies: VLAs trained on rich synthetic commands at various levels of abstraction, like subtasks, motions, and grounded pixel coordinates. By improving low-level controllability, Steerable Policies can unlock pretrained knowledge in VLMs, enabling improved task generalization. We demonstrate this benefit by controlling our Steerable Policies with both a learned high-level embodied reasoner and an off-the-shelf VLM prompted to reason over command abstractions via in-context learning. Across extensive real-world manipulation experiments, these two novel methods outperform prior embodied reasoning VLAs and VLM-based hierarchical baselines, including on challenging generalization and long-horizon tasks.",
+"url": "https://www.roboticsproceedings.org/rss22/p074.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p074.pdf"
+},
+{
 "id": "RSS2026-181",
 "title": "ELVIS: Ensemble-Calibrated Latent Imagination for Long-Horizon Visual MPC",
 "authors": [
@@ -870,6 +899,39 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p122.pdf"
 },
 {
+"id": "RSS2026-183",
+"title": "KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning",
+"authors": [
+"Yixuan Huang",
+"Bowen Li",
+"Vaibhav Saxena",
+"Yichao Liang",
+"Utkarsh Aashu Mishra",
+"Liang Ji",
+"Lihan Zha",
+"Jimmy Wu",
+"Nishanth Kumar",
+"Sebastian Scherer",
+"Danfei Xu",
+"Tom Silver"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"IL",
+"Agentic",
+"RL"
+],
+"tracked_authors": [
+"Danfei Xu"
+],
+"score": 27,
+"tldr": "We introduce KinDER, a benchmark for Kinematic and Dynamic Embodied Reasoning that targets physical reasoning challenges arising in robot learning and planning.",
+"abstract": "Robotic systems that interact with the physical world must reason about kinematic and dynamic constraints imposed by their own embodiment, their environment, and the task at hand. We introduce KinDER, a benchmark for Kinematic and Dynamic Embodied Reasoning that targets physical reasoning challenges arising in robot learning and planning. KinDER comprises 25 procedurally generated environments, a Gymnasium-compatible Python library with parameterized skills and demonstrations, and a standardized evaluation suite with 8 implemented baselines spanning task and motion planning, imitation learning, reinforcement learning, and foundation-model-based approaches. The environments are designed to isolate five core physical reasoning challenges: basic spatial relations, nonprehensile multi-object manipulation, tool use, combinatorial geometric constraints, and dynamic constraints, disentangled from perception, language understanding, and application-specific complexity. Empirical evaluation shows that existing methods struggle to solve many of the environments, indicating substantial gaps in current approaches to physical reasoning. We additionally include real-to-sim-to-real experiments on a mobile manipulator to assess the correspondence between simulation and real-world physical interaction. KinDER is fully open-sourced and intended to enable systematic comparison across diverse paradigms for advancing physical reasoning in robotics.",
+"url": "https://www.roboticsproceedings.org/rss22/p184.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p184.pdf"
+},
+{
 "id": "RSS2026-11",
 "title": "Self-Improving Robot Policy with Compositional World Model",
 "authors": [
@@ -922,6 +984,29 @@
 "abstract": "Dexterous grasping is fundamental to robotics, yet data-driven grasp prediction heavily relies on large, diverse datasets that are costly to generate and typically limited to a narrow set of gripper morphologies. Analytical grasp synthesis can be used to scale data collection, but necessary simplifying assumptions often yield physically infeasible grasps that need to be filtered in high-fidelity simulators, significantly reducing the total number of grasps and their diversity. We propose a scalable generate-and-refine pipeline for synthesizing large-scale, diverse, and physically feasible grasps. Instead of using high-fidelity simulators solely for verification and filtering, we leverage them as an optimization stage that continuously improves grasp quality without discarding precomputed candidates. More specifically, we initialize an evolutionary search with a seed set of analytically generated, potentially suboptimal grasps. We then refine these proposals directly in a high-fidelity simulator (Isaac Sim) using an asynchronous, gradient-free evolutionary algorithm, improving stability while maintaining diversity. In addition, this refinement stage can be guided toward human preferences and/or domain-specific quality metrics without requiring a differentiable objective. We further distill the refined grasp distribution into a diffusion model for robust real-world deployment, and highlight the role of diversity for both effective training and during deployment. Experiments on a newly introduced Handles dataset and a DexGraspNet subset demonstrate that our approach achieves over 120 distinct stable grasps per object (a 1.7-6x improvement over unrefined analytical methods) while outperforming diffusion-based alternatives by 46-60% in unique grasp coverage.",
 "url": "https://www.roboticsproceedings.org/rss22/p059.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p059.pdf"
+},
+{
+"id": "RSS2026-63",
+"title": "Self-Supervised Bootstrapping of Action-Predictive Embodied Reasoning",
+"authors": [
+"Milan Ganai",
+"Katie Z. Luo",
+"Jonas Frey",
+"Clark Barrett",
+"Marco Pavone"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"Agentic",
+"FM"
+],
+"tracked_authors": [],
+"score": 26,
+"tldr": "We introduce R&B-EnCoRe, which enables models to bootstrap embodied reasoning from internet-scale knowledge through self-supervised refinement.",
+"abstract": "Embodied Chain-of-Thought (CoT) reasoning has significantly enhanced Vision-Language-Action (VLA) models, yet current methods rely on rigid templates to specify reasoning primitives (e.g., objects in the scene, high-level plans, structural affordances). These templates can force policies to process irrelevant information that distracts from critical action-prediction signals. This creates a bottleneck: without successful policies, we cannot verify reasoning quality; without quality reasoning, we cannot build robust policies. We introduce R&B-EnCoRe, which enables models to bootstrap embodied reasoning from internet-scale knowledge through self-supervised refinement. By treating reasoning as a latent variable within importance-weighted variational inference, models can generate and distill a refined reasoning training dataset of embodiment-specific strategies without external rewards, verifiers, or human annotation. We validate R&B-EnCoRe across manipulation (Franka Panda in simulation, WidowX in hardware), legged navigation (bipedal, wheeled, bicycle, quadruped), and autonomous driving embodiments using various VLA architectures with 1B, 4B, 7B, and 30B parameters. Our approach achieves 28% gains in manipulation success, 101% improvement in navigation scores, and 21% reduction in collision-rate metric over models that indiscriminately reason about all available primitives. R&B-EnCoRe enables models to distill reasoning that is predictive of successful control, bypassing manual annotation engineering while grounding internet-scale knowledge in physical execution.",
+"url": "https://www.roboticsproceedings.org/rss22/p064.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p064.pdf"
 },
 {
 "id": "RSS2026-88",
@@ -1224,6 +1309,37 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p055.pdf"
 },
 {
+"id": "RSS2026-82",
+"title": "BagelVLA: Enhancing Long-Horizon Manipulation via Interleaved Vision-Language-Action Generation",
+"authors": [
+"Yucheng Hu",
+"Jianke Zhang",
+"Yuanfei Luo",
+"Yanjiang Guo",
+"Xiaoyu Chen",
+"Sun Xinshu",
+"Kun Feng",
+"Qingzhou Lu",
+"Sheng Chen",
+"Yangang Zhang",
+"Wei Li",
+"Jianyu Chen"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"FM",
+"Agentic",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 23,
+"tldr": "To bridge this gap, we propose BagelVLA, a unified model that integrates linguistic planning, visual forecasting, and action generation within a single framework.",
+"abstract": "Equipping embodied agents with the ability to reason about tasks, foresee physical outcomes, and generate precise actions is essential for general-purpose manipulation. While recent Vision-Language-Action (VLA) models have leveraged pre-trained foundation models, they typically focus on either linguistic planning or visual forecasting in isolation. These methods rarely integrate both capabilities simultaneously to guide action generation, leading to suboptimal performance in complex, long-horizon manipulation tasks. To bridge this gap, we propose BagelVLA, a unified model that integrates linguistic planning, visual forecasting, and action generation within a single framework. Initialized from a pretrained unified understanding and generative model, BagelVLA is trained to interleave textual reasoning and visual prediction directly into the action execution loop. To efficiently couple these modalities, we introduce Residual Flow Guidance (RFG), which initializes from current observation and leverages single-step denoising to extract predictive visual features, guiding action generation with minimal latency. Extensive experiments demonstrate that BagelVLA outperforms existing baselines by a significant margin on multiple simulated and real-world benchmarks, particularly in tasks requiring multi-stage reasoning.",
+"url": "https://www.roboticsproceedings.org/rss22/p083.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p083.pdf"
+},
+{
 "id": "RSS2026-123",
 "title": "One Hand to Rule Them All: Canonical Representations for Unified Dexterous Manipulation",
 "authors": [
@@ -1243,39 +1359,6 @@
 "abstract": "Dexterous manipulation policies today largely assume fixed hand designs, severely restricting their generalization to new embodiments with varied kinematic and structural layouts. To overcome this limitation, we introduce a parameterized canonical representation that unifies a broad spectrum of dexterous hand architectures. It comprises a unified parameter space and a canonical URDF format, offering three key advantages. 1) The parameter space captures essential morphological and kinematic variations for effective conditioning in learning algorithms. 2) A structured latent manifold can be learned over our space, where interpolations between embodiments yield smooth and physically meaningful morphology transitions. 3) The canonical URDF standardizes the action space while preserving dynamic and functional properties of the original URDFs, enabling efficient and reliable cross-embodiment policy learning. We validate these advantages through extensive analysis and experiments, including grasp policy replay, variational autoencoder (VAE) latent encoding, and cross-embodiment zero-shot transfer. Specifically, we train a VAE on the unified representation to obtain a compact, semantically rich latent embedding, and develop a grasping policy conditioned on the canonical representation that generalizes across dexterous hands. We demonstrate, through simulation and real-world tasks on unseen morphologies (e.g., 81.9% zero-shot success rate on 3-finger leap hand), that our framework unifies both the representational and action spaces of structurally diverse hands, providing a scalable foundation for cross-hand learning towards universal dexterous manipulation. Anonymous project website: https://ohra-anonymous.github.io/.",
 "url": "https://www.roboticsproceedings.org/rss22/p124.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p124.pdf"
-},
-{
-"id": "RSS2026-183",
-"title": "KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning",
-"authors": [
-"Yixuan Huang",
-"Bowen Li",
-"Vaibhav Saxena",
-"Yichao Liang",
-"Utkarsh Aashu Mishra",
-"Liang Ji",
-"Lihan Zha",
-"Jimmy Wu",
-"Nishanth Kumar",
-"Sebastian Scherer",
-"Danfei Xu",
-"Tom Silver"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"IL",
-"RL",
-"Control"
-],
-"tracked_authors": [
-"Danfei Xu"
-],
-"score": 22,
-"tldr": "We introduce KinDER, a benchmark for Kinematic and Dynamic Embodied Reasoning that targets physical reasoning challenges arising in robot learning and planning.",
-"abstract": "Robotic systems that interact with the physical world must reason about kinematic and dynamic constraints imposed by their own embodiment, their environment, and the task at hand. We introduce KinDER, a benchmark for Kinematic and Dynamic Embodied Reasoning that targets physical reasoning challenges arising in robot learning and planning. KinDER comprises 25 procedurally generated environments, a Gymnasium-compatible Python library with parameterized skills and demonstrations, and a standardized evaluation suite with 8 implemented baselines spanning task and motion planning, imitation learning, reinforcement learning, and foundation-model-based approaches. The environments are designed to isolate five core physical reasoning challenges: basic spatial relations, nonprehensile multi-object manipulation, tool use, combinatorial geometric constraints, and dynamic constraints, disentangled from perception, language understanding, and application-specific complexity. Empirical evaluation shows that existing methods struggle to solve many of the environments, indicating substantial gaps in current approaches to physical reasoning. We additionally include real-to-sim-to-real experiments on a mobile manipulator to assess the correspondence between simulation and real-world physical interaction. KinDER is fully open-sourced and intended to enable systematic comparison across diverse paradigms for advancing physical reasoning in robotics.",
-"url": "https://www.roboticsproceedings.org/rss22/p184.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p184.pdf"
 },
 {
 "id": "RSS2026-8",
@@ -1403,34 +1486,6 @@
 "abstract": "While gradient-based methods can efficiently optimize trajectories and controllers by exploiting physical priors and differentiable simulators, contact-rich manipulation remains challenging due to discontinuous and vanishing gradients arising from hybrid contact dynamics. Recent methods smooth the dynamics to obtain continuous gradients, but the resulting model mismatch often causes controller failures when executed on real systems. We address this trade-off by developing a framework that plans efficiently with smoothed dynamics while explicitly quantifying and compensating for the induced modeling errors. Our method provides formal guarantees of constraint satisfaction and goal reachability on the true hybrid dynamics, enabling robust gradient-based synthesis for contact-rich manipulation. Specifically, we construct smooth approximations of both system dynamics and contact geometry to obtain a well-conditioned optimization landscape, and characterize the discrepancy from the true dynamics as a set-valued deviation. This deviation is incorporated into the optimization of time-varying affine feedback policies that admit analytical predictions of true system behavior under feedback, while relying solely on informative gradients from the smoothed dynamics. We evaluate our method on several contact-rich tasks, including planar pushing, object rotation, and in-hand dexterous manipulation, achieving guaranteed constraint satisfaction with lower goal error than baselines. By bridging differentiable physics with set-valued robust control, our method is the first certifiable gradient-based policy synthesis method for contact-rich manipulation.",
 "url": "https://www.roboticsproceedings.org/rss22/p190.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p190.pdf"
-},
-{
-"id": "RSS2026-73",
-"title": "Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control",
-"authors": [
-"William Chen",
-"Jagdeep Singh Bhatia",
-"Catherine Glossop",
-"Nikhil Mathihalli",
-"Andy Tang",
-"Ria Doshi",
-"Danny Driess",
-"Karl Pertsch",
-"Sergey Levine"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"FM"
-],
-"tracked_authors": [
-"Sergey Levine"
-],
-"score": 20,
-"tldr": "Pretrained vision-language models (VLMs) can make semantic and visual inferences across diverse settings, providing valuable common-sense priors for robotic control.",
-"abstract": "Pretrained vision-language models (VLMs) can make semantic and visual inferences across diverse settings, providing valuable common-sense priors for robotic control. However, effectively grounding this knowledge in robot behaviors remains an open challenge. Prior methods often employ a hierarchical approach where VLMs reason over high-level commands to be executed by separate low-level policies, e.g., vision-language-action models (VLAs). The interface between VLMs and VLAs is usually *natural language task instructions*, which fundamentally limits how much VLM reasoning can steer low-level behavior. We thus introduce Steerable Policies: VLAs trained on rich synthetic commands at various levels of abstraction, like subtasks, motions, and grounded pixel coordinates. By improving low-level controllability, Steerable Policies can unlock pretrained knowledge in VLMs, enabling improved task generalization. We demonstrate this benefit by controlling our Steerable Policies with both a learned high-level embodied reasoner and an off-the-shelf VLM prompted to reason over command abstractions via in-context learning. Across extensive real-world manipulation experiments, these two novel methods outperform prior embodied reasoning VLAs and VLM-based hierarchical baselines, including on challenging generalization and long-horizon tasks.",
-"url": "https://www.roboticsproceedings.org/rss22/p074.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p074.pdf"
 },
 {
 "id": "RSS2026-98",
@@ -1593,34 +1648,31 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p015.pdf"
 },
 {
-"id": "RSS2026-82",
-"title": "BagelVLA: Enhancing Long-Horizon Manipulation via Interleaved Vision-Language-Action Generation",
+"id": "RSS2026-35",
+"title": "A Closed-Loop Multi-Agent Framework for Robust Multi-Robot Manipulation",
 "authors": [
-"Yucheng Hu",
-"Jianke Zhang",
-"Yuanfei Luo",
-"Yanjiang Guo",
-"Xiaoyu Chen",
-"Sun Xinshu",
-"Kun Feng",
-"Qingzhou Lu",
-"Sheng Chen",
-"Yangang Zhang",
-"Wei Li",
-"Jianyu Chen"
+"Yi-Xiang He",
+"Lan Wei",
+"Haoming Cen",
+"Jian-Jian Jiang",
+"Zhuohao Li",
+"Guanxing Lu",
+"Yihan Yang",
+"Dandan Zhang",
+"Wei-Shi Zheng"
 ],
 "venue": "RSS 2026",
 "year": 2026,
 "topics": [
-"FM",
-"GenModel"
+"Agentic",
+"Dex"
 ],
 "tracked_authors": [],
-"score": 18,
-"tldr": "To bridge this gap, we propose BagelVLA, a unified model that integrates linguistic planning, visual forecasting, and action generation within a single framework.",
-"abstract": "Equipping embodied agents with the ability to reason about tasks, foresee physical outcomes, and generate precise actions is essential for general-purpose manipulation. While recent Vision-Language-Action (VLA) models have leveraged pre-trained foundation models, they typically focus on either linguistic planning or visual forecasting in isolation. These methods rarely integrate both capabilities simultaneously to guide action generation, leading to suboptimal performance in complex, long-horizon manipulation tasks. To bridge this gap, we propose BagelVLA, a unified model that integrates linguistic planning, visual forecasting, and action generation within a single framework. Initialized from a pretrained unified understanding and generative model, BagelVLA is trained to interleave textual reasoning and visual prediction directly into the action execution loop. To efficiently couple these modalities, we introduce Residual Flow Guidance (RFG), which initializes from current observation and leverages single-step denoising to extract predictive visual features, guiding action generation with minimal latency. Extensive experiments demonstrate that BagelVLA outperforms existing baselines by a significant margin on multiple simulated and real-world benchmarks, particularly in tasks requiring multi-stage reasoning.",
-"url": "https://www.roboticsproceedings.org/rss22/p083.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p083.pdf"
+"score": 19,
+"tldr": "To address this, we propose a novel closed-loop agentic LLM-based framework to ensure robust multi-robot manipulation.",
+"abstract": "Multi-robot systems provide the parallelism and redundancy necessary for long-horizon tasks, while Large Language Models (LLMs) offer the reasoning capabilities to decompose these objectives into actionable plans. However, effectively grounding this high-level reasoning in physical multi-agent execution remains an open challenge. Existing LLM-based approaches fall mainly into two categories: Single-robot methods achieve robust contact-rich manipulation but lack the coordination mechanisms required for tasks spanning multiple workspaces. Current multi-robot frameworks focus on high-level planning, often treating manipulation as an idealized primitive that fails to account for real-world execution uncertainties. To address this, we propose a novel closed-loop agentic LLM-based framework to ensure robust multi-robot manipulation. Our system consists of three specialized agents: the Planning Agent decomposes instructions into allocated sub-tasks, the Manipulation Agent for each robot executes actions via adaptive tool use, and the Verification Agent closes the loop by monitoring physical outcomes and feeding back semantic corrections. Extensive real-world experiments demonstrate that our framework achieves superior success rates, ensures robust adaptability ranging from single to cross workspace manipulation, and offers a generalizable approach for diverse manipulation tasks.",
+"url": "https://www.roboticsproceedings.org/rss22/p036.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p036.pdf"
 },
 {
 "id": "RSS2026-96",
@@ -1963,6 +2015,34 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p112.pdf"
 },
 {
+"id": "RSS2026-131",
+"title": "Beyond Isolation: A Unified Benchmark for General-Purpose Navigation",
+"authors": [
+"Seson Sun",
+"Tianyi Yang",
+"Tengyue Wang",
+"Yikai Xue",
+"Zhengjie Xu",
+"Lingming Zhang",
+"Qichen Zhang",
+"Chao Liang",
+"Zhipeng Zhang"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"Agentic",
+"IL",
+"FM"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "To bridge this gap, we introduce OmniNavBench, a holistic benchmark designed to rigorously assess cross-skill coordination and cross-embodiment generalization.",
+"abstract": "The pursuit of general-purpose embodied agents is currently hindered by fragmented evaluation protocols that isolate navigation skills and fixate on specific robot morphologies. This disconnect fails to reflect real-world scenarios where agents must orchestrate diverse behaviors across varying physical embodiments. To bridge this gap, we introduce OmniNavBench, a holistic benchmark designed to rigorously assess cross-skill coordination and cross-embodiment generalization. Distinguished from existing datasets, OmniNavBench introduces three paradigm shifts: (1) Compositional Complexity. We propose composite instructions that interleave sub-tasks from 6 distinct categories (i.e., PointNav, VLN, ObjectNav, SocialNav, Human Following and EQA), compelling agents to seamlessly transition between exploration, interaction, and social compliance within a single unified episode. (2) Morphological Universality and Sensor Flexibility. We present a simulation platform that breaks the reliance on single-morphology evaluation. This ecosystem empowers researchers to test generalization across different robot types, including humanoid, quadrupedal, and wheeled, while accommodating diverse algorithmic needs through a modular sensor interface and a hybrid suite of 170 environments blending synthetic assets with real-world scans. (3) Demonstrations Quality. Moving beyond mechanical shortest-path algorithms, we curate 1,769 expert trajectories via human teleoperation, capturing critical behavioral nuances, such as exploratory glance and anticipatory avoidance, essential for natural human-robot coexistence. Extensive evaluations demonstrate that current methods, despite their claimed unified design, struggle to adapt to the complex, interleaved nature of truly general-purpose navigation. This",
+"url": "https://www.roboticsproceedings.org/rss22/p132.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p132.pdf"
+},
+{
 "id": "RSS2026-140",
 "title": "Contact-Anchored Policies: Contact Conditioning Creates Strong Robot Utility Models",
 "authors": [
@@ -2023,6 +2103,33 @@
 "abstract": "Scaling robot learning to long-horizon tasks remains a formidable challenge. While end-to-end policies often lack the structural priors needed for effective long-term reasoning, traditional neuro-symbolic methods rely heavily on hand-crafted symbolic priors. To address the issue, we introduce ENAP (Emergent Neural Automaton Policy), a framework that allows bi-level neuro-symbolic policy adaptively emerges from demonstrations. Specifically, we first employ adaptive clustering and an extension of the L* algorithm to infer a Mealy state machine from visuomotor data, which serves as an interpretable high-level planner capturing latent task modes. Then, this discrete structure guides a low-level reactive residual network to learn precise continuous control via behavior cloning. By explicitly modeling the task policy with discrete transitions and continuous residuals, ENAP achieves high sample efficiency and interpretability without requiring task-specific labels. Extensive experiments on complex manipulation and long-horizon tasks demonstrate that ENAP outperforms state-of-the-art end-to-end VLA policies by up to 27% in low-data regimes, while offering a structured representation of robotic intent",
 "url": "https://www.roboticsproceedings.org/rss22/p144.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p144.pdf"
+},
+{
+"id": "RSS2026-179",
+"title": "From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph for Robotic Manipulation",
+"authors": [
+"Sheng Xu",
+"Ruixing Jin",
+"Huayi Zhou",
+"Bo Yue",
+"Guanren Qiao",
+"Yunxin Tai",
+"Yueci Deng",
+"Kui Jia",
+"Guiliang Liu"
+],
+"venue": "RSS 2026",
+"year": 2026,
+"topics": [
+"Agentic",
+"Dex"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "Inspired by the human capability to anticipate and proactively plan for potential failures, we introduce AgentChord, an agentic system that models a manipulation task as a directed, recovery-augmented graph.",
+"abstract": "Recent advances in robotic manipulation remain hindered by the inevitability of task failures, particularly in dynamic and unstructured environments. To handle such failure, existing frameworks typically follow a stepwise detect–reason–recover pipeline, which often incurs high latency and limited robustness due to delayed reasoning and reactive planning. Inspired by the human capability to anticipate and proactively plan for potential failures, we introduce AgentChord, an agentic system that models a manipulation task as a directed, recovery-augmented graph. Prior to execution, this graph is enriched with anticipatory recovery branches that specify context-aware corrective behaviors, enabling immediate and targeted responses when failures occur. During execution, AgentChord operates through a choreography of specialized agents, covering a composer for task structuring, an arranger for execution compilation, and a conductor for recovery orchestration. AgentChord coordinates these agents via low-latency monitors that detect deviations and trigger pre-compiled recoveries without re-planning. Empirical studies on diverse long-horizon bimanual manipulation tasks demonstrate that AgentChord substantially improves success rates and execution efficiency, advancing the reliability and autonomy of real-world robotic systems.",
+"url": "https://www.roboticsproceedings.org/rss22/p180.html",
+"pdf": "https://www.roboticsproceedings.org/rss22/p180.pdf"
 },
 {
 "id": "RSS2026-200",
@@ -2671,28 +2778,6 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p204.pdf"
 },
 {
-"id": "RSS2026-63",
-"title": "Self-Supervised Bootstrapping of Action-Predictive Embodied Reasoning",
-"authors": [
-"Milan Ganai",
-"Katie Z. Luo",
-"Jonas Frey",
-"Clark Barrett",
-"Marco Pavone"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"FM"
-],
-"tracked_authors": [],
-"score": 11,
-"tldr": "We introduce R&B-EnCoRe, which enables models to bootstrap embodied reasoning from internet-scale knowledge through self-supervised refinement.",
-"abstract": "Embodied Chain-of-Thought (CoT) reasoning has significantly enhanced Vision-Language-Action (VLA) models, yet current methods rely on rigid templates to specify reasoning primitives (e.g., objects in the scene, high-level plans, structural affordances). These templates can force policies to process irrelevant information that distracts from critical action-prediction signals. This creates a bottleneck: without successful policies, we cannot verify reasoning quality; without quality reasoning, we cannot build robust policies. We introduce R&B-EnCoRe, which enables models to bootstrap embodied reasoning from internet-scale knowledge through self-supervised refinement. By treating reasoning as a latent variable within importance-weighted variational inference, models can generate and distill a refined reasoning training dataset of embodiment-specific strategies without external rewards, verifiers, or human annotation. We validate R&B-EnCoRe across manipulation (Franka Panda in simulation, WidowX in hardware), legged navigation (bipedal, wheeled, bicycle, quadruped), and autonomous driving embodiments using various VLA architectures with 1B, 4B, 7B, and 30B parameters. Our approach achieves 28% gains in manipulation success, 101% improvement in navigation scores, and 21% reduction in collision-rate metric over models that indiscriminately reason about all available primitives. R&B-EnCoRe enables models to distill reasoning that is predictive of successful control, bypassing manual annotation engineering while grounding internet-scale knowledge in physical execution.",
-"url": "https://www.roboticsproceedings.org/rss22/p064.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p064.pdf"
-},
-{
 "id": "RSS2026-66",
 "title": "OpenFrontier: General Navigation with Visual-Language Grounded Frontiers",
 "authors": [
@@ -2880,33 +2965,6 @@
 "abstract": "Robust trajectory optimization enables autonomous systems to operate safely under uncertainty by computing control policies that satisfy the constraints for all bounded disturbances. However, these problems often lead to large Second Order Conic Programming (SOCP) constraints, which are computationally expensive. In this work, we propose the CUDA Nonlinear Robust Trajectory Optimization (cuNRTO) framework by introducing two dynamic optimization architectures that have direct application to robust decision-making and are implemented on CUDA. The first architecture, NRTO-DR, leverages the Douglas-Rachford (DR) splitting method to solve the SOCP inner subproblems of NRTO, thereby significantly reducing the computational burden through parallel SOCP projections and sparse direct solves. The second architecture, NRTO-FullADMM, is a novel variant that further exploits the problem structure to improve scalability using the Alternating Direction Method of Multipliers (ADMM). Finally, we provide a GPU implementation of the proposed methodologies using custom CUDA kernels for SOC projection steps and cuBLAS GEMM chains for feedback gain updates. We validate the performance of cuNRTO through simulated experiments on unicycle, quadcopter, and Franka manipulator models, demonstrating speedup up to 139.6×.",
 "url": "https://www.roboticsproceedings.org/rss22/p102.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p102.pdf"
-},
-{
-"id": "RSS2026-131",
-"title": "Beyond Isolation: A Unified Benchmark for General-Purpose Navigation",
-"authors": [
-"Seson Sun",
-"Tianyi Yang",
-"Tengyue Wang",
-"Yikai Xue",
-"Zhengjie Xu",
-"Lingming Zhang",
-"Qichen Zhang",
-"Chao Liang",
-"Zhipeng Zhang"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"IL",
-"FM"
-],
-"tracked_authors": [],
-"score": 10,
-"tldr": "To bridge this gap, we introduce OmniNavBench, a holistic benchmark designed to rigorously assess cross-skill coordination and cross-embodiment generalization.",
-"abstract": "The pursuit of general-purpose embodied agents is currently hindered by fragmented evaluation protocols that isolate navigation skills and fixate on specific robot morphologies. This disconnect fails to reflect real-world scenarios where agents must orchestrate diverse behaviors across varying physical embodiments. To bridge this gap, we introduce OmniNavBench, a holistic benchmark designed to rigorously assess cross-skill coordination and cross-embodiment generalization. Distinguished from existing datasets, OmniNavBench introduces three paradigm shifts: (1) Compositional Complexity. We propose composite instructions that interleave sub-tasks from 6 distinct categories (i.e., PointNav, VLN, ObjectNav, SocialNav, Human Following and EQA), compelling agents to seamlessly transition between exploration, interaction, and social compliance within a single unified episode. (2) Morphological Universality and Sensor Flexibility. We present a simulation platform that breaks the reliance on single-morphology evaluation. This ecosystem empowers researchers to test generalization across different robot types, including humanoid, quadrupedal, and wheeled, while accommodating diverse algorithmic needs through a modular sensor interface and a hybrid suite of 170 environments blending synthetic assets with real-world scans. (3) Demonstrations Quality. Moving beyond mechanical shortest-path algorithms, we curate 1,769 expert trajectories via human teleoperation, capturing critical behavioral nuances, such as exploratory glance and anticipatory avoidance, essential for natural human-robot coexistence. Extensive evaluations demonstrate that current methods, despite their claimed unified design, struggle to adapt to the complex, interleaved nature of truly general-purpose navigation. This",
-"url": "https://www.roboticsproceedings.org/rss22/p132.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p132.pdf"
 },
 {
 "id": "RSS2026-177",
@@ -3526,32 +3584,6 @@
 "pdf": "https://www.roboticsproceedings.org/rss22/p031.pdf"
 },
 {
-"id": "RSS2026-35",
-"title": "A Closed-Loop Multi-Agent Framework for Robust Multi-Robot Manipulation",
-"authors": [
-"Yi-Xiang He",
-"Lan Wei",
-"Haoming Cen",
-"Jian-Jian Jiang",
-"Zhuohao Li",
-"Guanxing Lu",
-"Yihan Yang",
-"Dandan Zhang",
-"Wei-Shi Zheng"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"Dex"
-],
-"tracked_authors": [],
-"score": 6,
-"tldr": "To address this, we propose a novel closed-loop agentic LLM-based framework to ensure robust multi-robot manipulation.",
-"abstract": "Multi-robot systems provide the parallelism and redundancy necessary for long-horizon tasks, while Large Language Models (LLMs) offer the reasoning capabilities to decompose these objectives into actionable plans. However, effectively grounding this high-level reasoning in physical multi-agent execution remains an open challenge. Existing LLM-based approaches fall mainly into two categories: Single-robot methods achieve robust contact-rich manipulation but lack the coordination mechanisms required for tasks spanning multiple workspaces. Current multi-robot frameworks focus on high-level planning, often treating manipulation as an idealized primitive that fails to account for real-world execution uncertainties. To address this, we propose a novel closed-loop agentic LLM-based framework to ensure robust multi-robot manipulation. Our system consists of three specialized agents: the Planning Agent decomposes instructions into allocated sub-tasks, the Manipulation Agent for each robot executes actions via adaptive tool use, and the Verification Agent closes the loop by monitoring physical outcomes and feeding back semantic corrections. Extensive real-world experiments demonstrate that our framework achieves superior success rates, ensures robust adaptability ranging from single to cross workspace manipulation, and offers a generalizable approach for diverse manipulation tasks.",
-"url": "https://www.roboticsproceedings.org/rss22/p036.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p036.pdf"
-},
-{
 "id": "RSS2026-109",
 "title": "TinySDP: Real Time Semidefinite Optimization for Certifiable and Agile Edge Robotics",
 "authors": [
@@ -3880,32 +3912,6 @@
 "abstract": "Language-conditioned manipulation policies typically process instructions and observations through shared network parameters. This task-state entanglement provides a pathway for observation leakage -- networks learn scene-to-action shortcuts that bypass language grounding entirely. DISC eliminates this failure structurally. Rather than conditioning a universal policy on language, DISC uses a hypernetwork to generate the entire parameter set of a task-specific visuomotor policy from the instruction alone. The generated policy never directly accesses language; therefore, its task-awareness must come from the language. Consequently, observation leakage has no pathway to emerge. On the other hand, generating coherent high-dimensional policy weights is itself a challenging problem. We address it with a two-stage hypernetwork whose refinement stage embeds the structure of gradient-based optimization as a feed-forward inductive bias, producing globally consistent parameters without actual gradient computation. Trained entirely from scratch on standard data budgets, DISC outperforms all entangled baselines on LIBERO-90 and Meta-World, with advantages that widen on complex, long-horizon tasks -- and surpasses the large-scale pretrained π₀ despite using no external pretraining data. On a real-world benchmark where all tasks share identical visual context, DISC substantially outperforms entangled alternatives, directly confirming that generated parameters, not visual shortcuts, drive behavior. The hypernetwork further learns a semantically structured parameter manifold that enables few-shot adaptation from minimal demonstrations and robust generalization across paraphrased instructions.",
 "url": "https://www.roboticsproceedings.org/rss22/p147.html",
 "pdf": "https://www.roboticsproceedings.org/rss22/p147.pdf"
-},
-{
-"id": "RSS2026-179",
-"title": "From Reaction to Anticipation: Proactive Failure Recovery through Agentic Task Graph for Robotic Manipulation",
-"authors": [
-"Sheng Xu",
-"Ruixing Jin",
-"Huayi Zhou",
-"Bo Yue",
-"Guanren Qiao",
-"Yunxin Tai",
-"Yueci Deng",
-"Kui Jia",
-"Guiliang Liu"
-],
-"venue": "RSS 2026",
-"year": 2026,
-"topics": [
-"Dex"
-],
-"tracked_authors": [],
-"score": 5,
-"tldr": "Inspired by the human capability to anticipate and proactively plan for potential failures, we introduce AgentChord, an agentic system that models a manipulation task as a directed, recovery-augmented graph.",
-"abstract": "Recent advances in robotic manipulation remain hindered by the inevitability of task failures, particularly in dynamic and unstructured environments. To handle such failure, existing frameworks typically follow a stepwise detect–reason–recover pipeline, which often incurs high latency and limited robustness due to delayed reasoning and reactive planning. Inspired by the human capability to anticipate and proactively plan for potential failures, we introduce AgentChord, an agentic system that models a manipulation task as a directed, recovery-augmented graph. Prior to execution, this graph is enriched with anticipatory recovery branches that specify context-aware corrective behaviors, enabling immediate and targeted responses when failures occur. During execution, AgentChord operates through a choreography of specialized agents, covering a composer for task structuring, an arranger for execution compilation, and a conductor for recovery orchestration. AgentChord coordinates these agents via low-latency monitors that detect deviations and trigger pre-compiled recoveries without re-planning. Empirical studies on diverse long-horizon bimanual manipulation tasks demonstrate that AgentChord substantially improves success rates and execution efficiency, advancing the reliability and autonomy of real-world robotic systems.",
-"url": "https://www.roboticsproceedings.org/rss22/p180.html",
-"pdf": "https://www.roboticsproceedings.org/rss22/p180.pdf"
 },
 {
 "id": "RSS2026-190",
@@ -6764,6 +6770,27 @@
 "pdf": "https://www.roboticsproceedings.org/rss21/p161.pdf"
 },
 {
+"id": "RSS2025-50",
+"title": "Flow Matching Ergodic Coverage",
+"authors": [
+"Max Muchen Sun",
+"Allison Pinosky",
+"Todd Murphey"
+],
+"venue": "RSS 2025",
+"year": 2025,
+"topics": [
+"GenModel",
+"Agentic"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "In this work, we propose an alternative approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and scalable sampling.",
+"abstract": "Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning the spatial distribution of the agent's trajectory with a target distribution, where the difference between these two distributions is measured by the ergodic metric. However, existing ergodic coverage methods are constrained by the limited set of ergodic metrics available for control synthesis, fundamentally limiting their performance. In this work, we propose an alternative approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and scalable sampling. We formally derive the flow matching problem for ergodic coverage and show that it is equivalent to a linear quadratic regulator problem with a closed-form solution. Our formulation enables alternative ergodic metrics from generative inference that overcome the limitations of existing ones. These metrics were previously infeasible for control synthesis but can now be supported with no computational overhead. Specifically, flow matching with the Stein variational gradient flow enables control synthesis directly over the score function of the target distribution, improving robustness to the unnormalized distributions; on the other hand, flow matching with the Sinkhorn divergence flow enables an optimal transport-based ergodic metric, improving coverage performance on non-smooth distributions with irregular supports. We validate the improved performance and competitive computational efficiency of our method through comprehensive numerical benchmarks and across different nonlinear dynamics. We further demonstrate the practicality of our method through a series of drawing and erasing tasks on a Franka robot.",
+"url": "https://www.roboticsproceedings.org/rss21/p051.html",
+"pdf": "https://www.roboticsproceedings.org/rss21/p051.pdf"
+},
+{
 "id": "RSS2025-58",
 "title": "Demonstrating REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly",
 "authors": [
@@ -7206,26 +7233,6 @@
 "abstract": "We show that contact-rich motion planning is also sparsity-rich when viewed as polynomial optimization (POP). We can exploit not only the correlative and term sparsity patterns that are general to all POPs, but also specialized sparsity patterns from the robot kinematic structure and the separability of contact modes. Such sparsity enables the design of high-order but sparse semidefinite programming (SDPs) relaxations—building upon Lasserre’s moment and sums of squares hierarchy—that (i) can be solved in seconds by off-the-shelf SDP solvers, and (ii) compute near globally optimal solutions to the nonconvex contact-rich planning problems with small certified suboptimality. Through extensive experiments both in simulation (Push Bot, Push Box, Push Box with Obstacles, and Planar Hand) and real world (Push T), we demonstrate the power of using convex SDP relaxations to generate global contact-rich motion plans. As a contribution of independent interest, we release the Sparse Polynomial Optimization Toolbox (SPOT)—implemented in C++ with interfaces to both Python and Matlab—that automates sparsity exploitation for robotics and beyond.",
 "url": "https://www.roboticsproceedings.org/rss21/p046.html",
 "pdf": "https://www.roboticsproceedings.org/rss21/p046.pdf"
-},
-{
-"id": "RSS2025-50",
-"title": "Flow Matching Ergodic Coverage",
-"authors": [
-"Max Muchen Sun",
-"Allison Pinosky",
-"Todd Murphey"
-],
-"venue": "RSS 2025",
-"year": 2025,
-"topics": [
-"GenModel"
-],
-"tracked_authors": [],
-"score": 10,
-"tldr": "In this work, we propose an alternative approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and scalable sampling.",
-"abstract": "Ergodic coverage effectively generates exploratory behaviors for embodied agents by aligning the spatial distribution of the agent's trajectory with a target distribution, where the difference between these two distributions is measured by the ergodic metric. However, existing ergodic coverage methods are constrained by the limited set of ergodic metrics available for control synthesis, fundamentally limiting their performance. In this work, we propose an alternative approach to ergodic coverage based on flow matching, a technique widely used in generative inference for efficient and scalable sampling. We formally derive the flow matching problem for ergodic coverage and show that it is equivalent to a linear quadratic regulator problem with a closed-form solution. Our formulation enables alternative ergodic metrics from generative inference that overcome the limitations of existing ones. These metrics were previously infeasible for control synthesis but can now be supported with no computational overhead. Specifically, flow matching with the Stein variational gradient flow enables control synthesis directly over the score function of the target distribution, improving robustness to the unnormalized distributions; on the other hand, flow matching with the Sinkhorn divergence flow enables an optimal transport-based ergodic metric, improving coverage performance on non-smooth distributions with irregular supports. We validate the improved performance and competitive computational efficiency of our method through comprehensive numerical benchmarks and across different nonlinear dynamics. We further demonstrate the practicality of our method through a series of drawing and erasing tasks on a Franka robot.",
-"url": "https://www.roboticsproceedings.org/rss21/p051.html",
-"pdf": "https://www.roboticsproceedings.org/rss21/p051.pdf"
 },
 {
 "id": "RSS2025-59",
@@ -9717,6 +9724,32 @@
 "pdf": "https://www.roboticsproceedings.org/rss20/p135.pdf"
 },
 {
+"id": "RSS2024-87",
+"title": "Explore until Confident: Efficient Exploration for Embodied Question Answering",
+"authors": [
+"Allen Z. Ren",
+"Jaden Clark",
+"Anushri Dixit",
+"Masha Itkina",
+"Anirudha Majumdar",
+"Dorsa Sadigh"
+],
+"venue": "RSS 2024",
+"year": 2024,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [
+"Allen Z. Ren",
+"Dorsa Sadigh"
+],
+"score": 23,
+"tldr": "In this work, we leverage the strong semantic reasoning capabilities of large vision-language models (VLMs) to efficiently explore and answer such questions.",
+"abstract": "We consider the problem of Embodied Question Answering (EQA), which refers to settings where an embodied agent such as a robot needs to actively explore an environment to gather information until it is confident about the answer to a question. In this work, we leverage the strong semantic reasoning capabilities of large vision-language models (VLMs) to efficiently explore and answer such questions. However, there are two main challenges when using VLMs in EQA: they do not have an internal memory for mapping the scene to be able to plan how to explore over time, and their confidence can be miscalibrated and can cause the robot to prematurely stop exploration or over-explore. We propose a method that first builds a semantic map of the scene based on depth information and via visual prompting of a VLM --- leveraging its vast knowledge of relevant regions of the scene for exploration. Next, we use conformal prediction to calibrate the VLM's question answering confidence, allowing the robot to know when to stop exploration --- leading to a more calibrated and efficient exploration strategy. To test our framework in simulation, we also contribute a new EQA dataset with diverse, realistic human-robot scenarios and scenes built upon the Habitat-Matterport 3D Research Dataset (HM3D). Both simulated and real robot experiments show our proposed approach improves the performance and efficiency over baselines that do no leverage VLM for exploration or do not calibrate its confidence.",
+"url": "https://www.roboticsproceedings.org/rss20/p089.html",
+"pdf": "https://www.roboticsproceedings.org/rss20/p089.pdf"
+},
+{
 "id": "RSS2024-92",
 "title": "DrEureka: Language Model Guided Sim-To-Real Transfer",
 "authors": [
@@ -9921,30 +9954,6 @@
 "abstract": "The ability to reuse collected data and transfer trained policies between robots could alleviate the burden of additional data collection and training. While existing approaches such as pretraining plus finetuning and co-training show promise, they do not generalize to robots unseen in training. Focusing on common robot arms with similar workspaces and 2-jaw grippers, we investigate the feasibility of zero-shot transfer. Through simulation studies on 8 manipulation tasks, we find that state-based Cartesian control policies can successfully zero-shot transfer to a target robot after accounting for forward dynamics. To address robot visual disparities for vision-based policies, we introduce Mirage, which uses “cross-painting”—masking out the unseen target robot and inpainting the seen source robot—during execution in real time so that it appears to the policy as if the trained source robot were performing the task. Mirage applies to both first-person and third-person camera views and policies that take in both states and images as inputs or only images as inputs. Despite its simplicity, our extensive simulation and physical experiments provide strong evidence that Mirage can successfully zero-shot transfer between different robot arms and grippers with only minimal performance degradation on a variety of manipulation tasks such as picking, stacking, and assembly, significantly outperforming a generalist policy.",
 "url": "https://www.roboticsproceedings.org/rss20/p069.html",
 "pdf": "https://www.roboticsproceedings.org/rss20/p069.pdf"
-},
-{
-"id": "RSS2024-87",
-"title": "Explore until Confident: Efficient Exploration for Embodied Question Answering",
-"authors": [
-"Allen Z. Ren",
-"Jaden Clark",
-"Anushri Dixit",
-"Masha Itkina",
-"Anirudha Majumdar",
-"Dorsa Sadigh"
-],
-"venue": "RSS 2024",
-"year": 2024,
-"topics": [],
-"tracked_authors": [
-"Allen Z. Ren",
-"Dorsa Sadigh"
-],
-"score": 18,
-"tldr": "In this work, we leverage the strong semantic reasoning capabilities of large vision-language models (VLMs) to efficiently explore and answer such questions.",
-"abstract": "We consider the problem of Embodied Question Answering (EQA), which refers to settings where an embodied agent such as a robot needs to actively explore an environment to gather information until it is confident about the answer to a question. In this work, we leverage the strong semantic reasoning capabilities of large vision-language models (VLMs) to efficiently explore and answer such questions. However, there are two main challenges when using VLMs in EQA: they do not have an internal memory for mapping the scene to be able to plan how to explore over time, and their confidence can be miscalibrated and can cause the robot to prematurely stop exploration or over-explore. We propose a method that first builds a semantic map of the scene based on depth information and via visual prompting of a VLM --- leveraging its vast knowledge of relevant regions of the scene for exploration. Next, we use conformal prediction to calibrate the VLM's question answering confidence, allowing the robot to know when to stop exploration --- leading to a more calibrated and efficient exploration strategy. To test our framework in simulation, we also contribute a new EQA dataset with diverse, realistic human-robot scenarios and scenes built upon the Habitat-Matterport 3D Research Dataset (HM3D). Both simulated and real robot experiments show our proposed approach improves the performance and efficiency over baselines that do no leverage VLM for exploration or do not calibrate its confidence.",
-"url": "https://www.roboticsproceedings.org/rss20/p089.html",
-"pdf": "https://www.roboticsproceedings.org/rss20/p089.pdf"
 },
 {
 "id": "RSS2024-130",
@@ -13497,6 +13506,51 @@
 "pdf": "https://www.roboticsproceedings.org/rss19/p095.pdf"
 },
 {
+"id": "RSS2023-98",
+"title": "Metric-Free Exploration for Topological Mapping by Task and Motion Imitation in Feature Space",
+"authors": [
+"Yuhang He",
+"Irving Fang",
+"Yiming Li",
+"Rushi Bhavesh Shah",
+"Chen Feng"
+],
+"venue": "RSS 2023",
+"year": 2023,
+"topics": [
+"IL",
+"Agentic"
+],
+"tracked_authors": [],
+"score": 9,
+"tldr": "We propose DeepExplorer, a simple and lightweight metric-free exploration method for topological mapping of unknown environments.",
+"abstract": "We propose DeepExplorer, a simple and lightweight metric-free exploration method for topological mapping of unknown environments. It performs task and motion planning (TAMP) entirely in image feature space. The task planner is a recurrent network using the latest image observation sequence to hallucinate a feature as the next-best exploration goal. The motion planner then utilizes the current and the hallucinated features to generate an action taking the agent towards that goal. Our novel feature hallucination enables imitation learning with deep supervision to jointly train the two planners more efficiently than baseline methods. During exploration, we iteratively call the two planners to predict the next action, and the topological map is built by constantly appending the latest image observation and action to the map and using visual place recognition (VPR) for loop closing. The resulting topological map efficiently represents an environment's connectivity and traversability, so it can be used for tasks such as visual navigation. We show DeepExplorer's exploration efficiency and strong sim2sim generalization capability on large-scale simulation datasets like Gibson and MP3D. Its effectiveness is further validated via the image-goal navigation performance on the resulting topological map. We further show its strong zero-shot sim2real generalization capability in real-world experiments. The source code is available at https://ai4ce.github.io/DeepExplorer/.",
+"url": "https://www.roboticsproceedings.org/rss19/p099.html",
+"pdf": "https://www.roboticsproceedings.org/rss19/p099.pdf"
+},
+{
+"id": "RSS2023-23",
+"title": "Demonstrating Large Language Models on Robots",
+"authors": [
+"Andy Zeng",
+"Brian Ichter",
+"Fei Xia",
+"Ted Xiao",
+"Vikas Sindhwani"
+],
+"venue": "RSS 2023",
+"year": 2023,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 8,
+"tldr": "Robots may benefit from large language models (LLMs), which have demonstrated strong reasoning capabilities across various domains.",
+"abstract": "Robots may benefit from large language models (LLMs), which have demonstrated strong reasoning capabilities across various domains. This demonstration includes several systems based on recent methods that integrate LLMs on robots: SayCan, Socratic Models, Inner Monologue, and Code as Policies. While each algorithm highlights a different mode of grounding, they all share a common system-level structure in that they use LLMs to take as input natural language instructions and generate robot plans in the form of step-by-step procedures or code. This structure provides several practical perks for demonstration in that (i) we can use existing video chat interfaces to instruct the robot by typing commands and broadcasting its movements in action via video streaming, (ii) one can seamlessly switch between interfaces that communicate with different robots, and (iii) this can all be done remotely on a laptop, where the robots on real hardware can be held on standby in the lab ready to run on command. Our tentative plan is to show at least one system running on real hardware remotely -- Inner Monologue or Code as Policies, and solicit task instructions from a live audience. Time-permitting we may also demonstrate the other systems available to run on real hardware. Otherwise, we will present recorded videos of past runs. We will link to open-source code, and conclude with a discussion of open research questions in the area.",
+"url": "https://www.roboticsproceedings.org/rss19/p024.html",
+"pdf": "https://www.roboticsproceedings.org/rss19/p024.pdf"
+},
+{
 "id": "RSS2023-26",
 "title": "Scaling Robot Learning with Semantically Imagined Experience",
 "authors": [
@@ -13664,28 +13718,6 @@
 "abstract": "Large-scale data is an essential component of machine learning as demonstrated in recent advances in natural language processing and computer vision research. However, collecting large-scale robotic data is much more expensive and slower as each operator can control only a single robot at a time. To make this costly data collection process efficient and scalable, we propose Policy Assisted TeleOperation (PATO), a system which automates part of the demonstration collection process using a learned assistive policy. PATO autonomously executes repetitive behaviors in data collection and asks for human input only when it is uncertain about which subtask or behavior to execute. We conduct teleoperation user studies both with a real robot and a simulated robot fleet and demonstrate that our assisted teleoperation system reduces human operators' mental load while improving data collection efficiency. Further, it enables a single operator to control multiple robots in parallel, which is a first step towards scalable robotic data collection. For code and video results, see https://clvrai.com/pato",
 "url": "https://www.roboticsproceedings.org/rss19/p013.html",
 "pdf": "https://www.roboticsproceedings.org/rss19/p013.pdf"
-},
-{
-"id": "RSS2023-98",
-"title": "Metric-Free Exploration for Topological Mapping by Task and Motion Imitation in Feature Space",
-"authors": [
-"Yuhang He",
-"Irving Fang",
-"Yiming Li",
-"Rushi Bhavesh Shah",
-"Chen Feng"
-],
-"venue": "RSS 2023",
-"year": 2023,
-"topics": [
-"IL"
-],
-"tracked_authors": [],
-"score": 6,
-"tldr": "We propose DeepExplorer, a simple and lightweight metric-free exploration method for topological mapping of unknown environments.",
-"abstract": "We propose DeepExplorer, a simple and lightweight metric-free exploration method for topological mapping of unknown environments. It performs task and motion planning (TAMP) entirely in image feature space. The task planner is a recurrent network using the latest image observation sequence to hallucinate a feature as the next-best exploration goal. The motion planner then utilizes the current and the hallucinated features to generate an action taking the agent towards that goal. Our novel feature hallucination enables imitation learning with deep supervision to jointly train the two planners more efficiently than baseline methods. During exploration, we iteratively call the two planners to predict the next action, and the topological map is built by constantly appending the latest image observation and action to the map and using visual place recognition (VPR) for loop closing. The resulting topological map efficiently represents an environment's connectivity and traversability, so it can be used for tasks such as visual navigation. We show DeepExplorer's exploration efficiency and strong sim2sim generalization capability on large-scale simulation datasets like Gibson and MP3D. Its effectiveness is further validated via the image-goal navigation performance on the resulting topological map. We further show its strong zero-shot sim2real generalization capability in real-world experiments. The source code is available at https://ai4ce.github.io/DeepExplorer/.",
-"url": "https://www.roboticsproceedings.org/rss19/p099.html",
-"pdf": "https://www.roboticsproceedings.org/rss19/p099.pdf"
 },
 {
 "id": "RSS2023-104",
@@ -14010,26 +14042,6 @@
 "abstract": "Automating warehouse operations can reduce logistics overhead costs, ultimately driving down the final price for consumers, increasing the speed of delivery, and enhancing the resiliency to workforce fluctuations. The past few years have seen increased interest in automating such repeated tasks but mostly in controlled settings. Tasks such as picking objects from unstructured, cluttered piles have only recently become robust enough for large-scale deployment with minimal human intervention.",
 "url": "https://www.roboticsproceedings.org/rss19/p023.html",
 "pdf": "https://www.roboticsproceedings.org/rss19/p023.pdf"
-},
-{
-"id": "RSS2023-23",
-"title": "Demonstrating Large Language Models on Robots",
-"authors": [
-"Andy Zeng",
-"Brian Ichter",
-"Fei Xia",
-"Ted Xiao",
-"Vikas Sindhwani"
-],
-"venue": "RSS 2023",
-"year": 2023,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "Robots may benefit from large language models (LLMs), which have demonstrated strong reasoning capabilities across various domains.",
-"abstract": "Robots may benefit from large language models (LLMs), which have demonstrated strong reasoning capabilities across various domains. This demonstration includes several systems based on recent methods that integrate LLMs on robots: SayCan, Socratic Models, Inner Monologue, and Code as Policies. While each algorithm highlights a different mode of grounding, they all share a common system-level structure in that they use LLMs to take as input natural language instructions and generate robot plans in the form of step-by-step procedures or code. This structure provides several practical perks for demonstration in that (i) we can use existing video chat interfaces to instruct the robot by typing commands and broadcasting its movements in action via video streaming, (ii) one can seamlessly switch between interfaces that communicate with different robots, and (iii) this can all be done remotely on a laptop, where the robots on real hardware can be held on standby in the lab ready to run on command. Our tentative plan is to show at least one system running on real hardware remotely -- Inner Monologue or Code as Policies, and solicit task instructions from a live audience. Time-permitting we may also demonstrate the other systems available to run on real hardware. Otherwise, we will present recorded videos of past runs. We will link to open-source code, and conclude with a discussion of open research questions in the area.",
-"url": "https://www.roboticsproceedings.org/rss19/p024.html",
-"pdf": "https://www.roboticsproceedings.org/rss19/p024.pdf"
 },
 {
 "id": "RSS2023-32",
@@ -14767,5 +14779,5 @@
 }
 ]
 },
-"updated": "2026-11-24"
+"updated": "2026-11-26"
 }

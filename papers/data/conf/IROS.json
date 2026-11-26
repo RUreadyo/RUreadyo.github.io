@@ -29,7 +29,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-258",
+"id": "IROS2025-259",
 "title": "Learning Force Distribution Estimation for the GelSight Mini Optical Tactile Sensor Based on Finite Element Analysis",
 "authors": [
 "Erik Helmut",
@@ -52,7 +52,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-629",
+"id": "IROS2025-644",
 "title": "DTactive: A Vision-Based Tactile Sensor with Active Surface",
 "authors": [
 "Jikai Xu",
@@ -104,7 +104,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-363",
+"id": "IROS2025-367",
 "title": "Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning",
 "authors": [
 "Runyu Ding",
@@ -133,7 +133,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-526",
+"id": "IROS2025-534",
 "title": "TacCap: A Wearable FBG-Based Tactile Sensor for Seamless Human-To-Robot Skill Transfer",
 "authors": [
 "Chengyi Xing",
@@ -161,7 +161,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-216",
+"id": "IROS2025-217",
 "title": "Learning Gentle Grasping Using Vision, Sound, and Touch",
 "authors": [
 "Ken Nakahara",
@@ -210,7 +210,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-108",
+"id": "IROS2025-109",
 "title": "AgiBot World Colosseo: Large-Scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
 "authors": [
 "Qingwen Bu",
@@ -259,7 +259,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-163",
+"id": "IROS2025-164",
 "title": "Sampling-Based Model Predictive Control for Dexterous Manipulation on a Biomimetic Tendon-Driven Hand",
 "authors": [
 "Adrian Hess",
@@ -283,7 +283,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-308",
+"id": "IROS2025-310",
 "title": "R-Tac0: A Rounded High-Frequency Transferable Monochrome Vision-Based Tactile Sensor for Shape Reconstruction",
 "authors": [
 "Wanlin Li",
@@ -309,7 +309,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-426",
+"id": "IROS2025-430",
 "title": "Touch-Linked Sleeve: A Haptic Interface for Augmented Tactile Perception in Robotic Teleoperation",
 "authors": [
 "Yatao Leng",
@@ -332,7 +332,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-485",
+"id": "IROS2025-489",
 "title": "Low-Fidelity Visuo-Tactile Pre-Training Improves Vision-Only Manipulation Performance",
 "authors": [
 "Selam Gano",
@@ -354,7 +354,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-307",
+"id": "IROS2025-309",
 "title": "Bio-Skin: A Cost-Effective Thermostatic Tactile Sensor with Multi-Modal Force and Temperature Detection",
 "authors": [
 "Haoran Guo",
@@ -376,7 +376,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-488",
+"id": "IROS2025-492",
 "title": "3D Vision-Tactile Reconstruction from Infrared and Visible Images for Robotic Fine-Grained Tactile Perception",
 "authors": [
 "Yuankai Lin",
@@ -398,7 +398,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-305",
+"id": "IROS2025-307",
 "title": "Vision-Based Tactile Sensor Using Light-Conductive Plate for Enhanced Force Sensing Capability",
 "authors": [
 "Zhitong Liu",
@@ -419,7 +419,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-613",
+"id": "IROS2025-627",
 "title": "Object Extrinsic Contact Surface Reconstruction through Extrinsic Contact Sensing from Visuo-Tactile Measurements",
 "authors": [
 "Yoonjin Kim",
@@ -461,7 +461,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-471",
+"id": "IROS2025-475",
 "title": "AirTouch: A Low-Cost Versatile Visuotactile Feedback System for Enhanced Robotic Teleoperation",
 "authors": [
 "Shoujie Li",
@@ -487,7 +487,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-632",
+"id": "IROS2025-647",
 "title": "Trajectory Optimization for In-Hand Manipulation with Tactile Force Control",
 "authors": [
 "Haegu Lee",
@@ -510,7 +510,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-253",
+"id": "IROS2025-254",
 "title": "ORCA: An Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning",
 "authors": [
 "Clemens Claudio Christoph",
@@ -540,7 +540,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-276",
+"id": "IROS2025-277",
 "title": "Learning Adaptive Dexterous Grasping from Single Demonstrations",
 "authors": [
 "Liangzhi Shi",
@@ -567,7 +567,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-347",
+"id": "IROS2025-351",
 "title": "Refined Policy Distillation: From VLA Generalists to RL Experts",
 "authors": [
 "Tobias Thomas Jülg",
@@ -589,7 +589,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-368",
+"id": "IROS2025-372",
 "title": "TwinTac: A Wide-Range, Highly Sensitive Tactile Sensor with Real-To-Sim Digital Twin Sensor Model",
 "authors": [
 "Xiyan Huang",
@@ -611,7 +611,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-403",
+"id": "IROS2025-407",
 "title": "Real-World Offline Reinforcement Learning from Vision Language Model Feedback",
 "authors": [
 "Sreyas Venkataraman",
@@ -636,7 +636,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-582",
+"id": "IROS2025-592",
 "title": "A Compact, Cost-Effective, and Highly Sensitive Optical Blocking Structure (OBS) Tactile Sensor for Enhanced Robotic Grasping (I)",
 "authors": [
 "Liyan Mo",
@@ -691,7 +691,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-477",
+"id": "IROS2025-481",
 "title": "Tactile-Based Force Estimation for Interaction Control with Robot Fingers",
 "authors": [
 "Elie Chelly",
@@ -714,7 +714,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-452",
+"id": "IROS2025-456",
 "title": "Disambiguate Gripper State in Grasp-Based Tasks: Pseudo-Tactile As Feedback Enables Pure Simulation Learning",
 "authors": [
 "Yifei Yang",
@@ -741,7 +741,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-211",
+"id": "IROS2025-212",
 "title": "Stretchable and High-Precision Optical Tactile Sensor for Trajectory Tracking of Parallel Mechanisms",
 "authors": [
 "Yiding Nie",
@@ -764,7 +764,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-271",
+"id": "IROS2025-272",
 "title": "Grasping State Analysis of Soft Manipulator Based on Flexible Tactile Sensor and High-Dimensional Fuzzy System (I)",
 "authors": [
 "Haoyuan Wang",
@@ -789,7 +789,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-294",
+"id": "IROS2025-295",
 "title": "ManiDP: Manipulability-Aware Diffusion Policy for Posture-Dependent Bimanual Manipulation",
 "authors": [
 "Zhuo Li",
@@ -815,7 +815,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-325",
+"id": "IROS2025-328",
 "title": "M3D-Skin: Multi-Material 3D-Printed Tactile Sensor with Hierarchical Infill Structures for Pressure Sensing",
 "authors": [
 "Shunnosuke Yoshimura",
@@ -836,7 +836,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-366",
+"id": "IROS2025-370",
 "title": "MelumiTac: Vision-Based Tactile Sensor Using Mechanoluminescence for Dynamic Tactile and Nociceptive Perception",
 "authors": [
 "Sunggyu Bae",
@@ -858,7 +858,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-367",
+"id": "IROS2025-371",
 "title": "VibeCheck: Using Active Acoustic Tactile Sensing for Contact-Rich Manipulation",
 "authors": [
 "Kaidi Zhang",
@@ -886,7 +886,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-384",
+"id": "IROS2025-388",
 "title": "A Lightweight 3-Axis Permanent Magnetic Sponge-Based Self-Adapting Tactile Sensor",
 "authors": [
 "Yushi Wang",
@@ -911,7 +911,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-389",
+"id": "IROS2025-393",
 "title": "PD-VLA: Accelerating Vision-Language-Action Model Integrated with Action Chunking Via Parallel Decoding",
 "authors": [
 "Wenxuan Song",
@@ -941,7 +941,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-486",
+"id": "IROS2025-490",
 "title": "ThinTact: Thin Vision-Based Tactile Sensor by Lensless Imaging",
 "authors": [
 "Jing Xu",
@@ -964,7 +964,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-529",
+"id": "IROS2025-537",
 "title": "Exploratory Movement Strategies for Texture Discrimination with a Neuromorphic Tactile Sensor",
 "authors": [
 "Xingchen Xu",
@@ -985,7 +985,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-532",
+"id": "IROS2025-540",
 "title": "NUSense: Shear Based Robust Optical Tactile Sensor",
 "authors": [
 "Madina Yergibay",
@@ -1012,7 +1012,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-578",
+"id": "IROS2025-588",
 "title": "ViaTac: A High-Resolution Piezoresistive Tactile Sensor Array with Conformal Contact Surface for Shape Reconstruction",
 "authors": [
 "Yanjun Du",
@@ -1033,7 +1033,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-583",
+"id": "IROS2025-593",
 "title": "MagicGel: A Novel Visual-Based Tactile Sensor Design with Magnetic Gel",
 "authors": [
 "Jianhua Shan",
@@ -1083,7 +1083,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-259",
+"id": "IROS2025-260",
 "title": "SuperMag: Vision-Based Tactile Data Guided High-Resolution Tactile Shape Reconstruction for Magnetic Tactile Sensors",
 "authors": [
 "Peiyao Hou",
@@ -1109,7 +1109,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-332",
+"id": "IROS2025-336",
 "title": "ReBot: Scaling Robot Learning with Real-To-Sim-To-Real Robotic Video Synthesis",
 "authors": [
 "Yu Fang",
@@ -1134,7 +1134,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-428",
+"id": "IROS2025-432",
 "title": "Wearing a Robotic Hand to Feel 3D Force Feedback: Analysis and Virtual Reality Application of the Hand-In-Hand System",
 "authors": [
 "Nicolas Kosanovic",
@@ -1155,7 +1155,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-209",
+"id": "IROS2025-210",
 "title": "C-TRAC: Terrain-Adaptive Control for Articulated Tracked Robots Via Contact-Aware Reinforcement Learning",
 "authors": [
 "Hainan Pan",
@@ -1181,7 +1181,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-476",
+"id": "IROS2025-480",
 "title": "Visual-Tactile Perception Based Control Strategy for Complex Robot Peg-In-Hole Process Via Topological and Geometric Reasoning",
 "authors": [
 "Gaozhao Wang",
@@ -1204,7 +1204,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-478",
+"id": "IROS2025-482",
 "title": "Sequential Multi-Object Grasping with One Dexterous Hand",
 "authors": [
 "Sicheng He",
@@ -1230,7 +1230,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-627",
+"id": "IROS2025-642",
 "title": "VET: A Visual-Electronic Tactile System for Immersive Human-Machine Interaction",
 "authors": [
 "Cong Zhang",
@@ -1299,7 +1299,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-152",
+"id": "IROS2025-153",
 "title": "FunGrasp: Functional Grasping for Diverse Dexterous Hands",
 "authors": [
 "Linyi Huang",
@@ -1323,7 +1323,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-154",
+"id": "IROS2025-155",
 "title": "Hierarchical Diffusion Policy: Manipulation Trajectory Generation Via Contact Guidance",
 "authors": [
 "Dexin Wang",
@@ -1346,7 +1346,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-165",
+"id": "IROS2025-166",
 "title": "Empirical Analysis of Sim-And-Real Cotraining of Diffusion Policies for Planar Pushing from Pixels",
 "authors": [
 "Adam Wei",
@@ -1374,7 +1374,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-260",
+"id": "IROS2025-261",
 "title": "A Neuromorphic Tactile System for Reliable Braille Reading in Noisy Environments",
 "authors": [
 "Xingchen Xu",
@@ -1420,7 +1420,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-252",
+"id": "IROS2025-253",
 "title": "ContactDexNet: Multi-Fingered Robotic Hand Grasping in Cluttered Environments through Hand-Object Contact Semantic Mapping",
 "authors": [
 "Lei Zhang",
@@ -1444,7 +1444,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-263",
+"id": "IROS2025-264",
 "title": "The Foundation for Tactile Robots: Approaching the Holistic Analysis of a Robot’s Force Sensing Capabilities",
 "authors": [
 "Robin Jeanne Kirschner",
@@ -1466,7 +1466,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-285",
+"id": "IROS2025-286",
 "title": "Decentralized but Not Compromised: Modular Architecture with Refined Observation for Multi-Agent Model-Based Reinforcement Learning",
 "authors": [
 "Shuqi Wang",
@@ -1489,7 +1489,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-411",
+"id": "IROS2025-415",
 "title": "Inverse Model Predictive Control: Learning Optimal Control Cost Functions for MPC (I)",
 "authors": [
 "Fawang Zhang",
@@ -1513,7 +1513,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-483",
+"id": "IROS2025-487",
 "title": "UltraTac: Integrated Ultrasound-Augmented Visuotactile Sensor for Enhanced Robotic Perception",
 "authors": [
 "Junhao Gong",
@@ -1539,7 +1539,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-557",
+"id": "IROS2025-567",
 "title": "Exo-ViHa: A Cross-Platform Exoskeleton System with Visual and Haptic Feedback for Efficient Dexterous Skill Learning",
 "authors": [
 "Xintao Chao",
@@ -1565,7 +1565,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-570",
+"id": "IROS2025-580",
 "title": "Using Fiber Optic Bundles to Miniaturize Vision-Based Tactile Sensors",
 "authors": [
 "Julia Di",
@@ -1599,7 +1599,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-197",
+"id": "IROS2025-198",
 "title": "High-Dynamic Tactile Sensing for Tactile Servo Manipulation: Let Robots Swing a Hammer",
 "authors": [
 "Yingtian Xu",
@@ -1621,7 +1621,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-227",
+"id": "IROS2025-228",
 "title": "SimLauncher: Launching Sample-Efficient Real-World Robotic Reinforcement Learning Via Simulation Pre-Training",
 "authors": [
 "Aaron Mingdong Wu",
@@ -1652,7 +1652,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-251",
+"id": "IROS2025-252",
 "title": "Design of an Affordable, Fully-Actuated Biomimetic Hand for Dexterous Teleoperation Systems",
 "authors": [
 "Zhaoliang Wan",
@@ -1676,7 +1676,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-349",
+"id": "IROS2025-353",
 "title": "Towards Safe Imitation Learning Via Potential Field-Guided Flow Matching",
 "authors": [
 "Haoran Ding",
@@ -1701,7 +1701,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-371",
+"id": "IROS2025-375",
 "title": "Flexible Electronic Device with Multifunctional Tactile Perception for Enhanced Robotic Interaction",
 "authors": [
 "Chenhao Mao",
@@ -1723,7 +1723,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-442",
+"id": "IROS2025-446",
 "title": "TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation",
 "authors": [
 "Junjie Wen",
@@ -1754,7 +1754,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-129",
+"id": "IROS2025-130",
 "title": "Enhancing Tactile Sensing in Robotics Using Null-Space Diffusion Model with EIT-Based Sensors",
 "authors": [
 "Qilin Zhang",
@@ -1778,7 +1778,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-187",
+"id": "IROS2025-188",
 "title": "Dynamic Layer Detection of Thin Materials Using DenseTact Optical Tactile Sensors",
 "authors": [
 "Ankush Dhawan",
@@ -1800,7 +1800,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-249",
+"id": "IROS2025-250",
 "title": "CATCH-FORM-3D: Compliance-Aware Tactile Control and Hybrid Deformation Regulation for 3D Viscoelastic Object Manipulation",
 "authors": [
 "Hongjun Ma",
@@ -1820,7 +1820,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-311",
+"id": "IROS2025-313",
 "title": "Soft Tactile Sensors for Robot Grippers Using Acoustic Sensing",
 "authors": [
 "Kevin Xu",
@@ -1840,7 +1840,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-351",
+"id": "IROS2025-355",
 "title": "LEGATO: Cross-Embodiment Imitation Using a Grasping Tool",
 "authors": [
 "Mingyo Seo",
@@ -1865,7 +1865,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-487",
+"id": "IROS2025-491",
 "title": "IFEM2.0: Dense 3-D Contact Force Field Reconstruction and Assessment for Vision-Based Tactile Sensors",
 "authors": [
 "Can Zhao",
@@ -1886,7 +1886,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-513",
+"id": "IROS2025-520",
 "title": "Geometric Retargeting: A Principled, Ultrafast Neural Hand Retargeting Algorithm",
 "authors": [
 "Zhao-Heng Yin",
@@ -1913,7 +1913,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-580",
+"id": "IROS2025-590",
 "title": "RoTipBot: Robotic Handling of Thin and Flexible Objects Using Rotatable Tactile Sensors",
 "authors": [
 "Jiaqi Jiang",
@@ -1987,7 +1987,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-162",
+"id": "IROS2025-163",
 "title": "Offline Reinforcement Learning with Koopman Operators for Control of Soft Robots",
 "authors": [
 "Yue Jiang",
@@ -2013,7 +2013,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-292",
+"id": "IROS2025-293",
 "title": "CDP: Constrained Diffusion Policies with Mirror Diffusion Model for Safety-Assured Imitation Learning",
 "authors": [
 "Taeoh Ha",
@@ -2034,7 +2034,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-391",
+"id": "IROS2025-395",
 "title": "GRASPLAT: Enabling Dexterous Grasping through Novel View Synthesis",
 "authors": [
 "Matteo Bortolon",
@@ -2057,7 +2057,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-405",
+"id": "IROS2025-409",
 "title": "Diffusion Policies with Value-Conditional Optimization for Offline Reinforcement Learning",
 "authors": [
 "Yunchang Ma",
@@ -2082,7 +2082,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-619",
+"id": "IROS2025-634",
 "title": "RoboEnvision: A Long-Horizon Video Generation Model for Multi-Task Robot Manipulation",
 "authors": [
 "Liudi Yang",
@@ -2159,7 +2159,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-109",
+"id": "IROS2025-110",
 "title": "Like Playing a Video Game: Spatial-Temporal Optimization of Foot Trajectories for Controlled Football Kicking in Bipedal Robots",
 "authors": [
 "Wanyue Li",
@@ -2181,7 +2181,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-121",
+"id": "IROS2025-122",
 "title": "World Models for Anomaly Detection During Model-Based Reinforcement Learning Inference",
 "authors": [
 "Fabian Domberg",
@@ -2201,7 +2201,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-135",
+"id": "IROS2025-136",
 "title": "Stochastic Force-Closure Grasp Synthesis for Unknown Objects Using Proximity Perception (I)",
 "authors": [
 "Wei Xu",
@@ -2223,7 +2223,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-254",
+"id": "IROS2025-255",
 "title": "Dual-Modal Soft Magnetic Skin with Anti-Magnetic Interference Structure for Tactile Perception",
 "authors": [
 "Pengwen Xiong",
@@ -2246,7 +2246,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-354",
+"id": "IROS2025-358",
 "title": "Real-Time Iteration Scheme for Diffusion Policy",
 "authors": [
 "Yufei Duan",
@@ -2268,7 +2268,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-425",
+"id": "IROS2025-429",
 "title": "Intuitive Hand Positional Guidance Using McKibben-Based Surface Tactile Sensations to Shoulder and Elbow",
 "authors": [
 "Kenta Yokoe",
@@ -2290,7 +2290,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-467",
+"id": "IROS2025-471",
 "title": "HACTS: A Human-As-Copilot Teleoperation System for Robot Learning",
 "authors": [
 "Zhiyuan Xu",
@@ -2317,7 +2317,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-524",
+"id": "IROS2025-532",
 "title": "Bimanual Long-Horizon Manipulation Via Temporal-Context Transformer RL",
 "authors": [
 "Ji-Heon Oh",
@@ -2340,7 +2340,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-549",
+"id": "IROS2025-559",
 "title": "Learning Object Compliance Via Young's Modulus from Single Grasps Using Camera-Based Tactile Sensors",
 "authors": [
 "Michael Burgess",
@@ -2361,7 +2361,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-625",
+"id": "IROS2025-640",
 "title": "Open-World Task Planning for Humanoid Bimanual Dexterous Manipulation Via Vision-Language Models",
 "authors": [
 "Zixin Tang",
@@ -2409,7 +2409,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-166",
+"id": "IROS2025-167",
 "title": "Diffusion-Based Approximate MPC: Fast and Consistent Imitation of Multi-Modal Action Distributions",
 "authors": [
 "Pau Marquez Julbe",
@@ -2433,7 +2433,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-179",
+"id": "IROS2025-180",
 "title": "RoboSwap: A GAN-Driven Video Diffusion Framework for Unsupervised Robot Arm Swapping",
 "authors": [
 "Yang Bai",
@@ -2460,7 +2460,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-212",
+"id": "IROS2025-213",
 "title": "SMA-TENG Actuator with Tactile Sensing Capability",
 "authors": [
 "Yiping Zhang",
@@ -2485,7 +2485,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-226",
+"id": "IROS2025-227",
 "title": "From Learning to Mastery: Achieving Safe and Efficient Real-World Autonomous Driving with Human-In-The-Loop Reinforcement Learning",
 "authors": [
 "Zeqiao Li",
@@ -2510,7 +2510,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-233",
+"id": "IROS2025-234",
 "title": "Towards Surgical Task Automation: Actor-Critic Models Meet Self-Supervised Imitation Learning",
 "authors": [
 "Jingshuai Liu",
@@ -2536,7 +2536,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-257",
+"id": "IROS2025-258",
 "title": "ConViTac: Aligning Visual-Tactile Fusion with Contrastive Representations",
 "authors": [
 "Zhiyuan Wu",
@@ -2557,7 +2557,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-310",
+"id": "IROS2025-312",
 "title": "Coil-Tac: Coiled Capacitor Mechanism with Liquid Metal for Tactile Sensing",
 "authors": [
 "George Jenkinson",
@@ -2578,7 +2578,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-348",
+"id": "IROS2025-352",
 "title": "Policy Learning from Large Vision-Language Model Feedback without Reward Modeling",
 "authors": [
 "Tung Luu",
@@ -2601,7 +2601,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-446",
+"id": "IROS2025-450",
 "title": "Stable Variable Impedance Control Via CLF-MPC for Physical Human-Robot Interaction",
 "authors": [
 "SeungMin Choi",
@@ -2621,7 +2621,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-484",
+"id": "IROS2025-488",
 "title": "NailTact: Single-Camera Based Tactile Fingertip with Nail",
 "authors": [
 "Hao Zhou",
@@ -2642,7 +2642,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-567",
+"id": "IROS2025-577",
 "title": "Whole-Body Teleoperation for Mobile Manipulation at Zero Added Cost",
 "authors": [
 "Daniel Honerkamp",
@@ -2710,7 +2710,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-118",
+"id": "IROS2025-119",
 "title": "RoboNurse-VLA: Robotic Scrub Nurse System Based on Vision-Language-Action Model",
 "authors": [
 "Shunlei Li",
@@ -2734,7 +2734,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-122",
+"id": "IROS2025-123",
 "title": "Imagine-2-Drive: Leveraging High-Fidelity World Models Via Multi-Modal Diffusion Policies",
 "authors": [
 "Anant Garg",
@@ -2755,7 +2755,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-136",
+"id": "IROS2025-137",
 "title": "Grasp EveryThing (GET): 1-DoF, 3-Fingered Gripper with Tactile Sensing for Robust Grasping",
 "authors": [
 "Michael Burgess",
@@ -2776,7 +2776,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-244",
+"id": "IROS2025-245",
 "title": "Mirror Adaptive Impedance Control of Multi-Mode Soft Exoskeleton with Reinforcement Learning (I)",
 "authors": [
 "Jiajun Xu",
@@ -2800,7 +2800,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-283",
+"id": "IROS2025-284",
 "title": "M3PO: Massively Multi-Task Model-Based Policy Optimization",
 "authors": [
 "Aditya Narendra",
@@ -2821,7 +2821,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-284",
+"id": "IROS2025-285",
 "title": "Mastering the Labyrinth Game: Efficient Multimodal Reinforcement Learning with Selective Reconstruction",
 "authors": [
 "Thomas Bi",
@@ -2843,7 +2843,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-295",
+"id": "IROS2025-296",
 "title": "Cross-Embodiment Robotic Manipulation Synthesis Via Guided Demonstrations through CycleVAE and Human Behavior Transformer",
 "authors": [
 "Apan Dastider",
@@ -2865,7 +2865,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-361",
+"id": "IROS2025-365",
 "title": "ManiGaussian++: General Robotic Bimanual Manipulation with Hierarchical Gaussian World Model",
 "authors": [
 "Tengbo Yu",
@@ -2893,7 +2893,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-528",
+"id": "IROS2025-536",
 "title": "Instantaneous Contact Localization on a Magnetically Transduced Tapered Whisker",
 "authors": [
 "Yixuan Dang",
@@ -2919,7 +2919,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-550",
+"id": "IROS2025-560",
 "title": "Learning-Based Predictive Impedance Control towards Safe Predefined-Time Physical Robotic Interaction",
 "authors": [
 "Junyuan Xue",
@@ -2942,7 +2942,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-579",
+"id": "IROS2025-589",
 "title": "Three-Axis Flat and Lightweight Force/Torque Sensor for Enhancing Kinesthetic Sensing Capability of Robotic Hand (I)",
 "authors": [
 "Sungwoo Park",
@@ -2962,7 +2962,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-604",
+"id": "IROS2025-617",
 "title": "A Multi-Modal Hand Imitation Dataset for Dexterous Hand",
 "authors": [
 "Shaochen Wang",
@@ -2986,7 +2986,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-618",
+"id": "IROS2025-633",
 "title": "Self-Supervised Complementary Learning between Vision and Tactility by Probing Action into an Open-Mouth Container",
 "authors": [
 "Daiki Takamori",
@@ -3095,7 +3095,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-213",
+"id": "IROS2025-214",
 "title": "Tactile Sensing Soft Fingertip with Dual Air Bag Structure for an Anthropomorphic Robotic Hand",
 "authors": [
 "Jipeng Yin",
@@ -3122,7 +3122,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-331",
+"id": "IROS2025-335",
 "title": "Exploiting Policy Idling for Dexterous Manipulation",
 "authors": [
 "Annie Chen",
@@ -3149,7 +3149,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-434",
+"id": "IROS2025-438",
 "title": "STAGE: A Stream-Centric Generative World Model for Long-Horizon Driving-Scene Simulation",
 "authors": [
 "Jiamin Wang",
@@ -3175,7 +3175,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-542",
+"id": "IROS2025-550",
 "title": "EmoRLTalk: Speech-Driven Emotional Facial Animation with Offline Reinforcement Learning",
 "authors": [
 "Gaofeng Liu",
@@ -3291,7 +3291,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-124",
+"id": "IROS2025-125",
 "title": "Distributional Decision Transformer: Risk-Sensitive Offline RL Via Quantile-Based Critics and Stochastic Return",
 "authors": [
 "Changxu Wei",
@@ -3314,7 +3314,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-161",
+"id": "IROS2025-162",
 "title": "Efficient Learning of a Unified Policy for Whole-Body Manipulation and Locomotion Skills",
 "authors": [
 "Dianyong Hou",
@@ -3338,7 +3338,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-185",
+"id": "IROS2025-186",
 "title": "A Bionic Robotic Hand Designed with Multiple Grasping Modes and Magnetic Tactile Perception",
 "authors": [
 "Shixian Wang",
@@ -3363,7 +3363,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-220",
+"id": "IROS2025-221",
 "title": "Tactile Ergodic Coverage on Curved Surfaces",
 "authors": [
 "Cem Bilaloglu",
@@ -3384,7 +3384,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-229",
+"id": "IROS2025-230",
 "title": "Multitask Reinforcement Learning for Quadcopter Attitude Stabilization and Tracking Using Graph Policy",
 "authors": [
 "Yu Tang Liu",
@@ -3406,7 +3406,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-256",
+"id": "IROS2025-257",
 "title": "Design of Scalable Orthogonal Digital Encoding Architecture for Large-Area Flexible Tactile Sensing in Robotics",
 "authors": [
 "Weijie Liu",
@@ -3429,7 +3429,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-270",
+"id": "IROS2025-271",
 "title": "Vi2TaP: A Cross-Polarization Based Mechanism for Perception Transition in Tactile-Proximity Sensing with Applications to Soft Grippers",
 "authors": [
 "Nhan Huu Nguyen",
@@ -3452,7 +3452,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-298",
+"id": "IROS2025-300",
 "title": "VTD: Visual and Tactile Dataset for Driver State and Behavior Detection",
 "authors": [
 "Jie Wang",
@@ -3476,7 +3476,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-319",
+"id": "IROS2025-321",
 "title": "Investigating the Fitness of Finger Grippers for Dynamic Tactile Manipulation under Static Object Conditions",
 "authors": [
 "Mehmet Can Yildirim",
@@ -3500,7 +3500,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-356",
+"id": "IROS2025-360",
 "title": "Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed Adversarial Learning from Demonstration",
 "authors": [
 "Junjia Liu",
@@ -3526,7 +3526,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-369",
+"id": "IROS2025-373",
 "title": "Tac-Man: Tactile-Informed Prior-Free Manipulation of Articulated Objects",
 "authors": [
 "Zihang Zhao",
@@ -3551,7 +3551,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-370",
+"id": "IROS2025-374",
 "title": "Distributed Contact Sensing Enabled by Vibration Propagation on Robot End-Effector",
 "authors": [
 "Wangbo Tan",
@@ -3571,7 +3571,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-392",
+"id": "IROS2025-396",
 "title": "LensDFF: Language-Enhanced Sparse Feature Distillation for Efficient Few-Shot Dexterous Manipulation",
 "authors": [
 "Qian Feng",
@@ -3595,7 +3595,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-527",
+"id": "IROS2025-535",
 "title": "UniTac-NV: A Unified Tactile Representation for Non-Vision-Based Tactile Sensors",
 "authors": [
 "Jian Hou",
@@ -3617,7 +3617,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-530",
+"id": "IROS2025-538",
 "title": "High Resolution, Large Area Vision-Based Tactile Sensing Based on a Novel Piezoluminescent Skin",
 "authors": [
 "Ruxiang Jiang",
@@ -3639,7 +3639,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-531",
+"id": "IROS2025-539",
 "title": "Integrating Human-Like Impedance Regulation and Model-Based Approaches for Compliance Discrimination Via Biomimetic Optical Tactile Sensors",
 "authors": [
 "Giulia Pagnanelli",
@@ -3663,7 +3663,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-602",
+"id": "IROS2025-614",
 "title": "Sensing Differently: Unifying Vision, Language, Posture and Tactile in Robotic Perception",
 "authors": [
 "Yanmin Zhou",
@@ -3689,7 +3689,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-605",
+"id": "IROS2025-618",
 "title": "Optimization Based Human-Guided Variable-Stiffness Visual Impedance Control for Contact-Rich Tasks",
 "authors": [
 "Jiao Jiang",
@@ -3714,7 +3714,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-630",
+"id": "IROS2025-645",
 "title": "Semantic-Geometric-Physical-Driven Robot Manipulation Skill Transfer Via Skill Library and Tactile Representation",
 "authors": [
 "Mingchao Qi",
@@ -3803,6 +3803,30 @@
 "tldr": "Local optima issues challenge mobile robot mapless navigation with the dilemma of avoiding collisions and approaching the target.",
 "abstract": "Local optima issues challenge mobile robot mapless navigation with the dilemma of avoiding collisions and approaching the target. Planning-based methods rely on environmental models and manual strategies for updating local paths to guide the robot. In contrast, learning-based methods are capable of processing original sensor data to navigate the robot in real time but struggle with local optima problems. To address this, we designed reward rules that punishes the robot for revisiting passed areas that may traps the robot, and reward it for exploring local areas in diverse ways and escaping from local optima areas. Then, we improved the Soft Actor-Critic (SAC) algorithm by making its temperature parameter adaptive to the current training status, and memorize them in experiences for strategy updating, bringing additional exploratory behaviors and necessary stability into the training. Finally, with the assistance of auxiliary networks, the robot learns to handle various navigation tasks with local optima risks. Simulations demonstrate the advantages of our method in terms of both success rate and path efficiency compared to several existing methods. Experiments verified the proposed method in real-world scenarios.",
 "url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_1.html#tuat11_01",
+"pdf": ""
+},
+{
+"id": "IROS2025-46",
+"title": "RoboDexVLM: Visual Language Model-Enabled Task Planning and Motion Control for Dexterous Robot Manipulation",
+"authors": [
+"Haichao Liu",
+"Sikai Guo",
+"Pengfei Mai",
+"Jiahang Cao",
+"Haoang Li",
+"Jun Ma"
+],
+"venue": "IROS 2025",
+"year": 2025,
+"topics": [
+"Dex",
+"Agentic"
+],
+"tracked_authors": [],
+"score": 17,
+"tldr": "This paper introduces RoboDexVLM, an innovative framework for robot task planning and grasp detection tailored for a collaborative manipulator equipped with a dexterous hand.",
+"abstract": "This paper introduces RoboDexVLM, an innovative framework for robot task planning and grasp detection tailored for a collaborative manipulator equipped with a dexterous hand. Previous methods focus on simplified and limited manipulation tasks, which often neglect the complexities associated with grasping a diverse array of objects in a long-horizon manner. In contrast, our proposed framework utilizes a dexterous hand capable of grasping objects of varying shapes and sizes while executing tasks based on natural language commands. The proposed approach has the following core components: First, a robust task planner with a task-level recovery mechanism that leverages vision-language models (VLMs) is designed, which enables the system to interpret and execute open-vocabulary commands for long sequence tasks. Second, a language-guided dexterous grasp perception algorithm is presented based on robot kinematics and formal methods, tailored for zero-shot dexterous manipulation with diverse objects and commands. Comprehensive experimental results validate the effectiveness, adaptability, and robustness of RoboDexVLM in handling long-horizon scenarios and performing dexterous grasping. These results highlight the framework's ability to operate in complex environments, showcasing its potential for open-vocabulary dexterous manipulation. Our open-source project page can be found at https://henryhcliu.github.io/robodexvlm.",
+"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_1.html#tuat25_02",
 "pdf": ""
 },
 {
@@ -3926,7 +3950,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-137",
+"id": "IROS2025-138",
 "title": "A Rigid-Flexible Coupled Bionic Robotic Finger with Perception Decoupling and Slip Detection Capabilities",
 "authors": [
 "Yuyaocen Xiang",
@@ -3950,7 +3974,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-171",
+"id": "IROS2025-172",
 "title": "Reactive 3D Motion Planning in Dynamic Environments Using Efficient Model Predictive Control Via Circular Fields",
 "authors": [
 "Fabrice Zeug",
@@ -3972,7 +3996,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-208",
+"id": "IROS2025-209",
 "title": "PainDiffusion: Learning to Express Pain",
 "authors": [
 "Quang Tien Dam",
@@ -3994,7 +4018,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-223",
+"id": "IROS2025-224",
 "title": "Sample-Efficient Deep Reinforcement Learning of Mobile Manipulation for 6-DOF Trajectory Following (I)",
 "authors": [
 "Yifan Zhou",
@@ -4019,7 +4043,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-297",
+"id": "IROS2025-299",
 "title": "HannesImitation: Grasping with the Hannes Prosthetic Hand Via Imitation Learning",
 "authors": [
 "Carlo Alessi",
@@ -4042,7 +4066,28 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-379",
+"id": "IROS2025-330",
+"title": "ContextCache: Task-Aware Lifecycle Management for Memory-Efficient LLM Agent Deployment",
+"authors": [
+"Liu Tao",
+"Ping Guo",
+"Dong Feng",
+"Peng Wang"
+],
+"venue": "IROS 2025",
+"year": 2025,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 17,
+"tldr": "To address this, we propose ContextCache, a task-aware lifecycle management framework that optimizes context fragment caching for multi-step LLM agents.",
+"abstract": "LLM-based agents have demonstrated remarkable capabilities in multi-step reasoning and task execution across domains such as robotics and autonomous systems. However, deploying these agents on resource-constrained platforms presents a fundamental challenge: reducing inference latency while maintaining efficient memory usage. Existing caching techniques (KVCache, PrefixCache, PromptCache) improve inference speed by reusing cached context but overlook LLM dependency relationships in agent workflows, leading to excessive memory usage or redundant recomputation. To address this, we propose ContextCache, a task-aware lifecycle management framework that optimizes context fragment caching for multi-step LLM agents. ContextCache predicts the lifespan of each context fragment and dynamically allocates and releases GPU memory accordingly. We evaluate our approach on a newly constructed dataset, covering logistics coordination, assembly tasks, and health management. Experimental results demonstrate a 15% reduction in memory usage compared to state-of-the-art caching strategies, with no loss in inference efficiency, making our approach well-suited for real-world deployment in resource-constrained environments.",
+"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_2.html#wect5_01",
+"pdf": ""
+},
+{
+"id": "IROS2025-383",
 "title": "Online Residual Model Learning for Model Predictive Control of Autonomous Surface Vehicles in Real-World Environments",
 "authors": [
 "Arturo Gamboa-Gonzalez",
@@ -4063,7 +4108,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-420",
+"id": "IROS2025-424",
 "title": "Learning Predictive Control with Online Modeling for Agile Maneuvering of Autonomous Vehicles",
 "authors": [
 "Xin Yin",
@@ -4088,7 +4133,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-492",
+"id": "IROS2025-496",
 "title": "Energy Reduction for Wearable Pneumatic Valve System with SINDy and Time-Variant Model Predictive Control (I)",
 "authors": [
 "Hao Lee",
@@ -4109,7 +4154,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-560",
+"id": "IROS2025-570",
 "title": "Integrating Trajectory Optimization and Reinforcement Learning for Quadrupedal Jumping with Terrain-Adaptive Landing",
 "authors": [
 "Renjie Wang",
@@ -4132,7 +4177,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-615",
+"id": "IROS2025-629",
 "title": "VLIN-RL: A Unified Vision-Language Interpreter and Reinforcement Learning Motion Planner Framework for Robot Dynamic Tasks",
 "authors": [
 "Zewu Jiang",
@@ -4222,7 +4267,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-138",
+"id": "IROS2025-139",
 "title": "Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies",
 "authors": [
 "Zixuan Chen",
@@ -4253,7 +4298,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-221",
+"id": "IROS2025-222",
 "title": "A Multi-Task Learning System for Composites Defect Segmentation and Classification with TacRoller",
 "authors": [
 "Xiaolong Li",
@@ -4277,7 +4322,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-290",
+"id": "IROS2025-291",
 "title": "Out-Of-Distribution Recovery with Object-Centric Keypoint Inverse Policy for Visuomotor Imitation Learning",
 "authors": [
 "Jiayuan Gao",
@@ -4297,7 +4342,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-293",
+"id": "IROS2025-294",
 "title": "Elastic Motion Policy: An Adaptive Dynamical System for Robust and Efficient One-Shot Imitation Learning",
 "authors": [
 "Tianyu Li",
@@ -4318,7 +4363,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-324",
+"id": "IROS2025-327",
 "title": "Electrical Impedance Tomography Based Finger-Shaped Soft Artificial Skin",
 "authors": [
 "Yunqi Huang",
@@ -4338,7 +4383,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-352",
+"id": "IROS2025-356",
 "title": "Multi-Agent Generative Adversarial Interactive Self-Imitation Learning for AUV Formation Control and Obstacle Avoidance",
 "authors": [
 "Zheng Fang",
@@ -4362,7 +4407,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-404",
+"id": "IROS2025-408",
 "title": "SAC(λ): Efficient Reinforcement Learning for Sparse-Reward Autonomous Car Racing Using Imperfect Demonstrations",
 "authors": [
 "Heeseong Lee",
@@ -4385,7 +4430,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-409",
+"id": "IROS2025-413",
 "title": "GABRIL: Gaze-Based Regularization for Mitigating Causal Confusion in Imitation Learning",
 "authors": [
 "Amin Banayeeanzade",
@@ -4406,7 +4451,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-424",
+"id": "IROS2025-428",
 "title": "Optimal Trajectory Planning in a Vertically Undulating Snake Locomotion Using Contact-Implicit Optimization",
 "authors": [
 "Adarsh Salagame",
@@ -4427,7 +4472,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-431",
+"id": "IROS2025-435",
 "title": "Model-Free Energy-Based Friction Compensation for Industrial Collaborative Robots As Haptic Displays (I)",
 "authors": [
 "Huseyin Tugcan Dinc",
@@ -4448,7 +4493,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-440",
+"id": "IROS2025-444",
 "title": "UA-MPC: Uncertainty-Aware Model Predictive Control for Motorized LiDAR Odometry",
 "authors": [
 "Jianping Li",
@@ -4471,7 +4516,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-495",
+"id": "IROS2025-499",
 "title": "Stereo Hand-Object Reconstruction for Human-To-Robot Handover",
 "authors": [
 "Yik Lung Pang",
@@ -4492,7 +4537,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-497",
+"id": "IROS2025-504",
 "title": "Task-Guided and Object-Centric Conditioning for Effective and Adaptive Diffusion Policy",
 "authors": [
 "Wenshuo Wang",
@@ -4514,7 +4559,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-575",
+"id": "IROS2025-585",
 "title": "CSC-MPPI: A Novel Constrained MPPI Framework with DBSCAN for Reliable Obstacle Avoidance",
 "authors": [
 "Leesai Park",
@@ -4534,7 +4579,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-576",
+"id": "IROS2025-586",
 "title": "Mapless Collision-Free Flight Via MPC Using Dual KD-Trees in Cluttered Environments",
 "authors": [
 "Linzuo Zhang",
@@ -4557,7 +4602,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-624",
+"id": "IROS2025-639",
 "title": "Human-Inspired Active Compliant and Passive Shared Control Framework for Robotic Contact-Rich Tasks in Medical Applications",
 "authors": [
 "Junling Fu",
@@ -4677,7 +4722,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-151",
+"id": "IROS2025-152",
 "title": "Learning Dual-Arm Push and Grasp Synergy in Dense Clutter",
 "authors": [
 "Yongliang Wang",
@@ -4697,7 +4742,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-174",
+"id": "IROS2025-175",
 "title": "Safe Multi-Agent Reinforcement Learning for Behavior-Based Cooperative Navigation",
 "authors": [
 "Murad Dawood",
@@ -4721,7 +4766,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-181",
+"id": "IROS2025-182",
 "title": "On Learning Racing Policies with Reinforcement Learning",
 "authors": [
 "Grzegorz Czechmanowski",
@@ -4743,7 +4788,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-215",
+"id": "IROS2025-216",
 "title": "DB-MPO: Demonstration Boosted Reactive Grasping for Two-Finger Gripper",
 "authors": [
 "Boya Zhang",
@@ -4765,7 +4810,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-289",
+"id": "IROS2025-290",
 "title": "CLAP: A Closed-Loop Diffusion Transformer Action Foundation Model for Robotic Manipulation",
 "authors": [
 "Mu Li",
@@ -4786,7 +4831,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-343",
+"id": "IROS2025-347",
 "title": "Offline Imitation Learning Upon Arbitrary Demonstrations by Pre-Training Dynamics Representations",
 "authors": [
 "Haitong Ma",
@@ -4809,7 +4854,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-344",
+"id": "IROS2025-348",
 "title": "Context-Based Meta Reinforcement Learning for Robust and Adaptable Peg-In-Hole Assembly Tasks",
 "authors": [
 "Ahmed Shokry",
@@ -4836,7 +4881,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-353",
+"id": "IROS2025-357",
 "title": "Image-Driven Imitation Learning: Acquiring Expert Scanning Skills in Robotics Ultrasound (I)",
 "authors": [
 "Jiaming Li",
@@ -4860,7 +4905,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-355",
+"id": "IROS2025-359",
 "title": "Learning Target-Directed Skill and Variable Impedance Control from Interactive Demonstrations for Robot-Assisted Soft Tissue Puncture Tasks (I)",
 "authors": [
 "Xueqian Zhai",
@@ -4886,7 +4931,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-372",
+"id": "IROS2025-376",
 "title": "MuxHand: A Cost-Effective and Compact Dexterous Robotic Hand Using Time-Division Multiplexing Mechanism",
 "authors": [
 "Jianle Xu",
@@ -4911,7 +4956,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-408",
+"id": "IROS2025-412",
 "title": "Robust Offline Imitation Learning through State-Level Trajectory Stitching",
 "authors": [
 "Shuze Wang",
@@ -4935,7 +4980,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-416",
+"id": "IROS2025-420",
 "title": "Prediction of Delay-Free Scene for Quadruped Robot Teleoperation: Integrating Delayed Data with User Commands",
 "authors": [
 "Seunghyeon Ha",
@@ -4956,7 +5001,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-418",
+"id": "IROS2025-422",
 "title": "Viewpoint Planning for Active 3D Reconstruction of Freeform Surface Parts Based on DDPG-3DCNN (I)",
 "authors": [
 "Jun Ye",
@@ -4979,7 +5024,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-596",
+"id": "IROS2025-606",
 "title": "Adaptive Anomaly Recovery for Telemanipulation: A Diffusion Model Approach to Vision-Based Tracking",
 "authors": [
 "Haoyang Wang",
@@ -5002,7 +5047,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-608",
+"id": "IROS2025-621",
 "title": "Context-Aware Graph Inference and Generative Adversarial Imitation Learning for Object-Goal Navigation in Unfamiliar Environment",
 "authors": [
 "Yiyue Meng",
@@ -5022,6 +5067,58 @@
 "tldr": "Specifically, we propose GAIL to address the non-discriminative reward problem that exists in object-goal navigation.",
 "abstract": "Object-goal navigation aims to guide an agent to find a specific target object in an unfamiliar environment based on first-person visual observations. It requires the agent to learn informative visual representation and robust navigation policy. To promote these two components, we proposed two complementary techniques, context-aware graph inference (CGI) and generative adversarial imitation learning (GAIL). CGI improves visual representation learning by integrating object relationships, including category proximity and spatial correlation. It uses the translation on hyperplane (TransH) method to infer context-aware object relationships under the guidance of various contexts over navigation episodes, including image, action, and memory. Both CGI and GAIL aim to improve robust navigation policy, enabling the agent to escape from deadlock states, such as looping or getting stuck. GAIL is an imitation learning (IL) technique that enables the agent to learn from expert demonstrations. Specifically, we propose GAIL to address the non-discriminative reward problem that exists in object-goal navigation. GAIL designs a dynamic reward function and combines it with environment rewards, thus providing guidance for effective navigation policy. Experiments in the AI2-Thor and RoboThor environments demonstrate that our method significantly improves the effectiveness and efficiency of navigation in unfamiliar environments.",
 "url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thdt12_01",
+"pdf": ""
+},
+{
+"id": "IROS2025-630",
+"title": "CLEA: Closed-Loop Embodied Agent for Enhancing Task Execution in Dynamic Environments",
+"authors": [
+"Mingcong Lei",
+"Ge Wang",
+"Yiming Zhao",
+"Zhixin Mai",
+"Qing Zhao",
+"Yao Guo",
+"Zhen Li",
+"Shuguang Cui",
+"Yatong Han",
+"Jinke Ren"
+],
+"venue": "IROS 2025",
+"year": 2025,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "To address these limitations in dynamic environments, we propose Closed-Loop Embodied Agent (CLEA)--a novel architecture incorporating four specialized open-source LLMs with functional decoupling for closed-loop task management.",
+"abstract": "Large Language Models (LLMs) exhibit remarkable capabilities in the hierarchical decomposition of complex tasks through semantic reasoning. However, their application in embodied systems faces challenges in ensuring reliable execution of subtask sequences and achieving one-shot success in long-term task completion. To address these limitations in dynamic environments, we propose Closed-Loop Embodied Agent (CLEA)--a novel architecture incorporating four specialized open-source LLMs with functional decoupling for closed-loop task management. The framework features two core innovations: (1) Interactive task planner that dynamically generates executable subtasks based on the environmental memory, and (2) Multimodal execution critic employing an evaluation framework to conduct a probabilistic assessment of action feasibility, triggering hierarchical re-planning mechanisms when environmental perturbations exceed preset thresholds. To validate CLEA's effectiveness, we conduct experiments in a real environment with manipulable objects, using two heterogeneous robots for object search, manipulation, and search-manipulation integration tasks. Across 12 task trials, CLEA outperforms the baseline model, achieving a 67.3% improvement in success rate and a 52.8% increase in task completion rate. These results demonstrate that CLEA significantly enhances the robustness of task planning and execution in dynamic environments. Our code is available at https://sp4595.github.io/CLEA/.",
+"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thdt16_08",
+"pdf": ""
+},
+{
+"id": "IROS2025-649",
+"title": "Embodied Instruction Following in Unknown Environments",
+"authors": [
+"Zhenyu Wu",
+"Ziwei Wang",
+"Xiuwei Xu",
+"Hang Yin",
+"Yinan Liang",
+"Angyuan Ma",
+"Jiwen Lu",
+"Haibin Yan"
+],
+"venue": "IROS 2025",
+"year": 2025,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 15,
+"tldr": "On the contrary, we propose an embodied instruction following (EIF) method for complex tasks in the unknown environment, where the agent efficiently explores the unknown environment to generate feasible plans with existing objects to accomplish abstract instructions.",
+"abstract": "Enabling embodied agents to complete complex human instructions from natural language is crucial to autonomous systems in household services. Conventional methods can only accomplish human instructions in the known environment where all interactive objects are provided to the embodied agent, and directly deploying the existing approaches for the unknown environment usually generates infeasible plans that manipulate non-existing objects. On the contrary, we propose an embodied instruction following (EIF) method for complex tasks in the unknown environment, where the agent efficiently explores the unknown environment to generate feasible plans with existing objects to accomplish abstract instructions. Specifically, we build a hierarchical embodied instruction following framework including the high-level task planner and the low-level exploration controller with multimodal large language models. We then construct a semantic representation map of the scene with dynamic region attention to demonstrate the known visual clues, where the goal of task planning and scene exploration is aligned for human instruction. For the task planner, we generate the feasible step-by-step plans for human goal accomplishment according to the task completion process and the known visual clues. For the exploration controller, the optimal navigation or object interaction policy is predicted based on the generated step-wise plans and the known visual clues. The experimental results demonstrate that our method can achieve 45.09% success rate in 204 complex human instructions such as making breakfast and tidying rooms in large house-level scenes. Code and supplementary are available at https://gary3410.github.io/eif unknown/.",
+"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thdt30_04",
 "pdf": ""
 },
 {
@@ -5151,29 +5248,6 @@
 "tldr": "In this paper, we present a framework addressing these challenges based on the concept of directional corrections.",
 "abstract": "Many robotics tasks, such as path planning or trajectory optimization, are formulated as optimal control problems (OCPs). The key to obtaining high performance lies in the design of the OCP's objective function. In practice, the objective function consists of a set of individual components that must be carefully modeled and traded off such that the OCP has the desired solution. It is often challenging to balance multiple components to achieve the desired solution and to understand, when the solution is undesired, the impact of individual cost components. In this paper, we present a framework addressing these challenges based on the concept of directional corrections. Specifically, given the solution to an OCP that is deemed undesirable, and access to an expert providing the direction of change that would increase the desirability of the solution, our method analyzes the individual cost components for their consistency with the provided directional correction. This information can be used to improve the OCP formulation, e.g., by increasing the weight of consistent cost components, or reducing the weight of -- or even redesigning -- inconsistent cost components. We also show that our framework can automatically tune parameters of the OCP to achieve consistency with a set of corrections.",
 "url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_1.html#tuat21_02",
-"pdf": ""
-},
-{
-"id": "IROS2025-46",
-"title": "RoboDexVLM: Visual Language Model-Enabled Task Planning and Motion Control for Dexterous Robot Manipulation",
-"authors": [
-"Haichao Liu",
-"Sikai Guo",
-"Pengfei Mai",
-"Jiahang Cao",
-"Haoang Li",
-"Jun Ma"
-],
-"venue": "IROS 2025",
-"year": 2025,
-"topics": [
-"Dex"
-],
-"tracked_authors": [],
-"score": 14,
-"tldr": "This paper introduces RoboDexVLM, an innovative framework for robot task planning and grasp detection tailored for a collaborative manipulator equipped with a dexterous hand.",
-"abstract": "This paper introduces RoboDexVLM, an innovative framework for robot task planning and grasp detection tailored for a collaborative manipulator equipped with a dexterous hand. Previous methods focus on simplified and limited manipulation tasks, which often neglect the complexities associated with grasping a diverse array of objects in a long-horizon manner. In contrast, our proposed framework utilizes a dexterous hand capable of grasping objects of varying shapes and sizes while executing tasks based on natural language commands. The proposed approach has the following core components: First, a robust task planner with a task-level recovery mechanism that leverages vision-language models (VLMs) is designed, which enables the system to interpret and execute open-vocabulary commands for long sequence tasks. Second, a language-guided dexterous grasp perception algorithm is presented based on robot kinematics and formal methods, tailored for zero-shot dexterous manipulation with diverse objects and commands. Comprehensive experimental results validate the effectiveness, adaptability, and robustness of RoboDexVLM in handling long-horizon scenarios and performing dexterous grasping. These results highlight the framework's ability to operate in complex environments, showcasing its potential for open-vocabulary dexterous manipulation. Our open-source project page can be found at https://henryhcliu.github.io/robodexvlm.",
-"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_1.html#tuat25_02",
 "pdf": ""
 },
 {
@@ -5337,7 +5411,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-115",
+"id": "IROS2025-116",
 "title": "Non-Contact Dexterous Micromanipulation with Multiple Optoelectronic Robots",
 "authors": [
 "Yongyi Jia",
@@ -5361,7 +5435,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-119",
+"id": "IROS2025-120",
 "title": "Language-Driven Policy Distillation for Cooperative Driving in Multi-Agent Reinforcement Learning",
 "authors": [
 "Jiaqi Liu",
@@ -5387,7 +5461,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-145",
+"id": "IROS2025-146",
 "title": "Robust Model Predictive Control for Quadruped Locomotion under Model Uncertainties and External Disturbances",
 "authors": [
 "Weipeng Xia",
@@ -5407,7 +5481,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-150",
+"id": "IROS2025-151",
 "title": "Enabling On-Chip Adaptive Linear Optimal Control Via Linearized Gaussian Process",
 "authors": [
 "Yuan Gao",
@@ -5428,7 +5502,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-153",
+"id": "IROS2025-154",
 "title": "A Hybrid Motion Optimization Framework for the Humanoid Upper-Body Robot: Safe and Dexterous Object Carrying",
 "authors": [
 "Zhaoyang Chen",
@@ -5450,7 +5524,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-159",
+"id": "IROS2025-160",
 "title": "Online Motion Planning for Quadrotor Multi-Point Navigation Using Efficient Imitation Learning-Based Strategy",
 "authors": [
 "Jin Zhou",
@@ -5473,7 +5547,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-178",
+"id": "IROS2025-179",
 "title": "Informative Trajectory Planning for Air-Ground Cooperative Monitoring of Spatiotemporal Fields (I)",
 "authors": [
 "Zhuo Li",
@@ -5497,7 +5571,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-180",
+"id": "IROS2025-181",
 "title": "RA-DP: Rapid Adaptive Diffusion Policy for Training-Free High-Frequency Robotics Replanning",
 "authors": [
 "Xi Ye",
@@ -5520,7 +5594,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-182",
+"id": "IROS2025-183",
 "title": "Homotopy-Aware Multi-Agent Navigation Via Distributed Model Predictive Control",
 "authors": [
 "Haoze Dong",
@@ -5541,7 +5615,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-204",
+"id": "IROS2025-205",
 "title": "Incremental Sparse Gaussian Process-Based Model Predictive Control for Trajectory Tracking of Unmanned Underwater Vehicles",
 "authors": [
 "Yukun Dang",
@@ -5563,7 +5637,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-214",
+"id": "IROS2025-215",
 "title": "Refer and Grasp: Vision-Language Guided Continuous Dexterous Grasping",
 "authors": [
 "Yayu Huang",
@@ -5589,7 +5663,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-231",
+"id": "IROS2025-232",
 "title": "Gaze-Guided Task Decomposition for Imitation Learning in Robotic Manipulation",
 "authors": [
 "Ryo Takizawa",
@@ -5609,7 +5683,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-243",
+"id": "IROS2025-244",
 "title": "One-Shot Robust Imitation Learning for Long-Horizon Visuomotor Tasks from Unsegmented Demonstrations",
 "authors": [
 "Shaokang Wu",
@@ -5629,7 +5703,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-248",
+"id": "IROS2025-249",
 "title": "Hierarchical Reinforcement Learning for Articulated Tool Manipulation with Multifingered Hand",
 "authors": [
 "Wei Xu",
@@ -5651,7 +5725,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-291",
+"id": "IROS2025-292",
 "title": "A Simple Approach to Constraint-Aware Imitation Learning with Application to Autonomous Racing",
 "authors": [
 "Shengfan Cao",
@@ -5671,7 +5745,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-303",
+"id": "IROS2025-305",
 "title": "Functional Eigen-Grasping Using Approach Heatmaps",
 "authors": [
 "Malek Aburub",
@@ -5693,7 +5767,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-322",
+"id": "IROS2025-324",
 "title": "Aerial Robots Carrying Flexible Cables: Dynamic Shape Optimal Control Via Spectral Method Model",
 "authors": [
 "Yaolei Shen",
@@ -5713,7 +5787,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-329",
+"id": "IROS2025-333",
 "title": "DiffGen: Robot Demonstration Generation Via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model",
 "authors": [
 "Yang Jin",
@@ -5736,7 +5810,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-339",
+"id": "IROS2025-343",
 "title": "Deep Reinforcement Learning-Based Levitation Control of WirelessCapsule Endoscope by Robotically Driven Permanent Magnet",
 "authors": [
 "Ding Huang",
@@ -5757,7 +5831,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-383",
+"id": "IROS2025-387",
 "title": "Underactuated Dexterous Robotic Grasping with Reconfigurable Passive Joints",
 "authors": [
 "Marek Kopicki",
@@ -5780,7 +5854,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-458",
+"id": "IROS2025-462",
 "title": "Deep Reinforcement Learning with Multiple Unrelated Rewards for AGV Mapless Navigation (I)",
 "authors": [
 "Boliang Cai",
@@ -5800,7 +5874,7 @@
 "pdf": ""
 },
 {
-"id": "IROS2025-470",
+"id": "IROS2025-474",
 "title": "Online Imitation Learning for Manipulation Via Decaying Relative Correction through Teleoperation",
 "authors": [
 "Cheng Pan",
@@ -5818,84 +5892,8 @@
 "abstract": "Teleoperated robotic manipulators enable the collection of demonstration data, which can be used to train control policies through imitation learning. However, such methods can require significant amounts of training data to develop robust policies or adapt them to new and unseen tasks. While expert feedback can significantly enhance policy performance, providing continuous feedback can be cognitively demanding and time-consuming for experts. To address this challenge, we propose to use a cable-driven teleoperation system which can provide spatial corrections with 6 degree of freedom to the trajectories generated by a policy model. Specifically, we propose a correction method termed Decaying Relative Correction (DRC) which is based upon the spatial offset vector provided by the expert and exists temporarily, and which reduces the intervention steps required by an expert. Our results demonstrate that DRC reduces the required expert intervention rate by 30% compared to a standard absolute corrective method. Furthermore, we show that integrating DRC within an online imitation learning framework rapidly increases the success rate of manipulation tasks such as raspberry harvesting and cloth wiping.",
 "url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#that15_06",
 "pdf": ""
-},
-{
-"id": "IROS2025-534",
-"title": "RoboDuet: Learning a Cooperative Policy for Whole-Body Legged Loco-Manipulation",
-"authors": [
-"Guoping Pan",
-"Qingwei Ben",
-"Zhecheng Yuan",
-"Guangqi Jiang",
-"Yandong Ji",
-"Shoujie Li",
-"Jiangmiao Pang",
-"Houde Liu",
-"Huazhe Xu"
-],
-"venue": "IROS 2025",
-"year": 2025,
-"topics": [
-"Control"
-],
-"tracked_authors": [
-"Huazhe Xu"
-],
-"score": 14,
-"tldr": "In this letter, we propose a novel framework RoboDuet, which employs two collaborative policies to realize locomotion and manipulation simultaneously, achieving whole-body control through mutual interactions.",
-"abstract": "Fully leveraging the loco-manipulation capabilities of a quadruped robot equipped with a robotic arm is non-trivial, as it requires controlling all degrees of freedom (DoFs) of the quadruped robot to achieve effective whole-body coordination. In this letter, we propose a novel framework RoboDuet, which employs two collaborative policies to realize locomotion and manipulation simultaneously, achieving whole-body control through mutual interactions. Beyond enabling large-range 6D pose tracking for manipulation, we find that the two-policy framework supports zero-shot transfer across quadruped robots with similar morphology and physical dimensions in the real world. Our experiments demonstrate that RoboDuet achieves a 23% improvement in success rate over the baseline in challenging loco-manipulation tasks employing whole-body control. To support further research, we provide open-source code and additional videos on our website: https://locomanip-duet.github.io/.",
-"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thbt25_04",
-"pdf": ""
-},
-{
-"id": "IROS2025-571",
-"title": "ColaDex: Contact-Guided Optimization and VLM-Assisted Selection for Task-Oriented Dexterous Grasp Generation",
-"authors": [
-"Yiyao Ma",
-"Kai Chen",
-"Xuecheng Xu",
-"Zhongxiang Zhou",
-"Liang Xie",
-"Rong Xiong",
-"Qi Dou"
-],
-"venue": "IROS 2025",
-"year": 2025,
-"topics": [
-"Dex"
-],
-"tracked_authors": [],
-"score": 14,
-"tldr": "In this paper, we propose a novel pipeline called ColaDex to address this challenging problem.",
-"abstract": "Task-oriented dexterous grasp generation aims to generate stable and functional grasps that enable a robotic hand to effectively interact with objects to accomplish specific tasks. However, generating high-dimensional hand configurations that seamlessly adapt to diverse task requirements and object geometries remains a significant challenge. In this paper, we propose a novel pipeline called ColaDex to address this challenging problem. The core idea of ColaDex is to leverage a vision-language models (VLMs) to select the dexterous grasp from a set of candidates that aligns well with the task description. To this end, we first introduce a contact-guided optimization method to generate a set of high-quality grasp candidates around the object through analytical optimization. Subsequently, to effectively prompt VLMs with the sampled numerous grasp candidates, we propose an object-centric approach that adaptively represents a group of candidates as prototypical contact maps, learned based on the geometric relationships between the grasping hand and object shape. We then feed the task requirement and the generated prototypical contact maps into the VLM, enabling it to reason about grasp-object interactions and assess their alignment with the given task, ultimately selecting the grasp that best aligns with the task requirement. Extensive experiments demonstrate that our prototypical contact map is a more informative prompting mechanism than conventional RGB images, enabling ColaDex to consistently generate high-quality task-oriented grasps and achieve a high success rate across diverse objects and tasks.",
-"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thct21_01",
-"pdf": ""
-},
-{
-"id": "IROS2025-591",
-"title": "UltraDP: Generalizable Carotid Ultrasound Scanning with Force-Aware Diffusion Policy",
-"authors": [
-"Ruoqu Chen",
-"Xiangjie Yan",
-"Kangchen Lv",
-"Gao Huang",
-"Zheng Li",
-"Xiang Li"
-],
-"venue": "IROS 2025",
-"year": 2025,
-"topics": [
-"IL",
-"GenModel"
-],
-"tracked_authors": [],
-"score": 14,
-"tldr": "To overcome these limitations, we present UltraDP, a Diffusion-Policy-based method that receives multi-sensory inputs (ultrasound images, wrist camera images, contact wrench, and probe pose) and generates actions that are fit for multi-modal action distributions in autonomous…",
-"abstract": "Ultrasound scanning is a critical imaging technique for real-time, non-invasive diagnostics. However, variations in patient anatomy and complex human-in-the-loop interactions pose significant challenges for autonomous robotic scanning. Existing ultrasound scanning robots are commonly limited to relatively low generalization and inefficient data utilization. To overcome these limitations, we present UltraDP, a Diffusion-Policy-based method that receives multi-sensory inputs (ultrasound images, wrist camera images, contact wrench, and probe pose) and generates actions that are fit for multi-modal action distributions in autonomous ultrasound scanning of carotid artery. We propose a specialized guidance module to enable the policy to output actions that center the artery in ultrasound images. To ensure stable contact and safe interaction between the robot and the human subject, a hybrid force-impedance controller is utilized to drive the robot to track such trajectories. Also, we have built a large-scale training dataset for carotid scanning comprising 210 scans with 460k sample pairs from 21 volunteers of both genders. By exploring our guidance module and DP's strong generalization ability, UltraDP achieves a 95% success rate in transverse scanning on previously unseen subjects, demonstrating its effectiveness.",
-"url": "https://ras.papercept.net/conferences/conferences/IROS25/program/IROS25_ContentListWeb_3.html#thct28_04",
-"pdf": ""
 }
 ]
 },
-"updated": "2026-11-24"
+"updated": "2026-11-26"
 }

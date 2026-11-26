@@ -3,7 +3,7 @@
 "years": {
 "2026": [
 {
-"id": "ICRA2026-425",
+"id": "ICRA2026-436",
 "title": "Flow before Imitation: Learning Dexterous In-Hand Manipulation with Dynamic Visuotactile Shortcut Policy",
 "authors": [
 "Yijin Chen",
@@ -29,7 +29,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-559",
+"id": "ICRA2026-573",
 "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
 "authors": [
 "Yanjie Ze",
@@ -86,7 +86,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-799",
+"id": "ICRA2026-822",
 "title": "Learning Dexterous Manipulation Skills from Imperfect Simulations",
 "authors": [
 "Elvis Hsieh",
@@ -115,7 +115,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-691",
+"id": "ICRA2026-708",
 "title": "Tactile-Driven Dexterous In-Hand Writing Via Extrinsic Contact Sensing",
 "authors": [
 "Can Zhao",
@@ -139,7 +139,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-78",
+"id": "ICRA2026-79",
 "title": "SpikeATac: A Multimodal Tactile Finger with Taxelized Dynamic Sensing for Dexterous Manipulation",
 "authors": [
 "Eric T. Chang",
@@ -169,7 +169,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-418",
+"id": "ICRA2026-428",
 "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
 "authors": [
 "Lujie Yang",
@@ -201,7 +201,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-125",
+"id": "ICRA2026-126",
 "title": "Low-Dimensional Tactile Glove for Visuo-Tactile Robot Hand Control: A Preliminary Study",
 "authors": [
 "Gi-gwang Baek",
@@ -221,7 +221,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-478",
+"id": "ICRA2026-491",
 "title": "Zero-Shot Sim2Real Transfer for Magnet-Based Tactile Sensor on Insertion Tasks",
 "authors": [
 "Beining Han",
@@ -243,7 +243,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-338",
+"id": "ICRA2026-343",
 "title": "Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models",
 "authors": [
 "Mingyang Lv",
@@ -269,7 +269,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-170",
+"id": "ICRA2026-171",
 "title": "Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-The-Wild Human Demonstrations",
 "authors": [
 "Irmak Guzey",
@@ -305,7 +305,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-783",
+"id": "ICRA2026-805",
 "title": "Using Non-Expert Data to Robustify Imitation Learning Via Offline Reinforcement Learning",
 "authors": [
 "Kevin Huang",
@@ -339,7 +339,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-534",
+"id": "ICRA2026-547",
 "title": "Ultra-Fast Lightweight Incipient Slip Detection Using Hyperdimensional Computing with the PapillArray Tactile Sensor",
 "authors": [
 "Jingtao Zhang",
@@ -362,7 +362,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-449",
+"id": "ICRA2026-460",
 "title": "Learning Controlled Separation of Small Objects between Two Fingers with a Tactile Skin",
 "authors": [
 "Ulf Kasolowsky",
@@ -383,7 +383,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-279",
+"id": "ICRA2026-281",
 "title": "ETac: A Lightweight and Efficient Tactile Simulation Framework for Learning Dexterous Manipulation",
 "authors": [
 "Zhe Xu",
@@ -406,7 +406,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-759",
+"id": "ICRA2026-780",
 "title": "FD-VLA: Force-Distilled Vision-Language-Action Model for Contact-Rich Manipulation",
 "authors": [
 "Ruiteng Zhao",
@@ -432,7 +432,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-353",
+"id": "ICRA2026-359",
 "title": "ADM-DP: Adaptive Dynamic Modality Diffusion Policy through Vision-Tactile-Graph Fusion for Multi-Agent Manipulation",
 "authors": [
 "Wang Enyi",
@@ -454,7 +454,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-419",
+"id": "ICRA2026-429",
 "title": "Push Anything: Single and Multi-Object Pushing from First Sight with Contact-Implicit MPC",
 "authors": [
 "Hien Bui",
@@ -482,7 +482,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-594",
+"id": "ICRA2026-609",
 "title": "Learning End-To-End Dexterous Arm-Hand VLA Policies with Shared Autonomy: DexGrasp AI Copilot for Efficient Teleoperation",
 "authors": [
 "Yu Cui",
@@ -507,7 +507,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-639",
+"id": "ICRA2026-654",
 "title": "COMPASS: Cross-embOdiment Mobility Policy Via ResiduAl RL and Skill Synthesis",
 "authors": [
 "Wei Liu",
@@ -533,7 +533,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-302",
+"id": "ICRA2026-304",
 "title": "UVDtact: UV Marker-Embedded Fingertip-Like Vision-Based Tactile Sensor for Shape Reconstruction and Force Estimation",
 "authors": [
 "Woojong Kim",
@@ -557,7 +557,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-835",
+"id": "ICRA2026-859",
 "title": "PoCoDP3: Pose and Contact-Aware Visual-Tactile Policy for Contact-Rich 3D Manipulation",
 "authors": [
 "Zhaokun Yue",
@@ -579,7 +579,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-132",
+"id": "ICRA2026-133",
 "title": "Spatially-Anchored Tactile Awareness for Robust Dexterous Manipulation",
 "authors": [
 "Jialei Huang",
@@ -603,7 +603,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-315",
+"id": "ICRA2026-318",
 "title": "TEGA: A Tactile-Enhanced Grasping Assistant for Assistive Robotics Via Sensor Fusion and Closed-Loop Haptic Feedback",
 "authors": [
 "Hengxu You",
@@ -627,7 +627,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-636",
+"id": "ICRA2026-651",
 "title": "M-VTOP: Modular Visuo-Tactile Object Pose Estimation for High-Precision Robotic Manipulation",
 "authors": [
 "Miquel Oller",
@@ -649,7 +649,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-187",
+"id": "ICRA2026-188",
 "title": "FreeTacMan: Robot-Free Visuo-Tactile Data Collection System for Contact-Rich Manipulation",
 "authors": [
 "Longyan Wu",
@@ -675,7 +675,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-204",
+"id": "ICRA2026-205",
 "title": "Residual Off-Policy RL for Finetuning Behavior Cloning Policies",
 "authors": [
 "Lars Ankile",
@@ -703,7 +703,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-73",
+"id": "ICRA2026-74",
 "title": "Suction Leap-Hand: Suction Cups on a Multi-Fingered Hand Enable Embodied Dexterity and In-Hand Teleoperation",
 "authors": [
 "Sun Zhaole",
@@ -726,7 +726,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-199",
+"id": "ICRA2026-200",
 "title": "SARL: Spatially-Aware Self-Supervised Representation Learning for Visuo-Tactile Perception",
 "authors": [
 "Gurmeher Khurana",
@@ -747,7 +747,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-340",
+"id": "ICRA2026-345",
 "title": "TranTac: Leveraging Transient Tactile Signals for Contact-Rich Robotic Manipulation",
 "authors": [
 "Yinghao Wu",
@@ -773,7 +773,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-717",
+"id": "ICRA2026-736",
 "title": "TactileAloha: Learning Bimanual Manipulation with Tactile Sensing",
 "authors": [
 "Ningquan Gu",
@@ -795,7 +795,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-773",
+"id": "ICRA2026-794",
 "title": "OCRA: Object-Centric Learning with 3D and Tactile Priors for Human-To-Robot Action Transfer",
 "authors": [
 "Kuanning Wang",
@@ -873,7 +873,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-200",
+"id": "ICRA2026-201",
 "title": "Diffusing Trajectory Optimization Problems for Recovery During Multi-Finger Manipulation",
 "authors": [
 "Abhinav Kumar",
@@ -898,7 +898,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-585",
+"id": "ICRA2026-600",
 "title": "Planning-Guided Diffusion Policy Learning for Contact-Rich Bimanual Object Reorientation",
 "authors": [
 "Xuanlin Li",
@@ -924,7 +924,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-596",
+"id": "ICRA2026-611",
 "title": "DemoBot: Efficient Learning of Bimanual Manipulation with Dexterous Hands from Third-Person Human Videos",
 "authors": [
 "Yucheng Xu",
@@ -950,7 +950,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-784",
+"id": "ICRA2026-806",
 "title": "Adversarial Game-Theoretic Algorithm for Dexterous Grasp Synthesis",
 "authors": [
 "Yu Chen",
@@ -979,7 +979,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-98",
+"id": "ICRA2026-99",
 "title": "Opt2Skill: Imitating Dynamically-Feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
 "authors": [
 "Fukang Liu",
@@ -1011,7 +1011,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-165",
+"id": "ICRA2026-166",
 "title": "Approximated Collision Detection for Contact-Rich Dexterous Manipulation with Nonnegative Least Squares",
 "authors": [
 "Weibing Li",
@@ -1034,7 +1034,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-349",
+"id": "ICRA2026-354",
 "title": "TactEx: An Explainable Multimodal Robotic Interaction Framework for Human-Like Touch and Hardness Estimation",
 "authors": [
 "Felix Verstraete",
@@ -1057,7 +1057,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-408",
+"id": "ICRA2026-416",
 "title": "TacFlex: Multi-Mode Tactile Imprints Simulation for Visuotactile Sensors with Coating Patterns",
 "authors": [
 "Chaofan Zhang",
@@ -1082,7 +1082,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-803",
+"id": "ICRA2026-826",
 "title": "Cross-Embodiment Transfer Via Behavior-Aligned Representations",
 "authors": [
 "Ajay Sridhar",
@@ -1109,7 +1109,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-839",
+"id": "ICRA2026-863",
 "title": "Shear-Based Grasp Control for Multi-Fingered Underactuated Tactile Robotic Hands",
 "authors": [
 "Christopher Ford",
@@ -1133,7 +1133,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-127",
+"id": "ICRA2026-128",
 "title": "Toward Human Preference Optimization for Vision-Language-Action Models: A Pilot Study on the Limits of Imitation Learning",
 "authors": [
 "Tae-Won Lee",
@@ -1154,7 +1154,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-339",
+"id": "ICRA2026-344",
 "title": "Bi-Hap: A Bi-Directional Learning-Based Control and Momentum-Based Haptic Feedback System for Dexterous In-Hand Telemanipulation",
 "authors": [
 "Haoyang Wang",
@@ -1177,7 +1177,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-343",
+"id": "ICRA2026-348",
 "title": "Touch with Insight: Physics-Aware Data-Driven Learning for EIT-Based Tactile Sensing",
 "authors": [
 "Kiyanoush Nazari",
@@ -1201,7 +1201,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-415",
+"id": "ICRA2026-425",
 "title": "Dexora: Open-Source VLA for High-DoF Bimanual Dexterity",
 "authors": [
 "Zongzheng Zhang",
@@ -1246,7 +1246,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-626",
+"id": "ICRA2026-641",
 "title": "DOT-Sim: Differentiable Optical Tactile Simulation with Precise Real-To-Sim Physical Calibration",
 "authors": [
 "Yang You",
@@ -1271,7 +1271,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-753",
+"id": "ICRA2026-773",
 "title": "MultiDiffSense: Diffusion-Based Multi-Modal Visuo-Tactile Image Generation Conditioned on Object Shape and Contact Pose",
 "authors": [
 "Sirine Bhouri",
@@ -1317,7 +1317,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-156",
+"id": "ICRA2026-157",
 "title": "Learning Geometry-Aware Nonprehensile Pushing and Pulling with Dexterous Hands",
 "authors": [
 "Yunshuang Li",
@@ -1339,7 +1339,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-218",
+"id": "ICRA2026-219",
 "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
 "authors": [
 "João Araújo",
@@ -1366,7 +1366,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-304",
+"id": "ICRA2026-306",
 "title": "Grasp Like Humans: Learning Generalizable Multi-Fingered Grasping from Human Proprioceptive Sensorimotor Integration",
 "authors": [
 "Ce Guo",
@@ -1393,7 +1393,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-332",
+"id": "ICRA2026-337",
 "title": "TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In-Grasp Manipulation",
 "authors": [
 "Pranav Ponnivalavan",
@@ -1416,7 +1416,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-426",
+"id": "ICRA2026-437",
 "title": "Flexible Locomotion Learning with Diffusion Model Predictive Control",
 "authors": [
 "Runhan Huang",
@@ -1441,7 +1441,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-592",
+"id": "ICRA2026-607",
 "title": "DemoDiffusion: One-Shot Human Imitation Using Pre-Trained Diffusion Policy",
 "authors": [
 "Sungjae Park",
@@ -1465,7 +1465,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-772",
+"id": "ICRA2026-793",
 "title": "How to Train Your Tactile Model: Tactile Perception with Multi-Fingered Robot Hands",
 "authors": [
 "Christopher Ford",
@@ -1488,7 +1488,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-779",
+"id": "ICRA2026-801",
 "title": "HoMeR: Learning In-The-Wild Mobile Manipulation Via Hybrid Imitation and Whole-Body Control",
 "authors": [
 "Priya Sundaresan",
@@ -1519,7 +1519,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-850",
+"id": "ICRA2026-875",
 "title": "SCIZOR: A Self-Supervised Approach to Data Curation for Large-Scale Imitation Learning",
 "authors": [
 "Yu Zhang",
@@ -1546,7 +1546,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-852",
+"id": "ICRA2026-877",
 "title": "ViTaS: Visual Tactile Soft Fusion Contrastive Learning for Visuomotor Learning",
 "authors": [
 "Yufeng Tian",
@@ -1575,7 +1575,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-172",
+"id": "ICRA2026-173",
 "title": "Dream2Flow: Bridging Video Generation and Open-World Manipulation with 3D Object Flow",
 "authors": [
 "Karthik Dharmarajan",
@@ -1601,7 +1601,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-229",
+"id": "ICRA2026-230",
 "title": "Scalable Vision-Language-Action Model Pretraining for Robotic Dexterous Manipulation with Real-Life Human Activity Videos",
 "authors": [
 "Qixiu Li",
@@ -1636,7 +1636,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-439",
+"id": "ICRA2026-450",
 "title": "A Closed-Loop CPR Training Glove with Integrated Tactile Sensing and Haptic Feedback",
 "authors": [
 "Jaeyoung Moon",
@@ -1663,7 +1663,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-460",
+"id": "ICRA2026-472",
 "title": "Reactive Slip Control in Multifingered Grasping: Hybrid Tactile Sensing and Internal-Force Optimization",
 "authors": [
 "Théo Ayral",
@@ -1684,7 +1684,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-467",
+"id": "ICRA2026-480",
 "title": "T(R, O) Grasp: Efficient Graph Diffusion of Robot-Object Spatial Transformation for Cross-Embodiment Dexterous Grasping",
 "authors": [
 "Xin Fei",
@@ -1708,7 +1708,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-487",
+"id": "ICRA2026-500",
 "title": "How Well Do Diffusion Policies Learn Kinematic Constraint Manifolds?",
 "authors": [
 "Lexi Foland",
@@ -1735,7 +1735,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-617",
+"id": "ICRA2026-632",
 "title": "ViTac-Tracing: Visual-Tactile Imitation Learning of Deformable Object Tracing",
 "authors": [
 "Yongqiang Zhao",
@@ -1760,7 +1760,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-736",
+"id": "ICRA2026-755",
 "title": "Symmetry-Aware Fusion of Vision and Tactile Sensing Via Bilateral Force Priors for Robotic Manipulation",
 "authors": [
 "Wonju Lee",
@@ -1781,7 +1781,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-737",
+"id": "ICRA2026-756",
 "title": "Galaxy Open-World Dataset and G0 Dual-System VLA Model",
 "authors": [
 "Tao Jiang",
@@ -1811,7 +1811,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-801",
+"id": "ICRA2026-824",
 "title": "X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations",
 "authors": [
 "Maximus Pace",
@@ -1838,7 +1838,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-817",
+"id": "ICRA2026-840",
 "title": "ConTact: Contrastive Tactile Alignment for Sim-To-Real Robotic Manipulation",
 "authors": [
 "Yanlin Lai",
@@ -1891,7 +1891,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-184",
+"id": "ICRA2026-185",
 "title": "One-Policy-Fits-All: Geometry-Aware Action Latents for Cross-Embodiment Manipulation",
 "authors": [
 "Juncheng Mu",
@@ -1920,7 +1920,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-193",
+"id": "ICRA2026-194",
 "title": "Tactile Memory for Continuous Policy Blending in Unified Force-Impedance Control",
 "authors": [
 "Kübra Karacan",
@@ -1946,7 +1946,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-220",
+"id": "ICRA2026-221",
 "title": "AnchorDream: Repurposing Video Diffusion for Embodiment-Aware Robot Data Synthesis",
 "authors": [
 "Junjie Ye",
@@ -1972,7 +1972,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-358",
+"id": "ICRA2026-364",
 "title": "UMI-On-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies",
 "authors": [
 "Harsh Gupta",
@@ -2003,7 +2003,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-367",
+"id": "ICRA2026-373",
 "title": "ACG: Action Coherence Guidance for Flow-Based Vision-Language-Action Models",
 "authors": [
 "Minho Park",
@@ -2030,7 +2030,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-388",
+"id": "ICRA2026-395",
 "title": "TransTac: Visuo-Tactile Modality Transition Via Ultraviolet-Encoded Transparent Elastomers",
 "authors": [
 "Lingyue Yang",
@@ -2050,7 +2050,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-444",
+"id": "ICRA2026-455",
 "title": "OcTac: An Octopus Sucker-Inspired Vision-Based Tactile Sensor with Self-Adaptive Adhesion for Complex Surface Interactions",
 "authors": [
 "Yi Xiong",
@@ -2073,7 +2073,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-490",
+"id": "ICRA2026-503",
 "title": "ExpReS-VLA: Specializing Vision-Language-Action Models through Experience Replay and Retrieval",
 "authors": [
 "Shahram Najam Syed",
@@ -2095,7 +2095,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-573",
+"id": "ICRA2026-587",
 "title": "Haptic Stiffness Perception Using Hand Exoskeletons in Tactile Robotic Telemanipulation",
 "authors": [
 "Gabriele Giudici",
@@ -2118,7 +2118,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-581",
+"id": "ICRA2026-596",
 "title": "PegasusFlow: Parallel Rolling-Denoising Score Sampling for Robot Diffusion Planner Flow Matching",
 "authors": [
 "Lei Ye",
@@ -2147,7 +2147,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-584",
+"id": "ICRA2026-599",
 "title": "HOGraspFlow: Taxonomy-Aware Hand-Object Retargeting for Multi-Modal SE(3) Grasp Generation",
 "authors": [
 "Yitian Shi",
@@ -2171,7 +2171,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-619",
+"id": "ICRA2026-634",
 "title": "Balancing Marker and Markerless Modes in Vision-Based Tactile Sensors with a Translucent Skin",
 "authors": [
 "Oluwatimilehin Tijani",
@@ -2193,7 +2193,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-642",
+"id": "ICRA2026-657",
 "title": "Built Different: Tactile Perception to Overcome Cross-Embodiment Capability Differences in Collaborative Manipulation",
 "authors": [
 "William van den Bogert",
@@ -2215,7 +2215,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-770",
+"id": "ICRA2026-791",
 "title": "Tactile Hide and Seek: Bimanual Object Blind Search and Retrieval Via Tactile-Only Feedback",
 "authors": [
 "Xiangyu Fu",
@@ -2240,7 +2240,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-176",
+"id": "ICRA2026-177",
 "title": "DextrAH-RGB: Visuomotor Policies to Grasp Anything with Dexterous Hands",
 "authors": [
 "Ritvik Singh",
@@ -2264,7 +2264,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-219",
+"id": "ICRA2026-220",
 "title": "Unlocking the Potential of Soft Actor-Critic for Imitation Learning",
 "authors": [
 "Nayari Marie Lessa",
@@ -2286,7 +2286,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-410",
+"id": "ICRA2026-418",
 "title": "A Cable-Driven Soft Robotic Hand with an In-Hand RGB-D Camera for Dexterous Grasping and Manipulation",
 "authors": [
 "Zhanfeng Zhou",
@@ -2312,7 +2312,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-548",
+"id": "ICRA2026-562",
 "title": "GuideTWSI: A Diverse Tactile Walking Surface Indicator Dataset from Synthetic and Real-World Images for Blind and Low-Vision Navigation",
 "authors": [
 "Hochul Hwang",
@@ -2340,7 +2340,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-74",
+"id": "ICRA2026-75",
 "title": "Robot Control Stack: A Lean Ecosystem for Robot Learning at Scale",
 "authors": [
 "Tobias Thomas Jülg",
@@ -2370,7 +2370,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-106",
+"id": "ICRA2026-107",
 "title": "Approximating Global Contact-Implicit MPC Via Sampling and Local Complementarity",
 "authors": [
 "Sharanya Venkatesh",
@@ -2393,7 +2393,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-268",
+"id": "ICRA2026-269",
 "title": "Simultaneous Extrinsic Contact and In-Hand Pose Estimation Via Distributed Tactile Sensing",
 "authors": [
 "Mark Van der Merwe",
@@ -2416,7 +2416,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-372",
+"id": "ICRA2026-378",
 "title": "Ego-Vision World Model for Humanoid Contact Planning",
 "authors": [
 "Hang Liu",
@@ -2443,7 +2443,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-669",
+"id": "ICRA2026-685",
 "title": "Open-World Object Manipulation with Vision-Language-Action Models Via Synthetic Multi-Modal Data",
 "authors": [
 "Yefei Chen",
@@ -2492,7 +2492,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-192",
+"id": "ICRA2026-193",
 "title": "UltraDexGrasp: Learning Universal Dexterous Grasping for Bimanual Robots with Synthetic Data",
 "authors": [
 "Sizhe Yang",
@@ -2517,7 +2517,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-253",
+"id": "ICRA2026-254",
 "title": "Grasp Independent Indirect Tool Force Estimation Using Vision-Based Tactile Sensors",
 "authors": [
 "Luchen Li",
@@ -2537,7 +2537,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-285",
+"id": "ICRA2026-287",
 "title": "CoorGrasp: Coordinated Contact Control for Adaptive Dexterous Grasping under Uncertainty",
 "authors": [
 "Mingrui Yu",
@@ -2560,7 +2560,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-501",
+"id": "ICRA2026-514",
 "title": "Non-Contact Tactile Perception in Human-Robot Interaction: Deep Learning-Enhanced Super-Resolution Spatial Sensing",
 "authors": [
 "Shuyao Zhou",
@@ -2585,7 +2585,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-613",
+"id": "ICRA2026-628",
 "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
 "authors": [
 "Bowen Jiang",
@@ -2607,7 +2607,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-676",
+"id": "ICRA2026-692",
 "title": "MachaGrasp: Morphology-Aware Cross-Embodiment Dexterous Hand Articulation Generation for Grasping",
 "authors": [
 "Heng Zhang",
@@ -2654,7 +2654,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-128",
+"id": "ICRA2026-129",
 "title": "Enhancing VLA Precision in Robotic Manipulation Via FiLM-Based Force/Torque-Vision Integration",
 "authors": [
 "Gunhee Nam",
@@ -2675,7 +2675,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-131",
+"id": "ICRA2026-132",
 "title": "Do You Know Where Your Camera Is? View-Invariant Policy Learning with Camera Conditioning",
 "authors": [
 "Tianchong Jiang",
@@ -2699,7 +2699,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-208",
+"id": "ICRA2026-209",
 "title": "TwinTrack: Bridging Vision and Contact Physics for Real-Time Tracking of Unknown Objects in Contact-Rich Scenes",
 "authors": [
 "Wen Yang",
@@ -2723,7 +2723,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-266",
+"id": "ICRA2026-267",
 "title": "FORTE: Tactile Force and Slip Sensing on Compliant Fingers for Delicate Manipulation",
 "authors": [
 "Siqi Shang",
@@ -2747,7 +2747,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-698",
+"id": "ICRA2026-715",
 "title": "The Developments and Challenges towards Dexterous and Embodied Robotic Manipulation: A Survey",
 "authors": [
 "Gaofeng Li",
@@ -2771,7 +2771,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-808",
+"id": "ICRA2026-831",
 "title": "TransDexNet: An End-To-End Motion Retargeting Network with Transformer for Dexterous Hand Teleoperation from RGB Images",
 "authors": [
 "Jiaying Tan",
@@ -2792,7 +2792,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-819",
+"id": "ICRA2026-842",
 "title": "DualGuard MPPI: Safe and Performant Optimal Control by Combining Sampling-Based MPC and Hamilton-Jacobi Reachability",
 "authors": [
 "Javier Borquez",
@@ -2813,7 +2813,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-851",
+"id": "ICRA2026-876",
 "title": "Deep Sensorimotor Control by Imitating Predictive Models of Human Motion",
 "authors": [
 "Himanshu Gaurav Singh",
@@ -2838,7 +2838,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-352",
+"id": "ICRA2026-358",
 "title": "Multimodal Diffusion Forcing for Forceful Manipulation",
 "authors": [
 "Zixuan Huang",
@@ -2860,7 +2860,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-424",
+"id": "ICRA2026-434",
 "title": "Few-Shot Transfer of Tool-Use Skills Using Human Demonstrations with Proximity and Tactile Sensing",
 "authors": [
 "Marina Y. Aoyama",
@@ -2882,7 +2882,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-514",
+"id": "ICRA2026-527",
 "title": "Physically-Grounded Data Generation Via Video Diffusion Models",
 "authors": [
 "Sriram Yenamandra",
@@ -2905,7 +2905,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-523",
+"id": "ICRA2026-536",
 "title": "Diffusion Trajectory-Guided Policy for Long-Horizon Robot Manipulation",
 "authors": [
 "Shichao Fan",
@@ -2931,7 +2931,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-564",
+"id": "ICRA2026-578",
 "title": "Dream to Fly: Model-Based Reinforcement Learning for Vision-Based Drone Flight",
 "authors": [
 "Angel Romero",
@@ -2954,7 +2954,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-673",
+"id": "ICRA2026-689",
 "title": "Wearable, Fabric-Embedded Acoustic Waveguides for Meter-Scale Contact Localization and Force Sensing",
 "authors": [
 "Wilfred Mason",
@@ -2977,7 +2977,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-786",
+"id": "ICRA2026-809",
 "title": "CRAFT: Adapting VLA Models to Contact-Rich Manipulation Via Force-Aware Curriculum Fine-Tuning",
 "authors": [
 "Yike Zhang",
@@ -3006,7 +3006,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-97",
+"id": "ICRA2026-98",
 "title": "STEM: A Soft Tactile Electromagnetic Actuator for Multimodal Haptic Feedback in Virtual Environments",
 "authors": [
 "Heeju Mun",
@@ -3029,7 +3029,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-133",
+"id": "ICRA2026-134",
 "title": "DAM-VLA: A Dynamic Action Model-Based Vision-Language-Action Framework for Robot Manipulation",
 "authors": [
 "Xiongfeng Peng",
@@ -3058,7 +3058,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-150",
+"id": "ICRA2026-151",
 "title": "Constructing Contact Estimation Models for Barometric Tactile Sensors",
 "authors": [
 "Sharmi Shah",
@@ -3083,7 +3083,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-290",
+"id": "ICRA2026-292",
 "title": "Tactile Elastography",
 "authors": [
 "Yichen Xiang",
@@ -3105,7 +3105,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-430",
+"id": "ICRA2026-441",
 "title": "OmniVLA: An Omni-Modal Vision-Language-Action Model for Robot Navigation",
 "authors": [
 "Noriaki Hirose",
@@ -3128,7 +3128,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-484",
+"id": "ICRA2026-497",
 "title": "Tactile-Proprioceptive Sensor Fusion for Contact Wrench Estimation in Whole-Body Physical Human-Robot Interaction",
 "authors": [
 "Junha Min",
@@ -3153,7 +3153,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-575",
+"id": "ICRA2026-589",
 "title": "Grasp, Slide, Roll: Comparative Analysis of Contact Modes for Tactile-Based Shape Reconstruction",
 "authors": [
 "Chung Hee Kim",
@@ -3176,7 +3176,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-577",
+"id": "ICRA2026-591",
 "title": "Switchable Neural Teleoperation",
 "authors": [
 "Jianglong Ye",
@@ -3204,7 +3204,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-656",
+"id": "ICRA2026-671",
 "title": "Learning Affordances at Inference-Time for Vision-Language-Action Models",
 "authors": [
 "Ameesh Shah",
@@ -3229,7 +3229,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-663",
+"id": "ICRA2026-679",
 "title": "SuckTac: Camera-Based Tactile Sucker for Unstructured Surface Perception and Interaction",
 "authors": [
 "Ruiyong Yuan",
@@ -3253,7 +3253,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-667",
+"id": "ICRA2026-683",
 "title": "Rainbow-DemoRL: Combining Improvements in Demonstration-Augmented Reinforcement Learning",
 "authors": [
 "Dwait Bhatt",
@@ -3275,7 +3275,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-706",
+"id": "ICRA2026-723",
 "title": "A Taxonomy for Evaluating Generalist Robot Manipulation Policies",
 "authors": [
 "Jensen Gao",
@@ -3301,7 +3301,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-777",
+"id": "ICRA2026-799",
 "title": "Tactile-Based Human Intent Recognition for Robot Assistive Navigation",
 "authors": [
 "Shaoting Peng",
@@ -3323,7 +3323,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-843",
+"id": "ICRA2026-867",
 "title": "Time-Division Multimodal Tactile Perception for Physical AI and Robotic Hands",
 "authors": [
 "Dohyung Kim",
@@ -3398,7 +3398,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-129",
+"id": "ICRA2026-130",
 "title": "GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks",
 "authors": [
 "Yen-Ling Tai",
@@ -3421,7 +3421,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-191",
+"id": "ICRA2026-192",
 "title": "MLA: A Multisensory Language–Action Model for Multimodal Understanding and Forecasting in Robotic Manipulation",
 "authors": [
 "Zhuoyang Liu",
@@ -3453,7 +3453,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-337",
+"id": "ICRA2026-342",
 "title": "MoE-DP: An MoE-Enhanced Diffusion Policy for Robust Long-Horizon Robotic Manipulation with Skill Decomposition and Failure Recovery",
 "authors": [
 "Baiye Cheng",
@@ -3481,7 +3481,31 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-386",
+"id": "ICRA2026-355",
+"title": "Will People Enjoy a Robot Trainer? a Case Study with Snoopie the Pacerbot",
+"authors": [
+"Maximilian Du",
+"Jennifer Grannen",
+"Shuran Song",
+"Dorsa Sadigh"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [
+"Shuran Song",
+"Dorsa Sadigh"
+],
+"score": 23,
+"tldr": "To meet this challenge, we propose Snoopie, an autonomous robot quadruped pacer capable of running interval training exercises tailored to challenge a user's personal abilities.",
+"abstract": "The physicality of exercise makes the role of athletic trainers unique. Their physical presence allows them to guide a student through a motion, demonstrate an exercise, and give intuitive feedback. Robot quadrupeds are also embodied agents with robust agility and athleticism. In our work, we investigate whether a robot quadruped can serve as an effective and enjoyable personal trainer device. We focus on a case study of interval training for runners: a repetitive, long-horizon task where precision and consistency are important. To meet this challenge, we propose Snoopie, an autonomous robot quadruped pacer capable of running interval training exercises tailored to challenge a user's personal abilities. We conduct a set of user experiments that compare the robot trainer to a wearable trainer device--the Apple Watch--to investigate the benefits of a physical embodiment in exercise-based interactions. We demonstrate 60.6% better adherence to a pace schedule and were 45.9% more consistent across their running speeds with the quadruped trainer. Subjective results also showed that participants strongly preferred training with the robot over wearable devices across many qualitative axes, including its ease of use (+56.7%), enjoyability of the interaction (+60.6%), and helpfulness (+39.1%). Additional videos and visualizations can be found on our website: https://sites.google.com/view/snoopie",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1i_200",
+"pdf": ""
+},
+{
+"id": "ICRA2026-393",
 "title": "Dynamic Neural Potential Field: Online Trajectory Optimization in Presence of Moving Obstacles",
 "authors": [
 "Aleksei Staroverov",
@@ -3503,7 +3527,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-416",
+"id": "ICRA2026-426",
 "title": "Robotic Dexterous Manipulation Via Anisotropic Friction Modulation Using Passive Rollers",
 "authors": [
 "Ethan Fisk",
@@ -3523,7 +3547,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-435",
+"id": "ICRA2026-446",
 "title": "Grasp-MPC: Closed-Loop Visual Grasping Via Value-Guided Model Predictive Control",
 "authors": [
 "Jun Yamada",
@@ -3548,7 +3572,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-536",
+"id": "ICRA2026-549",
 "title": "Transferring Policy of Offline Reinforcement Learning from Hybrid Dataset to Real World Via Progressive Neural Network",
 "authors": [
 "Pengyu Zhao",
@@ -3573,7 +3597,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-645",
+"id": "ICRA2026-660",
 "title": "In-The-Wild Compliant Manipulation with UMI-FT",
 "authors": [
 "Hojung Choi",
@@ -3602,7 +3626,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-659",
+"id": "ICRA2026-675",
 "title": "PPGuide: Steering Diffusion Policies with Performance Predictive Guidance",
 "authors": [
 "Zixing Wang",
@@ -3625,7 +3649,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-709",
+"id": "ICRA2026-726",
 "title": "Risk-Aware Control of Tendon-Driven Continuum Robots Via CVaR-MPPI with Residual Learning for Hysteresis Compensation : A Pilot Study",
 "authors": [
 "Dongjun Lee",
@@ -3719,7 +3743,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-181",
+"id": "ICRA2026-182",
 "title": "NavDP: Learning Sim-To-Real Navigation Diffusion Policy with Privileged Information Guidance",
 "authors": [
 "Wenzhe Cai",
@@ -3747,7 +3771,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-194",
+"id": "ICRA2026-195",
 "title": "Judo: A User-Friendly Open-Source Package for Sampling-Based Model Predictive Control",
 "authors": [
 "Albert H. Li",
@@ -3773,7 +3797,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-260",
+"id": "ICRA2026-261",
 "title": "Tracing Energy Flow: Learning Tactile-Based Grasping Force Control to Reduce Slippage in Dynamic Object Interaction",
 "authors": [
 "Cheng-Yu Kuo",
@@ -3795,7 +3819,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-323",
+"id": "ICRA2026-326",
 "title": "Active Tactile Exploration for Rigid Body Pose and Shape Estimation",
 "authors": [
 "Ethan Kroll Gordon",
@@ -3817,7 +3841,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-333",
+"id": "ICRA2026-338",
 "title": "SVP: Improving Vision-Language-Action Models with Dual Stochastic Visual Prompting",
 "authors": [
 "Zhide Zhong",
@@ -3843,7 +3867,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-384",
+"id": "ICRA2026-391",
 "title": "Tactile Execution Monitoring of Robotic Manipulation Via Time-Series Based Predictive Encoding",
 "authors": [
 "Florian Voigt",
@@ -3864,7 +3888,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-412",
+"id": "ICRA2026-420",
 "title": "DexFruit: Dexterous Manipulation and Gaussian Splatting Inspection of Fruit",
 "authors": [
 "Aiden Swann",
@@ -3889,7 +3913,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-453",
+"id": "ICRA2026-464",
 "title": "RM-RL: Role-Model Reinforcement Learning for Precise Robot Manipulation",
 "authors": [
 "Xiangyu Chen",
@@ -3911,7 +3935,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-464",
+"id": "ICRA2026-476",
 "title": "MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic Manipulation",
 "authors": [
 "Runhao Li",
@@ -3937,7 +3961,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-606",
+"id": "ICRA2026-621",
 "title": "Unified Generation-Refinement Planning: Bridging Guided Flow Matching and Sampling-Based MPC for Social Navigation",
 "authors": [
 "Kazuki Mizuta",
@@ -3958,7 +3982,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-649",
+"id": "ICRA2026-664",
 "title": "Behavior Cloning-Enhanced Deep Reinforcement Learning for Robot Navigation Via Dynamic Reward and Adaptive Replanning",
 "authors": [
 "Jianning Chi",
@@ -3980,7 +4004,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-650",
+"id": "ICRA2026-665",
 "title": "TacTip-Based Dynamic Contact Force Estimation with Sequential Tactile Images and Its Applications to Robotic Force Tracking",
 "authors": [
 "Wantong Xie",
@@ -4005,7 +4029,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-674",
+"id": "ICRA2026-690",
 "title": "Reimagination with Test-Time Observation Interventions: Distractor-Robust World Model Predictions for Visual Model Predictive Control",
 "authors": [
 "Yuxin Chen",
@@ -4030,7 +4054,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-675",
+"id": "ICRA2026-691",
 "title": "Tactile Recognition of Both Shapes and Materials with Automatic Feature Optimization-Enabled Meta Learning",
 "authors": [
 "Hongliang Zhao",
@@ -4054,7 +4078,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-685",
+"id": "ICRA2026-702",
 "title": "InvariantCloud: A Globally Invariant, Uniquely Indexed Point Cloud Framework for Robust 6-DoF Tactile Pose Tracking",
 "authors": [
 "Pengfei Ye",
@@ -4105,7 +4129,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-123",
+"id": "ICRA2026-124",
 "title": "Reinforcement Learning for Stair Locomotion of a Wheeled Bipedal Robot with Contact-Guided Behavior Cloning",
 "authors": [
 "Yi Gyeom Kim",
@@ -4129,7 +4153,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-186",
+"id": "ICRA2026-187",
 "title": "Learning Generalizable Robot Policy with Human Demonstration Video As a Prompt",
 "authors": [
 "Xiang Zhu",
@@ -4152,7 +4176,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-189",
+"id": "ICRA2026-190",
 "title": "ManeuverNet: A Soft Actor-Critic Framework for Precise Maneuvering of Double-Ackermann-Steering Robots with Optimized Reward Functions",
 "authors": [
 "Kohio Deflesselle",
@@ -4175,7 +4199,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-212",
+"id": "ICRA2026-213",
 "title": "EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations",
 "authors": [
 "Justin Yu",
@@ -4201,7 +4225,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-216",
+"id": "ICRA2026-217",
 "title": "Uncertainty Guided Exploratory Trajectory Optimization for Sampling-Based Model Predictive Control",
 "authors": [
 "Oguzhan Goktug Poyrazoglu",
@@ -4222,7 +4246,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-275",
+"id": "ICRA2026-277",
 "title": "Manipulator-Effort-Aware MPC for Body Motion Coordination of an Underwater Walking Robot under Ocean Current Disturbances",
 "authors": [
 "Bonhak Koo",
@@ -4242,7 +4266,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-280",
+"id": "ICRA2026-282",
 "title": "Closed-Loop Trajectory Optimization of Deformable Linear Objects for Dynamic Motions",
 "authors": [
 "Marc Kilian Klankers",
@@ -4261,7 +4285,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-331",
+"id": "ICRA2026-336",
 "title": "Rethinking the Practicality of Vision-Language-Action Model: A Comprehensive Benchmark and an Improved Baseline",
 "authors": [
 "Wenxuan Song",
@@ -4294,7 +4318,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-365",
+"id": "ICRA2026-371",
 "title": "High-Altitude Balloon Station-Keeping with First Order Model Predictive Control",
 "authors": [
 "Myles Pasetsky",
@@ -4316,7 +4340,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-404",
+"id": "ICRA2026-412",
 "title": "FlowDreamer: A RGB-D World Model with Flow-Based Motion Representations for Robot Manipulation",
 "authors": [
 "Jun Guo",
@@ -4341,7 +4365,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-507",
+"id": "ICRA2026-520",
 "title": "Parallel Heuristic Search As Inference for Actor-Critic Reinforcement Learning Models",
 "authors": [
 "Hanlan Yang",
@@ -4365,7 +4389,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-599",
+"id": "ICRA2026-614",
 "title": "Embodiment‑Aware Generalist Specialist Distillation for Unified Humanoid Whole-Body Control",
 "authors": [
 "Quanquan Peng",
@@ -4389,7 +4413,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-670",
+"id": "ICRA2026-686",
 "title": "Phys2Real: Fusing VLM Priors with Interactive Online Adaptation for Uncertainty-Aware Sim-To-Real Manipulation",
 "authors": [
 "Maggie Wang",
@@ -4416,7 +4440,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-681",
+"id": "ICRA2026-698",
 "title": "SoftMimic: Learning Compliant Whole-Body Control from Examples",
 "authors": [
 "Gabriel Margolis",
@@ -4440,7 +4464,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-696",
+"id": "ICRA2026-713",
 "title": "Robot Deformable Object Manipulation Via NMPC-Generated Demonstrations in Deep Reinforcement Learning (I)",
 "authors": [
 "Haoyuan Wang",
@@ -4469,7 +4493,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-718",
+"id": "ICRA2026-737",
 "title": "RAMBO: RL-Augmented Model-Based Whole-Body Control for Loco-Manipulation",
 "authors": [
 "Jin Cheng",
@@ -4494,7 +4518,31 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-738",
+"id": "ICRA2026-748",
+"title": "Fast ECoT: Efficient Embodied Chain-Of-Thought Via Thoughts Reuse",
+"authors": [
+"Zhekai Duan",
+"Yuan Zhang",
+"Shikai Geng",
+"Gaowen Liu",
+"Joschka Boedecker",
+"Chris Xiaoxuan Lu"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"Agentic",
+"FM"
+],
+"tracked_authors": [],
+"score": 21,
+"tldr": "We propose Fast ECoT, an inference-time acceleration method that exploits the structured and repetitive nature of ECoT to (1) cache and reuse high-level reasoning across timesteps and (2) parallelise the generation of modular reasoning steps.",
+"abstract": "Embodied Chain-of-Thought (ECoT) reasoning enhances vision-language-action (VLA) models by improving performance and interpretability through intermediate reasoning steps. However, its sequential autoregressive token generation introduces significant inference latency, limiting real-time deployment. We propose Fast ECoT, an inference-time acceleration method that exploits the structured and repetitive nature of ECoT to (1) cache and reuse high-level reasoning across timesteps and (2) parallelise the generation of modular reasoning steps. Additionally, we introduce an asynchronous scheduler that decouples reasoning from action decoding, further boosting responsiveness. Fast ECoT requires no model changes or additional training and easily integrates into existing VLA pipelines. Experiments in both simulation (LIBERO) and real-world robot tasks show up to a 7.5× reduction in latency with comparable or improved task success rate and reasoning faithfulness, bringing ECoT policies closer to practical real-time deployment.",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi2i_60",
+"pdf": ""
+},
+{
+"id": "ICRA2026-757",
 "title": "FAR-Dex: Few-Shot Data Augmentation and Adaptive Residual Policy Refinement for Dexterous Manipulation",
 "authors": [
 "Yushan Bai",
@@ -4518,7 +4566,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-778",
+"id": "ICRA2026-800",
 "title": "GATO: GPU-Accelerated and Batched Trajectory Optimization for Scalable Edge Model Predictive Control",
 "authors": [
 "Alexander Du",
@@ -4539,7 +4587,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-787",
+"id": "ICRA2026-810",
 "title": "ManipForce: Force-Guided Policy Learning with Frequency-Aware Representation for Contact-Rich Manipulation",
 "authors": [
 "Geonhyup Lee",
@@ -4564,7 +4612,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-790",
+"id": "ICRA2026-813",
 "title": "WorldPlanner: Monte Carlo Tree Search and MPC with Action-Conditioned Visual World Models",
 "authors": [
 "Rooholla Khorrambakht",
@@ -4590,7 +4638,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-802",
+"id": "ICRA2026-825",
 "title": "CG-THWM: Curriculum-Guided Temporal Haptic World Modeling for Peg-In-Hole Tasks",
 "authors": [
 "Xinli Zhong",
@@ -4615,7 +4663,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-814",
+"id": "ICRA2026-837",
 "title": "Automatic Physically-Based Sim2Real for Tactile Images through Differentiable Path-Tracing Rendering",
 "authors": [
 "Guillaume Duret",
@@ -4690,7 +4738,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-76",
+"id": "ICRA2026-77",
 "title": "Real-Time Model Predictive Control of Nonlinear Coupled Joints Using MPPI: Application to Humanoid Ankle Joints",
 "authors": [
 "Gunoo Park",
@@ -4716,7 +4764,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-88",
+"id": "ICRA2026-89",
 "title": "MiniBEE: A New Form Factor for Compact Bimanual Dexterity",
 "authors": [
 "Sharfin Islam",
@@ -4745,7 +4793,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-109",
+"id": "ICRA2026-110",
 "title": "Real-Time Adaptive Motion Planning Via Point Cloud-Guided, Energy-Based Diffusion and Potential Fields",
 "authors": [
 "Wondmgezahu Teshome",
@@ -4768,7 +4816,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-114",
+"id": "ICRA2026-115",
 "title": "TARAD: Task-Aware Robot Affordance-Centric Diffusion Policy Learned from LLM-Generated Demonstrations",
 "authors": [
 "Site Hu",
@@ -4788,7 +4836,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-158",
+"id": "ICRA2026-159",
 "title": "SEG-Parking: Towards Safe, Efficient, and Generalizable Autonomous Parking Via End-To-End Offline Reinforcement Learning",
 "authors": [
 "Zewei Yang",
@@ -4808,7 +4856,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-174",
+"id": "ICRA2026-175",
 "title": "VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning Via Online Monte Carlo Tree Search",
 "authors": [
 "Wenkai Guo",
@@ -4831,7 +4879,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-230",
+"id": "ICRA2026-231",
 "title": "Implicit Maximum Likelihood Estimation for Real-Time Generative Model Predictive Control",
 "authors": [
 "Grayson Lee",
@@ -4855,7 +4903,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-234",
+"id": "ICRA2026-235",
 "title": "Closed-Loop Multimodal Sensory Training Enhances the Proprioceptive-Motor Pathway: Low-Load Automaticity and Fine Motor Control",
 "authors": [
 "Qian Cheng",
@@ -4877,7 +4925,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-239",
+"id": "ICRA2026-240",
 "title": "Quasimetric Decision Transformers: Enhancing Goal-Conditioned Reinforcement Learning with Structured Distance Guidance",
 "authors": [
 "Madhav Goyani",
@@ -4898,7 +4946,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-327",
+"id": "ICRA2026-330",
 "title": "Learning Conservative Neural Control Barrier Functions from Demonstrations",
 "authors": [
 "Ihab Tabbara",
@@ -4918,7 +4966,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-335",
+"id": "ICRA2026-340",
 "title": "Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics",
 "authors": [
 "Songhua Yang",
@@ -4943,7 +4991,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-364",
+"id": "ICRA2026-370",
 "title": "Audio-VLA: Adding Contact Audio Perception to Vision-Language-Action Model for Robotic Manipulation",
 "authors": [
 "Xiangyi Wei",
@@ -4967,7 +5015,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-366",
+"id": "ICRA2026-372",
 "title": "AERO-MPPI: Anchor-Guided Ensemble Trajectory Optimization for Agile Mapless Drone Navigation",
 "authors": [
 "Xin Chen",
@@ -4988,7 +5036,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-378",
+"id": "ICRA2026-385",
 "title": "INSIGHT: INference-Time Sequence Introspection for Generating Help Triggers in Vision-Language-Action Models",
 "authors": [
 "Ulas Berk Karli",
@@ -5008,7 +5056,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-383",
+"id": "ICRA2026-390",
 "title": "TMR-VLA: Vision-Language-Action Model for Magnetic Motion Control of Tri-Leg Silicone-Based Soft Robot",
 "authors": [
 "Ruijie Tang",
@@ -5033,7 +5081,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-495",
+"id": "ICRA2026-508",
 "title": "HapCompass: A Rotational Haptic Device for Contact-Rich Robotic Teleoperation",
 "authors": [
 "Xiangshan Tan",
@@ -5057,7 +5105,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-511",
+"id": "ICRA2026-524",
 "title": "AdaThinkDrive: Adaptive Thinking Via Reinforcement Learning for Autonomous Driving",
 "authors": [
 "Yuechen Luo",
@@ -5088,7 +5136,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-591",
+"id": "ICRA2026-606",
 "title": "GRAPE: Generalizing Robot Policy Via Preference Alignment",
 "authors": [
 "Zijian Zhang",
@@ -5117,7 +5165,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-598",
+"id": "ICRA2026-613",
 "title": "Reference-Free Sampling-Based Model Predictive Control",
 "authors": [
 "Fabian Schramm",
@@ -5139,7 +5187,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-653",
+"id": "ICRA2026-668",
 "title": "SPARR: Simulation-Based Policies with Asymmetric Real-World Residuals for Assembly",
 "authors": [
 "Yijie Guo",
@@ -5166,7 +5214,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-677",
+"id": "ICRA2026-693",
 "title": "OmniDexGrasp: Generalizable Dexterous Grasping Via Foundation Model and Force Feedback",
 "authors": [
 "Yi-Lin Wei",
@@ -5192,7 +5240,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-731",
+"id": "ICRA2026-750",
 "title": "CAPE: Context-Aware Diffusion Policy Via Proximal Mode Expansion for Collision Avoidance",
 "authors": [
 "Rui Heng Yang",
@@ -5218,7 +5266,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-853",
+"id": "ICRA2026-878",
 "title": "TADPO: Reinforcement Learning Goes Off-Road",
 "authors": [
 "Zhouchonghao Wu",
@@ -5311,7 +5359,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-101",
+"id": "ICRA2026-102",
 "title": "ViTacGen: Robotic Pushing with Vision-To-Touch Generation",
 "authors": [
 "Zhiyuan Wu",
@@ -5337,7 +5385,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-104",
+"id": "ICRA2026-105",
 "title": "Single-Instance Sampling for Computationally Efficient and Accurate Real-Time Task Space MPPI Control",
 "authors": [
 "Dongwhan Kim",
@@ -5359,7 +5407,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-232",
+"id": "ICRA2026-233",
 "title": "Reinforcement Learning-Based Robust Wall Climbing Locomotion Controller in Ferromagnetic Environment",
 "authors": [
 "Yong Um",
@@ -5382,7 +5430,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-270",
+"id": "ICRA2026-271",
 "title": "Augmented Reality for RObots (ARRO): Pointing Visuomotor Policies towards Visual Robustness",
 "authors": [
 "Reihaneh Mirjalili",
@@ -5404,7 +5452,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-306",
+"id": "ICRA2026-308",
 "title": "ROPA: Synthetic Robot Pose Generation for RGB-D Bimanual Data Augmentation",
 "authors": [
 "Jason Chen",
@@ -5426,7 +5474,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-393",
+"id": "ICRA2026-401",
 "title": "Feedback-MPPI: Fast Sampling-Based MPC Via Rollout Differentiation – Adios Low-Level Controllers",
 "authors": [
 "Tommaso Belvedere",
@@ -5447,7 +5495,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-427",
+"id": "ICRA2026-438",
 "title": "UniFuture: A 4D Driving World Model for Future Generation and Perception",
 "authors": [
 "Dingkang Liang",
@@ -5475,7 +5523,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-456",
+"id": "ICRA2026-468",
 "title": "High-Bandwidth Tactile-Reactive Control for Grasp Adjustment",
 "authors": [
 "Yonghyeon Lee",
@@ -5498,7 +5546,32 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-509",
+"id": "ICRA2026-481",
+"title": "IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for Human–Robot Interaction",
+"authors": [
+"Yandu Chen",
+"Kefan Gu",
+"Yuqing Wen",
+"Yucheng Zhao",
+"Tiancai Wang",
+"Liqiang Nie"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"FM",
+"Agentic",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 19,
+"tldr": "To overcome these limitations, we propose IntentionVLA, a VLA framework with a curriculum training paradigm and an efficient inference mechanism.",
+"abstract": "Vision-Language-Action (VLA) models leverage pretrained vision-language models (VLMs) to couple perception with robotic control, offering a promising path toward general purpose embodied intelligence. However, current SOTA VLAs are primarily pretrained on multimodal tasks with limited relevance to embodied scenarios, and then finetuned to map explicit instructions to actions. Consequently, due to the lack of reasoning-intensive pretraining and reasoning-guided manipulation, these models are unable to perform implicit human intention reasoning required for complex, real-world interactions. To overcome these limitations, we propose IntentionVLA, a VLA framework with a curriculum training paradigm and an efficient inference mechanism. Our proposed method first leverages carefully designed reasoning data that combine intention inference, spatial grounding, and compact embodied reasoning, endowing the model with both reasoning and perception capabilities. In the following finetuning stage, IntentionVLA employs the compact reasoning outputs as contextual guidance for action generation, enabling fast inference under indirect instructions. Experimental results show that IntentionVLA substantially outperforms pi_0, achieving 18% higher success rates with direct instructions and 28% higher than ECoT under intention instructions. On out-of-distribution intention tasks, IntentionVLA achieves over twice the success rate of all baselines, and further enables zero-shot human-robot interaction with 40% success rate. These results highlight IntentionVLA as a promising paradigm for next-generation human-robot interaction (HRI) systems.",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei2i_178",
+"pdf": ""
+},
+{
+"id": "ICRA2026-522",
 "title": "GPU-Accelerated Continuous-Time Successive Convexification for Contact-Implicit Legged Locomotion",
 "authors": [
 "Samuel Buckner",
@@ -5517,7 +5590,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-539",
+"id": "ICRA2026-552",
 "title": "Whole-Body Inverse Dynamics MPC for Legged Loco-Manipulation",
 "authors": [
 "Lukas Molnar",
@@ -5541,7 +5614,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-550",
+"id": "ICRA2026-564",
 "title": "HITTER: A HumanoId Table TEnnis Robot Via Hierarchical Planning and Learning",
 "authors": [
 "Zhi Su",
@@ -5567,7 +5640,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-614",
+"id": "ICRA2026-629",
 "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation Via Trajectory-Centric Learning",
 "authors": [
 "Jiacheng Liu",
@@ -5596,7 +5669,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-746",
+"id": "ICRA2026-766",
 "title": "Receding Horizon Reinforcement Learning with Autoregressive Model for Motion Control of Autonomous Vehicles",
 "authors": [
 "Xin Yin",
@@ -5620,7 +5693,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-749",
+"id": "ICRA2026-769",
 "title": "Improving Robotic Manipulation Robustness Via NICE Scene Surgery",
 "authors": [
 "Sajjad Pakdamansavoji",
@@ -5644,7 +5717,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-780",
+"id": "ICRA2026-802",
 "title": "Optimizing Vehicle Trajectories at a Signalized Intersection in Mixed Traffic",
 "authors": [
 "Cheng Peng",
@@ -5667,7 +5740,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-818",
+"id": "ICRA2026-841",
 "title": "IVRA: Improving Visual-Token Relations for Robot Action Policy with Training-Free Hint-Based Guidance",
 "authors": [
 "Jongwoo Park",
@@ -5746,6 +5819,34 @@
 "pdf": ""
 },
 {
+"id": "ICRA2026-19",
+"title": "Multi-Modal Affordance Planner with Temporal-Context Action Policy for Long-Horizon Bimanual Robot Manipulation",
+"authors": [
+"Ji-Heon Oh",
+"Danbi Jung",
+"Ismael Espinoza",
+"Yong-Hyeok Choi",
+"YoungOuk Kim",
+"Dongin Shin",
+"JongSul Moon",
+"Wonha Kim",
+"Tae-Seong Kim"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"IL",
+"Dex",
+"Agentic"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "To address these challenges, this paper introduces the Multi-modal Affordance Planner with Temporal-Context Action Policy (MAP-TCA), a novel hierarchical framework that learns and performs diverse bimanual long-horizon (LH) tasks by generating action plans from MAP.",
+"abstract": "Bimanual robot manipulation for long-horizon (LH) tasks is crucial for the practical use of humanoids, but it struggles with robust planning and generalization. Approaches based on Task and Motion Planning (TAMP), transformers, and Large Language Models (LLMs) suffer from critical limitations, including costly human demonstrations, task planner hallucination, and unsatisfactory generalization performance. To address these challenges, this paper introduces the Multi-modal Affordance Planner with Temporal-Context Action Policy (MAP-TCA), a novel hierarchical framework that learns and performs diverse bimanual long-horizon (LH) tasks by generating action plans from MAP. The MAP-TCA consists of a planner based on Bimanual Robot Manipulation Retrieval-Augmented Generation (Bi-RAG)-enhanced Large-Language Model (LLM) and a low-level Temporal Context Action Policy (TCA). With multimodal inputs including vision, language, and affordance for primitive action demonstration, Bi-RAG generates a Primitive Action (PA)-specific embedded space. Then, MAP generates LH plans, LH demonstrations, and reward functions within the PA-specific embedded space, thereby mitigating hallucinations and reducing training cost. The generated plan, demos, and rewards then guide TCA, which learns the LH tasks via behavior cloning (BC) and online fine-tuning. We demonstrate that the proposed MAP-TCA achieves an average success rate of 86.75%, comparable to a baseline model, TCA, which is trained extensively on direct human demonstrations and manually designed rewards. Our work presents a scalable and generalizable solution for complex bimanual LH manipulation, significantly reducing the dependency on human supervision.",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_79",
+"pdf": ""
+},
+{
 "id": "ICRA2026-20",
 "title": "EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation",
 "authors": [
@@ -5791,7 +5892,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-153",
+"id": "ICRA2026-154",
 "title": "Flow-Enabled Generalization to Human Demonstrations in Few-Shot Imitation Learning",
 "authors": [
 "Runze Tang",
@@ -5811,7 +5912,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-182",
+"id": "ICRA2026-183",
 "title": "Magnet-Based Soft Robotic Skin Using a 3D-Printed Multi-Lattice Structure and CNN-Based Tactile Super-Resolution",
 "authors": [
 "Yunseong Bang",
@@ -5835,7 +5936,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-227",
+"id": "ICRA2026-228",
 "title": "Safe and Optimal Variable Impedance Control Via Certified Reinforcement Learning",
 "authors": [
 "Shreyas Kumar",
@@ -5855,7 +5956,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-267",
+"id": "ICRA2026-268",
 "title": "Actuator Dynamics-Aware Model Predictive Control of a Wheeled Inverted Pendulum with a Fan",
 "authors": [
 "Dohyeon Kim",
@@ -5874,7 +5975,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-271",
+"id": "ICRA2026-272",
 "title": "Tactile Object Recognition with Recurrent Neural Networks through a Perceptive Soft Gripper",
 "authors": [
 "Enrico Donato",
@@ -5897,7 +5998,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-274",
+"id": "ICRA2026-276",
 "title": "Stereo-Based Vision and Tactile Sensing for Robust Dual-Arm Robotic Connector Assembly",
 "authors": [
 "Michele Mirto",
@@ -5919,7 +6020,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-310",
+"id": "ICRA2026-312",
 "title": "R2BC: Multi-Agent Imitation Learning from Single-Agent Demonstrations",
 "authors": [
 "Connor Mattson",
@@ -5942,7 +6043,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-322",
+"id": "ICRA2026-325",
 "title": "Adaptive Diffusion Constrained Sampling for Bimanual Robot Manipulation",
 "authors": [
 "Haolei Tong",
@@ -5964,7 +6065,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-325",
+"id": "ICRA2026-328",
 "title": "Design, Mapping, and Contact Anticipation with 3D-Printed Whole-Body Tactile and Proximity Sensors",
 "authors": [
 "Carson Kohlbrenner",
@@ -5987,7 +6088,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-354",
+"id": "ICRA2026-360",
 "title": "DexCtrl: Sim-To-Real Dexterity with Adaptive Controller Learning",
 "authors": [
 "Shuqi Zhao",
@@ -6013,7 +6114,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-369",
+"id": "ICRA2026-375",
 "title": "INTACT-GRIP: An Inflatable Tactile Gripper for Soft Manipulation and High-Resolution Texture Mapping",
 "authors": [
 "Ozdemir Can Kara",
@@ -6035,7 +6136,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-371",
+"id": "ICRA2026-377",
 "title": "MonoDuo: Using One Robot Arm to Learn Bimanual Policies",
 "authors": [
 "Sandeep Bajamahal",
@@ -6061,7 +6162,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-392",
+"id": "ICRA2026-400",
 "title": "A Lightweight Physics-Informed Neural Network for Sim-To-Real of Biped Robot",
 "authors": [
 "Yan Liu",
@@ -6086,7 +6187,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-432",
+"id": "ICRA2026-443",
 "title": "HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation",
 "authors": [
 "Lai Wei",
@@ -6111,7 +6212,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-483",
+"id": "ICRA2026-496",
 "title": "Vi-TacMan: Articulated Object Manipulation Via Vision and Touch",
 "authors": [
 "Leiyao Cui",
@@ -6136,7 +6237,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-506",
+"id": "ICRA2026-519",
 "title": "RoboCade: Gamifying Robot Data Collection",
 "authors": [
 "Suvir Mirchandani",
@@ -6161,7 +6262,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-516",
+"id": "ICRA2026-529",
 "title": "Flow with the Force Field: Learning 3D Compliant Flow Matching Policies from Force and Demonstration-Guided Simulation Data",
 "authors": [
 "Tianyu Li",
@@ -6184,7 +6285,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-557",
+"id": "ICRA2026-571",
 "title": "EMMA: Scaling Mobile Manipulation Via Egocentric Human Data",
 "authors": [
 "Lawrence Y. Zhu",
@@ -6212,7 +6313,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-595",
+"id": "ICRA2026-610",
 "title": "MIMO: A Multimodal Imitation Learning Framework for Mobile Manipulation with Exoskeleton-VR Teleoperation",
 "authors": [
 "Jie Mei",
@@ -6235,7 +6336,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-608",
+"id": "ICRA2026-623",
 "title": "Refinery: Active Fine-Tuning and Deployment-Time Optimization for Contact-Rich Policies",
 "authors": [
 "Bingjie Tang",
@@ -6263,7 +6364,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-623",
+"id": "ICRA2026-638",
 "title": "Contributing Factors in Human-Robot Handshake: Compliance, Hand Grip, and Synchrony",
 "authors": [
 "Adnan Saood",
@@ -6284,7 +6385,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-632",
+"id": "ICRA2026-647",
 "title": "Data-Efficient Hierarchical Goal-Conditioned Reinforcement Learning Via Normalizing Flows",
 "authors": [
 "Shaswat Garg",
@@ -6305,7 +6406,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-658",
+"id": "ICRA2026-673",
 "title": "CDF-Glove: A Cable-Driven Force Feedback Glove for Dexterous Teleoperation",
 "authors": [
 "Huayue Liang",
@@ -6329,7 +6430,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-668",
+"id": "ICRA2026-684",
 "title": "A Tactile Rubbing Gripper for Reliable Fabric Separation",
 "authors": [
 "Zhengrong Ling",
@@ -6350,7 +6451,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-699",
+"id": "ICRA2026-716",
 "title": "TD-CD-MPPI: Temporal-Difference Constraint-Discounted Model Predictive Path Integral Control",
 "authors": [
 "Pietro Noah Crestaz",
@@ -6373,7 +6474,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-713",
+"id": "ICRA2026-732",
 "title": "TacTape: Real-Time High-Accuracy Tactile Fiducial System with Structured 3D Texture for Vision-Based Tactile Sensors",
 "authors": [
 "Meng Wang",
@@ -6400,7 +6501,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-751",
+"id": "ICRA2026-771",
 "title": "Do What You Say: Steering Vision-Language-Action Models Via Runtime Reasoning-Action Alignment Verification",
 "authors": [
 "Yilin Wu",
@@ -6423,7 +6524,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-767",
+"id": "ICRA2026-788",
 "title": "RoTri-Diff: A Spatial Robot–Object Triadic Interaction-Guided Diffusion Model for Bimanual Manipulation",
 "authors": [
 "Zixuan Chen",
@@ -6453,7 +6554,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-815",
+"id": "ICRA2026-838",
 "title": "T-NACD: A Tactile-Friendly Novel Anomaly Class Discovery Framework for Black Rubber Products",
 "authors": [
 "Long Xiao",
@@ -6478,7 +6579,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-821",
+"id": "ICRA2026-844",
 "title": "X-Nav: Learning End-To-End Cross-Embodiment Navigation for Mobile Robots",
 "authors": [
 "Haitong Wang",
@@ -6501,7 +6602,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-838",
+"id": "ICRA2026-862",
 "title": "SilRef: Joint Visual Silhouette and Tactile Pose Optimization for Transparent Object Manipulation",
 "authors": [
 "Jean-Baptiste Weibel",
@@ -6548,7 +6649,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-130",
+"id": "ICRA2026-131",
 "title": "Hierarchical DLO Routing with Reinforcement Learning and In-Context Vision-Language Models",
 "authors": [
 "Mingen Li",
@@ -6571,7 +6672,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-167",
+"id": "ICRA2026-168",
 "title": "DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial Reasoning",
 "authors": [
 "Tianyuan Yuan",
@@ -6594,7 +6695,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-224",
+"id": "ICRA2026-225",
 "title": "AMPLIFY: Actionless Motion Priors for Robot Learning from Videos",
 "authors": [
 "Jeremy Collins",
@@ -6619,7 +6720,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-236",
+"id": "ICRA2026-237",
 "title": "APEX-Glove: An Actuated, Open-Source, Hand-Exoskeleton Glove for Finger Motion Tracking and Kinesthetic 3D Force Feedback",
 "authors": [
 "Nicolas Kosanovic",
@@ -6640,7 +6741,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-314",
+"id": "ICRA2026-317",
 "title": "Seeing the Bigger Picture: 3D Latent Mapping for Mobile Manipulation Policy Learning",
 "authors": [
 "Sunghwan Kim",
@@ -6668,7 +6769,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-347",
+"id": "ICRA2026-352",
 "title": "DRAW2ACT: Turning Depth-Encoded Trajectories into Robotic Demonstration Videos",
 "authors": [
 "Yang Bai",
@@ -6694,7 +6795,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-360",
+"id": "ICRA2026-366",
 "title": "Masquerade: Learning from In-The-Wild Human Videos Using Data-Editing",
 "authors": [
 "Marion Lepert",
@@ -6717,7 +6818,26 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-417",
+"id": "ICRA2026-424",
+"title": "Hybrid Agentic AI-FSM Framework for Instruction-Based Industrial Manipulation Tasks",
+"authors": [
+"Sungmoon Joo",
+"Ikjune Kim"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 17,
+"tldr": "This paper proposes a hybrid Agentic AI–FSM framework for robust natural-language-driven automation in safety-critical industrial robotics applications.",
+"abstract": "This paper proposes a hybrid Agentic AI–FSM framework for robust natural-language-driven automation in safety-critical industrial robotics applications. Although natural-language procedures are commonplace in manufacturing, translating them into reliable robot programs remains labor-intensive. While Large Language Models (LLMs) offer strong parsing and planning capabilities, their inherent non-determinism and susceptibility to hallucinations preclude their direct use for robot control. To bridge this gap, our architecture employs an LLM-based planning agent to translate instructions offline into a structured task plan. Execution is then delegated to a deterministic Finite State Machine (FSM)-style execution engine to ensure reliability. Safety is further guaranteed by a multi-stage validation–simulation pipeline that verifies schema compliance and operational constraints through dry runs prior to deployment. For runtime anomalies, a RAG-enhanced Exception Handling Agent proposes recovery options, which are strictly mediated through a human-in-the-loop (HIL) interface for operator approval. Finally, a rule-based Safety Agent enforces physical constraints and provides an independent protection layer.",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_4.html#wei1lb_23",
+"pdf": ""
+},
+{
+"id": "ICRA2026-427",
 "title": "Bi-Adapt: Few-Shot Bimanual Adaptation for Novel Categories of 3D Objects Via Semantic Correspondence",
 "authors": [
 "Jinxian Zhou",
@@ -6742,7 +6862,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-420",
+"id": "ICRA2026-430",
 "title": "DigiArm: An Anthropomorphic 3D-Printed Prosthetic Hand with Enhanced Dexterity for Typing Tasks",
 "authors": [
 "Dean Zadok",
@@ -6767,7 +6887,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-423",
+"id": "ICRA2026-433",
 "title": "Spatio-Temporal Motion Retargeting for Quadruped Robots",
 "authors": [
 "Taerim Yoon",
@@ -6793,7 +6913,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-474",
+"id": "ICRA2026-487",
 "title": "EasyMimic: A Low-Cost Framework for Robot Imitation Learning from Human Videos",
 "authors": [
 "Tao Zhang",
@@ -6815,7 +6935,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-493",
+"id": "ICRA2026-506",
 "title": "Amplifying Force-Feedback Cues for Enhancing Dexterous Skill Transfer in Virtual Environments",
 "authors": [
 "Eunchae Kim",
@@ -6837,7 +6957,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-535",
+"id": "ICRA2026-548",
 "title": "Barrier Method for Inequality Constrained Factor Graph Optimization with Application to Model Predictive Control",
 "authors": [
 "Anas Abdelkarim",
@@ -6857,7 +6977,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-551",
+"id": "ICRA2026-565",
 "title": "SymSkill: Symbol and Skill Co-Invention for Data-Efficient and Reactive Long-Horizon Manipulation",
 "authors": [
 "Yifei Shao",
@@ -6880,7 +7000,31 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-587",
+"id": "ICRA2026-585",
+"title": "BOSS: Benchmark for Observation Space Shift in Long-Horizon Task",
+"authors": [
+"Yue Yang",
+"Linfeng Zhao",
+"Mingyu Ding",
+"Gedas Bertasius",
+"Daniel J. Szafir"
+],
+"venue": "ICRA 2026",
+"year": 2026,
+"topics": [
+"IL",
+"FM",
+"Agentic"
+],
+"tracked_authors": [],
+"score": 17,
+"tldr": "To understand OSS and evaluate its impact on long-horizon tasks, we introduce BOSS (a Benchmark for Observation Space Shift).",
+"abstract": "Robotics has long sought to develop robots capable of completing previously unseen long-horizon tasks. Hierarchical approaches offer a pathway for achieving this goal by executing skill combinations arranged by a task planner, with each visuomotor skill pre-trained using a specific imitation learning (IL) algorithm. However, even in simple long-horizon tasks like skill chaining, hierarchical approaches often struggle due to a problem we identify as Observation Space Shift (OSS), where the sequential execution of preceding skills causes shifts in the observation space, disrupting the performance of subsequent individually trained skill policies. To understand OSS and evaluate its impact on long-horizon tasks, we introduce BOSS (a Benchmark for Observation Space Shift). BOSS comprises three distinct challenges: \"Single Predicate Shift,\" \"Accumulated Predicate Shift,\" and \"Skill Chaining,\" each designed to assess a different aspect of OSS's negative effect. We evaluated several recent popular IL algorithms on BOSS, including three Behavioral Cloning methods and the Visual Language Action model OpenVLA. Even on the simplest challenge, we observed average performance drops of 67%, 35%, 34%, and 54%, respectively, when comparing skill performance with and without OSS. Additionally, we investigate three potential solutions, including using frozen robotics-specific vision encoders, switching to 3D pointcloud-based inputs, and applying data augmentation to expand visual diversity. Our results show that none of these approaches are sufficient to resolve OSS. The project page is: https://boss-benchmark.github.io/",
+"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_5.html#thi1i_17",
+"pdf": ""
+},
+{
+"id": "ICRA2026-602",
 "title": "Demonstration-Augmented Deep Reinforcement Learning with Mixed Reality Human-In-The-Loop Guidance",
 "authors": [
 "Mohammad-Ehsan Matour",
@@ -6901,7 +7045,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-601",
+"id": "ICRA2026-616",
 "title": "Active Scene Reconstruction with Topological Reasoning and Semantic-Augmented Reinforcement Learning",
 "authors": [
 "Yiqing Yuan",
@@ -6924,7 +7068,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-634",
+"id": "ICRA2026-649",
 "title": "Generative Adversarial Imitation Learning for Robot Swarms: Learning from Human Demonstrations and Trained Policies",
 "authors": [
 "Mattes Kraus",
@@ -6944,7 +7088,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-638",
+"id": "ICRA2026-653",
 "title": "Notes-To-Self: Scratchpad Augmented VLAs for Memory Dependent Manipulation Tasks",
 "authors": [
 "Sanjay Haresh",
@@ -6966,7 +7110,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-644",
+"id": "ICRA2026-659",
 "title": "RL-Augmented Adaptive Model Predictive Control for Bipedal Locomotion Over Challenging Terrain",
 "authors": [
 "Junnosuke Kamohara",
@@ -6989,7 +7133,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-697",
+"id": "ICRA2026-714",
 "title": "Accelerating Residual Reinforcement Learning with Uncertainty Estimation",
 "authors": [
 "Lakshita Dodeja",
@@ -7014,7 +7158,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-809",
+"id": "ICRA2026-832",
 "title": "SA-MPPI: Sensitivity-Aware Model Predictive Path Integral Control for Robust and Agile Quadrotor Flight",
 "authors": [
 "Fuqiang Gu",
@@ -7040,7 +7184,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-810",
+"id": "ICRA2026-833",
 "title": "OccLLaMA: A Unified Occupancy-Language-Action World Model for Enhancing Motion Planning Via Multi-Task Learning",
 "authors": [
 "Julong Wei",
@@ -7066,7 +7210,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-855",
+"id": "ICRA2026-880",
 "title": "Factorizing Diffusion Policies for Observation Modality Prioritization",
 "authors": [
 "Omkar Deepak Patil",
@@ -7198,7 +7342,7 @@
 "pdf": ""
 },
 {
-"id": "ICRA2026-68",
+"id": "ICRA2026-69",
 "title": "Predictive Local Planning with Multi-Step Reward and Q-Value Forecasting",
 "authors": [
 "Yuhan Du",
@@ -7221,158 +7365,8 @@
 "abstract": "Planning in dynamic environments often relies on explicit future observation prediction or value-based estimation, both of which can be brittle or hard to generalize in uncertain settings. We propose a novel model-based reinforcement learning framework that performs trajectory rollout and optimization entirely in a learned latent space. Instead of predicting future observations explicitly, our method evaluates candidate trajectories through multi-step reward prediction and terminal Q-value estimation in the latent domain, enabling robust and generalizable planning in dynamic environments. A policy model generates an initial trajectory in latent space, which is then refined via a smoothness-regularized optimization using Model Predictive Path Integral (MPPI), guided by the predicted cumulative reward and Q-values. This avoids the complexity of future state reconstruction while ensuring dynamically feasible execution. To enhance the model's deployment performance in crowded or interactive scenarios, we further introduce a lightweight social reward that penalizes unsafe overtaking and encourages yielding behavior. Experiments in both simulation and real-world environments show improved success rate, efficiency, and social acceptability compared to strong baselines.",
 "url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_238",
 "pdf": ""
-},
-{
-"id": "ICRA2026-81",
-"title": "RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation",
-"authors": [
-"Yuming Jiang",
-"Siteng Huang",
-"Shengke Xue",
-"Yaxi Zhao",
-"Jun Cen",
-"Sicong Leng",
-"Kehan Li",
-"Jiayan Guo",
-"Kexiang Wang",
-"Mingxiu Chen",
-"Fan Wang",
-"Deli Zhao",
-"Xin Li"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"FM",
-"IL"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "This paper presents RynnVLA-001, a vision-language-action (VLA) model built upon large-scale video generative pretraining from human demonstrations.",
-"abstract": "This paper presents RynnVLA-001, a vision-language-action (VLA) model built upon large-scale video generative pretraining from human demonstrations. We propose a novel two-stage pretraining methodology. The first stage, Ego-Centric Video Generative Pretraining, trains an Image-to-Video model to predict future frames based on an image and a language instruction. The second stage, Human-Centric Trajectory-Aware Modeling, extends this by jointly predicting future keypoint trajectories, thereby bridging visual frame prediction with action prediction. Furthermore, to enhance action representation, we propose ActionVAE, a variational autoencoder that compresses sequences of actions into compact latent embeddings, reducing the complexity of the VLA output space. When finetuned on the same downstream robotics datasets, RynnVLA-001 achieves superior performance over state-of-the-art baselines, demonstrating that the proposed pretraining strategy provides a more effective initialization for VLA models.",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_270",
-"pdf": ""
-},
-{
-"id": "ICRA2026-94",
-"title": "RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models",
-"authors": [
-"Jiyeon Koo",
-"Taewan Cho",
-"Hyunjoon Kang",
-"Eunseom Pyo",
-"Taegyun Oh",
-"Taeryang Kim",
-"Andrew Jaeyong Choi"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"FM"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "This work introduces RetoVLA, an architecture designed to maintain spatial awareness in lightweight models by repurposing Register Tokens—learnable parameters originally introduced to mitigate attention artifacts in Vision Transformers.",
-"abstract": "Vision-Language-Action (VLA) models have demonstrated robust performance across diverse robotic tasks. However, their high memory and computational demands often limit real-time deployment. While existing model compression techniques reduce the parameter footprint, they often drop in 3D spatial reasoning and scene layout understanding. This work introduces RetoVLA, an architecture designed to maintain spatial awareness in lightweight models by repurposing Register Tokens—learnable parameters originally introduced to mitigate attention artifacts in Vision Transformers. While these tokens are generally discarded once used, we repurpose them for their dense representation of global spatial context. RetoVLA integrates these recycled tokens directly into the action-planning module through a dedicated spatial context injection path. Our proposed design enables the recovery of global context without increasing the total parameter count. Real-world experiments using a 7-DOF manipulator show a 17.1%p improvement in average success rates over the baseline. Our results demonstrate that leveraging internal register tokens provides a highly effective mechanism for developing efficient, spatially-aware robotic agents. A video demonstration is available at: https://youtu.be/2CseBR-snZg",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1i_332",
-"pdf": ""
-},
-{
-"id": "ICRA2026-126",
-"title": "Towards Massively Parallel Motion Planning with Inverse Dynamics",
-"authors": [
-"Ioannis Tsikelis",
-"Enrico Mingo Hoffman"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"Control",
-"WM"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "We present preliminary results towards a novel implementation of a batched SQP solver for equality-constrained optimal control.",
-"abstract": "Parallel evaluation of robotic system environments is becoming increasingly popular in modern robotics applications for machine learning and stochastic control. At the same time, the field of model-based control has matured enough to provide solutions that cover the needs of sophisticated robotics platforms. However, few works address the parallelization of such solvers to be combined with the above approaches and accelerate research in robot planning and control. We present preliminary results towards a novel implementation of a batched SQP solver for equality-constrained optimal control. After linearizing the dynamics in the SQP step, we employ a state-control equality constrained LQR solver. The additional equality constraints yield a structured system at each stage that can be solved via a Riccati-recursion-based block elimination. We evaluate our approach on an inverse-dynamics-based optimal control problem, in contrast to the forward-dynamics formulations typical of related works. Our results demonstrate computational efficiency and structural advantages for massively parallel environments. Our implementation, available here, is developed in PyTorch, taking advantage of the library's batched linear algebra suite for parallelization.",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui1lb_20",
-"pdf": ""
-},
-{
-"id": "ICRA2026-160",
-"title": "Pose Retargeting from a Single RGB Camera: Optimization-Based Hand Pose Retargeting and Wrist Pose Estimation",
-"authors": [
-"Longrui Chen",
-"Lipeng Chen",
-"Kunpeng Yao",
-"Mehmet R Dogar"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"Dex",
-"IL"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "In this paper, we propose OAT (Optimization-based hAnd pose retargeting and wrisT pose estimation), a streamlined approach to retarget human hand and wrist pose to the robot.",
-"abstract": "Robot teleoperation plays a crucial role in collecting data for large-scale imitation learning. Inferring operator's hand pose is crucial for vision-based teleoperation, and current solutions either rely on additional neural network training or hardware to infer the operator's wrist pose. To our knowledge, there is no open-source, general teleoperation toolkit that can be easily deployed to retarget both hand and wrist poses from a single RGB camera. In this paper, we propose OAT (Optimization-based hAnd pose retargeting and wrisT pose estimation), a streamlined approach to retarget human hand and wrist pose to the robot. We leverage the off-the-shelf MediaPipe framework to estimate the operator's hand pose and employ an optimization-based method to infer the operator's wrist pose within the camera frame by 2D/3D hand joint matching. This integrated pipeline facilitates teleoperation from virtually any location using any device equipped with an RGB camera, offering a highly accessible and easily implementable solution. Furthermore, a hand-based camera calibration optimization is proposed to improve the accuracy of wrist pose estimation. In addition to minimal hardware requirements and deployment convenience, our system also demonstrates superior real-time performance compared to state-of-the-art vision-based teleoperation methods.",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_86",
-"pdf": ""
-},
-{
-"id": "ICRA2026-210",
-"title": "JuggleRL: Mastering Ball Juggling with a Quadrotor Via Deep Reinforcement Learning",
-"authors": [
-"Shilong Ji",
-"Yinuo Chen",
-"Chuqi Wang",
-"Jiayu Chen",
-"Ruize Zhang",
-"Feng Gao",
-"Wenhao Tang",
-"Shu'ang Yu",
-"Sirui Xiang",
-"Xinlei Chen",
-"Chao Yu",
-"Yu Wang"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"RL",
-"Dex",
-"Control"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "In this paper, we study the problem of aerial ball juggling using a quadrotor equipped with a racket, a task that demands accurate timing, stable control, and continuous adaptation.",
-"abstract": "Aerial robots interacting with objects must perform precise, contact-rich maneuvers under uncertainty. In this paper, we study the problem of aerial ball juggling using a quadrotor equipped with a racket, a task that demands accurate timing, stable control, and continuous adaptation. We propose JuggleRL, the first reinforcement learning–based system for aerial juggling. It learns closed-loop policies in large-scale simulation using systematic calibration of quadrotor and ball dynamics to reduce the sim-to-real gap. The training incorporates reward shaping to encourage racket-centered hits and sustained juggling, as well as domain randomization over ball position and coefficient of restitution to enhance robustness and transferability. The learned policy outputs mid-level commands executed by a low-level controller and is deployed zero-shot on real hardware, where an enhanced perception module with a lightweight communication protocol reduces delays in high-frequency state estimation and ensures real-time control. Experiments show that JuggleRL achieves an average of 311 hits over 10 consecutive trials in the real world, with a maximum of 462 hits observed, far exceeding a model-based baseline that reaches at most 14 hits with an average of 3.1. Moreover, the policy generalizes to unseen conditions, successfully juggling a lighter 5 g ball with an average of 145.9 hits. This work demonstrates that reinforcement learning can empower aerial robots with robust and stable control in dynamic interaction tasks.",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_251",
-"pdf": ""
-},
-{
-"id": "ICRA2026-221",
-"title": "A Vision-Language-Action Model for Adaptive Ultrasound-Guided Needle Insertion and Needle Tracking",
-"authors": [
-"Yuelin Zhang",
-"Qingpeng Ding",
-"Longxiang Tang",
-"Chengyu Fang",
-"Shing Shin Cheng"
-],
-"venue": "ICRA 2026",
-"year": 2026,
-"topics": [
-"FM"
-],
-"tracked_authors": [],
-"score": 16,
-"tldr": "In this paper, a Vision-Language-Action (VLA) model is proposed for adaptive and automated US-guided needle insertion and tracking on a robotic ultrasound (RUS) system.",
-"abstract": "Ultrasound (US)-guided needle insertion is a critical yet challenging procedure due to dynamic imaging conditions and difficulties in needle visualization. Many methods have been proposed for automated needle insertion, but they often rely on hand-crafted pipelines with modular controllers, whose performance degrades in challenging cases. In this paper, a Vision-Language-Action (VLA) model is proposed for adaptive and automated US-guided needle insertion and tracking on a robotic ultrasound (RUS) system. This framework provides a unified approach to needle tracking and needle insertion control, enabling real-time, dynamically adaptive adjustment of insertion based on the obtained needle position and environment awareness. To achieve real-time and end-to-end tracking, a Cross-Depth Fusion (CDF) tracking head is proposed, integrating shallow positional and deep semantic features from the large-scale vision backbone. To adapt the pretrained vision backbone for tracking tasks, a Tracking-Conditioning (TraCon) register is introduced for parameter-efficient feature conditioning. After needle tracking, an uncertainty-aware control policy and an asynchronous VLA pipeline are presented for adaptive needle insertion control, ensuring timely decision-making for improved safety and outcomes. Extensive experiments on both needle tracking and insertion show that our method consistently outperforms state-of-the-art trackers and manual operation, achieving higher tracking accuracy, improved insertion success rates, and reduced procedure time, highlighting promising directions for RUS-based intelligent intervention.",
-"url": "https://ras.papercept.net/conferences/conferences/ICRA26/program/ICRA26_ContentListWeb_3.html#tui2i_277",
-"pdf": ""
 }
 ]
 },
-"updated": "2026-11-24"
+"updated": "2026-11-26"
 }

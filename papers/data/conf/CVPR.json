@@ -36,7 +36,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_RoboWheel_A_Data_Engine_from_Real-World_Human_Demonstrations_for_Cross-Embodiment_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_RoboWheel_A_Data_Engine_from_Real-World_Human_Demonstrations_for_Cross-Embodiment_CVPR_2026_paper.pdf",
 "arxiv": "2512.02729",
-"citations": 17,
+"citations": 19,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -79,7 +79,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_UniDex_A_Robot_Foundation_Suite_for_Universal_Dexterous_Hand_Control_CVPR_2026_paper.pdf",
 "arxiv": "2603.22264",
-"citations": 40,
+"citations": 42,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -210,7 +210,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/He_VIRAL_Visual_Sim-to-Real_at_Scale_for_Humanoid_Loco-Manipulation_CVPR_2026_paper.pdf",
 "arxiv": "2511.15200",
-"citations": 77,
+"citations": 78,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -398,7 +398,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Bi_Motus_A_Unified_Latent_Action_World_Model_CVPR_2026_paper.pdf",
 "arxiv": "2512.13030",
-"citations": 412,
+"citations": 430,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -513,7 +513,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xue_Opening_the_Sim-to-Real_Door_for_Humanoid_Pixel-to-Action_Policy_Transfer_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xue_Opening_the_Sim-to-Real_Door_for_Humanoid_Pixel-to-Action_Policy_Transfer_CVPR_2026_paper.pdf",
 "arxiv": "2512.01061",
-"citations": 47,
+"citations": 48,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -544,7 +544,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_GenieDrive_Towards_Physics-Aware_Driving_World_Model_with_4D_Occupancy_Guided_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_GenieDrive_Towards_Physics-Aware_Driving_World_Model_with_4D_Occupancy_Guided_CVPR_2026_paper.pdf",
 "arxiv": "2512.12751",
-"citations": 22,
+"citations": 24,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -571,7 +571,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Nie_Transition_Matching_Distillation_for_Fast_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Nie_Transition_Matching_Distillation_for_Fast_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2601.09881",
-"citations": 34,
+"citations": 35,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -603,7 +603,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Fei_SRPO_Self-Referential_Policy_Optimization_for_Vision-Language-Action_Models_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fei_SRPO_Self-Referential_Policy_Optimization_for_Vision-Language-Action_Models_CVPR_2026_paper.pdf",
 "arxiv": "2511.15605",
-"citations": 31,
+"citations": 33,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -691,7 +691,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Peng_Counterfactual_VLA_Self-Reflective_Vision-Language-Action_Model_with_Adaptive_Reasoning_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Peng_Counterfactual_VLA_Self-Reflective_Vision-Language-Action_Model_with_Adaptive_Reasoning_CVPR_2026_paper.pdf",
 "arxiv": "2512.24426",
-"citations": 30,
+"citations": 32,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -719,7 +719,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zheng_VerseCrafter_Dynamic_Realistic_Video_World_Model_with_4D_Geometric_Control_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zheng_VerseCrafter_Dynamic_Realistic_Video_World_Model_with_4D_Geometric_Control_CVPR_2026_paper.pdf",
 "arxiv": "2601.05138",
-"citations": 38,
+"citations": 40,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -775,7 +775,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_WAM-Flow_Parallel_Coarse-to-Fine_Motion_Planning_via_Discrete_Flow_Matching_for_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_WAM-Flow_Parallel_Coarse-to-Fine_Motion_Planning_via_Discrete_Flow_Matching_for_CVPR_2026_paper.pdf",
 "arxiv": "2512.06112",
-"citations": 27,
+"citations": 28,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -798,7 +798,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lee_DextER_Language-driven_Dexterous_Grasp_Generation_with_Embodied_Reasoning_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lee_DextER_Language-driven_Dexterous_Grasp_Generation_with_Embodied_Reasoning_CVPR_2026_paper.pdf",
 "arxiv": "2601.16046",
-"citations": 6,
+"citations": 7,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -830,7 +830,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_AnyLift_Scaling_Motion_Reconstruction_from_Internet_Videos_via_2D_Diffusion_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_AnyLift_Scaling_Motion_Reconstruction_from_Internet_Videos_via_2D_Diffusion_CVPR_2026_paper.pdf",
 "arxiv": "2604.17818",
-"citations": 5,
+"citations": 6,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -859,7 +859,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liang_Adaptive_Action_Chunking_at_Inference-time_for_Vision-Language-Action_Models_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_Adaptive_Action_Chunking_at_Inference-time_for_Vision-Language-Action_Models_CVPR_2026_paper.pdf",
 "arxiv": "2604.04161",
-"citations": 53,
+"citations": 54,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -920,7 +920,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lin_HiF-VLA_Hindsight_Insight_and_Foresight_through_Motion_Representation_for_Vision-Language-Action_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lin_HiF-VLA_Hindsight_Insight_and_Foresight_through_Motion_Representation_for_Vision-Language-Action_CVPR_2026_paper.pdf",
 "arxiv": "2512.09928",
-"citations": 48,
+"citations": 50,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1013,7 +1013,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Sun_Stereo_World_Model_Camera-Guided_Stereo_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Sun_Stereo_World_Model_Camera-Guided_Stereo_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2603.17375",
-"citations": 3,
+"citations": 4,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1040,7 +1040,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zou_DisCa_Accelerating_Video_Diffusion_Transformers_with_Distillation-Compatible_Learnable_Feature_Caching_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zou_DisCa_Accelerating_Video_Diffusion_Transformers_with_Distillation-Compatible_Learnable_Feature_Caching_CVPR_2026_paper.pdf",
 "arxiv": "2602.05449",
-"citations": 12,
+"citations": 13,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1078,7 +1078,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tian_InternData-A1_Pioneering_High-Fidelity_Synthetic_Data_for_Pre-training_Generalist_Policy_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tian_InternData-A1_Pioneering_High-Fidelity_Synthetic_Data_for_Pre-training_Generalist_Policy_CVPR_2026_paper.pdf",
 "arxiv": "2511.16651",
-"citations": 101,
+"citations": 104,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1163,7 +1163,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kodaira_StreamDiT_Real-Time_Streaming_Text-to-Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kodaira_StreamDiT_Real-Time_Streaming_Text-to-Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2507.03745",
-"citations": 57,
+"citations": 58,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1220,7 +1220,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Chain_of_World_World_Model_Thinking_in_Latent_Motion_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Chain_of_World_World_Model_Thinking_in_Latent_Motion_CVPR_2026_paper.pdf",
 "arxiv": "2603.03195",
-"citations": 17,
+"citations": 19,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1313,7 +1313,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Seo_PropFly_Learning_to_Propagate_via_On-the-Fly_Supervision_from_Pre-trained_Video_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Seo_PropFly_Learning_to_Propagate_via_On-the-Fly_Supervision_from_Pre-trained_Video_CVPR_2026_paper.pdf",
 "arxiv": "2602.20583",
-"citations": 5,
+"citations": 6,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1342,7 +1342,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_ForeAct_Steering_Your_VLA_with_Efficient_Visual_Foresight_Planning_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_ForeAct_Steering_Your_VLA_with_Efficient_Visual_Foresight_Planning_CVPR_2026_paper.pdf",
 "arxiv": "2602.12322",
-"citations": 15,
+"citations": 16,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1370,7 +1370,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_WorldStereo_Bridging_Camera-Guided_Video_Generation_and_Scene_Reconstruction_via_3D_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_WorldStereo_Bridging_Camera-Guided_Video_Generation_and_Scene_Reconstruction_via_3D_CVPR_2026_paper.pdf",
 "arxiv": "2603.02049",
-"citations": 25,
+"citations": 30,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1451,7 +1451,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_FlashMotion_Few-Step_Controllable_Video_Generation_with_Trajectory_Guidance_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_FlashMotion_Few-Step_Controllable_Video_Generation_with_Trajectory_Guidance_CVPR_2026_paper.pdf",
 "arxiv": "2603.12146",
-"citations": 12,
+"citations": 13,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1479,7 +1479,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_RecTok_Reconstruction_Distillation_along_Rectified_Flow_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_RecTok_Reconstruction_Distillation_along_Rectified_Flow_CVPR_2026_paper.pdf",
 "arxiv": "2512.13421",
-"citations": 6,
+"citations": 7,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1537,7 +1537,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_GRPO-Guard_Mitigating_Implicit_Over-Optimization_in_Flow_Matching_via_Regulated_Clipping_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_GRPO-Guard_Mitigating_Implicit_Over-Optimization_in_Flow_Matching_via_Regulated_Clipping_CVPR_2026_paper.pdf",
 "arxiv": "2510.22319",
-"citations": 55,
+"citations": 57,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1665,7 +1665,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yesiltepe_Infinity-RoPE_Action-Controllable_Infinite_Video_Generation_Emerges_From_Autoregressive_Self-Rollout_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yesiltepe_Infinity-RoPE_Action-Controllable_Infinite_Video_Generation_Emerges_From_Autoregressive_Self-Rollout_CVPR_2026_paper.pdf",
 "arxiv": "2511.20649",
-"citations": 102,
+"citations": 104,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1751,7 +1751,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kim_Understanding_Accelerating_and_Improving_MeanFlow_Training_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kim_Understanding_Accelerating_and_Improving_MeanFlow_Training_CVPR_2026_paper.pdf",
 "arxiv": "2511.19065",
-"citations": 7,
+"citations": 8,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1776,7 +1776,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Rawal_NoRD_A_Data-Efficient_Vision-Language-Action_Model_that_Drives_without_Reasoning_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Rawal_NoRD_A_Data-Efficient_Vision-Language-Action_Model_that_Drives_without_Reasoning_CVPR_2026_paper.pdf",
 "arxiv": "2602.21172",
-"citations": 20,
+"citations": 23,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1933,7 +1933,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Foo_Physical_Simulator_In-the-Loop_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Foo_Physical_Simulator_In-the-Loop_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2603.06408",
-"citations": 26,
+"citations": 30,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1960,7 +1960,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Unified_Camera_Positional_Encoding_for_Controlled_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_Unified_Camera_Positional_Encoding_for_Controlled_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2512.07237",
-"citations": 57,
+"citations": 62,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2187,7 +2187,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Luo_Joint-Aligned_Latent_Action_Towards_Scalable_VLA_Pretraining_in_the_Wild_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Luo_Joint-Aligned_Latent_Action_Towards_Scalable_VLA_Pretraining_in_the_Wild_CVPR_2026_paper.pdf",
 "arxiv": "2602.21736",
-"citations": 25,
+"citations": 26,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2248,7 +2248,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xiao_AVA-VLA_Improving_Vision-Language-Action_models_with_Active_Visual_Attention_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xiao_AVA-VLA_Improving_Vision-Language-Action_models_with_Active_Visual_Attention_CVPR_2026_paper.pdf",
 "arxiv": "2511.18960",
-"citations": 46,
+"citations": 48,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2477,7 +2477,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lee_TraceGen_World_Modeling_in_3D_Trace_Space_Enables_Learning_from_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lee_TraceGen_World_Modeling_in_3D_Trace_Space_Enables_Learning_from_CVPR_2026_paper.pdf",
 "arxiv": "2511.21690",
-"citations": 28,
+"citations": 29,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2511,7 +2511,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lin_Evo-1_Lightweight_Vision-Language-Action_Model_with_Preserved_Semantic_Alignment_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lin_Evo-1_Lightweight_Vision-Language-Action_Model_with_Preserved_Semantic_Alignment_CVPR_2026_paper.pdf",
 "arxiv": "2511.04555",
-"citations": 70,
+"citations": 72,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2575,7 +2575,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Mao_Generative_Neural_Video_Compression_via_Video_Diffusion_Prior_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Mao_Generative_Neural_Video_Compression_via_Video_Diffusion_Prior_CVPR_2026_paper.pdf",
 "arxiv": "2512.05016",
-"citations": 31,
+"citations": 32,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2662,7 +2662,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Luo_Unleashing_VLA_Potentials_in_Autonomous_Driving_via_Explicit_Learning_from_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Luo_Unleashing_VLA_Potentials_in_Autonomous_Driving_via_Explicit_Learning_from_CVPR_2026_paper.pdf",
 "arxiv": "2603.01063",
-"citations": 35,
+"citations": 36,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2694,7 +2694,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_Mantis_A_Versatile_Vision-Language-Action_Model_with_Disentangled_Visual_Foresight_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_Mantis_A_Versatile_Vision-Language-Action_Model_with_Disentangled_Visual_Foresight_CVPR_2026_paper.pdf",
 "arxiv": "2511.16175",
-"citations": 24,
+"citations": 25,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2721,7 +2721,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_NeoVerse_Enhancing_4D_World_Model_with_in-the-wild_Monocular_Videos_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_NeoVerse_Enhancing_4D_World_Model_with_in-the-wild_Monocular_Videos_CVPR_2026_paper.pdf",
 "arxiv": "2601.00393",
-"citations": 65,
+"citations": 66,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2777,7 +2777,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ghafoorian_Attention_Surgery_An_Efficient_Recipe_to_Linearize_Your_Video_Diffusion_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ghafoorian_Attention_Surgery_An_Efficient_Recipe_to_Linearize_Your_Video_Diffusion_CVPR_2026_paper.pdf",
 "arxiv": "2509.24899",
-"citations": 14,
+"citations": 15,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2832,7 +2832,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_When_Robots_Obey_the_Patch_Universal_Transferable_Patch_Attacks_on_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lu_When_Robots_Obey_the_Patch_Universal_Transferable_Patch_Attacks_on_CVPR_2026_paper.pdf",
 "arxiv": "2511.21192",
-"citations": 29,
+"citations": 31,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2858,7 +2858,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_LinVideo_A_Post-Training_Framework_towards_On_Attention_in_Efficient_Video_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_LinVideo_A_Post-Training_Framework_towards_On_Attention_in_Efficient_Video_CVPR_2026_paper.pdf",
 "arxiv": "2510.08318",
-"citations": 10,
+"citations": 11,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2881,7 +2881,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ghafoorian_ReHyAt_Recurrent_Hybrid_Attention_for_Video_Diffusion_Transformers_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ghafoorian_ReHyAt_Recurrent_Hybrid_Attention_for_Video_Diffusion_Transformers_CVPR_2026_paper.pdf",
 "arxiv": "2601.04342",
-"citations": 7,
+"citations": 8,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2969,7 +2969,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_PointWorld_Scaling_3D_World_Models_for_In-The-Wild_Robotic_Manipulation_CVPR_2026_paper.pdf",
 "arxiv": "2601.03782",
-"citations": 133,
+"citations": 142,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3070,7 +3070,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_DriveMoE_Mixture-of-Experts_for_Vision-Language-Action_Model_in_End-to-End_Autonomous_Driving_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_DriveMoE_Mixture-of-Experts_for_Vision-Language-Action_Model_in_End-to-End_Autonomous_Driving_CVPR_2026_paper.pdf",
 "arxiv": "2505.16278",
-"citations": 124,
+"citations": 125,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3278,7 +3278,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Magne_NitroGen_An_Open_Foundation_Model_for_Generalist_Gaming_Agents_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Magne_NitroGen_An_Open_Foundation_Model_for_Generalist_Gaming_Agents_CVPR_2026_paper.pdf",
 "arxiv": "2601.02427",
-"citations": 37,
+"citations": 39,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3444,7 +3444,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Tan_AdaCluster_Adaptive_Query-Key_Clustering_for_Sparse_Attention_in_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Tan_AdaCluster_Adaptive_Query-Key_Clustering_for_Sparse_Attention_in_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2604.18348",
-"citations": 11,
+"citations": 12,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3659,7 +3659,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Kang_EgoX_Egocentric_Video_Generation_from_a_Single_Exocentric_Video_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Kang_EgoX_Egocentric_Video_Generation_from_a_Single_Exocentric_Video_CVPR_2026_paper.pdf",
 "arxiv": "2512.08269",
-"citations": 16,
+"citations": 17,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3773,7 +3773,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Chain_of_Event-Centric_Causal_Thought_for_Physically_Plausible_Video_Generation_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_Chain_of_Event-Centric_Causal_Thought_for_Physically_Plausible_Video_Generation_CVPR_2026_paper.pdf",
 "arxiv": "2603.09094",
-"citations": 11,
+"citations": 13,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3996,7 +3996,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_GuideFlow_Constraint-Guided_Flow_Matching_for_Planning_in_End-to-End_Autonomous_Driving_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_GuideFlow_Constraint-Guided_Flow_Matching_for_Planning_in_End-to-End_Autonomous_Driving_CVPR_2026_paper.pdf",
 "arxiv": "2511.18729",
-"citations": 42,
+"citations": 44,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -4075,7 +4075,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liu_ActiveVLA_Injecting_Active_Perception_into_Vision-Language-Action_Models_for_Precise_3D_CVPR_2026_paper.pdf",
 "arxiv": "2601.08325",
-"citations": 41,
+"citations": 42,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -4234,7 +4234,7 @@
 "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Deng_GaussianDWM_3D_Gaussian_Driving_World_Model_for_Unified_Scene_Understanding_CVPR_2026_paper.html",
 "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Deng_GaussianDWM_3D_Gaussian_Driving_World_Model_for_Unified_Scene_Understanding_CVPR_2026_paper.pdf",
 "arxiv": "2512.23180",
-"citations": 36,
+"citations": 38,
 "cite_src": "Semantic Scholar"
 }
 ],

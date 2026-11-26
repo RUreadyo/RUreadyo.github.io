@@ -234,8 +234,7 @@
    "published": "2026-11-25",
    "topics": [
     "Video",
-    "RL",
-    "Agentic"
+    "RL"
    ],
    "kw_score": 25,
    "tldr": "We present Agentic LongLive, an asynchronous agentic memory for long video generation.",

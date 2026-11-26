@@ -56,7 +56,7 @@
 "url": "https://openreview.net/forum?id=KdaClHHEUt",
 "pdf": "https://arxiv.org/pdf/2606.17055",
 "arxiv": "2606.17055",
-"citations": 45,
+"citations": 47,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -128,7 +128,7 @@
 "url": "https://openreview.net/forum?id=PniGejQAdF",
 "pdf": "https://arxiv.org/pdf/2512.15840",
 "arxiv": "2512.15840",
-"citations": 86,
+"citations": 87,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -268,7 +268,7 @@
 "url": "https://openreview.net/forum?id=DEPCm83K5I",
 "pdf": "https://arxiv.org/pdf/2607.00033",
 "arxiv": "2607.00033",
-"citations": 24,
+"citations": 26,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -345,7 +345,7 @@
 "url": "https://openreview.net/forum?id=sitHOFsi2x",
 "pdf": "https://arxiv.org/pdf/2606.19333",
 "arxiv": "2606.19333",
-"citations": 43,
+"citations": 45,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -575,6 +575,40 @@
 "cite_src": "Semantic Scholar"
 },
 {
+"id": "CoRL2026-223",
+"title": "Energy-Based Policy Orchestration",
+"authors": [
+"Weirui Ye",
+"Yen-Jen Wang",
+"Elvis Hsieh",
+"Zhiyang Dou",
+"Shibo Zhao",
+"Pieter Abbeel",
+"Yilun Du",
+"Leslie Pack Kaelbling",
+"Tomás Lozano-Pérez"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"GenModel",
+"Agentic",
+"Control"
+],
+"tracked_authors": [
+"Pieter Abbeel",
+"Yilun Du"
+],
+"score": 33,
+"tldr": "We develop EPO, an energy-based policy orchestrator for modular goal-conditioned policy families.",
+"abstract": "Hierarchical control scales robot behavior by separating task-level planning from low-level control. In dynamic, high-dimensional tasks, however, a fixed planner-to-policy interface can fail when contacts, balance, or disturbances evolve faster than high-level policy updates. Execution therefore requires choosing not only which low-level policy to run, but also which policy-specific goal should be given to it. We formulate this problem as policy orchestration: runtime selection of a policy-goal pair that is likely to remain feasible while tracking the planner target. We develop EPO, an energy-based policy orchestrator for modular goal-conditioned policy families. For each policy, EPO learns a composite energy over low-level goals, where lower energy corresponds to higher feasibility and more accurate target realization. At runtime, EPO refines each policy's goal and executes the lowest-energy policy-goal pair. Because energies are policy-specific, new policies can be incorporated by learning their own energy models, without retraining the existing policies or a centralized scheduler. In simulation, EPO improves the empirical precision-robustness trade-off by refining policy-specific goals before selectively switching among policies based on energy scores. We further demonstrate sim-to-real deployment of the same frozen policies and energy models on real humanoid loco-manipulation tasks. Project website: https://yewr.github.io/epo",
+"url": "https://openreview.net/forum?id=NZrwlgnR4X",
+"pdf": "https://arxiv.org/pdf/2611.02546",
+"arxiv": "2611.02546",
+"citations": 0,
+"cite_src": "Semantic Scholar"
+},
+{
 "id": "CoRL2026-561",
 "title": "Supervise What Survives: Geometry-Guided VLA Adaptation from Synthetic Robot Videos",
 "authors": [
@@ -629,7 +663,7 @@
 "url": "https://openreview.net/forum?id=AhpH1nGaUp",
 "pdf": "https://arxiv.org/pdf/2606.13675",
 "arxiv": "2606.13675",
-"citations": 15,
+"citations": 16,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -657,8 +691,25 @@
 "url": "https://openreview.net/forum?id=u56Z5KqtkI",
 "pdf": "https://arxiv.org/pdf/2608.02547",
 "arxiv": "2608.02547",
-"citations": 18,
+"citations": 20,
 "cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-112",
+"title": "HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic",
+"RL"
+],
+"tracked_authors": [],
+"score": 30,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=JqZEEaNDLJ",
+"pdf": ""
 },
 {
 "id": "CoRL2026-248",
@@ -798,39 +849,6 @@
 "cite_src": "Semantic Scholar"
 },
 {
-"id": "CoRL2026-223",
-"title": "Energy-Based Policy Orchestration",
-"authors": [
-"Weirui Ye",
-"Yen-Jen Wang",
-"Elvis Hsieh",
-"Zhiyang Dou",
-"Shibo Zhao",
-"Pieter Abbeel",
-"Yilun Du",
-"Leslie Pack Kaelbling",
-"Tomás Lozano-Pérez"
-],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"GenModel",
-"Control"
-],
-"tracked_authors": [
-"Pieter Abbeel",
-"Yilun Du"
-],
-"score": 29,
-"tldr": "We develop EPO, an energy-based policy orchestrator for modular goal-conditioned policy families.",
-"abstract": "Hierarchical control scales robot behavior by separating task-level planning from low-level control. In dynamic, high-dimensional tasks, however, a fixed planner-to-policy interface can fail when contacts, balance, or disturbances evolve faster than high-level policy updates. Execution therefore requires choosing not only which low-level policy to run, but also which policy-specific goal should be given to it. We formulate this problem as policy orchestration: runtime selection of a policy-goal pair that is likely to remain feasible while tracking the planner target. We develop EPO, an energy-based policy orchestrator for modular goal-conditioned policy families. For each policy, EPO learns a composite energy over low-level goals, where lower energy corresponds to higher feasibility and more accurate target realization. At runtime, EPO refines each policy's goal and executes the lowest-energy policy-goal pair. Because energies are policy-specific, new policies can be incorporated by learning their own energy models, without retraining the existing policies or a centralized scheduler. In simulation, EPO improves the empirical precision-robustness trade-off by refining policy-specific goals before selectively switching among policies based on energy scores. We further demonstrate sim-to-real deployment of the same frozen policies and energy models on real humanoid loco-manipulation tasks. Project website: https://yewr.github.io/epo",
-"url": "https://openreview.net/forum?id=NZrwlgnR4X",
-"pdf": "https://arxiv.org/pdf/2611.02546",
-"arxiv": "2611.02546",
-"citations": 0,
-"cite_src": "Semantic Scholar"
-},
-{
 "id": "CoRL2026-246",
 "title": "GRAIL: Generating Humanoid Loco-Manipulation from World Models",
 "authors": [
@@ -871,7 +889,43 @@
 "url": "https://openreview.net/forum?id=2dEfANeQL7",
 "pdf": "https://arxiv.org/pdf/2606.05160",
 "arxiv": "2606.05160",
-"citations": 3,
+"citations": 5,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-419",
+"title": "VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes",
+"authors": [
+"Yen-Jen Wang",
+"Jiaman Li",
+"Sirui Chen",
+"Takara E. Truong",
+"Pei Xu",
+"Pieter Abbeel",
+"Rocky Duan",
+"Koushil Sreenath",
+"Angjoo Kanazawa",
+"Carmelo Sferrazza",
+"Guanya Shi",
+"Karen Liu"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Control"
+],
+"tracked_authors": [
+"Pieter Abbeel",
+"Guanya Shi",
+"Karen Liu"
+],
+"score": 29,
+"tldr": "Perception-based humanoid loco-manipulation requires connecting egocentric observations and task instructions to whole-body motion.",
+"abstract": "Perception-based humanoid loco-manipulation requires connecting egocentric observations and task instructions to whole-body motion. Learning this mapping requires synchronized egocentric images, language commands, and robot-compatible kinematic trajectories, yet no existing data source provides this complete tuple at scale. We address this bottleneck by generating vision-language-kinematics (VLK) supervision synthetically in reconstructed scenes. Our pipeline leverages 3D Gaussian Splatting to reconstruct metric-scale indoor environments, synthesizes navigation and object-interaction trajectories using privileged scene information, and renders paired egocentric observations after the fact. We produce 48,000 paired trajectories with no human intervention and train a VLK policy that predicts short-horizon whole-body kinematic trajectories. A whole-body tracker converts these predictions into actions on the physical humanoid. We evaluate on the physical Unitree G1 performing navigation and single-object transport, demonstrating that synthesized interactions in reconstructed scenes provide effective supervision for sim-to-real perception-based humanoid loco-manipulation. Project Website: https://vision-language-kinematics.github.io/",
+"url": "https://openreview.net/forum?id=qMAfkDMTOy",
+"pdf": "https://arxiv.org/pdf/2606.30645",
+"arxiv": "2606.30645",
+"citations": 20,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -895,6 +949,70 @@
 "url": "https://openreview.net/forum?id=dngZLI0SlV",
 "pdf": "https://arxiv.org/pdf/2610.14564",
 "arxiv": "2610.14564",
+"citations": 0,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-133",
+"title": "NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning",
+"authors": [
+"Jiahui Fu",
+"Junyu Nan",
+"Lingfeng Sun",
+"Hongyu Li",
+"Jianing Qian",
+"Benjamin Yang",
+"Yilun Du",
+"Jennifer L. Barry",
+"Kris Kitani",
+"George Konidaris"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"Video",
+"Agentic"
+],
+"tracked_authors": [
+"Yilun Du"
+],
+"score": 28,
+"tldr": "We introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans.",
+"abstract": "Solving complex long-horizon robotic tasks requires joint reasoning over abstract task structure and low-level physical interaction. While combining Vision-Language Models (VLMs) and video generation models offers a promising path for zero-shot planning, their individual tendencies to hallucinate physics or violate geometric consistency often compound over time, preventing reliable real-world execution. We introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans. At the high level, a VLM planner decomposes tasks and filters out dynamically inconsistent futures by verifying multiple candidate video rollouts. To translate these imagined futures into reliable physical actions, NovaPlan utilizes a hybrid geometric representation that adaptively switches between object-centric flow and human hand flow. Finally, NovaPlan closes the loop by continuously monitoring execution to verify outcomes and synthesize local, non-prehensile corrective behaviors, such as fingertip poking, when failures occur. Across diverse multi-stage tasks, NovaPlan substantially outperforms prior zero-shot systems, achieving complex assembly and dexterous error recovery entirely without task-specific training or demonstrations. Please visit our project website for additional results: https://nova-plan.github.io/",
+"url": "https://openreview.net/forum?id=5cXsYqAjNs",
+"pdf": "https://arxiv.org/pdf/2602.20119",
+"arxiv": "2602.20119",
+"citations": 8,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-372",
+"title": "T(R,O) Grasp++: Cross-Embodiment Dexterous Grasping in Cluttered Environments at Scale",
+"authors": [
+"Xin Fei",
+"Zhixuan Xu",
+"Huaicong Fang",
+"Fangjun Chen",
+"Zhaoyu Mu",
+"Rui Yang",
+"Zhexi Luo",
+"Lin Shao"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"FM",
+"RL"
+],
+"tracked_authors": [],
+"score": 28,
+"tldr": "To address this problem, we introduce one of the largest simulation benchmarks to date, comprising around 0.5B grasp annotations across eight dexterous hands and approximately 50K objects.",
+"abstract": "Dexterous grasping in cluttered scenes remains a central challenge in robotic manipulation, as it requires high-dimensional hand coordination under complex object-environment constraints. To address this problem, we introduce one of the largest simulation benchmarks to date, comprising around 0.5B grasp annotations across eight dexterous hands and approximately 50K objects. Furthermore, we propose T(R,O) Grasp++, a scalable diffusion-based framework for cross-embodiment dexterous grasp synthesis in cluttered environments. Extensive experiments demonstrate that our model significantly outperforms existing baselines, achieving an average success rate of 88% across eight dexterous embodiments. Meanwhile, our pipeline achieves only 0.3s inference latency while improving inference sample efficiency by over 10 times.",
+"url": "https://openreview.net/forum?id=IbO5qWFXuh",
+"pdf": "https://arxiv.org/pdf/2610.25410",
+"arxiv": "2610.25410",
 "citations": 0,
 "cite_src": "Semantic Scholar"
 },
@@ -982,7 +1100,7 @@
 "url": "https://openreview.net/forum?id=zYpPmDICVV",
 "pdf": "https://arxiv.org/pdf/2602.03002",
 "arxiv": "2602.03002",
-"citations": 32,
+"citations": 33,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1000,6 +1118,46 @@
 "abstract": "",
 "url": "https://openreview.net/forum?id=AmQH2hU9Gs",
 "pdf": ""
+},
+{
+"id": "CoRL2026-465",
+"title": "Playful Agentic Robot Learning",
+"authors": [
+"Junyi Zhang",
+"Jiaxin Ge",
+"Hanjun Yoo",
+"Letian Fu",
+"Zihan Yang",
+"Yaowei Liu",
+"Raj Saravanan",
+"Shaofeng Yin",
+"Justin Yu",
+"Dantong Niu",
+"Zirui Wang",
+"Roei Herzig",
+"Ken Goldberg",
+"Yutong Bai",
+"David M. Chan",
+"Ion Stoica",
+"Angjoo Kanazawa",
+"Jiahui Lei",
+"Haiwen Feng",
+"Trevor Darrell"
+],
+"venue": "CoRL 2026 (Spotlight)",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 27,
+"tldr": "We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition.",
+"abstract": "Current agentic robot systems can write executable Code-as-Policy programs, observe feedback, and revise behavior across multiple attempts, but they remain largely task-driven: reusable skills are acquired only after explicit instructions. We study Playful Agentic Robot Learning, where an embodied coding agent uses self-directed play as a continual skill-learning stage before downstream tasks arrive. We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition. During play, RATs proposes novel yet learnable exploratory tasks, plans and executes robot-code policies, verifies intermediate progress, diagnoses failures, retries with dense, step-level feedback, and distills successful executions into a persistent code skill library. At test time, the agent reuses relevant skills from this frozen library to help solve new tasks. Experiments in LIBERO-PRO and MolmoSpaces show that play-learned skills improve held-out downstream tasks over no-play and random-play baselines, with 20.6 and 17.0 percentage-point gains over CaP-Agent0 on LIBERO-PRO and MolmoSpaces, respectively. Moreover, the learned skills can be plugged into other inference-time Code-as-Policy agents by simply retrieving them into the context, improving RoboSuite and real-world transfer by 8.9 and 8.8 points, respectively, without finetuning the underlying model.",
+"url": "https://openreview.net/forum?id=GeL3GdwSYo",
+"pdf": "https://arxiv.org/pdf/2606.19419",
+"arxiv": "2606.19419",
+"citations": 47,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "CoRL2026-241",
@@ -1058,7 +1216,7 @@
 "url": "https://openreview.net/forum?id=drlpFld34L",
 "pdf": "https://arxiv.org/pdf/2606.12604",
 "arxiv": "2606.12604",
-"citations": 20,
+"citations": 22,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1258,6 +1416,22 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-200",
+"title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 24,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=0cK9Wf9Eeq",
+"pdf": ""
+},
+{
 "id": "CoRL2026-239",
 "title": "RL Token: Bootstrapping Online RL with Vision-Language-Action Models",
 "authors": [],
@@ -1306,6 +1480,39 @@
 "abstract": "",
 "url": "https://openreview.net/forum?id=Rrnnh3mDaH",
 "pdf": ""
+},
+{
+"id": "CoRL2026-417",
+"title": "HuMI: Humanoid Whole-Body Manipulation from Humanoid-Free Demonstrations",
+"authors": [
+"Ruiqian Nai",
+"Boyuan Zheng",
+"Junming Zhao",
+"Haodong Zhu",
+"Sicong Dai",
+"Zunhao Chen",
+"Yihang Hu",
+"Yingdong Hu",
+"Tong Zhang",
+"Chuan Wen",
+"Yang Gao"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Dex",
+"IL",
+"RL"
+],
+"tracked_authors": [],
+"score": 24,
+"tldr": "In this paper, we present the Humanoid Manipulation Interface (HuMI), a portable and efficient framework for learning diverse whole-body manipulation tasks across various environments.",
+"abstract": "Current approaches for humanoid whole-body manipulation, primarily relying on teleoperation or visual sim-to-real reinforcement learning, are hindered by hardware logistics and complex reward engineering. Consequently, demonstrated autonomous skills remain limited and are typically restricted to controlled environments. In this paper, we present the Humanoid Manipulation Interface (HuMI), a portable and efficient framework for learning diverse whole-body manipulation tasks across various environments. HuMI enables humanoid-free data collection by capturing rich whole-body motion using portable hardware. This data drives a hierarchical learning pipeline that translates human motions into dexterous and feasible humanoid skills. Extensive experiments across five whole-body tasks--including kneeling, squatting, tossing, walking, and bimanual manipulation--demonstrate that HuMI achieves a 3x increase in data collection efficiency compared to teleoperation and attains a 70% success rate in unseen environments.",
+"url": "https://openreview.net/forum?id=aq2hmhW0kU",
+"pdf": "https://arxiv.org/pdf/2602.06643",
+"arxiv": "2602.06643",
+"citations": 37,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "CoRL2026-528",
@@ -1406,40 +1613,6 @@
 "pdf": "https://arxiv.org/pdf/2604.21924",
 "arxiv": "2604.21924",
 "citations": 18,
-"cite_src": "Semantic Scholar"
-},
-{
-"id": "CoRL2026-133",
-"title": "NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning",
-"authors": [
-"Jiahui Fu",
-"Junyu Nan",
-"Lingfeng Sun",
-"Hongyu Li",
-"Jianing Qian",
-"Benjamin Yang",
-"Yilun Du",
-"Jennifer L. Barry",
-"Kris Kitani",
-"George Konidaris"
-],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"Dex",
-"Video",
-"IL"
-],
-"tracked_authors": [
-"Yilun Du"
-],
-"score": 23,
-"tldr": "We introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans.",
-"abstract": "Solving complex long-horizon robotic tasks requires joint reasoning over abstract task structure and low-level physical interaction. While combining Vision-Language Models (VLMs) and video generation models offers a promising path for zero-shot planning, their individual tendencies to hallucinate physics or violate geometric consistency often compound over time, preventing reliable real-world execution. We introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans. At the high level, a VLM planner decomposes tasks and filters out dynamically inconsistent futures by verifying multiple candidate video rollouts. To translate these imagined futures into reliable physical actions, NovaPlan utilizes a hybrid geometric representation that adaptively switches between object-centric flow and human hand flow. Finally, NovaPlan closes the loop by continuously monitoring execution to verify outcomes and synthesize local, non-prehensile corrective behaviors, such as fingertip poking, when failures occur. Across diverse multi-stage tasks, NovaPlan substantially outperforms prior zero-shot systems, achieving complex assembly and dexterous error recovery entirely without task-specific training or demonstrations. Please visit our project website for additional results: https://nova-plan.github.io/",
-"url": "https://openreview.net/forum?id=5cXsYqAjNs",
-"pdf": "https://arxiv.org/pdf/2602.20119",
-"arxiv": "2602.20119",
-"citations": 7,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1567,7 +1740,7 @@
 "url": "https://openreview.net/forum?id=2nityiXWGJ",
 "pdf": "https://arxiv.org/pdf/2607.22535",
 "arxiv": "2607.22535",
-"citations": 9,
+"citations": 10,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1597,6 +1770,31 @@
 "url": "https://openreview.net/forum?id=ShBMWDRPVu",
 "pdf": "https://arxiv.org/pdf/2606.13769",
 "arxiv": "2606.13769",
+"citations": 1,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-666",
+"title": "MPC-Injection: Biasing Off-Policy Locomotion RL Toward Controller-Induced Behavior Basins",
+"authors": [
+"Roy Xing",
+"Seyoung Ree",
+"Brian Plancher"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Control",
+"RL",
+"IL"
+],
+"tracked_authors": [],
+"score": 23,
+"tldr": "We present MPC-Injection, a low-overhead method that steers RL toward a designer-preferred behavior by inserting transitions generated in the same environment by a model predictive controller (MPC).",
+"abstract": "Reinforcement learning (RL) for locomotion frequently converges to locally optimal but undeployable behaviors, such as vibrating limbs or scooting on the torso, that maximize return without producing a usable gait. We present MPC-Injection, a low-overhead method that steers RL toward a designer-preferred behavior by inserting transitions generated in the same environment by a model predictive controller (MPC). Unlike reward shaping, MPC-Injection does not require redesigning the task reward, and unlike adversarial imitation learning, it adds no discriminator, no kinematic retargeting, and no auxiliary objective. We analyze how the injected transitions bias the learning, allowing the policy to converge to behaviors that pure RL may fail to reach under simple reward functions. On a 2D walker in simulation and with sim-to-real evaluation on a Go2 quadruped, we show that MPC-Injection produces gaits qualitatively comparable to those of reward shaping and adversarial motion priors. We also show that MPC-Injection can complete a barrel roll that pure RL fails to achieve under the same simple reward and can select between trotting and bounding gaits only through changing the injected MPC data.",
+"url": "https://openreview.net/forum?id=0HS0to0eVo",
+"pdf": "https://arxiv.org/pdf/2606.26392",
+"arxiv": "2606.26392",
 "citations": 1,
 "cite_src": "Semantic Scholar"
 },
@@ -1649,23 +1847,6 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=wt25SMJmEq",
-"pdf": ""
-},
-{
-"id": "CoRL2026-372",
-"title": "T(R,O) Grasp++: Cross-Embodiment Dexterous Grasping in Cluttered Environments at Scale",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"Dex",
-"FM"
-],
-"tracked_authors": [],
-"score": 22,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=IbO5qWFXuh",
 "pdf": ""
 },
 {
@@ -1826,7 +2007,7 @@
 "url": "https://openreview.net/forum?id=c4Z0Y8gvnI",
 "pdf": "https://arxiv.org/pdf/2603.16861",
 "arxiv": "2603.16861",
-"citations": 33,
+"citations": 38,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -1963,7 +2144,7 @@
 "url": "https://openreview.net/forum?id=ntHuqgjrgs",
 "pdf": "https://arxiv.org/pdf/2606.19531",
 "arxiv": "2606.19531",
-"citations": 70,
+"citations": 78,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -2075,6 +2256,22 @@
 "arxiv": "2606.08653",
 "citations": 2,
 "cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-199",
+"title": "RoboGene: Diversity-Driven Agentic Task Generation Framework for VLA Pre-training",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"FM"
+],
+"tracked_authors": [],
+"score": 20,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=uizBY3yrgz",
+"pdf": ""
 },
 {
 "id": "CoRL2026-217",
@@ -2428,6 +2625,22 @@
 "cite_src": "Semantic Scholar"
 },
 {
+"id": "CoRL2026-96",
+"title": "UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"RL"
+],
+"tracked_authors": [],
+"score": 18,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=ar3eWq6mh4",
+"pdf": ""
+},
+{
 "id": "CoRL2026-104",
 "title": "EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models",
 "authors": [],
@@ -2466,7 +2679,7 @@
 "url": "https://openreview.net/forum?id=8TvqhVkrMd",
 "pdf": "https://arxiv.org/pdf/2606.12366",
 "arxiv": "2606.12366",
-"citations": 11,
+"citations": 12,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3072,7 +3285,7 @@
 "url": "https://openreview.net/forum?id=E5lvpA2Glx",
 "pdf": "https://arxiv.org/pdf/2509.22407",
 "arxiv": "2509.22407",
-"citations": 15,
+"citations": 14,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3124,7 +3337,7 @@
 "url": "https://openreview.net/forum?id=fTx97RpooW",
 "pdf": "https://arxiv.org/pdf/2606.05468",
 "arxiv": "2606.05468",
-"citations": 10,
+"citations": 11,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3186,7 +3399,7 @@
 "url": "https://openreview.net/forum?id=oias4zZRUn",
 "pdf": "https://arxiv.org/pdf/2606.28237",
 "arxiv": "2606.28237",
-"citations": 3,
+"citations": 4,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3299,7 +3512,7 @@
 "url": "https://openreview.net/forum?id=JV472m0zgq",
 "pdf": "https://arxiv.org/pdf/2608.02580",
 "arxiv": "2608.02580",
-"citations": 24,
+"citations": 26,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -3676,6 +3889,38 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-425",
+"title": "Social Humanoid: Socially Responsive Human–Humanoid Interaction",
+"authors": [
+"Vongani H. Maluleke",
+"James Ni",
+"Kie Horiuchi",
+"Lea Wilken",
+"Jiahui Lei",
+"Evonne Ng",
+"Roei Herzig",
+"Jitendra Malik",
+"Trevor Darrell",
+"Angjoo Kanazawa"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Dex"
+],
+"tracked_authors": [
+"Jitendra Malik"
+],
+"score": 14,
+"tldr": "To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion.",
+"abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot. To train the system, we introduce a two-phase adaptive retargeting procedure that retargets one interaction partner to the robot while morphing the other partner to preserve contact dynamics, reachability, and relative body scale. We apply this procedure across five motion-capture datasets to produce a new Human-Humanoid Interaction (HHI) benchmark of 260 hours of human-humanoid interactions. Our results demonstrate that Social Humanoid produces coordinated, human-aligned behavior across diverse interaction types in simulation and the real world. Project page: https://von31.github.io/social-humanoid/",
+"url": "https://openreview.net/forum?id=hf8X30fAtz",
+"pdf": "https://arxiv.org/pdf/2611.08407",
+"arxiv": "2611.08407",
+"citations": 0,
+"cite_src": "Semantic Scholar"
+},
+{
 "id": "CoRL2026-490",
 "title": "τ0-WM: A Unified Video-Action World Model for Robotic Manipulation",
 "authors": [],
@@ -3901,6 +4146,35 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-368",
+"title": "AnyRank: Reliable Anytime Policy Ranking via Sequential Testing",
+"authors": [
+"Apurva Badithela",
+"David Snyder",
+"Tenny Yin",
+"Jade Sceats",
+"George Pappas",
+"Nikolai Matni",
+"Masha Itkina",
+"Haruki Nishimura",
+"Anirudha Majumdar"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"WM"
+],
+"tracked_authors": [],
+"score": 13,
+"tldr": "We propose AnyRank: a sequential method for multi-policy ranking that (i) adaptively allocates trials to hard-to-separate policies, (ii) provides (partial) rankings at any stopping time while bounding the probability of an incorrect ranking, and (iii) optionally exploits…",
+"abstract": "Due to the high cost of hardware experiments, robot policies are predominantly evaluated by comparing their empirical performance on a limited number of hardware trials. However, finite-sample statistical uncertainty can lead to erroneous conclusions, especially when ranking multiple policies using a fixed batch of evaluation data. We propose AnyRank: a sequential method for multi-policy ranking that (i) adaptively allocates trials to hard-to-separate policies, (ii) provides (partial) rankings at any stopping time while bounding the probability of an incorrect ranking, and (iii) optionally exploits prior information to prioritize hardware evaluations more efficiently. This prior information could be informed from expert intuition, a small set of held-out hardware evaluations, or from policy rollouts in a simulator or an action-conditioned video world model. Notably, the prior can be imperfect; while a strong prior can provide efficiency gains on hardware, any inaccuracies in prior policy rankings do not invalidate the statistical assurances of AnyRank. We achieve the aforementioned properties through novel theoretical contributions that combine sequential testing with multiple-hypothesis graphical testing approaches. Experiments in simulation and real-world policy evaluation benchmarks show that AnyRank requires up to 50% fewer hardware evaluations compared to existing statistically rigorous approaches, while guarding against the incorrect rankings produced by heuristic methods used by state-of-the-art benchmarks.",
+"url": "https://openreview.net/forum?id=iOU9zkASbg",
+"pdf": "https://arxiv.org/pdf/2610.14603",
+"arxiv": "2610.14603",
+"citations": 1,
+"cite_src": "Semantic Scholar"
+},
+{
 "id": "CoRL2026-440",
 "title": "SPOT: Spatial Perception-Oriented Long-Horizon Humanoid Teleoperation",
 "authors": [
@@ -4087,6 +4361,54 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-65",
+"title": "Safe Task Planning with Long-Term Graph Memory for Embodied Agents",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=rnp2Bj4RUX",
+"pdf": ""
+},
+{
+"id": "CoRL2026-66",
+"title": "RoboMemory: A Brain-inspired Multi-memory Agentic Framework for Interactive Environmental Learning in Physical Embodied Systems",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=Q4ehHMIPmb",
+"pdf": ""
+},
+{
+"id": "CoRL2026-83",
+"title": "An Agentic Framework for Proactive Robots with Procedural Assistance Memory",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=nXfwmrzXzz",
+"pdf": ""
+},
+{
 "id": "CoRL2026-95",
 "title": "Task-Space Imitation Guidance for Efficient Reinforcement Learning",
 "authors": [],
@@ -4218,6 +4540,22 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=SniDOKrnNY",
+"pdf": ""
+},
+{
+"id": "CoRL2026-226",
+"title": "Automating the Design of Embodied Agent Architectures",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=2LNbCnzTQk",
 "pdf": ""
 },
 {
@@ -4394,6 +4732,22 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-342",
+"title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=A9AQjk3dAt",
+"pdf": ""
+},
+{
 "id": "CoRL2026-354",
 "title": "ExecGap: Exploiting Command-Execution Gap for Patch Attacks on Vision-Language-Action Models",
 "authors": [],
@@ -4492,6 +4846,38 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-566",
+"title": "GIF: Agentic Generation of Interactive and Functional Object Compositions for Robot Learning",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=y5Z5ccS0Bv",
+"pdf": ""
+},
+{
+"id": "CoRL2026-573",
+"title": "SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=UZnHsKKAAB",
+"pdf": ""
+},
+{
 "id": "CoRL2026-606",
 "title": "AURORA: Active Uncertainty-Driven Re-Orientation for In-Hand Reconstruction",
 "authors": [],
@@ -4568,6 +4954,20 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-680",
+"title": "EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [],
+"tracked_authors": [],
+"score": 12,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=oMvcKDFLRA",
+"pdf": ""
+},
+{
 "id": "CoRL2026-683",
 "title": "FlashDrive: Flash Vision-Language-Action Inference Framework for Autonomous Driving",
 "authors": [],
@@ -4582,6 +4982,30 @@
 "abstract": "",
 "url": "https://openreview.net/forum?id=sdujBb3P4e",
 "pdf": ""
+},
+{
+"id": "CoRL2026-28",
+"title": "FlowVLA: Enabling World Dynamics Understanding through Pluggable 3D Flow Learning",
+"authors": [
+"Junhyeong Go",
+"Mingyu Jung",
+"Woobin Im",
+"Jongbin Ryu"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"FM"
+],
+"tracked_authors": [],
+"score": 11,
+"tldr": "To address these limitations, we introduce FlowVLA, a reconstruction-guided, pluggable 3D flow learning framework aimed at empowering VLA models with an inherent understanding of action-relevant dynamics.",
+"abstract": "Recent advances in 3D reconstruction enable the extraction of temporally consistent 3D motion from RGB observations; however, current Vision-Language-Action (VLA) models still predominantly rely on 2D image-text priors. Therefore, they do not accurately represent the fundamental dynamics of the 3D world associated with physical actions. This over-reliance on static 2D visual cues limits the capacity of VLA models in achieving robust robot manipulation. To address these limitations, we introduce FlowVLA, a reconstruction-guided, pluggable 3D flow learning framework aimed at empowering VLA models with an inherent understanding of action-relevant dynamics. Instead of requiring explicit 3D sensor inputs or altering the inference-time architecture, our method is designed to utilize temporally aligned 3D flow only during training. This allows the model to learn the dynamic evolution of the physical scene while preserving the computational efficiency of conventional 2D VLA backbones. To bridge scene-level dynamics with robotic manipulation, we propose a modular 3D flow learning framework with dual-level flow supervision. Specifically, point-level flow guides the model to forecast the future displacements of task-critical 3D points, while TCP-level flow aggregates these motions to align with the robot's TCP trajectories. This dual-level flow supervision encourages the model to focus on semantically meaningful dynamic regions, effectively coupling scene-level motion with precise control signals. Extensive evaluations across simulation and real-world experiments demonstrate that FlowVLA consistently improves manipulation performance, zero-shot robustness, and optimizes data efficiency. FlowVLA adds only lightweight auxiliary heads during training and discards them at inference. T",
+"url": "https://openreview.net/forum?id=ZAdTLinUnd",
+"pdf": "https://arxiv.org/pdf/2610.16160",
+"arxiv": "2610.16160",
+"citations": 1,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "CoRL2026-116",
@@ -4892,6 +5316,22 @@
 "pdf": ""
 },
 {
+"id": "CoRL2026-132",
+"title": "VoLo: A Physical Orchestrator for Open-Vocabulary Long-Horizon Manipulation",
+"authors": [],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 10,
+"tldr": "",
+"abstract": "",
+"url": "https://openreview.net/forum?id=sF3YZbbTNX",
+"pdf": ""
+},
+{
 "id": "CoRL2026-139",
 "title": "Learning Object Manipulation from Scratch via Contrastive Interaction",
 "authors": [
@@ -4960,22 +5400,6 @@
 "cite_src": "Semantic Scholar"
 },
 {
-"id": "CoRL2026-199",
-"title": "RoboGene: Diversity-Driven Agentic Task Generation Framework for VLA Pre-training",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"FM"
-],
-"tracked_authors": [],
-"score": 10,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=uizBY3yrgz",
-"pdf": ""
-},
-{
 "id": "CoRL2026-219",
 "title": "Optimal Control with Learned Critics under Unmodeled State Dependencies",
 "authors": [],
@@ -5019,7 +5443,7 @@
 "url": "https://openreview.net/forum?id=9ih6YlxhI5",
 "pdf": "https://arxiv.org/pdf/2606.19774",
 "arxiv": "2606.19774",
-"citations": 8,
+"citations": 9,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5079,7 +5503,7 @@
 "url": "https://openreview.net/forum?id=9Jm97oFGuA",
 "pdf": "https://arxiv.org/pdf/2606.15587",
 "arxiv": "2606.15587",
-"citations": 3,
+"citations": 5,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5457,7 +5881,7 @@
 "url": "https://openreview.net/forum?id=oX3ErTz3rv",
 "pdf": "https://arxiv.org/pdf/2607.06988",
 "arxiv": "2607.06988",
-"citations": 20,
+"citations": 24,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5587,7 +6011,7 @@
 "url": "https://openreview.net/forum?id=VEsQVsxMMw",
 "pdf": "https://arxiv.org/pdf/2604.11386",
 "arxiv": "2604.11386",
-"citations": 2,
+"citations": 3,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5790,7 +6214,7 @@
 "url": "https://openreview.net/forum?id=c5oiL7JqbQ",
 "pdf": "https://arxiv.org/pdf/2606.08059",
 "arxiv": "2606.08059",
-"citations": 11,
+"citations": 12,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5819,6 +6243,64 @@
 "pdf": "https://arxiv.org/pdf/2610.29676",
 "arxiv": "2610.29676",
 "citations": 0,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-367",
+"title": "SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation",
+"authors": [
+"Dijie Zhu",
+"Seunghun Oh",
+"Ruopeng Huang",
+"Zhiyu Huang",
+"Jiaqi Ma",
+"Chen Tang"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"Control",
+"RL",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 9,
+"tldr": "We propose SCAPE, a scenario-conditioned simulation-augmented policy evaluation framework that predicts scenario-conditioned real-world policy performance using limited paired sim-and-real samples and large-scale simulation rollouts.",
+"abstract": "Reliable performance evaluation is a central bottleneck for deploying robot-learning policies in real-world conditions. Real-world testing is faithful but costly and difficult to scale, whereas simulation-based testing scales easily but is inevitably biased by the sim-to-real gap. Existing simulation-augmented methods combine limited real-world rollouts with abundant simulation proxies, but focus on performance averaged over initial conditions and deployment settings. Such population-level averages obscure scenario-specific variation and provide limited guidance about when and where a policy can be safely deployed. We propose SCAPE, a scenario-conditioned simulation-augmented policy evaluation framework that predicts scenario-conditioned real-world policy performance using limited paired sim-and-real samples and large-scale simulation rollouts. SCAPE corrects sim-to-real bias in simulation labels before training the prediction model and calibrates prediction uncertainty through conformal prediction. We validate SCAPE on autonomous driving and quadruped velocity tracking. In sim-to-sim studies, SCAPE reduces scenario-level prediction error by 4.9%/34.7% (driving) and 14.5%/27.7% (quadruped) relative to scene-conditioned neural and aggregate statistical baselines on average. We further evaluate a velocity-tracking policy deployed on a physical Unitree Go2. SCAPE also improves testing sample efficiency, produces narrower calibrated prediction intervals, generalizes better to out-of-distribution scenarios, and enables fine-grained deployment strategies.",
+"url": "https://openreview.net/forum?id=51YZMUGRUA",
+"pdf": "https://arxiv.org/pdf/2608.19425",
+"arxiv": "2608.19425",
+"citations": 0,
+"cite_src": "Semantic Scholar"
+},
+{
+"id": "CoRL2026-418",
+"title": "ZeroWBC: Learning Natural Whole-Body Humanoid Interaction from Human Egocentric Data",
+"authors": [
+"Haoran Yang",
+"Jiacheng Bao",
+"Yucheng Xin",
+"Haoming Song",
+"Yuyang Tian",
+"Bin Zhao",
+"Dong Wang",
+"Xuelong Li"
+],
+"venue": "CoRL 2026",
+"year": 2026,
+"topics": [
+"IL",
+"FM",
+"RL"
+],
+"tracked_authors": [],
+"score": 9,
+"tldr": "We present ZeroWBC, a teleoperation-free framework that learns humanoid whole-body interaction from human egocentric videos paired with synchronized whole-body motion and text annotations.",
+"abstract": "Achieving versatile and natural whole-body humanoid interaction control remains challenging due to the high cost of whole-body teleoperation data. We present ZeroWBC, a teleoperation-free framework that learns humanoid whole-body interaction from human egocentric videos paired with synchronized whole-body motion and text annotations. ZeroWBC adopts a generation-then-tracking formulation to tackle the static scene whole-body interaction control problem. Given an initial egocentric image and a language instruction, a fine-tuned Vision-Language Model generates future human whole-body motion tokens, which are decoded into continuous motions and retargeted to the humanoid. The resulting reference motions, together with root and key body-part trajectories, are then executed by a general interactive motion tracking policy. To improve interaction performance, we introduce an interaction-oriented tracking reward that prioritizes global root and key body-part trajectory alignment while preserving natural whole-body motion. Experiments on the Unitree G1 humanoid robot show that ZeroWBC enables diverse scene-aware behaviors without robot teleoperation demonstrations. These results suggest a scalable paradigm for learning natural humanoid whole-body interaction from human egocentric data.",
+"url": "https://openreview.net/forum?id=trTMmn2U1g",
+"pdf": "https://arxiv.org/pdf/2603.09170",
+"arxiv": "2603.09170",
+"citations": 9,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5875,7 +6357,7 @@
 "url": "https://openreview.net/forum?id=lY47GBfn32",
 "pdf": "https://arxiv.org/pdf/2510.26236",
 "arxiv": "2510.26236",
-"citations": 17,
+"citations": 18,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -5910,7 +6392,7 @@
 "url": "https://openreview.net/forum?id=TmKLynfHXr",
 "pdf": "https://arxiv.org/pdf/2607.13472",
 "arxiv": "2607.13472",
-"citations": 2,
+"citations": 3,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -6044,22 +6526,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-96",
-"title": "UniIntervene: Agentic Intervention for Efficient Real-World Reinforcement Learning",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"RL"
-],
-"tracked_authors": [],
-"score": 8,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=ar3eWq6mh4",
-"pdf": ""
-},
-{
 "id": "CoRL2026-97",
 "title": "Preference-Calibrated Human-in-the-Loop Reinforcement Learning for Robotic Manipulation",
 "authors": [],
@@ -6124,22 +6590,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-112",
-"title": "HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"RL"
-],
-"tracked_authors": [],
-"score": 8,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=JqZEEaNDLJ",
-"pdf": ""
-},
-{
 "id": "CoRL2026-120",
 "title": "Bimanual Robot Manipulation via Multi-Agent In-Context Learning",
 "authors": [
@@ -6163,7 +6613,7 @@
 "url": "https://openreview.net/forum?id=bLQynefrlp",
 "pdf": "https://arxiv.org/pdf/2604.20348",
 "arxiv": "2604.20348",
-"citations": 4,
+"citations": 5,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -6493,22 +6943,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-666",
-"title": "MPC-Injection: Biasing Off-Policy Locomotion RL Toward Controller-Induced Behavior Basins",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"Control"
-],
-"tracked_authors": [],
-"score": 8,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=0HS0to0eVo",
-"pdf": ""
-},
-{
 "id": "CoRL2026-685",
 "title": "VIGOR-MPC: Vision-Guided Objective Regulation MPC",
 "authors": [
@@ -6669,7 +7103,7 @@
 "url": "https://openreview.net/forum?id=RmP7m64fQ6",
 "pdf": "https://arxiv.org/pdf/2602.03973",
 "arxiv": "2602.03973",
-"citations": 34,
+"citations": 37,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -6825,7 +7259,7 @@
 "url": "https://openreview.net/forum?id=6RJsxVCnhB",
 "pdf": "https://arxiv.org/pdf/2606.08029",
 "arxiv": "2606.08029",
-"citations": 3,
+"citations": 4,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -6867,22 +7301,6 @@
 "arxiv": "2606.08666",
 "citations": 1,
 "cite_src": "Semantic Scholar"
-},
-{
-"id": "CoRL2026-417",
-"title": "HuMI: Humanoid Whole-Body Manipulation from Humanoid-Free Demonstrations",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [
-"IL"
-],
-"tracked_authors": [],
-"score": 6,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=aq2hmhW0kU",
-"pdf": ""
 },
 {
 "id": "CoRL2026-436",
@@ -7000,7 +7418,7 @@
 "url": "https://openreview.net/forum?id=GX5xey9ade",
 "pdf": "https://arxiv.org/pdf/2606.13497",
 "arxiv": "2606.13497",
-"citations": 3,
+"citations": 4,
 "cite_src": "Semantic Scholar"
 },
 {
@@ -7549,44 +7967,6 @@
 "abstract": "",
 "url": "https://openreview.net/forum?id=qQs6JndxfZ",
 "pdf": ""
-},
-{
-"id": "CoRL2026-465",
-"title": "Playful Agentic Robot Learning",
-"authors": [
-"Junyi Zhang",
-"Jiaxin Ge",
-"Hanjun Yoo",
-"Letian Fu",
-"Zihan Yang",
-"Yaowei Liu",
-"Raj Saravanan",
-"Shaofeng Yin",
-"Justin Yu",
-"Dantong Niu",
-"Zirui Wang",
-"Roei Herzig",
-"Ken Goldberg",
-"Yutong Bai",
-"David M. Chan",
-"Ion Stoica",
-"Angjoo Kanazawa",
-"Jiahui Lei",
-"Haiwen Feng",
-"Trevor Darrell"
-],
-"venue": "CoRL 2026 (Spotlight)",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 5,
-"tldr": "We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition.",
-"abstract": "Current agentic robot systems can write executable Code-as-Policy programs, observe feedback, and revise behavior across multiple attempts, but they remain largely task-driven: reusable skills are acquired only after explicit instructions. We study Playful Agentic Robot Learning, where an embodied coding agent uses self-directed play as a continual skill-learning stage before downstream tasks arrive. We introduce RATs, Robotics Agent Teams designed for play-time skill acquisition. During play, RATs proposes novel yet learnable exploratory tasks, plans and executes robot-code policies, verifies intermediate progress, diagnoses failures, retries with dense, step-level feedback, and distills successful executions into a persistent code skill library. At test time, the agent reuses relevant skills from this frozen library to help solve new tasks. Experiments in LIBERO-PRO and MolmoSpaces show that play-learned skills improve held-out downstream tasks over no-play and random-play baselines, with 20.6 and 17.0 percentage-point gains over CaP-Agent0 on LIBERO-PRO and MolmoSpaces, respectively. Moreover, the learned skills can be plugged into other inference-time Code-as-Policy agents by simply retrieving them into the context, improving RoboSuite and real-world transfer by 8.9 and 8.8 points, respectively, without finetuning the underlying model.",
-"url": "https://openreview.net/forum?id=GeL3GdwSYo",
-"pdf": "https://arxiv.org/pdf/2606.19419",
-"arxiv": "2606.19419",
-"citations": 42,
-"cite_src": "Semantic Scholar"
 },
 {
 "id": "CoRL2026-466",
@@ -8166,20 +8546,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-28",
-"title": "FlowVLA: Enabling World Dynamics Understanding through Pluggable 3D Flow Learning",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=ZAdTLinUnd",
-"pdf": ""
-},
-{
 "id": "CoRL2026-32",
 "title": "GeomVLA: Unifying Scene, Motion, and Action in 3D",
 "authors": [],
@@ -8390,34 +8756,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-65",
-"title": "Safe Task Planning with Long-Term Graph Memory for Embodied Agents",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=rnp2Bj4RUX",
-"pdf": ""
-},
-{
-"id": "CoRL2026-66",
-"title": "RoboMemory: A Brain-inspired Multi-memory Agentic Framework for Interactive Environmental Learning in Physical Embodied Systems",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=Q4ehHMIPmb",
-"pdf": ""
-},
-{
 "id": "CoRL2026-67",
 "title": "MessyMem: Learning-from-Doing Memory for Mobile Manipulation",
 "authors": [],
@@ -8568,20 +8906,6 @@
 "arxiv": "2609.40245",
 "citations": 0,
 "cite_src": "Semantic Scholar"
-},
-{
-"id": "CoRL2026-83",
-"title": "An Agentic Framework for Proactive Robots with Procedural Assistance Memory",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=nXfwmrzXzz",
-"pdf": ""
 },
 {
 "id": "CoRL2026-84",
@@ -8861,20 +9185,6 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=UMHg65UHcY",
-"pdf": ""
-},
-{
-"id": "CoRL2026-132",
-"title": "VoLo: A Physical Orchestrator for Open-Vocabulary Long-Horizon Manipulation",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=sF3YZbbTNX",
 "pdf": ""
 },
 {
@@ -9588,20 +9898,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-200",
-"title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=0cK9Wf9Eeq",
-"pdf": ""
-},
-{
 "id": "CoRL2026-201",
 "title": "MAESTRO: Orchestrating Robotics Modules with Coding Agents for Zero-Shot Generalist Robots",
 "authors": [],
@@ -9875,20 +10171,6 @@
 "arxiv": "2606.16972",
 "citations": 0,
 "cite_src": "Semantic Scholar"
-},
-{
-"id": "CoRL2026-226",
-"title": "Automating the Design of Embodied Agent Architectures",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=2LNbCnzTQk",
-"pdf": ""
 },
 {
 "id": "CoRL2026-227",
@@ -10311,20 +10593,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-342",
-"title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=A9AQjk3dAt",
-"pdf": ""
-},
-{
 "id": "CoRL2026-343",
 "title": "The Imitator Game: Benchmarking Robot Imitative Ability Beyond Action Prediction",
 "authors": [],
@@ -10495,16 +10763,26 @@
 {
 "id": "CoRL2026-365",
 "title": "Benchmarking Real-World Robotic Manipulation through Stochastic Challenges",
-"authors": [],
+"authors": [
+"Elias Gläßer",
+"Gülhan Şikaroğlu",
+"Pavlo Kupyn",
+"Marc Pollefeys",
+"Zuria Bauer",
+"Hermann Blum"
+],
 "venue": "CoRL 2026",
 "year": 2026,
 "topics": [],
 "tracked_authors": [],
 "score": 2,
-"tldr": "",
-"abstract": "",
+"tldr": "This paper proposes a new paradigm of stochastic challenges.",
+"abstract": "A challenging bottleneck in manipulation research is reproducibility and comparability of methods in real-world environments. Since manipulation is an interactive task, it cannot be evaluated on a static dataset of observations. Benchmarking in simulation is a common remedy, but cannot cover the whole complexity of real-world tests. This paper proposes a new paradigm of stochastic challenges. Like the well-known YCB objects, it is based on reproducible real-world scenes and therefore allows system-level innovation and comparability between different platforms. Due to their stochastic nature, our challenges however, mimic the rigor and surprise of hidden test sets. To this end, we show how different robots in different labs can be compared based on their success rate over different random task samples, if these samples come from the same distribution. We propose stochastic challenges as a general paradigm for robot benchmarking and implement this paradigm in a novel benchmark for mobile manipulation, on which we compare two robots tested in two different labs.",
 "url": "https://openreview.net/forum?id=MWHlzlo4UD",
-"pdf": ""
+"pdf": "https://arxiv.org/pdf/2611.12804",
+"arxiv": "2611.12804",
+"citations": 0,
+"cite_src": "Semantic Scholar"
 },
 {
 "id": "CoRL2026-366",
@@ -10518,34 +10796,6 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=QJI3N7JzBc",
-"pdf": ""
-},
-{
-"id": "CoRL2026-367",
-"title": "SCAPE: Scenario-Conditioned Simulation-Augmented Policy Evaluation",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=51YZMUGRUA",
-"pdf": ""
-},
-{
-"id": "CoRL2026-368",
-"title": "AnyRank: Reliable Anytime Policy Ranking via Sequential Testing",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=iOU9zkASbg",
 "pdf": ""
 },
 {
@@ -10675,34 +10925,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-418",
-"title": "ZeroWBC: Learning Natural Whole-Body Humanoid Interaction from Human Egocentric Data",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=trTMmn2U1g",
-"pdf": ""
-},
-{
-"id": "CoRL2026-419",
-"title": "VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=qMAfkDMTOy",
-"pdf": ""
-},
-{
 "id": "CoRL2026-420",
 "title": "HuG: Learning Humanoid Whole-Body Affordance-Aware Grasping with Active Perception",
 "authors": [],
@@ -10742,20 +10964,6 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=r27erS063s",
-"pdf": ""
-},
-{
-"id": "CoRL2026-425",
-"title": "Social Humanoid: Socially Responsive Human–Humanoid Interaction",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=hf8X30fAtz",
 "pdf": ""
 },
 {
@@ -11367,20 +11575,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-566",
-"title": "GIF: Agentic Generation of Interactive and Functional Object Compositions for Robot Learning",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=y5Z5ccS0Bv",
-"pdf": ""
-},
-{
 "id": "CoRL2026-567",
 "title": "IM-ENGINE: Image Editing for Embodied Data Generation",
 "authors": [],
@@ -11420,20 +11614,6 @@
 "tldr": "",
 "abstract": "",
 "url": "https://openreview.net/forum?id=WaIPZtSrpq",
-"pdf": ""
-},
-{
-"id": "CoRL2026-573",
-"title": "SkillWeaver: Agentic Exploration over Neural Interaction Skills for Scalable Robot Data Generation",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=UZnHsKKAAB",
 "pdf": ""
 },
 {
@@ -12212,20 +12392,6 @@
 "pdf": ""
 },
 {
-"id": "CoRL2026-680",
-"title": "EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents",
-"authors": [],
-"venue": "CoRL 2026",
-"year": 2026,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "",
-"abstract": "",
-"url": "https://openreview.net/forum?id=oMvcKDFLRA",
-"pdf": ""
-},
-{
 "id": "CoRL2026-681",
 "title": "An Adaptive Slow-Fast Framework for Real-Time Anomaly Detection in Autonomous Driving",
 "authors": [],
@@ -12835,6 +13001,33 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/bharadhwaj25a/bharadhwaj25a.pdf"
 },
 {
+"id": "CoRL2025-16",
+"title": "Training Strategies for Efficient Embodied Reasoning",
+"authors": [
+"William Chen",
+"Suneel Belkhale",
+"Suvir Mirchandani",
+"Karl Pertsch",
+"Danny Driess",
+"Oier Mees",
+"Sergey Levine"
+],
+"venue": "CoRL 2025 (Oral)",
+"year": 2025,
+"topics": [
+"Agentic",
+"FM"
+],
+"tracked_authors": [
+"Sergey Levine"
+],
+"score": 35,
+"tldr": "Robot chain-of-thought reasoning (CoT) – wherein a model predicts helpful intermediate representations before choosing actions – provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs).",
+"abstract": "Robot chain-of-thought reasoning (CoT) – wherein a model predicts helpful intermediate representations before choosing actions – provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs). While such approaches have been shown to improve performance and generalization, they suffer from core limitations, like needing specialized robot reasoning data and slow inference speeds. To design new robot reasoning approaches that address these issues, a more complete characterization of why reasoning helps policy performance is critical. We hypothesize several mechanisms by which robot reasoning improves policies – (1) better representation learning, (2) improved learning curricularization, and (3) increased expressivity – then devise simple variants of robot CoT reasoning to isolate and test each one. We find that learning to generate reasonings does lead to better VLA representations, while attending to the reasonings aids in actually leveraging these features for improved action prediction. Our results provide us with a better understanding of why CoT reasoning helps VLAs, which we use to introduce two simple and lightweight alternative recipes for robot reasoning. Our proposed approaches achieve significant performance gains over non-reasoning policies, state-of-the-art results on the LIBERO-90 benchmark, and a 3x inference speedup compared to standard robot reasoning.",
+"url": "https://proceedings.mlr.press/v305/chen25a.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/chen25a/chen25a.pdf"
+},
+{
 "id": "CoRL2025-100",
 "title": "TWIST: Teleoperated Whole-Body Imitation System",
 "authors": [
@@ -13045,6 +13238,29 @@
 "abstract": "Enabling robots to perform diverse tasks across varied environments is a central challenge in robot learning. While vision-language-action (VLA) models have shown promise for generalizable robot skills, realizing their full potential requires addressing limitations in action representation and efficient training. Current VLA models often focus on scaling the vision-language model (VLM) component, while the action space representation remains a critical bottleneck. This paper introduces DexVLA, a novel framework designed to enhance the efficiency and generalization capabilities of VLAs for complex, long-horizon tasks across diverse robot embodiments. DexVLA features a novel diffusion-based action expert, scaled to one billion parameters, designed for cross-embodiment learning. A novel embodiment curriculum learning strategy facilitates efficient training: (1) pre-training the diffusion expert on cross-embodiment data, (2) aligning the VLA model to specific embodiments, and (3) post-training for rapid adaptation to new tasks. We conduct comprehensive experiments across multiple embodiments, including single-arm, bimanual, and dexterous hand, demonstrating DexVLA’s adaptability to challenging tasks without task-specific adaptation, its ability to learn dexterous skills on novel embodiments with limited data, and its capacity to complete complex, long-horizon tasks using only direct language prompting, such as laundry folding. In all settings, our method demonstrates superior performance compared to state-of-the-art models like OpenVLA and $\\pi_0$.",
 "url": "https://proceedings.mlr.press/v305/wen25b.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/wen25b/wen25b.pdf"
+},
+{
+"id": "CoRL2025-130",
+"title": "Mechanistic Interpretability for Steering Vision-Language-Action Models",
+"authors": [
+"Bear H\\\"aon",
+"Kaylene Caswell Stocking",
+"Ian Chuang",
+"Claire Tomlin"
+],
+"venue": "CoRL 2025",
+"year": 2025,
+"topics": [
+"FM",
+"Agentic",
+"RL"
+],
+"tracked_authors": [],
+"score": 30,
+"tldr": "Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time.",
+"abstract": "Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control—establishing a new paradigm for transparent and steerable foundation models in robotics.",
+"url": "https://proceedings.mlr.press/v305/haon25a.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/haon25a/haon25a.pdf"
 },
 {
 "id": "CoRL2025-160",
@@ -13369,32 +13585,6 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/lin25d/lin25d.pdf"
 },
 {
-"id": "CoRL2025-16",
-"title": "Training Strategies for Efficient Embodied Reasoning",
-"authors": [
-"William Chen",
-"Suneel Belkhale",
-"Suvir Mirchandani",
-"Karl Pertsch",
-"Danny Driess",
-"Oier Mees",
-"Sergey Levine"
-],
-"venue": "CoRL 2025 (Oral)",
-"year": 2025,
-"topics": [
-"FM"
-],
-"tracked_authors": [
-"Sergey Levine"
-],
-"score": 25,
-"tldr": "Robot chain-of-thought reasoning (CoT) – wherein a model predicts helpful intermediate representations before choosing actions – provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs).",
-"abstract": "Robot chain-of-thought reasoning (CoT) – wherein a model predicts helpful intermediate representations before choosing actions – provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs). While such approaches have been shown to improve performance and generalization, they suffer from core limitations, like needing specialized robot reasoning data and slow inference speeds. To design new robot reasoning approaches that address these issues, a more complete characterization of why reasoning helps policy performance is critical. We hypothesize several mechanisms by which robot reasoning improves policies – (1) better representation learning, (2) improved learning curricularization, and (3) increased expressivity – then devise simple variants of robot CoT reasoning to isolate and test each one. We find that learning to generate reasonings does lead to better VLA representations, while attending to the reasonings aids in actually leveraging these features for improved action prediction. Our results provide us with a better understanding of why CoT reasoning helps VLAs, which we use to introduce two simple and lightweight alternative recipes for robot reasoning. Our proposed approaches achieve significant performance gains over non-reasoning policies, state-of-the-art results on the LIBERO-90 benchmark, and a 3x inference speedup compared to standard robot reasoning.",
-"url": "https://proceedings.mlr.press/v305/chen25a.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/chen25a/chen25a.pdf"
-},
-{
 "id": "CoRL2025-30",
 "title": "Learning a Unified Policy for Position and Force Control in Legged Loco-Manipulation",
 "authors": [
@@ -13444,28 +13634,6 @@
 "abstract": "Simulation-based reinforcement learning (RL) has significantly advanced humanoid locomotion tasks, yet direct real-world RL from scratch or starting from pretrained policies remains rare, limiting the full potential of humanoid robots. Real-world training, despite being crucial for overcoming the sim-to-real gap, faces substantial challenges related to safety, reward design, and learning efficiency. To address these limitations, we propose Robot-Trains-Robot (RTR), a novel framework where a robotic arm teacher actively supports and guides a humanoid student robot. The RTR system provides protection, schedule, reward, perturbation, failure detection, and automatic resets, enabling efficient long-term real-world training with minimal human intervention. Furthermore, we propose a novel RL pipeline that facilitates and stabilizes sim-to-real transfer by optimizing a single dynamics-encoded latent variable in the real world. We validate our method through two challenging real-world humanoid tasks: fine-tuning a walking policy for precise speed tracking and learning a humanoid swing-up task from scratch, illustrating the promising capabilities of real-world humanoid learning realized by RTR-style systems.",
 "url": "https://proceedings.mlr.press/v305/hu25a.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/hu25a/hu25a.pdf"
-},
-{
-"id": "CoRL2025-130",
-"title": "Mechanistic Interpretability for Steering Vision-Language-Action Models",
-"authors": [
-"Bear H\\\"aon",
-"Kaylene Caswell Stocking",
-"Ian Chuang",
-"Claire Tomlin"
-],
-"venue": "CoRL 2025",
-"year": 2025,
-"topics": [
-"FM",
-"RL"
-],
-"tracked_authors": [],
-"score": 25,
-"tldr": "Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time.",
-"abstract": "Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control—establishing a new paradigm for transparent and steerable foundation models in robotics.",
-"url": "https://proceedings.mlr.press/v305/haon25a.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/haon25a/haon25a.pdf"
 },
 {
 "id": "CoRL2025-131",
@@ -14639,6 +14807,31 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/agia25a/agia25a.pdf"
 },
 {
+"id": "CoRL2025-230",
+"title": "Imagine, Verify, Execute: Memory-guided Agentic Exploration with Vision-Language Models",
+"authors": [
+"Seungjae Lee",
+"Daniel Ekpo",
+"Haowen Liu",
+"Furong Huang",
+"Abhinav Shrivastava",
+"Jia-Bin Huang"
+],
+"venue": "CoRL 2025",
+"year": 2025,
+"topics": [
+"Agentic",
+"IL",
+"GenModel"
+],
+"tracked_authors": [],
+"score": 16,
+"tldr": "To bridge the gap between imagination and execution, we present IVE (Imagine, Verify, Execute), an agentic exploration framework inspired by human curiosity.",
+"abstract": "Exploration is key for general-purpose robotic learning, particularly in open-ended environments where explicit guidance or task-specific feedback is limited. Vision-language models (VLMs), which can reason about object semantics, spatial relations, and potential outcomes, offer a promising foundation for guiding exploratory behavior by generating high-level goals or transitions. However, their outputs lack grounding, making it difficult to determine whether imagined transitions are physically feasible or informative. To bridge the gap between imagination and execution, we present IVE (Imagine, Verify, Execute), an agentic exploration framework inspired by human curiosity. Human exploration often emerges from the drive to discover novel scene configurations and to understand the environment. Inspired by this, IVE leverages VLMs to abstract RGB-D observations into semantic scene graphs, imagine novel scenes, predict their physical plausibility, and generate executable skill sequences through action tools. We evaluate IVE in both simulated and real-world tabletop environments. The results show that IVE produces more diverse and meaningful exploration than RL baselines. The collected data facilitates learning downstream tasks that closely match those of policies trained on human-collected demonstrations.",
+"url": "https://proceedings.mlr.press/v305/lee25b.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/lee25b/lee25b.pdf"
+},
+{
 "id": "CoRL2025-236",
 "title": "EndoVLA: Dual-Phase Vision-Language-Action for Precise Autonomous Tracking in Endoscopy",
 "authors": [
@@ -14871,6 +15064,34 @@
 "abstract": "Vision-Language-Action (VLA) models offer a pivotal approach to learning robotic manipulation at scale by repurposing large pre-trained Vision-Language-Models (VLM) to output robotic actions. However, adapting VLMs for robotic domains comes with an unnecessarily high computational cost, which we attribute to the tokenization scheme of visual inputs. In this work, we aim to enable efficient VLA training by proposing Oat-VLA, an Object-Agent-centric Tokenization for VLAs. Building on the insights of object-centric representation learning, our method introduces an inductive bias towards scene objects and the agent’s own visual information. As a result, we find that Oat-VLA can drastically reduce the number of visual tokens to just a few tokens without sacrificing performance. We reveal that Oat-VLA converges at least twice as fast as OpenVLA on the LIBERO suite, as well as outperform OpenVLA in diverse real-world pick and place tasks.",
 "url": "https://proceedings.mlr.press/v305/bendikas25a.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/bendikas25a/bendikas25a.pdf"
+},
+{
+"id": "CoRL2025-214",
+"title": "Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
+"authors": [
+"Yitang Li",
+"Yuanhang Zhang",
+"Wenli Xiao",
+"Chaoyi Pan",
+"Haoyang Weng",
+"Guanqi He",
+"Tairan He",
+"Guanya Shi"
+],
+"venue": "CoRL 2025",
+"year": 2025,
+"topics": [
+"Agentic",
+"Control"
+],
+"tracked_authors": [
+"Guanya Shi"
+],
+"score": 15,
+"tldr": "To address this, we propose SoFTA, a Slow-Fast Two-Agent framework that decouples upper-body and lower-body control into separate agents operating at different frequencies and with distinct rewards.",
+"abstract": "Can your humanoid walk up and hand you a full cup of beer—without spilling a drop? While humanoids are increasingly featured in flashy demos—dancing, delivering packages, traversing rough terrain—fine-grained control during locomotion remains a significant challenge. In particular, stabilizing a filled end-effector (EE) while walking is far from solved, due to a fundamental mismatch in task dynamics: locomotion demands slow-timescale, robust control, whereas EE stabilization requires rapid, high-precision corrections. To address this, we propose SoFTA, a Slow-Fast Two-Agent framework that decouples upper-body and lower-body control into separate agents operating at different frequencies and with distinct rewards. This temporal and objective separation mitigates policy interference mitagates objective conflict and enables coordinated whole-body behavior. SoFTA executes upper-body actions at 100 Hz for precise EE control and lower-body actions at 50 Hz for robust gait. It reduces EE acceleration by 2-5x to baselines and performs 2–3x closer to human-level stability, enabling delicate tasks such as carrying nearly full cups, capturing steady video during locomotion, and disturbance rejection with EE stability.",
+"url": "https://proceedings.mlr.press/v305/li25i.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/li25i/li25i.pdf"
 },
 {
 "id": "CoRL2025-8",
@@ -15616,33 +15837,6 @@
 "abstract": "Visual planning, by offering a sequence of intermediate visual subgoals to a goal-conditioned low-level policy, achieves promising performance on long-horizon manipulation tasks. To obtain the subgoals, existing methods typically resort to video generation models but suffer from model hallucination and computational cost. We present Vis2Plan, an efficient, explainable and white-box visual planning framework powered by symbolic guidance. From raw, unlabeled play data, Vis2Plan harnesses vision foundation models to automatically extract a compact set of task symbols, which allows building a high-level symbolic transition graph for multi-goal, multi-stage planning. At test time, given a desired task goal, our planner conducts planning at the symbolic level and assembles a sequence of physically consistent intermediate sub-goal images grounded by the underlying symbolic representation. Our Vis2Plan outperforms strong diffusion video generation-based visual planners by delivering 53% higher aggregate success rate while generating visual plans 35$\\times$ faster. The results indicate that Vis2Plan is able to generate physically consistent image goals while offering fully inspectable reasoning steps.",
 "url": "https://proceedings.mlr.press/v305/yang25c.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/yang25c/yang25c.pdf"
-},
-{
-"id": "CoRL2025-214",
-"title": "Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
-"authors": [
-"Yitang Li",
-"Yuanhang Zhang",
-"Wenli Xiao",
-"Chaoyi Pan",
-"Haoyang Weng",
-"Guanqi He",
-"Tairan He",
-"Guanya Shi"
-],
-"venue": "CoRL 2025",
-"year": 2025,
-"topics": [
-"Control"
-],
-"tracked_authors": [
-"Guanya Shi"
-],
-"score": 11,
-"tldr": "To address this, we propose SoFTA, a Slow-Fast Two-Agent framework that decouples upper-body and lower-body control into separate agents operating at different frequencies and with distinct rewards.",
-"abstract": "Can your humanoid walk up and hand you a full cup of beer—without spilling a drop? While humanoids are increasingly featured in flashy demos—dancing, delivering packages, traversing rough terrain—fine-grained control during locomotion remains a significant challenge. In particular, stabilizing a filled end-effector (EE) while walking is far from solved, due to a fundamental mismatch in task dynamics: locomotion demands slow-timescale, robust control, whereas EE stabilization requires rapid, high-precision corrections. To address this, we propose SoFTA, a Slow-Fast Two-Agent framework that decouples upper-body and lower-body control into separate agents operating at different frequencies and with distinct rewards. This temporal and objective separation mitigates policy interference mitagates objective conflict and enables coordinated whole-body behavior. SoFTA executes upper-body actions at 100 Hz for precise EE control and lower-body actions at 50 Hz for robust gait. It reduces EE acceleration by 2-5x to baselines and performs 2–3x closer to human-level stability, enabling delicate tasks such as carrying nearly full cups, capturing steady video during locomotion, and disturbance rejection with EE stability.",
-"url": "https://proceedings.mlr.press/v305/li25i.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/li25i/li25i.pdf"
 },
 {
 "id": "CoRL2025-3",
@@ -16902,30 +17096,6 @@
 "abstract": "Human drivers rely on commonsense reasoning to navigate diverse and dynamic real-world scenarios. Existing end-to-end (E2E) autonomous driving (AD) models are typically optimized to mimic driving patterns observed in data, without capturing the underlying reasoning processes. This limitation constrains their ability to handle challenging driving scenarios. To close this gap, we propose VLM-AD, a method that leverages vision-language models (VLMs) as teachers to enhance training by providing additional supervision that incorporates unstructured reasoning information and structured action labels. Such supervision enhances the model’s ability to learn richer feature representations that capture the rationale behind driving patterns. Importantly, our method does not require a VLM during inference, making it practical for real-time deployment. When integrated with state-of-the-art methods, VLM-AD achieves significant improvements in planning accuracy and reduced collision rates on the nuScenes dataset. It further improves route completion and driving scores under closed-loop evaluation, demonstrating its effectiveness in long-horizon, interactive driving scenarios and its potential for safe and reliable real-world deployment.",
 "url": "https://proceedings.mlr.press/v305/xu25f.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/xu25f/xu25f.pdf"
-},
-{
-"id": "CoRL2025-230",
-"title": "Imagine, Verify, Execute: Memory-guided Agentic Exploration with Vision-Language Models",
-"authors": [
-"Seungjae Lee",
-"Daniel Ekpo",
-"Haowen Liu",
-"Furong Huang",
-"Abhinav Shrivastava",
-"Jia-Bin Huang"
-],
-"venue": "CoRL 2025",
-"year": 2025,
-"topics": [
-"IL",
-"GenModel"
-],
-"tracked_authors": [],
-"score": 6,
-"tldr": "To bridge the gap between imagination and execution, we present IVE (Imagine, Verify, Execute), an agentic exploration framework inspired by human curiosity.",
-"abstract": "Exploration is key for general-purpose robotic learning, particularly in open-ended environments where explicit guidance or task-specific feedback is limited. Vision-language models (VLMs), which can reason about object semantics, spatial relations, and potential outcomes, offer a promising foundation for guiding exploratory behavior by generating high-level goals or transitions. However, their outputs lack grounding, making it difficult to determine whether imagined transitions are physically feasible or informative. To bridge the gap between imagination and execution, we present IVE (Imagine, Verify, Execute), an agentic exploration framework inspired by human curiosity. Human exploration often emerges from the drive to discover novel scene configurations and to understand the environment. Inspired by this, IVE leverages VLMs to abstract RGB-D observations into semantic scene graphs, imagine novel scenes, predict their physical plausibility, and generate executable skill sequences through action tools. We evaluate IVE in both simulated and real-world tabletop environments. The results show that IVE produces more diverse and meaningful exploration than RL baselines. The collected data facilitates learning downstream tasks that closely match those of policies trained on human-collected demonstrations.",
-"url": "https://proceedings.mlr.press/v305/lee25b.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v305/main/assets/lee25b/lee25b.pdf"
 },
 {
 "id": "CoRL2025-258",
@@ -18786,6 +18956,36 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/yu25c/yu25c.pdf"
 },
 {
+"id": "CoRL2024-9",
+"title": "Reinforcement Learning with Foundation Priors: Let Embodied Agent Efficiently Learn on Its Own",
+"authors": [
+"Weirui Ye",
+"Yunsheng Zhang",
+"Haoyang Weng",
+"Xianfan Gu",
+"Shengjie Wang",
+"Tong Zhang",
+"Mengchen Wang",
+"Pieter Abbeel",
+"Yang Gao"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"Agentic",
+"RL",
+"Dex"
+],
+"tracked_authors": [
+"Pieter Abbeel"
+],
+"score": 45,
+"tldr": "To address these issues, we leverage foundation models in this paper.",
+"abstract": "Reinforcement learning (RL) is a promising approach for solving robotic manipulation tasks. However, it is challenging to apply the RL algorithms directly in the real world. For one thing, RL is data-intensive and typically requires millions of interactions with environments, which are impractical in real scenarios. For another, it is necessary to make heavy engineering efforts to design reward functions manually. To address these issues, we leverage foundation models in this paper. We propose Reinforcement Learning with Foundation Priors (RLFP) to utilize guidance and feedback from policy, value, and success-reward foundation models. Within this framework, we introduce the Foundation-guided Actor-Critic (FAC) algorithm, which enables embodied agents to explore more efficiently with automatic reward functions. The benefits of our framework are threefold: (1) \\textitsample efficient; (2) \\textitminimal and effective reward engineering; (3) \\textitagnostic to foundation model forms and robust to noisy priors. Our method achieves remarkable performances in various manipulation tasks on both real robots and in simulation. Across 5 dexterous tasks with real robots, FAC achieves an average success rate of 86% after one hour of real-time learning. Across 8 tasks in the simulated Meta-world, FAC achieves 100% success rates in 7/8 tasks under less than 100k frames (about 1-hour training), outperforming baseline methods with manual-designed rewards in 1M frames. We believe the RLFP framework can enable future robots to explore and learn autonomously in the physical world for more tasks.",
+"url": "https://proceedings.mlr.press/v270/ye25a.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/ye25a/ye25a.pdf"
+},
+{
 "id": "CoRL2024-192",
 "title": "Mobile ALOHA: Learning Bimanual Mobile Manipulation using Low-Cost Whole-Body Teleoperation",
 "authors": [
@@ -18839,6 +19039,33 @@
 "abstract": "We present OmniH2O (Omni Human-to-Humanoid), a learning-based system for whole-body humanoid teleoperation and autonomy. Using kinematic pose as a universal control interface, OmniH2O enables various ways for a human to control a full-sized humanoid with dexterous hands, including using real-time teleoperation through VR headset, verbal instruction, and RGB camera. OmniH2O also enables full autonomy by learning from teleoperated demonstrations or integrating with frontier models such as GPT-4. OmniH2O demonstrates versatility and dexterity in various real-world whole-body tasks through teleoperation or autonomy, such as playing multiple sports, moving and manipulating objects, and interacting with humans. We develop an RL-based sim-to-real pipeline, which involves large-scale retargeting and augmentation of human motion datasets, learning a real-world deployable policy with sparse sensor input by imitating a privileged teacher policy, and reward designs to enhance robustness and stability. We release the first humanoid whole-body control dataset, OmniH2O-6, containing six everyday tasks, and demonstrate humanoid whole-body skill learning from teleoperated datasets. Videos at the anonymous website [https://anonymous-omni-h2o.github.io/](https://anonymous-omni-h2o.github.io/)",
 "url": "https://proceedings.mlr.press/v270/he25b.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/he25b/he25b.pdf"
+},
+{
+"id": "CoRL2024-145",
+"title": "Robotic Control via Embodied Chain-of-Thought Reasoning",
+"authors": [
+"Micha\\l Zawalski",
+"William Chen",
+"Karl Pertsch",
+"Oier Mees",
+"Chelsea Finn",
+"Sergey Levine"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"FM",
+"Agentic"
+],
+"tracked_authors": [
+"Chelsea Finn",
+"Sergey Levine"
+],
+"score": 41,
+"tldr": "To this end, we introduce Embodied Chain-of-Thought Reasoning (ECoT) for VLAs, in which we train VLAs to perform multiple steps of reasoning about plans, sub-tasks, motions, and visually grounded features like object bounding boxes and end effector positions, before…",
+"abstract": "A key limitation of learned robot control policies is their inability to generalize outside their training data. Recent works on vision-language-action models (VLAs) have shown that the use of large, internet pre-trained vision-language models as the backbone of learned robot policies can substantially improve their robustness and generalization ability. Yet, one of the most exciting capabilities of large vision-language models in other domains is their ability to reason iteratively through complex problems. Can that same capability be brought into robotics to allow policies to improve performance by reasoning about a given task before acting? Naive use of “chain-of-thought” (CoT) style prompting is significantly less effective with standard VLAs because of the relatively simple training examples that are available to them. Additionally, purely semantic reasoning about sub-tasks, as is common in regular CoT, is insufficient for robot policies that need to ground their reasoning in sensory observations and the robot state. To this end, we introduce Embodied Chain-of-Thought Reasoning (ECoT) for VLAs, in which we train VLAs to perform multiple steps of reasoning about plans, sub-tasks, motions, and visually grounded features like object bounding boxes and end effector positions, before predicting the robot action. We design a scalable pipeline for generating synthetic training data for ECoT on large robot datasets. We demonstrate, that ECoT increases the absolute success rate of OpenVLA, the current strongest open-source VLA policy, by 28% across challenging generalization tasks, without any additional robot training data. Additionally, ECoT makes it easier for humans to interpret a policy’s failures and correct its behavior using natural language.",
+"url": "https://proceedings.mlr.press/v270/zawalski25a.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/zawalski25a/zawalski25a.pdf"
 },
 {
 "id": "CoRL2024-225",
@@ -19208,32 +19435,6 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/zhao25b/zhao25b.pdf"
 },
 {
-"id": "CoRL2024-145",
-"title": "Robotic Control via Embodied Chain-of-Thought Reasoning",
-"authors": [
-"Micha\\l Zawalski",
-"William Chen",
-"Karl Pertsch",
-"Oier Mees",
-"Chelsea Finn",
-"Sergey Levine"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [
-"FM"
-],
-"tracked_authors": [
-"Chelsea Finn",
-"Sergey Levine"
-],
-"score": 31,
-"tldr": "To this end, we introduce Embodied Chain-of-Thought Reasoning (ECoT) for VLAs, in which we train VLAs to perform multiple steps of reasoning about plans, sub-tasks, motions, and visually grounded features like object bounding boxes and end effector positions, before…",
-"abstract": "A key limitation of learned robot control policies is their inability to generalize outside their training data. Recent works on vision-language-action models (VLAs) have shown that the use of large, internet pre-trained vision-language models as the backbone of learned robot policies can substantially improve their robustness and generalization ability. Yet, one of the most exciting capabilities of large vision-language models in other domains is their ability to reason iteratively through complex problems. Can that same capability be brought into robotics to allow policies to improve performance by reasoning about a given task before acting? Naive use of “chain-of-thought” (CoT) style prompting is significantly less effective with standard VLAs because of the relatively simple training examples that are available to them. Additionally, purely semantic reasoning about sub-tasks, as is common in regular CoT, is insufficient for robot policies that need to ground their reasoning in sensory observations and the robot state. To this end, we introduce Embodied Chain-of-Thought Reasoning (ECoT) for VLAs, in which we train VLAs to perform multiple steps of reasoning about plans, sub-tasks, motions, and visually grounded features like object bounding boxes and end effector positions, before predicting the robot action. We design a scalable pipeline for generating synthetic training data for ECoT on large robot datasets. We demonstrate, that ECoT increases the absolute success rate of OpenVLA, the current strongest open-source VLA policy, by 28% across challenging generalization tasks, without any additional robot training data. Additionally, ECoT makes it easier for humans to interpret a policy’s failures and correct its behavior using natural language.",
-"url": "https://proceedings.mlr.press/v270/zawalski25a.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/zawalski25a/zawalski25a.pdf"
-},
-{
 "id": "CoRL2024-181",
 "title": "Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs",
 "authors": [
@@ -19332,36 +19533,6 @@
 "abstract": "Recent work has shown diffusion models are an effective approach to learning the multimodal distributions arising from demonstration data in behavior cloning. However, a drawback of this approach is the need to learn a denoising function, which is significantly more complex than learning an explicit policy. In this work, we propose Equivariant Diffusion Policy, a novel diffusion policy learning method that leverages domain symmetries to obtain better sample efficiency and generalization in the denoising function. We theoretically analyze the $\\mathrmSO(2)$ symmetry of full 6-DoF control and characterize when a diffusion model is $\\mathrmSO(2)$-equivariant. We furthermore evaluate the method empirically on a set of 12 simulation tasks in MimicGen, and show that it obtains a success rate that is, on average, 21.9% higher than the baseline Diffusion Policy. We also evaluate the method on a real-world system to show that effective policies can be learned with relatively few training samples, whereas the baseline Diffusion Policy cannot.",
 "url": "https://proceedings.mlr.press/v270/wang25a.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/wang25a/wang25a.pdf"
-},
-{
-"id": "CoRL2024-9",
-"title": "Reinforcement Learning with Foundation Priors: Let Embodied Agent Efficiently Learn on Its Own",
-"authors": [
-"Weirui Ye",
-"Yunsheng Zhang",
-"Haoyang Weng",
-"Xianfan Gu",
-"Shengjie Wang",
-"Tong Zhang",
-"Mengchen Wang",
-"Pieter Abbeel",
-"Yang Gao"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [
-"RL",
-"Dex",
-"GenModel"
-],
-"tracked_authors": [
-"Pieter Abbeel"
-],
-"score": 30,
-"tldr": "To address these issues, we leverage foundation models in this paper.",
-"abstract": "Reinforcement learning (RL) is a promising approach for solving robotic manipulation tasks. However, it is challenging to apply the RL algorithms directly in the real world. For one thing, RL is data-intensive and typically requires millions of interactions with environments, which are impractical in real scenarios. For another, it is necessary to make heavy engineering efforts to design reward functions manually. To address these issues, we leverage foundation models in this paper. We propose Reinforcement Learning with Foundation Priors (RLFP) to utilize guidance and feedback from policy, value, and success-reward foundation models. Within this framework, we introduce the Foundation-guided Actor-Critic (FAC) algorithm, which enables embodied agents to explore more efficiently with automatic reward functions. The benefits of our framework are threefold: (1) \\textitsample efficient; (2) \\textitminimal and effective reward engineering; (3) \\textitagnostic to foundation model forms and robust to noisy priors. Our method achieves remarkable performances in various manipulation tasks on both real robots and in simulation. Across 5 dexterous tasks with real robots, FAC achieves an average success rate of 86% after one hour of real-time learning. Across 8 tasks in the simulated Meta-world, FAC achieves 100% success rates in 7/8 tasks under less than 100k frames (about 1-hour training), outperforming baseline methods with manual-designed rewards in 1M frames. We believe the RLFP framework can enable future robots to explore and learn autonomously in the physical world for more tasks.",
-"url": "https://proceedings.mlr.press/v270/ye25a.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/ye25a/ye25a.pdf"
 },
 {
 "id": "CoRL2024-49",
@@ -21161,6 +21332,27 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/wang25e/wang25e.pdf"
 },
 {
+"id": "CoRL2024-109",
+"title": "Pre-emptive Action Revision by Environmental Feedback for Embodied Instruction Following Agents",
+"authors": [
+"Jinyeon Kim",
+"Cheolhong Min",
+"Byeonghwi Kim",
+"Jonghyun Choi"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "Here, we propose Pre-emptive Action Revision by Environmental feeDback (PRED) that allows an embodied agent to revise their action in response to the perceived environmental status before it makes mistakes.",
+"abstract": "When we, humans, perform a task, we consider changes in environments such as objects’ arrangement due to interactions with objects and other reasons; e.g., when we find a mug to clean, if it is already clean, we skip cleaning it. But even the state-of-the-art embodied agents often ignore changed environments when performing a task, leading to failure to complete the task, executing unnecessary actions, or fixing the mistake after it was made. Here, we propose Pre-emptive Action Revision by Environmental feeDback (PRED) that allows an embodied agent to revise their action in response to the perceived environmental status before it makes mistakes. We empirically validate PRED and observe that it outperforms the prior art on two challenging benchmarks in the virtual environment, TEACh and ALFRED, by noticeable margins in most metrics, including unseen success rates, with shorter execution time, implying an efficiently behaved agent. Furthermore, we demonstrate the effectiveness of the proposed method with real robot experiments.",
+"url": "https://proceedings.mlr.press/v270/kim25b.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/kim25b/kim25b.pdf"
+},
+{
 "id": "CoRL2024-150",
 "title": "Leveraging Locality to Boost Sample Efficiency in Robotic Manipulation",
 "authors": [
@@ -21181,6 +21373,29 @@
 "abstract": "Given the high cost of collecting robotic data in the real world, sample efficiency is a consistently compelling pursuit in robotics. In this paper, we introduce SGRv2, an imitation learning framework that enhances sample efficiency through improved visual and action representations. Central to the design of SGRv2 is the incorporation of a critical inductive bias—$\\textitaction locality$, which posits that robot’s actions are predominantly influenced by the target object and its interactions with the local environment. Extensive experiments in both simulated and real-world settings demonstrate that action locality is essential for boosting sample efficiency. SGRv2 excels in RLBench tasks with keyframe control using merely 5 demonstrations and surpasses the RVT baseline in 23 of 26 tasks. Furthermore, when evaluated on ManiSkill2 and MimicGen using dense control, SGRv2’s success rate is 2.54 times that of SGR. In real-world environments, with only eight demonstrations, SGRv2 can perform a variety of tasks at a markedly higher success rate compared to baseline models.",
 "url": "https://proceedings.mlr.press/v270/zhang25h.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/zhang25h/zhang25h.pdf"
+},
+{
+"id": "CoRL2024-186",
+"title": "VLM-Grounder: A VLM Agent for Zero-Shot 3D Visual Grounding",
+"authors": [
+"Runsen Xu",
+"Zhiwei Huang",
+"Tai Wang",
+"Yilun Chen",
+"Jiangmiao Pang",
+"Dahua Lin"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 12,
+"tldr": "In this work, we present VLM-Grounder, a novel framework using vision-language models (VLMs) for zero-shot 3D visual grounding based solely on 2D images.",
+"abstract": "3D visual grounding is crucial for robots, requiring integration of natural language and 3D scene understanding. Traditional methods depend on supervised learning with 3D point clouds are limited by scarce datasets. Recently zero-shot methods leveraging LLMs have been proposed to address the data issue. While effective, these methods often miss detailed scene context, limiting their ability to handle complex queries. In this work, we present VLM-Grounder, a novel framework using vision-language models (VLMs) for zero-shot 3D visual grounding based solely on 2D images. VLM-Grounder dynamically stitches image sequences, employs a grounding and feedback scheme to find the target object, and uses a multi-view ensemble projection to accurately estimate 3D bounding boxes. Experiments on ScanRefer and Nr3D datasets show VLM-Grounder outperforms previous zero-shot methods, achieving 51.6% Acc@0.25 on ScanRefer and 48.0% Acc on Nr3D, without relying on 3D geometry or object priors.",
+"url": "https://proceedings.mlr.press/v270/xu25c.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/xu25c/xu25c.pdf"
 },
 {
 "id": "CoRL2024-190",
@@ -22985,6 +23200,40 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/bae25a/bae25a.pdf"
 },
 {
+"id": "CoRL2024-105",
+"title": "MOSAIC: Modular Foundation Models for Assistive and Interactive Cooking",
+"authors": [
+"Huaxiaoyue Wang",
+"Kushal Kedia",
+"Juntao Ren",
+"Rahma Abdullah",
+"Atiksh Bhardwaj",
+"Angela Chao",
+"Kelly Y Chen",
+"Nathaniel Chin",
+"Prithwish Dan",
+"Xinyi Fan",
+"Gonzalo Gonzalez-Pumariega",
+"Aditya Kompella",
+"Maximus Adrian Pace",
+"Yash Sharma",
+"Xiangwan Sun",
+"Neha Sunkara",
+"Sanjiban Choudhury"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 5,
+"tldr": "We present MOSAIC, a modular architecture for coordinating multiple robots to (a) interact with users using natural language and (b) manipulate an open vocabulary of everyday objects.",
+"abstract": "We present MOSAIC, a modular architecture for coordinating multiple robots to (a) interact with users using natural language and (b) manipulate an open vocabulary of everyday objects. At several levels, MOSAIC employs modularity: it leverages multiple large-scale pre-trained models for high-level tasks like language and image recognition, while using streamlined modules designed for low-level task-specific control. This decomposition allows us to reap the complementary benefits of foundation models and precise, more specialized models, enabling our system to scale to complex tasks that involve coordinating multiple robots and humans. First, we unit-test individual modules with 180 episodes of visuomotor picking, 60 episodes of human motion forecasting, and 46 online user evaluations of the task planner. We then extensively evaluate MOSAIC with 60 end-to-end trials. We discuss crucial design decisions, limitations of the current system, and open challenges in this domain",
+"url": "https://proceedings.mlr.press/v270/wang25h.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/wang25h/wang25h.pdf"
+},
+{
 "id": "CoRL2024-147",
 "title": "SLR: Learning Quadruped Locomotion without Privileged Information",
 "authors": [
@@ -23031,6 +23280,27 @@
 "abstract": "In the field of locomotion task of quadruped robots, Blind Policy and Perceptive Policy each have their own advantages and limitations. The Blind Policy relies on preset sensor information and algorithms, suitable for known and structured environments, but it lacks adaptability in complex or unknown environments. The Perceptive Policy uses visual sensors to obtain detailed environmental information, allowing it to adapt to complex terrains, but its effectiveness is limited under occluded conditions, especially when perception fails. Unlike the Blind Policy, the Perceptive Policy is not as robust under these conditions. To address these challenges, we propose a MBC:Multi-Brain collaborative system that incorporates the concepts of Multi-Agent Reinforcement Learning and introduces collaboration between the Blind Policy and the Perceptive Policy. By applying this multi-policy collaborative model to a quadruped robot, the robot can maintain stable locomotion even when the perceptual system is impaired or observational data is incomplete. Our simulations and real-world experiments demonstrate that this system significantly improves the robot’s passability and robustness against perception failures in complex environments, validating the effectiveness of multi-policy collaboration in enhancing robotic motion performance.",
 "url": "https://proceedings.mlr.press/v270/liu25f.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/liu25f/liu25f.pdf"
+},
+{
+"id": "CoRL2024-201",
+"title": "Learning Long-Horizon Action Dependencies in Sampling-Based Bilevel Planning",
+"authors": [
+"Bart\\lomiej Cie\\'slar",
+"Leslie Pack Kaelbling",
+"Tom\\'as Lozano-P\\'erez",
+"Jorge Mendez-Mendez"
+],
+"venue": "CoRL 2024",
+"year": 2024,
+"topics": [
+"Agentic"
+],
+"tracked_authors": [],
+"score": 5,
+"tldr": "We propose an approach to account for these dependencies by learning a search heuristic for task and motion planning.",
+"abstract": "Autonomous robots will need the ability to make task and motion plans that involve long sequences of actions, e.g. to prepare a meal. One challenge is that the feasibility of actions late in the plan may depend on much earlier actions. This issue is exacerbated if these dependencies exist at a purely geometric level, making them difficult to express for a task planner. Backtracking is a common technique to resolve such geometric dependencies, but its time complexity limits its applicability to short-horizon dependencies. We propose an approach to account for these dependencies by learning a search heuristic for task and motion planning. We evaluate our approach on five quasi-static simulated domains and show a substantial improvement in success rate over the baselines.",
+"url": "https://proceedings.mlr.press/v270/cieslar25a.html",
+"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/cieslar25a/cieslar25a.pdf"
 },
 {
 "id": "CoRL2024-209",
@@ -23876,57 +24146,6 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/zhang25e/zhang25e.pdf"
 },
 {
-"id": "CoRL2024-105",
-"title": "MOSAIC: Modular Foundation Models for Assistive and Interactive Cooking",
-"authors": [
-"Huaxiaoyue Wang",
-"Kushal Kedia",
-"Juntao Ren",
-"Rahma Abdullah",
-"Atiksh Bhardwaj",
-"Angela Chao",
-"Kelly Y Chen",
-"Nathaniel Chin",
-"Prithwish Dan",
-"Xinyi Fan",
-"Gonzalo Gonzalez-Pumariega",
-"Aditya Kompella",
-"Maximus Adrian Pace",
-"Yash Sharma",
-"Xiangwan Sun",
-"Neha Sunkara",
-"Sanjiban Choudhury"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "We present MOSAIC, a modular architecture for coordinating multiple robots to (a) interact with users using natural language and (b) manipulate an open vocabulary of everyday objects.",
-"abstract": "We present MOSAIC, a modular architecture for coordinating multiple robots to (a) interact with users using natural language and (b) manipulate an open vocabulary of everyday objects. At several levels, MOSAIC employs modularity: it leverages multiple large-scale pre-trained models for high-level tasks like language and image recognition, while using streamlined modules designed for low-level task-specific control. This decomposition allows us to reap the complementary benefits of foundation models and precise, more specialized models, enabling our system to scale to complex tasks that involve coordinating multiple robots and humans. First, we unit-test individual modules with 180 episodes of visuomotor picking, 60 episodes of human motion forecasting, and 46 online user evaluations of the task planner. We then extensively evaluate MOSAIC with 60 end-to-end trials. We discuss crucial design decisions, limitations of the current system, and open challenges in this domain",
-"url": "https://proceedings.mlr.press/v270/wang25h.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/wang25h/wang25h.pdf"
-},
-{
-"id": "CoRL2024-109",
-"title": "Pre-emptive Action Revision by Environmental Feedback for Embodied Instruction Following Agents",
-"authors": [
-"Jinyeon Kim",
-"Cheolhong Min",
-"Byeonghwi Kim",
-"Jonghyun Choi"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "Here, we propose Pre-emptive Action Revision by Environmental feeDback (PRED) that allows an embodied agent to revise their action in response to the perceived environmental status before it makes mistakes.",
-"abstract": "When we, humans, perform a task, we consider changes in environments such as objects’ arrangement due to interactions with objects and other reasons; e.g., when we find a mug to clean, if it is already clean, we skip cleaning it. But even the state-of-the-art embodied agents often ignore changed environments when performing a task, leading to failure to complete the task, executing unnecessary actions, or fixing the mistake after it was made. Here, we propose Pre-emptive Action Revision by Environmental feeDback (PRED) that allows an embodied agent to revise their action in response to the perceived environmental status before it makes mistakes. We empirically validate PRED and observe that it outperforms the prior art on two challenging benchmarks in the virtual environment, TEACh and ALFRED, by noticeable margins in most metrics, including unseen success rates, with shorter execution time, implying an efficiently behaved agent. Furthermore, we demonstrate the effectiveness of the proposed method with real robot experiments.",
-"url": "https://proceedings.mlr.press/v270/kim25b.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/kim25b/kim25b.pdf"
-},
-{
 "id": "CoRL2024-110",
 "title": "Generative Image as Action Models",
 "authors": [
@@ -24458,27 +24677,6 @@
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/jain25a/jain25a.pdf"
 },
 {
-"id": "CoRL2024-186",
-"title": "VLM-Grounder: A VLM Agent for Zero-Shot 3D Visual Grounding",
-"authors": [
-"Runsen Xu",
-"Zhiwei Huang",
-"Tai Wang",
-"Yilun Chen",
-"Jiangmiao Pang",
-"Dahua Lin"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "In this work, we present VLM-Grounder, a novel framework using vision-language models (VLMs) for zero-shot 3D visual grounding based solely on 2D images.",
-"abstract": "3D visual grounding is crucial for robots, requiring integration of natural language and 3D scene understanding. Traditional methods depend on supervised learning with 3D point clouds are limited by scarce datasets. Recently zero-shot methods leveraging LLMs have been proposed to address the data issue. While effective, these methods often miss detailed scene context, limiting their ability to handle complex queries. In this work, we present VLM-Grounder, a novel framework using vision-language models (VLMs) for zero-shot 3D visual grounding based solely on 2D images. VLM-Grounder dynamically stitches image sequences, employs a grounding and feedback scheme to find the target object, and uses a multi-view ensemble projection to accurately estimate 3D bounding boxes. Experiments on ScanRefer and Nr3D datasets show VLM-Grounder outperforms previous zero-shot methods, achieving 51.6% Acc@0.25 on ScanRefer and 48.0% Acc on Nr3D, without relying on 3D geometry or object priors.",
-"url": "https://proceedings.mlr.press/v270/xu25c.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/xu25c/xu25c.pdf"
-},
-{
 "id": "CoRL2024-194",
 "title": "Event3DGS: Event-Based 3D Gaussian Splatting for High-Speed Robot Egomotion",
 "authors": [
@@ -24539,25 +24737,6 @@
 "abstract": "Lidar-based perception pipelines rely on 3D object detection models to interpret complex scenes. While multiple representations for lidar exist, the range view is enticing since it losslessly encodes the entire lidar sensor output. In this work, we achieve state-of-the-art amongst range view 3D object detection models without using multiple techniques proposed in past range view literature. We explore range view 3D object detection across two modern datasets with substantially different properties: Argoverse 2 and Waymo Open. Our investigation reveals key insights: (1) input feature dimensionality significantly influences the overall performance, (2) surprisingly, employing a classification loss grounded in 3D spatial proximity works as well or better compared to more elaborate IoU-based losses, and (3) addressing non-uniform lidar density via a straightforward range subsampling technique outperforms existing multi-resolution, range-conditioned networks. Our experiments reveal that techniques proposed in recent range view literature are not needed to achieve state-of-the-art performance. Combining the above findings, we establish a new state-of-the-art model for range view 3D object detection — improving AP by 2.2% on the Waymo Open dataset while maintaining a runtime of 10 Hz. We are the first to benchmark a range view model on the Argoverse 2 dataset and outperform strong voxel-based baselines. All models are multi-class and open-source. Code is available at https://github.com/benjaminrwilson/range-view-3d-detection.",
 "url": "https://proceedings.mlr.press/v270/wilson25a.html",
 "pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/wilson25a/wilson25a.pdf"
-},
-{
-"id": "CoRL2024-201",
-"title": "Learning Long-Horizon Action Dependencies in Sampling-Based Bilevel Planning",
-"authors": [
-"Bart\\lomiej Cie\\'slar",
-"Leslie Pack Kaelbling",
-"Tom\\'as Lozano-P\\'erez",
-"Jorge Mendez-Mendez"
-],
-"venue": "CoRL 2024",
-"year": 2024,
-"topics": [],
-"tracked_authors": [],
-"score": 2,
-"tldr": "We propose an approach to account for these dependencies by learning a search heuristic for task and motion planning.",
-"abstract": "Autonomous robots will need the ability to make task and motion plans that involve long sequences of actions, e.g. to prepare a meal. One challenge is that the feasibility of actions late in the plan may depend on much earlier actions. This issue is exacerbated if these dependencies exist at a purely geometric level, making them difficult to express for a task planner. Backtracking is a common technique to resolve such geometric dependencies, but its time complexity limits its applicability to short-horizon dependencies. We propose an approach to account for these dependencies by learning a search heuristic for task and motion planning. We evaluate our approach on five quasi-static simulated domains and show a substantial improvement in success rate over the baselines.",
-"url": "https://proceedings.mlr.press/v270/cieslar25a.html",
-"pdf": "https://raw.githubusercontent.com/mlresearch/v270/main/assets/cieslar25a/cieslar25a.pdf"
 },
 {
 "id": "CoRL2024-202",
@@ -29389,5 +29568,5 @@
 }
 ]
 },
-"updated": "2026-11-24"
+"updated": "2026-11-26"
 }
