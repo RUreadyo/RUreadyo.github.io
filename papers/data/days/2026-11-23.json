@@ -1284,7 +1284,8 @@
    "published": "2026-11-23",
    "topics": [
     "RL",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 10,
    "tldr": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist…",

@@ -798,7 +798,8 @@
    "published": "2026-11-03",
    "topics": [
     "RL",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 16,
    "tldr": "Based on this structure, we propose ARPG, a dependency-aware agentic framework that performs sequential MDP modeling, localized verification and correction, and simulator-structured implementation while externalizing intermediate artifacts.",
@@ -1156,7 +1157,8 @@
    "published": "2026-11-03",
    "topics": [
     "RL",
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 7,
    "tldr": "We present WayTrace, a hierarchical system that connects web-map directions to robot motion through language.",
@@ -1218,7 +1220,8 @@
    ],
    "published": "2026-11-03",
    "topics": [
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 6,
    "tldr": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",

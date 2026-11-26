@@ -118,7 +118,8 @@
    "topics": [
     "FM",
     "RL",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 20,
    "relevance": 7,
@@ -740,7 +741,8 @@
    ],
    "published": "2026-11-09",
    "topics": [
-    "Dex"
+    "Dex",
+    "Agentic"
    ],
    "kw_score": 13,
    "tldr": "In this paper, we show that a coding agent can autonomously develop and refine object-flipping strategies through iterative learning in physics simulations across diverse object geometries.",

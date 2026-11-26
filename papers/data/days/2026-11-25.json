@@ -234,7 +234,8 @@
    "published": "2026-11-25",
    "topics": [
     "Video",
-    "RL"
+    "RL",
+    "Agentic"
    ],
    "kw_score": 25,
    "tldr": "We present Agentic LongLive, an asynchronous agentic memory for long video generation.",
@@ -1161,7 +1162,8 @@
    "topics": [
     "FM",
     "IL",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 14,
    "tldr": "Inspired by human learning through reasoning and practice, we propose RoboEvo$^2$, a framework for recursive harness-policy co-evolution.",

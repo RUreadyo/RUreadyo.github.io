@@ -402,7 +402,8 @@
    "topics": [
     "FM",
     "Dex",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 26,
    "relevance": 5,
@@ -975,7 +976,8 @@
    "published": "2026-11-19",
    "topics": [
     "RL",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 8,
    "tldr": "We present EmbodyAgent, an end-to-end post-training framework with three tightly coupled pipelines: (1) a black-box data synthesis pipeline that queries a strong teacher under a forced think-then-code contract and filters trajectories by task success; (2) an SFT pipeline that…",
@@ -1061,7 +1063,8 @@
    "published": "2026-11-19",
    "topics": [
     "Video",
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 7,
    "tldr": "We present Baton, which hands the large model the small model's visual memory, its key-value (KV) cache over the history.",

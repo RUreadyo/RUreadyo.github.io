@@ -442,7 +442,8 @@
    ],
    "published": "2026-10-31",
    "topics": [
-    "WM"
+    "WM",
+    "Agentic"
    ],
    "kw_score": 8,
    "relevance": 4,
@@ -675,7 +676,8 @@
    ],
    "published": "2026-10-31",
    "topics": [
-    "Dex"
+    "Dex",
+    "Agentic"
    ],
    "kw_score": 5,
    "tldr": "When searching for an object, humans naturally combine semantic intuition - reasoning about where the object is likely to be stored - with geometric awareness of what parts of the space are visible, occluded, or unexplored.",

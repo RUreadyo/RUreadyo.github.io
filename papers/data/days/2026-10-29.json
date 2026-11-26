@@ -1006,7 +1006,8 @@
    ],
    "published": "2026-10-29",
    "topics": [
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 11,
    "tldr": "We present LOGIV, a graph engineering framework for agentic robot execution that uses an explicit task graph to connect symbolic planning, observation-based verification, and embodied action.",

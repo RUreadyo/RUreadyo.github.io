@@ -623,7 +623,9 @@
    "summary": "We propose REINS, a harness built on three LLM-planner couplings: LLM outputs are (i) grounded to a learned variable-level dynamics model, (ii) verified via calibrated predicates and forward rollout, and (iii) consolidated into an indexed rule memory that serves future scenes in O(log n) without re-invoking the LLM. Without modifying LLM weights, REINS attains 98%+ compliance, nearly 50% collision reduction, and 1.9-4.6 ms latency on simulated and real-world benchmarks at the tactical decision layer, with LLM invocation rate monotonically declining as memory matures.",
    "venue": "NeurIPS 2026",
    "citations": 0,
-   "topics": []
+   "topics": [
+    "Agentic"
+   ]
   },
   {
    "id": "2611.10720",

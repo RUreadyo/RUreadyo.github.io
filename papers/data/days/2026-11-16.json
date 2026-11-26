@@ -990,7 +990,8 @@
    ],
    "published": "2026-11-16",
    "topics": [
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 8,
    "tldr": "We introduce Learning and Verifying Progress for VLN (LeaP-VLN), an agentic VLN system that couples progress-aware execution with independent progress verification through plan--execute--verify--recover cycles.",

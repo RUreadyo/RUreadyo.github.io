@@ -1085,7 +1085,8 @@
    ],
    "published": "2026-11-18",
    "topics": [
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 11,
    "tldr": "We introduce RECLAIM, a training-free, inference-time defense that uses a frozen VLA's own attention response to local visual interventions to guide purification during closed-loop embodied manipulation.",

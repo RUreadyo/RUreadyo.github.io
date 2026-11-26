@@ -8,8 +8,8 @@ Inputs:
 For each paper produce:
 - relevance: integer 0-10, fit to the reader's profile. Be discerning: most papers <=5; 8-10 only for papers squarely in core interests (dexterous manipulation, diffusion/flow policies & action chunking, RL+generative policies, generative-model theory) or likely to be important.
 - quality: integer 0-10, expected significance/insight (clear new idea, strong real-robot results, rigorous analysis > incremental benchmark tweak).
-- topic: one of RL, RLGen, IL, GenModel, FM, Video, WM, Dex, Tactile, Control, Other
-  (RL=reinforcement learning, RLGen=RL x diffusion/flow, IL=imitation learning, GenModel=generative models, FM=robot foundation models/VLA, Video=video generation, WM=world models, Dex=dexterous manipulation, Tactile=tactile/visuotactile/force sensing and touch-based learning, Control=control).
+- topic: one of RL, RLGen, IL, GenModel, FM, Video, WM, Dex, Tactile, Agentic, Control, Other
+  (RL=reinforcement learning, RLGen=RL x diffusion/flow, IL=imitation learning, GenModel=generative models, FM=robot foundation models/VLA, Video=video generation, WM=world models, Dex=dexterous manipulation, Tactile=tactile/visuotactile/force sensing and touch-based learning, Agentic=agentic robotics: LLM/VLM planners or orchestrators calling skills/tools, code-as-policy, embodied reasoning, re-planning and failure recovery, agents that automate robot learning (reward/task/data generation), Control=control).
 - tldr: one sentence, <=25 words, what they did (concrete, no hype).
 - summary: 2-3 sentences: problem, key idea, main result (include numbers/settings if the abstract gives them).
 - why: one short sentence on why the reader should care (or why it's tangential). Refer to them as "the reader" (it is rewritten to first person on the page).

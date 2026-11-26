@@ -14,21 +14,21 @@
       --bg: #f7f6f3; --surface: #ffffff; --surface-2: #f1f0ec; --fg: #1a1a1e; --fg-2: #4a4a52; --muted: #85858d;
       --line: #e7e5df; --accent: #3b5bdb; --accent-soft: #e8edff; --gold: #b7791f; --gold-soft: #fdf3e1;
       --green: #2f855a; --green-soft: #e3f4ea; --red: #d9480f; --shadow: 0 1px 2px rgba(20,20,30,.04), 0 4px 16px rgba(20,20,30,.05);
-      --t-RL:#e8590c; --t-RLGen:#d6336c; --t-IL:#3b5bdb; --t-GenModel:#7048e8; --t-FM:#0c8599; --t-Video:#c2255c; --t-WM:#2b8a3e; --t-Dex:#e67700; --t-Tactile:#a61e4d; --t-Control:#495057; --t-Other:#868e96;
+      --t-RL:#e8590c; --t-RLGen:#d6336c; --t-IL:#3b5bdb; --t-GenModel:#7048e8; --t-FM:#0c8599; --t-Video:#c2255c; --t-WM:#2b8a3e; --t-Dex:#e67700; --t-Tactile:#a61e4d; --t-Agentic:#5f3dc4; --t-Control:#495057; --t-Other:#868e96;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
         --bg: #111114; --surface: #1a1a1f; --surface-2: #232329; --fg: #ededf0; --fg-2: #bdbdc5; --muted: #8b8b95;
         --line: #2b2b33; --accent: #8ea4ff; --accent-soft: #1f2645; --gold: #f2b84b; --gold-soft: #2e2516;
         --green: #63c58f; --green-soft: #15291e; --red: #ff8a50; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
-        --t-RL:#ff8c42; --t-RLGen:#f06595; --t-IL:#748ffc; --t-GenModel:#9775fa; --t-FM:#3bc9db; --t-Video:#f783ac; --t-WM:#69db7c; --t-Dex:#ffa94d; --t-Tactile:#faa2c1; --t-Control:#adb5bd; --t-Other:#adb5bd;
+        --t-RL:#ff8c42; --t-RLGen:#f06595; --t-IL:#748ffc; --t-GenModel:#9775fa; --t-FM:#3bc9db; --t-Video:#f783ac; --t-WM:#69db7c; --t-Dex:#ffa94d; --t-Tactile:#faa2c1; --t-Agentic:#b197fc; --t-Control:#adb5bd; --t-Other:#adb5bd;
       }
     }
     :root[data-theme="dark"] {
       --bg: #111114; --surface: #1a1a1f; --surface-2: #232329; --fg: #ededf0; --fg-2: #bdbdc5; --muted: #8b8b95;
       --line: #2b2b33; --accent: #8ea4ff; --accent-soft: #1f2645; --gold: #f2b84b; --gold-soft: #2e2516;
       --green: #63c58f; --green-soft: #15291e; --red: #ff8a50; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
-      --t-RL:#ff8c42; --t-RLGen:#f06595; --t-IL:#748ffc; --t-GenModel:#9775fa; --t-FM:#3bc9db; --t-Video:#f783ac; --t-WM:#69db7c; --t-Dex:#ffa94d; --t-Tactile:#faa2c1; --t-Control:#adb5bd; --t-Other:#adb5bd;
+      --t-RL:#ff8c42; --t-RLGen:#f06595; --t-IL:#748ffc; --t-GenModel:#9775fa; --t-FM:#3bc9db; --t-Video:#f783ac; --t-WM:#69db7c; --t-Dex:#ffa94d; --t-Tactile:#faa2c1; --t-Agentic:#b197fc; --t-Control:#adb5bd; --t-Other:#adb5bd;
     }
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
@@ -192,7 +192,7 @@
 </div>
 
 <script>
-const TOPICS = {Dex:"Dexterous", Tactile:"Tactile", IL:"Imitation", RLGen:"RL × Gen", RL:"RL", GenModel:"Generative", FM:"VLA / FM", WM:"World models", Video:"Video gen", Control:"Control"};
+const TOPICS = {Dex:"Dexterous", Tactile:"Tactile", Agentic:"Agentic", IL:"Imitation", RLGen:"RL × Gen", RL:"RL", GenModel:"Generative", FM:"VLA / FM", WM:"World models", Video:"Video gen", Control:"Control"};
 const MAIN = ["CoRL","RSS","ICRA","ICML","NeurIPS","ICLR"];
 // conferences offered as buttons; s2 = Semantic Scholar venue names, rx = matcher for raw venue strings
 const CONF = {
@@ -218,7 +218,7 @@ function shortVenue(name) {
   for (const [rx, k] of SHORTV) if (rx.test(name)) return k;
   return name.length > 40 ? name.slice(0, 38) + "…" : name;
 }
-const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitation", Dex: "Dexterous", Tactile: "Tactile", RL: "RL", RLGen: "RL × Gen", FM: "VLA / FM", WM: "World models", Video: "Video gen", Control: "Control"};
+const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitation", Dex: "Dexterous", Tactile: "Tactile", Agentic: "Agentic", RL: "RL", RLGen: "RL × Gen", FM: "VLA / FM", WM: "World models", Video: "Video gen", Control: "Control"};
 const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topics: [], topicAny: false, q: "", venue: "all", showAll: false,
   search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null,
   conf: {}, confYear: "all", confN: 25, bestYear: null, yearN: 40 };

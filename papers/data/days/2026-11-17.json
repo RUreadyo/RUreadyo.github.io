@@ -579,7 +579,8 @@
    "published": "2026-11-17",
    "topics": [
     "FM",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 13,
    "tldr": "We present InteractVLA, a framework that turns pretrained flow-based VLAs into geometrically steerable and inspectable tools through a bidirectional geometric interface with vision-language agents.",

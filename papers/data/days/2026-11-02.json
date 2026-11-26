@@ -277,7 +277,8 @@
    "published": "2026-11-02",
    "topics": [
     "Control",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "tracked_authors": [
     "Pieter Abbeel",
@@ -771,7 +772,8 @@
    ],
    "published": "2026-11-02",
    "topics": [
-    "Dex"
+    "Dex",
+    "Agentic"
    ],
    "kw_score": 14,
    "tldr": "Agentic Real2Sim2Real systems can reconstruct a scene in simulation from camera observations, but contact-rich dynamics such as friction and restitution cannot be observed without interaction.",
@@ -1010,7 +1012,8 @@
    ],
    "published": "2026-11-02",
    "topics": [
-    "WM"
+    "WM",
+    "Agentic"
    ],
    "kw_score": 8,
    "tldr": "World models are increasingly used to support prediction and planning in embodied agents, but the knowledge is usually established before deployment and then carried into later encounters.",

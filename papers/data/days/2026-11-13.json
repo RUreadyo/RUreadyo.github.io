@@ -199,7 +199,8 @@
    "topics": [
     "FM",
     "RL",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 12,
    "relevance": 6,
@@ -610,7 +611,8 @@
    ],
    "published": "2026-11-13",
    "topics": [
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 4,
    "tldr": "Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance.",

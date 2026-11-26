@@ -28,4 +28,5 @@ medical robotics, unless the method is clearly transferable to manipulation poli
 
 What makes a paper "good" for me: a clear new insight or analysis (not just a new benchmark number),
 strong real-robot results, rigorous understanding papers (why X works), or methods I could plausibly use.
+- Agentic robotics: LLM/VLM orchestrators that plan, call VLA skills and tools, check success and re-plan; code-as-policy; embodied reasoning models; memory for long-horizon tasks; agents that write rewards, generate tasks or run data collection.
 - Tactile sensing: visuotactile/GelSight/DIGIT sensors, tactile skins, force/torque feedback, touch-conditioned policies and tactile representation learning (especially for dexterous hands).

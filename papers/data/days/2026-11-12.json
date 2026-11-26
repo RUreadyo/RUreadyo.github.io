@@ -97,7 +97,8 @@
    "published": "2026-11-12",
    "topics": [
     "FM",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 17,
    "relevance": 6,
@@ -285,7 +286,8 @@
    "topics": [
     "Dex",
     "IL",
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 13,
    "relevance": 5,
@@ -526,7 +528,8 @@
    "topics": [
     "Dex",
     "IL",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 9,
    "tldr": "Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction.",
@@ -625,7 +628,8 @@
    ],
    "published": "2026-11-12",
    "topics": [
-    "Video"
+    "Video",
+    "Agentic"
    ],
    "kw_score": 7,
    "tldr": "We present BWM-Forge, a code-driven framework for controllable video generation in robotics.",

@@ -616,7 +616,8 @@
    ],
    "published": "2026-11-01",
    "topics": [
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 4,
    "tldr": "In this diagnostic study, we introduce a graph-swap test for the last of these: each episode is given another episode's graph, and we count how many answers change.",

@@ -260,7 +260,8 @@
    "topics": [
     "FM",
     "Dex",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 16,
    "relevance": 6,
@@ -300,7 +301,8 @@
    ],
    "published": "2026-11-06",
    "topics": [
-    "Dex"
+    "Dex",
+    "Agentic"
    ],
    "tracked_authors": [
     "Jiajun Wu"
@@ -371,7 +373,8 @@
    "topics": [
     "FM",
     "WM",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 21,
    "relevance": 5,

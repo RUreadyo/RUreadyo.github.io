@@ -669,7 +669,9 @@
    "why": "Informative snapshot of LLM agents as policies, but not your core direction.",
    "rated_by": "claude",
    "citations": 1,
-   "topics": []
+   "topics": [
+    "Agentic"
+   ]
   },
   {
    "id": "2611.08425",
@@ -1097,7 +1099,8 @@
    ],
    "published": "2026-11-05",
    "topics": [
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 6,
    "tldr": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks.",

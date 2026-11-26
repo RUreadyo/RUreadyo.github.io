@@ -279,7 +279,8 @@
    "published": "2026-10-30",
    "topics": [
     "WM",
-    "Control"
+    "Control",
+    "Agentic"
    ],
    "tracked_authors": [
     "Lerrel Pinto"
@@ -927,7 +928,8 @@
    ],
    "published": "2026-10-30",
    "topics": [
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 6,
    "tldr": "To address this, we propose REA (Routed Embodied Agent), a unified runtime where a deliberative System 2, an embodied router System 1 and reactive System 0 policies cooperate under a single golden rule - no running policy waits on the brain.",
@@ -963,7 +965,8 @@
    "published": "2026-10-30",
    "topics": [
     "GenModel",
-    "FM"
+    "FM",
+    "Agentic"
    ],
    "kw_score": 6,
    "tldr": "We introduce META-Robot, a framework that couples self cognition with capability scaling by expanding the criteria through which an agent evaluates and develops its skills.",

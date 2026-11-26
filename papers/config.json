@@ -37,7 +37,9 @@
     "dexterous",
     "model predictive control",
     "action chunking",
-    "energy-based"
+    "energy-based",
+    "embodied agent",
+    "agentic"
   ],
   "topics": {
     "RL": {
@@ -255,6 +257,38 @@
         "contact sensing": 4,
         "tactile sensor": 6,
         "tactile skin": 6
+      }
+    },
+    "Agentic": {
+      "label": "Agentic Robotics / LLM Planning",
+      "keywords": {
+        "agentic": 5,
+        "agentic robot": 6,
+        "agentic robotics": 6,
+        "embodied agent": 5,
+        "embodied agents": 5,
+        "llm agent": 5,
+        "llm agents": 5,
+        "vlm agent": 5,
+        "llm planner": 5,
+        "llm-based planner": 5,
+        "llm-based planning": 5,
+        "language model planning": 4,
+        "code as policies": 6,
+        "tool calling": 5,
+        "tool-calling": 5,
+        "function calling": 4,
+        "model context protocol": 5,
+        "orchestrator": 4,
+        "embodied reasoning": 5,
+        "embodied chain-of-thought": 5,
+        "llm-based task planning": 5,
+        "task planner": 3,
+        "vision-language model planner": 5,
+        "vlm planner": 5,
+        "vlm-based planner": 5,
+        "language-model planner": 5,
+        "agent framework": 4
       }
     }
   },

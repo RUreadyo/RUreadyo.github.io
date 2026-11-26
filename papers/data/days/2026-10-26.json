@@ -187,7 +187,8 @@
    "topics": [
     "FM",
     "Dex",
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 13,
    "relevance": 6,
@@ -937,7 +938,8 @@
    "published": "2026-10-26",
    "topics": [
     "Control",
-    "IL"
+    "IL",
+    "Agentic"
    ],
    "kw_score": 7,
    "tldr": "We present Zero-HLM, a real-to-sim-to-real framework that transforms smartphone captures and simulated source demonstrations into scalable training data for humanoid loco-manipulation.",
@@ -1062,7 +1064,8 @@
    ],
    "published": "2026-10-26",
    "topics": [
-    "Dex"
+    "Dex",
+    "Agentic"
    ],
    "kw_score": 6,
    "tldr": "We introduce EmbodiedLab, a simulated laboratory of 35 such experiments.",

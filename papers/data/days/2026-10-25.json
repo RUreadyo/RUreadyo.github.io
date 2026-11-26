@@ -592,7 +592,8 @@
    ],
    "published": "2026-10-25",
    "topics": [
-    "GenModel"
+    "GenModel",
+    "Agentic"
    ],
    "kw_score": 4,
    "tldr": "We develop a workflow for schematic-guided embodied navigation with two components: a training-data generation pipeline and ScheNav, a closed-loop navigation framework.",
