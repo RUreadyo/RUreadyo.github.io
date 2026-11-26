@@ -40,7 +40,7 @@
    "why": "Important 'understanding' paper questioning what VLAs and benchmarks measure.",
    "venue": "CoRL 2026 Workshop",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.12806",
@@ -1152,7 +1152,7 @@
    "url": "https://arxiv.org/abs/2611.03953",
    "pdf": "https://arxiv.org/pdf/2611.03953",
    "hf": "https://huggingface.co/papers/2611.03953",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.08264",
@@ -1382,7 +1382,7 @@
    "url": "https://arxiv.org/abs/2611.09017",
    "pdf": "https://arxiv.org/pdf/2611.09017",
    "hf": "https://huggingface.co/papers/2611.09017",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2611.06748",
@@ -1407,7 +1407,7 @@
    "url": "https://arxiv.org/abs/2611.06748",
    "pdf": "https://arxiv.org/pdf/2611.06748",
    "hf": "https://huggingface.co/papers/2611.06748",
-   "citations": 1
+   "citations": 2
   }
  ]
 }

@@ -213,7 +213,7 @@
    "summary": "World-action models inherit costly video-generation backbones. La-JEPA trains a policy transformer natively in frozen V-JEPA 2.1 features, predicting future features with actions during training and only actions at inference. It achieves SOTA on RoboTwin 2.0 and LIBERO-Plus among non-embodied-pretrained policies, runs 2-5x faster than Fast-WAM, scales to 2.1B, and matches pi0.5 on four real tasks; JEPA features beat video VAE latents especially OOD.",
    "why": "Useful evidence that JEPA latents beat video VAE latents for control, relevant to V-JEPA world-model interest.",
    "rated_by": "claude",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.08240",
@@ -248,7 +248,7 @@
    "summary": "RL post-training of diffusion is dominated by many-step rollouts; few-step models predict average velocities incompatible with existing objectives. The authors express objectives in x-space, decompose gradients into self-regression toward an anchor plus reward augmentation, and compute anchors from few-step flow maps. Reward-gradient methods work best when gradients are affordable; otherwise DiffusionNFT-style methods reach high reward quickly.",
    "why": "Unifying view of RL for few-step/flow-map models, transferable to fast generative policies.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   }
  ],
  "roundup": [
@@ -532,7 +532,7 @@
    "summary": "Retrieval-based ICL for VLAs relies on visual similarity, which misses execution stage. VICTR's In-Context Value Function Estimator predicts task progress conditioned on a reference demo video, and uses it to retrieve matching chunks for an ICL-trained pi0.5. On unseen OOD real tasks success rises from 6.2% to 23.8% and progress from 28.9% to 55.5%.",
    "why": "Interesting ICL angle for VLAs, though absolute success remains low.",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.08462",
@@ -1102,7 +1102,7 @@
    "kw_score": 6,
    "tldr": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks.",
    "summary": "Self-improving embodied agents are increasingly being developed and compared on robot simulation benchmarks. We conduct controlled experiments with a self-improving agent with and without CE, and find that with CE the agent quickly produces code with a higher success rate under the given criteria, but this advantage disappears when the criteria are changed slightly without departing from the original instructions.",
-   "citations": 4
+   "citations": 5
   },
   {
    "id": "2611.08056",
@@ -1425,7 +1425,7 @@
    "url": "https://arxiv.org/abs/2610.37257",
    "pdf": "https://arxiv.org/pdf/2610.37257",
    "hf": "https://huggingface.co/papers/2610.37257",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2610.40131",
@@ -1480,7 +1480,7 @@
    "url": "https://arxiv.org/abs/2611.05320",
    "pdf": "https://arxiv.org/pdf/2611.05320",
    "hf": "https://huggingface.co/papers/2611.05320",
-   "citations": 2
+   "citations": 3
   },
   {
    "id": "2611.06518",

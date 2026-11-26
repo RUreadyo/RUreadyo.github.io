@@ -862,7 +862,7 @@
    "kw_score": 11,
    "tldr": "In this paper, we propose W2A, a two-stage distillation framework for real-time robotic manipulation that distills intermediate denoising representations from a video diffusion model into an action model during training, while entirely discarding the video model at test time.",
    "summary": "In this paper, we propose W2A, a two-stage distillation framework for real-time robotic manipulation that distills intermediate denoising representations from a video diffusion model into an action model during training, while entirely discarding the video model at test time. Extensive experiments in both simulation and real-world settings demonstrate competitive success rates while significantly improving inference efficiency.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.03932",
@@ -1440,7 +1440,7 @@
    "url": "https://arxiv.org/abs/2610.40339",
    "pdf": "https://arxiv.org/pdf/2610.40339",
    "hf": "https://huggingface.co/papers/2610.40339",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2610.37918",

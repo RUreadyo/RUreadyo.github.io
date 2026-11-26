@@ -121,7 +121,7 @@
    "why": "Elegant unified video-action model design, a stated interest.",
    "venue": "CoRL",
    "rated_by": "claude",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.37219",
@@ -1023,7 +1023,7 @@
    "kw_score": 10,
    "tldr": "In this paper, we present Omni-IGN, a fully onboard ImageNav system that integrates quad-fisheye perception, an attention-based reinforcement learning (RL) policy, and a collision-aware safety layer.",
    "summary": "In this paper, we present Omni-IGN, a fully onboard ImageNav system that integrates quad-fisheye perception, an attention-based reinforcement learning (RL) policy, and a collision-aware safety layer. On Habitat benchmarks, Omni-IGN achieves the best performance among continuous-action baselines.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.36685",
@@ -1108,7 +1108,7 @@
    "kw_score": 9,
    "tldr": "Objective: This study aims to determine whether a hip-exoskeleton policy trained in simulation, by co-adapting with a musculoskeletal human model under a metabolic-energy reward, reduces the metabolic cost of walking in new users without per-user tuning, and how…",
    "summary": "Objective: This study aims to determine whether a hip-exoskeleton policy trained in simulation, by co-adapting with a musculoskeletal human model under a metabolic-energy reward, reduces the metabolic cost of walking in new users without per-user tuning, and how mechanical-power shaping affects the learned assistance. Results: In simulation, the Metabolic policy reduced modeled muscle metabolic power by 13.8% relative to no-device walking, versus 8.8% for Metabolic + Power.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.37550",

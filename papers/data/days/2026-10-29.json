@@ -1097,7 +1097,7 @@
    "kw_score": 10,
    "tldr": "Guided by this perspective, we introduce WorldBridge, a WAM with separate video and action experts connected through structured attention and trained with joint flow matching.",
    "summary": "Guided by this perspective, we introduce WorldBridge, a WAM with separate video and action experts connected through structured attention and trained with joint flow matching. Achieving the broad task generalization of embodied models in physical environments remains a central challenge in robot learning.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.40075",
@@ -1159,7 +1159,7 @@
    "kw_score": 10,
    "tldr": "To circumvent these limitations, we introduce \\method{}, a generative world model that jointly predicts future video and query-based 3D trajectories.",
    "summary": "To circumvent these limitations, we introduce \\method{}, a generative world model that jointly predicts future video and query-based 3D trajectories. Across all three evaluation sets, WorldFlow achieves the lowest average displacement error (ADE) and final displacement error (FDE) among the evaluated learning-based methods.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2610.39212",

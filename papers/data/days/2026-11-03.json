@@ -713,7 +713,7 @@
    "summary": "Diagnoses shortcomings of pixel-space image transformers for video and proposes a UNet-like transformer plus recipe and sampling changes. Improves FVD 27% over prior SOTA at 128px and gains grow with compression at 256px.",
    "why": "Generative modeling architecture insight; moderately relevant.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.04166",
@@ -916,7 +916,7 @@
    "kw_score": 13,
    "tldr": "Vision-language-action (VLA) models increasingly pair a pre-trained vision-language model (VLM) with a flow-matching expert that conditions its action predictions on the VLM's key-value representations.",
    "summary": "Vision-language-action (VLA) models increasingly pair a pre-trained vision-language model (VLM) with a flow-matching expert that conditions its action predictions on the VLM's key-value representations. In open-loop driving, insulation is competitive with coupling when action tokens are supervised; without them, coupling reduces trajectory-prediction error by roughly 25%.",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.04972",
@@ -1223,7 +1223,7 @@
    "kw_score": 6,
    "tldr": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
    "summary": "Teleoperation remains the default way to collect robot demonstrations, but every episode costs robot and operator time, and every new task starts from scratch.",
-   "citations": 2
+   "citations": 3
   }
  ],
  "trending_ml": [
@@ -1458,7 +1458,7 @@
    "url": "https://arxiv.org/abs/2611.01560",
    "pdf": "https://arxiv.org/pdf/2611.01560",
    "hf": "https://huggingface.co/papers/2611.01560",
-   "citations": 11
+   "citations": 12
   },
   {
    "id": "2611.02074",

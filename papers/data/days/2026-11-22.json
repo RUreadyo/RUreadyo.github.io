@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-26T14:10:56+00:00",
+ "generated_at": "2026-11-26T22:07:05+00:00",
  "ranker": "Claude",
  "overview": "zeta_0 turns humanoid VLAs (GR00T, Psi_0) into world action models by foreseeing both visual features and joint trajectories, with solid real-world gains. The ES-vs-policy-gradient analysis gives a clean dimension-vs-horizon picture of gradient estimator cost. DriveOddsBench's rank-calibration test for world models is a methodology that could transfer to robot video models.",
  "stats": {

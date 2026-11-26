@@ -854,7 +854,8 @@
    "kw_score": 10,
    "tldr": "In this work, we propose three improvements to bridge these gaps.",
    "summary": "In this work, we propose three improvements to bridge these gaps. First, we adopt a rectified flow framework to reduce the required inference steps to one while achieving comparable or even superior performance.",
-   "citations": 0
+   "citations": 0,
+   "venue": "IROS 2026"
   },
   {
    "id": "2611.26969",
@@ -1316,7 +1317,7 @@
    "url": "https://arxiv.org/abs/2611.26603",
    "pdf": "https://arxiv.org/pdf/2611.26603",
    "hf": "https://huggingface.co/papers/2611.26603",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.26590",
@@ -1418,7 +1419,7 @@
    "url": "https://arxiv.org/abs/2611.21885",
    "pdf": "https://arxiv.org/pdf/2611.21885",
    "hf": "https://huggingface.co/papers/2611.21885",
-   "citations": 3
+   "citations": 4
   }
  ]
 }

@@ -1012,7 +1012,8 @@
    "kw_score": 4,
    "tldr": "We present DroneDiffusion, a perception-aware diffusion planner for local 3-D UAV trajectory generation that explicitly models and avoids failure zones caused by lens flare, overexposure, and reflective surfaces.",
    "summary": "We present DroneDiffusion, a perception-aware diffusion planner for local 3-D UAV trajectory generation that explicitly models and avoids failure zones caused by lens flare, overexposure, and reflective surfaces. Reliability conditioning raises the mean perceptual reliability along generated trajectories to 0.71, compared with 0.63 for a geometric baseline, while guidance halves the collision rate of the learned prior from 14.7% to 7.8%.",
-   "citations": 1
+   "citations": 1,
+   "venue": "IEEE International Conference on Systems, Man and Cybernetics 2026"
   },
   {
    "id": "2611.15217",
@@ -1189,7 +1190,7 @@
    "url": "https://arxiv.org/abs/2611.14033",
    "pdf": "https://arxiv.org/pdf/2611.14033",
    "hf": "https://huggingface.co/papers/2611.14033",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.14210",
@@ -1260,7 +1261,7 @@
    "url": "https://arxiv.org/abs/2611.10649",
    "pdf": "https://arxiv.org/pdf/2611.10649",
    "hf": "https://huggingface.co/papers/2611.10649",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.12177",

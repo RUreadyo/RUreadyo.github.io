@@ -495,7 +495,7 @@
    "kw_score": 7,
    "tldr": "Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface…",
    "summary": "Motivated by this diagnostic result, we propose MetaWAM, which folds all robot signals into a single unified meta-frame: each signal is assigned to a disjoint frequency-domain channel band and lifted to the spatial latent by an inverse DCT, yielding a decodable interface aligned with the pretrained VDM prior without any added module or architectural change. On RoboCasa, MetaWAM reaches 68.9% success while collapsing the per-signal frames into one and cutting inference latency by 39%, and attains 85.0% success on three real-world Franka tasks.",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.14274",
@@ -1021,7 +1021,7 @@
    "url": "https://arxiv.org/abs/2611.08240",
    "pdf": "https://arxiv.org/pdf/2611.08240",
    "hf": "https://huggingface.co/papers/2611.08240",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.11558",

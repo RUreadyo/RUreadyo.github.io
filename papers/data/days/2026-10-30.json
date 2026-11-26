@@ -254,7 +254,7 @@
    "summary": "Exact contact gradients have rare unbounded samples and costly adjoints. Median-relative per-sample clipping and efficient adjoint computation enable ultra-efficient humanoid control, outperforming learned-model surrogate gradients.",
    "why": "Differentiable-sim policy learning on contact-rich tasks could transfer to manipulation.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2610.42146",
@@ -1221,7 +1221,7 @@
    "url": "https://arxiv.org/abs/2610.39302",
    "pdf": "https://arxiv.org/pdf/2610.39302",
    "hf": "https://huggingface.co/papers/2610.39302",
-   "citations": 10
+   "citations": 11
   },
   {
    "id": "2610.38568",

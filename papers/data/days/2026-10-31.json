@@ -601,7 +601,7 @@
    "kw_score": 6,
    "tldr": "We present Auriga, a task-agnostic agent harness that closes 68.3% of this gap in zero-shot manipulation without target-task trials or resets.",
    "summary": "We present Auriga, a task-agnostic agent harness that closes 68.3% of this gap in zero-shot manipulation without target-task trials or resets. On RoboDojo, a large planning-execution gap separates high-level task decisions from physical execution: removing arm execution raises GPT-6 Astra's success rate from 22.5% under the reference control interface to 76.2%.",
-   "citations": 3
+   "citations": 4
   },
   {
    "id": "2611.01038",
@@ -680,7 +680,7 @@
    "kw_score": 5,
    "tldr": "When searching for an object, humans naturally combine semantic intuition - reasoning about where the object is likely to be stored - with geometric awareness of what parts of the space are visible, occluded, or unexplored.",
    "summary": "When searching for an object, humans naturally combine semantic intuition - reasoning about where the object is likely to be stored - with geometric awareness of what parts of the space are visible, occluded, or unexplored. We argue that jointly reasoning over semantic and geometric evidence in an explicit 3D belief enables human-like interactive object search that outperforms either modality alone.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.01081",

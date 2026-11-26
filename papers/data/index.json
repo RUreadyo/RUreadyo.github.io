@@ -1,9 +1,17 @@
 [
  {
+  "date": "2026-11-25",
+  "top": 12,
+  "roundup": 30,
+  "papers": 200,
+  "trending": 10,
+  "ranker": "keywords"
+ },
+ {
   "date": "2026-11-24",
   "top": 8,
   "roundup": 30,
-  "papers": 198,
+  "papers": 224,
   "trending": 10,
   "ranker": "Claude"
  },

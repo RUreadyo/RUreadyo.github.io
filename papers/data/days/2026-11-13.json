@@ -208,7 +208,7 @@
    "summary": "PEAR scales robot-use RL in sim; skills generalize beyond training tasks and transfer to real robots, approaching proprietary robot-use agents.",
    "why": "Interesting alternate VLA paradigm, though coarse control.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 3
   },
   {
    "id": "2611.18298",
@@ -868,7 +868,7 @@
    "url": "https://arxiv.org/abs/2611.16748",
    "pdf": "https://arxiv.org/pdf/2611.16748",
    "hf": "https://huggingface.co/papers/2611.16748",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.15844",

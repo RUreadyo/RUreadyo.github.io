@@ -455,7 +455,7 @@
    "summary": "STVLA evaluates on LIBERO, LIBERO-Mem, MIKASA-Robo and SimplerEnv.",
    "why": "Memory-augmented VLA, incremental.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.16918",

@@ -269,7 +269,7 @@
    "summary": "The paper argues generalist agents can control manipulators more reliably than specialist policies. AMP1 provides no motor skills yet reaches 85.6% zero-shot on RoboLab-120 vs 49.2% for the best VLA, succeeds on 104 of 108 real trials (15-20x fewer failures), and with cross-episode memory cuts RoboDojo bimanual failures 4.6x.",
    "why": "Provocative challenge to the VLA paradigm; worth knowing even if far from dexterous control.",
    "rated_by": "claude",
-   "citations": 1
+   "citations": 2
   },
   {
    "id": "2611.09036",
@@ -879,7 +879,7 @@
    "kw_score": 8,
    "tldr": "Robots increasingly plan by searching against a reward model learned from human preferences.",
    "summary": "Robots increasingly plan by searching against a reward model learned from human preferences. On HalfCheetah and Hopper with crowd-sourced labels, and on Meta-World drawer-open and plate-slide with synthetic and blind human labels, harder MPPI search cuts true return by up to 76% while held-out label accuracy stays at 0.75-0.97; with human labels the drawer opens in 0 of 20 runs, against 10 of 10 for the cloned policy the planner starts from.",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.09376",
@@ -905,7 +905,7 @@
    "kw_score": 8,
    "tldr": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows.",
    "summary": "A language model can repair a robot policy's lexical instruction grounding by editing just 65 token-embedding rows. Three independent sessions on $π_{0.5}$ all improve success on 765 held-out paraphrases; the best raises success from 86.3\\% to 92.0\\% (48 repairs, four regressions; exact paired $p=1.31\\times10^{-10}$).",
-   "citations": 7
+   "citations": 9
   },
   {
    "id": "2611.09340",
@@ -1365,7 +1365,7 @@
    "url": "https://arxiv.org/abs/2611.07854",
    "pdf": "https://arxiv.org/pdf/2611.07854",
    "hf": "https://huggingface.co/papers/2611.07854",
-   "citations": 0
+   "citations": 1
   },
   {
    "id": "2611.00883",
