@@ -219,7 +219,7 @@ function shortVenue(name) {
   return name.length > 40 ? name.slice(0, 38) + "…" : name;
 }
 const IMPACT_TOPICS = {ML: "ML foundations", GenModel: "Generative", IL: "Imitation", Dex: "Dexterous", Tactile: "Tactile", RL: "RL", RLGen: "RL × Gen", FM: "VLA / FM", WM: "World models", Video: "Video gen", Control: "Control"};
-const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topic: "all", q: "", venue: "all", showAll: false,
+const state = { impactTopic: "ML", impactSort: "citations", impact: null, view: "daily", index: [], cur: 0, day: null, best: null, topics: [], topicAny: false, q: "", venue: "all", showAll: false,
   search: {q: "", confs: [], arxiv: false, from: "", to: "", sort: "relevance"}, allPapers: null, sres: null,
   conf: {}, confYear: "all", confN: 25, bestYear: null, yearN: 40 };
 const ARCHIVE = ["CoRL", "RSS", "ICRA", "IROS", "RA-L", "ICLR", "ICML", "NeurIPS", "CVPR", "ICCV", "ECCV", "SIGGRAPH", "SIGGRAPH Asia"];
@@ -342,7 +342,10 @@ function fmtDate(d, long) {
 }
 
 function matches(p) {
-  if (state.topic !== "all" && !(p.topics || []).includes(state.topic)) return false;
+  if (state.topics.length) {  // several topics: paper must have all of them (or any, if toggled)
+    const has = t => (p.topics || []).includes(t);
+    if (!(state.topicAny ? state.topics.some(has) : state.topics.every(has))) return false;
+  }
   if (!venueOk(p.venue)) return false;
   if (state.followedOnly && !(p.tracked_authors || []).length) return false;
   if (!state.q) return true;
@@ -367,12 +370,18 @@ function bindVenue(root, after) {
 
 function filtersUI(withTopics = true, withVenue = true) {
   const chips = withTopics ? [["all", "All topics"], ...Object.entries(TOPICS)].map(([k, v]) =>
-    `<button class="chip ${state.topic === k ? "on" : ""}" data-k="${k}">${k !== "all" ? `<span class="dot" style="--c:${tc(k)}"></span>` : ""}${v}</button>`).join("") : "";
+    `<button class="chip ${(k === "all" ? !state.topics.length : state.topics.includes(k)) ? "on" : ""}" data-k="${k}">${k !== "all" ? `<span class="dot" style="--c:${tc(k)}"></span>` : ""}${v}</button>`).join("") +
+    (state.topics.length > 1 ? `<button class="chip" data-tm="1" title="With several topics selected: show papers that have all of them, or any of them">${state.topicAny ? "Match: any of these" : "Match: all of these"}</button>` : "") : "";
   $("filters").innerHTML = `<div class="filters" style="margin:0">` + chips +
     (withTopics ? `<button class="chip ${state.followedOnly ? "on" : ""}" data-fo="1" title="Only papers with an author I follow (list at the bottom of the page)">★ Followed authors</button>` : "") +
     `<input class="search" id="q" type="search" placeholder="Filter titles, authors, abstracts…" value="${esc(state.q)}">` +
     `</div>` + (withTopics && withVenue ? `<div class="filters" style="margin:10px 0 0">${venueChips()}</div>` : "");
-  $("filters").querySelectorAll("[data-k]").forEach(b => b.onclick = () => { state.topic = b.dataset.k; render(); });
+  $("filters").querySelectorAll("[data-k]").forEach(b => b.onclick = () => {
+    const k = b.dataset.k;
+    state.topics = k === "all" ? [] : state.topics.includes(k) ? state.topics.filter(x => x !== k) : [...state.topics, k];
+    render();
+  });
+  const tm = $("filters").querySelector("[data-tm]"); if (tm) tm.onclick = () => { state.topicAny = !state.topicAny; render(); };
   bindVenue($("filters"), render);
   const fo = $("filters").querySelector("[data-fo]"); if (fo) fo.onclick = () => { state.followedOnly = !state.followedOnly; render(); };
   const q = $("q"); q.oninput = () => { state.q = q.value.trim().toLowerCase(); renderContent(); };
@@ -420,7 +429,7 @@ function renderContent() {
   if (state.view === "daily") {
     const d = state.day; if (!d) return;
     const top = d.top_picks.filter(matches), rest = d.roundup.filter(matches);
-    const ml = state.venue !== "all" || state.topic !== "all" ? [] : (d.trending_ml || []).filter(p => !state.q || (p.title + p.summary).toLowerCase().includes(state.q));
+    const ml = state.venue !== "all" || state.topics.length ? [] : (d.trending_ml || []).filter(p => !state.q || (p.title + p.summary).toLowerCase().includes(state.q));
     const shown = state.showAll ? rest : rest.slice(0, 12);
     const s = d.stats;
     c.innerHTML = `
