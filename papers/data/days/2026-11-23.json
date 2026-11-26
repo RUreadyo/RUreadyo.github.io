@@ -1,13 +1,13 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-25T22:08:15+00:00",
+ "generated_at": "2026-11-26T14:10:56+00:00",
  "ranker": "Claude",
- "overview": "NoveltyGate finds that input novelty, not approximation error, decides which pi0.5 tokens need exact compute, an insightful error-reliance gap for fast VLA inference. ProMix makes VLA data-mixture optimization cheap via a small proxy, and ViDiHand2 improves metric hand reconstruction from video for human-to-robot dexterous data. WAVE's frozen-skill warping is a neat interface idea for multi-object RL.",
+ "overview": "A light day. DRIFT is the pick: it shows one-phase visual sim-to-real RL with frozen pretrained encoders beats teacher-student distillation, especially out of distribution. Hi3R-VLA is a strong 3D VLA that also reports on dexterous benchmarks, and the pi0 continual-learning study warns that near-zero forgetting can hide OOD collapse.",
  "stats": {
   "papers": 219,
   "cs_ro": 115,
   "relevant": 154,
-  "rated": 23
+  "rated": 27
  },
  "top_picks": [
   {
@@ -232,6 +232,43 @@
    "tldr": "Native LAM turns a pretrained video diffusion transformer into both inverse and forward dynamics, extracting compact latent actions via dynamics registers.",
    "summary": "Latent action models train IDM/FDM from scratch, trading reconstruction against latent capacity. Native LAM uses one pretrained video DiT as both, bridged only by learnable dynamics registers, trained on counterfactual pairs differing only in motion, so registers distill compact latent actions. They also propose a pretraining paradigm using these latents for action-free video.",
    "why": "Latent actions from video world models are a promising route to learning from human/egocentric video.",
+   "rated_by": "claude",
+   "citations": 0
+  },
+  {
+   "id": "2611.31588",
+   "title": "One Phase Is Enough: Sim-to-Real Transfer with Direct Visual Reinforcement Learning",
+   "authors": [
+    "John Marangola",
+    "Antonia Bronars",
+    "Younghyo Park",
+    "Stephen Andrews",
+    "Kushal Kedia",
+    "Pulkit Agrawal"
+   ],
+   "abstract": "Sim-to-real reinforcement learning (RL) has enabled impressive robotic behaviors, yet deploying policies directly from vision remains challenging. A common approach first trains a teacher policy with RL using privileged state observations, then distills its behavior into a vision-based student via imitation. However, the resulting student can substantially underperform its teacher. Directly training visual policies with RL offers a promising alternative, but learning task-relevant visual representations from scratch can be sample-inefficient, making one-phase visual RL intractable. We propose DRIFT, a simple recipe for efficient one-phase visual RL using image observations available at test time. Our key insight is to use frozen, pretrained foundation vision encoders, allowing RL to focus on learning control from existing visual representations. Freezing the encoder avoids costly backpropagation through the vision backbone, while its pretrained representations enable real-world transfer from fast, rasterized simulation rendering. Under matched architectures, observations, and compute budgets, DRIFT outperforms two-phase distillation and achieves a 58.8% relative improvement in average real-world success rate across three manipulation tasks. Controlled simulation evaluations demonstrate that DRIFT's relative advantage grows from roughly 9% in-distribution to over 61% under out-of-distribution shifts, suggesting that stronger generalization contributes to superior real-world transfer. Project website: https://jmarangola.github.io/one-phase-visual-rl/",
+   "url": "https://arxiv.org/abs/2611.31588",
+   "pdf": "https://arxiv.org/pdf/2611.31588",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "RL",
+    "Control",
+    "GenModel"
+   ],
+   "tracked_authors": [
+    "Pulkit Agrawal"
+   ],
+   "kw_score": 23,
+   "relevance": 7,
+   "quality": 7,
+   "tldr": "DRIFT trains vision-based sim-to-real RL policies in one phase using frozen pretrained vision encoders instead of teacher-student distillation.",
+   "summary": "Teacher-student distillation for visual sim-to-real often leaves the student well below the teacher. DRIFT freezes a pretrained foundation vision encoder so RL only learns control, avoiding backprop through the backbone and enabling transfer from fast rasterized rendering. It yields a 58.8% relative real-world success improvement over two-phase distillation on three tasks, with the gap growing to 61% under OOD shifts.",
+   "why": "A simple recipe me could use to skip teacher-student distillation in sim-to-real manipulation, including dexterous settings.",
    "rated_by": "claude",
    "citations": 0
   },
@@ -611,6 +648,36 @@
    "citations": 0
   },
   {
+   "id": "2611.31535",
+   "title": "Hi3R-VLA: Grounding Semantics and Actions in 3D",
+   "authors": [
+    "Shizhe Chen",
+    "Paul Pacaud",
+    "Cordelia Schmid"
+   ],
+   "abstract": "While recent vision-language-action (VLA) models increasingly incorporate 3D geometry, how to effectively exploit it for precise and generalizable action prediction remains a central challenge. We introduce Hi3R-VLA, a 3D policy that grounds heterogeneous modalities - vision, language, and action - in explicit 3D geometry for robotic manipulation. Our model integrates spatially-aligned visual features and language conditioning into point cloud representations, enriching scene geometry with fine-grained, task-relevant semantics. It then anchors low-level control commands in the same 3D coordinate frame and uses 3D-RoPE enhanced action-to-point attention over coarse-to-fine point features to model geometric relationships between action targets and observed points. Our analysis demonstrates the importance of semantic fusion within 3D and spatial alignment between observations and actions. With fewer than 250M trainable parameters, Hi3R-VLA achieves state-of-the-art performance on RoboCasa, RLBench, RoboTwin2, DexJoCo and DexSuite across diverse manipulation tasks and embodiments, from single-arm and dual-arm grippers to dexterous hands. Real-robot evaluations further demonstrate its effectiveness in the physical world. The model, code and dataset are publicly released at https://cshizhe.github.io/projects/hi3r_vla.html.",
+   "url": "https://arxiv.org/abs/2611.31535",
+   "pdf": "https://arxiv.org/pdf/2611.31535",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.CV"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM",
+    "Dex"
+   ],
+   "kw_score": 21,
+   "relevance": 5,
+   "quality": 6,
+   "tldr": "Hi3R-VLA grounds vision, language and actions in a shared 3D point-cloud frame with 3D-RoPE action-to-point attention.",
+   "summary": "VLAs increasingly use 3D, but how best to exploit geometry is unclear. Hi3R-VLA fuses aligned visual and language features into point clouds and anchors actions in the same frame using coarse-to-fine 3D-RoPE attention. With under 250M trainable parameters it reports SOTA on RoboCasa, RLBench, RoboTwin2, DexJoCo and DexSuite.",
+   "why": "Solid 3D policy design that includes dexterous benchmarks, but mostly an architecture/benchmark paper.",
+   "rated_by": "claude",
+   "citations": 0
+  },
+  {
    "id": "2611.30659",
    "title": "ActField: Learning Action Effects as Continuous-Time Latent Dynamics",
    "authors": [
@@ -709,6 +776,39 @@
    "tldr": "JEPA-ICL predicts progress-aligned JEPA latent plans that guide actions and retrieve relevant demo stages for in-context manipulation.",
    "summary": "Demonstrations differ in embodiment and speed, making relevant guidance hard to locate. JEPA-ICL predicts ordered future JEPA states to subtask completion, using them to guide actions and align demo stages as context. It reaches 80.0% seen-task success on Imitator Game, 12 points above Zero-WAM.",
    "why": "In-context imitation with predictive latents; moderate relevance.",
+   "rated_by": "claude",
+   "citations": 0
+  },
+  {
+   "id": "2611.31511",
+   "title": "Near-Zero Forgetting Is Not Enough: Out-of-Distribution Robustness in Continual Learning of Pretrained VLAs",
+   "authors": [
+    "Adrià Ruiz",
+    "Bartłomiej Twardowski",
+    "Tinne Tuytelaars",
+    "Sergi Masip"
+   ],
+   "abstract": "Recent work shows that pretrained Vision-Language-Action (VLA) models exhibit near-zero forgetting in specific continual learning settings with experience replay. However, robustness to domain shift of learned tasks remains unexplored. In this work, we study the robustness of Pi0 fine-tuned with experience replay under out-of-distribution (OOD) data using the LIBERO and LIBERO-Plus benchmarks. While the in-domain (ID) setup achieves near-zero catastrophic forgetting, OOD performance on previous tasks quickly collapses. Specifically, we show that during the continual learning process, the OOD capabilities of the model degrade, following a shared representational pattern across domain shifts, which is also visible behaviorally in the two simpler suites. Representational analysis shows that drift concentrates in the multimodal and action features. Linear probes indicate that OOD features still retain task-relevant information, but appear unreadable, consistent with representation misalignment. These findings suggest that even when ID stability remains intact, severe OOD forgetting can still occur, accompanied by representational drift during continual learning.",
+   "url": "https://arxiv.org/abs/2611.31511",
+   "pdf": "https://arxiv.org/pdf/2611.31511",
+   "project": "https://adrrp.github.io/vla-ood-robustness",
+   "primary": "cs.LG",
+   "categories": [
+    "cs.LG",
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM",
+    "Control"
+   ],
+   "kw_score": 18,
+   "relevance": 4,
+   "quality": 5,
+   "tldr": "Shows pi0 continual learning with replay has near-zero in-domain forgetting but collapses on OOD variants of earlier tasks.",
+   "summary": "On LIBERO and LIBERO-Plus, pi0 fine-tuned with experience replay retains in-domain performance but OOD performance on old tasks degrades quickly. Representational drift concentrates in multimodal and action features; linear probes show information remains but is misaligned. Warns that ID stability masks OOD forgetting.",
+   "why": "A useful cautionary analysis if me fine-tunes VLAs sequentially, but not core.",
+   "venue": "CoRL 2026 Workshop",
    "rated_by": "claude",
    "citations": 0
   },
@@ -822,63 +922,36 @@
    "citations": 0
   },
   {
-   "id": "2611.31588",
-   "title": "One Phase Is Enough: Sim-to-Real Transfer with Direct Visual Reinforcement Learning",
+   "id": "2611.31452",
+   "title": "Ground, Guide, Act: Improving VLA Spatial Generalization with Multimodal Foundation Models",
    "authors": [
-    "John Marangola",
-    "Antonia Bronars",
-    "Younghyo Park",
-    "Stephen Andrews",
-    "Kushal Kedia",
-    "Pulkit Agrawal"
+    "Guangting Zheng",
+    "Shaoxuan Wang",
+    "Yu Yuan",
+    "Zhipeng Tang",
+    "Jiajun Deng",
+    "Yanyong Zhang"
    ],
-   "abstract": "Sim-to-real reinforcement learning (RL) has enabled impressive robotic behaviors, yet deploying policies directly from vision remains challenging. A common approach first trains a teacher policy with RL using privileged state observations, then distills its behavior into a vision-based student via imitation. However, the resulting student can substantially underperform its teacher. Directly training visual policies with RL offers a promising alternative, but learning task-relevant visual representations from scratch can be sample-inefficient, making one-phase visual RL intractable. We propose DRIFT, a simple recipe for efficient one-phase visual RL using image observations available at test time. Our key insight is to use frozen, pretrained foundation vision encoders, allowing RL to focus on learning control from existing visual representations. Freezing the encoder avoids costly backpropagation through the vision backbone, while its pretrained representations enable real-world transfer from fast, rasterized simulation rendering. Under matched architectures, observations, and compute budgets, DRIFT outperforms two-phase distillation and achieves a 58.8% relative improvement in average real-world success rate across three manipulation tasks. Controlled simulation evaluations demonstrate that DRIFT's relative advantage grows from roughly 9% in-distribution to over 61% under out-of-distribution shifts, suggesting that stronger generalization contributes to superior real-world transfer. Project website: https://jmarangola.github.io/one-phase-visual-rl/",
-   "url": "https://arxiv.org/abs/2611.31588",
-   "pdf": "https://arxiv.org/pdf/2611.31588",
-   "primary": "cs.LG",
+   "abstract": "Vision-Language-Action (VLA) models effectively learn action policies from robot demonstrations, but struggle to generalize to changes in object positions and task goals. General multimodal foundation models (MFMs) offer complementary scene understanding and spatial reasoning, but remain slow and unreliable for direct fine-grained control. To understand how MFMs can improve VLA spatial generalization, we conduct a systematic capability analysis across multiple VLA architectures using atomic-stage interventions, revealing that many failures stem from poor target grounding and global spatial routing, while local manipulation skills remain largely usable. Based on these findings, we propose MFM-VLA, a selective collaboration framework in which an MFM provides target grounding and spatial guidance, controllers execute free-space motion, and the VLA retains control over fine-grained manipulation. We fine-tune the VLA with action-chunk-level dense geometric captions and perturbed-state recovery data to improve local guidance following and recovery from unfamiliar handoff states. A development-calibrated capability router selects between direct VLA execution and MFM-assisted execution to avoid unnecessary intervention. Across LIBERO-PRO, ALOHA-Sim-PRO, RoboCasa365, and real-world chemistry tasks, MFM-VLA improves success rates by 14.9, 74.0, 3.6, and 30.9 percentage points, respectively, over the corresponding base VLA. The project page is available at https://tom-zgt.github.io/MFM-VLA",
+   "url": "https://arxiv.org/abs/2611.31452",
+   "pdf": "https://arxiv.org/pdf/2611.31452",
+   "primary": "cs.CV",
    "categories": [
-    "cs.LG",
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL",
-    "Control",
-    "GenModel"
-   ],
-   "tracked_authors": [
-    "Pulkit Agrawal"
-   ],
-   "kw_score": 23,
-   "tldr": "We propose DRIFT, a simple recipe for efficient one-phase visual RL using image observations available at test time.",
-   "summary": "We propose DRIFT, a simple recipe for efficient one-phase visual RL using image observations available at test time. Under matched architectures, observations, and compute budgets, DRIFT outperforms two-phase distillation and achieves a 58.8% relative improvement in average real-world success rate across three manipulation tasks.",
-   "citations": 0
-  },
-  {
-   "id": "2611.31535",
-   "title": "Hi3R-VLA: Grounding Semantics and Actions in 3D",
-   "authors": [
-    "Shizhe Chen",
-    "Paul Pacaud",
-    "Cordelia Schmid"
-   ],
-   "abstract": "While recent vision-language-action (VLA) models increasingly incorporate 3D geometry, how to effectively exploit it for precise and generalizable action prediction remains a central challenge. We introduce Hi3R-VLA, a 3D policy that grounds heterogeneous modalities - vision, language, and action - in explicit 3D geometry for robotic manipulation. Our model integrates spatially-aligned visual features and language conditioning into point cloud representations, enriching scene geometry with fine-grained, task-relevant semantics. It then anchors low-level control commands in the same 3D coordinate frame and uses 3D-RoPE enhanced action-to-point attention over coarse-to-fine point features to model geometric relationships between action targets and observed points. Our analysis demonstrates the importance of semantic fusion within 3D and spatial alignment between observations and actions. With fewer than 250M trainable parameters, Hi3R-VLA achieves state-of-the-art performance on RoboCasa, RLBench, RoboTwin2, DexJoCo and DexSuite across diverse manipulation tasks and embodiments, from single-arm and dual-arm grippers to dexterous hands. Real-robot evaluations further demonstrate its effectiveness in the physical world. The model, code and dataset are publicly released at https://cshizhe.github.io/projects/hi3r_vla.html.",
-   "url": "https://arxiv.org/abs/2611.31535",
-   "pdf": "https://arxiv.org/pdf/2611.31535",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
     "cs.CV"
    ],
    "published": "2026-11-23",
    "topics": [
     "FM",
-    "Dex"
+    "IL",
+    "GenModel"
    ],
-   "kw_score": 21,
-   "tldr": "We introduce Hi3R-VLA, a 3D policy that grounds heterogeneous modalities - vision, language, and action - in explicit 3D geometry for robotic manipulation.",
-   "summary": "We introduce Hi3R-VLA, a 3D policy that grounds heterogeneous modalities - vision, language, and action - in explicit 3D geometry for robotic manipulation. With fewer than 250M trainable parameters, Hi3R-VLA achieves state-of-the-art performance on RoboCasa, RLBench, RoboTwin2, DexJoCo and DexSuite across diverse manipulation tasks and embodiments, from single-arm and dual-arm grippers to dexterous hands.",
-   "citations": 0
+   "kw_score": 17,
+   "relevance": 4,
+   "quality": 5,
+   "tldr": "MFM-VLA uses a multimodal foundation model for target grounding and spatial routing while the VLA handles fine local manipulation.",
+   "summary": "An intervention analysis shows VLA spatial-generalization failures mostly come from target grounding and global routing, not local skills. MFM-VLA delegates grounding to an MFM, free-space motion to controllers, and fine manipulation to a VLA fine-tuned with dense geometric captions and recovery data. Improves spatial generalization across VLA architectures.",
+   "why": "The failure-analysis is mildly useful context for VLA deployment; the system itself is modular engineering.",
+   "rated_by": "claude"
   },
   {
    "id": "2611.30264",
@@ -905,35 +978,6 @@
    "tldr": "In this paper, we present a skill-adaptive noise diffusion framework (SaND) which introduces a learnable, skill-conditioned noise schedule that modulates the diffusion process per action dimension, adapting the noising dynamics to each skill.",
    "summary": "In this paper, we present a skill-adaptive noise diffusion framework (SaND) which introduces a learnable, skill-conditioned noise schedule that modulates the diffusion process per action dimension, adapting the noising dynamics to each skill. Such a design fundamentally limits the achievable performance, particularly for contact-rich and dexterous manipulation tasks where different skills exhibit distinct couplings between action dimensions.",
    "venue": "NeurIPS 2026",
-   "citations": 0
-  },
-  {
-   "id": "2611.31511",
-   "title": "Near-Zero Forgetting Is Not Enough: Out-of-Distribution Robustness in Continual Learning of Pretrained VLAs",
-   "authors": [
-    "Adrià Ruiz",
-    "Bartłomiej Twardowski",
-    "Tinne Tuytelaars",
-    "Sergi Masip"
-   ],
-   "abstract": "Recent work shows that pretrained Vision-Language-Action (VLA) models exhibit near-zero forgetting in specific continual learning settings with experience replay. However, robustness to domain shift of learned tasks remains unexplored. In this work, we study the robustness of Pi0 fine-tuned with experience replay under out-of-distribution (OOD) data using the LIBERO and LIBERO-Plus benchmarks. While the in-domain (ID) setup achieves near-zero catastrophic forgetting, OOD performance on previous tasks quickly collapses. Specifically, we show that during the continual learning process, the OOD capabilities of the model degrade, following a shared representational pattern across domain shifts, which is also visible behaviorally in the two simpler suites. Representational analysis shows that drift concentrates in the multimodal and action features. Linear probes indicate that OOD features still retain task-relevant information, but appear unreadable, consistent with representation misalignment. These findings suggest that even when ID stability remains intact, severe OOD forgetting can still occur, accompanied by representational drift during continual learning.",
-   "url": "https://arxiv.org/abs/2611.31511",
-   "pdf": "https://arxiv.org/pdf/2611.31511",
-   "project": "https://adrrp.github.io/vla-ood-robustness",
-   "primary": "cs.LG",
-   "categories": [
-    "cs.LG",
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "FM",
-    "Control"
-   ],
-   "kw_score": 18,
-   "tldr": "In this work, we study the robustness of Pi0 fine-tuned with experience replay under out-of-distribution (OOD) data using the LIBERO and LIBERO-Plus benchmarks.",
-   "summary": "In this work, we study the robustness of Pi0 fine-tuned with experience replay under out-of-distribution (OOD) data using the LIBERO and LIBERO-Plus benchmarks. While the in-domain (ID) setup achieves near-zero catastrophic forgetting, OOD performance on previous tasks quickly collapses.",
-   "venue": "CoRL 2026 Workshop",
    "citations": 0
   },
   {

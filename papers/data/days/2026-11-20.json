@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-25T22:08:13+00:00",
+ "generated_at": "2026-11-26T14:10:56+00:00",
  "ranker": "Claude",
  "overview": "A day of world-model and VLA deployment papers. GenPA argues image generators can be policies without future prediction, Ego4Gen generates 4D geometry and flow as a world-action interface, and PEA probes for invisible actuation shifts before running a VLA. Geo-Force offers a formal theory of virtual touch from depth geometry for those thinking about tactile substitutes.",
  "stats": {

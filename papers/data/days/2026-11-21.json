@@ -1,6 +1,6 @@
 {
  "date": "2026-11-21",
- "generated_at": "2026-11-25T22:08:14+00:00",
+ "generated_at": "2026-11-26T14:10:56+00:00",
  "ranker": "Claude",
  "overview": "The top pick is the CFG error-activation paper, a rigorous Helmholtz-Hodge analysis of how guidance turns harmless score errors harmful, which bears directly on guided diffusion policies. ViewPACT shows proprioception acts as a shortcut and fixes viewpoint brittleness with privileged pose supervision, with real-robot gains. Most other papers are LLM/VLM RL or medical.",
  "stats": {
