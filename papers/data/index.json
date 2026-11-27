@@ -1,11 +1,11 @@
 [
  {
   "date": "2026-11-25",
-  "top": 12,
+  "top": 8,
   "roundup": 30,
   "papers": 200,
   "trending": 10,
-  "ranker": "keywords"
+  "ranker": "Claude"
  },
  {
   "date": "2026-11-24",
@@ -26,7 +26,7 @@
  {
   "date": "2026-11-22",
   "top": 5,
-  "roundup": 24,
+  "roundup": 25,
   "papers": 84,
   "trending": 0,
   "ranker": "Claude"

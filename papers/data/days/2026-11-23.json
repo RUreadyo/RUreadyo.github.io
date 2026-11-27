@@ -1,13 +1,13 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-26T22:07:06+00:00",
+ "generated_at": "2026-11-27T14:11:09+00:00",
  "ranker": "Claude",
- "overview": "A light day. DRIFT is the pick: it shows one-phase visual sim-to-real RL with frozen pretrained encoders beats teacher-student distillation, especially out of distribution. Hi3R-VLA is a strong 3D VLA that also reports on dexterous benchmarks, and the pi0 continual-learning study warns that near-zero forgetting can hide OOD collapse.",
+ "overview": "Agentic robotics dominates. Real2Worlds2Real has an agent build digital twins and cousins and run sim policy training end to end, and Robo-MOPD asks how to merge specialist tool-calling planners into one generalist. EmboEagle adds a learned gate so a flow-matching WAM calls its VLM supervisor only when needed. All three treat the low-level policy as a tool inside a bigger loop.",
  "stats": {
   "papers": 219,
   "cs_ro": 115,
-  "relevant": 154,
-  "rated": 27
+  "relevant": 161,
+  "rated": 30
  },
  "top_picks": [
   {
@@ -441,6 +441,41 @@
    "citations": 0
   },
   {
+   "id": "2611.30997",
+   "title": "Generalizing Agentic Robotics via Multi-Teacher On-Policy Distillation",
+   "authors": [
+    "Xinxin Liu",
+    "Anh Dao",
+    "Wenrui Bao",
+    "Rafid Ahmed",
+    "Bingxin Xu",
+    "Ming Li",
+    "Chen Chen",
+    "Yuzhang Shang"
+   ],
+   "abstract": "Building general-purpose robots is a central goal in robotics. Agentic robotics pursues this goal with planners that control robots through tool calls. However, existing methods either rely on proprietary models accessed through APIs, which incur high costs and latency, or post-train a planner with reinforcement learning (RL) in a single domain, requiring a separate specialist for each domain with incompatible tools. In large language model (LLM) post-training, multi-teacher on-policy distillation (MOPD) has been used to consolidate domain specialists into a single generalist. Yet whether MOPD can build a generalist planner for agentic robotics, how well it performs, and how it compares with other consolidation methods remain unexplored. In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist supervised fine-tuning (SFT), and multi-domain online RL. Experiments on LIBERO-PRO and RoboCasa365 show that a single 9B Robo-MOPD planner reaches 72.9% and 44.8% success (58.9% average), surpassing all consolidated baselines in average success and both 9B specialists on their respective benchmarks. Robo-MOPD excels on long-horizon tasks, outperforming multi-domain online RL by 13.0 percentage points on LIBERO-10.",
+   "url": "https://arxiv.org/abs/2611.30997",
+   "pdf": "https://arxiv.org/pdf/2611.30997",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic",
+    "RL",
+    "GenModel"
+   ],
+   "kw_score": 32,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "Systematically studies multi-teacher on-policy distillation for consolidating domain-specialist robot tool-calling planners into one generalist.",
+   "summary": "Agentic robot planners are either costly API models or per-domain RL specialists. Robo-MOPD trains one student on closed-loop sim rollouts under token-level supervision from frozen specialists and compares to weight merging, off-policy SFT and multi-domain RL on LIBERO and other suites.",
+   "why": "Useful recipe evidence for agentic planners; tangential to low-level policy learning.",
+   "rated_by": "claude",
+   "citations": 0
+  },
+  {
    "id": "2611.30209",
    "title": "RoboAda: Adapting Frozen Robot Policies at Test Time to Physics They Cannot See",
    "authors": [
@@ -478,6 +513,47 @@
    "why": "Test-time execution adaptation for chunked policies is practical for contact-rich deployment.",
    "rated_by": "claude",
    "citations": 0
+  },
+  {
+   "id": "2611.31098",
+   "title": "Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation",
+   "authors": [
+    "Jinzhong Gu",
+    "Jiakai Chen",
+    "Xinyi Cao",
+    "Yan Shen",
+    "Hangke Sui",
+    "Shutian Zheng",
+    "Xiang Xiao",
+    "Haoran Lu",
+    "Fan Xu",
+    "Lu Shi",
+    "Daochen Shi",
+    "Ruihua Zhang",
+    "Wei Zhan",
+    "Masayoshi Tomizuka",
+    "Ruihai Wu"
+   ],
+   "abstract": "Scaling robot manipulation learning remains challenging due to the high cost of collecting real-world interaction data. Real-to-Sim-to-Real (Real2Sim2Real) offers a promising route by enabling policy learning in simulation grounded in real-world observations, yet scaling this paradigm across diverse tasks and physical interactions remains difficult. We introduce Real2Worlds2Real, a self-improving agentic framework that integrates scalable simulation-world construction with policy development. Given limited visual observations and task descriptions, its tool-orchestration harness constructs faithful digital twins and expands them into diverse, physically executable digital cousins. The agent adaptively selects tools and revisits construction decisions, using visual and execution feedback to refine geometry and physical behavior. Building on these worlds, the agent orchestrates policy development by coordinating data generation, policy learning, and refinement based on task requirements and simulation rollout feedback. Across both stages, the agent distills validated procedures into reusable skills that guide subsequent tasks. Experiments demonstrate improved world fidelity and successful real-world policy transfer, with performance gains from increasing world diversity and interaction-data volume. Skill reuse further improves world-building efficiency and long-horizon task success.",
+   "url": "https://arxiv.org/abs/2611.31098",
+   "pdf": "https://arxiv.org/pdf/2611.31098",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic",
+    "Control",
+    "FM"
+   ],
+   "kw_score": 17,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "An LLM agent builds digital twins and cousins from few observations, then orchestrates sim data generation and policy training, self-improving over tasks.",
+   "summary": "Real2Sim2Real is hard to scale across tasks. Real2Worlds2Real's tool harness reconstructs and refines physically executable sim worlds using visual and execution feedback, then coordinates data generation, learning and refinement, distilling validated procedures into reusable skills.",
+   "why": "Agents automating sim data pipelines could cut my data collection cost.",
+   "rated_by": "claude"
   },
   {
    "id": "2611.31079",
@@ -611,6 +687,44 @@
    "why": "Better metric hand motion from egocentric video directly feeds human-to-robot dexterous data pipelines.",
    "rated_by": "claude",
    "citations": 0
+  },
+  {
+   "id": "2611.31173",
+   "title": "EmboEagle: An Efficient Agentic Embodied Framework for Long-horizon Robotic Manipulation",
+   "authors": [
+    "Fan Xu",
+    "Zhongtao Wang",
+    "Hao Wu",
+    "Yitong Zhu",
+    "Wenzhuo Ma",
+    "Long Li",
+    "Zhuohao Li",
+    "Zhisheng Chen",
+    "Rui Su",
+    "Kun Wang",
+    "Xian Wu",
+    "Wanli Ouyang"
+   ],
+   "abstract": "Long-horizon robotic manipulation demands reliable execution across interdependent stages, yet standalone World-Action Models (WAMs) suffer from compounding physical errors, while stateless Vision-Language Model (VLM) supervision incurs prohibitive chunkwise latency and lacks 3D spatial persistence. We present EmboEagle, a closed-loop agentic framework that unifies subtask-conditioned WAM control, latent-space adaptive supervision, and memory-guided geometric recovery. First, we adapt sequential WAMs via decoupled two-stage flow matching that preserves cross-stage visual history while calibrating truncated action supervision at subtask boundaries. Second, without an auxiliary vision encoder, we distill teacher intervention decisions into a lightweight routing gate driven solely by the WAM Action Expert's pre- and post-chunk latent transitions and subtask embeddings. Third, upon invocation, the VLM decouples diagnostic status from discrete routing actions and executes parameterized recovery primitives grounded in structured memory (initial references, active grasp bindings, and tool traces), followed by mandatory post-repair verification. Across RMBench and LIBERO-Mem, EmboEagle achieves 91.3\\% and 90.6\\% average success, surpassing the strongest baselines by 8.0 and 9.8 percentage points, while boosting real-world success over VoLoAgent under identical executor weights. Moreover, adaptive gating cuts VLM calls by 74.2\\% versus chunkwise monitoring (91.3\\% vs. 93.7\\% success).",
+   "url": "https://arxiv.org/abs/2611.31173",
+   "pdf": "https://arxiv.org/pdf/2611.31173",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic",
+    "GenModel",
+    "FM"
+   ],
+   "kw_score": 18,
+   "relevance": 6,
+   "quality": 5,
+   "tldr": "Agentic framework coupling a subtask-conditioned world action model with a learned VLM-intervention gate and memory-grounded recovery primitives.",
+   "summary": "Standalone WAMs accumulate errors on long-horizon tasks while per-chunk VLM supervision is slow. EmboEagle uses two-stage flow matching across subtasks, distills when to call the VLM into a gate on the action expert's latents, and invokes parameterized recovery grounded in structured memory.",
+   "why": "Shows a practical way to call a VLM only when needed on top of a flow-matching WAM; system-heavy.",
+   "rated_by": "claude"
   },
   {
    "id": "2611.30145",
@@ -1104,6 +1218,108 @@
    "citations": 0
   },
   {
+   "id": "2611.31694",
+   "title": "CATWAY: Cost-sensitive agentic three-way robot decisions with calibrated language-model confidence",
+   "authors": [
+    "Erik Derner"
+   ],
+   "abstract": "A language-model robot agent must decide whether to execute, question or refuse an instruction, and an unsafe execution costs far more than an unneeded question. No prior robot gate derives all its thresholds from error costs or acts on calibrated probabilities, and none was fitted in one domain and evaluated unchanged in another. We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step. Its probabilities fuse a ten-sample vote with graded scores of ambiguity, infeasibility and risk by logistic regression. Fitted on household instructions and frozen, CATWAY was tested on text-level decisions of three small models in-domain, in two new robot domains and on the external TRUST-NAV benchmark. At eleven generations per decision against one, it was significantly cheaper than a direct prompt, a cost-aware prompt and an unguarded agent in all 18 household comparisons (mean loss per item 0.28 against 0.57-0.83), in 9 of 18 in the new domains and in 10 of 18 on TRUST-NAV (Holm per set), and never significantly costlier. It executed none of the 142 unsafe test instructions. On a unanimous vote, the minimum-expected-loss rule reduces calibration to one loss-derived threshold, so for two of six model configurations a gate on the vote alone never executed a clear instruction, costing 0.49 per item on TRUST-NAV against CATWAY's 0.13 and 0.09; the fused estimate avoided this on every set.",
+   "url": "https://arxiv.org/abs/2611.31694",
+   "pdf": "https://arxiv.org/pdf/2611.31694",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI",
+    "cs.CL",
+    "cs.LG"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic"
+   ],
+   "kw_score": 12,
+   "tldr": "We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step.",
+   "summary": "We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step."
+  },
+  {
+   "id": "2611.30989",
+   "title": "WorldLeague: Benchmarking Physical Agency",
+   "authors": [
+    "Xinyang Zhou",
+    "Qi Li",
+    "Xinchao Wang"
+   ],
+   "abstract": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in \\textbf{WorldSeek}, rearrange objects in \\textbf{WorldShape}, and adapt to changes in \\textbf{WorldShift}. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's \\emph{Physical Agency Profile}. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
+   "url": "https://arxiv.org/abs/2611.30989",
+   "pdf": "https://arxiv.org/pdf/2611.30989",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "FM",
+    "Agentic"
+   ],
+   "kw_score": 12,
+   "tldr": "We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory.",
+   "summary": "We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory. What range of physical goals can today's AI systems achieve autonomously?"
+  },
+  {
+   "id": "2611.30179",
+   "title": "Trustworthy agentic lunar robotics: safety-constrained contingent planning with a foundation-model planner",
+   "authors": [
+    "Bingqi Huang",
+    "Bingchuan Wei",
+    "Yingkai Cai",
+    "Zhaokui Wang"
+   ],
+   "abstract": "Sustained lunar-base operations require robots that restore equipment and deliver cargo under conditions unforeseen before deployment. Flown space autonomy executes pre-validated procedures and enters a safe hold outside their scope, whereas foundation models synthesize plans on site that cannot be verified before execution. We formulate these operations as safety-constrained contingent planning with irreversible actions, erroneous records, three-valued physical evidence, and costly, deadline-constrained sensing. We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition. Under sound measurements, no irreversible action executes on a false precondition for any planner or record, the sensing cost before an irreversible action is bounded below for every sound knowledge-based policy, and execution with a complete planner ends in a verified goal or a certified hold. AKR executed no hazardous action in 21,000 Monte Carlo trials with sound observations or in 58 full-stack runs; the FF-Replan acting rule executed one in 7% of those trials. The median AKR run took 1.10 times the fastest run on the same mission, against 1.50 under the K-replanner acting rule. AKR completed 20 of 21 contingency and sequential-fault runs with an unchanged task model; the original PLEXIL and EUROPA$\\rightarrow$PLEXIL procedures completed none.",
+   "url": "https://arxiv.org/abs/2611.30179",
+   "pdf": "https://arxiv.org/pdf/2611.30179",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic"
+   ],
+   "kw_score": 12,
+   "tldr": "We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition.",
+   "summary": "We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition. AKR executed no hazardous action in 21,000 Monte Carlo trials with sound observations or in 58 full-stack runs; the FF-Replan acting rule executed one in 7% of those trials."
+  },
+  {
+   "id": "2611.29912",
+   "title": "SuperNav-1.5: Structured Spatial Memory For Agentic Navigation Systems",
+   "authors": [
+    "Jiarui Guo",
+    "Jinkai Zhang",
+    "Yuanhong Yu",
+    "Yongchen Zai",
+    "Futang Zhu",
+    "Ruizhen Hu",
+    "Sida Peng",
+    "Xiaowei Zhou"
+   ],
+   "abstract": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals. Recent methods commonly represent a scene using scene graphs or image--text records. However, dense scene-graph representations impose substantial reasoning and context overhead on multimodal large language models, while image--text records cannot be directly converted into executable geometric routes. To address these limitations, we propose SuperNav-1.5, an agentic navigation system equipped with a structured spatial memory constructed by the agent. The memory consists of an area-segmented occupancy map annotated with agent-maintained, map-grounded memory nodes. This map guides the agent toward unvisited areas and provides executable routes to known locations. For multi-session navigation, we introduce agent-guided relocalization, whereby the agent infers an area prior from current observations and stored memory records to constrain geometric matching and localize the robot within the stored map. Together, these designs enable efficient navigation across session and successive object goals. Experiments show that our method outperforms baselines on single-object, multi-object, and demand-driven navigation benchmarks, with particularly strong gains in path efficiency. Multi-session evaluation demonstrates that the constructed memory can be reused, while deployment on a real quadruped robot further shows the system's applicability. Project Page: https://zju3dv.github.io/SuperNav-1.5/",
+   "url": "https://arxiv.org/abs/2611.29912",
+   "pdf": "https://arxiv.org/pdf/2611.29912",
+   "project": "https://zju3dv.github.io/SuperNav-1.5/",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO"
+   ],
+   "published": "2026-11-23",
+   "topics": [
+    "Agentic"
+   ],
+   "kw_score": 12,
+   "tldr": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals.",
+   "summary": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals. Experiments show that our method outperforms baselines on single-object, multi-object, and demand-driven navigation benchmarks, with particularly strong gains in path efficiency."
+  },
+  {
    "id": "2611.31561",
    "title": "Sampling at Scale: Distributed Multi-Agent Trajectory Optimization",
    "authors": [
@@ -1130,224 +1346,6 @@
    "kw_score": 11,
    "tldr": "Multi-agent trajectory optimization poses two coupled challenges: effectively exploring non-convex landscapes and scaling favorably to large teams of agents.",
    "summary": "Multi-agent trajectory optimization poses two coupled challenges: effectively exploring non-convex landscapes and scaling favorably to large teams of agents. Experiments on 2D and 3D tasks with up to 1024 agents demonstrate improved exploration and constraint satisfaction over state-of-the-art derivative-based distributed optimization, and superior scalability to existing distributed sampling methods.",
-   "citations": 0
-  },
-  {
-   "id": "2611.30511",
-   "title": "AXE: AlpaSim E2E Closed Loop Challenge Technical Report",
-   "authors": [
-    "Joonhee Lim",
-    "Seonmyeong Lee",
-    "Sihwan Hwang",
-    "Hanbin Jang",
-    "Hiwon Shin",
-    "Dogun Kim",
-    "Hyelin Jo",
-    "Hyeonjun Jeong",
-    "Yongjae Lee",
-    "Junseong Kwak",
-    "Junhyeok Park",
-    "Satyam Mishra",
-    "Juyeb Shin",
-    "Uisung Kim",
-    "Hyeonseo Kim",
-    "Saparkhan Kassymbekov",
-    "Hailemichael Molla Gashaw",
-    "Abi Rahman Syamil",
-    "Mingyu Kim",
-    "Hyeongjun Kim",
-    "Yeina Lee",
-    "Moogeun Park",
-    "Dongsuk Kum"
-   ],
-   "abstract": "This report presents a comprehensive pipeline for developing an end-to-end (E2E) autonomous driving model for the Physical AI AV Track. The framework consists of data curation, HD map auto-labelling, data-driven imitation learning, and simulator-based reinforcement learning. To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving. Trained on NVIDIA NuRec and the NVIDIA PAI-AV dataset, our method scores a fixed vocabulary of trajectory candidates for collision, drivable-area compliance, and progress learned from simulated rollouts, and selects the best candidate that passes the filter. This design highlights the effectiveness of combining E2E planning with perception-based trajectory filtering for safe and reliable closed-loop autonomous driving.",
-   "url": "https://arxiv.org/abs/2611.30511",
-   "pdf": "https://arxiv.org/pdf/2611.30511",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "cs.AI"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "IL",
-    "RL"
-   ],
-   "kw_score": 11,
-   "tldr": "To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving.",
-   "summary": "To ensure safety in the closed-loop setting, we introduce a selection-based E2E planning approach that leverages object detection and BEV segmentation to filter out trajectory candidates likely to cause collisions or off-road driving.",
-   "venue": "NeurIPS 2026 Workshop",
-   "citations": 0
-  },
-  {
-   "id": "2611.30449",
-   "title": "CHAMP: Coordinated Humanoid Loco-Manipulation with Whole-Body Motion Priors",
-   "authors": [
-    "Lijun Han",
-    "Muyuan Ma",
-    "Zichen Wang",
-    "Siyuan Liu",
-    "Yuxi Liu",
-    "Yutong Wang",
-    "Bohao Zhang",
-    "Heng Zhou",
-    "Wei Sui"
-   ],
-   "abstract": "Coordinating locomotion and dexterous manipulation is fundamental to humanoid robots operating in human environments. A key challenge is learning motion priors from diverse data and using them effectively for coordinated robot control. We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction. CHAMP pretrains a vision-language model to predict future body and hand motion from approximately 2,298 hours of heterogeneous human and robot data. A shared motion representation enables unified whole-body motion learning across embodiments from datasets with body annotations, hand annotations, or both. To ground these motion priors in robot control, we introduce a Coordination-oriented Action Expert (CAE) and train it on replay data generated using the target controller. Through sparse routing, CAE adaptively selects, transforms, and fuses features from multiple layers of the pretrained model to jointly generate body and hand actions. In experiments, CHAMP achieves overall success rates of 84.8% on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings. In particular, CHAMP achieves 70.0% success on the long-horizon popcorn-serving task, compared with 40.0% for the best-performing baseline.",
-   "url": "https://arxiv.org/abs/2611.30449",
-   "pdf": "https://arxiv.org/pdf/2611.30449",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "Dex",
-    "FM"
-   ],
-   "kw_score": 11,
-   "tldr": "We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction.",
-   "summary": "We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction. In experiments, CHAMP achieves overall success rates of 84.8% on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings.",
-   "citations": 0
-  },
-  {
-   "id": "2611.30133",
-   "title": "Value function based Reward shaping for safety in quadrupeds",
-   "authors": [
-    "Janani S K",
-    "Manan Tayal",
-    "Shishir N. Y Kolathaya"
-   ],
-   "abstract": "Reinforcement Learning (RL) has progressed from simple control tasks to complex real-world challenges with large state spaces. While RL excels in these tasks, training time remains a limitation. Reward shaping is a popular solution, but existing methods often rely on value functions, which face scalability issues. This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks. To evaluate the effectiveness of the proposed reward formulations, we conduct simulation experiments on the Unitree Go1 quadruped robot in Isaacgym. The policy was better than the existing baselines and reduced safety violations from 27% to 0.1% without almost any compromise on the performance.",
-   "url": "https://arxiv.org/abs/2611.30133",
-   "pdf": "https://arxiv.org/pdf/2611.30133",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO",
-    "eess.SY"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL"
-   ],
-   "kw_score": 11,
-   "tldr": "This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks.",
-   "summary": "This paper presents a novel safety-oriented reward-shaping framework inspired by barrier functions, offering simplicity and ease of implementation across various environments and tasks. The policy was better than the existing baselines and reduced safety violations from 27% to 0.1% without almost any compromise on the performance.",
-   "citations": 0
-  },
-  {
-   "id": "2611.31037",
-   "title": "SurgeCount: A Protocol-Guided Composition Harness for Bimanual Surgical Sponge Counting",
-   "authors": [
-    "Sung Eun Kim",
-    "Xiaoman Zhang",
-    "Xucheng Wang",
-    "Pranav Rajpurkar"
-   ],
-   "abstract": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol. Retained sponges cause preventable harm, and surgical teams count every sponge before closure to reduce that risk. The robot repeatedly isolates one deformable sponge from a tangled pile and places it in the next numbered counting-tray slot, requiring handling of occluded grasp threads while preserving step order. We train one subtask-conditioned policy on eleven short skills and learn when each skill ends. At each learned boundary, a stateful vision-language model selects the next skill from an operator-authored specification of step order, visual verification, and recovery. This creates temporal commitment to each subtask and enables failures to be recovered by recomposing existing skills rather than using a dedicated recovery policy. We evaluate five methods across 100 real-robot trials using 20 matched layouts. SurgeCount fills 47 of 60 ordered slots and completes 12 of 20 procedures, compared with 27 of 60 and 3 of 20 for the strongest of four end-to-end policies trained on the same data. Replacing the detailed protocol prompt with a minimal prompt reduces performance to 29 of 60 slots and 5 of 20 completed procedures. These results show that long-horizon performance depends not only on visuomotor capacity, but also on how learned skills are committed, verified, and composed. This tabletop proof of concept motivates further evaluation of protocol-guided robotic sponge counting in clinically representative settings.",
-   "url": "https://arxiv.org/abs/2611.31037",
-   "pdf": "https://arxiv.org/pdf/2611.31037",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "Dex",
-    "FM"
-   ],
-   "kw_score": 10,
-   "tldr": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol.",
-   "summary": "We present SurgeCount, a system for auditable robotic surgical sponge counting that composes learned skills under a written procedural protocol.",
-   "citations": 0
-  },
-  {
-   "id": "2611.30997",
-   "title": "Generalizing Agentic Robotics via Multi-Teacher On-Policy Distillation",
-   "authors": [
-    "Xinxin Liu",
-    "Anh Dao",
-    "Wenrui Bao",
-    "Rafid Ahmed",
-    "Bingxin Xu",
-    "Ming Li",
-    "Chen Chen",
-    "Yuzhang Shang"
-   ],
-   "abstract": "Building general-purpose robots is a central goal in robotics. Agentic robotics pursues this goal with planners that control robots through tool calls. However, existing methods either rely on proprietary models accessed through APIs, which incur high costs and latency, or post-train a planner with reinforcement learning (RL) in a single domain, requiring a separate specialist for each domain with incompatible tools. In large language model (LLM) post-training, multi-teacher on-policy distillation (MOPD) has been used to consolidate domain specialists into a single generalist. Yet whether MOPD can build a generalist planner for agentic robotics, how well it performs, and how it compares with other consolidation methods remain unexplored. In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist supervised fine-tuning (SFT), and multi-domain online RL. Experiments on LIBERO-PRO and RoboCasa365 show that a single 9B Robo-MOPD planner reaches 72.9% and 44.8% success (58.9% average), surpassing all consolidated baselines in average success and both 9B specialists on their respective benchmarks. Robo-MOPD excels on long-horizon tasks, outperforming multi-domain online RL by 13.0 percentage points on LIBERO-10.",
-   "url": "https://arxiv.org/abs/2611.30997",
-   "pdf": "https://arxiv.org/pdf/2611.30997",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL",
-    "GenModel",
-    "Agentic"
-   ],
-   "kw_score": 10,
-   "tldr": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist…",
-   "summary": "In this paper, we systematically study these questions: we introduce Robo-MOPD, which trains a single student on closed-loop rollouts in simulation under token-level supervision from matching frozen specialists, and compare it with weight merging, off-policy specialist supervised fine-tuning (SFT), and multi-domain online RL. Experiments on LIBERO-PRO and RoboCasa365 show that a single 9B Robo-MOPD planner reaches 72.9% and 44.8% success (58.9% average), surpassing all consolidated baselines in average success and both 9B specialists on their respective benchmarks.",
-   "citations": 0
-  },
-  {
-   "id": "2611.30072",
-   "title": "HERO: Hierarchical Region-Aware Reinforcement Learning for Autonomous Exploration",
-   "authors": [
-    "Xulin Xiao",
-    "Shengyi Liang",
-    "Mingjie Zhang",
-    "Chengkai Wu",
-    "Chen Chen",
-    "Zhigang Li",
-    "Jinni Zhou",
-    "Jun Ma",
-    "Boyu Zhou"
-   ],
-   "abstract": "Autonomous exploration is widely used to map unknown environments, yet maintaining both path efficiency and low online computation remains difficult as environment scale increases. Hierarchical planners reduce global search through coarse regional representations but often rely on handcrafted local viewpoint-selection rules. Graph-based reinforcement learning can improve local decisions, but its inference cost grows with the exploration graph and global direction is usually represented only implicitly. To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform. To reduce the growing inference cost of graph-based policies, HERO restricts learned target selection to reachable candidates within the current region while using region-level planning to provide long-horizon guidance. To avoid informative targets causing excessive deviation from this global direction, the proposed Dual-Branch Graph Policy balances Frontier Utility with guidance toward the next region, improving both local exploration and global progress. Experiments on unseen 2D maps show the lowest overall mean path length and target-decision cost among the evaluated methods. MARSIM simulations and deployments at three real-world sites further demonstrate the framework's applicability with LiDAR-based mapping and chassis dynamics.",
-   "url": "https://arxiv.org/abs/2611.30072",
-   "pdf": "https://arxiv.org/pdf/2611.30072",
-   "primary": "cs.RO",
-   "categories": [
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "topics": [
-    "RL",
-    "GenModel"
-   ],
-   "kw_score": 10,
-   "tldr": "To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform.",
-   "summary": "To address these limitations, we present HERO, a hierarchical framework that assigns distinct responsibilities to global planning and learned local decision-making, enabling each level to focus on the function it is best suited to perform. Graph-based reinforcement learning can improve local decisions, but its inference cost grows with the exploration graph and global direction is usually represented only implicitly.",
-   "citations": 0
-  },
-  {
-   "id": "2611.30004",
-   "title": "EnvTrap: Revealing the Environment-Only Attack Surface in Embodied AI via Consequence-Blind Action Execution",
-   "authors": [
-    "Zehao Liu",
-    "Huashuo Lei",
-    "Xi Lin",
-    "Haoang Li",
-    "Yuliang Chen",
-    "Huarui Zhang",
-    "Yifan Wang"
-   ],
-   "abstract": "As AI models evolve from text and vision to physical agents, embodied AI faces a fundamentally different attack surface. Prior attacks on embodied systems have used crafted instructions, adversarial visual inputs, and training-time policy modifications; we study environment-only object rearrangements with unchanged models and instructions. We reveal an attack surface in safety-critical spatial relations among existing objects. An adversary who rearranges objects, without modifying instructions or accessing models, can cause hazardous consequences. In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios. We demonstrate that environment-only perturbations raise hazardous-action rates to an average of 83.4% across the five evaluated action policies, with similar vulnerability patterns confirmed in world models. On a consequence-prediction task, model accuracy remains near chance, while human evaluators achieve high accuracy. We further propose a consequence-aware defense that reduces trap trigger rates by an average of 76.3 percentage points across action policies in simulation and by 62.9 percentage points pooled across physical backends. Together, these findings link environment-only attacks to a broader deficit in physical reasoning: embodied models recognize task-relevant objects yet fail to anticipate how spatial relations change the consequences of acting on them. EnvTrap makes this gap directly testable and turns hazardous layouts into training scenarios for safer embodied action. Our code and data are available at https://github.com/INKSIR/Envtrap.",
-   "url": "https://arxiv.org/abs/2611.30004",
-   "pdf": "https://arxiv.org/pdf/2611.30004",
-   "primary": "cs.CR",
-   "categories": [
-    "cs.CR",
-    "cs.RO"
-   ],
-   "published": "2026-11-23",
-   "kw_score": 10,
-   "tldr": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios.",
-   "summary": "In this work, we propose EnvTrap, a diagnostic pipeline that constructs paired safe, trap, and null-trap (benign but misleading) embodied scenarios. We demonstrate that environment-only perturbations raise hazardous-action rates to an average of 83.4% across the five evaluated action policies, with similar vulnerability patterns confirmed in world models.",
-   "venue": "NeurIPS 2026",
    "citations": 0
   }
  ],

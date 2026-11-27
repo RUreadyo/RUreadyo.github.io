@@ -1,13 +1,13 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-26T22:07:05+00:00",
+ "generated_at": "2026-11-27T14:11:09+00:00",
  "ranker": "Claude",
- "overview": "zeta_0 turns humanoid VLAs (GR00T, Psi_0) into world action models by foreseeing both visual features and joint trajectories, with solid real-world gains. The ES-vs-policy-gradient analysis gives a clean dimension-vs-horizon picture of gradient estimator cost. DriveOddsBench's rank-calibration test for world models is a methodology that could transfer to robot video models.",
+ "overview": "A quiet day with one paper: MAWAM extends world action models to several robots by imagining their futures jointly. It fits the ongoing trend of world action models as policy backbones, though multi-robot collaboration sits next to the reader's dexterity focus.",
  "stats": {
   "papers": 84,
   "cs_ro": 44,
-  "relevant": 66,
-  "rated": 20
+  "relevant": 67,
+  "rated": 21
  },
  "top_picks": [
   {
@@ -264,6 +264,44 @@
    "venue": "NeurIPS 2026",
    "rated_by": "claude",
    "citations": 0
+  },
+  {
+   "id": "2611.29501",
+   "title": "MAWAM: Joint Imagination for Collaborative Robot Manipulation with a Multi-Agent World Action Model",
+   "authors": [
+    "Rongze Tang",
+    "Chenyu Zhou",
+    "Jianjie Fang",
+    "Ziming Liu",
+    "Zhaolu Wang",
+    "Ziyou Wang",
+    "Xvyuan Liu",
+    "Wei Wu",
+    "Chen Gao",
+    "Yong Li",
+    "Zhibo Chen"
+   ],
+   "abstract": "World action models (WAMs) excel at robot manipulation by imagining future observations and decoding actions from them, yet remain confined to a single embodied agent. In practice, manipulation often requires multiple robots to collaborate across disjoint workspaces, coupled timing, and heterogeneous embodiments. Such coordination demands both spatiotemporal alignment of future interactions and awareness of individual embodiment and role identities, whereas existing decentralized per-robot policies, flat centralized models, and multi-robot VLAs fail to unite both. To bridge this gap, we present MAWAM, a multi-agent world action model that jointly predicts the future observations of multiple embodiments and decodes each agent's actions from them for collaborative manipulation. Through an agent-axis curriculum, MAWAM expands a single-agent WAM along an agent dimension to coordinate teams under shared weights. Within one unified causal sequence, joint self-attention spans all agents to spatiotemporally align their imagined futures, while hierarchical language, identity encodings, and embodiment masks bind each stream to its role, identity, and embodiment. We further formalize multi-agent-necessary manipulation along three axes (why, when, and who) and develop MA-Task Harness, a coding-agent pipeline where mutually constraining generators and evaluators co-evolve customizable simulation-data and evaluation packages. Using this pipeline, we build MA-Bench across all axes with seven tasks, pairing joint success rate with role and collaboration scores for fine-grained analysis. On MA-Bench, MAWAM reaches 82.7% mean joint success, 30.7% above the strongest baseline, and achieves real-time closed-loop collaboration on a real heterogeneous robot team.",
+   "url": "https://arxiv.org/abs/2611.29501",
+   "pdf": "https://arxiv.org/pdf/2611.29501",
+   "project": "https://embodiedcity.github.io/MAWAM/",
+   "primary": "cs.RO",
+   "categories": [
+    "cs.RO",
+    "cs.AI"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "WM",
+    "Agentic"
+   ],
+   "kw_score": 7,
+   "relevance": 6,
+   "quality": 6,
+   "tldr": "Extends a single-agent world action model to jointly imagine futures and decode actions for multiple collaborating robots.",
+   "summary": "Multi-robot manipulation needs spatiotemporally aligned plans and embodiment awareness, which per-robot policies and flat VLAs lack. MAWAM grows a single-agent WAM along an agent axis via curriculum, with joint self-attention across agents plus identity and embodiment encodings in one causal sequence.",
+   "why": "A neat extension of video-action world models, though multi-robot collaboration is adjacent to my core focus.",
+   "rated_by": "claude"
   },
   {
    "id": "2611.29277",
@@ -666,7 +704,7 @@
     "Tactile",
     "Agentic"
    ],
-   "kw_score": 24,
+   "kw_score": 29,
    "relevance": 4,
    "quality": 5,
    "tldr": "Contact Harness guides a VLM agent with optimized skills and compliant force control to perform zero-shot contact-rich insertion.",
@@ -702,7 +740,7 @@
     "FM",
     "Agentic"
    ],
-   "kw_score": 11,
+   "kw_score": 16,
    "relevance": 4,
    "quality": 5,
    "tldr": "Redirects VLA latent visual reasoning from predicting future frames to motion-oriented interaction latents for better generalization.",
