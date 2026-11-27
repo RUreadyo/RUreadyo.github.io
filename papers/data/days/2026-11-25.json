@@ -1,12 +1,12 @@
 {
  "date": "2026-11-25",
- "generated_at": "2026-11-27T14:11:09+00:00",
+ "generated_at": "2026-11-27T21:48:14+00:00",
  "ranker": "Claude",
  "overview": "A big day. Guidance as Variance Matching (Permenter, Jaakkola) explains CFG as restoring variance and predicts practical guidance scales in closed form. That is a must-read for the generative-theory side. On dexterity, DexEngine turns nine human HOI datasets into 578 h of physically executable arm-hand data, and DexLink chains retargeted pose templates with residual RL. Also worth a look: X-World (video prior + flow chunks + real-time chunking), iMFPO (MeanFlow policies with RL), and a 470k-rollout study of harness design for VLM-orchestrated VLAs.",
  "stats": {
-  "papers": 200,
+  "papers": 269,
   "cs_ro": 98,
-  "relevant": 148,
+  "relevant": 158,
   "rated": 28
  },
  "top_picks": [
@@ -147,7 +147,8 @@
    "tldr": "Large-scale study of harness design for VLM agents that call VLA/WAM skills, using 470,000 rollouts across eight benchmarks.",
    "summary": "Harness choices swing success by tens of points with identical models. Across six VLMs and 15 VLA/WAM checkpoints, seven controlled studies show effective harnesses must adapt to both the reasoning model's and the low-level policy's capabilities.",
    "why": "Rare rigorous empirical guidance for VLM-orchestrates-VLA systems.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.34741",
@@ -352,7 +353,8 @@
    "tldr": "Training-free MLLM agent that writes sparse ordered 6-DoF keypose sequences per call, interpolated by a motion planner, and learns rules from feedback.",
    "summary": "SOLVE notes DROID demos compress to a few keyposes, grounds keyposes via noisy depth queries and reflects on rollouts. It reaches 74.5% on RoboDojo and 84.5% on RoboLab at about $1.7 per episode.",
    "why": "A cheap, strong agentic baseline; less relevant to contact-rich dexterity.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.34675",
@@ -749,7 +751,8 @@
    "tldr": "Agentic framework that keeps execution knowledge across attempts as self-evolving programmatic policies plus measured action effects.",
    "summary": "Foundation-model robots forget what they learn when a task ends. SEEK retains programmatic procedures and records of earlier action effects, revising code when new conditions arise, so it improves across attempts with a frozen model.",
    "why": "Memory for agentic manipulation; modestly relevant.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.34280",
@@ -1112,7 +1115,8 @@
    ],
    "kw_score": 13,
    "tldr": "Building on this finding, we introduce CamAct, which incorporates this camera-motion supervision into VLA policies alongside robot demonstrations, extending the use of human videos for manipulation learning beyond object interactions.",
-   "summary": "Building on this finding, we introduce CamAct, which incorporates this camera-motion supervision into VLA policies alongside robot demonstrations, extending the use of human videos for manipulation learning beyond object interactions. We show that in-the-wild videos can improve robotic manipulation even when they contain no demonstrations of object manipulation."
+   "summary": "Building on this finding, we introduce CamAct, which incorporates this camera-motion supervision into VLA policies alongside robot demonstrations, extending the use of human videos for manipulation learning beyond object interactions. We show that in-the-wild videos can improve robotic manipulation even when they contain no demonstrations of object manipulation.",
+   "citations": 0
   },
   {
    "id": "2611.33739",
@@ -1142,7 +1146,8 @@
    ],
    "kw_score": 13,
    "tldr": "We present RegHarness, a two-level harness that governs both forms of persistence for the RATs agent team, without relying on a vision-language-action (VLA) policy or demonstrations.",
-   "summary": "We present RegHarness, a two-level harness that governs both forms of persistence for the RATs agent team, without relying on a vision-language-action (VLA) policy or demonstrations. Using a single low-cost model across all run-time roles, RegHarness achieves an 87.8% success rate (158/180) on paired LIBERO-PRO trials, compared with 39.4% for RATs, and a 72.0% success rate on MolmoSpaces trials."
+   "summary": "We present RegHarness, a two-level harness that governs both forms of persistence for the RATs agent team, without relying on a vision-language-action (VLA) policy or demonstrations. Using a single low-cost model across all run-time roles, RegHarness achieves an 87.8% success rate (158/180) on paired LIBERO-PRO trials, compared with 39.4% for RATs, and a 72.0% success rate on MolmoSpaces trials.",
+   "citations": 0
   },
   {
    "id": "2611.34569",
@@ -1176,7 +1181,8 @@
    ],
    "kw_score": 12,
    "tldr": "We present RIPPLE (Robust Interaction via Proprioceptive Policies on Large-deformation Elastic terrain), a simulation-to-real learning framework for humanoid control on such terrains.",
-   "summary": "We present RIPPLE (Robust Interaction via Proprioceptive Policies on Large-deformation Elastic terrain), a simulation-to-real learning framework for humanoid control on such terrains. In simulation, ElasticMembrane training holds standing success of at least 98.7% (mean over three seeds) on ElasticMembrane, IndependentSprings, and BouncyPlate under 0.3 m/s perturbations, whereas rigid-ground or contact-compliance training transfers poorly to the first two."
+   "summary": "We present RIPPLE (Robust Interaction via Proprioceptive Policies on Large-deformation Elastic terrain), a simulation-to-real learning framework for humanoid control on such terrains. In simulation, ElasticMembrane training holds standing success of at least 98.7% (mean over three seeds) on ElasticMembrane, IndependentSprings, and BouncyPlate under 0.3 m/s perturbations, whereas rigid-ground or contact-compliance training transfers poorly to the first two.",
+   "citations": 0
   },
   {
    "id": "2611.34560",
@@ -1206,7 +1212,8 @@
    ],
    "kw_score": 12,
    "tldr": "To this end, we introduce M$^{2}$AdaptVLA, a vision-language-action model that integrates visual and wrench memories with predictive test-time adaptation.",
-   "summary": "To this end, we introduce M$^{2}$AdaptVLA, a vision-language-action model that integrates visual and wrench memories with predictive test-time adaptation. Real-world experiments show that the TTT bank outperforms visual memory baselines on progress tracking, scene recall, and demonstration following."
+   "summary": "To this end, we introduce M$^{2}$AdaptVLA, a vision-language-action model that integrates visual and wrench memories with predictive test-time adaptation. Real-world experiments show that the TTT bank outperforms visual memory baselines on progress tracking, scene recall, and demonstration following.",
+   "citations": 0
   },
   {
    "id": "2611.34509",
@@ -1238,7 +1245,8 @@
    ],
    "kw_score": 12,
    "tldr": "Latent world models plan in a compact latent space by predicting the outcomes of actions.",
-   "summary": "Latent world models plan in a compact latent space by predicting the outcomes of actions. On goals up to 400 steps away, Graph Anchors raise LeWM's success from 13% to 85% on PointMaze-Medium, from 8% to 87% on PointMaze-Large, and from 5% to 71% on Push-T, where stronger search toward the goal fails and where prior training-free planners break down under missing step horizons, subsampling shortcuts, or fragmented contact."
+   "summary": "Latent world models plan in a compact latent space by predicting the outcomes of actions. On goals up to 400 steps away, Graph Anchors raise LeWM's success from 13% to 85% on PointMaze-Medium, from 8% to 87% on PointMaze-Large, and from 5% to 71% on Push-T, where stronger search toward the goal fails and where prior training-free planners break down under missing step horizons, subsampling shortcuts, or fragmented contact.",
+   "citations": 0
   },
   {
    "id": "2611.34148",
@@ -1265,7 +1273,8 @@
    ],
    "kw_score": 12,
    "tldr": "We propose Ground Your Steps (GYS), a training-free method that optimizes the sampling schedule by matching the generated and demonstrated chunk distributions at each observation.",
-   "summary": "We propose Ground Your Steps (GYS), a training-free method that optimizes the sampling schedule by matching the generated and demonstrated chunk distributions at each observation. This motivates optimizing the schedule to bring the generated action distribution closer to the demonstrations and improve task success."
+   "summary": "We propose Ground Your Steps (GYS), a training-free method that optimizes the sampling schedule by matching the generated and demonstrated chunk distributions at each observation. This motivates optimizing the schedule to bring the generated action distribution closer to the demonstrations and improve task success.",
+   "citations": 0
   },
   {
    "id": "2611.34128",
@@ -1297,10 +1306,55 @@
    "kw_score": 12,
    "tldr": "In this paper, we present a generalizable pipeline that directly recovers continuous, high-fidelity 3D surfaces from unposed images by seamlessly integrating pointmap- and ray-based representations.",
    "summary": "In this paper, we present a generalizable pipeline that directly recovers continuous, high-fidelity 3D surfaces from unposed images by seamlessly integrating pointmap- and ray-based representations. Trained as a single foundation model on 9 diverse datasets, our method demonstrates exceptional zero-shot generalization on 6 unseen datasets, clearly surpassing state-of-the-art baselines in geometric accuracy and detail preservation.",
-   "venue": "NeurIPS 2026"
+   "venue": "NeurIPS 2026",
+   "citations": 0
   }
  ],
  "trending_ml": [
+  {
+   "id": "2611.30634",
+   "title": "Rewirable Circuits in Transformers with Loom Attention",
+   "authors": [
+    "Da Xiao",
+    "Qingye Meng",
+    "Shengping Li",
+    "Xingyuan Yuan"
+   ],
+   "abstract": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with normalized and gated linear attention over a per-token matrix memory, which stores the compressed head outputs and serves as a second residual stream. This yields LoomFormer, a dual-stream architecture that splits control and content between the vector and matrix streams. Across model sizes and training token budgets in language modeling and downstream tasks, LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines (HC/mHC, MUDDFormer, AttnRes) trained with ~1.7-2.8x. For example, trained on the same 300B tokens with only 2% extra FLOPs, LoomPythia-2.8B achieves ~1.6x the average downstream gain of mHC-Pythia-2.8B over Pythia-2.8B, and matches (0-shot) or surpasses (5-shot) Pythia-12B. Code is available at https://github.com/Caiyun-AI/LoomFormer",
+   "summary": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with…",
+   "upvotes": 93,
+   "github": "https://github.com/Caiyun-AI/LoomFormer",
+   "stars": 22,
+   "project": "",
+   "org": "",
+   "url": "https://arxiv.org/abs/2611.30634",
+   "pdf": "https://arxiv.org/pdf/2611.30634",
+   "hf": "https://huggingface.co/papers/2611.30634",
+   "citations": 0
+  },
+  {
+   "id": "2611.31205",
+   "title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
+   "authors": [
+    "Zexin He",
+    "Rui Li",
+    "Yushi Lan",
+    "Chengkai Jin",
+    "Zhi Hou",
+    "Xingang Pan"
+   ],
+   "abstract": "Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts for a configurable control group, such as an arm with its gripper or the torso and chassis, enabling asynchronous reasoning and execution. However, different robot components often have physical dependencies that require coordination. To address this challenge, ACAP introduces a hyper-agent that assigns tasks, coordinates dependencies, and dynamically allocates control between the lead and member agents. This allows independent work to progress concurrently while supporting tightly coupled manipulation when necessary. Across 72 real-world rollouts covering 25 task/platform settings, ACAP reduces task-balanced time cost by 28.2% compared with a single-agent Direct Policy, with improvements across Fully Parallel, Parallel-Sequential, and Collaborative tasks. Across all eight Collaborative settings, ACAP also achieves lower mean time cost than Fixed Delegation, where only member agents can control their assigned groups. An additional 90-rollout study shows lower mean 30-minute-capped time cost than Direct on all six tasks. We further demonstrate mobile manipulation using the same member interface for chassis and torso control. We present the framework and a real-world rollout dataset containing observations, generated programs, actions, and feedback to support research on how coding agents reason and act in the physical world.",
+   "summary": "Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts…",
+   "upvotes": 67,
+   "github": "",
+   "stars": 0,
+   "project": "https://projects.zxhezexin.com/acap",
+   "org": "MMLab@NTU",
+   "url": "https://arxiv.org/abs/2611.31205",
+   "pdf": "https://arxiv.org/pdf/2611.31205",
+   "hf": "https://huggingface.co/papers/2611.31205",
+   "citations": 0
+  },
   {
    "id": "2611.25403",
    "title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
@@ -1332,7 +1386,7 @@
    ],
    "abstract": "We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route. Antom 3-in-1 Transformer is pretrained to learn reusable behavioral and relational representations, primarily on Ant International's internal payment data. In a cross-business transfer experiment, pretraining improves the target business metric by 34.5% over the same architecture trained from scratch. With only 25% of the training labels, the pretrained model outperforms the full-label scratch baseline in Average Precision (AP) and Recall@0.5% on different merchant domains. In a four-month online experiment on Ant International's billion-scale payment platform, the model reduced the overall loss rate by 37.88% relative to XGB-Online.",
    "summary": "We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route. Antom 3-in-1 Transformer is pretrained to learn…",
-   "upvotes": 106,
+   "upvotes": 67,
    "github": "",
    "stars": 0,
    "project": "",
@@ -1340,6 +1394,27 @@
    "url": "https://arxiv.org/abs/2611.25403",
    "pdf": "https://arxiv.org/pdf/2611.25403",
    "hf": "https://huggingface.co/papers/2611.25403",
+   "citations": 0
+  },
+  {
+   "id": "2611.32884",
+   "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+   "authors": [
+    "Richmond Sin Jing Xuan",
+    "Peilin Feng",
+    "Wenbin Wang",
+    "Soujanya Poria"
+   ],
+   "abstract": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers. An outcome reward at the end of the episode scores only the final answer, so it cannot teach the agent when to commit, because a lucky guess receives the same reward as an answer backed by evidence. During training, however, the simulator can compute the exact posterior over the answer at every step and tell whether the evidence is already enough. We propose Reinforcement Learning with Verifiable Beliefs (RLVB), which rewards the agent for taking further steps while this posterior still allows several answers and for committing once the evidence is sufficient. The reward needs no judge, critic or reward model, and it never reads the belief line the agent writes before each action. We also introduce Pro Worlds, a benchmark of visual puzzles where the agent views a large world through a small window. We evaluate three vision-language models on three benchmarks, two of which are never seen in training. RLVB improves the base model in all nine settings, by 17.1% on average. Under the outcome reward, GRPO and PPO fall below the base model on average. RLVB also outperforms PPO with a process reward from an LLM judge by 9.3% on average while using 1.6 times fewer GPU-hours. The trained agent answers with sufficient evidence in 51%, 12% and 74% of the episodes on the three benchmarks, against 8%, 0.4% and 36% for the base model. Its accuracy gain therefore comes from answering more often at high levels of evidence. The belief line shows how the agent reaches this evidence: it acts on its own belief. It commits at only 0.1 to 2.2% of the turns at which the evidence is insufficient and its line still names several answers, against 3 to 68% for the base model.",
+   "summary": "A reinforcement learning method rewards agents for delaying commitment until their inferred posterior over answers is sufficiently narrow, improving evidence-based answering across vision-language benchmarks.",
+   "upvotes": 65,
+   "github": "https://github.com/declare-lab/RLVB",
+   "stars": 27,
+   "project": "https://declare-lab.github.io/RLVB/?case=tabletop_cups&m=rlvb_grpo&s=0",
+   "org": "Nanyang Technological University",
+   "url": "https://arxiv.org/abs/2611.32884",
+   "pdf": "https://arxiv.org/pdf/2611.32884",
+   "hf": "https://huggingface.co/papers/2611.32884",
    "citations": 0
   },
   {
@@ -1354,7 +1429,7 @@
    ],
    "abstract": "Computer-use agents (CUAs) built on vision-language models are increasingly entrusted with long-horizon tasks in live desktop, web, and mobile environments, where the screen keeps changing on its own. However, current CUAs lack real-time situational awareness: they perceive the environment through discrete snapshots, and the substantial inference latency of VLMs, compounded by highly dynamic interfaces, opens a perception-action gap in which the observed state frequently becomes stale before the corresponding action is executed. To bridge this gap, we present NightWatch, a plug-and-play framework that endows any CUA with continuous, temporally grounded perception without changing the agent's model, prompt, or action space. NightWatch couples the VLM agent with NightWatch-0.8B, a lightweight System-1 model that performs streaming monitoring of the interface state and keeps the agent synchronized with the evolving environment at low computational cost and latency, thereby grounding each decision in the current state rather than an outdated snapshot and reducing both stale actions and idle waiting while preserving task success. Experiments on desktop and dynamic web environments (OSWorld-Verified and DynaCU-Bench) show that NightWatch, driven by a watcher of only 0.8B parameters, reduces non-reasoning wall-clock time by 33% and wasted time by 53% on OSWorld while keeping task success on par, raises success on DynaCU-Bench from 39.5% to 44.2% with the large VLM agent, and is more efficient than passive-watching baselines such as AOI and PUSV under the same screenshot-only input, as well as a System-1 decision model more than 30times its size. Overall, NightWatch demonstrates that the timing of perception is as critical as its content, marking a step toward agents that maintain continuous awareness of their environment rather than perceiving it turn by turn.",
    "summary": "NightWatch adds a lightweight streaming watcher to vision-language computer-use agents to keep perception synchronized with dynamic interfaces, reducing latency and wasted time while maintaining or improving task success.",
-   "upvotes": 102,
+   "upvotes": 65,
    "github": "https://github.com/SuJQ0722/NightWatch",
    "stars": 4,
    "project": "https://sujq0722.github.io/NightWatch/",
@@ -1362,71 +1437,6 @@
    "url": "https://arxiv.org/abs/2611.28947",
    "pdf": "https://arxiv.org/pdf/2611.28947",
    "hf": "https://huggingface.co/papers/2611.28947",
-   "citations": 0
-  },
-  {
-   "id": "2611.32884",
-   "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
-   "authors": [
-    "Richmond Sin Jing Xuan",
-    "Peilin Feng",
-    "Wenbin Wang",
-    "Soujanya Poria"
-   ],
-   "abstract": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers. An outcome reward at the end of the episode scores only the final answer, so it cannot teach the agent when to commit, because a lucky guess receives the same reward as an answer backed by evidence. During training, however, the simulator can compute the exact posterior over the answer at every step and tell whether the evidence is already enough. We propose Reinforcement Learning with Verifiable Beliefs (RLVB), which rewards the agent for taking further steps while this posterior still allows several answers and for committing once the evidence is sufficient. The reward needs no judge, critic or reward model, and it never reads the belief line the agent writes before each action. We also introduce Pro Worlds, a benchmark of visual puzzles where the agent views a large world through a small window. We evaluate three vision-language models on three benchmarks, two of which are never seen in training. RLVB improves the base model in all nine settings, by 17.1% on average. Under the outcome reward, GRPO and PPO fall below the base model on average. RLVB also outperforms PPO with a process reward from an LLM judge by 9.3% on average while using 1.6 times fewer GPU-hours. The trained agent answers with sufficient evidence in 51%, 12% and 74% of the episodes on the three benchmarks, against 8%, 0.4% and 36% for the base model. Its accuracy gain therefore comes from answering more often at high levels of evidence. The belief line shows how the agent reaches this evidence: it acts on its own belief. It commits at only 0.1 to 2.2% of the turns at which the evidence is insufficient and its line still names several answers, against 3 to 68% for the base model.",
-   "summary": "A reinforcement learning method rewards agents for delaying commitment until their inferred posterior over answers is sufficiently narrow, improving evidence-based answering across vision-language benchmarks.",
-   "upvotes": 98,
-   "github": "https://github.com/declare-lab/RLVB",
-   "stars": 27,
-   "project": "https://declare-lab.github.io/RLVB/?case=tabletop_cups&m=rlvb_grpo&s=0",
-   "org": "Nanyang Technological University",
-   "url": "https://arxiv.org/abs/2611.32884",
-   "pdf": "https://arxiv.org/pdf/2611.32884",
-   "hf": "https://huggingface.co/papers/2611.32884",
-   "citations": 0
-  },
-  {
-   "id": "2611.30634",
-   "title": "Rewirable Circuits in Transformers with Loom Attention",
-   "authors": [
-    "Da Xiao",
-    "Qingye Meng",
-    "Shengping Li",
-    "Xingyuan Yuan"
-   ],
-   "abstract": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with normalized and gated linear attention over a per-token matrix memory, which stores the compressed head outputs and serves as a second residual stream. This yields LoomFormer, a dual-stream architecture that splits control and content between the vector and matrix streams. Across model sizes and training token budgets in language modeling and downstream tasks, LoomFormer matches Transformers trained with over 3x compute and recent residual-stream baselines (HC/mHC, MUDDFormer, AttnRes) trained with ~1.7-2.8x. For example, trained on the same 300B tokens with only 2% extra FLOPs, LoomPythia-2.8B achieves ~1.6x the average downstream gain of mHC-Pythia-2.8B over Pythia-2.8B, and matches (0-shot) or surpasses (5-shot) Pythia-12B. Code is available at https://github.com/Caiyun-AI/LoomFormer",
-   "summary": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens. We instantiate vertical attention efficiently with…",
-   "upvotes": 92,
-   "github": "https://github.com/Caiyun-AI/LoomFormer",
-   "stars": 18,
-   "project": "",
-   "org": "",
-   "url": "https://arxiv.org/abs/2611.30634",
-   "pdf": "https://arxiv.org/pdf/2611.30634",
-   "hf": "https://huggingface.co/papers/2611.30634",
-   "citations": 0
-  },
-  {
-   "id": "2611.31205",
-   "title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
-   "authors": [
-    "Zexin He",
-    "Rui Li",
-    "Yushi Lan",
-    "Chengkai Jin",
-    "Zhi Hou",
-    "Xingang Pan"
-   ],
-   "abstract": "Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts for a configurable control group, such as an arm with its gripper or the torso and chassis, enabling asynchronous reasoning and execution. However, different robot components often have physical dependencies that require coordination. To address this challenge, ACAP introduces a hyper-agent that assigns tasks, coordinates dependencies, and dynamically allocates control between the lead and member agents. This allows independent work to progress concurrently while supporting tightly coupled manipulation when necessary. Across 72 real-world rollouts covering 25 task/platform settings, ACAP reduces task-balanced time cost by 28.2% compared with a single-agent Direct Policy, with improvements across Fully Parallel, Parallel-Sequential, and Collaborative tasks. Across all eight Collaborative settings, ACAP also achieves lower mean time cost than Fixed Delegation, where only member agents can control their assigned groups. An additional 90-rollout study shows lower mean 30-minute-capped time cost than Direct on all six tasks. We further demonstrate mobile manipulation using the same member interface for chassis and torso control. We present the framework and a real-world rollout dataset containing observations, generated programs, actions, and feedback to support research on how coding agents reason and act in the physical world.",
-   "summary": "Coding agents can construct and revise robot behavior during execution, but using one agent for the whole robot can delay otherwise independent work. We introduce Asynchronous Coding Agents as Policy (ACAP), an asynchronous framework that organizes one robot as a team of persistent agents. Each member reasons and acts…",
-   "upvotes": 64,
-   "github": "",
-   "stars": 0,
-   "project": "https://projects.zxhezexin.com/acap",
-   "org": "MMLab@NTU",
-   "url": "https://arxiv.org/abs/2611.31205",
-   "pdf": "https://arxiv.org/pdf/2611.31205",
-   "hf": "https://huggingface.co/papers/2611.31205",
    "citations": 0
   },
   {
@@ -1444,7 +1454,7 @@
    ],
    "abstract": "Computer-use agents (CUAs) are rapidly improving, yet their evaluation remains largely static. Existing benchmarks provide a strong foundation, but fixed difficulty ceilings, limited feature coverage, and coarse aggregate scores progressively weaken their discriminative and diagnostic value. We introduce CUA-SEE, a closed-loop evaluation environment that co-evolves tasks and executable verifiers from rollout evidence. It disentangles three objectives: benchmark evolution expands evaluation scope through cohort-calibrated difficulty and coverage growth; diagnostic evolution increases resolution through agent-conditional capability-boundary probes; and verifier evolution improves precision by translating changing requirements into state-grounded checkpoints with adversarial validation. Across multiple agents, applications, and rounds, CUA-SEE generates challenging, measurable tasks while preserving process-level evidence. Our results position adaptive evaluation as a scalable counterpart to self-evolving agents, continuously tracking what agents can do, where their boundaries lie, and how reliably progress is measured.",
    "summary": "CUA-SEE is a closed-loop evaluation environment that co-evolves tasks and executable verifiers to adaptively measure computer-use agents’ capabilities, boundaries, and progress reliability.",
-   "upvotes": 51,
+   "upvotes": 52,
    "github": "",
    "stars": 0,
    "project": "",
@@ -1502,7 +1512,7 @@
    "summary": "A training-free agentic framework integrates pretrained 3D and 2D experts with closed-loop refinement to achieve state-of-the-art 3D part segmentation across multiple benchmarks.",
    "upvotes": 36,
    "github": "https://github.com/yangcaoai/PartAgent_Agent_for_3D_Part_Seg",
-   "stars": 33,
+   "stars": 35,
    "project": "https://yangcaoai.github.io/PartAgent_ProjectPage/",
    "org": "The Hong Kong University of Science and Technology",
    "url": "https://arxiv.org/abs/2611.32554",

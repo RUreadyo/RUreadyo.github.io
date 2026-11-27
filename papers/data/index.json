@@ -3,7 +3,7 @@
   "date": "2026-11-25",
   "top": 8,
   "roundup": 30,
-  "papers": 200,
+  "papers": 269,
   "trending": 10,
   "ranker": "Claude"
  },
@@ -11,7 +11,7 @@
   "date": "2026-11-24",
   "top": 8,
   "roundup": 30,
-  "papers": 224,
+  "papers": 300,
   "trending": 10,
   "ranker": "Claude"
  },
@@ -19,7 +19,7 @@
   "date": "2026-11-23",
   "top": 10,
   "roundup": 30,
-  "papers": 219,
+  "papers": 295,
   "trending": 10,
   "ranker": "Claude"
  },
@@ -27,7 +27,7 @@
   "date": "2026-11-22",
   "top": 5,
   "roundup": 25,
-  "papers": 84,
+  "papers": 120,
   "trending": 0,
   "ranker": "Claude"
  },

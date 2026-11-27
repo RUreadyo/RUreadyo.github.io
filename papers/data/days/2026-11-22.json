@@ -1,12 +1,12 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-27T14:11:09+00:00",
+ "generated_at": "2026-11-27T21:48:12+00:00",
  "ranker": "Claude",
  "overview": "A quiet day with one paper: MAWAM extends world action models to several robots by imagining their futures jointly. It fits the ongoing trend of world action models as policy backbones, though multi-robot collaboration sits next to the reader's dexterity focus.",
  "stats": {
-  "papers": 84,
+  "papers": 120,
   "cs_ro": 44,
-  "relevant": 67,
+  "relevant": 69,
   "rated": 21
  },
  "top_picks": [
@@ -301,7 +301,8 @@
    "tldr": "Extends a single-agent world action model to jointly imagine futures and decode actions for multiple collaborating robots.",
    "summary": "Multi-robot manipulation needs spatiotemporally aligned plans and embodiment awareness, which per-robot policies and flat VLAs lack. MAWAM grows a single-agent WAM along an agent axis via curriculum, with joint self-attention across agents plus identity and embodiment encodings in one causal sequence.",
    "why": "A neat extension of video-action world models, though multi-robot collaboration is adjacent to my core focus.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.29277",

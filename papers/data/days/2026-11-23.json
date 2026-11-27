@@ -1,12 +1,12 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-27T14:11:09+00:00",
+ "generated_at": "2026-11-27T21:48:13+00:00",
  "ranker": "Claude",
  "overview": "Agentic robotics dominates. Real2Worlds2Real has an agent build digital twins and cousins and run sim policy training end to end, and Robo-MOPD asks how to merge specialist tool-calling planners into one generalist. EmboEagle adds a learned gate so a flow-matching WAM calls its VLM supervisor only when needed. All three treat the low-level policy as a tool inside a bigger loop.",
  "stats": {
-  "papers": 219,
+  "papers": 295,
   "cs_ro": 115,
-  "relevant": 161,
+  "relevant": 167,
   "rated": 30
  },
  "top_picks": [
@@ -553,7 +553,8 @@
    "tldr": "An LLM agent builds digital twins and cousins from few observations, then orchestrates sim data generation and policy training, self-improving over tasks.",
    "summary": "Real2Sim2Real is hard to scale across tasks. Real2Worlds2Real's tool harness reconstructs and refines physically executable sim worlds using visual and execution feedback, then coordinates data generation, learning and refinement, distilling validated procedures into reusable skills.",
    "why": "Agents automating sim data pipelines could cut my data collection cost.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.31079",
@@ -724,7 +725,8 @@
    "tldr": "Agentic framework coupling a subtask-conditioned world action model with a learned VLM-intervention gate and memory-grounded recovery primitives.",
    "summary": "Standalone WAMs accumulate errors on long-horizon tasks while per-chunk VLM supervision is slow. EmboEagle uses two-stage flow matching across subtasks, distills when to call the VLM into a gate on the action expert's latents, and invokes parameterized recovery grounded in structured memory.",
    "why": "Shows a practical way to call a VLM only when needed on top of a flow-matching WAM; system-heavy.",
-   "rated_by": "claude"
+   "rated_by": "claude",
+   "citations": 0
   },
   {
    "id": "2611.30145",
@@ -1239,7 +1241,8 @@
    ],
    "kw_score": 12,
    "tldr": "We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step.",
-   "summary": "We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step."
+   "summary": "We propose CATWAY, a cost-sensitive three-way decision gate: a loss matrix over four instruction conditions (clear, ambiguous, infeasible, unsafe) fixes execute, ask and refuse regions on the probability simplex, the question being the information-gathering step.",
+   "citations": 0
   },
   {
    "id": "2611.30989",
@@ -1263,7 +1266,8 @@
    ],
    "kw_score": 12,
    "tldr": "We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory.",
-   "summary": "We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory. What range of physical goals can today's AI systems achieve autonomously?"
+   "summary": "We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory. What range of physical goals can today's AI systems achieve autonomously?",
+   "citations": 0
   },
   {
    "id": "2611.30179",
@@ -1288,7 +1292,8 @@
    ],
    "kw_score": 12,
    "tldr": "We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition.",
-   "summary": "We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition. AKR executed no hazardous action in 21,000 Monte Carlo trials with sound observations or in 58 full-stack runs; the FF-Replan acting rule executed one in 7% of those trials."
+   "summary": "We propose asymmetric knowledge-level replanning (AKR), which treats the planner as an untrusted black box: reversible actions run on the planner's assumptions, and irreversible actions run only after a minimum-cost sensing cover verifies every precondition. AKR executed no hazardous action in 21,000 Monte Carlo trials with sound observations or in 58 full-stack runs; the FF-Replan acting rule executed one in 7% of those trials.",
+   "citations": 0
   },
   {
    "id": "2611.29912",
@@ -1317,7 +1322,8 @@
    ],
    "kw_score": 12,
    "tldr": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals.",
-   "summary": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals. Experiments show that our method outperforms baselines on single-object, multi-object, and demand-driven navigation benchmarks, with particularly strong gains in path efficiency."
+   "summary": "This paper addresses the challenge of scene-level memory design for efficient navigation across sessions and successive object goals. Experiments show that our method outperforms baselines on single-object, multi-object, and demand-driven navigation benchmarks, with particularly strong gains in path efficiency.",
+   "citations": 0
   },
   {
    "id": "2611.31561",
@@ -1392,9 +1398,9 @@
    ],
    "abstract": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT's hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .",
    "summary": "A benchmark and lightweight framework leverage hidden states from frozen diffusion transformers to detect and prevent object penetration in interactive video world models, reducing physical violations and generalizing zero-shot.",
-   "upvotes": 62,
+   "upvotes": 63,
    "github": "https://github.com/yuhangdai427/NoPeWorld",
-   "stars": 60,
+   "stars": 72,
    "project": "https://nopeworld.github.io/",
    "org": "The Hong Kong Polytechnic University",
    "url": "https://arxiv.org/abs/2611.27963",
@@ -1412,7 +1418,7 @@
    "summary": "We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation. Clover adapts Gated Delta Networks to block diffusion by combining recurrent memory of previously generated context with…",
    "upvotes": 45,
    "github": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview",
-   "stars": 167,
+   "stars": 170,
    "project": "https://diffuspace.ai/blog/clover-35b/",
    "org": "Diffuspace",
    "url": "https://arxiv.org/abs/2611.24636",
@@ -1439,7 +1445,7 @@
    "summary": "Future-OPSD trains vision-language models via on-policy self-distillation and a contrastive privilege advantage derived from a foresight score, improving video foresight prediction and planning without extra annotations or LLM supervision.",
    "upvotes": 43,
    "github": "https://github.com/Jingchensun/future-opsd",
-   "stars": 15,
+   "stars": 16,
    "project": "https://jingchensun.github.io/future-opsd/",
    "org": "University at Buffalo",
    "url": "https://arxiv.org/abs/2611.26954",
@@ -1461,7 +1467,7 @@
    "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, token-level KV caches, incurring linear GPU memory growth and quadratic…",
    "upvotes": 30,
    "github": "https://github.com/Clare-Nie/MemOnce",
-   "stars": 31,
+   "stars": 38,
    "project": "https://clare-nie.github.io/MemOnce/",
    "org": "Nanjing University",
    "url": "https://arxiv.org/abs/2611.27973",
@@ -1512,14 +1518,36 @@
    ],
    "abstract": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation from execution: the frontend decides whether and what to request, while the backend determines how. Execution can be offloaded, but unsent requests cannot be executed, and incomplete ones can misdirect the backend. On Full-Duplex-Bench v3 (FDB v3), most failures of Realtime-Venus-Audio + Harness in our streaming pipeline occur before a domain tool executes. We introduce Duopra, a full-duplex interaction model that learns task execution alongside conversational control. Duopra treats the backend as a tool, accepting a self-contained natural-language request. Direct calls and backend delegation share an action interface and requirements for faithful initiation and correct execution. Its three-stage training combines protocol SFT, full-duplex RL rewarding timely and complete execution, and projector-only repair of talker conditioning after thinker updates. With the same backend, Pass@1 rises from 4.7% to 44.7%; Duopra achieves 47.7% calling tools directly (26.0% after SFT) and 49.3% with a DeepSeek backend. It improves three FDB v1.0 takeover rates over the base model. These results show that task agency can coexist with key conversational agency.",
    "summary": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation…",
-   "upvotes": 17,
+   "upvotes": 16,
    "github": "https://github.com/cyChen2003/duopra",
-   "stars": 125,
+   "stars": 145,
    "project": "https://cychen2003.github.io/duopra/",
    "org": "",
    "url": "https://arxiv.org/abs/2611.25773",
    "pdf": "https://arxiv.org/pdf/2611.25773",
    "hf": "https://huggingface.co/papers/2611.25773",
+   "citations": 0
+  },
+  {
+   "id": "2611.27398",
+   "title": "Taking Apart and Putting Together: Tracking Objects Through Physical Transformations",
+   "authors": [
+    "Davide Gardenal",
+    "Mingxuan Liu",
+    "Flavio Vella",
+    "Quentin Guimard",
+    "Elisa Ricci"
+   ],
+   "abstract": "We introduce Transformation Tracking and Understanding (TTU), extending video object tracking to environments where objects undergo physical assemblies and disassemblies. TTU requires continuously tracking objects through transformations, identifying new entities, maintaining a state graph of their relationships, and assigning semantic labels to transformations. While foundation models (e.g., SAM 2/3) maintain tracklets through appearance changes, they cannot update semantic identities as objects physically evolve. Prior work addresses only disassemblies, relying on expensive searches triggered only when tracking fails. We propose Tracking Instances via Proposals and Overlaps (TIPO), a training-free framework that continuously infers transformations via a generate-evaluate-judge pipeline. TIPO generates split and merge proposals from disjoint mask components, scores them against mask-decoder priors using inner and external overlap, and queries an MLLM on the top proposal for visual verification and semantic labeling. To benchmark TTU, we curate Video Instances, States, and Transformation Annotations (VISTA), a dataset including state graphs with 124 assembly and 132 disassembly events across 50 sequences and over 26,000 frames. TIPO achieves state-of-the-art tracking and state-graph accuracy on VISTA, while operating 6times to 15times faster than prior methods. Project page: https://davidegardenal.github.io/tipo-tracking",
+   "summary": "A training-free framework tracks objects through physical assemblies and disassemblies by generating and evaluating split/merge proposals and querying a multimodal large language model for verification and labeling, achieving state-of-the-art accuracy and faster performance on a new benchmark.",
+   "upvotes": 14,
+   "github": "https://github.com/davidegardenal/TIPO",
+   "stars": 15,
+   "project": "https://davidegardenal.github.io/tipo-tracking/",
+   "org": "Multimedia and Human Understanding Group",
+   "url": "https://arxiv.org/abs/2611.27398",
+   "pdf": "https://arxiv.org/pdf/2611.27398",
+   "hf": "https://huggingface.co/papers/2611.27398",
    "citations": 0
   },
   {
@@ -1565,28 +1593,6 @@
    "url": "https://arxiv.org/abs/2611.24249",
    "pdf": "https://arxiv.org/pdf/2611.24249",
    "hf": "https://huggingface.co/papers/2611.24249",
-   "citations": 0
-  },
-  {
-   "id": "2611.27398",
-   "title": "Taking Apart and Putting Together: Tracking Objects Through Physical Transformations",
-   "authors": [
-    "Davide Gardenal",
-    "Mingxuan Liu",
-    "Flavio Vella",
-    "Quentin Guimard",
-    "Elisa Ricci"
-   ],
-   "abstract": "We introduce Transformation Tracking and Understanding (TTU), extending video object tracking to environments where objects undergo physical assemblies and disassemblies. TTU requires continuously tracking objects through transformations, identifying new entities, maintaining a state graph of their relationships, and assigning semantic labels to transformations. While foundation models (e.g., SAM 2/3) maintain tracklets through appearance changes, they cannot update semantic identities as objects physically evolve. Prior work addresses only disassemblies, relying on expensive searches triggered only when tracking fails. We propose Tracking Instances via Proposals and Overlaps (TIPO), a training-free framework that continuously infers transformations via a generate-evaluate-judge pipeline. TIPO generates split and merge proposals from disjoint mask components, scores them against mask-decoder priors using inner and external overlap, and queries an MLLM on the top proposal for visual verification and semantic labeling. To benchmark TTU, we curate Video Instances, States, and Transformation Annotations (VISTA), a dataset including state graphs with 124 assembly and 132 disassembly events across 50 sequences and over 26,000 frames. TIPO achieves state-of-the-art tracking and state-graph accuracy on VISTA, while operating 6times to 15times faster than prior methods. Project page: https://davidegardenal.github.io/tipo-tracking",
-   "summary": "A training-free framework tracks objects through physical assemblies and disassemblies by generating and evaluating split/merge proposals and querying a multimodal large language model for verification and labeling, achieving state-of-the-art accuracy and faster performance on a new benchmark.",
-   "upvotes": 11,
-   "github": "https://github.com/davidegardenal/TIPO",
-   "stars": 8,
-   "project": "https://davidegardenal.github.io/tipo-tracking/",
-   "org": "Multimedia and Human Understanding Group",
-   "url": "https://arxiv.org/abs/2611.27398",
-   "pdf": "https://arxiv.org/pdf/2611.27398",
-   "hf": "https://huggingface.co/papers/2611.27398",
    "citations": 0
   }
  ]
